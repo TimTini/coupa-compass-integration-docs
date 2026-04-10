@@ -1,0 +1,6 @@
+View Treasury API Documentation
+
+You can access the Treasury API documentation directly from the Treasury Management application.
+
+- Click More in the User Toolbar.
+- From the menu, select API documentation. This opens the API documentation in a new tab. Select an API integration from the list to expand it.

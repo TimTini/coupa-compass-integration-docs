@@ -1,0 +1,32 @@
+Commodities API (/commodities)
+
+Associations
+
+This resources is associated with Items API, Order Lines API, Suppliers API, and Supplier Information API.
+
+Actions
+
+Verb 	 Path 	 Action 	 Description
+POST 	 /api/commodities 	create 	Create commodity
+GET 	 /api/commodities 	index 	Query commodities
+GET 	 /api/commodities/:id 	show 	Show commodity
+PATCH 	 /api/commodities/:id 	update 	Update commodity
+PUT 	 /api/commodities/:id 	update 	Update commodity
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+active 	A false value will inactivate the account making it no longer available to users. A true value will make it active and available to users. 	true, false 	yes 	yes 	boolean
+category 	Category 	 	 	goods, services, monetary, others 	yes 	yes 	string(255)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+deductibility 	Deductibility 	 	 	fully_deductible, partially_deductible, not_deductible 	yes 	yes 	string(255)
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+imported-from-taxonomy 	A true value will tell that the commodity is imported from Coupa Taxonomy. A false value will tell that the value is created by a user or system 	 	 	 	 	yes 	boolean
+name 	name 	yes 	yes 	 	yes 	yes 	string(255)
+parent 	parent 	 	 	 	yes 	yes 	Commodity
+preferred 	A Yes/No value will mark/unmark commodity as preferred. Set to Automatic if you want the system to mark preferred. 'Automatic' option is available only if 'Automatic Guided Experiences configuration' is enabled on the Company Information page. 	 	 	Yes, No, Automatic, Always, Never 	yes 	yes 	string(255)
+subcategory 	Subcategory 	 	 	raw_materials, investment_goods, services_exceptions 	yes 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User
+translated_name 	Translated name 	 	 	 	 	yes

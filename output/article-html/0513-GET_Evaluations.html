@@ -1,0 +1,612 @@
+<article class="" id="reference1">
+<h1 class="title">GET Evaluations</h1>
+<p class="font-size-lg">Retrieve evaluation data from your Coupa Risk Assess tenant, such as evaluation scores, comments, and attachments.</p>
+<div class="body refbody">
+<div class="" id="section1">
+<h2 class="title sectiontitle">Endpoint</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="simpletable properties simpletableborder">
+<tr>
+<td class="entry" align="">
+<p class="">
+<b>Endpoint</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/evaluations</code>
+</p>
+</td>
+</tr>
+<tr>
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+</tr>
+</table>
+</div>
+</p>
+</div>
+<div class="" id="section2">
+<h2 class="title sectiontitle">Headers</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Header</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Argument</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Authorization</p>
+</td>
+<td class="entry" align="">
+<p class="">Bearer token</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Accept</p>
+</td>
+<td class="entry" align="">
+<p class="">application/json or application/xml</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Parameters</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<caption>
+<span class="table--title-label">Table 1. </span>
+<span class="title">Query parameters</span>
+</caption>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Paremeter</b>
+</p>
+</td>
+<td class="entry" align="">
+<b>Data Type</b>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Description</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">limit</p>
+</td>
+<td class="entry" align="">int</td>
+<td class="entry" align="">
+<p class="">Maximum number of items in the response. Maximum: 50.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">offset</p>
+</td>
+<td class="entry" align="">int</td>
+<td class="entry" align="">
+<p class="">Number of items to skip from the start. Default: 0.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">entityId</td>
+<td class="entry" align="">guid</td>
+<td class="entry" align="">Unique identifier of evaluation. You can filter by this parameter using these operators: [eq]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">name</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Evaluation name. You can filter by this parameter using these operators: [eq], [contains]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Evaluation status. You can filter by this parameter using these operators: [eq], [contains]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">createdAt</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Evaluation creation timestamp in the following format: YYYY-MM-DDTHH:MM:SS.FFZ. You can filter by this parameter using these operators: [eq], [lt], [gt]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">modifiedAt</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Last updated timestamp in the following format: YYYY-MM-DDTHH:MM:SS.FFZ. You can filter by this parameter using these operators: [eq], [lt], [gt]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">includeDeleted</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Specify whether to include the deleted evaluations in the returned list of evaluations. Default: False.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+<p class="">
+</div>
+<div class="">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Evaluations API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<b>Available Options</b>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">success</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Whether the request was successful.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">totalCount</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Total number of evaluations that match the filter criteria across all pages.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Use the limit and offset query parameters to retrieve additional sets of data if totalCount exceeds the page size.</p>
+</div>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">result</p>
+</td>
+<td class="entry" align="">
+<p class="">array</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Current page of evaluation results, with up to 50 evaluations per request (determined by limit and offset).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">errors</p>
+</td>
+<td class="entry" align="">
+<p class="">array</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">List of error objects. Typically empty when the request is successful.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">entityId</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Unique, permanent GUID that represents the evaluation within the system.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Name of the evaluation, which is generated automatically by the system.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+<td class="entry" align="">
+<p class="">PrgCancelled, PrgCollaborate, PrgCompleted, PrgExtApprInprocess, PrgExtApprPending, PrgExtEvalApproved, PrgExtEvalComplete, PrgExtEvalInprocess, PrgExtEvalPending, PrgIntApprInprocess, PrgIntApprPending, PrgIntEvalComplete, PrgIntEvalInprocess, PrgIntEvalPending, PrgCancelled</p>
+</td>
+<td class="entry" align="">
+<p class="">Enumeration that indicates the current state of the evaluation.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">finalScore</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">See the <b>FinalScore and FinalRating values</b> section below.</td>
+<td class="entry" align="">
+<p class="">Final score assigned to the evaluation, calculated based on KPI scores, weights, and other configurations. A value of <b>-1</b> signifies that the evaluation is incomplete (<b>status</b> is not <b>PrgCompleted</b>).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">finalRating</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+<td class="entry" align="">See the <b>FinalScore and FinalRating values</b> section below.</td>
+<td class="entry" align="">
+<p class="">Rating label derived from the <b>finalScore</b>, based on the configured rating range within the evaluation's program. This value is null if the rating range is not set or if the evaluation is incomplete.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">createdAt</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Date and time when the evaluation was created.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">modifiedAt</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Date and time when the evaluation was last modified.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">enrollment</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-enrollment-object" title="Contains details recorded when an object is enrolled for evaluation. Includes the target of evaluation (such as a supplier or engagement) and evaluation-specific configurations, including assigned evaluators, approvers, and other relevant data.">Enrollment</a>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Details recorded during the enrollment of an object for evaluation. Encompasses the target of evaluation (such as a supplier or engagement) as well as evaluation-specific configurations, including assigned evaluators, approvers, and other relevant data.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">program</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-program-object" title="The Program object contains evaluation program data related to an evaluation. The Program object contails framework, regulations, scoring setup, and timeline for the evaluation process.">Program</a>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Details about the evaluation program that governs the creation of this specific evaluation instance. Includes overall framework, regulations, scoring setup, and timeline for the evaluation process.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">riskableObject</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-riskableobject-object" title="Provides details about the evaluable or riskable entity that underwent evaluation. The RiskableObject object can represent various types of entities, including Supplier, Relationship, Engagement, and others.">RiskableObject</a>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Details about the evaluable or riskable entity that underwent evaluation. Represents various types of entities, including Supplier, Relationship, Engagement, and more.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">organizations</td>
+<td class="entry" align="">
+<p class="">Array of <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-organizations-object" title="Represents Organization Score Accumulators linked to the evaluation process. Accumulators compile the scores of Key Performance Indicators at the organizational level. The Object contains score accumulator records rather than the organizations themselves.">Organizations</a> objects</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Represents Organization Score Accumulators linked to the evaluation process. These accumulators compile the scores of Key Performance Indicators (KPIs) at the organizational level. While the object is referred to as organizations, the values pertain to score accumulator records rather than the organizations themselves.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">comments</td>
+<td class="entry" align="">Array of <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-comments-object" title="Contains comments provided by evaluators or approvers at the overall evaluation level. This object does not contain comments made at lower levels, such as organization, category, or KPI.">Comments</a> objects</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Represents comments provided by evaluators or approvers at the overall evaluation level. This object does not include comments made at lower levels, such as organization, category, or KPI.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">attachments</td>
+<td class="entry" align="">Array of <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-attachments-object" title="Contains the files attached by evaluators or approvers at the overall evaluation level. Does not contain attachments added at lower levels, such as organization, category, or KPI.">Attachments</a> objects</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Files attached by evaluators or approvers at the overall evaluation level. This array does not contain attachments added at lower levels, such as organization, category, or KPI.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+</div>
+<div class="">
+<h2 class="title sectiontitle">FinalScore and FinalRating values</h2>
+<p class="">The fields <b>FinalScore</b> and <b>FinalRating</b> can have a different set of possible values based on the type of program the evaluation was created for. Below is the set of possible values:<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Evaluation Program Type</b>
+</th>
+<th class="entry " align="">
+<b>Possible Values For FinalScore</b>
+</th>
+<th class="entry " align="">
+<b>Possible Values For FinalRating</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Enterprise Compliance</p>
+</td>
+<td class="entry" align="">
+<p class="">0/100</p>
+</td>
+<td class="entry" align="">
+<p class="">PASS/FAIL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Enterprise Performance</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal value between 0 and100</p>
+</td>
+<td class="entry" align="">
+<p class="">Based on range values assigned to program</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Enterprise Risk</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal value between 0 and100</p>
+</td>
+<td class="entry" align="">
+<p class="">Based on range values assigned to program</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">InformationManagement</p>
+</td>
+<td class="entry" align="">
+<p class="">-1</p>
+</td>
+<td class="entry" align="">None</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Robo</p>
+</td>
+<td class="entry" align="">
+<p class="">-1</p>
+</td>
+<td class="entry" align="">None</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Run As Robo</p>
+</td>
+<td class="entry" align="">
+<p class="">-1</p>
+</td>
+<td class="entry" align="">None</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Incomplete Evaluation</p>
+</td>
+<td class="entry" align="">
+<p class="">-1</p>
+</td>
+<td class="entry" align="">None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+<example>
+<h2 class="title">Get evaluations</h2>
+<dl class="dl">
+<dt class="dt dlterm">Endpoint</dt>
+<dd class="dd">
+<p class="">GET <code class="ph codeph">/api/evaluations</code>
+</p>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;.risk.com/api/evaluations' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••'</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example response</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">{
+    "result": {
+        "totalCount": 1,
+        "evaluations": [
+            {
+                "entityId": "70d4920d-4db3-4e15-a607-00139fae905a",
+                "name": "Evaluation-RuleEqualsTodayProgram [AutoSupplier_20220218171430] - Quarterly - Period Start 29 Aug 23",
+                "status": "PrgIntEvalPending",
+                "createdAt": "2023-08-29T18:06:08.037Z",
+                "modifiedAt": "2023-08-29T18:06:08.303Z",
+                "finalScore": -1.0,
+                "finalRating": null,
+                "program": {
+                    "entityId": "639f950f-9d2b-49d1-ae3f-840970f3a58a",
+                    "name": "RuleEqualsTodayProgram",
+                    "status": "Performance_Active",
+                    "links": null
+                },
+                "enrollment": {
+                    "entityId": "dc920003-f6cc-4c0d-bf9a-ccce277b8797",
+                    "name": "AutoSupplier_20220218171430",
+                    "links": null
+                },
+                "riskableObject": {
+                    "entityId": "495e7410-cf2d-4346-91de-c1420f5b1de5",
+                    "name": "AutoSupplier_20220218171430",
+                    "objectName": "Hiperos.Models.Supplier",
+                    "status": "General_Active",
+                    "links": [
+                        {
+                            "href": "api/suppliers",
+                            "rel": "retrieve-suppliers",
+                            "method": "GET"
+                        },
+                        {
+                            "href": "api/suppliers?entityId[eq]=495e7410-cf2d-4346-91de-c1420f5b1de5",
+                            "rel": "_self",
+                            "method": "GET"
+                        }
+                    ]
+                },
+                "organizations": [
+                    {
+                        "entityId": "a205cbdb-a575-49a1-9985-9457d6ebac73",
+                        "name": "QAAutomation",
+                        "links": null
+                    }
+                ],
+                "comments": null,
+                "attachments": null
+            },
+            {
+                "entityId": "98dc3811-d2ea-492c-8318-001e972827b1",
+                "name": "Evaluation-RuleEqualsTodayProgram [Auto_SyncAddress_20220330080032] - Quarterly - Period Start 29 Aug 23",
+                "status": "PrgIntEvalPending",
+                "createdAt": "2023-08-29T18:26:45.92Z",
+                "modifiedAt": "2023-08-29T18:26:46.85Z",
+                "finalScore": -1.0,
+                "finalRating": null,
+                "program": {
+                    "entityId": "639f950f-9d2b-49d1-ae3f-840970f3a58a",
+                    "name": "RuleEqualsTodayProgram",
+                    "status": "Performance_Active",
+                    "links": null
+                },
+                "enrollment": {
+                    "entityId": "a10b710e-4432-4945-bddb-16e628527406",
+                    "name": "Auto_SyncAddress_20220330080032",
+                    "links": null
+                },
+                "riskableObject": {
+                    "entityId": "242fa13c-224f-44ed-80d1-95d83ea31692",
+                    "name": "Auto_SyncAddress_20220330080032",
+                    "objectName": "Hiperos.Models.Supplier",
+                    "status": "General_Active",
+                    "links": [
+                        {
+                            "href": "api/suppliers",
+                            "rel": "retrieve-suppliers",
+                            "method": "GET"
+                        },
+                        {
+                            "href": "api/suppliers?entityId[eq]=242fa13c-224f-44ed-80d1-95d83ea31692",
+                            "rel": "_self",
+                            "method": "GET"
+                        }
+                    ]
+                },
+                "organizations": [
+                    {
+                        "entityId": "9c9f45b8-1a5a-463e-8bc0-8d83edeee15c",
+                        "name": "QAAutomation",
+                        "links": null
+                    }
+                ],
+                "comments": null,
+                "attachments": null
+            },
+        ]
+    },
+    "errors": [],
+    "success": true
+}</code>
+</pre>
+</dd>
+</dl>
+</example>
+</div>
+<nav role="navigation" class="related-links">
+<ul class="ullinks child-links-section">
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-enrollment-object">Risk Assess Enrollment Object</a>
+<br>Contains details recorded when an object is enrolled for evaluation. Includes the target of evaluation (such as a supplier or engagement) and evaluation-specific configurations, including assigned evaluators, approvers, and other relevant data.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-program-object">Risk Assess Program Object</a>
+<br>The Program object contains evaluation program data related to an evaluation. The Program object contails framework, regulations, scoring setup, and timeline for the evaluation process.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-riskableobject-object">Risk Assess RiskableObject Object</a>
+<br>Provides details about the evaluable or riskable entity that underwent evaluation. The RiskableObject object can represent various types of entities, including Supplier, Relationship, Engagement, and others.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-attachments-object">Risk Assess Attachments Object</a>
+<br>Contains the files attached by evaluators or approvers at the overall evaluation level. Does not contain attachments added at lower levels, such as organization, category, or KPI.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-comments-object">Risk Assess Comments Object</a>
+<br>Contains comments provided by evaluators or approvers at the overall evaluation level. This object does not contain comments made at lower levels, such as organization, category, or KPI.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-organizations-object">Risk Assess Organizations Object</a>
+<br>Represents Organization Score Accumulators linked to the evaluation process. Accumulators compile the scores of Key Performance Indicators at the organizational level. The Object contains score accumulator records rather than the organizations themselves.</li>
+</ul>
+</nav>
+</article>

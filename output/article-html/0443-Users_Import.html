@@ -1,0 +1,954 @@
+<article class="" id="users_import">
+<h1 class="title">Users Import</h1>
+<div class="body">
+<div class="" id="overview-d117e179823">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The User Import process read files from the <code class="ph codeph">./Incoming/Users/</code> in the SFTP.
+        These files will be moved to the archive folder located at
+          <code class="ph codeph">./Incoming/Archive/Users/</code> before being processed in alphanumeric
+        order.</p>
+<ul class="ul">
+<li class="li">Associated fields like <code class="ph codeph">Content Groups</code>, <code class="ph codeph">Account Group
+            Names</code>, etc. must already exist. They will not be created through the users
+          integration (CSV or API).</li>
+<li class="li">Integrations (CSV or API) currently supports only a full default account code. If only a
+          portion of the default account code is used as a source field, the integration can query
+          Coupa for any account that matches the partial account with a limit of 1.</li>
+</ul>
+</div>
+<div class="" id="keys-d117e179844">
+<h2 class="title sectiontitle">Keys</h2>
+<ul class="ul">
+<li class="li">Id</li>
+<li class="li">Employee Number</li>
+<li class="li">Login</li>
+</ul>
+</div>
+<div class="" id="validations-d117e179856">
+<h2 class="title sectiontitle">Validations</h2>
+<p class="">You can update any field if you include <code class="ph codeph">Id</code>. You can update
+          <code class="ph codeph">Login</code> using <code class="ph codeph">Employee Number</code>. However, you cannot update
+          <code class="ph codeph">Employee Number</code> using <code class="ph codeph">Login</code>. Coupa tries to create a new
+        record with the login, and the integration will fail.</p>
+</div>
+<div class="" id="user_authentication">
+<h2 class="title sectiontitle">User Authentication</h2>
+<p class="">Methods that don't use standard Coupa credentials need to be configured in the customer
+        instance before they are available as choices on a user record. These are case some sample
+        values and their associated reference field:</p>
+<ul class="ul">
+<li class="li">LDAP - "ldap" - The <code class="ph codeph">Login</code> field is mapped to the LDAP
+            <code class="ph codeph">sAMAccountName</code> field</li>
+<li class="li">SAML - "saml" - The <code class="ph codeph">Sso Identifier</code> field is mapped to the SAML
+            <code class="ph codeph">NameID</code>
+</li>
+</ul>
+</div>
+<div class="" id="section_trq_nj5_g1c">
+<h2 class="title sectiontitle">User</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Id</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Unique identifier Coupa assigns when a new record is created. It can’t be modified, but can be used to update the record.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Login</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Must be at least 2 characters</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Status</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Possible values are active or inactive. Inactive users cannot login.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Purchasing User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Purchasing User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Coupa Navi Ai Agent User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Navi Ai Agent User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expense User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Expense User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sourcing User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Sourcing User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Inventory User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contracts User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Contracts User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Analytics User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Analytics User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">AI Classification User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">AI Classification User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Spend Guard User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Spend Guard User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Navi Chatbot User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Navi User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contingent Workforce User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Contingent Workforce User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Risk Assess User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Risk Assess User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Does the user have a Contract Lifecycle Management Advanced License?</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Contract Lifecycle Management Advanced License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supply Chain User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Supply Chain User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Travel User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Travel User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Treasury User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Treasury User License?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Authentication Method</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Optional field to specify LDAP or SAML authentication if you have either of those enabled</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sso Identifier</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Identifier for SSO/SAML</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Generate Password And Notify User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Set to Yes if you want the system to invite the user to the system and have them set up their password</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Email</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">User's email address</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">First Name</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">User's first name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Last Name</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">User's last name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Employee Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">User's employee number, often used for cross-referencing with the HR system</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Department</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Must match department name exactly.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Phone Work</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Your user's work phone number in the format xxx-yyy-zzzz. Intl numbers must be prefaced by a + sign and the country code. +aa xxx-yyy-zzzz</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Phone Mobile</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Your user contact's mobile number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the approval limit in the form 1000.00 USD. May also be the name of an already created approval limit or position. Setting this field will set Requisition Approval Limit, Expense Approval Limit and Invoice Approval Limit.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requisition Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expense Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service/Time Sheets Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the approval limit in the form '1000.00 USD'.  May also be the name of an already created approval limit or position.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receipt Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. Setting this field will set Receipt Approval Limit.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sourcing Launch Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. This field will set Sourcing Launch Approval Limit</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sourcing Award Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. This field will set Sourcing Award Approval Limit</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Self Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the self approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. Setting this field will set Requisition Self Approval Limit, and Expense Self Approval Limit.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requisition Self Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the self approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. Setting this field will set Requisition Self Approval Limit, and Expense Self Approval Limit.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expense Self Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the self approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. Setting this field will set Requisition Self Approval Limit, and Expense Self Approval Limit.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Self Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the self approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. Setting this field will set Requisition Self Approval Limit, and Expense Self Approval Limit.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract Self Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the self approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. Setting this field will set Requisition Self Approval Limit, and Expense Self Approval Limit.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receipt Self Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the self approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. Setting this field will set Receipt Self Approval Limit</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sourcing Launch Self Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the self approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. This field will set Sourcing Launch Self Approval Limit</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sourcing Award Self Approval Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the self approval limit in the form '1000.00 USD'. May also be the name of an already created approval limit or position. This field will set Sourcing Award Self Approval Limit</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Escalation Threshold Limit</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The amount and currency code of the escalation threshold in the form '1000.00 USD'. May also be the name of an already created approval limit or position. Setting this field will set Escalation Threshold.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Approver Login</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your user's next approver</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Chart of Accounts Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default chart of accounts for this user.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If the user has a particular account that he or she charges most purchases to, you can enter in a default account</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-5</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-6</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-6</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-7</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-7</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-8</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-8</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-9</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-9</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-10</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-10</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-11</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-11</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-12</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-12</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-13</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-13</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-14</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-14</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-15</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-15</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-16</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-16</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-17</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-17</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-18</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-18</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-19</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-19</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Account Code Segment-20</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Account Code Segment-20</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">User Role Names</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Possible values are User, Buyer, Accounts Payable, Central Receiving, Accounting Supervisor, Edit as Approver, Inventory Manager, and/or Admin. If entering more than one, use a comma to separate. You can also pass custom role names in this element.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Currency</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Enter in the 3-digit currency code. If a value is not provided and the user record doesn't have a default currency already set, then the default currency is set to the instance's reporting currency.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Locale</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(10)</td>
+<td class="entry" align="">Enter in the 2 or 5 letters locale code. For example: en or en-US.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Content Groups</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Enter in content groups (for security)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address Location Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in location code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address Street 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in street address line 1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address Street 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in street address line 2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address Street 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in street address line 3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address Street 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in street address line 4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in city</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in state</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in postal code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in country code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address Attention</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in Attention line</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Address Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For shipping address, enter in address nickname</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remove Default Address</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remove the default address for this user</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receive Coupa Emails</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Possible values are Yes or No. If yes, the person will receive updates from Coupa Service Delivery and Operations on any announcements</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Limit Showing of DataTable Views</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Do now allow user to create datatable views</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Security Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Possible values are '0' (or blank; No account-based restrictions), '1' (Restrict to the user's default Chart of Accounts) or '2' (Restrict based on account groups).</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Business Group Security Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Sets the content groups for the user. Options include: 0 = No content group restrictions, 1 = Basic content plus selected content groups if content groups are specified, basic content only if no content groups are specified.</td>
+<td class="entry" align="">0, 1</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Group Names</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account groups that the user should have access to (for account-based document security)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Approval Group Names</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Approval groups that the user should belong to</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Warehouses</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Warehouses</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Organizations</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">InventoryOrganization</td>
+<td class="entry" align="">Inventory Organizations</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow user to upload Invoice images from Coupa Mobile to Invoice Inbox</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Allow user to upload Invoice images from Coupa Mobile to Invoice Inbox</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Mention Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Mention Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Country Of Residence Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">User's country of residence code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Legal Entity Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Legal Entity Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Seniority Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Seniority Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Business Function</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Business Function</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Employee Payment Channel</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Determine how expenses will be paid to the employee. 'ERP' per default and can be switched to 'CoupaPay' if instance allows it.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow Employee Payment Account Creation</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Allow the user to create an Employee Payment Account, regardless of the Employee Payment Channel.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Groups</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">UserGroup</td>
+<td class="entry" align="">Groups</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Middle Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">User's middle name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pcard Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If the user has a purchasing credit card, you can enter in the person's name on the card</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pcard Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Enter in the purchasing credit card's number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pcard Expiration</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Enter in the purchasing credit card's expiration date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pcard Cvv</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">DEPRECATED NO LONGER SUPPORTED</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Projects</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Projects</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoicing User</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Invoicing User License?</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="list_of_valid_locales">
+<h2 class="title sectiontitle">List of Valid Locales</h2>
+<p class="">en, tr, ja, cs, es, da, de-AT, de-CH, de, en-AU, de-BE, de-LU, en-CA, en-GB, en-HK, en-IE,
+        en-IN, en-ME, en-MT, en-MY, en-NZ, en-PH, en-ZA, es-CO, es-MX, es-PR, es-IC, fi, fr-BE,
+        fr-CA, fr-CH, fr, hu, fr-LU, it-CH, it, ko, nl-BE, nl, no, pl, pt-BR, pt, ru, ro, sr, sv,
+        zh-CN, zh-TW, zh-HK, en, tr, ja, cs, es, da, de-AT, de-CH, de, en-AU, en-CA, en-GB, en-IE,
+        en-ZA, es-CO, es-MX, es-PR, fi, fr-BE, fr-CA, fr-CH, fr, hu, it-CH, it, ko, nl-BE, nl, no,
+        pl, pt-BR, pt, ru, sv, zh-CN, zh-TW, zh-HK,</p>
+</div>
+</div>
+</article>

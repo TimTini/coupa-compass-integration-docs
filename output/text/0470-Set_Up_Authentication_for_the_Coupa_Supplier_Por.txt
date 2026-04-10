@@ -1,0 +1,32 @@
+Set Up Authentication for the Coupa Supplier Portal REST API
+
+Create an OAuth 2.0 client and generate an access token in the Coupa Supplier Portal. Use the access token to access CSP data using the CSP REST API.
+
+- Create an OAuth 2.0 client and assign scopes.
+- Navigate to Setup > Admin .
+- Select API Clients and select Create.
+- Define these fields.
+
+Field 	Description
+Name 	Enter an API client name.
+Hostname 	Supplier client application hostname.
+Scopes 	Select csp.invoices.read.
+
+- Select Save.
+
+The API Client Details page displays. Note the Identifier and Secret fields to use in your API call to generate the token in the following step.
+
+- Send an API call to generate a token.
+- Send a POST call to https://supplier.coupahost.com/oauth2/token.
+
+Include these elements in the request body.
+
+Element 	 Description
+client_id 	Client identifier value from the OAuth 2.0 client.
+client_secret 	Client secret value from the OAuth 2.0 client.
+grant_type 	Enter client_credentials.
+scope 	List of scopes with commas removed.
+
+Example cURL request: curl --location 'https://supplier.coupahost.com/oauth2/token' \ --header 'Content-Type: application/x-www-form-urlencoded' \ --data-urlencode 'client_id=3c1ce11a8105004359a7e00b7c4cfd09' \ --data-urlencode 'grant_type=client_credentials' \ --data-urlencode 'scope=csp.invoices.read' \ --data-urlencode 'client_secret=4cef98122f7adcd701585789808a49714bd116a6fed5cdfe7e1c84f5e6377fb1'
+
+The API returns a bearer token to use in subsequent API calls.

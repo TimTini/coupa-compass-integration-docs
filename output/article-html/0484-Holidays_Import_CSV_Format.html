@@ -1,0 +1,186 @@
+<article class="" id="holidays_import_csv_format">
+<h1 class="title">Holidays Import CSV Format</h1>
+<div class="body">
+<div class="" id="format_description-d94e3016">
+<h2 class="title sectiontitle">Format Description</h2>
+<p class="">
+<a data-scope="peer" data-name="" target="" href="/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/Holidays_Import_CSV_Format.pdf" title="">PDF Version</a>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">The date of the holiday.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Calculation</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">0 = Do not include date in calculations.</p>
+<p class="">1 = Include date in
+                  calculations.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Detail</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">If the holiday refers to a currency, enter the three-digit ISO-code of that
+                  currency.</p>
+<p class="">If the holiday refers to a country, enter the two-digit ISO-code
+                  of that country.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Name</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">The name of the holiday.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="import_function-d94e3168">
+<h2 class="title sectiontitle">Import Function</h2>
+<p class="">The import function is
+        under Special Functions on System &gt; Market Data/Scenarios &gt; Holidays.</p>
+<p class="">The import
+        function processes files in standard text formats:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII</p>
+</li>
+<li class="li">
+<p class="">Unicode</p>
+</li>
+</ul>
+</div>
+<div class="" id="format_rules-d94e3181">
+<h2 class="title sectiontitle">Format Rules</h2>
+<p class="">One file may contain entries
+        for multiple holidays. Each dataset contains exactly one holiday.</p>
+<p class="">If imported a second
+        time, pre-existing datasets are not overwritten and are added to the list.</p>
+<p class="">The file
+        cannot contain any headers or format descriptions. Do not enclose text in quotation
+        marks.</p>
+<p class="">Each row in the file contains exactly one data set:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII Code 13: carriage return shows the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">ASCII Code 10: new line shows the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">The last data set concludes by an end of file (EOF).</p>
+</li>
+</ul>
+<p class="">In the table above, the value for “char” shows how many characters is the maximum
+        length for that field in the imported file.</p>
+<p class="">Days and months are always 2-digit values,
+        whereas years are 4 digits. Date separator, date sequence, and file format must match your
+        user settings.</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Field Separator</b> – semicolon (;), comma (,)</p>
+</li>
+<li class="li">
+<p class="">
+<b>Date Separator</b> – slash (/), period (.), comma (,), &lt; none &gt;</p>
+</li>
+<li class="li">
+<p class="">
+<b>Date Sequence</b> – mdy, dmy, ymd</p>
+</li>
+<li class="li">
+<p class="">
+<b>File Format</b> – ASCII, Unicode</p>
+</li>
+</ul>
+</div>
+<div class="" id="example_data_sets-d94e3225">
+<h2 class="title sectiontitle">Example Data
+        Sets</h2>
+<p class="">12/25/2021;0;USD;Christmas Day</p>
+<p class="">12/31/2021;1;US;New Year’s
+      Eve</p>
+</div>
+</div>
+</article>

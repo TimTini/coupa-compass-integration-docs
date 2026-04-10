@@ -1,0 +1,338 @@
+<article class="" id="business_entities_api_business_entities">
+<h1 class="title">Business Entities API (/business_entities)</h1>
+<div class="body">
+<p class="">Use the budget line API to create and update budget lines that
+you have associated with your accounts.</p>
+<p class="">The URL to access business
+entities is: <code class="ph codeph">https://&lt;instance&gt;/api/business_entities</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration
+Best Practices</a> for more info.</p>
+<div class="" id="actions-d957e36446">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Business Entities API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/business_entities</code>
+</td>
+<td class="entry" align="">query</td>
+<td class="entry" align="">Query business entities</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/business_entities</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create business entity</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/business_entities/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show business entity</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/business_entities/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update business entity</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/business_entities/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update business entity</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e36591">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Business
+Entities API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">name</td>
+<td class="entry" align="">Name</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">display-name</td>
+<td class="entry" align="">Display Name</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Type</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">LegalBusinessEntity, OrganizationalBusinessEntity</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">formation-type</td>
+<td class="entry" align="">Formation Type</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">Organization, Person</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">Status</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">primary-address</td>
+<td class="entry" align="">Primary Address</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">primary-contact</td>
+<td class="entry" align="">Primary Contact</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">addresses</td>
+<td class="entry" align="">Addresses</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">[]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">business-entity-account-owners</td>
+<td class="entry" align="">Business Entity Account Owners</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">[]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">business-entity-relationships</td>
+<td class="entry" align="">Business Entity Relationships</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">[]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">business-entity-alternate- names</td>
+<td class="entry" align="">Business Entity Alternate Names</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">[]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">business-entity-external-references</td>
+<td class="entry" align="">Business Entity External Reference</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">[]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">country-of-origin</td>
+<td class="entry" align="">Country of Origin</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa Internal ID</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">external-src-ref</td>
+<td class="entry" align="">External Source Reference</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">external-src-name</td>
+<td class="entry" align="">External Source Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<nav role="navigation" class="related-links">
+<ul class="ullinks child-links-section">
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/business-entities-api-(business_entities)/business-entity-account-owner-api">Business Entity Account Owner API</a>
+</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/business-entities-api-(business_entities)/business-entity-address-api">Business Entity Address API</a>
+</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/business-entities-api-(business_entities)/business-entity-alternate-name-api">Business Entity Alternate Name API</a>
+</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/business-entities-api-(business_entities)/business-entity-external-reference-api">Business Entity External Reference API</a>
+</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/business-entities-api-(business_entities)/business-entity-relationship-api">Business Entity Relationship API</a>
+</li>
+</ul>
+</nav>
+</article>

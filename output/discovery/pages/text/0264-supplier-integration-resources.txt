@@ -1,0 +1,9 @@
+supplier-integration-resources
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/product-documentation/suppliers/supplier-integration-resources
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8Tx1HSUqut1K0gKg2I1sIDL5Nn3zJrjm18nVH%2BPY4LqCB1jzm55%2BteL1EMxvPNGJ%2FsPXwfAWOx267IA8iFUG29KJVSsmy7ui0fZ2pedrPjYsEUmx3bjhRfIKB2dkWaqibFDnGEncUobExQ3czKRGP1oWa8m3PWVG%2B67isptslFWxEz8ylGj5xS6UYvSjhFCFaYyj1HUUk3UOH9f%2F8eEuwFonchpi9G4fTsmnqsRdtsb4a3UrA4p4iOTuVI8c4FCbnhihyFQZiS9klAv8BfpA8uOunMjbZK228rMgbLnUCN3IoBkEfJ95sPdzw15Y%2FnIeTvD4e%2B7D%2FtD6TYIEKYKt06i%2BMAYQ%2FhRUv4fH93WTInr3KhXG%2FSpNe4pDgNxiLPR3o9kv%2Bdn6yX0zTPtwgX%2FNfp4k8Csr6adUkvlM82nn9MUrtt74yWP6dNDyJed2IVy4hW5TGPchiENhulAiCmHRrjftwGEDEdJoYxLYCuz7b%2FvtH1Lw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fsuppliers%2Fsupplier-integration-resources
+
+Observed redirect page title: Coupa Portals - Sign In

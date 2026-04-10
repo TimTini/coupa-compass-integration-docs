@@ -1,0 +1,21 @@
+Expense Line Mileage API
+
+Association
+
+This resource is associated with Expense Lines API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+distance 	Distance 	yes 	 	 	 	yes 	decimal(32,4)
+distance-unit 	Distance unit 	yes 	 	 	 	yes 	string(255)
+end-address 	End address 	yes 	 	 	 	yes 	string(255)
+expense-line-mileage-allocations 	Expense line mileage allocations 	 	 	 	 	yes 	Expense Line Mileage Allocation
+expense-mileage-region 	Expense mileage region 	 	 	 	 	yes 	Expense::Mileage::Region
+expense-mileage-vehicle-type 	Expense mileage vehicle type 	 	 	 	 	yes 	Expense::Mileage::VehicleType
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+passenger-count 	Passenger count 	 	 	 	 	yes 	integer
+round-trip 	Round trip 	 	 	 	 	yes 	boolean
+start-address 	Start address 	yes 	 	 	 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime

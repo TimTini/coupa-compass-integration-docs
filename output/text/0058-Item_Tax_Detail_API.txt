@@ -1,0 +1,16 @@
+Item Tax Detail API
+
+Associations
+
+This API is associated with the Items API.
+
+Elements
+
+The following elements are available for the Item Tax Detail API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+cfop 	Cfop 	 	 	 	yes 	yes 	string(255)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+ncm 	Ncm 	 	 	 	yes 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime

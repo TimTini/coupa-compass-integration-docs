@@ -1,0 +1,17 @@
+Order Header Confirmation Export
+
+Export of these records is included as a Standard CSV Export.
+
+Order Confirmation
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+type 	Indicates record type 	 	No/No
+id 	Coupa's internal ID 	integer 	No/No
+status 	PO Confirmation Status 	string(255) 	No/No
+order-header-id 	Coupa's internal ID 	integer 	No/No
+order-header-version-id 	Coupa's internal ID 	integer 	No/No
+external-reference-number 	External Reference Number 	string(255) 	No/No
+integration-message 	Integration Message 	text 	Yes/No
+created-at 	Created Date 	datetime 	No/No
+updated-at 	Last Updated at Date 	datetime 	No/No
+tags 	Tags 	Tag 	No/No

@@ -1,0 +1,20 @@
+Unit of Measure API
+
+Use this API to specify the unit of measure on orders, invoices, items, and more.
+
+Associations
+
+This API is associated with Items API, Purchase Order Lines API, Invoice Lines API, ASN Lines API, and Receiving Transactions API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+active 	A false value will inactivate the account making it no longer available to users. A true value will make it active and available to users. 	yes 	yes 	boolean
+allowable-precision 	allowable_precision 	yes 	 	 	yes 	yes 	integer
+code 	code 	yes 	yes 	 	yes 	yes 	string(6)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+name 	name 	yes 	yes 	 	yes 	yes 	string(100)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

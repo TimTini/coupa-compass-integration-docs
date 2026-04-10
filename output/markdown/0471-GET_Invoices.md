@@ -1,0 +1,131 @@
+---
+title: "GET Invoices"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-supplier-portal-rest-api/get-invoices"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-supplier-portal-rest-api/get-invoices"
+status_code: 200
+fetched_at: "2026-04-09T12:00:54+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Supplier Portal REST API"
+  - "GET Invoices"
+---
+
+# GET Invoices
+
+Use the Coupa Supplier Portal (CSP) REST API to access invoice data in the CSP.
+
+## Endpoint
+
+| **Method** | **Endpoint** |
+| --- | --- |
+| GET | `/api/v1/invoices` |
+| GET | `/api/v1/invoice/{id}` |
+
+## Headers
+
+| **Header** | **Argument** |
+| --- | --- |
+| Authorization | Bearer token |
+| Content-Type | application/json |
+
+## Parameters
+
+| **Parameter** | **Description** |
+| --- | --- |
+| sort_by | Order of response values. Available options: `invoice_number:ASC`. |
+| page | Page of results to display. |
+| limit | Maximum number of items in the response. Default: 100. |
+| status | Document status to include in the response. Available options: `pending_po`. |
+
+## Elements
+
+The following elements are available for the Invoices API:
+
+| **Element** | **Description** | **Required** | **Data Type** |
+| --- | --- | --- | --- |
+| id | Unique identifier. | | integer |
+| invoice_number | Invoice number. | yes | string(40) |
+| original_invoice_number | Original invoice number used in case of a Credit Note. | yes | string(40) |
+| total_with_taxes | Total with taxes. | yes | decimal |
+| status | Invoice Status. For more information about invoice statuses, see [Invoice Progression through Statuses](https://compass.coupa.com/x295096.xml). | | string(50) |
+| invoice_date | Date of invoice. | yes | datetime |
+| original_invoice_date | Original invoice date used in case of a Credit Note. | yes | datetime |
+| line_level_taxation | Whether taxes are provided at line level in this invoice. | yes | boolean |
+| paid | Whether the invoice is paid. | | boolean |
+| document_type | Invoice or Credit Note | | string(255) |
+| enterprise_instance_url | URL for your core instance. | | string(255) |
+| created_at | Automatically created in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | datetime |
+| updated_at | Automatically created in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | datetime |
+| invoice_lines | Invoice lines associated with the invoice. | | InvoiceLine |
+| tax_amount | Tax amount (not used if tax is provided at line level) | | decimal |
+| currency | Currency code | | Currency |
+| discount_due_date | Discount Due Date calculated based on the discount payment terms. | | datetime |
+| net_due_date | Net Due Date calculated based on the net payment terms | | datetime |
+| dispute_reason | Dispute Reason | | DisputeReason |
+
+## Get invoices
+
+Endpoint
+
+GET `/api/v1/invoices`
+
+Example cURL request
+
+```text
+curl --location 'https://supplier.coupahost.com/api/v1/invoices?status=pending_po&sort_by=invoice_number:ASC' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ••••••'
+```
+
+Example response
+
+```text
+{
+"data": [
+// ... invoice data objects ...
+{
+"id": "680fa552-3ef1-576c-b531-b743ca208134",
+"invoice_number": "feb27_e2e_1_update2",
+"original_invoice_number": "fdelc-dchrl-qisty-xeskl",
+"total_with_taxes": 100,
+"status": "approved",
+"invoice_date": "2024-02-27T00:00:00Z",
+"original_invoice_date": "2024-02-27T11:42:15Z",
+"line_level_taxation": true,
+"paid": false,
+"document_type": "Invoice",
+"enterprise_instance_url": "https://www.website.com",
+"created_at": "2024-02-28T05:46:29Z",
+"updated_at": "2025-08-14T12:30:55Z",
+"invoice_lines": [
+// ... invoice_lines data objects ...
+{
+"id": "684dd604-77e1-55c1-939e-4aebd152fd0a",
+"description": "Impressivo 1000 motherboard",
+"line_num": 1,
+"price": 10,
+"total": 100,
+"uom": "EA",
+"status": "missing_po",
+"quantity": 10,
+"tax_amount": 0
+}
+],
+"tax_amount": 0,
+"currency": "USD",
+"discount_due_date": "2024-03-18T23:59:59Z",
+"net_due_date": null,
+"dispute_reason": ""
+},
+...,
+...,
+...,
+...,
+...,
+],
+"total": 25,
+"limit": 20,
+"current": 1,
+"num_pages": 2
+}
+```

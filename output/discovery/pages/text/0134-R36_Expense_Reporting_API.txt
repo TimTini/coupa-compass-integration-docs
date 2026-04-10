@@ -1,0 +1,9 @@
+R36_Expense_Reporting_API.json
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Expense_Reporting_API.json
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbjtMwEP2VyO%2FOTWkIVlupuwVRaYFoW3jgZTU4U9ZaxzYeZyl%2Fj%2BMCKkjdx5zMuc14STBqJzZTeDT3%2BH1CCtluu2IPQ10vGokNl2XZ8kYuWg4SWt5h18quew1Dc2TZZ%2FSkrFmxOi9ZtiOacGcogAkRKuuWlw2vykNZiUUrqjrv6uYLy7bRRRkIifkYgiNRFNJODjieAnoDOrdPAXJpxwKc%2B%2B%2FfQ4QdEDnrQ%2FyqCjw92bqcSmjq7c34RkIVXhVEtpjLseyt9RJTwxU7giack%2FZRQD3jX6T3Nlhp9Y0ygzLfVmzyRlggRcLAiCSCFPvN%2BzsRm4qv5yES7w6Hnvcf9weWbYjQz5VuraFpRL9H%2F6wkfrq%2FuyyZkuepUKo3axbXuCw7jdqQSEd6OZL7nZ%2Btl%2FO0SLfwF%2FyX6fAnAVtfzbosLpTPNk58iFK7bW%2B1kj%2FnTY8QrjtVeZUQNfBjGhU4gtKbYfBIFHeotf1x6xFCPEzwU1xAsT7b%2FvtG178A&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Expense_Reporting_API.json
+
+Observed redirect page title: Coupa Portals - Sign In

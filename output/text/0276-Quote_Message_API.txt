@@ -1,0 +1,14 @@
+Quote Message API
+
+Use the Quote Message API to view messages sent or recieved by the buyer in relation to your sourcing event.
+
+Associations
+
+This resource is associated with the Quote Request API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+quote-supplier-id 	Quote Supplier ID 	No 	No 	Any 	No 	Yes 	string
+quote-requests-user-id 	Quote Request User ID 	No 	No 	Any 	No 	Yes 	string
+quote-message-body 	Message Body 	No 	No 	Quote Message Body object 	No 	Yes 	 QuoteMessageBody

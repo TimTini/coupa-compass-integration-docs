@@ -1,0 +1,65 @@
+<article class="" id="special_actions_and_api_notes">
+<h1 class="title">Special Actions and API Notes</h1>
+<p class="">
+<p class="">Additional info on how to use the Coupa API.</p>
+</p>
+<div class="body">
+<p class="">Certain functions or actions are available via the API and require additional explanation.
+      These will be documented below.</p>
+<p class="">
+<b>Mark Object as Exported</b> - Marking an object as exported requires its own request. Any
+      other changes included may be ignored during the update.</p>
+<ul class="ul">
+<li class="li">
+<p class="">A PUT to the record's URL with <code class="ph codeph">exported=true</code> as a
+            parameter:</p>
+<p class="">
+<i>HTTP PUT
+            --&gt;</i>
+<code class="ph codeph">https://&lt;example&gt;.coupahost.com/api/purchase_orders/25?exported=true</code>
+          where 25 is the purchase order number to set exported.</p>
+</li>
+</ul>
+<p class="">
+<b>Submit Requisition For Approval - </b>Requisitions can be automatically submitted for
+      approval when they are created via the API. To submit a requisition, add the following to the
+      URL you when you are creating the requsition: "<code class="ph codeph">/new/submit_for_approval</code>"</p>
+<ul class="ul">
+<li class="li">
+<p class="">HTTP POST --&gt;
+            <code class="ph codeph">https://&lt;example&gt;.coupahost.com/api/requisitions/new/submit_for_approval</code>
+</p>
+</li>
+</ul>
+<p class="">
+<b>Void a Receipt (release 008) - </b>Existing Inventory_Transactions can be voided via the
+      API. Add the following to the URL you when you are making a PUT to the receipt:
+        <code class="ph codeph">/void</code>
+</p>
+<ul class="ul">
+<li class="li">
+<p class="">HTTP PUT --&gt;
+            <code class="ph codeph">https://&lt;example&gt;.coupahost.com/api/inventory_transactions/123/void</code>
+          where 123 is the Coupa ID of the Receipt.</p>
+</li>
+</ul>
+<p class="">
+<b>Purchase Order Version - </b>An edit to a Purchase Order which results in a new Purchase
+      Order Version (resend to supplier) will reset the exported flag to false.</p>
+<p class="">
+<b>Error Response</b> - If an error occurs, Coupa will return a message in the following
+      format:<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;errors&gt;
+   &lt;error&gt;This is a sample error message from the API.&lt;/error&gt;
+&lt;/errors&gt;</code>
+</pre>
+</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Coupa generally recommends that customers send POs to suppliers from the Coupa system,
+        rather than issuing POs to suppliers from their ERP system.</p>
+</div>
+</div>
+</article>

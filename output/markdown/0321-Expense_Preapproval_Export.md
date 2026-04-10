@@ -1,0 +1,67 @@
+---
+title: "Expense Preapproval Export"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/expense-preapproval-export"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/expense-preapproval-export"
+status_code: 200
+fetched_at: "2026-04-09T12:00:17+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Export"
+  - "Expense Preapproval Export"
+---
+
+# Expense Preapproval Export
+
+Export of these records is included as a Standard CSV Export.
+
+## Expense Preapproval
+
+| Field Name | Description | Field Type | Required/Unique | Possible Values |
+| --- | --- | --- | --- | --- |
+| RecordType | The type of record type found in each row | | No/No | |
+| ID | ID for the expense preapproval | integer | No/No | |
+| Description | The description entered by the user often describing why they are requesting expense preapproval | string(255) | Yes/No | |
+| Type | The type of form that the admin has configured for its users when requesting expense preapprovals | string(255) | No/No | |
+| Preapproved Amount | Total amount requested by the user on expense preapproval form | | No/No | |
+| Currency | Currency code related to requested preapproval amount | | No/No | |
+| Available Amount | The available amount left on a preapproval after a portion of the expense preapproval has been reconciled with an Expense Report | | No/No | |
+| Available Amount Currency | Currency code related to remaining requested preapproval amount | | No/No | |
+| Available | When Preapproval is archived then Available is set to No; however, when it is still active, is set to Yes | boolean | No/No | |
+| Start Date | The start date entered by user on expense preapproval in the format YYYY-MM-DDTHH:MM:SS+HH:MM | datetime | No/No | |
+| End Date | The end date entered by user on expense preapproval in the format YYYY-MM-DDTHH:MM:SS+HH:MM | datetime | No/No | |
+| Preapproval User Fullname | Full name of the user for whom the preapproval is created | | No/No | |
+| Created By Fullname | Full name of the user who created the expense preapproval | | No/No | |
+| Updated By Fullname | Full name of the user who updated the expense preapproval | | No/No | |
+| Created At | Time of record creation in the format YYYY-MM-DDTHH:MM:SS+HH:MM | datetime | No/No | |
+| Updated At | Time that the record was updated in the format YYYY-MM-DDTHH:MM:SS+HH:MM | datetime | No/No | |
+| Reporting Total | The total expense preapproval amount requested in the company's dashboard currency | decimal(32,4) | No/No | |
+| Form Response | The form response name set by the admin when publishing expense preapproval form | | No/No | |
+| Expense Reports | One or many expense reports that the expense preapproval is associated to | [] | No/No | |
+| Cash Advance Applied Amount | The total cash advance amount requested on expense preapproval form | | No/No | |
+| Cash Advance Applied Amount Currency | Currency code related to requested cash advance amount | | No/No | |
+| Cash Advance Outstanding Amount | The available cash advance amount left on a preapproval after a portion of the expense preapproval has been reconciled with an Expense Report | | No/No | |
+| Cash Advance Outstanding Amount Currency | Currency code related to remaining cash advance amount on expense preapproval | | No/No | |
+| Virtual Card Applied Amount | The total amount of the virtual card that was applied to the expense preapproval | | No/No | |
+| Virtual Card Applied Amount Currency | Currency code related to virtual card amount applied to the expense preapproval | | No/No | |
+| Virtual Card Outstanding Amount | The available virtual card amount left on a preapproval after a portion of the expense preapproval has been reconciled with an Expense Report | | No/No | |
+| Virtual Card Outstanding Amount Currency | Currency code related to remaining virtual card amount on expense preapproval | | No/No | |
+
+## Expense Preapproval Line
+
+| Field Name | Description | Field Type | Required/Unique | Possible Values |
+| --- | --- | --- | --- | --- |
+| RecordType | The type of record type found in each row | | No/No | |
+| ID | ID for the expense preapproval line | integer | No/No | |
+| Expense Preapproval ID | ID for the expense preapproval | integer | No/No | |
+| Type | The type of expense preapproval line: Flight, Hotel, Car Rental, Train, Transportation, or None | string(255) | No/No | |
+| Estimated Amount | The estimated price of a segment predicted by Coupa's Community Intelligence Price Prediction | | No/No | |
+| Estimated Amount Currency | Currency code related to the estimated amount requested on expense preapproval | | No/No | |
+| Requested Amount | Total amount requested by the user on expense preapproval form | | No/No | |
+| Requested Amount Currency | Currency code related to the requested amount on expense preapproval line | | No/No | |
+| Account Type Name | The COA of the account selected in account code | | No/No | |
+| Account Code | The accounting string that is assigned to the expense preapproval line | | No/No | |
+| Accounting Total | The total expense preapproval amount requested in the COAs currency | | No/No | |
+| Accounting Total Currency | Currency code related to the accounting total on the expense preapproval line | | No/No | |
+| Created At | The time of record creation in the format YYYY-MM-DDTHH:MM:SS+HH:MM | datetime | No/No | |
+| Updated At | Time that the record was updated in the format YYYY-MM-DDTHH:MM:SS+HH:MM | datetime | No/No | |

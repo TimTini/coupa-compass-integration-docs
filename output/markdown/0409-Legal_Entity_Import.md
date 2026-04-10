@@ -1,0 +1,44 @@
+---
+title: "Legal Entity Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/legal-entity-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/legal-entity-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:41+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Legal Entity Import"
+---
+
+# Legal Entity Import
+
+## Legal Entity
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Id | No | No | integer | Coupa unique legal entity ID | |
+| Name | Yes | Yes | string(255) | Must be unique legal entity name | |
+| Abbreviation | Yes | Yes | string(50) | Must be unique legal entity abbreviation | |
+| Sector | No | No | string(16) | Corporate sector | |
+| SWIFT Code | No | No | string(11) | SWIFT Code | |
+| Parent Legal Entity | No | No | | Parent Legal Entity | |
+| Currency | No | No | | Currency | |
+| Use FX rate reciprocal | No | No | boolean | Use FX rate reciprocal (true/false) | |
+| Billing Address Name | No | No | | Your legal entity's billing address name | |
+| Billing Address Line 1 | No | No | | Your legal entity's billing address street line 1 | |
+| Billing Address Line 2 | No | No | | Your legal entity's billing address street line 2 | |
+| Billing Address Line 3 | No | No | | Your legal entity's billing address street line 3 | |
+| Billing Address Line 4 | No | No | | Your legal entity's billing address street line 4 | |
+| Billing Address City | No | No | | Your legal entity's billing address city | |
+| Billing Address State | No | No | | Your legal entity's billing address state | |
+| Billing Address Postal Code | No | No | | Your legal entity's billing address postal code | |
+| Billing Address Country/Region | No | No | | Your legal entity's billing address country code | |
+| Legal Entity Identifier | No | No | string(20) | Legal Entity Identifier | |
+| Company Code | No | No | string(11) | Company Code | |
+| Deviating SWIFT Code for Treasury Matching | No | No | string(11) | Deviating SWIFT Code for Treasury Matching | |
+| Deviating Name for Treasury Matching | No | No | string(100) | Deviating Name for Treasury Matching | |
+| Creditor ID | No | No | string(35) | Creditor ID | |
+| IC Identifier for GL Exports | No | No | string(50) | IC Identifier for GL Exports | |
+| Description | No | No | string(500) | Description | |
+| Accounting Method | No | No | string(7) | Accounting method | ifrs, ifrs_9, us_gaap |

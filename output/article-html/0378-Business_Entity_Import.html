@@ -1,0 +1,666 @@
+<article class="" id="business_entity_import">
+<h1 class="title">Business Entity Import</h1>
+<div class="body">
+<div class="" id="section_zfc_dqb_h1c">
+<h2 class="title sectiontitle">Possible values</h2>
+<dl class="dl">
+<dt class="dt dlterm">Deductibility</dt>
+<dd class="dd">fully_deductible, partially_deductible, not_deductible</dd>
+<dt class="dt dlterm">Category</dt>
+<dd class="dd">goods, services</dd>
+<dt class="dt dlterm">Subcategory</dt>
+<dd class="dd">raw_materials, investment_goods, services_exceptions</dd>
+<dt class="dt dlterm">Preferred</dt>
+<dd class="dd">Yes, No, Automatic, Always, Never</dd>
+</dl>
+</div>
+<div class="" id="section_v4z_fws_d1c">
+<h2 class="title sectiontitle">Business Entity</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Business Entity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Business Entity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Coupa Unique Supplier Sharing Setting Id for your Business Entity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Name of Business Entity External Reference</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Display Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Business entity display name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Type of Business Entity External Reference</td>
+<td class="entry" align="">LegalBusinessEntity, OrganizationalBusinessEntity</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Status</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Possible values are active and inactive</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Country of Origin Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's origine Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">State of Origin</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's origine State</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Formation Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Can be either Organization or Person</td>
+<td class="entry" align="">Organization, Person</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Business Entity Alternate Names</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">BusinessEntityAlternateName</td>
+<td class="entry" align="">Alternate names for your business entity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Parent Business Entity Id</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">ID of parent business entity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contact</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Contact</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Can be eithor true or false</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Email</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity contact's Email</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name Given</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity contact's Name Given</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name Family</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity contact's Name Family</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Phone Work</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity contact's work phone number in the format xxx-yyy-zzzz. Intl numbers must be prefaced by a + sign and the country code. +aa xxx-yyy-zzzz</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Phone Mobile</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity contact's Phone Mobile</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Phone Fax</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity contact's Phone Fax</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Address</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Address</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's Address Street Line 1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's Address Street Line 2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's Address Street Line 3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's Address Street Line 4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's Address City</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's Address State</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's Address Postal Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your business entity's Address Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Business Entity External Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">BusinessEntityExternalReference</td>
+<td class="entry" align="">Business Entity External Reference</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Value</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Value of Business Entity External Reference</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Sharing Setting</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Sharing Setting</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sharable ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Coupa Unique Sharable Id for Supplier Sharing Setting of your Business Entity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sharable Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Possible values can be BusinessEntity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Shared Category</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Possible values can be risk</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Share with Children</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">default</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="business_entity_contact_columns">
+<h2 class="title sectiontitle">Business Entity Contact columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Contact</td>
+<td class="entry" align="">Contact</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ID</td>
+<td class="entry" align="">Coupa Unique Contact ID for your Business Entity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary</td>
+<td class="entry" align="">Can be either true or false</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Email</td>
+<td class="entry" align="">Your business entity contact's Email</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name Given</td>
+<td class="entry" align="">Your business entity contact's Name Given</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name Family</td>
+<td class="entry" align="">Your business entity contact's Name Family</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Phone Work</td>
+<td class="entry" align="">Your business entity contact's work phone number in the format xxx-yyy-zzzz.
+                Intl numbers must be prefaced by a + sign and the country code. +aa
+                xxx-yyy-zzzz</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Phone Mobile</td>
+<td class="entry" align="">Your business entity contact's Phone Mobile</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Phone Fax</td>
+<td class="entry" align="">Your business entity contact's Phone Fax</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="business_entity_address_columns">
+<h2 class="title sectiontitle">Business Entity Address columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Address</td>
+<td class="entry" align="">Address</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ID</td>
+<td class="entry" align="">Coupa Unique Address ID for your Business Entity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line 1</td>
+<td class="entry" align="">Your business entity's Address Street Line 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line 2</td>
+<td class="entry" align="">Your business entity's Address Street Line 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line 3</td>
+<td class="entry" align="">Your business entity's Address Street Line 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line 4</td>
+<td class="entry" align="">Your business entity's Address Street Line 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">City</td>
+<td class="entry" align="">Your business entity's Address City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">State</td>
+<td class="entry" align="">Your business entity's Address State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Postal Code</td>
+<td class="entry" align="">Your business entity's Address Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Country Code</td>
+<td class="entry" align="">Your business entity's Address Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="business_entity_external_reference_columns">
+<h2 class="title sectiontitle">Business Entity External Reference columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Business Entity External Reference</td>
+<td class="entry" align="">Business Entity External Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ID</td>
+<td class="entry" align="">Coupa Unique External Reference ID for your Business Entity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Value</td>
+<td class="entry" align="">Value of Business Entity External Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="business_entity_supplier_sharing_setting_columns">
+<h2 class="title sectiontitle">Business Entity Supplier Sharing Setting columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Supplier Sharing Setting</td>
+<td class="entry" align="">Supplier Sharing Setting</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ID</td>
+<td class="entry" align="">Coupa Unique Supplier Sharing Setting ID for your Business Entity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sharable ID</td>
+<td class="entry" align="">Coupa Unique Sharable ID for Supplier Sharing Setting of your Business
+                Entity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sharable Type</td>
+<td class="entry" align="">Possible values can be BusinessEntity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Shared Category</td>
+<td class="entry" align="">Possible values can be risk</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Share with Children</td>
+<td class="entry" align="">default</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

@@ -1,0 +1,592 @@
+<article class="" id="contract_terms_api">
+<h1 class="title">Contract Terms API</h1>
+<div class="body">
+<p class="">The URL to access contract terms is
+<code class="ph codeph">/api/contracts/{id}/contract_terms</code>.</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration
+Best Practices</a> for more info.</p>
+<div class="" id="actions-d957e136335">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Contract Terms API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/contracts/:contract_id/contract_terms</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create contract term</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/contracts/:contract_id/contract_terms</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query contract terms</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/contracts/:contract_id/contract_terms/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show contract term</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/contracts/:contract_id/contract_terms/:id</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update contract term</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e136453">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Contract Terms
+API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">contract-term-type</td>
+<td class="entry" align="">contract_term_type</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="" colspan="2">PerOrderContractTerm, TotalQtyContractTerm,
+TotalAmtContractTerm</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="" colspan="2">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">name</td>
+<td class="entry" align="">name</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-10-disc-pct</td>
+<td class="entry" align="">tier_10_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-10-upper-bound</td>
+<td class="entry" align="">tier_10_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-11-disc-pct</td>
+<td class="entry" align="">tier_11_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-11-upper-bound</td>
+<td class="entry" align="">tier_11_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-12-disc-pct</td>
+<td class="entry" align="">tier_12_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-12-upper-bound</td>
+<td class="entry" align="">tier_12_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-13-disc-pct</td>
+<td class="entry" align="">tier_13_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-13-upper-bound</td>
+<td class="entry" align="">tier_13_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-14-disc-pct</td>
+<td class="entry" align="">tier_14_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-14-upper-bound</td>
+<td class="entry" align="">tier_14_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-15-disc-pct</td>
+<td class="entry" align="">tier_15_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-15-upper-bound</td>
+<td class="entry" align="">tier_15_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-16-disc-pct</td>
+<td class="entry" align="">tier_16_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-16-upper-bound</td>
+<td class="entry" align="">tier_16_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-17-disc-pct</td>
+<td class="entry" align="">tier_17_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-17-upper-bound</td>
+<td class="entry" align="">tier_17_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-18-disc-pct</td>
+<td class="entry" align="">tier_18_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-18-upper-bound</td>
+<td class="entry" align="">tier_18_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-19-disc-pct</td>
+<td class="entry" align="">tier_19_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-19-upper-bound</td>
+<td class="entry" align="">tier_19_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-1-disc-pct</td>
+<td class="entry" align="">tier_1_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-1-upper-bound</td>
+<td class="entry" align="">tier_1_upper_bound</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-20-disc-pct</td>
+<td class="entry" align="">tier_20_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-20-upper-bound</td>
+<td class="entry" align="">tier_20_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-2-disc-pct</td>
+<td class="entry" align="">tier_2_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-2-upper-bound</td>
+<td class="entry" align="">tier_2_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-3-disc-pct</td>
+<td class="entry" align="">tier_3_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-3-upper-bound</td>
+<td class="entry" align="">tier_3_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-4-disc-pct</td>
+<td class="entry" align="">tier_4_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-4-upper-bound</td>
+<td class="entry" align="">tier_4_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-5-disc-pct</td>
+<td class="entry" align="">tier_5_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-5-upper-bound</td>
+<td class="entry" align="">tier_5_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-6-disc-pct</td>
+<td class="entry" align="">tier_6_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-6-upper-bound</td>
+<td class="entry" align="">tier_6_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-7-disc-pct</td>
+<td class="entry" align="">tier_7_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-7-upper-bound</td>
+<td class="entry" align="">tier_7_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-8-disc-pct</td>
+<td class="entry" align="">tier_8_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-8-upper-bound</td>
+<td class="entry" align="">tier_8_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-9-disc-pct</td>
+<td class="entry" align="">tier_9_disc_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tier-9-upper-bound</td>
+<td class="entry" align="">tier_9_upper_bound</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="" colspan="2">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">use-pct-discounts</td>
+<td class="entry" align="">use_pct_discounts</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

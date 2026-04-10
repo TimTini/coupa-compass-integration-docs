@@ -1,0 +1,540 @@
+Core API and CSV Download Formats
+
+Download API schema files in JSON format to import into your REST client, or download CSV import and export formats as Excel files.
+
+Version
+
+API schemas
+
+CSV Import
+
+CSV Export
+
+R44
+
+R44 CLM Standard API
+
+R44 Core Platform API
+
+R44 Expense Reporting API
+
+R44 External Orders API
+
+R44 Inventory API
+
+R44 Invoicing API
+
+R44 Purchasing API
+
+R44 Sourcing API
+
+R44 Supplier Risk API
+
+R44 Worker Management API
+R44 CSV Import Formats 	 R44 CSV Export Formats
+R43
+
+R43 CLM Standard API
+
+R43 Core Platform API
+
+R43 Coupa Pay Base API
+
+R43 Coupa Pay Virtual Card API
+
+R43 Expense Reporting API
+
+R43 Inventory API
+
+R43 Invoicing API
+
+R43 Purchasing API
+
+R43 Sourcing API
+
+R43 Supplier Risk API
+
+R43 Worker Management API
+R43 CSV Import Formats 	 R43 CSV Export Formats
+R42
+
+R42 CLM Standard API
+
+R42 Core Platform API
+
+R42 Coupa Pay Base API
+
+R42 Coupa Pay Virtual Card API
+
+R42 Expense Reporting API
+
+R42 Inventory API
+
+R42 Invoicing API
+
+R42 Purchasing API
+
+R42 Sourcing API
+
+R42 Supplier Risk API
+
+R42 Worker Management API
+R42 CSV Import Formats 	 R42 CSV Export Formats
+
+R41
+
+R41 Core Platform API
+
+R41 Custom Object API
+
+R41 Project API
+
+R41 Purchasing API
+
+R41 Expense Reporting API
+
+R41 Sourcing API
+
+R41 Inventory API
+
+R41 Invoicing API
+
+R41 CLM Standard API
+
+R41 Supplier Risk API
+
+R41 Coupa Pay Base API
+
+R41 Coupa Pay Virtual Card API
+
+R41 Supply Chain API
+
+R41 CSV Import Formats
+
+R41 CSV Export Formats
+
+R40
+
+R40 Core Platform API
+
+R40 Purchasing API
+
+R40 Expense Reporting API
+
+R40 Sourcing API
+
+R40 Inventory API
+
+R40 Invoicing API
+
+R40 CLM Standard API
+
+R40 Supplier Risk API
+
+R40 Coupa Pay Base API
+
+R40 Coupa Pay Virtual Card API
+
+R40 Supply Chain API
+
+R40 CSV Import Formats
+
+R40 CSV Export Formats
+
+R39
+
+R39 Core Platform API
+
+R39 Purchasing API
+
+R39 Expense Reporting API
+
+R39 Sourcing API
+
+R39 Inventory API
+
+R39 Invoicing API
+
+R39 CLM Standard API
+
+R39 Supplier Risk API
+
+R39 Coupa Pay Base API
+
+R39 Supply Chain API
+
+R39 CSV Import Formats
+
+R39 CSV Export Formats
+
+R38
+
+R38 Core Platform API
+
+R38 Purchasing API
+
+R38 Expense Reporting API
+
+R38 Sourcing API
+
+R38 Inventory API
+
+R38 Invoicing API
+
+R38 CLM Standard API
+
+R38 Supplier Risk API
+
+R38 Coupa Pay Base API
+
+R38 Supply Chain API
+
+R38 Worker Management API
+
+R38 CSV Import Formats
+
+R38 CSV Export Formats
+
+R37
+
+R37 Core Platform API
+
+R37 Purchasing API
+
+R37 Expense Reporting API
+
+R37 Sourcing API
+
+R37 Inventory API
+
+R37 CLM Standard API
+
+R37 Supplier Risk API
+
+R37 Coupa Pay Virtual Card API
+
+R37 Coupa Pay Base API
+
+R37 Supply Chain API
+
+R37 Project Without License API
+
+R37 Custom Object Without License API
+
+R37 CSV Import Formats
+
+R37 CSV Export Formats
+
+R36
+
+R36 Core Platform API
+
+R36 Purchasing API
+
+R36 Expense Reporting API
+
+R36 Sourcing API
+
+R36 Inventory API
+
+R36 CLM Standard API
+
+R36 Supplier Risk API
+
+R36 Coupa Pay Virtual Card API
+
+R36 Coupa Pay Base API
+
+R36 Supply Chain API
+
+R36 CSV Import Formats
+
+R36 CSV Export Formats
+
+R35
+
+R35 Core Platform API
+
+R35 Purchasing API
+
+R35 Expense Reporting API
+
+R35 Sourcing API
+
+R35 Inventory API
+
+R35 CLM Standard API
+
+R35 Supplier Risk API
+
+R35 Coupa Pay Virtual Card API
+
+R35 Supply Chain API
+
+R35 CSV Import Formats
+
+R35 CSV Export Formats
+
+R34
+
+R34 Core Platform API
+
+R34 Purchasing API
+
+R34 Expense Reporting API
+
+R34 Sourcing API
+
+R34 Inventory API
+
+R34 CLM Standard API
+
+R34 Supplier Risk API
+
+R34 Coupa Pay Virtual Card API
+
+R34 CSV Import Formats
+
+R34 CSV Export Formats
+
+R33
+
+R33 Core Platform API
+
+R33 Purchasing API
+
+R33 Expense Reporting API
+
+R33 Sourcing API
+
+R33 Inventory API
+
+R33 CLM Standard API
+
+R33 Supplier Risk API
+
+R33 Coupa Pay Virtual Card API
+
+R33 CSV Import Formats
+
+R33 CSV Export Formats
+
+R32
+
+R32 Core Platform API
+
+R32 Purchasing API
+
+R32 Expense Reporting API
+
+R32 Sourcing API
+
+R32 Inventory API
+
+R32 CLM Standard API
+
+R32 Supplier Risk API
+
+R32 Coupa Pay Virtual Card API
+
+R32 CSV Import Formats
+
+R32 CSV Export Formats
+
+R31
+
+R31 Core Platform API
+
+R31 Purchasing API
+
+R31 Expense Reporting API
+
+R31 Sourcing API
+
+R31 Inventory API
+
+R31 CLM Standard API
+
+R31 Supplier Risk API
+
+R31 Coupa Pay Virtual Card API
+
+R31 CSV Import Formats
+
+R31 CSV Export Formats
+
+R30
+
+R30 Core Platform API
+
+R30 Purchasing API
+
+R30 Expense Reporting API
+
+R30 Inventory API
+
+R30 Supplier Risk API
+
+R30 Coupa Pay Virtual Card API
+
+R30 CSV Import Formats
+
+R30 CSV Export Formats
+
+R29
+
+R29 Core Platform API
+
+R29 Purchasing API
+
+R29 Expense Reporting API
+
+R29 Sourcing API
+
+R29 Inventory API
+
+R29 CLM Standard API
+
+R29 Supplier Risk API
+
+R29 Coupa Pay Virtual Card API
+
+R29 CSV Import Formats
+
+R29 CSV Export Formats
+
+R28
+
+R28 Core Platform API
+
+R28 Purchasing API
+
+R28 Expense Reporting API
+
+R28 Sourcing API
+
+R28 Inventory API
+
+R28 Contracts API
+
+R28 Supplier Risk API
+
+R28 CSV Import Formats
+
+R28 CSV Export Formats
+
+R27
+
+R27 Core Platform API
+
+R27 Purchasing API
+
+R27 Expense Reporting API
+
+R27 Sourcing API
+
+R27 Inventory API
+
+R27 Contracts API
+
+R27 Supplier Risk API
+
+R27 Coupa Pay Virtual Card API
+
+R27 CSV Import Formats
+
+R27 CSV Export Formats
+
+R26
+
+R26 Core Platform API
+
+R26 Purchasing API
+
+R26 Expense Reporting API
+
+R26 Sourcing API
+
+R26 Contracts API
+
+R26 Supplier Risk API
+
+R26 Coupa Pay Virtual Card API
+
+R26 CSV Import Formats
+
+R26 CSV Export Formats
+
+R25
+
+R25 Core Platform API
+
+R25 Purchasing API
+
+R25 Expense Reporting API
+
+R25 Sourcing API
+
+R25 Contracts API
+
+R25 Coupa Pay Virtual Card API
+
+R25 CSV Import Formats
+
+R25 CSV Export Formats
+
+R24
+
+R24 Core Platform API
+
+R24 Purchasing API
+
+R24 Expense Reporting API
+
+R24 Sourcing API
+
+R24 Contracts API
+
+R24 CSV Import Formats
+
+R24 CSV Export Formats
+
+R23
+
+R23 Core Platform API
+
+R23 Purchasing API
+
+R23 Expense Reporting API
+
+R23 Sourcing API
+
+R23 Contracts API
+
+R23 CSV Import Formats
+
+R23 CSV Export Formats
+
+R22
+
+R22 Core Platform API
+
+R22 Purchasing API
+
+R22 Expense Reporting API
+
+R22 Sourcing API
+
+R22 Contracts API
+
+R22 CSV Import Formats
+
+R22 CSV Export Formats
+
+R21
+
+R21 API Schema
+
+R21 CSV Import Formats
+
+R21 CSV Export Formats

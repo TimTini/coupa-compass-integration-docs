@@ -1,0 +1,297 @@
+---
+title: "Requisitions Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/requisitions-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/requisitions-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:45+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Requisitions Import"
+---
+
+# Requisitions Import
+
+## Overview
+
+The Requisition Import process reads files from the
+`./Incoming/Requisitions/` in the SFTP. These files are moved to the
+archive folder located at `./Incoming/Archive/Requisitions/` before being
+processed in alphanumeric order.
+
+Coupa can't update a requisition using flat file Integration.
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note: When specifying a ship-to address, Coupa first looks for Ship to
+Id and then Ship to Country Location Code. If neither field is found, then a new ship-to
+address is created.
+
+## Item finder logic
+
+Coupa searches `Supplier Items` for `Header Requestor User`
+on an item with a matching `Supplier Part Number`. If nothing is found, Coupa
+uses the first created `Supplier Item` for `Header Requestor User`.
+
+If your search is successful, refer to the Requisition Line Defaults for All Lines section
+below.
+
+If you run into errors, refer to the Item Finder Errors section below.
+
+## Requisition
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Requisition | No | No | | Field indicating record type - Header. | |
+| Record Identifier | No | No | | Record Identifier | |
+| Requisition Title | No | No | string(50) | Requisition Title | |
+| Submit For Approval? | No | No | | When true, the requisition should be immediately submitted for approval. When false, it will be left in Draft mode. | |
+| Need By Date | No | No | datetime | Need By Date | |
+| Justification | No | No | text | Requisition Justification Comments. | |
+| Department Name | No | No | | Requisition Department. | |
+| Buyer Note | No | No | text | Any comments or notes from the Buyer. | |
+| Requested By (Email) | No | No | | User email of requisition requester. Value is the 'on behalf of' user if requisition is on behalf of another user. | |
+| Requested By (Login) | No | No | | User login of requisition requester. Value is the 'on behalf of' user if requisition is on behalf of another user. | |
+| PCard Name | No | No | | PCard Name | |
+| Ship To Name | No | No | | Ship To Name | |
+| Ship To Id | No | No | | Unique ID of the address. If specified, must exist in Coupa, but no other address fields are required. | |
+| Ship To Attention | No | No | string(255) | Either the Requester or the attention linked to Address in Coupa (defaults to the requester). | |
+| Ship To Street 1 | No | No | | Ship To Street 1 | |
+| Ship To Street 2 | No | No | | Ship To Street 2 | |
+| Ship To Street 3 | No | No | | Ship To Street 3 | |
+| Ship To Street 4 | No | No | | Ship To Street 4 | |
+| Ship To City | No | No | | Ship to Address City. Provide if the address does not exist in Coupa. | |
+| Ship To State | No | No | | Ship to Address state. Provide if the address does not exist in Coupa. | |
+| Ship To Postal Code | No | No | | Ship to Address Postal code. Provide if the address does not exist in Coupa. | |
+| Ship to Country Code | No | No | | Ship to Address Country Code. Must exist in Coupa. | |
+| Ship to Country Name | No | No | | Ship to Country Name | |
+| Ship to Location Code | No | No | | If specified and exists in Coupa, no other address fields are required. If doesn't exist in Coupa, a new address is created. | |
+| Hide Price | No | No | boolean | Hide Price from supplier | |
+| External PO Reference | No | Yes | string(255) | External System ID or PO Number | |
+| Requisition Line | No | No | | Requisition Line | |
+| Line Number | No | No | | Line Number | |
+| Catalog Item Number | No | No | | Catalog Item Number | |
+| Catalog Item Name | No | No | | Catalog Item Name | |
+| Non Catalog Item Description | No | No | | Non Catalog Item Description | |
+| Supplier Part Number | No | No | | Supplier Part Number | |
+| Supplier Aux Part Number | No | No | | Supplier Aux Part Number | |
+| Quantity | No | No | | Quantity | |
+| Price | No | No | | Price | |
+| Transmission Method Override | No | No | | Transmission Method Override | |
+| Transmission Emails | No | No | | Transmission Emails | |
+| Supplier Name | No | No | | Supplier Name | |
+| Supplier Number | No | No | | Supplier Number | |
+| Supplier Site Code | No | No | | Supplier Site Code | |
+| UOM Code | No | No | | UOM Code | |
+| Commodity Name | No | No | | Commodity Name | |
+| Contract Name | No | No | | Contract Name | |
+| Currency Code | No | No | | Currency Code | |
+| Asset Tags | No | No | | Asset Tags | |
+| Chart of Account Name | No | No | | Chart of Account Name | |
+| Account Name | No | No | | Account Name | |
+| Account Code | No | No | | Account Code | |
+| Account Segment 1 | No | No | | Account Segment 1 | |
+| Account Segment 2 | No | No | | Account Segment 2 | |
+| Account Segment 3 | No | No | | Account Segment 3 | |
+| Account Segment 4 | No | No | | Account Segment 4 | |
+| Account Segment 5 | No | No | | Account Segment 5 | |
+| Account Segment 6 | No | No | | Account Segment 6 | |
+| Account Segment 7 | No | No | | Account Segment 7 | |
+| Account Segment 8 | No | No | | Account Segment 8 | |
+| Account Segment 9 | No | No | | Account Segment 9 | |
+| Account Segment 10 | No | No | | Account Segment 10 | |
+| Account Segment 11 | No | No | | Account Segment 11 | |
+| Account Segment 12 | No | No | | Account Segment 12 | |
+| Account Segment 13 | No | No | | Account Segment 13 | |
+| Account Segment 14 | No | No | | Account Segment 14 | |
+| Account Segment 15 | No | No | | Account Segment 15 | |
+| Account Segment 16 | No | No | | Account Segment 16 | |
+| Account Segment 17 | No | No | | Account Segment 17 | |
+| Account Segment 18 | No | No | | Account Segment 18 | |
+| Account Segment 19 | No | No | | Account Segment 19 | |
+| Account Segment 20 | No | No | | Account Segment 20 | |
+| Account Allocation Amount | No | No | | Account Allocation Amount | |
+| Account Allocation Percent | No | No | | Account Allocation Percent | |
+| Payment Term Code | No | No | | Payment Term Code | |
+| Shipping Term Code | No | No | | Shipping Term Code | |
+| Budget Period Name | No | No | | Budget Period Name | |
+| Manufacturer Name | No | No | | Manufacturer Name | |
+| Manufacturer Part Number | No | No | | Manufacturer Part Number | |
+| Confirm By (In Hours) | No | No | | Confirm By (In Hours) | |
+| Order Confirmation Level | No | No | | Order Confirmation Level | |
+| Account Allocation | No | No | | Account Allocation | |
+| Estimated Tax Amount | No | No | | Estimated Tax Amount | |
+| Percent | No | No | | Percent | |
+| Tag | No | No | | Tag | |
+| Object Number* | Yes | No | | The parent object's number, used to add a tagging to a header level object | |
+| Name* | Yes | No | | The Tag's name | |
+| Description | No | No | | Description | |
+| System Tag | No | No | | System Tag, defaults to false if not specified | |
+| Payment Agreement | No | No | | Payment Agreement | |
+| Type | No | No | | Type | |
+| Amount Type | No | No | | Amount Type | |
+| Due Date | No | No | | Due Date | |
+| Estimated Tax Line | No | No | | Estimated Tax Line | |
+| Tax Line Number | No | No | | Tax Line Number | |
+| Estimated Tax Code | No | No | | Estimated Tax Code | |
+| Estimated Tax Rate | No | No | | Estimated Tax Rate | |
+| Tax Reference | No | No | | Tax Reference | |
+| Base Amount | No | No | | Base Amount | |
+| Product Classification | No | No | | Product Classification | |
+| Delete | No | No | | Delete | |
+
+## Requisition Header Assignment
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Document* | Yes | No | | RequisitionHeaderID | |
+| Assignee Type* | Yes | No | string(255) | The type of asignee: User or UserGroup. | |
+| Assignee* | Yes | No | | Allowable values: login, email address, group name. For Asignee Type = User: user login or email address. For Asignee Type = UserGroup: group name. | |
+| Comment | No | No | | Comment | |
+| Action | No | No | | Action, possible values are Assign and Unassign. Default is Assign. | |
+
+## Requisition line columns
+
+| **Column Name** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| Requisition Line | Field indicating record type (Line) | Yes | | string | Requisition Line |
+| Record Identifier | Used to identify record to associate header & lines. Only used in load, not sent to Coupa. | Yes | | string(255) | |
+| Line Number | Line Number | No | No | integer(11) | |
+| Catalog Item Number | Catalog Item Number (blank if Non Catalog Item) | No | No | string(255) | |
+| Catalog Item Name | Catalog Item Name (blank if Non Catalog Item) | No | No | string(255) | |
+| Non Catalog Item Description | Item Description for Non Catalog Items | No | No | string(255) | |
+| Supplier Part Number | Supplier Part Number | No | No | string(255) | |
+| Supplier Aux Part Number | Supplier Aux Part Number | No | No | | any |
+| Quantity | Line Qty Amount (blank for Service-based line) | No* | No | decimal(30,6) | |
+| Price | Item Unit Price | No | No | decimal(30,3) | |
+| Need By Date | Item Need By Date | No | No | datetime | YYYY-MM-DDTHH:MM:SS+HH:MM |
+| Supplier Name | Supplier Name (required unless Supplier Number is provided) | Yes** | No | string(100) | |
+| Supplier Number | Supplier Number (required unless Supplier Name is provided) | Yes** | No | string(255) | |
+| Supplier Site Code | ID of Supplier Site | No | No | integer(11) | |
+| UOM Code | Unit of Measure Code | No* | No | string(6) | |
+| Commodity Name | Commodity Name | No | No | string(255) | |
+| Contract Name | Name of Contract used for purchase | No | No | string(100) | |
+| Currency Code | Currency Code | Yes | No | string(6) | Any ISO 4217 three letter currency code |
+| Asset Tags | Not currently used | No | No | string(255) | |
+| Chart of Account Name | Chart of Accounts for Line. Although this field isn't required, you should enter something in this field. If this value is left blank, your integration may not work. | No | No | string(50) | |
+| Account Name | Account Name | No | No | string(100) | |
+| Account Code | Account Code (can be provided instead of Account Segments below) | No | No | string(2020) | |
+| Account Segment 1..20 | Account Billing Code Segment for Line | No | No | string(100) | |
+| Account Allocation Amount | Not currently used | No | No | float | |
+| Account Allocation Percent | Not currently used | No | No | | |
+| Payment Term Code | Payment Term Code | No | No | string(255) | |
+| Shipping Term Code | Shipping Term Code | No | No | string(255) | |
+| Budget Period Name | Name fo budget period | No | No | string(255) | |
+| Manufacturer Name | Manufacturer Name | No | No | | any |
+| Manufacturer Part Number | Manufacturer Part Number | No | No | | any |
+| Service Type | Service type being requested | No | No | string | Service (Amt), Service (Qty), or Resource |
+| Start Date | Service start date | No | No | datetime | YYYY-MM-DDTHH:MM:SS+HH:MM |
+| Due Date | Service due (or end) date | No | No | datetime | YYYY-MM-DDTHH:MM:SS+HH:MM |
+| Manager | Manager requesting the service | Yes | No | string(50) | Any |
+| Work Confirmer Email | Email of the manager performing the service | Yes | No | string(60) | |
+
+* Service based lines don't have a quantity or UOM
+
+** Requires one of Supplier Name or Supplier Number
+
+## Requisition line defaults for all lines
+
+| **Line Attribute** | **Source** | **Source Attribute** | **Conditions** |
+| --- | --- | --- | --- |
+| description | Item | name | |
+| line_num | CSV | csv_row[:line_number] | |
+| unit_price | CSV | csv_row[ rice] | If provided |
+| unit_price | SupplierItem | price | If CSV value (above) is blank |
+| contract | #load_contract | csv_row[:contract_number] or csv_row[:contract_name] | If provided |
+| contract | SupplierItem | contract | If CSV value (above) is blank |
+| source_part_num | CSV | csv_row[:supplier_part_number] | If provided |
+| source_part_num | SupplierItem | supplier_part_num | If CSV value (above) is blank |
+| supplier_aux_part_num | CSV | csv_row[:supplier_aux_part_number] | If provided |
+| supplier_aux_part_num | SupplierItem | supplier_aux_part_num | If CSV value (above) is blank |
+| unspsc_code | SupplierItem | unspsc_code | |
+| supplier | #load_supplier | Supplier | Matching Name or Number & "active" |
+| supplier_site | #load_supplier_site | SupplierSite | Find with "Supplier Site Code" for Supplier and "Requested By" User |
+| uom | #load_uom | Uom | Matching "Uom Code" |
+| commodity | #load_commodity | Commodity | Matching Commodity Name |
+| contract | #load_contract | Contract | Matching Name or Number |
+| currency | #load_supplier | Currency | Matching "Currency Code" |
+| shipping_term | #load_shipping_term | ShippingTerm | Matching "Shipping Term Code" |
+| payment_term | #load_payment_term | PaymentTerm | Matching "Payment Term Code" |
+| account_type | #load_account_type | AccountType | Matching "Chart Of Account Name" |
+| period | #load_period | BudgetPeriod | Matching "Budget Period Name" for AccountType (above) |
+| need_by_date | CSV | csv_row[:need_by_date] | |
+| transmission_method_override | CSV | csv_row[:transmission_method_override] | If provided |
+| transmission_method_override | RequisitionLine | .transmission_method_default_value | If CSV value (above) is blank |
+| transmission_emails | CSV | csv_row[:transmission_emails] | |
+
+## Additional defaults for quantity-based requisition lines
+
+| **Line Attribute** | **Source** | **Source Attribute** | **Conditions** |
+| --- | --- | --- | --- |
+| minimum_order_quantity | Supplier Item | minimum_order_quantity | |
+| order_increment | Supplier Item | order_increment | |
+
+## Defaults for free-form requisition lines
+
+| **Line Attribute** | **Source** | **Source Attribute** | **Conditions** |
+| --- | --- | --- | --- |
+| description | CSV | csv_row[:non_catalog_item_description] | |
+
+## Rate Card Line Columns
+
+| **Column Name** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| Record Identifier | Used to identify record to associate header & lines. Only used in load, not sent to Coupa. | Yes | No | string(255) | |
+| Line Number | Line Number | No | No | integer(11) | |
+| Name | name describing the service associated with the rate. | Yes | No | string(255) | |
+| Code | code describing the service associated with the rate. | No | No | string(255) | |
+| Line Type | Select whether the requisition line is based on an amount, a price per quantity, or a resource (such as an hourly rate)<br>Note: Values must be lowercase. | Yes | No | | amount, quantity, or resource |
+| Price | amount that estimates your total budget for the service. | Yes | No | | |
+| UOM | Unit of Measurement | Yes | No | | Depends on the line type (UOM is required for a Quanity line type) |
+
+## Item finder errors
+
+- `Supplier Name` or `Supplier Number` cannot find a
+Supplier
+
+- Catalog and/or Manufacturer details are included in the loader input and no catalog item
+is found. This includes cases where there is an existing match to "Catalog..." details but
+with different "Manufacturer..." details.
+
+- The `Supplier Item Required?` setup key is enabled and no Supplier Item
+is found.
+
+- `Supplier Item` is found and the line type is `Order Quantity Line` and:
+
+- `Quantity` is less than the`Minimum Order Quantity`
+
+- `Quantity` is not a multiple of `Order Increment`
+
+- If no details are provided in loader data for "Catalog..." or "Manufacturer...", a
+"free-form" `Requisition Line` will be created and `Non Catalog Item Description` will be copied to the `Requisition Line`
+`description`. No error is returned for a blank description.
+
+- `Service Type` is set to `Service (Amt)`, however, a
+Quantity is entered.
+
+- `Service Type` is set to `Service (Qty)`, however, a
+Quantity or UOM is not entered (or the `UOM Code` entered doesn't match one
+of the UOM Codes configured).
+
+- `Service Type` is set to `Resource`, however, a
+`Quantity` is not entered, or a `UOM Code` is
+entered,
+
+- (attribute) has been incorrectly added to a request line that is not a `Service Amount`.
+
+- (attribute) has been added without the proper user permissions.
+
+- (attribute) was incorrectly added with a `Unit of Measurement`.
+
+- (attribute) was entered with an incorrect value.
+
+- (attribute) was added with an incorrect value that is not configured for
+`Resource`.
+
+- (attribute) is incorrect, Rate Card Lines are only valid for Service Amount
+Requests.

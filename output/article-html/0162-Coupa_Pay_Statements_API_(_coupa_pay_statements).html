@@ -1,0 +1,275 @@
+<article class="" id="coupa_pay_statements_api_coupa_pay_statements">
+<h1 class="title">Coupa Pay Statements API (/coupa_pay/statements)</h1>
+<div class="body">
+<div class="" id="overview-d957e146926">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Corporate card payment partner statements that have a status of
+approved for payment may be retrieved from Coupa to the
+ERP using a GET request sent to the Statements API
+endpoint: <code class="ph codeph">https://{your_instance_name}/api/coupa_pay/statements</code>
+</p>
+<p class="">Once a statement is exported for accounting or ERP payment,
+that statement should be marked as exported using the PUT
+call, so it is not retrieved a second
+time.  </p>
+<p class="">API Operations supported:</p>
+<ul class="ul">
+<li class="li">GET </li>
+<li class="li">PUT(only to mark exported)</li>
+</ul>
+<p class="">The API key used to fetch/update data must have permission to
+index, show, and update Api/Coupa_Pay/Statements data.</p>
+<p class="">Statement data can be queried by all fields within the payload.
+Typical query parameters are:</p>
+<ul class="ul">
+<li class="li">?exported=false</li>
+<li class="li">?payment-partner[issuing-bank]=&lt;<i>Bank_Name</i>&gt;</li>
+<li class="li">?status=approved_for_payment   (status is not in the
+payload response)</li>
+</ul>
+<p class="">These query parameters can be combined into a statement like the
+following:</p>
+<ul class="ul">
+<li class="li">API GET
+<code class="ph codeph">https://{</code>
+<i>your_instance_name</i>
+<code class="ph codeph">}/api/coupa_pay/statements?status=approved_for_payment&amp;exported=false&amp;payment-partner[issuing-bank]=</code>
+<i>XYZBank</i>
+<ul class="ul">
+<li class="li">This will return statements for XYZBank Issuer Payment
+Partner that are approved but not exported.</li>
+<li class="li">For ERP payments you should only pull approved statements
+from Coupa to the ERP.</li>
+</ul>
+</li>
+</ul>
+<p class="">An exported statement should be marked as exported
+once it is fetched successfully. You can do that with a call
+like the following:</p>
+<ul class="ul">
+<li class="li">API PUT
+<code class="ph codeph">https://{</code>
+<i>your_instance_name</i>
+<code class="ph codeph">}/api/coupa_pay/statements/&lt;ID&gt;?exported=true</code>
+ OR</li>
+<li class="li">API PUT
+<code class="ph codeph">https://{</code>
+<i>your_instance_name</i>
+<code class="ph codeph">}/api/coupa_pay/statements/&lt;ID&gt;</code> with
+a payload like:
+<ul class="ul">
+<li class="li">
+<code class="ph codeph">&lt;statement&gt;&lt;exported&gt;true&lt;/exported&gt;&lt;/statement&gt;</code>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="" id="elements-d957e147005">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Field Name</b>
+</th>
+<th class="entry " align="">
+<b>Field Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Unique identifier (read-only)</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ (read-only)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string($datetime)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ (read-only)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string($datetime)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">external-ref-id</td>
+<td class="entry" align="">External reference identifier</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">coupa-pay-id</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">name</td>
+<td class="entry" align="">Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount</td>
+<td class="entry" align="">dollar amount for this allocation</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,2)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">statement-date</td>
+<td class="entry" align="">Receipt timestamp in the format: YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string($datetime)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-of-lines</td>
+<td class="entry" align="">(read-only)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">total</td>
+<td class="entry" align="">Sum of all statement lines (read-only)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">decimal(16,10)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">last-exported-at</td>
+<td class="entry" align="">timestamp</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string($datetime)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">exported</td>
+<td class="entry" align="">True / False was the statement sent to an external system of
+record. (read-only)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-partner</td>
+<td class="entry" align="">Coupa Pay - Virtual Card Partner </td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)" title="">Currency</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

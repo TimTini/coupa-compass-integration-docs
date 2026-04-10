@@ -1,0 +1,21 @@
+Diversity Association API
+
+Associations
+
+This API is associated with the Suppliers API.
+
+Elements
+
+The following elements are available for the Diversity Association API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+country 	Country Sub Object 	 	 	 	yes 	yes 	Country
+country-id 	Country 	yes 	 	 	yes 	 	integer
+created-at 	Created Date and Time 	 	 	 	 	yes 	datetime
+diversity-category 	Diversity Category Sub Object 	 	 	 	yes 	yes 	 Diversity Category
+diversity-category-id 	Diversity category 	yes 	yes 	 	yes 	 	integer
+diversity-subcategory 	Diversity Subcategory Sub Object 	 	 	 	yes 	yes 	 DiversitySubcategory
+diversity-subcategory-id 	Diversity subcategory 	yes 	 	 	yes 	 	integer
+id 	Diversity Association ID 	 	 	 	yes 	yes 	integer
+sim-diversity-certificate-artifacts 	Supplier Diversity Artifact Sub Object 	 	 	 	yes 	yes 	 SIM Diversity Certificate Artifact
+updated-at 	Last Updated Date and Time 	 	 	 	 	yes 	datetime

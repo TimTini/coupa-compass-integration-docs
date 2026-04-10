@@ -1,0 +1,472 @@
+<article class="" id="order_confirmations_api_order_header_confirmations">
+<h1 class="title">Order Confirmations API (/order_header_confirmations)</h1>
+<div class="body">
+<p class="">The URL to access order confirmations is: <code class="ph codeph">https://{your_instance}/api/order_header_confirmations/</code>
+</p>
+<div class="" id="actions-d957e200299">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Order Confirmations API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/order_header_confirmations</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query order confirmations.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/order_header_confirmations/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show order confirmations.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PATCH</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/order_header_confirmations/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update order confirmations. When the confirmation is line level, moves the confirmation lines to buyer_draft.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/order_header_confirmations/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update line-level order confirmations. Moves the confirmation lines to buyer_draft.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">api/order_header_confirmations/:id/integration_approval_rejected</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Moves all lines in the <code class="ph codeph">pending integration</code> status to the <code class="ph codeph">overridden</code> status. See note below the table for more information.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/order_header_confirmations/:id/accept_header</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">accept_header</p>
+</td>
+<td class="entry" align="">
+<p class="">Buyers can accept order header confirmations from suppliers when the order confirmation status is pending_buyer_review. confirmation_level must be header.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/order_header_confirmations/:id/reject_header</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">reject_header</p>
+</td>
+<td class="entry" align="">
+<p class="">Buyers can reject order header confirmations from suppliers when the order confirmation status is pending_buyer_review. confirmation_level must be header. Requires the reason-insight-events element in the request body.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/order_header_confirmations/:id/submit</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">submit</p>
+</td>
+<td class="entry" align="">
+<p class="">Submit a line-level order confirmation that is in a draft state.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">The <code class="ph codeph">/integration_approval_rejected</code> endpoint requires the Partial Order Confirmations feature to be enabled and requires an <code class="ph codeph">integration_version</code> query parameter. For example: <code class="ph codeph">api/order_header_confirmations/:id/integration_approval_rejected?integration_version=1</code>. For more information, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/supply-chain-collaboration/review-lines-on-a-purchase-order-for-partial-confirmations" title="">Review Lines on a Purchase Order for Partial Confirmations</a>.</p>
+</div>
+</div>
+<div class="" id="section_jhy_pjl_w1c">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The Order Confirmations API contains the following elements: <div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Date record was created in Coupa.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">ID of the user who created the order.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exported</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates if the transaction has been exported.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external-reference-number</p>
+</td>
+<td class="entry" align="">
+<p class="">External Reference Number.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa's internal ID.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">integration-message</p>
+</td>
+<td class="entry" align="">
+<p class="">Integration message.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last-exported-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Date of last export.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">order-header</p>
+</td>
+<td class="entry" align="">
+<p class="">Purchase order.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">OrderHeaderConfirmation</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">order-line-confirmations</p>
+</td>
+<td class="entry" align="">
+<p class="">Order line confirmations.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">OrderLineConfirmation</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">reason-insight-events</p>
+</td>
+<td class="entry" align="">
+<p class="">Reason insight events.</p>
+</td>
+<td class="entry" align="">
+<p class="">Only when submitting a reject_header request.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">ReasonInsightEvent</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">Order confirmation status.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Date of last update.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">ID of the user who last updated the order.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+</div>
+</article>

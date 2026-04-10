@@ -1,0 +1,4493 @@
+<article class="" id="sample_requests_responses_-_xml_vs_json">
+<h1 class="title">Sample Requests/Responses - XML vs JSON</h1>
+<div class="body">
+<p class="">Below are examples of JSON and XML requests and responses, using the User object as an
+      example. The responses can be long, so use the table of contents below to skip to the desired
+      sections.</p>
+<div class="" id="user_list">
+<h2 class="title sectiontitle">User List</h2>
+<p class="">url: <a data-scope="external" data-name="" target="_blank" href="http://dashmaster17-0.coupadev.com/api/users?limit=2" title="">http://dashmaster17-0.coupadev.com/api/users?limit=2</a>
+</p>
+<p class="">method: GET</p>
+</div>
+<div class="" id="json_response-d957e2159">
+<h2 class="title sectiontitle">JSON response</h2>
+<pre>
+<code class="codeblock">[
+ {	 "id": 771,
+	 "created-at": "2016-11-08T11:28:50+02:00",
+	 "updated-at": "2016-11-09T16:35:40+02:00",
+	 "login": "testuser1",
+	 "email": "adf@gmail.com",
+	 "purchasing-user": true,
+	 "expense-user": false,
+	 "sourcing-user": false,
+	 "inventory-user": false,
+	 "employee-number": "",
+	 "firstname": "text",
+	 "lastname": "abc",
+	 "fullname": "text abc",
+	 "api-user": false,
+	 "active": true,
+	 "salesforce-id": null,
+	 "account-security-type": 0,
+	 "authentication-method": "coupa_credentials",
+	 "sso-identifier": "899",
+	 "default-locale": "en",
+	 "business-group-security-type": 1,
+	 "edit-invoice-on-quick-entry": false,
+	 "avatar-thumb-url": null,
+	 "mention-name": "text12",
+	 "gpo-entity": "",
+	 "radio-button-test": null,
+	 "subsidary": "",
+	 "function": "",
+	 "seg3default": "",
+	 "phone-work": null,
+	 "phone-mobile": null,
+	 "roles": [
+		 {			 "id": 2,
+			 "created-at": "2011-08-05T19:46:31+03:00",
+			 "updated-at": "2011-08-05T19:46:31+03:00",
+			 "name": "Admin",
+			 "description": "Full system access to setup and maintain the application",
+			 "omnipotent": true,
+			 "system-role": true,
+			 "updated-by": {				 "id": 1,
+				 "login": "coupasupport",
+				 "firstname": "Coupa",
+				 "lastname": "Support",
+				 "employee-number": "",
+				 "email": "upgrade+coupasupport@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2006-02-16T16:01:34+02:00",
+				 "updated-at": "2016-10-28T11:14:12+03:00"
+			 },
+			 "created-by": null
+		 },
+		 {			 "id": 3,
+			 "created-at": "2011-08-05T19:46:31+03:00",
+			 "updated-at": "2011-08-05T19:46:31+03:00",
+			 "name": "User",
+			 "description": "Standard role for all users who need to create and/or approve requisitions",
+			 "omnipotent": false,
+			 "system-role": true,
+			 "updated-by": {				 "id": 1,
+				 "login": "coupasupport",
+				 "firstname": "Coupa",
+				 "lastname": "Support",
+				 "employee-number": "",
+				 "email": "upgrade+coupasupport@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2006-02-16T16:01:34+02:00",
+				 "updated-at": "2016-10-28T11:14:12+03:00"
+			 },
+			 "created-by": null
+		 }	 ],
+	 "manager": {		 "id": 629,
+		 "login": "gunab",
+		 "firstname": "gunab",
+		 "lastname": "buyer",
+		 "employee-number": "",
+		 "email": "catestit8@gmail.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2016-11-01T17:07:03+02:00",
+		 "updated-at": "2016-11-09T09:40:36+02:00"
+	 },
+	 "default-address": null,
+	 "default-account": null,
+	 "default-account-type": null,
+	 "default-currency": {		 "id": 1,
+		 "code": "USD",
+		 "decimals": 2,
+		 "updated-by": {			 "id": 80,
+			 "login": "learnapi",
+			 "firstname": "API",
+			 "lastname": "API",
+			 "employee-number": null,
+			 "email": "learnapi@learnapi.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2013-05-16T01:05:17+03:00",
+			 "updated-at": "2016-03-30T12:35:20+03:00"
+		 }	 },
+	 "pcard": null,
+	 "department": null,
+	 "requisition-approval-limit": {		 "id": 35,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED",
+		 "amount": "0.00",
+		 "subject": "requisition_header",
+		 "currency": {			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+		 },
+		 "created-by": {			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "expense-approval-limit": {
+		 "id": 36,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED (2)",
+		 "amount": "0.00",
+		 "subject": "expense_report",
+		 "currency": {
+			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "invoice-approval-limit": {
+		 "id": 37,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED (3)",
+		 "amount": "0.00",
+		 "subject": "invoice_header",
+		 "currency": {
+			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "requisition-self-approval-limit": {
+		 "id": 35,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED",
+		 "amount": "0.00",
+		 "subject": "requisition_header",
+		 "currency": {
+			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "expense-self-approval-limit": {
+		 "id": 36,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED (2)",
+		 "amount": "0.00",
+		 "subject": "expense_report",
+		 "currency": {
+			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "expenses-delegated-to": [],
+	 "can-expense-for": [],
+	 "content-groups": [],
+	 "account-groups": [],
+	 "approval-groups": [],
+	 "working-warehouses": [],
+	 "inventory-organizations": [],
+	 "created-by": {
+		 "id": 224,
+		 "login": "sneha.latha@coupa.com",
+		 "firstname": "Sneha",
+		 "lastname": "Latha",
+		 "employee-number": null,
+		 "email": "sneha.latha@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2016-10-12T09:20:37+03:00",
+		 "updated-at": "2016-11-14T09:21:00+02:00"
+	 },
+	 "updated-by": {
+		 "id": 228,
+		 "login": "kuppusamy.sekaran@coupa.com",
+		 "firstname": "Kuppusamy",
+		 "lastname": "Sekaran",
+		 "employee-number": null,
+		 "email": "kuppusamy.sekaran@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2016-10-12T11:42:59+03:00",
+		 "updated-at": "2016-11-14T10:59:24+02:00"
+	 },
+	 "custom-field-8": null,
+	 "custom-field-7": null,
+	 "username1": null
+
+ },
+ {
+"id": 808,
+	 "created-at": "2016-11-10T02:55:30+02:00",
+	 "updated-at": "2016-11-11T00:52:43+02:00",
+	 "login": "pfiuser1",
+	 "email": "aditya+r17-pfiuser@coupa.com",
+	 "purchasing-user": true,
+	 "expense-user": false,
+	 "sourcing-user": false,
+	 "inventory-user": false,
+	 "employee-number": "",
+	 "firstname": "PFI",
+	 "lastname": "User",
+	 "fullname": "PFI User",
+	 "api-user": false,
+	 "active": true,
+	 "salesforce-id": null,
+	 "account-security-type": 0,
+	 "authentication-method": "coupa_credentials",
+	 "sso-identifier": "pfiuser1",
+	 "default-locale": "en",
+	 "business-group-security-type": 0,
+	 "edit-invoice-on-quick-entry": false,
+	 "avatar-thumb-url": null,
+	 "mention-name": "pfiuser",
+	 "gpo-entity": "",
+	 "radio-button-test": null,
+	 "subsidary": "",
+	 "function": "",
+	 "seg3default": "",
+	 "phone-work": null,
+	 "phone-mobile": null,
+	 "roles": [
+
+		 {
+			 "id": 3,
+			 "created-at": "2011-08-05T19:46:31+03:00",
+			 "updated-at": "2011-08-05T19:46:31+03:00",
+			 "name": "User",
+			 "description": "Standard role for all users who need to create and/or approve requisitions",
+			 "omnipotent": false,
+			 "system-role": true,
+			 "updated-by": {
+				 "id": 1,
+				 "login": "coupasupport",
+				 "firstname": "Coupa",
+				 "lastname": "Support",
+				 "employee-number": "",
+				 "email": "upgrade+coupasupport@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2006-02-16T16:01:34+02:00",
+				 "updated-at": "2016-10-28T11:14:12+03:00"
+			 },
+			 "created-by": null
+
+		 },
+		 {
+			 "id": 10153,
+			 "created-at": "2016-11-11T00:52:22+02:00",
+			 "updated-at": "2016-11-11T00:52:22+02:00",
+			 "name": "Analytics Only",
+			 "description": "",
+			 "omnipotent": false,
+			 "system-role": false,
+			 "updated-by": {
+				 "id": 475,
+				 "login": "justin.mehta@coupa.com",
+				 "firstname": "Justin",
+				 "lastname": "Mehta",
+				 "employee-number": null,
+				 "email": "justin.mehta@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2016-10-20T20:55:27+03:00",
+				 "updated-at": "2016-11-14T09:56:55+02:00"
+			 },
+			 "created-by": {
+				 "id": 475,
+				 "login": "justin.mehta@coupa.com",
+				 "firstname": "Justin",
+				 "lastname": "Mehta",
+				 "employee-number": null,
+				 "email": "justin.mehta@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2016-10-20T20:55:27+03:00",
+				 "updated-at": "2016-11-14T09:56:55+02:00"
+			 }
+		 }
+	 ],
+	 "manager": null,
+	 "default-address": null,
+	 "default-account": null,
+	 "default-account-type": null,
+	 "default-currency": {
+		 "id": 156,
+		 "code": "AED",
+		 "decimals": 2,
+		 "updated-by": null
+
+	 },
+	 "pcard": null,
+	 "department": null,
+	 "requisition-approval-limit": {
+		 "id": 35,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED",
+		 "amount": "0.00",
+		 "subject": "requisition_header",
+		 "currency": {
+			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "expense-approval-limit": {
+		 "id": 36,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED (2)",
+		 "amount": "0.00",
+		 "subject": "expense_report",
+		 "currency": {
+			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "invoice-approval-limit": {
+		 "id": 37,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED (3)",
+		 "amount": "0.00",
+		 "subject": "invoice_header",
+		 "currency": {
+			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "requisition-self-approval-limit": {
+		 "id": 35,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED",
+		 "amount": "0.00",
+		 "subject": "requisition_header",
+		 "currency": {
+			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "expense-self-approval-limit": {
+		 "id": 36,
+		 "created-at": "2016-04-01T09:08:38+03:00",
+		 "updated-at": "2016-04-01T09:08:38+03:00",
+		 "name": "0.00 AED (2)",
+		 "amount": "0.00",
+		 "subject": "expense_report",
+		 "currency": {
+			 "id": 156,
+			 "code": "AED",
+			 "decimals": 2,
+			 "updated-by": null
+
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 "expenses-delegated-to": [],
+	 "can-expense-for": [],
+	 "content-groups": [],
+	 "account-groups": [],
+	 "approval-groups": [],
+	 "working-warehouses": [],
+	 "inventory-organizations": [],
+	 "created-by": {
+		 "id": 390,
+		 "login": "aditya.mandavilli@coupa.com",
+		 "firstname": "Aditya",
+		 "lastname": "Mandavilli",
+		 "employee-number": null,
+		 "email": "aditya.mandavilli@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2016-10-17T20:24:54+03:00",
+		 "updated-at": "2016-11-14T01:40:08+02:00"
+	 },
+	 "updated-by": {
+		 "id": 475,
+		 "login": "justin.mehta@coupa.com",
+		 "firstname": "Justin",
+		 "lastname": "Mehta",
+		 "employee-number": null,
+		 "email": "justin.mehta@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2016-10-20T20:55:27+03:00",
+		 "updated-at": "2016-11-14T09:56:55+02:00"
+	 },
+	 "custom-field-8": null,
+	 "custom-field-7": null,
+	 "username1": null
+ }
+]</code>
+</pre>
+</div>
+<div class="" id="xml_response-d957e4226">
+<h2 class="title sectiontitle">XML Response</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;users type="array"&gt;			
+	 &lt;user&gt;						 
+			&lt;id type="integer"&gt;771&lt;/id&gt;						 
+			&lt;created-at type="dateTime"&gt;2016-11-08T11:28:50+02:00&lt;/created-at&gt;						 
+			&lt;updated-at type="dateTime"&gt;2016-11-09T16:35:40+02:00&lt;/updated-at&gt;						 
+			&lt;login&gt;testuser1&lt;/login&gt;						 
+			&lt;email&gt;adf@gmail.com&lt;/email&gt;						 
+			&lt;purchasing-user type="boolean"&gt;true&lt;/purchasing-user&gt;						 
+			&lt;expense-user type="boolean"&gt;false&lt;/expense-user&gt;						 
+			&lt;sourcing-user type="boolean"&gt;false&lt;/sourcing-user&gt;						 
+			&lt;inventory-user type="boolean"&gt;false&lt;/inventory-user&gt;						 
+			&lt;employee-number /&gt;						 
+			&lt;firstname&gt;text&lt;/firstname&gt;						 
+			&lt;lastname&gt;abc&lt;/lastname&gt;						 
+			&lt;fullname&gt;text abc&lt;/fullname&gt;						 
+			&lt;api-user type="boolean"&gt;false&lt;/api-user&gt;						 
+			&lt;active type="boolean"&gt;true&lt;/active&gt;						 
+			&lt;salesforce-id nil="true" /&gt;						 
+			&lt;account-security-type type="integer"&gt;0&lt;/account-security-type&gt;						 
+			&lt;authentication-method type="symbol"&gt;coupa_credentials&lt;/authentication-method&gt;						 
+			&lt;sso-identifier&gt;899&lt;/sso-identifier&gt;						 
+			&lt;default-locale&gt;en&lt;/default-locale&gt;						 
+			&lt;business-group-security-type type="integer"&gt;1&lt;/business-group-security-type&gt;						 
+			&lt;edit-invoice-on-quick-entry type="boolean"&gt;false&lt;/edit-invoice-on-quick-entry&gt;						 
+			&lt;avatar-thumb-url nil="true" /&gt;						 
+			&lt;mention-name&gt;text12&lt;/mention-name&gt;						 
+			&lt;custom-field-8 /&gt;						 
+			&lt;custom-field-7 /&gt;						 
+			&lt;gpo-entity /&gt;						 
+			&lt;radio-button-test /&gt;						 
+			&lt;subsidary /&gt;						 
+			&lt;function /&gt;						 
+			&lt;seg3default /&gt;						 
+			&lt;username1 /&gt;						 
+			&lt;roles type="array"&gt;										
+				 &lt;role&gt;													 
+						&lt;id type="integer"&gt;2&lt;/id&gt;													 
+						&lt;created-at type="dateTime"&gt;2011-08-05T19:46:31+03:00&lt;/created-at&gt;													 
+						&lt;updated-at type="dateTime"&gt;2011-08-05T19:46:31+03:00&lt;/updated-at&gt;													 
+						&lt;name&gt;Admin&lt;/name&gt;													 
+						&lt;description&gt;Full system access to setup and maintain the application&lt;/description&gt;													 
+						&lt;omnipotent type="boolean"&gt;true&lt;/omnipotent&gt;													 
+						&lt;system-role type="boolean"&gt;true&lt;/system-role&gt;													 
+						&lt;updated-by&gt;																	
+							 &lt;id type="integer"&gt;1&lt;/id&gt;																	
+							 &lt;login&gt;coupasupport&lt;/login&gt;																	
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;																	
+							 &lt;employee-number /&gt;																	
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;																	
+							 &lt;lastname&gt;Support&lt;/lastname&gt;																	
+							 &lt;salesforce-id nil="true" /&gt;																	
+							 &lt;avatar-thumb-url nil="true" /&gt;																	
+							 &lt;custom-field-8 /&gt;																	
+							 &lt;custom-field-7 /&gt;																	
+							 &lt;gpo-entity /&gt;																	
+							 &lt;radio-button-test /&gt;																	
+							 &lt;subsidary /&gt;																	
+							 &lt;function /&gt;																	
+							 &lt;seg3default /&gt;																	
+							 &lt;username1 /&gt;															
+						&lt;/updated-by&gt;											 
+				 &lt;/role&gt;										
+				 &lt;role&gt;													 
+						&lt;id type="integer"&gt;3&lt;/id&gt;													 
+						&lt;created-at type="dateTime"&gt;2011-08-05T19:46:31+03:00&lt;/created-at&gt;													 
+						&lt;updated-at type="dateTime"&gt;2011-08-05T19:46:31+03:00&lt;/updated-at&gt;													 
+						&lt;name&gt;User&lt;/name&gt;													 
+						&lt;description&gt;Standard role for all users who need to create and/or approve requisitions&lt;/description&gt;													 
+						&lt;omnipotent type="boolean"&gt;false&lt;/omnipotent&gt;													 
+						&lt;system-role type="boolean"&gt;true&lt;/system-role&gt;													 
+						&lt;updated-by&gt;																	
+							 &lt;id type="integer"&gt;1&lt;/id&gt;																	
+							 &lt;login&gt;coupasupport&lt;/login&gt;																	
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;																	
+							 &lt;employee-number /&gt;																	
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;																	
+							 &lt;lastname&gt;Support&lt;/lastname&gt;																	
+							 &lt;salesforce-id nil="true" /&gt;																	
+							 &lt;avatar-thumb-url nil="true" /&gt;																	
+							 &lt;custom-field-8 /&gt;																	
+							 &lt;custom-field-7 /&gt;																	
+							 &lt;gpo-entity /&gt;																	
+							 &lt;radio-button-test /&gt;																	
+							 &lt;subsidary /&gt;																	
+							 &lt;function /&gt;																	
+							 &lt;seg3default /&gt;																	
+							 &lt;username1 /&gt;															
+						&lt;/updated-by&gt;											 
+				 &lt;/role&gt;								
+			&lt;/roles&gt;						 
+			&lt;manager&gt;										
+				 &lt;id type="integer"&gt;629&lt;/id&gt;										
+				 &lt;login&gt;gunab&lt;/login&gt;										
+				 &lt;email&gt;catestit8@gmail.com&lt;/email&gt;										
+				 &lt;employee-number /&gt;										
+				 &lt;firstname&gt;gunab&lt;/firstname&gt;										
+				 &lt;lastname&gt;buyer&lt;/lastname&gt;										
+				 &lt;salesforce-id nil="true" /&gt;										
+				 &lt;avatar-thumb-url nil="true" /&gt;										
+				 &lt;custom-field-8 /&gt;										
+				 &lt;custom-field-7 /&gt;										
+				 &lt;gpo-entity /&gt;										
+				 &lt;radio-button-test /&gt;										
+				 &lt;subsidary /&gt;										
+				 &lt;function /&gt;										
+				 &lt;seg3default /&gt;										
+				 &lt;username1 /&gt;								
+			&lt;/manager&gt;						 
+			&lt;default-currency&gt;										
+				 &lt;id type="integer"&gt;1&lt;/id&gt;										
+				 &lt;code&gt;USD&lt;/code&gt;										
+				 &lt;decimals type="integer"&gt;2&lt;/decimals&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;80&lt;/id&gt;													 
+						&lt;login&gt;learnapi&lt;/login&gt;													 
+						&lt;email&gt;learnapi@learnapi.com&lt;/email&gt;													 
+						&lt;employee-number nil="true" /&gt;													 
+						&lt;firstname&gt;API&lt;/firstname&gt;													 
+						&lt;lastname&gt;API&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/default-currency&gt;						 
+			&lt;requisition-approval-limit&gt;										
+				 &lt;id type="integer"&gt;35&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;requisition_header&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/requisition-approval-limit&gt;						 
+			&lt;expense-approval-limit&gt;										
+				 &lt;id type="integer"&gt;36&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED (2)&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;expense_report&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/expense-approval-limit&gt;						 
+			&lt;invoice-approval-limit&gt;										
+				 &lt;id type="integer"&gt;37&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED (3)&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;invoice_header&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/invoice-approval-limit&gt;						 
+			&lt;requisition-self-approval-limit&gt;										
+				 &lt;id type="integer"&gt;35&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;requisition_header&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/requisition-self-approval-limit&gt;						 
+			&lt;expense-self-approval-limit&gt;										
+				 &lt;id type="integer"&gt;36&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED (2)&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;expense_report&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/expense-self-approval-limit&gt;						 
+			&lt;expenses-delegated-to type="array" /&gt;						 
+			&lt;can-expense-for type="array" /&gt;						 
+			&lt;content-groups type="array" /&gt;						 
+			&lt;account-groups type="array" /&gt;						 
+			&lt;approval-groups type="array" /&gt;						 
+			&lt;working-warehouses type="array" /&gt;						 
+			&lt;inventory-organizations type="array" /&gt;						 
+			&lt;created-by&gt;										
+				 &lt;id type="integer"&gt;224&lt;/id&gt;										
+				 &lt;login&gt;sneha.latha@coupa.com&lt;/login&gt;										
+				 &lt;email&gt;sneha.latha@coupa.com&lt;/email&gt;										
+				 &lt;employee-number nil="true" /&gt;										
+				 &lt;firstname&gt;Sneha&lt;/firstname&gt;										
+				 &lt;lastname&gt;Latha&lt;/lastname&gt;										
+				 &lt;salesforce-id nil="true" /&gt;										
+				 &lt;avatar-thumb-url nil="true" /&gt;										
+				 &lt;custom-field-8 /&gt;										
+				 &lt;custom-field-7 /&gt;										
+				 &lt;gpo-entity /&gt;										
+				 &lt;radio-button-test /&gt;										
+				 &lt;subsidary /&gt;										
+				 &lt;function /&gt;										
+				 &lt;seg3default /&gt;										
+				 &lt;username1 /&gt;								
+			&lt;/created-by&gt;						 
+			&lt;updated-by&gt;										
+				 &lt;id type="integer"&gt;228&lt;/id&gt;										
+				 &lt;login&gt;kuppusamy.sekaran@coupa.com&lt;/login&gt;										
+				 &lt;email&gt;kuppusamy.sekaran@coupa.com&lt;/email&gt;										
+				 &lt;employee-number nil="true" /&gt;										
+				 &lt;firstname&gt;Kuppusamy&lt;/firstname&gt;										
+				 &lt;lastname&gt;Sekaran&lt;/lastname&gt;										
+				 &lt;salesforce-id nil="true" /&gt;										
+				 &lt;avatar-thumb-url nil="true" /&gt;										
+				 &lt;custom-field-8 /&gt;										
+				 &lt;custom-field-7 /&gt;										
+				 &lt;gpo-entity /&gt;										
+				 &lt;radio-button-test /&gt;										
+				 &lt;subsidary /&gt;										
+				 &lt;function /&gt;										
+				 &lt;seg3default /&gt;										
+				 &lt;username1 /&gt;								
+			&lt;/updated-by&gt;				 
+	 &lt;/user&gt;			
+	 &lt;user&gt;						 
+			&lt;id type="integer"&gt;808&lt;/id&gt;						 
+			&lt;created-at type="dateTime"&gt;2016-11-10T02:55:30+02:00&lt;/created-at&gt;						 
+			&lt;updated-at type="dateTime"&gt;2016-11-11T00:52:43+02:00&lt;/updated-at&gt;						 
+			&lt;login&gt;pfiuser1&lt;/login&gt;						 
+			&lt;email&gt;aditya+r17-pfiuser@coupa.com&lt;/email&gt;						 
+			&lt;purchasing-user type="boolean"&gt;true&lt;/purchasing-user&gt;						 
+			&lt;expense-user type="boolean"&gt;false&lt;/expense-user&gt;						 
+			&lt;sourcing-user type="boolean"&gt;false&lt;/sourcing-user&gt;						 
+			&lt;inventory-user type="boolean"&gt;false&lt;/inventory-user&gt;						 
+			&lt;employee-number /&gt;						 
+			&lt;firstname&gt;PFI&lt;/firstname&gt;						 
+			&lt;lastname&gt;User&lt;/lastname&gt;						 
+			&lt;fullname&gt;PFI User&lt;/fullname&gt;						 
+			&lt;api-user type="boolean"&gt;false&lt;/api-user&gt;						 
+			&lt;active type="boolean"&gt;true&lt;/active&gt;						 
+			&lt;salesforce-id nil="true" /&gt;						 
+			&lt;account-security-type type="integer"&gt;0&lt;/account-security-type&gt;						 
+			&lt;authentication-method type="symbol"&gt;coupa_credentials&lt;/authentication-method&gt;						 
+			&lt;sso-identifier&gt;pfiuser1&lt;/sso-identifier&gt;						 
+			&lt;default-locale&gt;en&lt;/default-locale&gt;						 
+			&lt;business-group-security-type type="integer"&gt;0&lt;/business-group-security-type&gt;						 
+			&lt;edit-invoice-on-quick-entry type="boolean"&gt;false&lt;/edit-invoice-on-quick-entry&gt;						 
+			&lt;avatar-thumb-url nil="true" /&gt;						 
+			&lt;mention-name&gt;pfiuser&lt;/mention-name&gt;						 
+			&lt;custom-field-8 /&gt;						 
+			&lt;custom-field-7 /&gt;						 
+			&lt;gpo-entity /&gt;						 
+			&lt;radio-button-test /&gt;						 
+			&lt;subsidary /&gt;						 
+			&lt;function /&gt;						 
+			&lt;seg3default /&gt;						 
+			&lt;username1 /&gt;						 
+			&lt;roles type="array"&gt;										
+				 &lt;role&gt;													 
+						&lt;id type="integer"&gt;3&lt;/id&gt;													 
+						&lt;created-at type="dateTime"&gt;2011-08-05T19:46:31+03:00&lt;/created-at&gt;													 
+						&lt;updated-at type="dateTime"&gt;2011-08-05T19:46:31+03:00&lt;/updated-at&gt;													 
+						&lt;name&gt;User&lt;/name&gt;													 
+						&lt;description&gt;Standard role for all users who need to create and / or approve requisitions&lt;/description&gt;													 
+						&lt;omnipotent type="boolean"&gt;false&lt;/omnipotent&gt;													 
+						&lt;system-role type="boolean"&gt;true&lt;/system-role&gt;													 
+						&lt;updated-by&gt;																	
+							 &lt;id type="integer"&gt;1&lt;/id&gt;																	
+							 &lt;login&gt;coupasupport&lt;/login&gt;																	
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;																	
+							 &lt;employee-number /&gt;																	
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;																	
+							 &lt;lastname&gt;Support&lt;/lastname&gt;																	
+							 &lt;salesforce-id nil="true" /&gt;																	
+							 &lt;avatar-thumb-url nil="true" /&gt;																	
+							 &lt;custom-field-8 /&gt;																	
+							 &lt;custom-field-7 /&gt;																	
+							 &lt;gpo-entity /&gt;																	
+							 &lt;radio-button-test /&gt;																	
+							 &lt;subsidary /&gt;																	
+							 &lt;function /&gt;																	
+							 &lt;seg3default /&gt;																	
+							 &lt;username1 /&gt;															
+						&lt;/updated-by&gt;											 
+				 &lt;/role&gt;										
+				 &lt;role&gt;													 
+						&lt;id type="integer"&gt;10153&lt;/id&gt;													 
+						&lt;created-at type="dateTime"&gt;2016-11-11T00:52:22+02:00&lt;/created-at&gt;													 
+						&lt;updated-at type="dateTime"&gt;2016-11-11T00:52:22+02:00&lt;/updated-at&gt;													 
+						&lt;name&gt;Analytics Only&lt;/name&gt;													 
+						&lt;description /&gt;													 
+						&lt;omnipotent type="boolean"&gt;false&lt;/omnipotent&gt;													 
+						&lt;system-role type="boolean"&gt;false&lt;/system-role&gt;													 
+						&lt;created-by&gt;																	
+							 &lt;id type="integer"&gt;475&lt;/id&gt;																	
+							 &lt;login&gt;justin.mehta@coupa.com&lt;/login&gt;																	
+							 &lt;email&gt;justin.mehta@coupa.com&lt;/email&gt;																	
+							 &lt;employee-number nil="true" /&gt;																	
+							 &lt;firstname&gt;Justin&lt;/firstname&gt;																	
+							 &lt;lastname&gt;Mehta&lt;/lastname&gt;																	
+							 &lt;salesforce-id nil="true" /&gt;																	
+							 &lt;avatar-thumb-url nil="true" /&gt;																	
+							 &lt;custom-field-8 /&gt;																	
+							 &lt;custom-field-7 /&gt;																	
+							 &lt;gpo-entity /&gt;																	
+							 &lt;radio-button-test /&gt;																	
+							 &lt;subsidary /&gt;																	
+							 &lt;function /&gt;																	
+							 &lt;seg3default /&gt;																	
+							 &lt;username1 /&gt;															
+						&lt;/created-by&gt;													 
+						&lt;updated-by&gt;																	
+							 &lt;id type="integer"&gt;475&lt;/id&gt;																	
+							 &lt;login&gt;justin.mehta@coupa.com&lt;/login&gt;																	
+							 &lt;email&gt;justin.mehta@coupa.com&lt;/email&gt;																	
+							 &lt;employee-number nil="true" /&gt;																	
+							 &lt;firstname&gt;Justin&lt;/firstname&gt;																	
+							 &lt;lastname&gt;Mehta&lt;/lastname&gt;																	
+							 &lt;salesforce-id nil="true" /&gt;																	
+							 &lt;avatar-thumb-url nil="true" /&gt;																	
+							 &lt;custom-field-8 /&gt;																	
+							 &lt;custom-field-7 /&gt;																	
+							 &lt;gpo-entity /&gt;																	
+							 &lt;radio-button-test /&gt;																	
+							 &lt;subsidary /&gt;																	
+							 &lt;function /&gt;																	
+							 &lt;seg3default /&gt;																	
+							 &lt;username1 /&gt;															
+						&lt;/updated-by&gt;											 
+				 &lt;/role&gt;								
+			&lt;/roles&gt;						 
+			&lt;default-currency&gt;										
+				 &lt;id type="integer"&gt;156&lt;/id&gt;										
+				 &lt;code&gt;AED&lt;/code&gt;										
+				 &lt;decimals type="integer"&gt;2&lt;/decimals&gt;								
+			&lt;/default-currency&gt;						 
+			&lt;requisition-approval-limit&gt;										
+				 &lt;id type="integer"&gt;35&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;requisition_header&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/requisition-approval-limit&gt;						 
+			&lt;expense-approval-limit&gt;										
+				 &lt;id type="integer"&gt;36&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED (2)&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;expense_report&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/expense-approval-limit&gt;						 
+			&lt;invoice-approval-limit&gt;										
+				 &lt;id type="integer"&gt;37&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED (3)&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;invoice_header&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/invoice-approval-limit&gt;						 
+			&lt;requisition-self-approval-limit&gt;										
+				 &lt;id type="integer"&gt;35&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;requisition_header&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/requisition-self-approval-limit&gt;						 
+			&lt;expense-self-approval-limit&gt;										
+				 &lt;id type="integer"&gt;36&lt;/id&gt;										
+				 &lt;created-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/created-at&gt;										
+				 &lt;updated-at type="dateTime"&gt;2016-04-01T09:08:38+03:00&lt;/updated-at&gt;										
+				 &lt;name&gt;0.00 AED (2)&lt;/name&gt;										
+				 &lt;amount type="decimal"&gt;0.00&lt;/amount&gt;										
+				 &lt;subject&gt;expense_report&lt;/subject&gt;										
+				 &lt;currency&gt;													 
+						&lt;id type="integer"&gt;156&lt;/id&gt;													 
+						&lt;code&gt;AED&lt;/code&gt;													 
+						&lt;decimals type="integer"&gt;2&lt;/decimals&gt;											 
+				 &lt;/currency&gt;										
+				 &lt;created-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/created-by&gt;										
+				 &lt;updated-by&gt;													 
+						&lt;id type="integer"&gt;1&lt;/id&gt;													 
+						&lt;login&gt;coupasupport&lt;/login&gt;													 
+						&lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;													 
+						&lt;employee-number /&gt;													 
+						&lt;firstname&gt;Coupa&lt;/firstname&gt;													 
+						&lt;lastname&gt;Support&lt;/lastname&gt;													 
+						&lt;salesforce-id nil="true" /&gt;													 
+						&lt;avatar-thumb-url nil="true" /&gt;													 
+						&lt;custom-field-8 /&gt;													 
+						&lt;custom-field-7 /&gt;													 
+						&lt;gpo-entity /&gt;													 
+						&lt;radio-button-test /&gt;													 
+						&lt;subsidary /&gt;													 
+						&lt;function /&gt;													 
+						&lt;seg3default /&gt;													 
+						&lt;username1 /&gt;											 
+				 &lt;/updated-by&gt;								
+			&lt;/expense-self-approval-limit&gt;						 
+			&lt;expenses-delegated-to type="array" /&gt;						 
+			&lt;can-expense-for type="array" /&gt;						 
+			&lt;content-groups type="array" /&gt;						 
+			&lt;account-groups type="array" /&gt;						 
+			&lt;approval-groups type="array" /&gt;						 
+			&lt;working-warehouses type="array" /&gt;						 
+			&lt;inventory-organizations type="array" /&gt;						 
+			&lt;created-by&gt;										
+				 &lt;id type="integer"&gt;390&lt;/id&gt;										
+				 &lt;login&gt;aditya.mandavilli@coupa.com&lt;/login&gt;										
+				 &lt;email&gt;aditya.mandavilli@coupa.com&lt;/email&gt;										
+				 &lt;employee-number nil="true" /&gt;										
+				 &lt;firstname&gt;Aditya&lt;/firstname&gt;										
+				 &lt;lastname&gt;Mandavilli&lt;/lastname&gt;										
+				 &lt;salesforce-id nil="true" /&gt;										
+				 &lt;avatar-thumb-url nil="true" /&gt;										
+				 &lt;custom-field-8 /&gt;										
+				 &lt;custom-field-7 /&gt;										
+				 &lt;gpo-entity /&gt;										
+				 &lt;radio-button-test /&gt;										
+				 &lt;subsidary /&gt;										
+				 &lt;function /&gt;										
+				 &lt;seg3default /&gt;										
+				 &lt;username1 /&gt;								
+			&lt;/created-by&gt;						 
+			&lt;updated-by&gt;										
+				 &lt;id type="integer"&gt;475&lt;/id&gt;										
+				 &lt;login&gt;justin.mehta@coupa.com&lt;/login&gt;										
+				 &lt;email&gt;justin.mehta@coupa.com&lt;/email&gt;										
+				 &lt;employee-number nil="true" /&gt;										
+				 &lt;firstname&gt;Justin&lt;/firstname&gt;										
+				 &lt;lastname&gt;Mehta&lt;/lastname&gt;										
+				 &lt;salesforce-id nil="true" /&gt;										
+				 &lt;avatar-thumb-url nil="true" /&gt;										
+				 &lt;custom-field-8 /&gt;										
+				 &lt;custom-field-7 /&gt;										
+				 &lt;gpo-entity /&gt;										
+				 &lt;radio-button-test /&gt;										
+				 &lt;subsidary /&gt;										
+				 &lt;function /&gt;										
+				 &lt;seg3default /&gt;										
+				 &lt;username1 /&gt;								
+			&lt;/updated-by&gt;				 
+	 &lt;/user&gt;&lt;/users&gt;</code>
+</pre>
+</div>
+<div class="" id="user_show">
+<h2 class="title sectiontitle">User Show</h2>
+<p class="">url: <a data-scope="external" data-name="" target="_blank" href="http://dashmaster17-0.coupadev.com/api/users/5" title="">http://dashmaster17-0.coupadev.com/api/users/5</a>
+</p>
+<p class="">method: GET</p>
+</div>
+<div class="" id="json_response-d957e6839">
+<h2 class="title sectiontitle">JSON Response</h2>
+<pre>
+<code class="codeblock">{
+ "id": 5,
+ "created-at": "2008-10-27T22:54:10+02:00",
+ "updated-at": "2013-04-19T22:02:26+03:00",
+ "login": "tkennedy",
+ "email": "upgrade+tk@coupa.com",
+ "purchasing-user": true,
+ "expense-user": false,
+ "sourcing-user": false,
+ "inventory-user": false,
+ "employee-number": "",
+ "firstname": "Tommy (Sales Lead)",
+ "lastname": "Kennedy",
+ "fullname": "Tommy (Sales Lead) Kennedy",
+ "api-user": false,
+ "active": true,
+ "salesforce-id": null,
+ "account-security-type": 0,
+ "authentication-method": "coupa_credentials",
+ "sso-identifier": "",
+ "default-locale": null,
+ "business-group-security-type": 1,
+ "edit-invoice-on-quick-entry": false,
+ "avatar-thumb-url": null,
+ "mention-name": "tommy(saleslead)kennedy",
+ "gpo-entity": "",
+ "radio-button-test": null,
+ "subsidary": null,
+ "function": null,
+ "seg3default": null,
+ "phone-work": {
+	 "id": 5,
+	 "created-at": "2008-10-27T22:54:10+02:00",
+	 "updated-at": "2012-12-14T00:27:57+02:00",
+	 "country-code": "1",
+	 "area-code": "650",
+	 "number": "5856306",
+	 "extension": null,
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T16:01:34+02:00",
+		 "updated-at": "2016-10-28T11:14:12+03:00"
+	 },
+	 "updated-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T16:01:34+02:00",
+		 "updated-at": "2016-10-28T11:14:12+03:00"
+	 }
+ },
+ "phone-mobile": {
+	 "id": 30,
+	 "created-at": "2008-10-28T19:59:47+02:00",
+	 "updated-at": "2012-12-14T00:27:57+02:00",
+	 "country-code": "1",
+	 "area-code": "650",
+	 "number": "5856306",
+	 "extension": null,
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T16:01:34+02:00",
+		 "updated-at": "2016-10-28T11:14:12+03:00"
+	 },
+	 "updated-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T16:01:34+02:00",
+		 "updated-at": "2016-10-28T11:14:12+03:00"
+	 }
+ },
+ "roles": [
+	 {
+		 "id": 3,
+		 "created-at": "2011-08-05T19:46:31+03:00",
+		 "updated-at": "2011-08-05T19:46:31+03:00",
+		 "name": "User",
+		 "description": "Standard role for all users who need to create and/or approve requisitions",
+		 "omnipotent": false,
+		 "system-role": true,
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 },
+	 {
+		 "id": 8,
+		 "created-at": "2011-08-05T19:46:31+03:00",
+		 "updated-at": "2012-07-31T19:40:04+03:00",
+		 "name": "Edit Requisition as Approver",
+		 "description": "Adds ability to edit a requisition when you are approving it",
+		 "omnipotent": false,
+		 "system-role": true,
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 }
+	 }
+ ],
+ "manager": {
+	 "id": 4,
+	 "login": "sjones",
+	 "firstname": "Sally (Sales VP)",
+	 "lastname": "Jones",
+	 "employee-number": "",
+	 "email": "upgradet+sj@coupa.com",
+	 "salesforce-id": null,
+	 "avatar-thumb-url": null,
+	 "created-at": "2008-10-27T22:54:10+02:00",
+	 "updated-at": "2016-10-21T21:47:04+03:00"
+ },
+ "default-address": {
+	 "id": 16,
+	 "created-at": "2008-10-27T22:00:19+02:00",
+	 "updated-at": "2016-11-10T07:42:35+02:00",
+	 "name": "HQ",
+	 "location-code": null,
+	 "street1": "28 Nevada Blvd",
+	 "street2": "",
+	 "city": "Laughlin",
+	 "state": "NV",
+	 "postal-code": "89028",
+	 "attention": "",
+	 "active": true,
+	 "business-group-name": "Everyone",
+	 "vat-number": null,
+	 "local-tax-number": null,
+	 "country": {
+		 "id": 223,
+		 "code": "US",
+		 "name": "United States"
+	 },
+	 "vat-country": null,
+	 "content-groups": [
+		 {
+			 "id": 1,
+			 "created-at": "2006-08-28T05:40:04+03:00",
+			 "updated-at": "2015-08-17T11:07:10+03:00",
+			 "name": "Everyone",
+			 "description": "All users can see documents assigned to this group",
+			 "updated-by": {
+				 "id": 80,
+				 "login": "learnapi",
+				 "firstname": "API",
+				 "lastname": "API",
+				 "employee-number": null,
+				 "email": "learnapi@learnapi.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2013-05-16T01:05:17+03:00",
+				 "updated-at": "2016-03-30T12:35:20+03:00"
+			 }
+		 }
+	 ],
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T16:01:34+02:00",
+		 "updated-at": "2016-10-28T11:14:12+03:00"
+	 },
+	 "updated-by": {
+		 "id": 157,
+		 "login": "vijayashree.christopher@coupa.com",
+		 "firstname": "vijayashree",
+		 "lastname": "Christopher",
+		 "employee-number": null,
+		 "email": "vijayashree.christopher@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2016-10-11T08:02:51+03:00",
+		 "updated-at": "2016-11-14T08:43:47+02:00"
+	 }
+ },
+ "default-account": {
+	 "id": null,
+	 "created-at": null,
+	 "updated-at": null,
+	 "name": null,
+	 "code": "SF-Sales-Indirect",
+	 "active": true,
+	 "segment-1": "SF",
+	 "segment-2": "Sales",
+	 "segment-3": "Indirect",
+	 "segment-4": null,
+	 "segment-5": null,
+	 "segment-6": null,
+	 "segment-7": null,
+	 "segment-8": null,
+	 "segment-9": null,
+	 "segment-10": null,
+	 "segment-11": null,
+	 "segment-12": null,
+	 "segment-13": null,
+	 "segment-14": null,
+	 "segment-15": null,
+	 "segment-16": null,
+	 "segment-17": null,
+	 "segment-18": null,
+	 "segment-19": null,
+	 "segment-20": null,
+	 "account-type": {
+		 "id": 1,
+		 "created-at": "2008-10-27T22:10:01+02:00",
+		 "updated-at": "2016-11-08T20:56:40+02:00",
+		 "name": "Ace Corporate",
+		 "active": true,
+		 "currency": {
+			 "id": 1,
+			 "code": "USD",
+			 "decimals": 2,
+			 "updated-by": {
+				 "id": 80,
+				 "login": "learnapi",
+				 "firstname": "API",
+				 "lastname": "API",
+				 "employee-number": null,
+				 "email": "learnapi@learnapi.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2013-05-16T01:05:17+03:00",
+				 "updated-at": "2016-03-30T12:35:20+03:00"
+			 }
+		 },
+		 "primary-contact": {
+			 "id": 14,
+			 "created-at": "2008-10-27T22:10:01+02:00",
+			 "updated-at": "2016-11-08T20:56:40+02:00",
+			 "email": "upgrade@coupa.com",
+			 "name-prefix": null,
+			 "name-suffix": null,
+			 "name-additional": null,
+			 "name-given": "xxx",
+			 "name-family": "yyy",
+			 "name-fullname": null,
+			 "notes": null,
+			 "phone-work": null,
+			 "phone-mobile": null,
+			 "phone-fax": null,
+			 "created-by": {
+				 "id": 1,
+				 "login": "coupasupport",
+				 "firstname": "Coupa",
+				 "lastname": "Support",
+				 "employee-number": "",
+				 "email": "upgrade+coupasupport@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2006-02-16T16:01:34+02:00",
+				 "updated-at": "2016-10-28T11:14:12+03:00"
+			 },
+			 "updated-by": {
+				 "id": 195,
+				 "login": "tim.durkin@coupa.com",
+				 "firstname": "Timothy",
+				 "lastname": "Durkin",
+				 "employee-number": null,
+				 "email": "tim.durkin@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2016-10-11T19:30:34+03:00",
+				 "updated-at": "2016-11-10T18:18:36+02:00"
+			 }
+		 },
+		 "primary-address": {
+			 "id": 184,
+			 "created-at": "2008-10-27T22:10:01+02:00",
+			 "updated-at": "2016-11-08T20:56:40+02:00",
+			 "name": "xxx yyy",
+			 "location-code": null,
+			 "street1": "2 W 5th Ave",
+			 "street2": "Suite 300",
+			 "city": "San Mateo",
+			 "state": "CA",
+			 "postal-code": "94404",
+			 "attention": null,
+			 "active": true,
+			 "business-group-name": null,
+			 "vat-number": "465456645",
+			 "local-tax-number": "",
+			 "country": {
+				 "id": 22,
+				 "code": "BE",
+				 "name": "Belgium"
+			 },
+			 "vat-country": {
+				 "id": 223,
+				 "code": "US",
+				 "name": "United States"
+			 },
+			 "content-groups": [],
+			 "created-by": {
+				 "id": 122,
+				 "login": "matthew.otzwirk@coupa.com",
+				 "firstname": "Matthew",
+				 "lastname": "Otzwirk",
+				 "employee-number": null,
+				 "email": "matthew.otzwirk@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2016-04-27T20:54:43+03:00",
+				 "updated-at": "2016-11-09T23:23:32+02:00"
+			 },
+			 "updated-by": {
+				 "id": 195,
+				 "login": "tim.durkin@coupa.com",
+				 "firstname": "Timothy",
+				 "lastname": "Durkin",
+				 "employee-number": null,
+				 "email": "tim.durkin@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2016-10-11T19:30:34+03:00",
+				 "updated-at": "2016-11-10T18:18:36+02:00"
+			 }
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 195,
+			 "login": "tim.durkin@coupa.com",
+			 "firstname": "Timothy",
+			 "lastname": "Durkin",
+			 "employee-number": null,
+			 "email": "tim.durkin@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2016-10-11T19:30:34+03:00",
+			 "updated-at": "2016-11-10T18:18:36+02:00"
+		 }
+	 }
+ },
+ "default-account-type": {
+	 "id": 1,
+	 "created-at": "2008-10-27T22:10:01+02:00",
+	 "updated-at": "2016-11-08T20:56:40+02:00",
+	 "name": "Ace Corporate",
+	 "active": true,
+	 "currency": {
+		 "id": 1,
+		 "code": "USD",
+		 "decimals": 2,
+		 "updated-by": {
+			 "id": 80,
+			 "login": "learnapi",
+			 "firstname": "API",
+			 "lastname": "API",
+			 "employee-number": null,
+			 "email": "learnapi@learnapi.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2013-05-16T01:05:17+03:00",
+			 "updated-at": "2016-03-30T12:35:20+03:00"
+		 }
+	 },
+	 "primary-contact": {
+		 "id": 14,
+		 "created-at": "2008-10-27T22:10:01+02:00",
+		 "updated-at": "2016-11-08T20:56:40+02:00",
+		 "email": "upgrade@coupa.com",
+		 "name-prefix": null,
+		 "name-suffix": null,
+		 "name-additional": null,
+		 "name-given": "xxx",
+		 "name-family": "yyy",
+		 "name-fullname": null,
+		 "notes": null,
+		 "phone-work": null,
+		 "phone-mobile": null,
+		 "phone-fax": null,
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T16:01:34+02:00",
+			 "updated-at": "2016-10-28T11:14:12+03:00"
+		 },
+		 "updated-by": {
+			 "id": 195,
+			 "login": "tim.durkin@coupa.com",
+			 "firstname": "Timothy",
+			 "lastname": "Durkin",
+			 "employee-number": null,
+			 "email": "tim.durkin@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2016-10-11T19:30:34+03:00",
+			 "updated-at": "2016-11-10T18:18:36+02:00"
+		 }
+	 },
+	 "primary-address": {
+		 "id": 184,
+		 "created-at": "2008-10-27T22:10:01+02:00",
+		 "updated-at": "2016-11-08T20:56:40+02:00",
+		 "name": "xxx yyy",
+		 "location-code": null,
+		 "street1": "2 W 5th Ave",
+		 "street2": "Suite 300",
+		 "city": "San Mateo",
+		 "state": "CA",
+		 "postal-code": "94404",
+		 "attention": null,
+		 "active": true,
+		 "business-group-name": null,
+		 "vat-number": "465456645",
+		 "local-tax-number": "",
+		 "country": {
+			 "id": 22,
+			 "code": "BE",
+			 "name": "Belgium"
+		 },
+		 "vat-country": {
+			 "id": 223,
+			 "code": "US",
+			 "name": "United States"
+		 },
+		 "content-groups": [],
+		 "created-by": {
+			 "id": 122,
+			 "login": "matthew.otzwirk@coupa.com",
+			 "firstname": "Matthew",
+			 "lastname": "Otzwirk",
+			 "employee-number": null,
+			 "email": "matthew.otzwirk@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2016-04-27T20:54:43+03:00",
+			 "updated-at": "2016-11-09T23:23:32+02:00"
+		 },
+		 "updated-by": {
+			 "id": 195,
+			 "login": "tim.durkin@coupa.com",
+			 "firstname": "Timothy",
+			 "lastname": "Durkin",
+			 "employee-number": null,
+			 "email": "tim.durkin@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2016-10-11T19:30:34+03:00",
+			 "updated-at": "2016-11-10T18:18:36+02:00"
+		 }
+	 },
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T16:01:34+02:00",
+		 "updated-at": "2016-10-28T11:14:12+03:00"
+	 },
+	 "updated-by": {
+		 "id": 195,
+		 "login": "tim.durkin@coupa.com",
+		 "firstname": "Timothy",
+		 "lastname": "Durkin",
+		 "employee-number": null,
+		 "email": "tim.durkin@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2016-10-11T19:30:34+03:00",
+		 "updated-at": "2016-11-10T18:18:36+02:00"
+	 }
+ },
+ "default-currency": {
+	 "id": 1,
+	 "code": "USD",
+	 "decimals": 2,
+	 "updated-by": {
+		 "id": 80,
+		 "login": "learnapi",
+		 "firstname": "API",
+		 "lastname": "API",
+		 "employee-number": null,
+		 "email": "learnapi@learnapi.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2013-05-16T01:05:17+03:00",
+		 "updated-at": "2016-03-30T12:35:20+03:00"
+	 }
+ },
+ "department": {
+	 "id": 2,
+	 "created-at": "2008-10-27T22:00:53+02:00",
+	 "updated-at": "2010-03-24T06:03:22+02:00",
+	 "name": "Sales",
+	 "active": true,
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T16:01:34+02:00",
+		 "updated-at": "2016-10-28T11:14:12+03:00"
+	 },
+	 "updated-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T16:01:34+02:00",
+		 "updated-at": "2016-10-28T11:14:12+03:00"
+	 }
+ },
+ "expenses-delegated-to": [],
+ "can-expense-for": [],
+ "content-groups": [],
+ "account-groups": [],
+ "approval-groups": [],
+ "working-warehouses": [],
+ "inventory-organizations": [],
+ "updated-by": {
+	 "id": 1,
+	 "login": "coupasupport",
+	 "firstname": "Coupa",
+	 "lastname": "Support",
+	 "employee-number": "",
+	 "email": "upgrade+coupasupport@coupa.com",
+	 "salesforce-id": null,
+	 "avatar-thumb-url": null,
+	 "created-at": "2006-02-16T16:01:34+02:00",
+	 "updated-at": "2016-10-28T11:14:12+03:00"
+ }
+}</code>
+</pre>
+</div>
+<div class="" id="xml_response-d957e8729">
+<h2 class="title sectiontitle">XML response</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;user&gt;
+	 &lt;id type="integer"&gt;5&lt;/id&gt;
+	 &lt;created-at type="dateTime"&gt;2008-10-27T22:54:10+02:00&lt;/created-at&gt;
+	 &lt;updated-at type="dateTime"&gt;2013-04-19T22:02:26+03:00&lt;/updated-at&gt;
+	 &lt;login&gt;tkennedy&lt;/login&gt;
+	 &lt;email&gt;upgrade+tk@coupa.com&lt;/email&gt;
+	 &lt;purchasing-user type="boolean"&gt;true&lt;/purchasing-user&gt;
+	 &lt;expense-user type="boolean"&gt;false&lt;/expense-user&gt;
+	 &lt;sourcing-user type="boolean"&gt;false&lt;/sourcing-user&gt;
+	 &lt;inventory-user type="boolean"&gt;false&lt;/inventory-user&gt;
+	 &lt;employee-number&gt;&lt;/employee-number&gt;
+	 &lt;firstname&gt;Tommy (Sales Lead)&lt;/firstname&gt;
+	 &lt;lastname&gt;Kennedy&lt;/lastname&gt;
+	 &lt;fullname&gt;Tommy (Sales Lead) Kennedy&lt;/fullname&gt;
+	 &lt;api-user type="boolean"&gt;false&lt;/api-user&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;salesforce-id nil="true"/&gt;
+	 &lt;account-security-type type="integer"&gt;0&lt;/account-security-type&gt;
+	 &lt;authentication-method type="symbol"&gt;coupa_credentials&lt;/authentication-method&gt;
+	 &lt;sso-identifier&gt;&lt;/sso-identifier&gt;
+	 &lt;default-locale nil="true"/&gt;
+	 &lt;business-group-security-type type="integer"&gt;1&lt;/business-group-security-type&gt;
+	 &lt;edit-invoice-on-quick-entry type="boolean"&gt;false&lt;/edit-invoice-on-quick-entry&gt;
+	 &lt;avatar-thumb-url nil="true"/&gt;
+	 &lt;mention-name&gt;tommy(saleslead)kennedy&lt;/mention-name&gt;
+	 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+	 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+	 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+	 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+	 &lt;subsidary&gt;&lt;/subsidary&gt;
+	 &lt;function&gt;&lt;/function&gt;
+	 &lt;seg3default&gt;&lt;/seg3default&gt;
+	 &lt;username1&gt;&lt;/username1&gt;
+	 &lt;phone-work&gt;
+			 &lt;id type="integer"&gt;5&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-27T22:54:10+02:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2012-12-14T00:27:57+02:00&lt;/updated-at&gt;
+			 &lt;country-code&gt;1&lt;/country-code&gt;
+			 &lt;area-code&gt;650&lt;/area-code&gt;
+			 &lt;number&gt;5856306&lt;/number&gt;
+			 &lt;extension nil="true"/&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/phone-work&gt;
+	 &lt;phone-mobile&gt;
+			 &lt;id type="integer"&gt;30&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-28T19:59:47+02:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2012-12-14T00:27:57+02:00&lt;/updated-at&gt;
+			 &lt;country-code&gt;1&lt;/country-code&gt;
+			 &lt;area-code&gt;650&lt;/area-code&gt;
+			 &lt;number&gt;5856306&lt;/number&gt;
+			 &lt;extension nil="true"/&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/phone-mobile&gt;
+	 &lt;roles type="array"&gt;
+			 &lt;role&gt;
+					 &lt;id type="integer"&gt;3&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2011-08-05T19:46:31+03:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2011-08-05T19:46:31+03:00&lt;/updated-at&gt;
+					 &lt;name&gt;User&lt;/name&gt;
+					 &lt;description&gt;Standard role for all users who need to create and/or approve requisitions&lt;/description&gt;
+					 &lt;omnipotent type="boolean"&gt;false&lt;/omnipotent&gt;
+					 &lt;system-role type="boolean"&gt;true&lt;/system-role&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+							 &lt;employee-number&gt;&lt;/employee-number&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+							 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/role&gt;
+			 &lt;role&gt;
+					 &lt;id type="integer"&gt;8&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2011-08-05T19:46:31+03:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2012-07-31T19:40:04+03:00&lt;/updated-at&gt;
+					 &lt;name&gt;Edit Requisition as Approver&lt;/name&gt;
+					 &lt;description&gt;Adds ability to edit a requisition when you are approving it&lt;/description&gt;
+					 &lt;omnipotent type="boolean"&gt;false&lt;/omnipotent&gt;
+					 &lt;system-role type="boolean"&gt;true&lt;/system-role&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+							 &lt;employee-number&gt;&lt;/employee-number&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+							 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/role&gt;
+	 &lt;/roles&gt;
+	 &lt;manager&gt;
+			 &lt;id type="integer"&gt;4&lt;/id&gt;
+			 &lt;login&gt;sjones&lt;/login&gt;
+			 &lt;email&gt;upgradet+sj@coupa.com&lt;/email&gt;
+			 &lt;employee-number&gt;&lt;/employee-number&gt;
+			 &lt;firstname&gt;Sally (Sales VP)&lt;/firstname&gt;
+			 &lt;lastname&gt;Jones&lt;/lastname&gt;
+			 &lt;salesforce-id nil="true"/&gt;
+			 &lt;avatar-thumb-url nil="true"/&gt;
+			 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+			 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+			 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+			 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+			 &lt;subsidary&gt;&lt;/subsidary&gt;
+			 &lt;function&gt;&lt;/function&gt;
+			 &lt;seg3default&gt;&lt;/seg3default&gt;
+			 &lt;username1&gt;&lt;/username1&gt;
+	 &lt;/manager&gt;
+	 &lt;default-address&gt;
+			 &lt;id type="integer"&gt;16&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-27T22:00:19+02:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2016-11-10T07:42:35+02:00&lt;/updated-at&gt;
+			 &lt;name&gt;HQ&lt;/name&gt;
+			 &lt;location-code nil="true"/&gt;
+			 &lt;street1&gt;28 Nevada Blvd&lt;/street1&gt;
+			 &lt;street2&gt;&lt;/street2&gt;
+			 &lt;city&gt;Laughlin&lt;/city&gt;
+			 &lt;state&gt;NV&lt;/state&gt;
+			 &lt;postal-code&gt;89028&lt;/postal-code&gt;
+			 &lt;attention&gt;&lt;/attention&gt;
+			 &lt;active type="boolean"&gt;true&lt;/active&gt;
+			 &lt;business-group-name&gt;Everyone&lt;/business-group-name&gt;
+			 &lt;vat-number nil="true"/&gt;
+			 &lt;local-tax-number nil="true"/&gt;
+			 &lt;country&gt;
+					 &lt;id type="integer"&gt;223&lt;/id&gt;
+					 &lt;code&gt;US&lt;/code&gt;
+					 &lt;name&gt;United States&lt;/name&gt;
+			 &lt;/country&gt;
+			 &lt;content-groups type="array"&gt;
+					 &lt;content-group&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;created-at type="dateTime"&gt;2006-08-28T05:40:04+03:00&lt;/created-at&gt;
+							 &lt;updated-at type="dateTime"&gt;2015-08-17T11:07:10+03:00&lt;/updated-at&gt;
+							 &lt;name&gt;Everyone&lt;/name&gt;
+							 &lt;description&gt;All users can see documents assigned to this group&lt;/description&gt;
+							 &lt;updated-by&gt;
+									 &lt;id type="integer"&gt;80&lt;/id&gt;
+									 &lt;login&gt;learnapi&lt;/login&gt;
+									 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;API&lt;/firstname&gt;
+									 &lt;lastname&gt;API&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+									 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/updated-by&gt;
+					 &lt;/content-group&gt;
+			 &lt;/content-groups&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;157&lt;/id&gt;
+					 &lt;login&gt;vijayashree.christopher@coupa.com&lt;/login&gt;
+					 &lt;email&gt;vijayashree.christopher@coupa.com&lt;/email&gt;
+					 &lt;employee-number nil="true"/&gt;
+					 &lt;firstname&gt;vijayashree&lt;/firstname&gt;
+					 &lt;lastname&gt;Christopher&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/default-address&gt;
+	 &lt;default-account&gt;
+			 &lt;id nil="true"/&gt;
+			 &lt;created-at nil="true"/&gt;
+			 &lt;updated-at nil="true"/&gt;
+			 &lt;name nil="true"/&gt;
+			 &lt;code&gt;SF-Sales-Indirect&lt;/code&gt;
+			 &lt;active type="boolean"&gt;true&lt;/active&gt;
+			 &lt;segment-1&gt;SF&lt;/segment-1&gt;
+			 &lt;segment-2&gt;Sales&lt;/segment-2&gt;
+			 &lt;segment-3&gt;Indirect&lt;/segment-3&gt;
+			 &lt;segment-4 nil="true"/&gt;
+			 &lt;segment-5 nil="true"/&gt;
+			 &lt;segment-6 nil="true"/&gt;
+			 &lt;segment-7 nil="true"/&gt;
+			 &lt;segment-8 nil="true"/&gt;
+			 &lt;segment-9 nil="true"/&gt;
+			 &lt;segment-10 nil="true"/&gt;
+			 &lt;segment-11 nil="true"/&gt;
+			 &lt;segment-12 nil="true"/&gt;
+			 &lt;segment-13 nil="true"/&gt;
+			 &lt;segment-14 nil="true"/&gt;
+			 &lt;segment-15 nil="true"/&gt;
+			 &lt;segment-16 nil="true"/&gt;
+			 &lt;segment-17 nil="true"/&gt;
+			 &lt;segment-18 nil="true"/&gt;
+			 &lt;segment-19 nil="true"/&gt;
+			 &lt;segment-20 nil="true"/&gt;
+			 &lt;account-type&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2008-10-27T22:10:01+02:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2016-11-08T20:56:40+02:00&lt;/updated-at&gt;
+					 &lt;name&gt;Ace Corporate&lt;/name&gt;
+					 &lt;active type="boolean"&gt;true&lt;/active&gt;
+					 &lt;currency&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;code&gt;USD&lt;/code&gt;
+							 &lt;decimals type="integer"&gt;2&lt;/decimals&gt;
+							 &lt;updated-by&gt;
+									 &lt;id type="integer"&gt;80&lt;/id&gt;
+									 &lt;login&gt;learnapi&lt;/login&gt;
+									 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;API&lt;/firstname&gt;
+									 &lt;lastname&gt;API&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+									 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/updated-by&gt;
+					 &lt;/currency&gt;
+					 &lt;primary-contact&gt;
+							 &lt;id type="integer"&gt;14&lt;/id&gt;
+							 &lt;created-at type="dateTime"&gt;2008-10-27T22:10:01+02:00&lt;/created-at&gt;
+							 &lt;updated-at type="dateTime"&gt;2016-11-08T20:56:40+02:00&lt;/updated-at&gt;
+							 &lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+							 &lt;name-prefix nil="true"/&gt;
+							 &lt;name-suffix nil="true"/&gt;
+							 &lt;name-additional nil="true"/&gt;
+							 &lt;name-given&gt;xxx&lt;/name-given&gt;
+							 &lt;name-family&gt;yyy&lt;/name-family&gt;
+							 &lt;name-fullname nil="true"/&gt;
+							 &lt;notes nil="true"/&gt;
+							 &lt;created-by&gt;
+									 &lt;id type="integer"&gt;1&lt;/id&gt;
+									 &lt;login&gt;coupasupport&lt;/login&gt;
+									 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+									 &lt;employee-number&gt;&lt;/employee-number&gt;
+									 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+									 &lt;lastname&gt;Support&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+									 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/created-by&gt;
+							 &lt;updated-by&gt;
+									 &lt;id type="integer"&gt;195&lt;/id&gt;
+									 &lt;login&gt;tim.durkin@coupa.com&lt;/login&gt;
+									 &lt;email&gt;tim.durkin@coupa.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;Timothy&lt;/firstname&gt;
+									 &lt;lastname&gt;Durkin&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+									 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/updated-by&gt;
+					 &lt;/primary-contact&gt;
+					 &lt;primary-address&gt;
+							 &lt;id type="integer"&gt;184&lt;/id&gt;
+							 &lt;created-at type="dateTime"&gt;2008-10-27T22:10:01+02:00&lt;/created-at&gt;
+							 &lt;updated-at type="dateTime"&gt;2016-11-08T20:56:40+02:00&lt;/updated-at&gt;
+							 &lt;name&gt;xxx yyy&lt;/name&gt;
+							 &lt;location-code nil="true"/&gt;
+							 &lt;street1&gt;2 W 5th Ave&lt;/street1&gt;
+							 &lt;street2&gt;Suite 300&lt;/street2&gt;
+							 &lt;city&gt;San Mateo&lt;/city&gt;
+							 &lt;state&gt;CA&lt;/state&gt;
+							 &lt;postal-code&gt;94404&lt;/postal-code&gt;
+							 &lt;attention nil="true"/&gt;
+							 &lt;active type="boolean"&gt;true&lt;/active&gt;
+							 &lt;business-group-name nil="true"/&gt;
+							 &lt;vat-number&gt;465456645&lt;/vat-number&gt;
+							 &lt;local-tax-number&gt;&lt;/local-tax-number&gt;
+							 &lt;country&gt;
+									 &lt;id type="integer"&gt;22&lt;/id&gt;
+									 &lt;code&gt;BE&lt;/code&gt;
+									 &lt;name&gt;Belgium&lt;/name&gt;
+							 &lt;/country&gt;
+							 &lt;vat-country&gt;
+									 &lt;id type="integer"&gt;223&lt;/id&gt;
+									 &lt;code&gt;US&lt;/code&gt;
+									 &lt;name&gt;United States&lt;/name&gt;
+							 &lt;/vat-country&gt;
+							 &lt;content-groups type="array"/&gt;
+							 &lt;created-by&gt;
+									 &lt;id type="integer"&gt;122&lt;/id&gt;
+									 &lt;login&gt;matthew.otzwirk@coupa.com&lt;/login&gt;
+									 &lt;email&gt;matthew.otzwirk@coupa.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;Matthew&lt;/firstname&gt;
+									 &lt;lastname&gt;Otzwirk&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+									 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/created-by&gt;
+							 &lt;updated-by&gt;
+									 &lt;id type="integer"&gt;195&lt;/id&gt;
+									 &lt;login&gt;tim.durkin@coupa.com&lt;/login&gt;
+									 &lt;email&gt;tim.durkin@coupa.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;Timothy&lt;/firstname&gt;
+									 &lt;lastname&gt;Durkin&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+									 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/updated-by&gt;
+					 &lt;/primary-address&gt;
+					 &lt;created-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+							 &lt;employee-number&gt;&lt;/employee-number&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+							 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/created-by&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;195&lt;/id&gt;
+							 &lt;login&gt;tim.durkin@coupa.com&lt;/login&gt;
+							 &lt;email&gt;tim.durkin@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;Timothy&lt;/firstname&gt;
+							 &lt;lastname&gt;Durkin&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+							 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/account-type&gt;
+	 &lt;/default-account&gt;
+	 &lt;default-account-type&gt;
+			 &lt;id type="integer"&gt;1&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-27T22:10:01+02:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2016-11-08T20:56:40+02:00&lt;/updated-at&gt;
+			 &lt;name&gt;Ace Corporate&lt;/name&gt;
+			 &lt;active type="boolean"&gt;true&lt;/active&gt;
+			 &lt;currency&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;code&gt;USD&lt;/code&gt;
+					 &lt;decimals type="integer"&gt;2&lt;/decimals&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;80&lt;/id&gt;
+							 &lt;login&gt;learnapi&lt;/login&gt;
+							 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;API&lt;/firstname&gt;
+							 &lt;lastname&gt;API&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+							 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/currency&gt;
+			 &lt;primary-contact&gt;
+					 &lt;id type="integer"&gt;14&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2008-10-27T22:10:01+02:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2016-11-08T20:56:40+02:00&lt;/updated-at&gt;
+					 &lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+					 &lt;name-prefix nil="true"/&gt;
+					 &lt;name-suffix nil="true"/&gt;
+					 &lt;name-additional nil="true"/&gt;
+					 &lt;name-given&gt;xxx&lt;/name-given&gt;
+					 &lt;name-family&gt;yyy&lt;/name-family&gt;
+					 &lt;name-fullname nil="true"/&gt;
+					 &lt;notes nil="true"/&gt;
+					 &lt;created-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+							 &lt;employee-number&gt;&lt;/employee-number&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+							 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/created-by&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;195&lt;/id&gt;
+							 &lt;login&gt;tim.durkin@coupa.com&lt;/login&gt;
+							 &lt;email&gt;tim.durkin@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;Timothy&lt;/firstname&gt;
+							 &lt;lastname&gt;Durkin&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+							 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/primary-contact&gt;
+			 &lt;primary-address&gt;
+					 &lt;id type="integer"&gt;184&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2008-10-27T22:10:01+02:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2016-11-08T20:56:40+02:00&lt;/updated-at&gt;
+					 &lt;name&gt;xxx yyy&lt;/name&gt;
+					 &lt;location-code nil="true"/&gt;
+					 &lt;street1&gt;2 W 5th Ave&lt;/street1&gt;
+					 &lt;street2&gt;Suite 300&lt;/street2&gt;
+					 &lt;city&gt;San Mateo&lt;/city&gt;
+					 &lt;state&gt;CA&lt;/state&gt;
+					 &lt;postal-code&gt;94404&lt;/postal-code&gt;
+					 &lt;attention nil="true"/&gt;
+					 &lt;active type="boolean"&gt;true&lt;/active&gt;
+					 &lt;business-group-name nil="true"/&gt;
+					 &lt;vat-number&gt;465456645&lt;/vat-number&gt;
+					 &lt;local-tax-number&gt;&lt;/local-tax-number&gt;
+					 &lt;country&gt;
+							 &lt;id type="integer"&gt;22&lt;/id&gt;
+							 &lt;code&gt;BE&lt;/code&gt;
+							 &lt;name&gt;Belgium&lt;/name&gt;
+					 &lt;/country&gt;
+					 &lt;vat-country&gt;
+							 &lt;id type="integer"&gt;223&lt;/id&gt;
+							 &lt;code&gt;US&lt;/code&gt;
+							 &lt;name&gt;United States&lt;/name&gt;
+					 &lt;/vat-country&gt;
+					 &lt;content-groups type="array"/&gt;
+					 &lt;created-by&gt;
+							 &lt;id type="integer"&gt;122&lt;/id&gt;
+							 &lt;login&gt;matthew.otzwirk@coupa.com&lt;/login&gt;
+							 &lt;email&gt;matthew.otzwirk@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;Matthew&lt;/firstname&gt;
+							 &lt;lastname&gt;Otzwirk&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+							 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/created-by&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;195&lt;/id&gt;
+							 &lt;login&gt;tim.durkin@coupa.com&lt;/login&gt;
+							 &lt;email&gt;tim.durkin@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;Timothy&lt;/firstname&gt;
+							 &lt;lastname&gt;Durkin&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+							 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/primary-address&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;195&lt;/id&gt;
+					 &lt;login&gt;tim.durkin@coupa.com&lt;/login&gt;
+					 &lt;email&gt;tim.durkin@coupa.com&lt;/email&gt;
+					 &lt;employee-number nil="true"/&gt;
+					 &lt;firstname&gt;Timothy&lt;/firstname&gt;
+					 &lt;lastname&gt;Durkin&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/default-account-type&gt;
+	 &lt;default-currency&gt;
+			 &lt;id type="integer"&gt;1&lt;/id&gt;
+			 &lt;code&gt;USD&lt;/code&gt;
+			 &lt;decimals type="integer"&gt;2&lt;/decimals&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;80&lt;/id&gt;
+					 &lt;login&gt;learnapi&lt;/login&gt;
+					 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+					 &lt;employee-number nil="true"/&gt;
+					 &lt;firstname&gt;API&lt;/firstname&gt;
+					 &lt;lastname&gt;API&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/default-currency&gt;
+	 &lt;department&gt;
+			 &lt;id type="integer"&gt;2&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-27T22:00:53+02:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2010-03-24T06:03:22+02:00&lt;/updated-at&gt;
+			 &lt;name&gt;Sales&lt;/name&gt;
+			 &lt;active type="boolean"&gt;true&lt;/active&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+					 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/department&gt;
+	 &lt;expenses-delegated-to type="array"/&gt;
+	 &lt;can-expense-for type="array"/&gt;
+	 &lt;content-groups type="array"/&gt;
+	 &lt;account-groups type="array"/&gt;
+	 &lt;approval-groups type="array"/&gt;
+	 &lt;working-warehouses type="array"/&gt;
+	 &lt;inventory-organizations type="array"/&gt;
+	 &lt;updated-by&gt;
+			 &lt;id type="integer"&gt;1&lt;/id&gt;
+			 &lt;login&gt;coupasupport&lt;/login&gt;
+			 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+			 &lt;employee-number&gt;&lt;/employee-number&gt;
+			 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+			 &lt;lastname&gt;Support&lt;/lastname&gt;
+			 &lt;salesforce-id nil="true"/&gt;
+			 &lt;avatar-thumb-url nil="true"/&gt;
+			 &lt;custom-field-8&gt;&lt;/custom-field-8&gt;
+			 &lt;custom-field-7&gt;&lt;/custom-field-7&gt;
+			 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+			 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+			 &lt;subsidary&gt;&lt;/subsidary&gt;
+			 &lt;function&gt;&lt;/function&gt;
+			 &lt;seg3default&gt;&lt;/seg3default&gt;
+			 &lt;username1&gt;&lt;/username1&gt;
+	 &lt;/updated-by&gt;
+&lt;/user&gt;</code>
+</pre>
+</div>
+<div class="" id="user_create">
+<h2 class="title sectiontitle">User Create</h2>
+<p class="">url: /api/users</p>
+<p class="">method: POST</p>
+</div>
+<div class="" id="json_request">
+<h2 class="title sectiontitle">JSON request</h2>
+<pre>
+<code class="codeblock">{
+						"login": "test1@coupa.com",
+						"email": "test1@coupa.com",
+						"purchasing-user": true,
+						"firstname": "test1",
+						"lastname": "user1"
+}</code>
+</pre>
+</div>
+<div class="" id="json_response-d957e11174">
+<h2 class="title sectiontitle">JSON response</h2>
+<pre>
+<code class="codeblock">{
+ "id": 606,
+ "created-at": "2016-11-14T11:53:40-08:00",
+ "updated-at": "2016-11-14T11:53:40-08:00",
+ "login": "test1@coupa.com",
+ "email": "test1@coupa.com",
+ "purchasing-user": true,
+ "expense-user": false,
+ "sourcing-user": false,
+ "inventory-user": false,
+ "employee-number": null,
+ "firstname": "test1",
+ "lastname": "user1",
+ "fullname": "test1 user1",
+ "api-user": false,
+ "active": true,
+ "salesforce-id": null,
+ "account-security-type": 0,
+ "authentication-method": "coupa_credentials",
+ "sso-identifier": null,
+ "default-locale": null,
+ "business-group-security-type": null,
+ "edit-invoice-on-quick-entry": false,
+ "avatar-thumb-url": null,
+ "mention-name": "test1user1",
+ "gpo-entity": null,
+ "radio-button-test": null,
+ "subsidary": null,
+ "function": null,
+ "seg3default": null,
+ "roles": [
+	 {
+		 "id": 3,
+		 "created-at": "2011-08-05T09:46:31-07:00",
+		 "updated-at": "2011-08-05T09:46:31-07:00",
+		 "name": "User",
+		 "description": "Standard role for all users who need to create and/or approve requisitions",
+		 "omnipotent": false,
+		 "system-role": true,
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T06:01:34-08:00",
+			 "updated-at": "2016-11-14T11:52:00-08:00"
+		 }
+	 }
+ ],
+ "expenses-delegated-to": [],
+ "can-expense-for": [],
+ "content-groups": [],
+ "account-groups": [],
+ "approval-groups": [],
+ "working-warehouses": [],
+ "inventory-organizations": [],
+ "created-by": {
+	 "id": 80,
+	 "login": "learnapi",
+	 "firstname": "API",
+	 "lastname": "API",
+	 "employee-number": null,
+	 "email": "learnapi@learnapi.com",
+	 "salesforce-id": null,
+	 "avatar-thumb-url": null,
+	 "created-at": "2013-05-15T15:05:17-07:00",
+	 "updated-at": "2016-03-30T02:35:20-07:00"
+ },
+ "updated-by": {
+	 "id": 80,
+	 "login": "learnapi",
+	 "firstname": "API",
+	 "lastname": "API",
+	 "employee-number": null,
+	 "email": "learnapi@learnapi.com",
+	 "salesforce-id": null,
+	 "avatar-thumb-url": null,
+	 "created-at": "2013-05-15T15:05:17-07:00",
+	 "updated-at": "2016-03-30T02:35:20-07:00"
+ }
+}</code>
+</pre>
+</div>
+<div class="" id="xml_request">
+<h2 class="title sectiontitle">XML request</h2>
+<pre>
+<code class="codeblock">&lt;user&gt;
+						&lt;login&gt;test2@coupa.com&lt;/login&gt;
+						&lt;email&gt;test2@coupa.com&lt;/email&gt;
+						&lt;purchasing-user&gt;true&lt;/purchasing-user&gt;
+						&lt;firstname&gt;test2&lt;/firstname&gt;
+						&lt;lastname&gt;user2&lt;/lastname&gt;
+&lt;/user&gt;</code>
+</pre>
+</div>
+<div class="" id="xml_response-d957e11470">
+<h2 class="title sectiontitle">XML response</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;user&gt;
+	 &lt;id type="integer"&gt;607&lt;/id&gt;
+	 &lt;created-at type="dateTime"&gt;2016-11-14T11:58:38-08:00&lt;/created-at&gt;
+	 &lt;updated-at type="dateTime"&gt;2016-11-14T11:58:38-08:00&lt;/updated-at&gt;
+	 &lt;login&gt;test2@coupa.com&lt;/login&gt;
+	 &lt;email&gt;test2@coupa.com&lt;/email&gt;
+	 &lt;purchasing-user type="boolean"&gt;true&lt;/purchasing-user&gt;
+	 &lt;expense-user type="boolean"&gt;false&lt;/expense-user&gt;
+	 &lt;sourcing-user type="boolean"&gt;false&lt;/sourcing-user&gt;
+	 &lt;inventory-user type="boolean"&gt;false&lt;/inventory-user&gt;
+	 &lt;employee-number nil="true"/&gt;
+	 &lt;firstname&gt;test2&lt;/firstname&gt;
+	 &lt;lastname&gt;user2&lt;/lastname&gt;
+	 &lt;fullname&gt;test2 user2&lt;/fullname&gt;
+	 &lt;api-user type="boolean"&gt;false&lt;/api-user&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;salesforce-id nil="true"/&gt;
+	 &lt;account-security-type type="integer"&gt;0&lt;/account-security-type&gt;
+	 &lt;authentication-method type="symbol"&gt;coupa_credentials&lt;/authentication-method&gt;
+	 &lt;sso-identifier nil="true"/&gt;
+	 &lt;default-locale nil="true"/&gt;
+	 &lt;business-group-security-type nil="true"/&gt;
+	 &lt;edit-invoice-on-quick-entry type="boolean"&gt;false&lt;/edit-invoice-on-quick-entry&gt;
+	 &lt;avatar-thumb-url nil="true"/&gt;
+	 &lt;mention-name&gt;test2user2&lt;/mention-name&gt;
+	 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+	 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+	 &lt;subsidary&gt;&lt;/subsidary&gt;
+	 &lt;function&gt;&lt;/function&gt;
+	 &lt;seg3default&gt;&lt;/seg3default&gt;
+	 &lt;username1&gt;&lt;/username1&gt;
+	 &lt;roles type="array"&gt;
+			 &lt;role&gt;
+					 &lt;id type="integer"&gt;3&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2011-08-05T09:46:31-07:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2011-08-05T09:46:31-07:00&lt;/updated-at&gt;
+					 &lt;name&gt;User&lt;/name&gt;
+					 &lt;description&gt;Standard role for all users who need to create and/or approve requisitions&lt;/description&gt;
+					 &lt;omnipotent type="boolean"&gt;false&lt;/omnipotent&gt;
+					 &lt;system-role type="boolean"&gt;true&lt;/system-role&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+							 &lt;employee-number&gt;&lt;/employee-number&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/role&gt;
+	 &lt;/roles&gt;
+	 &lt;expenses-delegated-to type="array"/&gt;
+	 &lt;can-expense-for type="array"/&gt;
+	 &lt;content-groups type="array"/&gt;
+	 &lt;account-groups type="array"/&gt;
+	 &lt;approval-groups type="array"/&gt;
+	 &lt;working-warehouses type="array"/&gt;
+	 &lt;inventory-organizations type="array"/&gt;
+	 &lt;created-by&gt;
+			 &lt;id type="integer"&gt;80&lt;/id&gt;
+			 &lt;login&gt;learnapi&lt;/login&gt;
+			 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+			 &lt;employee-number nil="true"/&gt;
+			 &lt;firstname&gt;API&lt;/firstname&gt;
+			 &lt;lastname&gt;API&lt;/lastname&gt;
+			 &lt;salesforce-id nil="true"/&gt;
+			 &lt;avatar-thumb-url nil="true"/&gt;
+			 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+			 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+			 &lt;subsidary&gt;&lt;/subsidary&gt;
+			 &lt;function&gt;&lt;/function&gt;
+			 &lt;seg3default&gt;&lt;/seg3default&gt;
+			 &lt;username1&gt;&lt;/username1&gt;
+	 &lt;/created-by&gt;
+	 &lt;updated-by&gt;
+			 &lt;id type="integer"&gt;80&lt;/id&gt;
+			 &lt;login&gt;learnapi&lt;/login&gt;
+			 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+			 &lt;employee-number nil="true"/&gt;
+			 &lt;firstname&gt;API&lt;/firstname&gt;
+			 &lt;lastname&gt;API&lt;/lastname&gt;
+			 &lt;salesforce-id nil="true"/&gt;
+			 &lt;avatar-thumb-url nil="true"/&gt;
+			 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+			 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+			 &lt;subsidary&gt;&lt;/subsidary&gt;
+			 &lt;function&gt;&lt;/function&gt;
+			 &lt;seg3default&gt;&lt;/seg3default&gt;
+			 &lt;username1&gt;&lt;/username1&gt;
+	 &lt;/updated-by&gt;
+&lt;/user&gt;</code>
+</pre>
+</div>
+<div class="" id="user_create_with_errors">
+<h2 class="title sectiontitle">User Create with Errors</h2>
+<p class="">url: /api/users</p>
+<p class="">method: POST</p>
+</div>
+<div class="" id="json_request-d957e11794">
+<h2 class="title sectiontitle">JSON request</h2>
+<pre>
+<code class="codeblock">{
+						"login": "test1@coupa.com",
+						"email": "test1@coupa.com",
+						"purchasing-user": true,
+						"firstname": "test1",
+						"lastname": "user1"
+}</code>
+</pre>
+</div>
+<div class="" id="json_response-d957e11818">
+<h2 class="title sectiontitle">JSON response</h2>
+<pre>
+<code class="codeblock">{
+ "errors": {
+	 "user": [
+		 "Login has already been taken",
+		 "Email has already been taken"
+	 ]
+ }
+}</code>
+</pre>
+</div>
+<div class="" id="xml_request-d957e11846">
+<h2 class="title sectiontitle">XML request</h2>
+<pre>
+<code class="codeblock">&lt;user&gt;
+						&lt;login&gt;test1@coupa.com&lt;/login&gt;
+						&lt;email&gt;test1@coupa.com&lt;/email&gt;
+						&lt;purchasing-user&gt;true&lt;/purchasing-user&gt;
+						&lt;firstname&gt;test1&lt;/firstname&gt;
+						&lt;lastname&gt;user1&lt;/lastname&gt;
+&lt;/user&gt;</code>
+</pre>
+</div>
+<div class="" id="xml_response-d957e11870">
+<h2 class="title sectiontitle">XML response</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;errors&gt;
+	 &lt;error&gt;
+			 &lt;![CDATA[Login has already been taken]]&gt;
+	 &lt;/error&gt;
+	 &lt;error&gt;
+			 &lt;![CDATA[Email has already been taken]]&gt;
+	 &lt;/error&gt;
+&lt;/errors&gt;</code>
+</pre>
+</div>
+<div class="" id="user_update">
+<h2 class="title sectiontitle">User Update</h2>
+<p class="">url: /api/users/5</p>
+<p class="">method: PUT</p>
+</div>
+<div class="" id="json_request-d957e11909">
+<h2 class="title sectiontitle">JSON request</h2>
+<pre>
+<code class="codeblock">{
+						"firstname": "test2",
+						"lastname": "user2"
+}</code>
+</pre>
+</div>
+<div class="" id="json_response-d957e11924">
+<h2 class="title sectiontitle">JSON response</h2>
+<pre>
+<code class="codeblock">{
+ "id": 5,
+ "created-at": "2008-10-27T13:54:10-07:00",
+ "updated-at": "2016-11-15T06:45:11-08:00",
+ "login": "tkennedy",
+ "email": "upgrade+tk@coupa.com",
+ "purchasing-user": true,
+ "expense-user": false,
+ "sourcing-user": false,
+ "inventory-user": false,
+ "employee-number": "",
+ "firstname": "test2",
+ "lastname": "user2",
+ "fullname": "test2 user2",
+ "api-user": false,
+ "active": true,
+ "salesforce-id": null,
+ "account-security-type": 0,
+ "authentication-method": "coupa_credentials",
+ "sso-identifier": "",
+ "default-locale": null,
+ "business-group-security-type": 1,
+ "edit-invoice-on-quick-entry": false,
+ "avatar-thumb-url": null,
+ "mention-name": "tommy(saleslead)kennedy",
+ "gpo-entity": "",
+ "radio-button-test": null,
+ "subsidary": null,
+ "function": null,
+ "seg3default": null,
+ "phone-work": {
+	 "id": 5,
+	 "created-at": "2008-10-27T13:54:10-07:00",
+	 "updated-at": "2012-12-13T14:27:57-08:00",
+	 "country-code": "1",
+	 "area-code": "650",
+	 "number": "5856306",
+	 "extension": null,
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T06:01:34-08:00",
+		 "updated-at": "2016-11-14T11:52:00-08:00"
+	 },
+	 "updated-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T06:01:34-08:00",
+		 "updated-at": "2016-11-14T11:52:00-08:00"
+	 }
+ },
+ "phone-mobile": {
+	 "id": 30,
+	 "created-at": "2008-10-28T10:59:47-07:00",
+	 "updated-at": "2012-12-13T14:27:57-08:00",
+	 "country-code": "1",
+	 "area-code": "650",
+	 "number": "5856306",
+	 "extension": null,
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T06:01:34-08:00",
+		 "updated-at": "2016-11-14T11:52:00-08:00"
+	 },
+	 "updated-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T06:01:34-08:00",
+		 "updated-at": "2016-11-14T11:52:00-08:00"
+	 }
+ },
+ "roles": [
+	 {
+		 "id": 3,
+		 "created-at": "2011-08-05T09:46:31-07:00",
+		 "updated-at": "2011-08-05T09:46:31-07:00",
+		 "name": "User",
+		 "description": "Standard role for all users who need to create and/or approve requisitions",
+		 "omnipotent": false,
+		 "system-role": true,
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T06:01:34-08:00",
+			 "updated-at": "2016-11-14T11:52:00-08:00"
+		 }
+	 },
+	 {
+		 "id": 8,
+		 "created-at": "2011-08-05T09:46:31-07:00",
+		 "updated-at": "2012-07-31T09:40:04-07:00",
+		 "name": "Edit Requisition as Approver",
+		 "description": "Adds ability to edit a requisition when you are approving it",
+		 "omnipotent": false,
+		 "system-role": true,
+		 "updated-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T06:01:34-08:00",
+			 "updated-at": "2016-11-14T11:52:00-08:00"
+		 }
+	 }
+ ],
+ "manager": {
+	 "id": 4,
+	 "login": "sjones",
+	 "firstname": "Sally (Sales VP)",
+	 "lastname": "Jones",
+	 "employee-number": "",
+	 "email": "upgradet+sj@coupa.com",
+	 "salesforce-id": null,
+	 "avatar-thumb-url": null,
+	 "created-at": "2008-10-27T13:54:10-07:00",
+	 "updated-at": "2016-10-21T11:47:04-07:00"
+ },
+ "default-address": {
+	 "id": 16,
+	 "created-at": "2008-10-27T13:00:19-07:00",
+	 "updated-at": "2009-07-11T13:33:25-07:00",
+	 "name": "HQ",
+	 "location-code": null,
+	 "street1": "28 Nevada Blvd",
+	 "street2": "",
+	 "city": "Laughlin",
+	 "state": "NV",
+	 "postal-code": "89028",
+	 "attention": "",
+	 "active": true,
+	 "business-group-name": "Everyone",
+	 "vat-number": null,
+	 "local-tax-number": null,
+	 "country": {
+		 "id": 223,
+		 "code": "US",
+		 "name": "United States"
+	 },
+	 "vat-country": null,
+	 "content-groups": [
+		 {
+			 "id": 1,
+			 "created-at": "2006-08-27T19:40:04-07:00",
+			 "updated-at": "2015-08-17T01:07:10-07:00",
+			 "name": "Everyone",
+			 "description": "All users can see documents assigned to this group",
+			 "updated-by": {
+				 "id": 80,
+				 "login": "learnapi",
+				 "firstname": "API",
+				 "lastname": "API",
+				 "employee-number": null,
+				 "email": "learnapi@learnapi.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2013-05-15T15:05:17-07:00",
+				 "updated-at": "2016-03-30T02:35:20-07:00"
+			 }
+		 }
+	 ],
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T06:01:34-08:00",
+		 "updated-at": "2016-11-14T11:52:00-08:00"
+	 },
+	 "updated-by": {
+		 "id": 16,
+		 "login": "krhine",
+		 "firstname": "Kevin",
+		 "lastname": "Rhine",
+		 "employee-number": "",
+		 "email": "kevin.rhine@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2009-02-23T17:28:34-08:00",
+		 "updated-at": "2016-10-23T22:53:46-07:00"
+	 }
+ },
+ "default-account": {
+	 "id": null,
+	 "created-at": null,
+	 "updated-at": null,
+	 "name": null,
+	 "code": "SF-Sales-Indirect",
+	 "active": true,
+	 "segment-1": "SF",
+	 "segment-2": "Sales",
+	 "segment-3": "Indirect",
+	 "segment-4": null,
+	 "segment-5": null,
+	 "segment-6": null,
+	 "segment-7": null,
+	 "segment-8": null,
+	 "segment-9": null,
+	 "segment-10": null,
+	 "segment-11": null,
+	 "segment-12": null,
+	 "segment-13": null,
+	 "segment-14": null,
+	 "segment-15": null,
+	 "segment-16": null,
+	 "segment-17": null,
+	 "segment-18": null,
+	 "segment-19": null,
+	 "segment-20": null,
+	 "account-type": {
+		 "id": 1,
+		 "created-at": "2008-10-27T13:10:01-07:00",
+		 "updated-at": "2016-10-27T02:38:59-07:00",
+		 "name": "Ace Corporate",
+		 "active": true,
+		 "currency": {
+			 "id": 1,
+			 "code": "USD",
+			 "decimals": 2,
+			 "updated-by": {
+				 "id": 80,
+				 "login": "learnapi",
+				 "firstname": "API",
+				 "lastname": "API",
+				 "employee-number": null,
+				 "email": "learnapi@learnapi.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2013-05-15T15:05:17-07:00",
+				 "updated-at": "2016-03-30T02:35:20-07:00"
+			 }
+		 },
+		 "primary-contact": {
+			 "id": 14,
+			 "created-at": "2008-10-27T13:10:01-07:00",
+			 "updated-at": "2016-10-12T14:35:18-07:00",
+			 "email": "upgrade@coupa.com",
+			 "name-prefix": null,
+			 "name-suffix": null,
+			 "name-additional": null,
+			 "name-given": "xxx",
+			 "name-family": "yyy",
+			 "name-fullname": null,
+			 "notes": null,
+			 "phone-work": null,
+			 "phone-mobile": null,
+			 "phone-fax": null,
+			 "created-by": {
+				 "id": 1,
+				 "login": "coupasupport",
+				 "firstname": "Coupa",
+				 "lastname": "Support",
+				 "employee-number": "",
+				 "email": "upgrade+coupasupport@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2006-02-16T06:01:34-08:00",
+				 "updated-at": "2016-11-14T11:52:00-08:00"
+			 },
+			 "updated-by": {
+				 "id": 122,
+				 "login": "matthew.otzwirk@coupa.com",
+				 "firstname": "Matthew",
+				 "lastname": "Otzwirk",
+				 "employee-number": null,
+				 "email": "matthew.otzwirk@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2016-04-27T10:54:43-07:00",
+				 "updated-at": "2016-10-27T09:30:21-07:00"
+			 }
+		 },
+		 "primary-address": {
+			 "id": 184,
+			 "created-at": "2008-10-27T13:10:01-07:00",
+			 "updated-at": "2016-03-17T01:35:36-07:00",
+			 "name": "xxx yyy",
+			 "location-code": null,
+			 "street1": "2 W 5th Ave",
+			 "street2": "Suite 300",
+			 "city": "San Mateo",
+			 "state": "CA",
+			 "postal-code": "94404",
+			 "attention": null,
+			 "active": true,
+			 "business-group-name": null,
+			 "vat-number": "465456645",
+			 "local-tax-number": "",
+			 "country": {
+				 "id": 22,
+				 "code": "BE",
+				 "name": "Belgium"
+			 },
+			 "vat-country": {
+				 "id": 223,
+				 "code": "US",
+				 "name": "United States"
+			 },
+			 "content-groups": [],
+			 "created-by": {
+				 "id": 122,
+				 "login": "matthew.otzwirk@coupa.com",
+				 "firstname": "Matthew",
+				 "lastname": "Otzwirk",
+				 "employee-number": null,
+				 "email": "matthew.otzwirk@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2016-04-27T10:54:43-07:00",
+				 "updated-at": "2016-10-27T09:30:21-07:00"
+			 },
+			 "updated-by": {
+				 "id": 122,
+				 "login": "matthew.otzwirk@coupa.com",
+				 "firstname": "Matthew",
+				 "lastname": "Otzwirk",
+				 "employee-number": null,
+				 "email": "matthew.otzwirk@coupa.com",
+				 "salesforce-id": null,
+				 "avatar-thumb-url": null,
+				 "created-at": "2016-04-27T10:54:43-07:00",
+				 "updated-at": "2016-10-27T09:30:21-07:00"
+			 }
+		 },
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T06:01:34-08:00",
+			 "updated-at": "2016-11-14T11:52:00-08:00"
+		 },
+		 "updated-by": {
+			 "id": 147,
+			 "login": "sourabh.pataskar@coupa.com",
+			 "firstname": "Sourabh",
+			 "lastname": "Pataskar",
+			 "employee-number": null,
+			 "email": "sourabh.pataskar@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2016-10-10T03:15:04-07:00",
+			 "updated-at": "2016-10-27T02:36:52-07:00"
+		 }
+	 }
+ },
+ "default-account-type": {
+	 "id": 1,
+	 "created-at": "2008-10-27T13:10:01-07:00",
+	 "updated-at": "2016-10-27T02:38:59-07:00",
+	 "name": "Ace Corporate",
+	 "active": true,
+	 "currency": {
+		 "id": 1,
+		 "code": "USD",
+		 "decimals": 2,
+		 "updated-by": {
+			 "id": 80,
+			 "login": "learnapi",
+			 "firstname": "API",
+			 "lastname": "API",
+			 "employee-number": null,
+			 "email": "learnapi@learnapi.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2013-05-15T15:05:17-07:00",
+			 "updated-at": "2016-03-30T02:35:20-07:00"
+		 }
+	 },
+	 "primary-contact": {
+		 "id": 14,
+		 "created-at": "2008-10-27T13:10:01-07:00",
+		 "updated-at": "2016-10-12T14:35:18-07:00",
+		 "email": "upgrade@coupa.com",
+		 "name-prefix": null,
+		 "name-suffix": null,
+		 "name-additional": null,
+		 "name-given": "xxx",
+		 "name-family": "yyy",
+		 "name-fullname": null,
+		 "notes": null,
+		 "phone-work": null,
+		 "phone-mobile": null,
+		 "phone-fax": null,
+		 "created-by": {
+			 "id": 1,
+			 "login": "coupasupport",
+			 "firstname": "Coupa",
+			 "lastname": "Support",
+			 "employee-number": "",
+			 "email": "upgrade+coupasupport@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2006-02-16T06:01:34-08:00",
+			 "updated-at": "2016-11-14T11:52:00-08:00"
+		 },
+		 "updated-by": {
+			 "id": 122,
+			 "login": "matthew.otzwirk@coupa.com",
+			 "firstname": "Matthew",
+			 "lastname": "Otzwirk",
+			 "employee-number": null,
+			 "email": "matthew.otzwirk@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2016-04-27T10:54:43-07:00",
+			 "updated-at": "2016-10-27T09:30:21-07:00"
+		 }
+	 },
+	 "primary-address": {
+		 "id": 184,
+		 "created-at": "2008-10-27T13:10:01-07:00",
+		 "updated-at": "2016-03-17T01:35:36-07:00",
+		 "name": "xxx yyy",
+		 "location-code": null,
+		 "street1": "2 W 5th Ave",
+		 "street2": "Suite 300",
+		 "city": "San Mateo",
+		 "state": "CA",
+		 "postal-code": "94404",
+		 "attention": null,
+		 "active": true,
+		 "business-group-name": null,
+		 "vat-number": "465456645",
+		 "local-tax-number": "",
+		 "country": {
+			 "id": 22,
+			 "code": "BE",
+			 "name": "Belgium"
+		 },
+		 "vat-country": {
+			 "id": 223,
+			 "code": "US",
+			 "name": "United States"
+		 },
+		 "content-groups": [],
+		 "created-by": {
+			 "id": 122,
+			 "login": "matthew.otzwirk@coupa.com",
+			 "firstname": "Matthew",
+			 "lastname": "Otzwirk",
+			 "employee-number": null,
+			 "email": "matthew.otzwirk@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2016-04-27T10:54:43-07:00",
+			 "updated-at": "2016-10-27T09:30:21-07:00"
+		 },
+		 "updated-by": {
+			 "id": 122,
+			 "login": "matthew.otzwirk@coupa.com",
+			 "firstname": "Matthew",
+			 "lastname": "Otzwirk",
+			 "employee-number": null,
+			 "email": "matthew.otzwirk@coupa.com",
+			 "salesforce-id": null,
+			 "avatar-thumb-url": null,
+			 "created-at": "2016-04-27T10:54:43-07:00",
+			 "updated-at": "2016-10-27T09:30:21-07:00"
+		 }
+	 },
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T06:01:34-08:00",
+		 "updated-at": "2016-11-14T11:52:00-08:00"
+	 },
+	 "updated-by": {
+		 "id": 147,
+		 "login": "sourabh.pataskar@coupa.com",
+		 "firstname": "Sourabh",
+		 "lastname": "Pataskar",
+		 "employee-number": null,
+		 "email": "sourabh.pataskar@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2016-10-10T03:15:04-07:00",
+		 "updated-at": "2016-10-27T02:36:52-07:00"
+	 }
+ },
+ "default-currency": {
+	 "id": 1,
+	 "code": "USD",
+	 "decimals": 2,
+	 "updated-by": {
+		 "id": 80,
+		 "login": "learnapi",
+		 "firstname": "API",
+		 "lastname": "API",
+		 "employee-number": null,
+		 "email": "learnapi@learnapi.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2013-05-15T15:05:17-07:00",
+		 "updated-at": "2016-03-30T02:35:20-07:00"
+	 }
+ },
+ "department": {
+	 "id": 2,
+	 "created-at": "2008-10-27T13:00:53-07:00",
+	 "updated-at": "2010-03-23T21:03:22-07:00",
+	 "name": "Sales",
+	 "active": true,
+	 "created-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T06:01:34-08:00",
+		 "updated-at": "2016-11-14T11:52:00-08:00"
+	 },
+	 "updated-by": {
+		 "id": 1,
+		 "login": "coupasupport",
+		 "firstname": "Coupa",
+		 "lastname": "Support",
+		 "employee-number": "",
+		 "email": "upgrade+coupasupport@coupa.com",
+		 "salesforce-id": null,
+		 "avatar-thumb-url": null,
+		 "created-at": "2006-02-16T06:01:34-08:00",
+		 "updated-at": "2016-11-14T11:52:00-08:00"
+	 }
+ },
+ "expenses-delegated-to": [],
+ "can-expense-for": [],
+ "content-groups": [],
+ "account-groups": [],
+ "approval-groups": [],
+ "working-warehouses": [],
+ "inventory-organizations": [],
+ "updated-by": {
+	 "id": 80,
+	 "login": "learnapi",
+	 "firstname": "API",
+	 "lastname": "API",
+	 "employee-number": null,
+	 "email": "learnapi@learnapi.com",
+	 "salesforce-id": null,
+	 "avatar-thumb-url": null,
+	 "created-at": "2013-05-15T15:05:17-07:00",
+	 "updated-at": "2016-03-30T02:35:20-07:00"
+ }
+}</code>
+</pre>
+</div>
+<div class="" id="xml_request-d957e13814">
+<h2 class="title sectiontitle">XML request</h2>
+<pre>
+<code class="codeblock">&lt;user&gt;
+						&lt;firstname&gt;test2&lt;/firstname&gt;
+						&lt;lastname&gt;user2&lt;/lastname&gt;
+&lt;/user&gt;</code>
+</pre>
+</div>
+<div class="" id="xml_response-d957e13829">
+<h2 class="title sectiontitle">XML response</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;user&gt;
+	 &lt;id type="integer"&gt;5&lt;/id&gt;
+	 &lt;created-at type="dateTime"&gt;2008-10-27T13:54:10-07:00&lt;/created-at&gt;
+	 &lt;updated-at type="dateTime"&gt;2016-11-15T06:45:11-08:00&lt;/updated-at&gt;
+	 &lt;login&gt;tkennedy&lt;/login&gt;
+	 &lt;email&gt;upgrade+tk@coupa.com&lt;/email&gt;
+	 &lt;purchasing-user type="boolean"&gt;true&lt;/purchasing-user&gt;
+	 &lt;expense-user type="boolean"&gt;false&lt;/expense-user&gt;
+	 &lt;sourcing-user type="boolean"&gt;false&lt;/sourcing-user&gt;
+	 &lt;inventory-user type="boolean"&gt;false&lt;/inventory-user&gt;
+	 &lt;employee-number&gt;&lt;/employee-number&gt;
+	 &lt;firstname&gt;test2&lt;/firstname&gt;
+	 &lt;lastname&gt;user2&lt;/lastname&gt;
+	 &lt;fullname&gt;test2 user2&lt;/fullname&gt;
+	 &lt;api-user type="boolean"&gt;false&lt;/api-user&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;salesforce-id nil="true"/&gt;
+	 &lt;account-security-type type="integer"&gt;0&lt;/account-security-type&gt;
+	 &lt;authentication-method type="symbol"&gt;coupa_credentials&lt;/authentication-method&gt;
+	 &lt;sso-identifier&gt;&lt;/sso-identifier&gt;
+	 &lt;default-locale nil="true"/&gt;
+	 &lt;business-group-security-type type="integer"&gt;1&lt;/business-group-security-type&gt;
+	 &lt;edit-invoice-on-quick-entry type="boolean"&gt;false&lt;/edit-invoice-on-quick-entry&gt;
+	 &lt;avatar-thumb-url nil="true"/&gt;
+	 &lt;mention-name&gt;tommy(saleslead)kennedy&lt;/mention-name&gt;
+	 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+	 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+	 &lt;subsidary&gt;&lt;/subsidary&gt;
+	 &lt;function&gt;&lt;/function&gt;
+	 &lt;seg3default&gt;&lt;/seg3default&gt;
+	 &lt;username1&gt;&lt;/username1&gt;
+	 &lt;phone-work&gt;
+			 &lt;id type="integer"&gt;5&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-27T13:54:10-07:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2012-12-13T14:27:57-08:00&lt;/updated-at&gt;
+			 &lt;country-code&gt;1&lt;/country-code&gt;
+			 &lt;area-code&gt;650&lt;/area-code&gt;
+			 &lt;number&gt;5856306&lt;/number&gt;
+			 &lt;extension nil="true"/&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/phone-work&gt;
+	 &lt;phone-mobile&gt;
+			 &lt;id type="integer"&gt;30&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-28T10:59:47-07:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2012-12-13T14:27:57-08:00&lt;/updated-at&gt;
+			 &lt;country-code&gt;1&lt;/country-code&gt;
+			 &lt;area-code&gt;650&lt;/area-code&gt;
+			 &lt;number&gt;5856306&lt;/number&gt;
+			 &lt;extension nil="true"/&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/phone-mobile&gt;
+	 &lt;roles type="array"&gt;
+			 &lt;role&gt;
+					 &lt;id type="integer"&gt;3&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2011-08-05T09:46:31-07:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2011-08-05T09:46:31-07:00&lt;/updated-at&gt;
+					 &lt;name&gt;User&lt;/name&gt;
+					 &lt;description&gt;Standard role for all users who need to create and/or approve requisitions&lt;/description&gt;
+					 &lt;omnipotent type="boolean"&gt;false&lt;/omnipotent&gt;
+					 &lt;system-role type="boolean"&gt;true&lt;/system-role&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+							 &lt;employee-number&gt;&lt;/employee-number&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/role&gt;
+			 &lt;role&gt;
+					 &lt;id type="integer"&gt;8&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2011-08-05T09:46:31-07:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2012-07-31T09:40:04-07:00&lt;/updated-at&gt;
+					 &lt;name&gt;Edit Requisition as Approver&lt;/name&gt;
+					 &lt;description&gt;Adds ability to edit a requisition when you are approving it&lt;/description&gt;
+					 &lt;omnipotent type="boolean"&gt;false&lt;/omnipotent&gt;
+					 &lt;system-role type="boolean"&gt;true&lt;/system-role&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+							 &lt;employee-number&gt;&lt;/employee-number&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/role&gt;
+	 &lt;/roles&gt;
+	 &lt;manager&gt;
+			 &lt;id type="integer"&gt;4&lt;/id&gt;
+			 &lt;login&gt;sjones&lt;/login&gt;
+			 &lt;email&gt;upgradet+sj@coupa.com&lt;/email&gt;
+			 &lt;employee-number&gt;&lt;/employee-number&gt;
+			 &lt;firstname&gt;Sally (Sales VP)&lt;/firstname&gt;
+			 &lt;lastname&gt;Jones&lt;/lastname&gt;
+			 &lt;salesforce-id nil="true"/&gt;
+			 &lt;avatar-thumb-url nil="true"/&gt;
+			 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+			 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+			 &lt;subsidary&gt;&lt;/subsidary&gt;
+			 &lt;function&gt;&lt;/function&gt;
+			 &lt;seg3default&gt;&lt;/seg3default&gt;
+			 &lt;username1&gt;&lt;/username1&gt;
+	 &lt;/manager&gt;
+	 &lt;default-address&gt;
+			 &lt;id type="integer"&gt;16&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-27T13:00:19-07:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2009-07-11T13:33:25-07:00&lt;/updated-at&gt;
+			 &lt;name&gt;HQ&lt;/name&gt;
+			 &lt;location-code nil="true"/&gt;
+			 &lt;street1&gt;28 Nevada Blvd&lt;/street1&gt;
+			 &lt;street2&gt;&lt;/street2&gt;
+			 &lt;city&gt;Laughlin&lt;/city&gt;
+			 &lt;state&gt;NV&lt;/state&gt;
+			 &lt;postal-code&gt;89028&lt;/postal-code&gt;
+			 &lt;attention&gt;&lt;/attention&gt;
+			 &lt;active type="boolean"&gt;true&lt;/active&gt;
+			 &lt;business-group-name&gt;Everyone&lt;/business-group-name&gt;
+			 &lt;vat-number nil="true"/&gt;
+			 &lt;local-tax-number nil="true"/&gt;
+			 &lt;country&gt;
+					 &lt;id type="integer"&gt;223&lt;/id&gt;
+					 &lt;code&gt;US&lt;/code&gt;
+					 &lt;name&gt;United States&lt;/name&gt;
+			 &lt;/country&gt;
+			 &lt;content-groups type="array"&gt;
+					 &lt;content-group&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;created-at type="dateTime"&gt;2006-08-27T19:40:04-07:00&lt;/created-at&gt;
+							 &lt;updated-at type="dateTime"&gt;2015-08-17T01:07:10-07:00&lt;/updated-at&gt;
+							 &lt;name&gt;Everyone&lt;/name&gt;
+							 &lt;description&gt;All users can see documents assigned to this group&lt;/description&gt;
+							 &lt;updated-by&gt;
+									 &lt;id type="integer"&gt;80&lt;/id&gt;
+									 &lt;login&gt;learnapi&lt;/login&gt;
+									 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;API&lt;/firstname&gt;
+									 &lt;lastname&gt;API&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/updated-by&gt;
+					 &lt;/content-group&gt;
+			 &lt;/content-groups&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;16&lt;/id&gt;
+					 &lt;login&gt;krhine&lt;/login&gt;
+					 &lt;email&gt;kevin.rhine@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Kevin&lt;/firstname&gt;
+					 &lt;lastname&gt;Rhine&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/default-address&gt;
+	 &lt;default-account&gt;
+			 &lt;id nil="true"/&gt;
+			 &lt;created-at nil="true"/&gt;
+			 &lt;updated-at nil="true"/&gt;
+			 &lt;name nil="true"/&gt;
+			 &lt;code&gt;SF-Sales-Indirect&lt;/code&gt;
+			 &lt;active type="boolean"&gt;true&lt;/active&gt;
+			 &lt;segment-1&gt;SF&lt;/segment-1&gt;
+			 &lt;segment-2&gt;Sales&lt;/segment-2&gt;
+			 &lt;segment-3&gt;Indirect&lt;/segment-3&gt;
+			 &lt;segment-4 nil="true"/&gt;
+			 &lt;segment-5 nil="true"/&gt;
+			 &lt;segment-6 nil="true"/&gt;
+			 &lt;segment-7 nil="true"/&gt;
+			 &lt;segment-8 nil="true"/&gt;
+			 &lt;segment-9 nil="true"/&gt;
+			 &lt;segment-10 nil="true"/&gt;
+			 &lt;segment-11 nil="true"/&gt;
+			 &lt;segment-12 nil="true"/&gt;
+			 &lt;segment-13 nil="true"/&gt;
+			 &lt;segment-14 nil="true"/&gt;
+			 &lt;segment-15 nil="true"/&gt;
+			 &lt;segment-16 nil="true"/&gt;
+			 &lt;segment-17 nil="true"/&gt;
+			 &lt;segment-18 nil="true"/&gt;
+			 &lt;segment-19 nil="true"/&gt;
+			 &lt;segment-20 nil="true"/&gt;
+			 &lt;account-type&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2008-10-27T13:10:01-07:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2016-10-27T02:38:59-07:00&lt;/updated-at&gt;
+					 &lt;name&gt;Ace Corporate&lt;/name&gt;
+					 &lt;active type="boolean"&gt;true&lt;/active&gt;
+					 &lt;currency&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;code&gt;USD&lt;/code&gt;
+							 &lt;decimals type="integer"&gt;2&lt;/decimals&gt;
+							 &lt;updated-by&gt;
+									 &lt;id type="integer"&gt;80&lt;/id&gt;
+									 &lt;login&gt;learnapi&lt;/login&gt;
+									 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;API&lt;/firstname&gt;
+									 &lt;lastname&gt;API&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/updated-by&gt;
+					 &lt;/currency&gt;
+					 &lt;primary-contact&gt;
+							 &lt;id type="integer"&gt;14&lt;/id&gt;
+							 &lt;created-at type="dateTime"&gt;2008-10-27T13:10:01-07:00&lt;/created-at&gt;
+							 &lt;updated-at type="dateTime"&gt;2016-10-12T14:35:18-07:00&lt;/updated-at&gt;
+							 &lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+							 &lt;name-prefix nil="true"/&gt;
+							 &lt;name-suffix nil="true"/&gt;
+							 &lt;name-additional nil="true"/&gt;
+							 &lt;name-given&gt;xxx&lt;/name-given&gt;
+							 &lt;name-family&gt;yyy&lt;/name-family&gt;
+							 &lt;name-fullname nil="true"/&gt;
+							 &lt;notes nil="true"/&gt;
+							 &lt;created-by&gt;
+									 &lt;id type="integer"&gt;1&lt;/id&gt;
+									 &lt;login&gt;coupasupport&lt;/login&gt;
+									 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+									 &lt;employee-number&gt;&lt;/employee-number&gt;
+									 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+									 &lt;lastname&gt;Support&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/created-by&gt;
+							 &lt;updated-by&gt;
+									 &lt;id type="integer"&gt;122&lt;/id&gt;
+									 &lt;login&gt;matthew.otzwirk@coupa.com&lt;/login&gt;
+									 &lt;email&gt;matthew.otzwirk@coupa.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;Matthew&lt;/firstname&gt;
+									 &lt;lastname&gt;Otzwirk&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/updated-by&gt;
+					 &lt;/primary-contact&gt;
+					 &lt;primary-address&gt;
+							 &lt;id type="integer"&gt;184&lt;/id&gt;
+							 &lt;created-at type="dateTime"&gt;2008-10-27T13:10:01-07:00&lt;/created-at&gt;
+							 &lt;updated-at type="dateTime"&gt;2016-03-17T01:35:36-07:00&lt;/updated-at&gt;
+							 &lt;name&gt;xxx yyy&lt;/name&gt;
+							 &lt;location-code nil="true"/&gt;
+							 &lt;street1&gt;2 W 5th Ave&lt;/street1&gt;
+							 &lt;street2&gt;Suite 300&lt;/street2&gt;
+							 &lt;city&gt;San Mateo&lt;/city&gt;
+							 &lt;state&gt;CA&lt;/state&gt;
+							 &lt;postal-code&gt;94404&lt;/postal-code&gt;
+							 &lt;attention nil="true"/&gt;
+							 &lt;active type="boolean"&gt;true&lt;/active&gt;
+							 &lt;business-group-name nil="true"/&gt;
+							 &lt;vat-number&gt;465456645&lt;/vat-number&gt;
+							 &lt;local-tax-number&gt;&lt;/local-tax-number&gt;
+							 &lt;country&gt;
+									 &lt;id type="integer"&gt;22&lt;/id&gt;
+									 &lt;code&gt;BE&lt;/code&gt;
+									 &lt;name&gt;Belgium&lt;/name&gt;
+							 &lt;/country&gt;
+							 &lt;vat-country&gt;
+									 &lt;id type="integer"&gt;223&lt;/id&gt;
+									 &lt;code&gt;US&lt;/code&gt;
+									 &lt;name&gt;United States&lt;/name&gt;
+							 &lt;/vat-country&gt;
+							 &lt;content-groups type="array"/&gt;
+							 &lt;created-by&gt;
+									 &lt;id type="integer"&gt;122&lt;/id&gt;
+									 &lt;login&gt;matthew.otzwirk@coupa.com&lt;/login&gt;
+									 &lt;email&gt;matthew.otzwirk@coupa.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;Matthew&lt;/firstname&gt;
+									 &lt;lastname&gt;Otzwirk&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/created-by&gt;
+							 &lt;updated-by&gt;
+									 &lt;id type="integer"&gt;122&lt;/id&gt;
+									 &lt;login&gt;matthew.otzwirk@coupa.com&lt;/login&gt;
+									 &lt;email&gt;matthew.otzwirk@coupa.com&lt;/email&gt;
+									 &lt;employee-number nil="true"/&gt;
+									 &lt;firstname&gt;Matthew&lt;/firstname&gt;
+									 &lt;lastname&gt;Otzwirk&lt;/lastname&gt;
+									 &lt;salesforce-id nil="true"/&gt;
+									 &lt;avatar-thumb-url nil="true"/&gt;
+									 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+									 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+									 &lt;subsidary&gt;&lt;/subsidary&gt;
+									 &lt;function&gt;&lt;/function&gt;
+									 &lt;seg3default&gt;&lt;/seg3default&gt;
+									 &lt;username1&gt;&lt;/username1&gt;
+							 &lt;/updated-by&gt;
+					 &lt;/primary-address&gt;
+					 &lt;created-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+							 &lt;employee-number&gt;&lt;/employee-number&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/created-by&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;147&lt;/id&gt;
+							 &lt;login&gt;sourabh.pataskar@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sourabh.pataskar@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;Sourabh&lt;/firstname&gt;
+							 &lt;lastname&gt;Pataskar&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/account-type&gt;
+	 &lt;/default-account&gt;
+	 &lt;default-account-type&gt;
+			 &lt;id type="integer"&gt;1&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-27T13:10:01-07:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2016-10-27T02:38:59-07:00&lt;/updated-at&gt;
+			 &lt;name&gt;Ace Corporate&lt;/name&gt;
+			 &lt;active type="boolean"&gt;true&lt;/active&gt;
+			 &lt;currency&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;code&gt;USD&lt;/code&gt;
+					 &lt;decimals type="integer"&gt;2&lt;/decimals&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;80&lt;/id&gt;
+							 &lt;login&gt;learnapi&lt;/login&gt;
+							 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;API&lt;/firstname&gt;
+							 &lt;lastname&gt;API&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/currency&gt;
+			 &lt;primary-contact&gt;
+					 &lt;id type="integer"&gt;14&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2008-10-27T13:10:01-07:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2016-10-12T14:35:18-07:00&lt;/updated-at&gt;
+					 &lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+					 &lt;name-prefix nil="true"/&gt;
+					 &lt;name-suffix nil="true"/&gt;
+					 &lt;name-additional nil="true"/&gt;
+					 &lt;name-given&gt;xxx&lt;/name-given&gt;
+					 &lt;name-family&gt;yyy&lt;/name-family&gt;
+					 &lt;name-fullname nil="true"/&gt;
+					 &lt;notes nil="true"/&gt;
+					 &lt;created-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+							 &lt;employee-number&gt;&lt;/employee-number&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/created-by&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;122&lt;/id&gt;
+							 &lt;login&gt;matthew.otzwirk@coupa.com&lt;/login&gt;
+							 &lt;email&gt;matthew.otzwirk@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;Matthew&lt;/firstname&gt;
+							 &lt;lastname&gt;Otzwirk&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/primary-contact&gt;
+			 &lt;primary-address&gt;
+					 &lt;id type="integer"&gt;184&lt;/id&gt;
+					 &lt;created-at type="dateTime"&gt;2008-10-27T13:10:01-07:00&lt;/created-at&gt;
+					 &lt;updated-at type="dateTime"&gt;2016-03-17T01:35:36-07:00&lt;/updated-at&gt;
+					 &lt;name&gt;xxx yyy&lt;/name&gt;
+					 &lt;location-code nil="true"/&gt;
+					 &lt;street1&gt;2 W 5th Ave&lt;/street1&gt;
+					 &lt;street2&gt;Suite 300&lt;/street2&gt;
+					 &lt;city&gt;San Mateo&lt;/city&gt;
+					 &lt;state&gt;CA&lt;/state&gt;
+					 &lt;postal-code&gt;94404&lt;/postal-code&gt;
+					 &lt;attention nil="true"/&gt;
+					 &lt;active type="boolean"&gt;true&lt;/active&gt;
+					 &lt;business-group-name nil="true"/&gt;
+					 &lt;vat-number&gt;465456645&lt;/vat-number&gt;
+					 &lt;local-tax-number&gt;&lt;/local-tax-number&gt;
+					 &lt;country&gt;
+							 &lt;id type="integer"&gt;22&lt;/id&gt;
+							 &lt;code&gt;BE&lt;/code&gt;
+							 &lt;name&gt;Belgium&lt;/name&gt;
+					 &lt;/country&gt;
+					 &lt;vat-country&gt;
+							 &lt;id type="integer"&gt;223&lt;/id&gt;
+							 &lt;code&gt;US&lt;/code&gt;
+							 &lt;name&gt;United States&lt;/name&gt;
+					 &lt;/vat-country&gt;
+					 &lt;content-groups type="array"/&gt;
+					 &lt;created-by&gt;
+							 &lt;id type="integer"&gt;122&lt;/id&gt;
+							 &lt;login&gt;matthew.otzwirk@coupa.com&lt;/login&gt;
+							 &lt;email&gt;matthew.otzwirk@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;Matthew&lt;/firstname&gt;
+							 &lt;lastname&gt;Otzwirk&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/created-by&gt;
+					 &lt;updated-by&gt;
+							 &lt;id type="integer"&gt;122&lt;/id&gt;
+							 &lt;login&gt;matthew.otzwirk@coupa.com&lt;/login&gt;
+							 &lt;email&gt;matthew.otzwirk@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true"/&gt;
+							 &lt;firstname&gt;Matthew&lt;/firstname&gt;
+							 &lt;lastname&gt;Otzwirk&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true"/&gt;
+							 &lt;avatar-thumb-url nil="true"/&gt;
+							 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+							 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+							 &lt;subsidary&gt;&lt;/subsidary&gt;
+							 &lt;function&gt;&lt;/function&gt;
+							 &lt;seg3default&gt;&lt;/seg3default&gt;
+							 &lt;username1&gt;&lt;/username1&gt;
+					 &lt;/updated-by&gt;
+			 &lt;/primary-address&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;147&lt;/id&gt;
+					 &lt;login&gt;sourabh.pataskar@coupa.com&lt;/login&gt;
+					 &lt;email&gt;sourabh.pataskar@coupa.com&lt;/email&gt;
+					 &lt;employee-number nil="true"/&gt;
+					 &lt;firstname&gt;Sourabh&lt;/firstname&gt;
+					 &lt;lastname&gt;Pataskar&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/default-account-type&gt;
+	 &lt;default-currency&gt;
+			 &lt;id type="integer"&gt;1&lt;/id&gt;
+			 &lt;code&gt;USD&lt;/code&gt;
+			 &lt;decimals type="integer"&gt;2&lt;/decimals&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;80&lt;/id&gt;
+					 &lt;login&gt;learnapi&lt;/login&gt;
+					 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+					 &lt;employee-number nil="true"/&gt;
+					 &lt;firstname&gt;API&lt;/firstname&gt;
+					 &lt;lastname&gt;API&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/default-currency&gt;
+	 &lt;department&gt;
+			 &lt;id type="integer"&gt;2&lt;/id&gt;
+			 &lt;created-at type="dateTime"&gt;2008-10-27T13:00:53-07:00&lt;/created-at&gt;
+			 &lt;updated-at type="dateTime"&gt;2010-03-23T21:03:22-07:00&lt;/updated-at&gt;
+			 &lt;name&gt;Sales&lt;/name&gt;
+			 &lt;active type="boolean"&gt;true&lt;/active&gt;
+			 &lt;created-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/created-by&gt;
+			 &lt;updated-by&gt;
+					 &lt;id type="integer"&gt;1&lt;/id&gt;
+					 &lt;login&gt;coupasupport&lt;/login&gt;
+					 &lt;email&gt;upgrade+coupasupport@coupa.com&lt;/email&gt;
+					 &lt;employee-number&gt;&lt;/employee-number&gt;
+					 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+					 &lt;lastname&gt;Support&lt;/lastname&gt;
+					 &lt;salesforce-id nil="true"/&gt;
+					 &lt;avatar-thumb-url nil="true"/&gt;
+					 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+					 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+					 &lt;subsidary&gt;&lt;/subsidary&gt;
+					 &lt;function&gt;&lt;/function&gt;
+					 &lt;seg3default&gt;&lt;/seg3default&gt;
+					 &lt;username1&gt;&lt;/username1&gt;
+			 &lt;/updated-by&gt;
+	 &lt;/department&gt;
+	 &lt;expenses-delegated-to type="array"/&gt;
+	 &lt;can-expense-for type="array"/&gt;
+	 &lt;content-groups type="array"/&gt;
+	 &lt;account-groups type="array"/&gt;
+	 &lt;approval-groups type="array"/&gt;
+	 &lt;working-warehouses type="array"/&gt;
+	 &lt;inventory-organizations type="array"/&gt;
+	 &lt;updated-by&gt;
+			 &lt;id type="integer"&gt;80&lt;/id&gt;
+			 &lt;login&gt;learnapi&lt;/login&gt;
+			 &lt;email&gt;learnapi@learnapi.com&lt;/email&gt;
+			 &lt;employee-number nil="true"/&gt;
+			 &lt;firstname&gt;API&lt;/firstname&gt;
+			 &lt;lastname&gt;API&lt;/lastname&gt;
+			 &lt;salesforce-id nil="true"/&gt;
+			 &lt;avatar-thumb-url nil="true"/&gt;
+			 &lt;gpo-entity&gt;&lt;/gpo-entity&gt;
+			 &lt;radio-button-test&gt;&lt;/radio-button-test&gt;
+			 &lt;subsidary&gt;&lt;/subsidary&gt;
+			 &lt;function&gt;&lt;/function&gt;
+			 &lt;seg3default&gt;&lt;/seg3default&gt;
+			 &lt;username1&gt;&lt;/username1&gt;
+	 &lt;/updated-by&gt;
+&lt;/user&gt;</code>
+</pre>
+</div>
+</div>
+</article>

@@ -1,0 +1,654 @@
+<article class="" id="easy_form_responses_api_easy_form_responses">
+<h1 class="title">Easy Form Responses API (/easy_form_responses)</h1>
+<div class="body">
+<div class="" id="overview-d957e153506">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Form responses are utilized in <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x61032.xml" title="">SIM</a> and <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x294250.xml" title="">Custom Objects</a>.</p>
+<p class="">To determine if the form response is related to SIM or a custom object, check the response payload:</p>
+<ul class="ul">
+<li class="li">
+<p class="">SIM-related form responses include the <code class="ph codeph">supplier-id</code> field</p>
+</li>
+<li class="li">
+<p class="">Custom object form responses include the <code class="ph codeph">custom_object_name</code> and <code class="ph codeph">custom_object_code</code> fields</p>
+</li>
+</ul>
+</div>
+<div class="" id="actions-d957e153535">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users/:user_id/easy_form_responses/:id/add_approver</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">add_approver</p>
+</td>
+<td class="entry" align="">
+<p class="">Manually add an approver for an easy form response</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/easy_form_responses/:id/add_approver</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">add_approver</p>
+</td>
+<td class="entry" align="">
+<p class="">Manually add an approver for an easy form response</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users/:user_id/easy_form_responses/:id/approval</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">approval</p>
+</td>
+<td class="entry" align="">
+<p class="">Submit an easy form response for approval</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/easy_form_responses/:id/approval</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">approval</p>
+</td>
+<td class="entry" align="">
+<p class="">Submit an easy form response for approval</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users/:user_id/easy_form_responses</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query easy form responses</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/easy_form_responses</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query easy form responses</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/easy_form_responses</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query easy form responses</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users/:user_id/easy_form_responses/:id/remove_approval</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">remove_approval</p>
+</td>
+<td class="entry" align="">
+<p class="">Remove an apporver who was manually added</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/easy_form_responses/:id/remove_approval</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">remove_approval</p>
+</td>
+<td class="entry" align="">
+<p class="">Remove an apporver who was manually added</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users/:user_id/easy_form_responses/:id/review</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">review</p>
+</td>
+<td class="entry" align="">
+<p class="">Review an easy form response</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/easy_form_responses/:id/review</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">review</p>
+</td>
+<td class="entry" align="">
+<p class="">Review an easy form response</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users/:user_id/easy_form_responses/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show an easy form response</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/easy_form_responses/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show an easy form response</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users/:user_id/easy_form_responses/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update easy form response</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/easy_form_responses/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update easy form response</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">StateIsoCode is available for SIM Easy Form Responses. The <code class="ph codeph">region</code> element returns the following: <code class="ph codeph">{country: country, state: state, state_iso_code: ISO-3166-2 codes}</code>. If the country does not have state options, the API returns the following: <code class="ph codeph">{country: Antarctica, state: NA, state_iso_code: nil}</code>.</p>
+</div>
+</div>
+<div class="" id="elements-d957e153896">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">approvals</p>
+</td>
+<td class="entry" align="">
+<p class="">Approvals</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/approvals-api-(approvals)" title="">Approval</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who created</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">current-approval</p>
+</td>
+<td class="entry" align="">
+<p class="">Current approval details</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">current-parallel-approvals</p>
+</td>
+<td class="entry" align="">
+<p class="">Current parallel approvals</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/approvals-api-(approvals)" title="">Approval</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">easy-form-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Easy form ID associated with this easy form response</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">easy-form-widget-responses</p>
+</td>
+<td class="entry" align="">
+<p class="">The widget responses</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/easy-form-responses-api-(easy_form_responses)/easy-form-widget-responses-api" title="">Easy Form Widget Response</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Object unique identifier (must exist)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the easy form response</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requested-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User that requested</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">Status of the easy form response</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">subject</p>
+</td>
+<td class="entry" align="">
+<p class="">Object associated with this easy form response</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-5926-da-5926" title="">Invoice Header</a>
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/invoice-line-api" title="">Invoice Line</a>
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-api-(supplier_information)-da-5810-da-5810" title="">Supplier Information</a>
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">submitted-at</p>
+</td>
+<td class="entry" align="">
+<p class="">The date/time the response was submitted in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who updated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">preferred</p>
+</td>
+<td class="entry" align="">
+<p class="">Preferred</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

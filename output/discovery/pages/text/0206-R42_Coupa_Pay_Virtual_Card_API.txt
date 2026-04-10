@@ -1,0 +1,9 @@
+R42_Coupa_Pay_Virtual_Card_API.json
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Coupa_Pay_Virtual_Card_API.json
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXdqs7wRtgEnblEDSSvEbg%2B9BBNq3BChSIVDpe7fh6KTwi3gHPU0b5vhgqDVnVj3%2FtHc4XOP5JPtZsnuDxWMJoVELqf5A6%2FkfMRnRTnnuSyb8aioRjOcsuQHOlLWLFmZ5izZEvW4NeTB%2BADl5YTnFS%2FyfV6I8URUs3Q8L3%2ByZBNclAEfmY%2FedySyTNq%2BA45Hj86ATu2Th1TaNoOu%2B%2B%2FffYA7IOqs8%2BGryPD4ZMu8z6EqN1ftJwmFn2ZENhvKseSzdRJjwyU7gCYcktZBQL3gX6R21ltp9ZUyjTK%2Flqx3RlggRcJAiyS8FLv17Y0ITcXDaYjEl%2F2%2B5vW33Z4layJ0Q6Vra6hv0e3QvSiJ3%2B9uzkvG5GksFOsNmtklLkuOrTYk4pE%2BjtS95WerxTAt4i3cGf9jOrwnYKuLWRfZmfLJphNfg9R2U1ut5J9h0y34y05FWkRENfwQRwW2oPS6aRwShR1qbX9fOwQfDuNdHxaQrU62%2F77R1Ss%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Coupa_Pay_Virtual_Card_API.json
+
+Observed redirect page title: Coupa Portals - Sign In

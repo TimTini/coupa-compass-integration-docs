@@ -1,0 +1,273 @@
+TTGL Bookings Export CSV Format
+
+Format Description
+
+PDF Version
+
+#
+
+Name
+
+Type
+
+Comment
+
+1
+
+Receipt No.
+
+char - 50
+
+2
+
+Receipt Date
+
+date
+
+3
+
+Booking Date
+
+date
+
+4
+
+Booking Period
+
+char - 4
+
+5
+
+Company Code
+
+char - 255
+
+6
+
+Contract Type
+
+char - 10
+
+MM, LD, etc
+
+7
+
+Contract Sub Type
+
+char - 255
+
+Abbreviation of contract subtypes as they appear in Coupa Treasury
+
+8
+
+Contract ID
+
+integer
+
+Contract ID in Coupa Treasury
+
+9
+
+Flow Type
+
+char - 5
+
+Long or Short
+
+10
+
+Type
+
+char - 255
+
+Start, End, Interest, Tax, Rebooking, Accrued interest, Special disbursement, Special repayment, or Principal
+
+11
+
+Flow Direction
+
+char - 1
+
++ or -
+
+12
+
+Amount
+
+decimal
+
+Absolute values only, line 11 defines whether it is a negative or positive amount
+
+13
+
+Currency
+
+char - 3
+
+ISO code for the currency
+
+14
+
+Start Date
+
+date
+
+15
+
+End Date
+
+date
+
+16
+
+Value Date
+
+date
+
+17
+
+Counterparty Short
+
+char - 50
+
+18
+
+Counterparty Country
+
+char - 2
+
+ISO code for country
+
+19
+
+Counterparty Internal/External
+
+char - 8
+
+Internal or External
+
+20
+
+Underlying
+
+char - 50
+
+21
+
+Add Text
+
+char - 255
+
+22
+
+Account Debit
+
+char - 255
+
+Bookings account in Coupa Treasury
+
+23
+
+Account Credit
+
+char - 255
+
+Bookings account in Coupa Treasury
+
+24
+
+Rate
+
+decimal
+
+25
+
+Reciprocal
+
+decimal
+
+26
+
+Counter Value HW
+
+decimal
+
+Export Function
+
+The export generates an ASCII formatted text file. Configure the file extension and prefixes on System > System Settings > System Settings.
+
+The exported file contains contract data for interface with an ERP system.
+
+Bookings originate from various financial instruments in Coupa Treasury:
+
+-
+
+Money market
+
+-
+
+Long-term loans
+
+-
+
+FX deals
+
+-
+
+Collaterals
+
+-
+
+FRAs
+
+-
+
+Letters of credit
+
+-
+
+Credit lines
+
+-
+
+FX options
+
+-
+
+Securities
+
+-
+
+Interest payments
+
+The file may also contain maturities, valuations, accruals, and deferrals.
+
+Format Rules
+
+The file does not contain any headers or format descriptions.
+
+Each row in the file contains exactly one data set:
+
+-
+
+ASCII Code 13: carriage return denotes the end of a data set.
+
+-
+
+ASCII Code 10: new line denotes the end of a data set.
+
+The field delimiter is the semicolon (;).
+
+For decimal values, the period (.) is the decimal separator.
+
+For integer values, there are no thousands or decimal separators.
+
+For text values, there are no quotation marks. The char value is the maximum number of characters for that field.
+
+Days and months are always 2-digit values and years are 4-digit values. There are no date separators and the date sequence is ymd.
+
+Example Data Set
+
+1;20090519;20090519;05;001;Staffel;TWAG-ABN-USD;9;Long;Zinsen;+;001;
+
+USD;20090512;20090512;20090512;AMRODeu;DE;Extern;;;;;0;0;0

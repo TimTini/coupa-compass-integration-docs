@@ -1,0 +1,11 @@
+Standard Flat File Export Configurations
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/standard-flat-file-export-configurations-da-3412-da-3412
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr87tkML1GorFbppldgW0bKHvaCrcxkWiZ35HNb99zjphrpJ5TFf7vt15zlB23R61ccnd48%2Fe6SYbdYL9jgFvFLV5TWf1fsZn0xmkkO9N1wVRlbF9bRGmLLsGway3i1YkUuWbYh63DiK4GKCZHHJ5YTL2U4VWkqtLnJ1Mf3OsnVysQ7iyHyKsSMthPF9BxwPEYODJvfPEXLjWwFd99%2B%2FxwR3QNT5ENOXEnh49oXsJUyK9U37wYCKV4LIi6Ecyz76YHBsuGA1NIRD0jIJ2Bd8Q8rgoze%2BubGusu7HgvXBaQ9kSTtokXQ0erv6fKdTU70%2FDpH%2BtNuVvPy63bFsRYRhqHTrHfUthi2GF2vw4f7utOSYPB8LjfUGTXGOy7JD2zjS45Hej9T9yc%2BW82Faj7cIJ%2Fz36fA3AVuezToXJ8pHm05%2FSVKbdekba34Pm24hnndSuRoRW%2FF6HNXYgm1WVRWQKO2wafyv24AQ02Fi6NMCxPJo%2B%2B8bXb4C&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fstandard-flat-file-export-configurations-da-3412-da-3412
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

@@ -1,0 +1,30 @@
+Risk Assess Attachments Object
+
+Contains the files attached by evaluators or approvers at the overall evaluation level. Does not contain attachments added at lower levels, such as organization, category, or KPI.
+
+Associations
+
+Access the Attachments object through the Evaluations API. For more information, see Risk Assess Evaluations API.
+
+Elements
+
+The following elements are available for the Attachments object:
+
+Element
+
+Data Type
+Description
+
+entityId
+
+string
+
+The unique entity ID of the attachment in CRA
+
+fileName
+
+string
+
+The name of the file as uploaded by the user
+
+links 	Array of objects 	Contains HATEOAS-style links, which facilitate navigation to specific APIs. Only currently populated for supplier-related objects, for example, a riskableObject that pertains to a supplier. For other APIs, the value is null.

@@ -1,0 +1,24 @@
+---
+title: "Integration Schedules and File Names"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/integration-schedules-and-file-names"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbhshEPyVE%2B93wNmxdci25MStailJT7Hbh75Ea4wbFA4oy6Xu35fDSeRWcl6QGHZ2ZnaZIXTGi2Ufn%2ByD%2BtUrjMV6NSePkyvWTMcgS15zXo5hJEs4pGMyqpur3aRhox0nxXcVUDs7J3XFSLFG7NXaYgQbE8TqScnGJWu2vBaMCV5XU9b8IMUqqWgLMTOfYvQoKJWu91CqY1TBgqncc4RKuo6C9%2F%2B9PSbYA6J3IaYbp%2Br47GrWMxjXq%2BvukwQepxTR0SEcKT67IFVOOCcHMKgGp21qoF%2FUO9IGF5105lrbvbY%2F56QPVjhAjcJCp1BEKTbLu1uRkordqQjFl%2B22Lduvmy0plogqDJFunMW%2BU2GjwouW6tvD7XnI7LzKgXK8oSe9xCXFsTMWRV7Sx5b8q3%2BymA3VIu8inPE%2FpsObA7K46HVGzzqfZLy4T63Wq9YZLf8Mk%2B4gXlbiFc%2BI3peHXCpUB9os9%2FugENMMjXG%2Fb4KCmBYTQ58GQBcn2X%2F%2F6OIv&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fintegration-schedules-and-file-names"
+status_code: 200
+fetched_at: "2026-04-09T12:00:10+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Getting Started"
+  - "Integration Schedules and File Names"
+---
+
+# Integration Schedules and File Names
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/integration-schedules-and-file-names](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/integration-schedules-and-file-names)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbhshEPyVE%2B93wNmxdci25MStailJT7Hbh75Ea4wbFA4oy6Xu35fDSeRWcl6QGHZ2ZnaZIXTGi2Ufn%2ByD%2BtUrjMV6NSePkyvWTMcgS15zXo5hJEs4pGMyqpur3aRhox0nxXcVUDs7J3XFSLFG7NXaYgQbE8TqScnGJWu2vBaMCV5XU9b8IMUqqWgLMTOfYvQoKJWu91CqY1TBgqncc4RKuo6C9%2F%2B9PSbYA6J3IaYbp%2Br47GrWMxjXq%2BvukwQepxTR0SEcKT67IFVOOCcHMKgGp21qoF%2FUO9IGF5105lrbvbY%2F56QPVjhAjcJCp1BEKTbLu1uRkordqQjFl%2B22Lduvmy0plogqDJFunMW%2BU2GjwouW6tvD7XnI7LzKgXK8oSe9xCXFsTMWRV7Sx5b8q3%2BymA3VIu8inPE%2FpsObA7K46HVGzzqfZLy4T63Wq9YZLf8Mk%2B4gXlbiFc%2BI3peHXCpUB9os9%2FugENMMjXG%2Fb4KCmBYTQ58GQBcn2X%2F%2F6OIv&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fintegration-schedules-and-file-names](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbhshEPyVE%2B93wNmxdci25MStailJT7Hbh75Ea4wbFA4oy6Xu35fDSeRWcl6QGHZ2ZnaZIXTGi2Ufn%2ByD%2BtUrjMV6NSePkyvWTMcgS15zXo5hJEs4pGMyqpur3aRhox0nxXcVUDs7J3XFSLFG7NXaYgQbE8TqScnGJWu2vBaMCV5XU9b8IMUqqWgLMTOfYvQoKJWu91CqY1TBgqncc4RKuo6C9%2F%2B9PSbYA6J3IaYbp%2Br47GrWMxjXq%2BvukwQepxTR0SEcKT67IFVOOCcHMKgGp21qoF%2FUO9IGF5105lrbvbY%2F56QPVjhAjcJCp1BEKTbLu1uRkordqQjFl%2B22Lduvmy0plogqDJFunMW%2BU2GjwouW6tvD7XnI7LzKgXK8oSe9xCXFsTMWRV7Sx5b8q3%2BymA3VIu8inPE%2FpsObA7K46HVGzzqfZLy4T63Wq9YZLf8Mk%2B4gXlbiFc%2BI3peHXCpUB9os9%2FugENMMjXG%2Fb4KCmBYTQ58GQBcn2X%2F%2F6OIv&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fintegration-schedules-and-file-names)
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

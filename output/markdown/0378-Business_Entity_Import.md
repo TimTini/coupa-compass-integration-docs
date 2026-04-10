@@ -1,0 +1,113 @@
+---
+title: "Business Entity Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/business-entity-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/business-entity-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:34+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Business Entity Import"
+---
+
+# Business Entity Import
+
+## Possible values
+
+Deductibility
+fully_deductible, partially_deductible, not_deductible
+Category
+goods, services
+Subcategory
+raw_materials, investment_goods, services_exceptions
+Preferred
+Yes, No, Automatic, Always, Never
+
+## Business Entity
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Business Entity | No | No | | Business Entity | |
+| ID | No | No | integer | Coupa Unique Supplier Sharing Setting Id for your Business Entity | |
+| Name | Yes | Yes | string(100) | Name of Business Entity External Reference | |
+| Display Name | No | No | string(100) | Business entity display name | |
+| Type | No | No | string(255) | Type of Business Entity External Reference | LegalBusinessEntity, OrganizationalBusinessEntity |
+| Status | No | No | string(255) | Possible values are active and inactive | |
+| Country of Origin Code | No | No | | Your business entity's origine Country Code | |
+| State of Origin | No | No | | Your business entity's origine State | |
+| Formation Type | No | No | string(255) | Can be either Organization or Person | Organization, Person |
+| Business Entity Alternate Names | No | No | BusinessEntityAlternateName | Alternate names for your business entity | |
+| Parent Business Entity Id | No | No | | ID of parent business entity | |
+| Contact | No | No | | Contact | |
+| Primary | No | No | | Can be eithor true or false | |
+| Email | No | No | | Your business entity contact's Email | |
+| Name Given | No | No | | Your business entity contact's Name Given | |
+| Name Family | No | No | | Your business entity contact's Name Family | |
+| Phone Work | No | No | | Your business entity contact's work phone number in the format xxx-yyy-zzzz. Intl numbers must be prefaced by a + sign and the country code. +aa xxx-yyy-zzzz | |
+| Phone Mobile | No | No | | Your business entity contact's Phone Mobile | |
+| Phone Fax | No | No | | Your business entity contact's Phone Fax | |
+| Address | No | No | | Address | |
+| Line 1 | No | No | | Your business entity's Address Street Line 1 | |
+| Line 2 | No | No | | Your business entity's Address Street Line 2 | |
+| Line 3 | No | No | | Your business entity's Address Street Line 3 | |
+| Line 4 | No | No | | Your business entity's Address Street Line 4 | |
+| City | No | No | | Your business entity's Address City | |
+| State | No | No | | Your business entity's Address State | |
+| Postal Code | No | No | | Your business entity's Address Postal Code | |
+| Country Code | No | No | | Your business entity's Address Country Code | |
+| Business Entity External Reference | No | No | BusinessEntityExternalReference | Business Entity External Reference | |
+| Value | No | No | | Value of Business Entity External Reference | |
+| Supplier Sharing Setting | No | No | | Supplier Sharing Setting | |
+| Sharable ID | No | No | | Coupa Unique Sharable Id for Supplier Sharing Setting of your Business Entity | |
+| Sharable Type | No | No | | Possible values can be BusinessEntity | |
+| Shared Category | No | No | | Possible values can be risk | |
+| Share with Children | No | No | | default | |
+
+## Business Entity Contact columns
+
+| **Column Name** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| Contact | Contact | No | No | | |
+| ID | Coupa Unique Contact ID for your Business Entity | No | No | integer | |
+| Primary | Can be either true or false | No | No | | |
+| Email | Your business entity contact's Email | No | No | | |
+| Name Given | Your business entity contact's Name Given | No | No | | |
+| Name Family | Your business entity contact's Name Family | No | No | | |
+| Phone Work | Your business entity contact's work phone number in the format xxx-yyy-zzzz. Intl numbers must be prefaced by a + sign and the country code. +aa xxx-yyy-zzzz | No | No | | |
+| Phone Mobile | Your business entity contact's Phone Mobile | No | No | | |
+| Phone Fax | Your business entity contact's Phone Fax | No | No | | |
+
+## Business Entity Address columns
+
+| **Column Name** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| Address | Address | No | No | | |
+| ID | Coupa Unique Address ID for your Business Entity | No | No | integer | |
+| Line 1 | Your business entity's Address Street Line 1 | No | No | | |
+| Line 2 | Your business entity's Address Street Line 2 | No | No | | |
+| Line 3 | Your business entity's Address Street Line 3 | No | No | | |
+| Line 4 | Your business entity's Address Street Line 4 | No | No | | |
+| City | Your business entity's Address City | No | No | | |
+| State | Your business entity's Address State | No | No | | |
+| Postal Code | Your business entity's Address Postal Code | No | No | | |
+| Country Code | Your business entity's Address Country Code | No | No | | |
+
+## Business Entity External Reference columns
+
+| **Column Name** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| Business Entity External Reference | Business Entity External Reference | No | No | | |
+| ID | Coupa Unique External Reference ID for your Business Entity | No | No | integer | |
+| Value | Value of Business Entity External Reference | No | No | | |
+
+## Business Entity Supplier Sharing Setting columns
+
+| **Column Name** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| Supplier Sharing Setting | Supplier Sharing Setting | No | No | | |
+| ID | Coupa Unique Supplier Sharing Setting ID for your Business Entity | No | No | integer | |
+| Sharable ID | Coupa Unique Sharable ID for Supplier Sharing Setting of your Business Entity | No | No | | |
+| Sharable Type | Possible values can be BusinessEntity | No | No | | |
+| Shared Category | Possible values can be risk | No | No | | |
+| Share with Children | default | No | No | | |

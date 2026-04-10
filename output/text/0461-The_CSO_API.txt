@@ -1,0 +1,17 @@
+The CSO API
+
+A brief description of the CSO API.
+
+The Coupa Sourcing Optimization API is based on import and export of data from fact sheets mediated by a RESTful webservice. It can be used to allow the flow of data between CSO and a 3rd party system.
+
+The OpenAPI schema is available on all CSO sites at https://{name_of_cso_site}/openapi.html. The documentation lists the data types that can be accessed (market, user, fact sheet, etc) and the requests that are allowed for each of them. Clicking a request opens a schema which describes the JSON format.
+
+To make sure the API calls are configured to properly meet your business needs, the setup should be done together with the CSO Services team. Please contact your Coupa representative to start planning for the work.
+
+- Get Started With CSO OpenAPI
+- Company API
+- Events API
+- Fact Sheets API
+- Fields API
+- Market API
+- User API

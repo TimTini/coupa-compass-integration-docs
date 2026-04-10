@@ -1,0 +1,280 @@
+<article class="" id="addresses_api_example_calls">
+<h1 class="title">Addresses API Example Calls</h1>
+<div class="body">
+<div class="" id="get_address_query_options">
+<h2 class="title sectiontitle">Get Address Query Options </h2>
+<p class="">Here are some more examples of how to use the address API to
+query and get the result set you want.</p>
+<p class="">This query will return all company addresses created after the
+date, November 1, 2010.</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/addresses?created_at[gt]=2010-11-01T00:00:00</code>
+</pre>
+</p>
+<p class="">This query will return all active and where the nickname of the
+company addresses contains the words "San Francisco".</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/addresses?active=true&amp;name[contains]=San+Francisco</code>
+</pre>
+</p>
+<p class="">This query will return all company addresses in United States
+and in the state of California</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/addresses?country[name]=United+States&amp;state=CA</code>
+</pre>
+</p>
+<p class="">This query will return all personal addresses where the nickname
+of the address contains the word "Home Office"</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/users/85/addresses?name=Home+Office</code>
+</pre>
+</p>
+</div>
+<div class="" id="get_address">
+<h2 class="title sectiontitle">Get Address</h2>
+<p class="">In this example, we queried for a company address record with an
+ID of 6.</p>
+<p class="">We did a GET to the URL: </p>
+<p class="">
+<code class="ph codeph">https://&lt;instance url&gt;/api/addresses/6</code>
+</p>
+<p class="">
+or</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance url&gt;/api/addresses?id=6</code>
+</p>
+<p class="">Here is the response matching the search
+        criteria:<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;addresses type="array"&gt;
+	 &lt;address&gt;
+			&lt;attention /&gt;
+			&lt;city&gt;San Francisco&lt;/city&gt;
+			&lt;id type="integer"&gt;14&lt;/id&gt;
+			&lt;name&gt;San Francisco Office&lt;/name&gt;
+			&lt;postal-code&gt;94450&lt;/postal-code&gt;
+			&lt;state&gt;CA&lt;/state&gt;
+			&lt;street1&gt;150 Main Street&lt;/street1&gt;
+			&lt;street2 /&gt;
+			&lt;country&gt;
+				 &lt;code&gt;US&lt;/code&gt;
+				 &lt;id type="integer"&gt;223&lt;/id&gt;
+				 &lt;name&gt;United States&lt;/name&gt;
+			&lt;/country&gt;
+	 &lt;/address&gt;
+&lt;/addresses&gt;</code>
+</pre>
+</p>
+<p class="">In this example, we queried for all the personal address records
+for user with an ID of 85.</p>
+<p class="">We did a GET to the URL:</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/users/85/addresses</code>
+</pre>
+</p>
+<p class="">Here is the response matching the search
+        criteria:<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;addresses type="array"&gt;
+	 &lt;address&gt;
+			&lt;attention&gt;Margret Patrick&lt;/attention&gt;
+			&lt;city&gt;San Mateo&lt;/city&gt;
+			&lt;id type="integer"&gt;123&lt;/id&gt;
+			&lt;name&gt;Home Office&lt;/name&gt;
+			&lt;postal-code&gt;94402&lt;/postal-code&gt;
+			&lt;state&gt;CA&lt;/state&gt;
+			&lt;street1&gt;111 Main Street&lt;/street1&gt;
+			&lt;street2 /&gt;
+			&lt;country&gt;
+				 &lt;code&gt;US&lt;/code&gt;
+				 &lt;id type="integer"&gt;223&lt;/id&gt;
+				 &lt;name&gt;United States&lt;/name&gt;
+			&lt;/country&gt;
+	 &lt;/address&gt;
+	 &lt;address&gt;
+			&lt;attention&gt;Margret Patrick&lt;/attention&gt;
+			&lt;city&gt;San Francisco&lt;/city&gt;
+			&lt;id type="integer"&gt;124&lt;/id&gt;
+			&lt;name&gt;test2&lt;/name&gt;
+			&lt;postal-code&gt;94103&lt;/postal-code&gt;
+			&lt;state&gt;CA&lt;/state&gt;
+			&lt;street1&gt;2600 Polk Street&lt;/street1&gt;
+			&lt;street2 /&gt;
+			&lt;country&gt;
+				 &lt;code&gt;US&lt;/code&gt;
+				 &lt;id type="integer"&gt;223&lt;/id&gt;
+				 &lt;name&gt;United States&lt;/name&gt;
+			&lt;/country&gt;
+	 &lt;/address&gt;
+&lt;/addresses&gt;</code>
+</pre>
+</p>
+</div>
+<div class="" id="address_create">
+<h2 class="title sectiontitle">Address Create</h2>
+<p class="">In this example, we are creating a company address.</p>
+<p class="">We posted it to the URL
+        <pre>
+<code class="codeblock">https://&lt;instanceurl&gt;/api/addresses.</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;address&gt;
+	 &lt;name&gt;Silicon Valley&lt;/name&gt;
+	 &lt;city&gt;San Mateo&lt;/city&gt;
+	 &lt;postal-code&gt;94404&lt;/postal-code&gt;
+	 &lt;state&gt;CA&lt;/state&gt;
+	 &lt;street1&gt;2 W 5th Ave&lt;/street1&gt;
+	 &lt;street2&gt;Suite 300&lt;/street2&gt;
+	 &lt;country&gt;
+			&lt;code&gt;US&lt;/code&gt;
+			&lt;name&gt;United States&lt;/name&gt;
+	 &lt;/country&gt;
+&lt;/address&gt;</code>
+</pre>
+<p class="">In this example, we are creating a personal address for User
+with the User ID of 85.</p>
+<p class="">We post it to the URL
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/users/85/addresses</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;address&gt;
+	 &lt;attention nil="true" /&gt;
+	 &lt;city&gt;San Mateo&lt;/city&gt;
+	 &lt;id type="integer"&gt;125&lt;/id&gt;
+	 &lt;name&gt;Silicon Valley&lt;/name&gt;
+	 &lt;postal-code&gt;94400&lt;/postal-code&gt;
+	 &lt;state&gt;CA&lt;/state&gt;
+	 &lt;street1&gt;2 W 5th Ave&lt;/street1&gt;
+	 &lt;street2 nil="true" /&gt;
+	 &lt;country&gt;
+			&lt;code&gt;US&lt;/code&gt;
+			&lt;id type="integer"&gt;223&lt;/id&gt;
+			&lt;name&gt;United States&lt;/name&gt;
+	 &lt;/country&gt;
+&lt;/address&gt;</code>
+</pre>
+</div>
+<div class="" id="remit-to_address_create">
+<h2 class="title sectiontitle">Remit-To Address Create</h2>
+<p class="">In this example, we are creating a Remit-To address for a
+specific supplier</p>
+<p class="">We posted it to the URL
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/&lt;supplier id&gt;/addresses</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;remit-to-address&gt;
+	 &lt;remit-to-code&gt;100&lt;/remit-to-code&gt;
+	 &lt;name&gt;100 Ellsworth&lt;/name&gt;
+	 &lt;street1&gt;100 Ellsworth Ave.&lt;/street1&gt;
+	 &lt;city&gt;SAN MATEO&lt;/city&gt;
+	 &lt;state&gt;CA&lt;/state&gt;
+	 &lt;postal-code&gt;94404&lt;/postal-code&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;country&gt;
+			&lt;code&gt;US&lt;/code&gt;
+	 &lt;/country&gt;
+&lt;/remit-to-address&gt;</code>
+</pre>
+</div>
+<div class="" id="address_update">
+<h2 class="title sectiontitle">Address Update</h2>
+<p class="">In these examples, we are updating a single company address
+record.</p>
+<p class="">We did a PUT to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/addresses/&lt;address ID&gt;</code>
+</pre>
+</p>
+<p class="">For example, to update the address record with a nickname and
+Line 2 for address ID 122:</p>
+<p class="">URL: <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/addresses/122</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;address&gt;
+	 &lt;name&gt;South Bay Office&lt;/name&gt;
+	 &lt;street2&gt;Suite 200&lt;/street2&gt;
+&lt;/address&gt;</code>
+</pre>
+<p class="">For example, to deactivate a company address with ID
+122: </p>
+<p class="">URL: <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/addresses/122</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock"> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;address&gt;
+	 &lt;active&gt;false&lt;/active&gt;
+&lt;/address&gt;</code>
+</pre>
+<p class="">For example, to deactivate a personal address for user ID 85 and
+address ID 125: </p>
+<p class="">URL: <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/users/85/addresses/125</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock"> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;address&gt;
+	 &lt;active&gt;false&lt;/active&gt;
+&lt;/address&gt;</code>
+</pre>
+</div>
+<div class="" id="supplier_remit-to_address_update">
+<h2 class="title sectiontitle">Supplier Remit-To Address Update</h2>
+<p class="">In these examples, we are updating a single Supplier Remit-To address. The way to update
+        the remit-to address, while just as simple as regular address, it does require knowing both
+        the supplier and remit-to id</p>
+<p class="">We did a PUT to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/&lt;supplier id&gt;/addresses/&lt;remit-to
+address ID&gt;</code>
+</pre>
+</p>
+<p class="">For example, to update the Remit-To Address to fix the remit-to code from whatever the
+        current value is to "001" for Remit-To Address ID 23287 for Supplier with ID 12</p>
+<p class="">URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/12/remit_to_addresses/23287</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;remit-to-address&gt;
+	 &lt;remit-to-code&gt;001&lt;/remit-to-code&gt;
+&lt;/remit-to-address&gt;
+      </code>
+</pre>
+<p class="">For example, to deactivate a remit-to address with ID 232887 for supplier with id 12:</p>
+<p class="">URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/12/remit_to_addresses/23287 </code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;remit-to-address&gt;
+	 &lt;remit-to-code&gt;001&lt;/remit-to-code&gt;
+	 &lt;active&gt;false&lt;/active&gt;
+&lt;/remit-to-address&gt;
+      </code>
+</pre>
+</div>
+</div>
+</article>

@@ -1,0 +1,3440 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <base href="https://compass.coupa.com/" />
+	<title>
+   Invoices API (/invoices)
+   | Coupa</title>
+	<link rel="canonical" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)" />
+		<link rel="alternate" hreflang="en-us" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)" />
+			<link rel="alternate" hreflang="ja-jp" href="https://compass.coupa.com/ja-jp/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-14130" />
+			<link rel="alternate" hreflang="fr-fr" href="https://compass.coupa.com/fr-fr/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)" />
+			<link rel="alternate" hreflang="de-de" href="https://compass.coupa.com/de-de/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-13594" />
+	<meta name="locale" content="en-us" />
+		<meta name="audience" content="Audience; Audience|External; Audience|External|Customer; Audience|External|Customer|Admin; Audience|External|Customer|Non-Admin; Audience|External|Supplier; Audience|Internal; Audience|Internal|Employee;" />
+		<meta name="product" content="Products; Products|Total Spend Management Platform;" />
+		<meta name="content_type" content="Content Type; Content Type|Knowledge;" />
+		<meta name="content_owner" content="Content Owner; Content Owner|Documentation;" />
+		<meta name="source" content="" />
+		<meta name="language" content="" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap-grid.min.css">
+<link href="/Content/css/coupa_css?v=oSR2VU2UAauSq61U5RF7aW7MAfwDS82Mo5MuvSkpljY1" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-coy.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.10098/css/CoveoFullSearch.css" />
+        <script class="coveo-script" src="https://static.cloud.coveo.com/searchui/v2.10098/js/CoveoJsSearch.Lazy.min.js"></script>
+                <link rel="icon" sizes="32x32" href="/Images/Icons/favicon_32x32.ico" />
+                <link rel="icon" sizes="64x64" href="/Images/Icons/favicon_64x64.ico" />
+                <link rel="icon" sizes="120x120" href="/Images/Icons/favicon_128x128.ico" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K6XGTMF');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body >
+        
+    <div id="page" class="layout-docs">
+
+<header>
+	<div class="container-fluid">
+		<a class="skip-to-content" href="#content">Skip to Content</a>
+		<div class="header-content">
+				<a class="open-toc" href="#" title="Toggle TOC">
+					<i class="fal fa-bars"></i>
+					<i class="fal fa-times"></i>
+				</a>
+						<a href="/en-us"  class="logo">		<img  src="/Images/Logos/Coupa-Compass-Stacked-Logo_210x60.png" alt="Coupa Logo"   />
+</a>
+
+			<div class="links">
+													<div class="lang-menu d-none d-sm-inline-block">
+						<a class="toggle" href="#">
+							<span class="default">EN</span>
+									<img  src="/Images/Icons/Navigation/CoupaCompass_icon_language.svg" alt="globe icon"   />
+
+						</a>
+						<ul>
+								<li>
+									<a href="/en-us" class="set-language" data-value="en_US" data-token="e816e88e6883f5ee94f51d341fd09e7ddfed6e64cb07e0dbe49c5dc49a84e138">
+										<span class="short">EN</span>
+										<span class="long">- English</span>
+									</a>
+								</li>
+								<li>
+									<a href="/de-de/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-13594" class="set-language" data-value="de" data-token="7f15aa55d950ff12c382ad9ea0a46f1c5bcfed6f61c9321accab75bdf20914d4">
+										<span class="short">DE</span>
+										<span class="long">- Deutsch</span>
+									</a>
+								</li>
+								<li>
+									<a href="/ja-jp/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-14130" class="set-language" data-value="ja_jp" data-token="18c05eb4c38047e7cc91dc6a5577e61c8ae6697243df4d8efd58b362f35ed1e3">
+										<span class="short">JA</span>
+										<span class="long">- 日本語</span>
+									</a>
+								</li>
+								<li>
+									<a href="/fr-fr/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)" class="set-language" data-value="fr" data-token="edf7fe7800d445d802930f38b9dc3c644e82b93969689402575b21efcfffdf3d">
+										<span class="short">FR</span>
+										<span class="long">- Fran&#231;ais</span>
+									</a>
+								</li>
+						</ul>
+						<form class="language-form" style="display:none;" action="/Salesforce/SetLanguage" method="post">
+							<input type="hidden" name="guid" value="af6dccd2-c7b3-40e7-a684-1b4d3baa898c" />
+							<input type="hidden" name="token" id="token" />
+							<input type="hidden" name="language" id="language" value="" />
+							<input type="hidden" name="redirect" id="redirect" value="" />
+						</form>
+					</div>
+				<div class="user-menu">
+						<a href="/Saml/SingleSignOn?returnUrl=http%3a%2f%2fcompass.coupa.com%2fen-us%2fproducts%2fproduct-documentation%2fintegration-technical-documentation%2fthe-coupa-core-api%2fresources%2ftransactional-resources%2finvoices-api-(invoices)" title="My Coupa" class="user clickable">
+									<img  src="/Images/Icons/Navigation/CoupaCompass_icon_account.svg" alt="user icon"   />
+
+						</a>
+				</div>
+				<a class="open-menu" href="#" title="Open menu">
+					<i class="fas fa-ellipsis-v"></i>
+					<i class="fal fa-times"></i>
+				</a>
+			</div>
+		</div>
+		
+	</div>
+</header>        <main id="content">
+            		<section class="tray tray-notice site-alert alert-low white-text"  style="display:none;" id="07385139-549e-5194-2d0c-c4fa0bbef8cf-1814f87a5d6d57e21d42e490b81c48570f8f8890261502062736e06e169f720d">
+			<div class="container">
+				<div class="content">
+					<div class="row row-gutter-10 justify-content-center align-items-center">
+						<div class="col-auto">
+							<p class="h4"><i class="fal fa-info"></i></p>
+						</div>
+							<div class="col-auto">
+										<div  class="body-copy-inner ">
+			<b>We’ve upgraded our documentation!</b> This page is part of our legacy documentation and is no longer being maintained. Visit the new site for the most up-to-date content, improved search, and all release notes.
+
+<a href="https://docs.coupa.com" target="_blank" rel="noopener noreferrer">Take me to the new site</a>
+
+		</div>
+
+							</div>
+					</div>
+				</div>
+				<a class="close-notice" href="#" title="Close notice"><i class="fal fa-times"></i></a>
+			</div>
+		</section>
+            
+<div class="content-inner">
+	<div class="row">
+		<div class="order-md-2 col-md-4 col-xl-auto">
+			<div class="side-stick">
+				<div class="side-nav">
+					<div class="side-menu">
+						<div class="tools">
+							<a href="#" class="copy-content" title="Copy" data-target=".onthispage-content"><i class="far fa-edit"></i></a>
+							
+							<a href="javascript:print()" title="Print"><i class="far fa-print"></i></a>
+							
+						</div>
+						<div class="head">
+							<a class="toggle" href="#" title="Toggle menu">
+								<span class="text"><i class="far fa-list"></i> On This Page</span>
+								<span class="icons">
+									<i class="fal fa-plus"></i>
+									<i class="fal fa-minus"></i>
+								</span>
+							</a>
+						</div>
+						<div class="side-menu-list">
+							<ul id="onthispage-links">
+								<li class="active"><a class="scroll-to-link" href="#page-title">
+   Invoices API (/invoices)
+  </a></li>
+								<li><hr></li>
+							</ul>
+						</div>
+						<div class="d-none d-md-block">
+							<div class="note-meta ">
+								<div class="content">
+									<ul class="list-meta">
+										
+																					<li><strong>Last edited on:</strong> 		<span >
+			16 July 2025
+		</span>
+</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="order-md-1 col-md-8 col-xl">
+			<div class="docs-copy">
+				
+<div class="crumbs">
+	<a href="/en-us"    title="What can we help you find?">
+		What can we help you find?
+	</a>
+            <span><i class="fas fa-angle-right"></i></span>
+	<a href="/en-us/products"    title="Products ">
+		Products 
+	</a>
+            <span><i class="fas fa-angle-right"></i></span>
+	<a href="/en-us/products/product-documentation"    title="Coupa Product Documentation ">
+		Coupa Product Documentation 
+	</a>
+            <span><i class="fas fa-angle-right"></i></span>
+            <span class="active">
+   Invoices API (/invoices)
+  </span>
+</div>
+				<div class="onthispage-content" data-url="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)">
+			<h1   id="page-title">
+   Invoices API (/invoices)
+  </h1>
+									<div class="font-size-lg" >
+					<p>
+   Use the invoice API to create, update, or query invoices associated with a purchase order.
+  </p>
+				</div>
+							<div  class="body-copy-inner ">
+			<h2>Overview</h2>
+<p>The URL to access invoices is: <code>
+    https://{your_instance_name}/api/invoices
+   </code></p>
+<p>As of Release 29, Coupa has enhanced the invoicing API to be fully functional, on parity with other invoice buyer channels. For more information about this update, see <a href="/en-us/products/release-notes/archived-release-notes/release-29/new-features/core-apps/extended-invoicing-api-coverage-for-invoice-creation" title="Extended Invoicing API Coverage for Invoice Creation"> Extended Invoicing API Coverage for Invoice Creation </a> .</p>
+<p>See <a href="/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/integration-knowledge-articles" title="Integration Best Practices"> Integration Best Practices </a> for more info.</p>
+<div class="note primary">
+<div class="note-inner">
+<div class="heading"><span class="icon primary-text"><i class="fas fa-info-circle"></i></span> <strong>Note</strong></div>
+<div class="content">
+<p><span>For <strong>invoice_date</strong> and <strong>original_invoice_date</strong>, provide only the date. Avoid adding the timestamp to prevent issues related to credit note linking.</span></p>
+</div>
+</div>
+</div>
+<pre class="script" mt-export-translate="no"></pre>
+<h2>Actions</h2>
+<p>The Invoices API&nbsp;allows you to:</p>
+<div class="table-wrap" style="width: 100%; table-layout: fixed;">
+<table class="integration" style="width: 100%; table-layout: fixed; height: 2382px;">
+<thead>
+<tr style="height: 17px;">
+<th scope="col" style="width: 10%; height: 17px;">Verb</th>
+<th scope="col" style="width: 40%; height: 17px;">Path</th>
+<th scope="col" style="width: 11.1315%; height: 17px;">Action</th>
+<th scope="col" style="width: 38.8685%; height: 17px;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 10%;">POST</td>
+<td style="width: 40%;"><code>
+       /api/invoices</code></td>
+<td style="width: 11.1315%;">Create</td>
+<td style="width: 38.8685%;"><span>Creates an invoice in draft status.</span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 10%;">PUT</td>
+<td style="height: 17px; width: 40%;"><code>
+       /api/invoices/:id/abandon
+      </code></td>
+<td style="height: 17px; width: 11.1315%;">Abandon</td>
+<td style="height: 17px; width: 38.8685%;">Abandon invoice.</td>
+</tr>
+<tr style="height: 51px;">
+<td style="height: 51px; width: 10%;">PUT</td>
+<td style="height: 51px; width: 40%;"><code>
+       /api/invoices/:id/add_approver
+      </code></td>
+<td style="height: 51px; width: 11.1315%;">Add approver</td>
+<td style="height: 51px; width: 38.8685%;">Manually add an approver for an invoice.</td>
+</tr>
+<tr style="height: 155px;">
+<td style="height: 155px; width: 10%;">PUT</td>
+<td style="height: 155px; width: 40%;"><code>
+       /api/invoices/:id/bypass_approvals
+      </code></td>
+<td style="height: 155px; width: 11.1315%;">Bypass approvals</td>
+<td style="height: 155px; width: 38.8685%;">
+<p>Bypass approvals</p>
+<p>Allows a 3rd-party&nbsp;system on the customers side to get an invoice approved and paid as quickly as possible.</p>
+</td>
+</tr>
+<tr style="height: 172px;">
+<td style="height: 172px; width: 10%;">PUT</td>
+<td style="height: 172px; width: 40%;"><code>
+       /api/invoices/:id/bypass_current_approval
+      </code></td>
+<td style="height: 172px; width: 11.1315%;">Bypass current approval</td>
+<td style="height: 172px; width: 38.8685%;">
+<p>Bypass current approval</p>
+<p>Allows a 3rd-party&nbsp;system on the customers side to get an invoice approved from the current approver to get an invoice&nbsp;paid as quickly as possible.</p>
+</td>
+</tr>
+<tr style="height: 441px;">
+<td style="height: 441px; width: 10%;">PUT</td>
+<td style="height: 441px; width: 40%;"><code>
+       /api/invoices/:id/dispute
+      </code></td>
+<td style="height: 441px; width: 11.1315%;">Dispute</td>
+<td style="height: 441px; width: 38.8685%;">
+<p>Dispute invoice</p>
+<p>Allows moving an invoice to disputed status via a system call. Moving an invoice to disputed notifies the supplier&nbsp;that there is an issue with an invoice. The dispute&nbsp;request can include a dispute reason in the payload as follows:</p>
+<pre>&lt;invoice-header&gt;
+  &lt;dispute-reason&gt;
+    &lt;code&gt;INCORRECT-QUANTITY&lt;/<wbr />code&gt;
+  &lt;/dispute-reason&gt;
+  &lt;comment&gt;A supplier comment&lt;/comment&gt;
+&lt;/invoice-header&gt;</pre>
+<p>This requires that INCORRECT_QUANTITY is a valid and active dispute reason.</p>
+</td>
+</tr>
+<tr style="height: 104px;">
+<td style="height: 104px; width: 10%;">PUT</td>
+<td style="height: 104px; width: 40%;"><code>
+       /api/invoices/:id/flip_to_advance_ship_notice
+      </code></td>
+<td style="height: 104px; width: 11.1315%;">Flip to advance ship notice</td>
+<td style="height: 104px; width: 38.8685%;">
+<p>Flip invoice to Advance Ship Notice</p>
+<p></p>
+</td>
+</tr>
+<tr style="height: 51px;">
+<td style="height: 51px; width: 10%;">GET</td>
+<td style="height: 51px; width: 40%;"><code>
+       /api/invoices/:id/retrieve_image_scan
+      </code></td>
+<td style="height: 51px; width: 11.1315%;">Retrieve image scan</td>
+<td style="height: 51px; width: 38.8685%;">Retrieve/Download image scan</td>
+</tr>
+<tr style="height: 34px;">
+<td style="height: 34px; width: 10%;">PUT</td>
+<td style="height: 34px; width: 40%;"><code>
+       /api/invoices/:id/image_scan
+      </code></td>
+<td style="height: 34px; width: 11.1315%;">Image scan</td>
+<td style="height: 34px; width: 38.8685%;">Update image scan attachment or image scan URL.</td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 10%;">GET</td>
+<td style="height: 17px; width: 40%;"><code>
+       /api/invoices
+      </code></td>
+<td style="height: 17px; width: 11.1315%;">Index</td>
+<td style="height: 17px; width: 38.8685%;">Query invoices</td>
+</tr>
+<tr style="height: 34px;">
+<td style="height: 34px; width: 10%;">PUT</td>
+<td style="height: 34px; width: 40%;"><code>
+       /api/invoices/:id/remove_approval
+      </code></td>
+<td style="height: 34px; width: 11.1315%;">Remove approval</td>
+<td style="height: 34px; width: 38.8685%;">Remove an approver who was manually added.</td>
+</tr>
+<tr style="height: 224px;">
+<td style="height: 224px; width: 10%;">PUT</td>
+<td style="height: 224px; width: 40%;"><code>
+       /api/invoices/:id/restart_approvals
+      </code></td>
+<td style="height: 224px; width: 11.1315%;">Restart approvals</td>
+<td style="height: 224px; width: 38.8685%;">
+<p>Restart approvals</p>
+<p>Allows a 3rd-party&nbsp;system on the customers side to clear the current approval chain and regenerate an new approval chain for an invoice that has had modifications.</p>
+<p></p>
+</td>
+</tr>
+<tr style="height: 68px;">
+<td style="height: 68px; width: 10%;">GET</td>
+<td style="height: 68px; width: 40%;"><code>
+       /api/invoices/:id/retrieve_clearance_document
+      </code></td>
+<td style="height: 68px; width: 11.1315%;">retrieve_clearance_document</td>
+<td style="height: 68px; width: 38.8685%;">Retrieve/Download clearance document.</td>
+</tr>
+<tr style="height: 68px;">
+<td style="height: 68px; width: 10%;">GET</td>
+<td style="height: 68px; width: 40%;"><code>
+       /api/invoices/:id/retrieve_legal_invoice_pdf
+      </code></td>
+<td style="height: 68px; width: 11.1315%;">retrieve_legal_invoice_pdf</td>
+<td style="height: 68px; width: 38.8685%;">Download/retrieve the legal invoice PDF. This action allows the&nbsp;PDF attachment to be exported by API call.</td>
+</tr>
+<tr style="height: 138px;">
+<td style="height: 138px; width: 10%;">PUT</td>
+<td style="height: 138px; width: 40%;"><code>
+       /api/invoices/:id/revalidate_tolerances
+      </code></td>
+<td style="height: 138px; width: 11.1315%;">Revalidate tolerances</td>
+<td style="height: 138px; width: 38.8685%;">
+<p>Revalidate tolerances</p>
+<p>Allows a 3rd-party&nbsp;system on the customers side to resubmit an invoice that had issues.</p>
+</td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 10%;">GET</td>
+<td style="height: 17px; width: 40%;"><code>
+       /api/invoices/:id
+      </code></td>
+<td style="height: 17px; width: 11.1315%;">Show</td>
+<td style="height: 17px; width: 38.8685%;">Show invoice</td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 10%;">PUT</td>
+<td style="height: 17px; width: 40%;"><code>
+       /api/invoices/:id/submit
+      </code></td>
+<td style="height: 17px; width: 11.1315%;">Submit</td>
+<td style="height: 17px; width: 38.8685%;">Submit draft invoice for approval.</td>
+</tr>
+<tr style="height: 52px;">
+<td style="height: 52px; width: 10%;">PATCH</td>
+<td style="height: 52px; width: 40%;"><code>
+       /api/invoices/:id
+      </code></td>
+<td style="height: 52px; width: 11.1315%;">Update</td>
+<td style="height: 52px; width: 38.8685%;">
+<p>Update invoice</p>
+</td>
+</tr>
+<tr style="height: 121px;">
+<td style="height: 121px; width: 10%;">PUT</td>
+<td style="height: 121px; width: 40%;"><code>
+       /api/invoices/:id
+      </code></td>
+<td style="height: 121px; width: 11.1315%;">Update</td>
+<td style="height: 121px; width: 38.8685%;">
+<p>Update invoice</p>
+<p>Used to updated information on the Invoice using the API.</p>
+</td>
+</tr>
+<tr style="height: 121px;">
+<td style="height: 121px; width: 10%;">PUT</td>
+<td style="height: 121px; width: 40%;"><code>
+       /api/invoices/:id/update_line_accounts
+      </code></td>
+<td style="height: 121px; width: 11.1315%;">Update line accounts</td>
+<td style="height: 121px; width: 38.8685%;">
+<p>Update line accounts.</p>
+<p>Used by mobile users to update Invoices.</p>
+</td>
+</tr>
+<tr style="height: 308px;">
+<td style="height: 308px; width: 10%;">PUT</td>
+<td style="height: 308px; width: 40%;"><code>
+       /api/invoices/:id/void
+      </code></td>
+<td style="height: 308px; width: 11.1315%;">Void</td>
+<td style="height: 308px; width: 38.8685%;">
+<p>Void an approved invoice</p>
+<p>This can be used on Invoices only on approved and pending receipt Invoices.</p>
+<ul>
+<li>BUYER_VOIDABLE_STATUSES = [:pending_receipt, :approved, :draft]</li>
+<li>SUPPLIER_VOIDABLE_STATUSES = [:pending_receipt, :approved]</li>
+</ul>
+</td>
+</tr>
+<tr style="height: 155px;">
+<td style="height: 155px; width: 10%;">PUT</td>
+<td style="height: 155px; width: 40%;"><code>
+       /api/invoices/:id/withdraw_dispute
+      </code></td>
+<td style="height: 155px; width: 11.1315%;">Withdraw dispute</td>
+<td style="height: 155px; width: 38.8685%;">
+<p>Withdraw dispute</p>
+<p>Due to supplier inaction or a mistake on the buyer side a disputed Invoice can be returned to the approval process.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Elements</h2>
+<div class="table-wrap" style="width: 100%; table-layout: fixed;">
+<table class="integration" style="width: 100%; table-layout: fixed;">
+<thead>
+<tr>
+<th scope="col" style="width: 20%;">Element</th>
+<th scope="col" style="width: 28%;">Description</th>
+<th scope="col" style="width: 6%;">Req'd</th>
+<th scope="col" style="width: 6%;">Unique</th>
+<th scope="col" style="width: 21.6644%;">Allowable Value</th>
+<th scope="col" style="width: 5.13176%;">In</th>
+<th scope="col" style="width: 5%;">Out</th>
+<th scope="col" style="width: 20%;">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 20%;">abandon-reason</td>
+<td style="width: 28%;">Abandon reason</td>
+<td style="width: 6%;">no</td>
+<td style="width: 6%;">no</td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">Reason Insight</td>
+</tr>
+<tr>
+<td style="width: 20%;">account-type</td>
+<td style="width: 28%;">Chart Of Account Reference</td>
+<td style="width: 6%;">yes</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285781.xml" title="Account Types API"> Account Type </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">advance-payment-received-amount</td>
+<td style="width: 28%;">Amount of advance payment received</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(30,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">amount-due-less-discount</td>
+<td style="width: 28%;">Amount due after applying the discount</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">approvals</td>
+<td style="width: 28%;">Approvals</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285973.xml" title="Approvals API"> Approval </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">attachments</td>
+<td style="width: 28%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285931.xml" title="Attachments API"> Attachment </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">archive-entity-id</td>
+<td style="width: 28%;">Archive Entity Id</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">integer</td>
+</tr>
+<tr>
+<td style="width: 20%;">bill-to-address</td>
+<td style="width: 28%;">Bill to Address</td>
+<td style="width: 6%;">yes</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)" title="Addresses API"> Address </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">buyer-tax-registration</td>
+<td style="width: 28%;">Buyer tax registration</td>
+<td style="width: 6%;">yes*</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285905.xml" title="Tax Registration API"> Tax Registration </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">canceled</td>
+<td style="width: 28%;">Indicates if transaction has been canceled</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;">cash-accounting-scheme-reference</td>
+<td style="width: 28%;">Note if using cash accounting scheme</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">clearance-document</td>
+<td colspan="4" style="width: 61.6644%;">Clearance document attachment file name. Accessible via /retrieve_clearance_document</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string</td>
+</tr>
+<tr>
+<td style="width: 20%;">comments</td>
+<td style="width: 28%;">comments</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">compliant</td>
+<td style="width: 28%;">Invoice compliance indicator</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;">confirmation</td>
+<td style="width: 28%;">Confirmation</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(50)</td>
+</tr>
+<tr>
+<td style="width: 20%;">contract</td>
+<td style="width: 28%;">Backing contract number</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285985.xml" title="Contracts API"> Contract </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">coupa-accelerate-status</td>
+<td colspan="3" style="width: 40%;">Status indicating whether the invoice has discount payment terms via Static Discounting</td>
+<td style="width: 21.6644%;">accelerated</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(40)</td>
+</tr>
+<tr>
+<td style="width: 20%;">created-at</td>
+<td colspan="4" style="width: 61.6644%;">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">created-by</td>
+<td style="width: 28%;">User who created</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285915.xml" title="Users API"> User </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">credit-note-differences-with-original-invoice</td>
+<td style="width: 28%;">Credit Note Differences With Original Invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(30,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">credit-reason</td>
+<td style="width: 28%;">The reason of creating the credit</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">currency</td>
+<td style="width: 28%;">Currency code</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">Currency</td>
+</tr>
+<tr>
+<td style="width: 20%;">current-integration-history-records</td>
+<td style="width: 28%;">Current Integration History Records</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x286099.xml" title="Integration History Record API"> Integration History Record </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">customer_account_number</td>
+<td style="width: 28%;">Customer Account Number</td>
+<td style="width: 6%;">false</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><span>string(255)</span></td>
+</tr>
+<tr>
+<td style="width: 20%;">customer-accounting-tax-less-discount</td>
+<td style="width: 28%;">Customer accounting tax after applying the discount</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">customs-declaration-date</td>
+<td style="width: 28%;">Customs Declaration Date</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">customs-declaration-number</td>
+<td style="width: 28%;">Customs Declaration Number</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(60)</td>
+</tr>
+<tr>
+<td style="width: 20%;">customs-office</td>
+<td style="width: 28%;">Customs Office</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">text</td>
+</tr>
+<tr>
+<td style="width: 20%;">date-received</td>
+<td style="width: 28%;">Date Received in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">delivery-date</td>
+<td style="width: 28%;">Date of Supply</td>
+<td style="width: 6%;">no</td>
+<td style="width: 6%;">no</td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">destination-country</td>
+<td style="width: 28%;">Country of destination used for compliance</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">Country</td>
+</tr>
+<tr>
+<td style="width: 20%;">discount-amount</td>
+<td style="width: 28%;">Discount Amount provided by supplier</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(32,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">discount-due-date</td>
+<td colspan="3" style="width: 40%;">Discount Due Date calculated based on the discount payment terms</td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">discount-percent</td>
+<td style="width: 28%;">Discount %</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">float</td>
+</tr>
+<tr>
+<td style="width: 20%;">dispute-method</td>
+<td style="width: 28%;">Dispute Method</td>
+<td style="width: 6%;">no</td>
+<td style="width: 6%;">no</td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;">dispute-reasons</td>
+<td style="width: 28%;">Dispute Reasons</td>
+<td style="width: 6%;">no</td>
+<td style="width: 6%;">no</td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x286107.xml" title="Dispute Reason API"> Dispute Reason </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">document-type</td>
+<td style="width: 28%;">Invoice or Credit Note</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;">Invoice, Credit Note</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">early-payment-provisions</td>
+<td style="width: 28%;">Early payment incentives</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">exchange-rate</td>
+<td style="width: 28%;">Exchange Rate</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(30,9)</td>
+</tr>
+<tr>
+<td style="width: 20%;">exported</td>
+<td style="width: 28%;">Indicates if transaction has been exported</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;">failed-tolerances</td>
+<td style="width: 28%;">Failed tolerances</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x286109.xml" title="Failed Tolerances API"> Invoice::FailedTolerance </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">folio-number</td>
+<td style="width: 28%;">Folio Number</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">form-of-payment</td>
+<td style="width: 28%;">Payment Form</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;">gross-total</td>
+<td style="width: 28%;">Gross Total</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">gross-total-less-discount</td>
+<td style="width: 28%;">Invoice total after applying the discount</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">handling-amount</td>
+<td style="width: 28%;">Handling amount</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(32,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">id</td>
+<td style="width: 28%;">Coupa unique identifier</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">integer</td>
+</tr>
+<tr>
+<td style="width: 20%;">image-scan</td>
+<td style="width: 28%;">Invoice Image Scan attachment filename</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(25)</td>
+</tr>
+<tr>
+<td style="width: 20%;">image-scan-content-type</td>
+<td style="width: 28%;">Content type of image scan</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(191)</td>
+</tr>
+<tr>
+<td style="width: 20%;">image-scan-file-name</td>
+<td style="width: 28%;">File name of the image scan</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">image-scan-file-size</td>
+<td style="width: 28%;">Size of image scan file in MB</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(12)</td>
+</tr>
+<tr>
+<td style="width: 20%;">image-scan-url</td>
+<td colspan="3" style="width: 40%;">Invoice Image Scan URL. Must begin with 'http://' or 'https://'.</td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">inbound-invoice</td>
+<td style="width: 28%;">Inbound invoice reference</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x286111.xml" title="Inbound Invoice API"> Inbound Invoice </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">inbox-name</td>
+<td style="width: 28%;">Inbox Name</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string</td>
+</tr>
+<tr>
+<td style="width: 20%;">internal-note</td>
+<td style="width: 28%;">Internal Note</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">text</td>
+</tr>
+<tr>
+<td style="width: 20%;">invoice-charges</td>
+<td style="width: 28%;">Invoice charges</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x286115.xml" title="Invoice Charge API"> Invoice Charge </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">invoice-date</td>
+<td style="width: 28%;">Date of Invoice</td>
+<td style="width: 6%;">yes</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">invoice-from-address</td>
+<td style="width: 28%;">Invoice from address</td>
+<td style="width: 6%;">yes*</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285883.xml" title="Supplier Remit To API"> Supplier Remit To </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">invoice-lines</td>
+<td style="width: 28%;">Record identifier</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x286119.xml" title="Invoice Line API"> Invoice Line </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">invoice-number</td>
+<td style="width: 28%;">Invoice number</td>
+<td style="width: 6%;">yes</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(40)</td>
+</tr>
+<tr>
+<td style="width: 20%;">invoice-payment-receipts</td>
+<td style="width: 28%;">Invoice related payment receipts information</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">Invoice Payment Receipt</td>
+</tr>
+<tr>
+<td style="width: 20%;">invoice-reference-number</td>
+<td style="width: 28%;">Invoice Reference Number (IRN)</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 20%;">issuance-place</td>
+<td style="width: 28%;">Issuance Place</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(50)</td>
+</tr>
+<tr>
+<td style="width: 20%;">last-exported-at</td>
+<td colspan="4" style="width: 61.6644%;">Date and time transaction was last exported in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">late-payment-penalties</td>
+<td style="width: 28%;">Late Payment Penalties</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">legal-destination-country</td>
+<td style="width: 28%;">Legal destination country used for compliance</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;">See the <a href="/Integrate/Technical_Documentation/API/Resources/Transactional/invoices/invoices#Compliant_Country_List" title="Invoices API"> Compliant Country List </a> .</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">Country</td>
+</tr>
+<tr>
+<td style="width: 20%;">line-level-taxation</td>
+<td style="width: 28%;">Flag indicating whether taxes are provided at line level in this invoice</td>
+<td style="width: 6%;">yes</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;">lock-version-key</td>
+<td style="width: 28%;">Lock Version</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">integer</td>
+</tr>
+<tr>
+<td style="width: 20%;">margin-scheme</td>
+<td style="width: 28%;">Reason for using margin scheme</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">misc-amount</td>
+<td style="width: 28%;">Miscellaneous Amount</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(32,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">net-due-date</td>
+<td style="width: 28%;">Net Due Date calculated based on the net payment terms</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">net-total-less-discount</td>
+<td style="width: 28%;">Net total after applying the discount</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">origin-country</td>
+<td style="width: 28%;">Country of origin used for compliance</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">Country</td>
+</tr>
+<tr>
+<td style="width: 20%;">origin-currency-gross</td>
+<td style="width: 28%;">Local Currency Gross</td>
+<td style="width: 6%;">yes*</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(32,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">origin-currency-net</td>
+<td style="width: 28%;">Local Currency Net</td>
+<td style="width: 6%;">yes*</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(32,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">original-invoice-date</td>
+<td style="width: 28%;">Original invoice date required when <code>
+       is-credit-note=true
+      </code></td>
+<td style="width: 6%;">yes**</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">original-invoice-number</td>
+<td style="width: 28%;">Original invoice date required when <code>
+       is-credit-note=true
+      </code></td>
+<td style="width: 6%;">yes**</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(40)</td>
+</tr>
+<tr>
+<td style="width: 20%;">paid</td>
+<td style="width: 28%;">Paid</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">pay-invoice</td>
+<td title="InvoiceHeader.pay_invoice.api_out" style="width: 28%;" tabindex="1">Pay invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 20%;">payment-channel</td>
+<td style="width: 28%;">How the invoice payment will be handled - ERP (default), Coupa Pay Virtual Card, Coupa Pay Invoice Payment</td>
+<td style="width: 6%;">no</td>
+<td style="width: 6%;">no</td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(40)</td>
+</tr>
+<tr>
+<td style="width: 20%;">payment-date</td>
+<td style="width: 28%;">Date of payment for invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">payment-method</td>
+<td style="width: 28%;">Payment Method</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;">payment-notes</td>
+<td style="width: 28%;">Notes included with payment for invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">text</td>
+</tr>
+<tr>
+<td style="width: 20%;">payment-order-reference</td>
+<td style="width: 28%;">Payment Order Reference</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">payment-term</td>
+<td style="width: 28%;">Payment term code on invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285847.xml" title="Payment Terms API"> Payment Term </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">payments</td>
+<td style="width: 28%;">Payments</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285949.xml" title="Payments API"> Payment </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">pre-payment-date</td>
+<td style="width: 28%;">Pre-Payment Date</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">reconciliation-lines</td>
+<td style="width: 28%;">Reconciliation lines</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;"></td>
+<td style="width: 20%;">Invoice/Reconciliation Line</td>
+</tr>
+<tr>
+<td style="width: 20%;">remit-to-address</td>
+<td style="width: 28%;">Remit to Address</td>
+<td style="width: 6%;">yes</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/en-us/products/product-documentation/total-spend-management-platform/company-setup/remit-to-addresses" title="Remit-to Addresses"> Remit To Address </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">requested-by</td>
+<td style="width: 28%;">Requester on the invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285915.xml" title="Users API"> User </a></td>
+</tr>
+<tr>
+<td style="width: 20%;"><span>resolution-number</span></td>
+<td style="width: 28%;">Resolution Number</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">reverse-charge-reference</td>
+<td style="width: 28%;">Reverse Charge Reference</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">signed-qr-code</td>
+<td title="InvoiceHeader.signed_qr_code.api_out" style="width: 28%;" tabindex="1">Signed QR Code</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">text</td>
+</tr>
+<tr>
+<td style="width: 20%;">self-billing-reference</td>
+<td style="width: 28%;">Self billing reference on the invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(191)</td>
+</tr>
+<tr>
+<td style="width: 20%;">sender-email</td>
+<td style="width: 28%;">Sender Email</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;">series</td>
+<td style="width: 28%;">Series</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(30)</td>
+</tr>
+<tr>
+<td style="width: 20%;">ship-from-address</td>
+<td style="width: 28%;">Ship from address</td>
+<td style="width: 6%;">yes</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285883.xml" title="Supplier Remit To API"> Supplier Remit To </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">ship-to-address</td>
+<td style="width: 28%;">Ship to Address</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)" title="Address API (/addresses)"> Address </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">shipping-amount</td>
+<td style="width: 28%;">Shipping Amount</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(32,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">shipping-term</td>
+<td style="width: 28%;">Shipping term code on invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285861.xml" title="Shipping Terms API"> Shipping Term </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">show-tax-information</td>
+<td style="width: 28%;">Show tax information in the invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;">status</td>
+<td style="width: 28%;">Invoice Status. For more information about invoice statuses, see <a href="/en-us/products/product-documentation/invoicing/invoice-progression-through-statuses" class="intLink" title="Invoice Progression Through Statuses">Invoice Progression through Statuses</a>.</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;">new,
+<div><span><span>ap_hold,</span></span>
+<div>
+<div><span>draft, </span><span style="font-size: 1.4rem;">on_hold,&nbsp;</span><br /><span></span></div>
+<div>
+<div><span> </span><span>pending_receipt,&nbsp;</span></div>
+<div><span> </span><span>rejected,&nbsp;</span></div>
+<div><span> </span><span>abandoned.</span></div>
+<div><span> </span><span>disputed.</span></div>
+<div><span> </span><span>pending_approval,</span></div>
+<div><span> </span><span>booking_hold,</span></div>
+<div><span> </span><span>pending_action,</span></div>
+<div><span> </span><span>approved,</span></div>
+<div><span> </span><span>voided,</span></div>
+<div><span> </span><span>processing,</span></div>
+<div><span> </span><span>invalid,</span></div>
+<div><span> </span><span>pending_action, payable_adjustment</span></div>
+</div>
+</div>
+</div>
+</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(50)</td>
+</tr>
+<tr>
+<td style="width: 20%;">supplier</td>
+<td style="width: 28%;">Supplier Name or Number</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)" title="Suppliers API"> Supplier </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">supplier-created</td>
+<td style="width: 28%;">Supplier created indicator for invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;">supplier-note</td>
+<td style="width: 28%;">Note provided by supplier</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">text</td>
+</tr>
+<tr>
+<td style="width: 20%;">supplier-remit-to</td>
+<td style="width: 28%;">Supplier provided remit to address</td>
+<td style="width: 6%;">yes</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285883.xml" title="Supplier Remit To API"> Supplier Remit To </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">supplier-tax-registration</td>
+<td style="width: 28%;">Supplier tax registration</td>
+<td style="width: 6%;">yes*</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285905.xml" title="Tax Registration API"> Tax Registration </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">supplier-total</td>
+<td style="width: 28%;">Supplier Total</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">taggings</td>
+<td style="width: 28%;">Taggings</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285965.xml" title="Tagging API"> Tagging </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">tags</td>
+<td colspan="3" style="width: 40%;">Tag (Deprecated, please use Taggings association to add Tags onto InvoiceHeader)</td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285967.xml" title="Tag API"> Tag </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">tax-amount</td>
+<td colspan="3" style="width: 40%;">Tax amount (not used if tax is provided at line level)</td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">tax-amount-engine</td>
+<td colspan="3" style="width: 40%;">Tax amount calculated by either Coupa Native or External Tax Engine based on configuration</td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">tax-code</td>
+<td style="width: 28%;">Tax code (not used if tax is provided at line level)</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">tax-code-engine</td>
+<td title="InvoiceLine.tax_code_engine.api_out" style="width: 28%;" tabindex="1">Tax code returned by External Tax Engine based on configuration</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 20%;">tax-due-to-supplier</td>
+<td style="width: 28%;">Tax due to the supplier</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(32,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">tax-lines</td>
+<td style="width: 28%;">Line tax code (not used if tax is provided at header level)</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x286125.xml" title="Tax Line API"> Tax Line </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">tax-rate</td>
+<td style="width: 28%;">Tax rate (not used if tax is provided at line level)</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">float</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">tax-rate-engine</td>
+<td title="InvoiceLine.tax_rate_engine.api_out" style="width: 28%;" tabindex="1">Tax rate returned by External Tax Engine based on configuration</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 20%;">taxes-in-origin-country-currency</td>
+<td style="width: 28%;">Local Currency Tax</td>
+<td style="width: 6%;">yes*</td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(32,4)</td>
+</tr>
+<tr>
+<td style="width: 20%;">tolerance-failures</td>
+<td style="width: 28%;">Tolerance Failure</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(512)</td>
+</tr>
+<tr>
+<td style="width: 20%;">total-with-taxes</td>
+<td style="width: 28%;">Total with taxes</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">total-taxes-less-discount</td>
+<td style="width: 28%;">Total taxes after applying the discount</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;">any</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal</td>
+</tr>
+<tr>
+<td style="width: 20%;">type-of-receipt</td>
+<td style="width: 28%;">Type of Receipt</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;">type-of-relationship</td>
+<td style="width: 28%;">Type of Relationship</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;">updated-at</td>
+<td colspan="4" style="width: 61.6644%;">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;">updated-by</td>
+<td style="width: 28%;">User who updated</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x285915.xml" title="Users API"> User </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">use-of-invoice</td>
+<td style="width: 28%;">Use of the Invoice</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;">withholding-tax-lines</td>
+<td style="width: 28%;">Withholding tax lines</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;"><a href="/x286127.xml" title="Withholding Tax Line API"> Withholding Tax Line </a></td>
+</tr>
+<tr>
+<td style="width: 20%;">withholding-tax-override</td>
+<td style="width: 28%;">Withholding Tax Override</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;"></td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">decimal(30,3)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">invoice-reference-number</td>
+<td title="InvoiceHeader.invoice_reference_number.api_in" style="width: 28%;" tabindex="1">Invoice Reference Number (IRN)</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">supplier-invoice-issuer-name</td>
+<td title="InvoiceHeader.supplier_invoice_issuer_name.api_in" style="width: 28%;" tabindex="1">Supplier Invoice Issuer Name</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">supplier-invoice-reviewer-name</td>
+<td title="InvoiceHeader.supplier_invoice_reviewer_name.api_in" style="width: 28%;" tabindex="1">Supplier Invoice Reviewer Name</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">supplier-payment-collector-name</td>
+<td title="InvoiceHeader.supplier_payment_collector_name.api_in" style="width: 28%;" tabindex="1">Supplier Payment Collector Name</td>
+<td style="width: 6%;"></td>
+<td style="width: 6%;"></td>
+<td style="width: 21.6644%;"></td>
+<td style="width: 5.13176%;">yes</td>
+<td style="width: 5%;">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">endorsement-on-invoices</td>
+<td title="InvoiceHeader.endorsement_on_invoices.api_out" style="width: 28%;" tabindex="1">Endorsement On Invoices</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1"></td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">new-means-of-transport</td>
+<td title="InvoiceHeader.new_means_of_transport.api_out" style="width: 28%;" tabindex="1">New Means Of Transport</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1"></td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">place-of-issuance</td>
+<td title="InvoiceHeader.place_of_issuance.api_out" style="width: 28%;" tabindex="1">Place Of Issuance</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1"></td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">string(100)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">amount-of-advance-payment</td>
+<td title="InvoiceHeader.amount_of_advance_payment.api_out" style="width: 28%;" tabindex="1">Amount Of Advance Payment</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">decimal(46,20)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">transaction-uuid</td>
+<td title="InvoiceHeader.transaction_uuid.api_out" style="width: 28%;" tabindex="1">Transaction UUID</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1"></td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">string(50)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">transaction-notification-date</td>
+<td title="InvoiceHeader.transaction_notification_date.api_out" style="width: 28%;" tabindex="1">Transaction Notification Date</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1"></td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">content-validation</td>
+<td title="InvoiceHeader.content_validation.api_out" style="width: 28%;" tabindex="1">Invoice Content Validation Indicator</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1"></td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">invoice-reference-number</td>
+<td title="InvoiceHeader.invoice_reference_number.api_in" style="width: 28%;" tabindex="1">Invoice Reference Number (IRN)</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">supplier-invoice-issuer-name</td>
+<td title="InvoiceHeader.supplier_invoice_issuer_name.api_in" style="width: 28%;" tabindex="1">Supplier Invoice Issuer Name</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">supplier-invoice-reviewer-name</td>
+<td title="InvoiceHeader.supplier_invoice_reviewer_name.api_in" style="width: 28%;" tabindex="1">Supplier Invoice Reviewer Name</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">supplier-payment-collector-name</td>
+<td title="InvoiceHeader.supplier_payment_collector_name.api_in" style="width: 28%;" tabindex="1">Supplier Payment Collector Name</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1">yes</td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">is-credit-note</td>
+<td title="InvoiceHeader.is_credit_note.api_in" style="width: 28%;" tabindex="1">Document Type Credit Note</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">requester-email</td>
+<td title="InvoiceHeader.requester_email.api_in" style="width: 28%;" tabindex="1">Requester Email</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">requester-name</td>
+<td title="InvoiceHeader.requester_name.api_in" style="width: 28%;" tabindex="1">Requester Fullname</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">requester-lookup-name</td>
+<td title="InvoiceHeader.requester_lookup_name.api_in" style="width: 28%;" tabindex="1">Requester Lookup Name</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">delivery-number</td>
+<td title="InvoiceHeader.delivery_number.api_in" style="width: 28%;" tabindex="1">Delivery Number</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">delivery-date</td>
+<td title="InvoiceHeader.delivery_date.api_in" style="width: 28%;" tabindex="1">Date of Supply</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">original-value-of-supply</td>
+<td title="InvoiceHeader.original_value_of_supply.api_in" style="width: 28%;" tabindex="1">Original Value of Supply</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">decimal(46,20)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">correct-value-of-supply</td>
+<td title="InvoiceHeader.correct_value_of_supply.api_in" style="width: 28%;" tabindex="1">Correct Value of Supply</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">decimal(46,20)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">original-invoice-date</td>
+<td title="InvoiceHeader.original_invoice_date.api_in" style="width: 28%;" tabindex="1">Original invoice date used in case of a Credit Note</td>
+<td style="width: 6%;" tabindex="1">yes</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">type-of-relationship</td>
+<td title="InvoiceHeader.type_of_relationship.api_in" style="width: 28%;" tabindex="1">Type of Relationship</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">original-invoice-number</td>
+<td title="InvoiceHeader.original_invoice_number.api_in" style="width: 28%;" tabindex="1">Original invoice number used in case of a Credit Note</td>
+<td style="width: 6%;" tabindex="1">yes</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(40)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">place-of-supply</td>
+<td title="InvoiceHeader.place_of_supply.api_in" style="width: 28%;" tabindex="1">Place Of Supply</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">split-payment-mechanism</td>
+<td title="InvoiceHeader.split_payment_mechanism.api_in" style="width: 28%;" tabindex="1">Split Payment Mechanism</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">endorsement-on-invoices</td>
+<td title="InvoiceHeader.endorsement_on_invoices.api_in" style="width: 28%;" tabindex="1">Endorsement On Invoices</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">new-means-of-transport</td>
+<td title="InvoiceHeader.new_means_of_transport.api_in" style="width: 28%;" tabindex="1">New Means Of Transport</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(10)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">place-of-issuance</td>
+<td title="InvoiceHeader.place_of_issuance.api_in" style="width: 28%;" tabindex="1">Place Of Issuance</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(100)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">signed-qr-code</td>
+<td title="InvoiceHeader.signed_qr_code.api_in" style="width: 28%;" tabindex="1">Signed QR Code</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">text</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">shipping-term</td>
+<td title="InvoiceHeader.shipping_term.api_in" style="width: 28%;" tabindex="1">Shipping term code on invoice</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">supplier-tax-registration</td>
+<td title="InvoiceHeader.supplier_tax_registration.api_in" style="width: 28%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1">yes</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">buyer-tax-registration</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1">yes</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">payment-order-number</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Payment Order Number</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">
+<p>yes</p>
+</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">invoice-issuance-time</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Invoice Issuance Time</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">cash-register-operator</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Cash Register Operator</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">means-of-payment</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Means Of Payment</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">unique-identification-code-of-cash-receipt</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Unique Identification Code Of Cash Receipt</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">security-code-of-issuer</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Security Code Of Issuer</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">state-tax-number</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">State Tax ID Number</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">state-tax-number-for-substitute-taxpayer</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">State Tax ID Number for Substitute Taxpayer</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">municipal-tax-number</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Municipality Tax ID Number</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">serial-code-of-fiscal-invoice</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Serial Code of Fiscal Invoice</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">verification-code</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Verification Code</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">type-of-document</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Type of Document</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">protocol-number</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Protocol Number</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">nature-of-operation</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Nature of Operation</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">type-of-operation</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Type of Operation</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">freight-type</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Freight Type</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">vehicle-license-plate</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Vehicle License Plate</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">national-enrollment-of-conveyor</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">National Enrollment of Conveyor</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">volume-amount</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Volume Amount</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">volume-gross-weight</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Volume Gross Weight</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">volume-liquid-weight</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Volume Liquid Weight</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">volume-brand</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Volume Brand</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">volume-type</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Volume Type</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">volume-numbering</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Volume Numbering</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">payment-agreement-notes</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1">Payment Agreement Notes</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1">Fully paid via Prepayment Agreement, Partially paid via Prepayment Agreement, Already paid for a Recurring Agreement, Retain payment per agreement</td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">tcs-tax-lines</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">-</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">invoice-from-address</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1">yes</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">Address</td>
+</tr>
+<tr>
+<td style="width: 20%;" tabindex="1">ship-from-address</td>
+<td title="InvoiceHeader.buyer_tax_registration.api_in" style="width: 28%;" tabindex="1"></td>
+<td style="width: 6%;" tabindex="1">yes</td>
+<td style="width: 6%;" tabindex="1"></td>
+<td style="width: 21.6644%;" tabindex="1"></td>
+<td style="width: 5.13176%;" tabindex="1">yes</td>
+<td style="width: 5%;" tabindex="1"></td>
+<td style="width: 20%;">Address</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note primary">
+<div class="note-inner">
+<div class="heading"><span class="icon primary-text"><i class="fas fa-info-circle"></i></span>Note</div>
+<div class="content">
+<p>Required fields marked with an asterisk * are additional required fields for compliant invoices.&nbsp;&nbsp;Required fields marked with two asterisks ** are only required when <code>
+     is-credit-note=true
+    </code> .</p>
+</div>
+</div>
+</div>
+<h2>Compliant Country List</h2>
+<p>This list shows which countries are permitted for compliant invoicing. It is not a list of compliant countries Coupa currently supports.</p>
+<div cellpadding="0" cellspacing="0" class="table-wrap" dir="ltr" style="table-layout: fixed;">
+<table cellpadding="0" cellspacing="0" class="integration" dir="ltr" style="table-layout: fixed;"><colgroup> <col width="100" /> <col width="100" /> <col width="100" /> </colgroup>
+<thead>
+<tr>
+<th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;#id&quot;}" scope="col">#id</th>
+<th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Code&quot;}" scope="col">Code</th>
+<th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Name&quot;}" scope="col">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:14}">14</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;AU&quot;}">AU</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Australia&quot;}">Australia</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:15}">15</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;AT&quot;}">AT</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Austria&quot;}">Austria</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:22}">22</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;BE&quot;}">BE</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Belgium&quot;}">Belgium</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:31}">31</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;BR&quot;}">BR</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Brazil&quot;}">Brazil</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:34}">34</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;BG&quot;}">BG</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Bulgaria&quot;}">Bulgaria</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:39}">39</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CA&quot;}">CA</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Canada&quot;}">Canada</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:53}">53</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;HR&quot;}">HR</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Croatia&quot;}">Croatia</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:55}">55</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CY&quot;}">CY</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Cyprus&quot;}">Cyprus</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:56}">56</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CZ&quot;}">CZ</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Czech Republic&quot;}">Czech Republic</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:58}">58</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;DK&quot;}">DK</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Denmark&quot;}">Denmark</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:67}">67</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;EE&quot;}">EE</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Estonia&quot;}">Estonia</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:72}">72</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FI&quot;}">FI</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Finland&quot;}">Finland</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:73}">73</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FR&quot;}">FR</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;France&quot;}">France</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:79}">79</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;DE&quot;}">DE</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Germany&quot;}">Germany</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:82}">82</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GB&quot;}">GB</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;United Kingdom&quot;}">United Kingdom</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:83}">83</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GR&quot;}">GR</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Greece&quot;}">Greece</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:96}">96</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;HK&quot;}">HK</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Hong Kong&quot;}">Hong Kong</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:97}">97</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;HU&quot;}">HU</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Hungary&quot;}">Hungary</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:98}">98</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;IS&quot;}">IS</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Iceland&quot;}">Iceland</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:103}">103</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;IE&quot;}">IE</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Ireland&quot;}">Ireland</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:104}">104</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;IL&quot;}">IL</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Israel&quot;}">Israel</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:105}">105</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;IT&quot;}">IT</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Italy&quot;}">Italy</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:108}">108</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;JP&quot;}">JP</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Japan&quot;}">Japan</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:118}">118</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;LV&quot;}">LV</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Latvia&quot;}">Latvia</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:123}">123</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;LI&quot;}">LI</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Liechtenstein&quot;}">Liechtenstein</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:124}">124</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;LT&quot;}">LT</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Lithuania&quot;}">Lithuania</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:125}">125</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;LU&quot;}">LU</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Luxembourg&quot;}">Luxembourg</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:133}">133</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;MT&quot;}">MT</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Malta&quot;}">Malta</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:138}">138</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;MX&quot;}">MX</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Mexico&quot;}">Mexico</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:141}">141</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;MC&quot;}">MC</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Monaco&quot;}">Monaco</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:144}">144</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;MA&quot;}">MA</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Morocco&quot;}">Morocco</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:151}">151</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;NL&quot;}">NL</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Netherlands&quot;}">Netherlands</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:154}">154</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;NZ&quot;}">NZ</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;New Zealand&quot;}">New Zealand</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:161}">161</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;NO&quot;}">NO</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Norway&quot;}">Norway</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:171}">171</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PL&quot;}">PL</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Poland&quot;}">Poland</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:173}">173</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PT&quot;}">PT</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Portugal&quot;}">Portugal</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:175}">175</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;QA&quot;}">QA</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Qatar&quot;}">Qatar</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:177}">177</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;RO&quot;}">RO</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Romania&quot;}">Romania</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:183}">183</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;SA&quot;}">SA</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Saudi Arabia&quot;}">Saudi Arabia</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:187}">187</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;SG&quot;}">SG</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Singapore&quot;}">Singapore</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:188}">188</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;SK&quot;}">SK</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Slovakia&quot;}">Slovakia</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:189}">189</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;SI&quot;}">SI</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Slovenia&quot;}">Slovenia</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:192}">192</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;ZA&quot;}">ZA</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;South Africa&quot;}">South Africa</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:193}">193</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;ES&quot;}">ES</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Spain&quot;}">Spain</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:204}">204</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;SE&quot;}">SE</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Sweden&quot;}">Sweden</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:205}">205</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CH&quot;}">CH</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Switzerland&quot;}">Switzerland</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:222}">222</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;AE&quot;}">AE</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;United Arab Emirates&quot;}">
+<p>United Arab Emirates</p>
+</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:223}">223</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;US&quot;}">US</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;United States&quot;}">United States</td>
+</tr>
+<tr>
+<td data-sheets-value="{&quot;1&quot;:3,&quot;3&quot;:250}">250</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;IM&quot;}">IM</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Isle Of Man&quot;}">Isle Of Man</td>
+</tr>
+</tbody>
+</table>
+</div>
+		</div>
+					<div  class="trays-list">
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+                        
+
+
+
+<div class="toc">
+	<div class="toc-inner">
+		<div class="content">
+			<ul>
+				<li class="heading">Table Of Contents</li>
+			</ul>
+		</div>
+	</div>
+	<a class="toggle-toc" href="#" title="Toggle TOC"><i class="fas fa-caret-left"></i></a>
+</div>
+
+                    </main>
+
+
+<footer>
+	<div class="footer-content">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-sm">
+					<p>
+									<a href="/en-us"  class="logo">		<img  src="/Images/Logos/coupa-compass-footer.svg" alt="Coupa white footer logo"   />
+</a>
+
+					</p>
+				</div>
+				<div class="col-sm-auto">
+					<p>
+						
+					</p>
+				</div>
+			</div>
+			<div class="spacer-10"></div>
+			<div class="legal">
+				© 2026 Coupa Software Inc. All Rights Reserved.
+					<span class="pipe">|</span>
+	<a href="https://www.coupa.com/privacy-policy/"    title="Privacy Policy">
+		Privacy Policy
+	</a>
+					<span class="pipe">|</span>
+	<a href="https://www.coupa.com/cookie-policy/"    title="Cookie Policy">
+		Cookie Policy
+	</a>
+					<span class="pipe">|</span>
+<div style="display: inline-block;" id="teconsent" ></div>					<span class="pipe">|</span>
+	<a href="http://www.coupa.com/"    title="Coupa Home">
+		Coupa Home
+	</a>
+			</div>
+		</div>
+	</div>
+</footer>        <a class="top-target" href="#" title="Scroll to top"><i class="fas fa-angle-up"></i></a>
+
+<div class="menu">
+	<div class="menu-inner">
+		
+		<div class="main">
+			<ul>
+					<li>
+
+	<a href="/en-us/get-started"    title="Get Started">
+		Get Started
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>New to Coupa? Start here!</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/get-started/welcome-to-coupa"    title="Welcome to Coupa ">
+		Welcome to Coupa 
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/portals-and-resources"    title="Portals and Resources">
+		Portals and Resources
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/your-coupa-journey"    title="Your Coupa Journey">
+		Your Coupa Journey
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>Implementation Resources</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/get-started/implementation-overview"    title="Implementation Overview">
+		Implementation Overview
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/implementation-best-practices"    title="Implementation Best Practices">
+		Implementation Best Practices
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-documentation/supplier-resources"    title="Supplier Resources">
+		Supplier Resources
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/learning"    title="Learning">
+		Learning
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="https://expertsdirectory.coupa.com/"    title="Credential Spotlight Directory">
+		Credential Spotlight Directory
+	</a>
+</li>
+		<li >	<a href="/en-us/learning/track-your-certifications"    title="Track Your Credentials">
+		Track Your Credentials
+	</a>
+</li>
+		<li >	<a href="/en-us/learning/coupa-training-partners"    title="Instructor-led Training">
+		Instructor-led Training
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/products"    title="Products ">
+		Products 
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/products/category-strategy"    title="Category Strategy">
+		Category Strategy
+	</a>
+</li>
+		<li >	<a href="/en-us/products/procure"    title="Procure">
+		Procure
+	</a>
+</li>
+		<li >	<a href="/en-us/products/invoice"    title="Invoice">
+		Invoice
+	</a>
+</li>
+		<li >	<a href="/en-us/products/travel-and-expense"    title="Travel & Expense">
+		Travel & Expense
+	</a>
+</li>
+		<li >	<a href="/en-us/products/coupa-pay"    title="Coupa Pay">
+		Coupa Pay
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/products/treasury-management"    title="Treasury Management">
+		Treasury Management
+	</a>
+</li>
+		<li >	<a href="/en-us/products/supply-chain-design-and-planning"    title="Supply Chain Design and Planning">
+		Supply Chain Design and Planning
+	</a>
+</li>
+		<li >	<a href="/en-us/products/supply-chain-collaboration"    title="Supply Chain Collaboration">
+		Supply Chain Collaboration
+	</a>
+</li>
+		<li >	<a href="/en-us/products/strategic-sourcing"    title="Strategic Sourcing">
+		Strategic Sourcing
+	</a>
+</li>
+		<li >	<a href="/en-us/products/contract-management"    title="Contract Management">
+		Contract Management
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/products/supplier-management"    title="Supplier Management">
+		Supplier Management
+	</a>
+</li>
+		<li >	<a href="/en-us/products/spend-analysis"    title="Spend Analysis">
+		Spend Analysis
+	</a>
+</li>
+		<li >	<a href="/en-us/products/contingent-workforce"    title="Contingent Workforce">
+		Contingent Workforce
+	</a>
+</li>
+		<li >	<a href="/en-us/products/total-spend-management-platform"    title="Total Spend Management Platform">
+		Total Spend Management Platform
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>Resources</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/products/release-notes"    title="Release Notes">
+		Release Notes
+	</a>
+</li>
+		<li >	<a href="https://compass.coupa.com/en-us/products/release-notes/about-coupa-releases"    title="About Coupa Releases">
+		About Coupa Releases
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-documentation/roadmaps-overview"    title="Product Roadmaps ">
+		Product Roadmaps 
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-compliance-downloads"    title="Product Compliance Downloads">
+		Product Compliance Downloads
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/community"    title="Community">
+		Community
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>Stay informed and get involved!</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="https://community.coupa.com/c/coupa-official/41"    title="News">
+		News
+	</a>
+</li>
+		<li >	<a href="https://community.coupa.com/" target="_blank"   title="Coupa Online Community">
+		Coupa Online Community
+	</a>
+</li>
+		<li >	<a href="https://www.coupaadvantageportal.com/"    title="Coupa Advantage Program">
+		Coupa Advantage Program
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>Attend an event!</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="https://community.coupa.com/upcoming-events"    title="See All Events">
+		See All Events
+	</a>
+</li>
+		<li >	<a href="https://community.coupa.com/webinars"    title="Find Upcoming Webinars">
+		Find Upcoming Webinars
+	</a>
+</li>
+		<li >	<a href="https://usergroups.coupa.com/"    title="Join a Coupa User Group Chapter">
+		Join a Coupa User Group Chapter
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/support"    title="Support">
+		Support
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+										
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/trust"    title="Trust">
+		Trust
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="https://www.coupa.com/legal" target="_blank"   title="Legal">
+		Legal
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/coupa-accessibility-statement"    title="Coupa Accessibility Statement">
+		Coupa Accessibility Statement
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/data-privacy"    title="Global Privacy Program">
+		Global Privacy Program
+	</a>
+</li>
+		<li >	<a href="https://www.coupa.com/compliance-security/" target="_blank"   title="AI Trust Center">
+		AI Trust Center
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/trust/security"    title="Security">
+		Security
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/compliance"    title=" Compliance">
+		 Compliance
+	</a>
+</li>
+		<li >	<a href="https://support.coupa.com/s/compliance-downloads"    title="Security and Compliance Downloads">
+		Security and Compliance Downloads
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/system-up-time-and-metrics"    title="System Uptime and Metrics">
+		System Uptime and Metrics
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+			</ul>
+		</div>
+		<div class="foot">
+			<ul>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="mega">
+			<div id="mega-0" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>New to Coupa? Start here!</strong></div>
+											<ul  >
+		<li >	<a href="/en-us/get-started/welcome-to-coupa"    title="Welcome to Coupa ">
+		Welcome to Coupa 
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/portals-and-resources"    title="Portals and Resources">
+		Portals and Resources
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/your-coupa-journey"    title="Your Coupa Journey">
+		Your Coupa Journey
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>Implementation Resources</strong></div>
+											<ul  >
+		<li >	<a href="/en-us/get-started/implementation-overview"    title="Implementation Overview">
+		Implementation Overview
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/implementation-best-practices"    title="Implementation Best Practices">
+		Implementation Best Practices
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-documentation/supplier-resources"    title="Supplier Resources">
+		Supplier Resources
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-1" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="https://expertsdirectory.coupa.com/"    title="Credential Spotlight Directory">
+		Credential Spotlight Directory
+	</a>
+</li>
+		<li >	<a href="/en-us/learning/track-your-certifications"    title="Track Your Credentials">
+		Track Your Credentials
+	</a>
+</li>
+		<li >	<a href="/en-us/learning/coupa-training-partners"    title="Instructor-led Training">
+		Instructor-led Training
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-2" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="/en-us/products/category-strategy"    title="Category Strategy">
+		Category Strategy
+	</a>
+</li>
+		<li >	<a href="/en-us/products/procure"    title="Procure">
+		Procure
+	</a>
+</li>
+		<li >	<a href="/en-us/products/invoice"    title="Invoice">
+		Invoice
+	</a>
+</li>
+		<li >	<a href="/en-us/products/travel-and-expense"    title="Travel & Expense">
+		Travel & Expense
+	</a>
+</li>
+		<li >	<a href="/en-us/products/coupa-pay"    title="Coupa Pay">
+		Coupa Pay
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="/en-us/products/treasury-management"    title="Treasury Management">
+		Treasury Management
+	</a>
+</li>
+		<li >	<a href="/en-us/products/supply-chain-design-and-planning"    title="Supply Chain Design and Planning">
+		Supply Chain Design and Planning
+	</a>
+</li>
+		<li >	<a href="/en-us/products/supply-chain-collaboration"    title="Supply Chain Collaboration">
+		Supply Chain Collaboration
+	</a>
+</li>
+		<li >	<a href="/en-us/products/strategic-sourcing"    title="Strategic Sourcing">
+		Strategic Sourcing
+	</a>
+</li>
+		<li >	<a href="/en-us/products/contract-management"    title="Contract Management">
+		Contract Management
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="/en-us/products/supplier-management"    title="Supplier Management">
+		Supplier Management
+	</a>
+</li>
+		<li >	<a href="/en-us/products/spend-analysis"    title="Spend Analysis">
+		Spend Analysis
+	</a>
+</li>
+		<li >	<a href="/en-us/products/contingent-workforce"    title="Contingent Workforce">
+		Contingent Workforce
+	</a>
+</li>
+		<li >	<a href="/en-us/products/total-spend-management-platform"    title="Total Spend Management Platform">
+		Total Spend Management Platform
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>Resources</strong></div>
+											<ul  >
+		<li >	<a href="/en-us/products/release-notes"    title="Release Notes">
+		Release Notes
+	</a>
+</li>
+		<li >	<a href="https://compass.coupa.com/en-us/products/release-notes/about-coupa-releases"    title="About Coupa Releases">
+		About Coupa Releases
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-documentation/roadmaps-overview"    title="Product Roadmaps ">
+		Product Roadmaps 
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-compliance-downloads"    title="Product Compliance Downloads">
+		Product Compliance Downloads
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-3" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>Stay informed and get involved!</strong></div>
+											<ul  >
+		<li >	<a href="https://community.coupa.com/c/coupa-official/41"    title="News">
+		News
+	</a>
+</li>
+		<li >	<a href="https://community.coupa.com/" target="_blank"   title="Coupa Online Community">
+		Coupa Online Community
+	</a>
+</li>
+		<li >	<a href="https://www.coupaadvantageportal.com/"    title="Coupa Advantage Program">
+		Coupa Advantage Program
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>Attend an event!</strong></div>
+											<ul  >
+		<li >	<a href="https://community.coupa.com/upcoming-events"    title="See All Events">
+		See All Events
+	</a>
+</li>
+		<li >	<a href="https://community.coupa.com/webinars"    title="Find Upcoming Webinars">
+		Find Upcoming Webinars
+	</a>
+</li>
+		<li >	<a href="https://usergroups.coupa.com/"    title="Join a Coupa User Group Chapter">
+		Join a Coupa User Group Chapter
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-4" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+									
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-5" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="https://www.coupa.com/legal" target="_blank"   title="Legal">
+		Legal
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/coupa-accessibility-statement"    title="Coupa Accessibility Statement">
+		Coupa Accessibility Statement
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/data-privacy"    title="Global Privacy Program">
+		Global Privacy Program
+	</a>
+</li>
+		<li >	<a href="https://www.coupa.com/compliance-security/" target="_blank"   title="AI Trust Center">
+		AI Trust Center
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="/en-us/trust/security"    title="Security">
+		Security
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/compliance"    title=" Compliance">
+		 Compliance
+	</a>
+</li>
+		<li >	<a href="https://support.coupa.com/s/compliance-downloads"    title="Security and Compliance Downloads">
+		Security and Compliance Downloads
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/system-up-time-and-metrics"    title="System Uptime and Metrics">
+		System Uptime and Metrics
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+</div>    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="/Content/js/coupa_foot?v=ObtuKn9rfH0O6eQfjZbh9aaNqZg8PzXibAtTnmvwg8Y1"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous"></script>
+
+    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gumshoe/5.1.1/gumshoe.polyfills.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			// Scroll Spy
+			var spy = new Gumshoe('.side-nav .side-menu-list a', {
+				offset: 90,
+				reflow: true
+			});
+		});
+	</script>
+
+        
+</body>
+</html>

@@ -1,0 +1,469 @@
+<article class="" id="ic_recon_-_invoice_export_-_csv_format">
+<h1 class="title">IC Recon - Invoice Export - CSV Format</h1>
+<div class="body">
+<div class="" id="format_description-d94e4085">
+<h2 class="title sectiontitle">Format Description</h2>
+<p class="">
+<a data-scope="peer" data-name="" target="" href="/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/IC_Recon_-_Invoice_Export_-_CSV_Format.pdf" title="">PDF Version</a>
+</p>
+</div>
+<div class="" id="receivables_export">
+<h2 class="title sectiontitle">Receivables Export</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice number</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice number on the receivables side</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Debitor account number</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 20</p>
+</td>
+<td class="entry" align="">
+<p class="">Debitor account as it appears in Coupa Treasury</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Due date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">ISO code of currency</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice flag</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Comment</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 250</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">9</p>
+</td>
+<td class="entry" align="">
+<p class="">Delivery slip number</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">XDoc no.</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">11</p>
+</td>
+<td class="entry" align="">
+<p class="">Booking date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">12</p>
+</td>
+<td class="entry" align="">
+<p class="">Remark</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 250</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">13</p>
+</td>
+<td class="entry" align="">
+<p class="">Project</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">14</p>
+</td>
+<td class="entry" align="">
+<p class="">Potfolio</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="payables_export">
+<h2 class="title sectiontitle">Payables Export</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice number</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice number on the payables side</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Creditor account number</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 20</p>
+</td>
+<td class="entry" align="">
+<p class="">Creditor account as used for importing the confirmation file. For manual
+                  confirmation, the first creditor account number entered for the counterparty as
+                    <b>ID counterparty</b>.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Due date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">ISO code of currency</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice identifier</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Comment</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 250</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">9</p>
+</td>
+<td class="entry" align="">
+<p class="">Delivery slip number</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">XDoc no.</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">11</p>
+</td>
+<td class="entry" align="">
+<p class="">Booking date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">12</p>
+</td>
+<td class="entry" align="">
+<p class="">Remark</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 250</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">13</p>
+</td>
+<td class="entry" align="">
+<p class="">Project</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">14</p>
+</td>
+<td class="entry" align="">
+<p class="">Portfolio</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="export_function-d94e4751">
+<h2 class="title sectiontitle">Export Function</h2>
+<p class="">The export function is
+        under Special Functions on <b>Recon &amp; Netting</b> &gt; <b>AP/AR Recon</b> &gt;
+          <b>Payments</b>.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/treasury_integrations/images/image13a.png" alt="" title="" width="">
+<p class="">The export function produces
+        text files with the .csv file extension.</p>
+</div>
+<div class="" id="format_rules-d94e4768">
+<h2 class="title sectiontitle">Format Rules</h2>
+<p class="">The export function uses the
+        user-defined <b>Export Format Settings</b> under <b>User Settings</b>.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/treasury_integrations/images/image6c.png" alt="" title="" width="">
+<p class="">The file does not contain any headers or format
+        descriptions.</p>
+<p class="">One file can contain multiple data sets.</p>
+<p class="">Each row in the file
+        contains exactly one data set:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII Code 13: carriage return denotes the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">ASCII Code 10: new line denotes the end of a data set.</p>
+</li>
+</ul>
+<p class="">The field delimiter is the semicolon (;).</p>
+<p class="">For decimal values, the period (.) is
+        the decimal separator. There are no thousands separators.</p>
+<p class="">For text values, there are
+        no quotation marks. The char value is the maximum number of characters for that
+        field.</p>
+<p class="">Days and months are always 2-digit values and years are 4-digit values. There
+        are no date separators and the date sequence is ymd.</p>
+</div>
+<div class="" id="example_data_sets-d94e4803">
+<h2 class="title sectiontitle">Example Data
+        Sets</h2>
+<p class="">745;104;05.01.2021;02.02.2021;1418258,41;EUR;;;;745;;</p>
+<p class="">746;104;15.01.2021;12.02.2021;1892985,48;EUR;;;;746;;</p>
+</div>
+</div>
+</article>

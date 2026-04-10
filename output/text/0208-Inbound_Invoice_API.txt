@@ -1,0 +1,14 @@
+Inbound Invoice API
+
+Associations
+
+This API resource is available through Invoices API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

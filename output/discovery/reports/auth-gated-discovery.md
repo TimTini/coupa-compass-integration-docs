@@ -1,0 +1,1089 @@
+# Discovery auth-gated resources
+
+- Generated at: 2026-04-10T02:01:37+00:00
+- Count: 155
+
+## 0032. R22_Contracts_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Contracts_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8nsdukHVZbqVtBVBoQrR0PvEyHc2XWHDv4nFH%2B%2BzkuTAWpe8yX%2B37deUHQmV6uh%2FBo7%2FDngBSy7WbJHqZXvBIHATkquMorDm3%2Bbjqr83o%2BraspnwtUgmVf0ZN2dskmBWfZlmjAraUANkSIT2Y5r3LB91zIupZVXcwq8Y1lm%2BiiLYTEfAyhJ1mWyg19dDsG9BZM4Z4CFMp1JfT9f%2F8eItwDUe98iF%2BixOOTm%2FCBQzXZXHfvFYgwL4lcOZZj2QfnFaaGS3YAQzgmbaKAfsZXpPEuOOXMtbattj%2BWbPBWOiBN0kKHJIOSu%2FWnWxmbyu%2BnIZIf9%2Fsmb77s9ixbE6EfK904S0OHfof%2BWSu8v7s9L5mSF6lQqjdqlpe4LDt2xpJMR3o7Uv8nP1stxmmZbuHP%2BG%2FT4W8CtrqYdVGeKZ9sevk5Sm03jTNa%2FR433UG47CQKkRDd5oc0KrEDbdZt65Eo7tAY9%2BvGI4R4mOCHuIBydbL9942uXgA%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR22%2FR22_Contracts_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0033. R22_Core_Platform_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Core_Platform_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87dqIkHVZbqVtBVBoQrYUHXqarc2HWEjv4nFH%2Be5wUUEHqHvPlvl93XhL03aA2Y3iyD%2Fh9RArJbrtij2UBbdbIG36U2YIXldb8ppUVbxCPVVvm7aJtWfIFPRlnVyxPJUt2RCPuLAWwIUIyr7gseCYPMlNlqYoyfZNVX1myjS7GQpiZTyEMpITQbhyA4ymgt9Cl7jlAql0vYBj%2B%2B%2FcY4QGIBudD%2FMoEnp5dLkcJRb697d9qyMJCEDkxlWPJO%2Bc1zg1XrIWOcEpaRwHzgn%2BR2rvgtOtujW2M%2FbZio7fKARlSFnokFbTabz7cq9hUHc9DpN4fDjWvP%2B0PLNkQoZ8q3TlLY49%2Bj%2F7FaPz8cH9Zck6ezoXmepOmuMZlyanvLKn5SK9HGn7nZ%2BvlNK3mW%2FgL%2Fut0%2BJOAra9mXYoL5bPNoD5Gqd22dp3RP6dN9xCuO2VpNiOm4e08qrAH022axiNR3GHXuR93HiHEwwQ%2FxgWI9dn23ze6%2FgU%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR22%2FR22_Core_Platform_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0034. R22_Expense_Reporting_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Expense_Reporting_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9owFP4rkd%2BdGwETC5Bo2TSkbosK3UNfqkM4tFYTO%2FNxOvbv65i2YpPoY76c73aOZwRt08ll7570Lf7ukVy0Xs3ZgxDjYleOpryciBEvJpOSlynsuBD5eHrAXEzLgkW%2F0JIyes7yOGXRmqjHtSYH2nkozSc8LXiWbtNMjseyEPEoFfcsWnkXpcEF5pNzHckkqU3fAcejQ6uhic2zg7g2bQJd99%2B%2FBw93QNQZ6%2FxXluDx2eRpn0KRr67aLzVkTiREJhnKseirsTWGhnN2gIZwSFp5AfWCH0hljTO1aa6U3iv9OGe91dIAKZIaWiTparlZfr%2BRvqncnYZIfttuK1793GxZtCRCO1S6Npr6Fu0G7Yuq8e725rxkSB6HQqHeoJlc4rLo2DaaZDjS55G6t%2FxsMRumZbiFPeN%2FTof3BGxxMessOVM%2B2XTyh5daryrTqPrvsOkW3GWnLM4Covb8EEYltqCa5X5vkcjvsGnMn2uL4PxhnO39ApLFyfbfN7p4BQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR22%2FR22_Expense_Reporting_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0035. R22_Purchasing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Purchasing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN%2FBmEFJrSRS2mxqpG5DTbaHvVRXc1mtGpv5TJf99zNkrdJJ6SMf9%2F2685ygM71cDeHR3uGvASkkm%2FWC3YvLD3kr6jotKlWmJcwgfajyy%2FRCqaoGIfb1HljyHT1pZxesyHKWbIgG3FgKYEOE8uIizctU5LtcyKqS5SwT1ewHS9bRRVsIE%2FMxhJ4k58oNPaR4COgtmMw9BciU6zj0%2FX%2F%2F7iPcA1HvfIhfguPhyRX5kENZrK%2B6jwpEqDmR42M5lnxyXuHUcMH2YAjHpE0U0M%2F4ijTeBaecudK21fbngg3eSgekSVrokGRQcrv6fCtjU%2FlwHCJ5s9s1afN1u2PJigj9WOnaWRo69Fv0z1rht7vb05JT8mwqNNUbNfk5LksOnbEkpyO9H6n%2Fl58t5%2BO0nG7hT%2Fjv0%2BElAVuezTrnJ8pHm15%2BiVKbdeOMVn%2FGTXcQzjuJTEyIbtP9NCqxA21WbeuRKO7QGPf72iOEeJjgh7gAvjzavn2jy78%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR22%2FR22_Purchasing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0036. R22_Sourcing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Sourcing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbT9swFP4rkd9zJS2N1VYqdNMqsS2iZQ%2B8oBPnFCwS2%2FNxWPfvcVxA3aTymC%2Fnu53jOUHfGb4a3JO6xd8Dkos26wV7uBR5lU%2BrJs6bZhqXVXsRNyBEXF0UUFZ7AFEIFv1CS1KrBSuSjEUbogE3ihwo56GsmMZZGefZLsv5ZMLLWTKZze5ZtPYuUoELzCfnDPE0FXowEOPBoVXQJfrZQSJ0n4Ix%2F%2F178LABIqOt8195iodnXWRDBmWxvuq%2FCMjdZUqk07Eci75qKzA0XLA9dIRj0toLyBf8QGqrnRa6u5KqlepxwQaruAaSxBX0SNwJvl19v%2BG%2BKW%2BOQ8S%2F7XZ1XP%2Fc7li0IkI7VrrWioYe7RbtixR4d3tzWjIkT0KhUG%2FUTM9xWXToO0U8HOnzSOYtP1vOx2kebmFP%2BJ%2FT4T0BW57NOk9PlI82hv%2FwUpt1rTsp%2Fo6b7sGdd8qTPCCyjfdhlGMPslu1rUUiv8Ou03%2BuLYLzh3F28AtIl0fbf9%2Fo8hU%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR22%2FR22_Sourcing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0113. R34_CLM_Standard_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_CLM_Standard_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ndqKQVlZbqdBNVGJbRMse9oIO5xgWjm18Duv%2B%2BzkpTN2k8pgv9%2F2684KgN16uh%2Fhkb%2FFlQIrZdrNk9wLns6pp5jk08zqvO1Hm89mFyAWAarqHrlRdybLvGEg7u2RVIVi2JRpwaymCjQkSVZOLOi%2FFXpTyopGiKWpR%2FWDZJrloC3FiPsXoSXKu3OAhx0PEYMEU7jlCoVzPwfv%2F%2Ft0n2AORdyGmr5Lj4dlVYhBQV5vL%2FpOCMs44keNjOZZ9dkHh1HDJHsEQjknbJKBf8S%2FSBhedcuZS207bn0s2BCsdkCZpoUeSUcnd%2BsuNTE3lw3GI5PV%2B3%2Bbtt92eZWsiDGOlK2dp6DHsMLxqhXe3N6clp%2BTFVGiqN2ryc1yWHXpjSU5H%2BjiSf8vPVotxWk63CCf8j%2BnwnoCtzmZd8BPlo42XX5PUdtM6o9XvcdM9xPNOZVFOiO7yx2lUYg%2FarLsuIFHaoTHu11VAiOkwMQxpAXx1tP33ja7%2BAA%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_CLM_Standard_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0114. R34_Core_Platform_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Core_Platform_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndqIQmAVItKwqUrdFhfahL9XhHKvVxM58Tsf%2B%2Bzlmq9gk%2Bpgv9%2F2685yga3u5GvyLuccfA5JPNusFe54cyrxqqlmqZgrSUsCndF%2BpfVpMZ4fpZF9hUyiWPKIjbc2CFZlgyYZowI0hD8YHSBRVKso0FzuRy0klxTTLi%2FKJJevgog34yHzxvifJubJDDykePToDbWZfPWTKdhz6%2Fr9%2FzwHugai3zoevnOPx1RZiEFAW66vus4LcTzmR5WM5ltxYpzA2XLADtIRj0joI6Dd8R2pnvVW2vdKm0eb7gg3OSAukSRrokKRXcrv6cidDU7k%2FDZG83e3qtP623bFkRYRurHRtDQ0dui26N63w4f7uvGRMnsVCsd6oyS9xWXLsWkMyHunjSP2f%2FGw5H6dlvIU7439Mh78J2PJi1jk%2FUz7Z9PJrkNqsa9tq9WvcdAf%2BslOe5RHRTXqIoxI70O2qaRwShR22rf157RB8OIx3Q1gAX55s%2F32jy98%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Core_Platform_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0115. R34_Coupa_Pay_Virtual_Card_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Coupa_Pay_Virtual_Card_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbbtswDP0VQ%2B%2B2bOfSWkgCpM2GBWg3o8n2sJeCltlVqCypotxlf1%2FZaYdsQPrII%2FJcSC0IOu3Eug%2BP5g6fe6SQbDdLdt82KKtLrNIWZJNOm3ySNpPZPJ3PqqqQzSVOIGfJD%2FSkrFmyMovVlqjHraEAJkQoL%2BdpPk2LfJ8XYjYX%2BUVWVpOfLNlEFWUgjJOPITgSnEvbO0jxENAb0Jl9CpBJ23Fw7r%2B3%2Bwg7IHLWh1gVHA9Ptsz7HKbl5qr7JKEIF5zI8iEcSz5bL3FMuGQPoAkHp3UkUC%2F4F6m9DVZafaVMq8yvJeu9ERZIkTDQIYkgxW59eyNiUtEcm0h82e%2FrtP6227NkTYR%2BiHRtDfUd%2Bh36FyXx%2B93NacjReTYGGuMNnPzcLEsOnTYkxiN9bMm9%2BWerxdAtxlv4k%2FmPx%2BHdAVud9brgJ8xHGSe%2BRqrtprZayT%2FDpjsI55WKrBgR1aYPY6vADpRet61HorhDre3va48Q4mGC7%2BMC%2BOoo%2B%2B8fXb0C&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Coupa_Pay_Virtual_Card_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0116. R34_Expense_Reporting_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Expense_Reporting_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8d21loOqut1K0gKg2I1sIDL9Ot4zFrjm18nVH%2BPU4KqCB1jzm55%2BteLxB6G%2BR6SE%2FuXn8fNKZiu1mSh3rW1FU3B3p9aK5oPb8GCnMlqGrEFUA1g4MQpPiiIxrvlqQqOSm2iIPeOkzgUoZ4NaO8poLvuZBvZpI3ZcOrr6TYZBfjIE3Mp5QCSsaUHwJQfUw6OrClf05QKt8zCOG%2Ffw8ZDoAYfEz5SzB9fPYVHzjU1eamf6tApIYhejaWI8U7H5WeGi7JI1jUY9I2C5gX%2FRdpo09eeXtjXGfctyUZopMe0KB00GuUScnd%2BsOdzE3l4TSE8v1%2B39L2025PijWijmOlW%2B9w6HXc6fhilP58f3deckpeToWmeqMmu8QlxbG3DuV0pNcjhd%2F5yWoxTsvpFvGM%2Fzod%2FiQgq4tZF%2BxM%2BWQT5Mcstd203hr1c9x0D%2BmykyjFhJiOPk6jUvdg7LrrokbMO7TW%2F7iNGlI%2BTIpDXgBbnWz%2FfaOrXw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Expense_Reporting_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0117. R34_Inventory_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Inventory_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRjtMwEPyVyO%2BJkyi9NFZbqXcFUemA6Fp44OW0uFvOOsc2Xucof4%2FjAipIvRdLHu%2FszOx6QTBoJ9ZjeDIP%2BH1ECtl2s2SPVVvPZ51s8%2BO8bPKmw2PeNRCPrp03WLdN3VUs%2B4yelDVLVhcly7ZEI24NBTAhQmV9k0duVe7LSsxuRNkWbTX7wrJNVFEGQmI%2BheBIcC7t6CDHU0BvQBf2OUAh7cDBuf%2FeHiPsgMhZH%2BKt4nh6tnU5ltDUm9vhjYQqtJzI8ikcy95aLzElXLIjaMLJaR8bqBf8i%2FTeBiutvlXmoMy3JRu9ERZIkTAwIIkgxW79%2Fl7EpOLruYjEu%2F2%2Bz%2FuPuz3L1kTop0h31tA4oN%2Bhf1ESPz3cX4ZMzosUKMWbevJrXJadBm1IpCW9bsn99s9Wi6lapF34C%2F7rdPjjgK2uel3wi85nGSc%2BxFbbTW%2B1kj%2BnSQ8QritVRZUQdciPqVTgAEqvDwePRHGGWtsfdx4hxMUEP8YB8NVZ9t8%2FuvoF&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Inventory_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0118. R34_Purchasing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Purchasing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLLbtswEPwVgXeKkvwMYRtw4hY1kLZC7PTQS7Ch1g0RimS5VOr%2BfSi5DdwCzo0c7uzM7HJB0Bov1118snf4s0OK2XazZA%2Fzqwonowb4dF4e%2BBjVgYOaKF7hqJmnAz6ORyz7hoG0s0tW5QXLtkQdbi1FsDFBRTXlxZiXxb4o5WQqi1k%2Bu5p%2BZ9kmqWgLcWA%2BxehJCqFc54HjMWKwYHL3HCFXrhXg%2FX9vDwn2QORdiOlWCjw%2Bu6roChhXm%2Bv2g4IyzgSRE304ln10QeGQcMkOYAh7p3VqoF%2FwDamDi045c61to%2B2PJeuClQ5Ik7TQIsmo5G79%2BVampPLxVETy035f8%2Frrbs%2ByNRGGPtKNs9S1GHYYXrTC%2B7vb85CD83wINMTre4pLXJYdW2NJDkt635L%2F45%2BtFn21HHYRzvjv0%2BGvA7a66HUhzjqfZLz8klptN7UzWv3uJ91CvKxU5uWA6IYfhlKJLWizbpqARGmGxrhfNwEhpsXE0KUBiNVJ9t8%2FunoF&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Purchasing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0119. R34_Sourcing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Sourcing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZTdNGyEJkDYbFqDbjCbdw14KRqZXobKkiXKX%2FX1lZSuyAemLAJ14vDtSc4JeO7EawpO5x58DUsg26wV73MuZrPn0Mp9UGI96us9nbQc5zOBCYtddTK73LPuGnpQ1C1YXnGUbogE3hgKYECFeT3M%2BySu%2B45W4nAp%2BVcyuv7NsHUWUgZCITyE4EmUp7eAgx0NAb0AX9jlAIW1fgnP%2FvT1G2AGRsz7EW1Xi4dnWfOAwqdc3%2FQcJVbgqiWw5ZmPZR%2BslpoAL1oEmHI02sYF6wTek8TZYafWNMq0yPxZs8EZYIEXCQI8kghTb1ec7EYOK%2FbGIxKfdrsmbr9sdy1ZE6MdIt9bQ0KPfon9REh%2Fu705DJudFCpTijT3Lc1yWHXptSKQdvW%2FJ%2FfHPlvOxWqRV%2BBP%2B%2B3T464Atz3qdlyedjzJOfImtNuvGaiV%2Fj5PuIZxXqooqIarNu1QqsAelV23rkSjOUGv769YjhLiY4Ic4gHJ5lP33iy5fAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Sourcing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0120. R34_Supplier_Risk_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Supplier_Risk_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr87cUJCqdVWKnTTKrEtomUPe0FX5woWie35HNb993PSgTqk8pgv9%2F2684yga51c9uHJ3OGvHikk69WcPRRNNS3L6Y6LJp%2Fyclpd8J2qCg5FjsVE7HdFNWHJD%2FSkrZmzIhUsWRP1uDYUwIQIieKSi5LnYityWV1KcZXmV5OfLFlFF20gjMynEBzJLFO2d8DxENAbaFP7HCBVtsvAuXf%2FHiLsgMhZH%2BJXnuHh2RaiF1AWq%2Bvuk4I8TDIimw3lWPLZeoVjwznbQ0s4JK2jgH7BN6T2Nlhl22ttGm0e56z3RlogTdJAhySDkpvl11sZm8rdcYjkl%2B225vX3zZYlSyL0Q6Uba6jv0G%2FQv2iF93e3pyXH5OlYaKw3aGbnuCw5dK0hOR7p40juX362mA3TcryFP%2BF%2FTIfXBGxxNussO1E%2B2jj5LUqtV7VttfozbLqDcN4pT%2FMR0Q3fj6MSO9Dtsmk8EsUdtq39feMRQjxM8H1cQLY42v7%2FRhd%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Supplier_Risk_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0130. R36_CLM_Standard_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_CLM_Standard_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87jqOkU622UreCqDQgWgsPvEyX9MqsOXbwOaP89zjuQAWpe8yX%2B37deUHQm0Gtx%2FBkH%2FDHiBSy7WbJHtuZnMlathyqas6reQG8reUNn7dQVyXC8Qgly76iJ%2B3skpV5wbIt0YhbSwFsiFBRznhRcVnsC6nqmZJlLsv6G8s20UVbCIn5FMJASojOjQNwPAX0FkzungPknesFDMN%2F%2Fx4jPADR4HyIX1Lg6dmVxVhAVW5u%2B3cdyHAjiJyYyrHsvfMdpoZLdgRDOCVtooB%2Bwb9I411wnTO32h60%2Fb5ko7fKAWlSFnokFTq1W3%2B8V7Gpas9DpD7s9w1vPu%2F2LFsToZ8q3TlLY49%2Bh%2F5Fd%2Fjl4f6yZEqep0Kp3qQprnFZduqNJZWO9Hak4TU%2FWy2maZVu4S%2F4b9PhTwK2upp1IS6UzzaD%2BhSltpvGGd39mjbdQ7juJHOZEH3gxzSqsAdt1oeDR6K4Q2PczzuPEOJhgh%2FjAsTqbPvvG139Bg%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_CLM_Standard_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0131. R36_Core_Platform_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Core_Platform_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8TX9Rl1GordSuISgOitfDAy3TmOsyaYxsfZ5R%2Fj%2BMCKkjdY76c73aOFwiDDXI9pid3r7%2BPGlO13SzJw0w8slZc81ox0daz%2FmpegwJWq3k%2FV0KolkNPqi86ovFuSUTDSLVFHPXWYQKXMjQR2azmbM%2B4vGolFw1v33wl1Sa7GAepMJ9SCigpVX4MUOtj0tGBbfxzgkb5gUII%2F%2F17yHAAxOBjyl%2Bc6uOzF2xkMBObm%2BGtAp6uKaKnUzlSvfNR6dJwSXqwqKekXRYwL%2Fov0kWfvPL2xriDcd%2BWZIxOekCD0sGgUSYld%2BsPdzI3lY%2BnIZTv9%2Fuu7j7t9qRaI%2Bo4Vbr1DsdBx52OL0bpz%2Fd35yVL8qYUKvUmTXqJS6rjYB3KcqTXI4Xf%2BclqMU3Lcot4xn%2BdDn8SkNXFrAt6pnyyCfJjltpuOm%2BN%2BjlteoB02Yk3vCDmUPdlVOoBjF0fDlEj5h1a63%2FcRg0pHybFMS%2BArk62%2F77R1S8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Core_Platform_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0132. R36_Coupa_Pay_Base_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Coupa_Pay_Base_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd%2BdxCELwWordSuISgOiteOBl8lxbpk1xza%2Bzij%2FHscFVCZ1jzm55%2BteL1CM2vH1FB7NHfyYAEO23SzJQ932rCllT1k7AK2bRtK2fHNF3zVDXUHbH3poSPYVPCprlqTKS5JtESfYGgzChAiVVUPLmrJyXzJ%2B1XBW5XXTfiPZJrooI0JiPobgkBeFtJMTFI4BvBE6t09B5NKOhXDuxb%2BHCDuB6KwP8YsVcHyyVTmVoq421%2BN7KVh4WyDaYi5Hsg%2FWS0gNl%2BQgNMKctIsC6hn%2BIZ23wUqrr5UZlPm%2BJJM33ApUyI0YAXmQfLf%2BdMtjU96fhpB%2F3O872n3Z7Um2RgQ%2FV7qxBqcR%2FA78s5Jwf3d7XjIlz1OhVG%2FWLC5xSXYctUGejvR6JPcnP1kt5mmebuHP%2BK%2FTxd8EZHUx66I4Uz7ZOP45Sm03ndVK%2Fpo3PYpw2YnlLCFqoIc0ymEUSq%2BHwQNi3KHW9ueNBxHiYYKf4gKK1cn2%2Fze6%2Bg0%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Coupa_Pay_Base_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0133. R36_Coupa_Pay_Virtual_Card_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Coupa_Pay_Virtual_Card_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8dO2noWqut1K0gKg2I1sIDL5Pr3DJrjm18nVH%2BPY4LqCB1jzm55%2BteL1D2xov1EJ%2FsA3wfAGOx3SzJY60m85nqJnQ2mR1ow4FTOZ3M6WFeQ9Mcu8MN70jxBQJqZ5ekLjkptogDbC1GaWOCeD2lvKEV3%2FNKvJmKqi6ndfWVFJvkoq2MmfkUo0fBmHKDlxROEYKVpnTPUZbK9Ux6%2F9%2B%2FxwR7iehdiOmrYnB6djUfuGzqzW3%2FVskq3jBEx8ZypHjngoLccEmO0iCMSdskoF%2FgL9IGF51y5lbbTttvSzIEK5xEjcLKHlBEJXbrD%2FciNRWH8xCK9%2Ft9S9tPuz0p1ogQxkp3zuLQQ9hBeNEKPj%2FcX5bMyctcKNcbNdk1LilOvbEo8pFej%2BR%2F5yerxTgt8i3CBf91uvyTgKyuZl2wC%2BWzjRcfk9R20zqj1c9x072M152qssqI7ugxjwropTbrrguAmHZojPtxF0DGdJgYhrQAtjrb%2FvtGV78A&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Coupa_Pay_Virtual_Card_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0134. R36_Expense_Reporting_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Expense_Reporting_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbjtMwEP2VyO%2FOTWkIVlupuwVRaYFoW3jgZTU4U9ZaxzYeZyl%2Fj%2BMCKkjdx5zMuc14STBqJzZTeDT3%2BH1CCtluu2IPQ10vGokNl2XZ8kYuWg4SWt5h18quew1Dc2TZZ%2FSkrFmxOi9ZtiOacGcogAkRKuuWlw2vykNZiUUrqjrv6uYLy7bRRRkIifkYgiNRFNJODjieAnoDOrdPAXJpxwKc%2B%2B%2FfQ4QdEDnrQ%2FyqCjw92bqcSmjq7c34RkIVXhVEtpjLseyt9RJTwxU7giack%2FZRQD3jX6T3Nlhp9Y0ygzLfVmzyRlggRcLAiCSCFPvN%2BzsRm4qv5yES7w6Hnvcf9weWbYjQz5VuraFpRL9H%2F6wkfrq%2FuyyZkuepUKo3axbXuCw7jdqQSEd6OZL7nZ%2Btl%2FO0SLfwF%2FyX6fAnAVtfzbosLpTPNk58iFK7bW%2B1kj%2FnTY8QrjtVeZUQNfBjGhU4gtKbYfBIFHeotf1x6xFCPEzwU1xAsT7b%2FvtG178A&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Expense_Reporting_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0135. R36_Inventory_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Inventory_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8dx1l6s9pK3Qqi0oBo7XjgZfKcE2bNsY2PM8q%2Fn5PCVJC6x3w53%2B0cL1F2xotNH5%2FsHfzsAWO2267IQzlvq7aSV7SaK6DVrFjQhZq0dDJ9vJpzXjZqMSHZNwionV2RMi9ItkPsYWcxShsTVJRTWlSUF4eCi8lU8DKfzfl3km2Ti7YyjsynGD0KxpTrvaRwjBCsNLl7jjJXrmPS%2B%2F%2F%2BPSTYS0TvQkxfnMHx2ZVFX8iq3F53H5TkccYQHRvKkeyjCwrGhivSSoMwJK2TgH6BN6QOLjrlzLW2jbY%2FVqQPVjiJGoWVHaCISuw3n29FaioeT0MoPh0ONa2%2F7g8k2yBCGCrdOIt9B2EP4UUruL%2B7PS85Js%2FHQmO9QZNd4pLs2BmLYjzS%2B5H8n%2FxkvRymxXiLcMZ%2Fny7%2FJiDri1mX7Ez5ZOPFlyS129bOaPV72HQn42UnnvMR0Q1tx1EBndRm0zQBENMOjXG%2FbgLImA4TQ58WwNYn23%2Ff6PoV&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Inventory_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0136. R36_Purchasing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Purchasing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8dx2kaNqut1K0gKg2I1o4HXibXuWHWHNv4OqP8e5wUUJnUPebknq97vUDZGy%2FWQ3yy9%2FBjAIzZdrMkj6o6dHV3DfS6m0tatfOaHsrqinLeduXsqipnXJHsKwTUzi5JmRck2yIOsLUYpY0JKsqaFhXlxb7gYl4LPsurev6NZJvkoq2ME%2FMpRo%2BCMeUGLykcIwQrTe6eo8yV65n0%2FtW%2FxwR7iehdiOmLMzg%2Bu7IYClmVm5v%2BvZI8vmOIjo3lSPbBBQVTwyXppEEYkzZJQL%2FAP6QJLjrlzI22rbbfl2QIVjiJGoWVPaCISuzWn%2B5EaioOpyEUH%2Ff7hjZfdnuSrREhjJVuncWhh7CD8KIVPNzfnZeckudToaneqMkucUl27I1FMR3p7Uj%2BT36yWozTYrpFOOO%2FTZd%2FE5DVxawLdqZ8svHic5LabhpntPo1brqX8bITz%2FmE6JZ206iAXmqzbtsAiGmHxriftwFkTIeJYUgLYKuT7f9vdPUb&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Purchasing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0137. R36_Sourcing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Sourcing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8dO17arlZbqVtBVBoQrYUHXibPuWXWEtv4OqP8%2BzkuoILUPebknq97vUDVd16uh%2Fhk7%2BHHABiL7WZJHqZtVc%2F5pKXiSlzTuj1M6LWAKdWifZzXB341nwtSfIWAxtklESUnxRZxgK3FqGxMEBdTymta8T2v5GQqq7qczWbfSLFJLsaqmJlPMXqUjGk3eEXhGCFY1ZXuOapSu54p7%2F%2F795BgrxC9CzF9VQyOz07wgatabG76d1pVccYQHRvLkeK9CxpywyU5qA5hTNokAfMCf5EmuOi0626MbY39viRDsNIpNCit6gFl1HK3%2FngnU1P5eBpC%2BWG%2Fb2jzebcnxRoRwljp1lkcegg7CC9Gw5f7u%2FOSOXmZC%2BV6oya7xCXFse8synyktyP53%2FnJajFOy3yLcMZ%2Fm67%2BJCCri1kX7Ez5ZOPlpyS13TSuM%2FrXuOlexctOVVllxLT0kEcl9Mp067YNgJh22HXu520AFdNhYhjSAtjqZPvvG129Ag%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Sourcing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0138. R36_Supplier_Risk_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Supplier_Risk_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8d21m2tVZbqVtBVBoQrYUHXqY7x2HWHNv4OqP8%2BzkpoILUPebknq97vUDobZDrIT25e%2F1j0JiK7WZJHmY1n89nwGk3E5e0vu4EhbabU6Wqbg7V40V9oUjxVUc03i1JVXJSbBEHvXWYwKUM8eqK8poKvudCXl5JUZczUX8jxSa7GAdpYj6lFFAypvwQgOpD0tGBLf1zglL5nkEI%2F%2F17yHAAxOBjyl%2BC6cOzr%2FjAoa42N%2F07BSJdM0TPxnKkeO%2Bj0lPDJenAoh6TNlnAvOi%2FSBN98srbG%2BNa474vyRCd9IAGpYNeo0xK7tYf72RuKh%2BPQyg%2F7PcNbT7v9qRYI%2Bo4Vrr1Dodex52OL0bpL%2Fd3pyWn5OVUaKo3arJzXFIceutQTkd6O1L4nZ%2BsFuO0nG4RT%2Fhv0%2BFPArI6m3XBTpSPNkF%2BylLbTeOtUb%2FGTfeQzjuJUkyIaWk3jUrdg7Hrto0aMe%2FQWv%2FzNmpI%2BTApDnkBbHW0%2FfeNrl4B&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Supplier_Risk_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0139. R36_Supply_Chain_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Supply_Chain_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8T26ENmtVW6lYQlQZEa9kDL9Ot4zBrjm18nVH%2BPY7LUJnUPebknq97vUAYjBfrMT7aO%2FVzVBiL7WZJHpqrHlgHs5JDf1XOenkoD%2B%2FmTQlc8lk3l01T96S4VwG1s0tSV4wUW8RRbS1GsDFBrG5KlgTYnnExbwSfV5w130mxSS7aQszMxxg9CkqlGz2U6hhVsGAq9xShkm6g4P2rfw8J9oDoXYjpi1N1fHI1GxnM6s318EECj%2B8poqNTOVJ8dEGq3HBJejCopqRtEtDP6h%2FSBheddOZa207bH0syBiscoEZhYVAoohS79edbkZqKw2kIxaf9vi3br7s9KdaIKkyVbpzFcVBhp8Kzlurb3e15yZy8yoVyvUmTXuKS4jgYiyIf6e1I%2Fm9%2BslpM0yLfIpzx36bDSwKyuph1Qc%2BUTzZefElS203rjJa%2Fp00PEC878YpnRHdln0eFGkCbddcFhZh2aIz7dRMUxHSYGMa0ALo62f7%2FRld%2FAA%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR36%2FR36_Supply_Chain_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0140. R37_CLM_Standard_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_CLM_Standard_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8T22nSMaut1K0gKg2I1o4HXibXvWXWHNv4OqP8exwXUJnUPebknq97PUPZGy%2BWQ3yy9%2FBjAIzFejUnj9eg2skU2nK6u2Jl09RN%2BQ4Ok%2FKwa3ctm1wz3k5I8RUCamfnpK4YKdaIA6wtRmljglg9LVlTcrZlXLRTwduqbvk3UqySi7YyZuZTjB4FpcoNXpZwjBCsNJV7jrJSrqfS%2B1f%2FHhPsJaJ3IaYvTuH47Go2MNnUq5v%2BvZI8XlFER8dypPjggoLccE4O0iCMSbskoF%2FgH9IFF51y5kbbvbbf52QIVjiJGoWVPaCISmyWn%2B5Eaip2pyEUH7fbruy%2BbLakWCJCGCvdOotDD2ED4UUreLi%2FOy%2BZk1e5UK43atJLXFIce2NR5CO9Hcn%2FyU8Ws3Fa5FuEM%2F7bdPk3AVlczDqjZ8onGy8%2BJ6n1qnNGq1%2FjpnsZLzvximdE78tDHhXQS22W%2B30AxLRDY9zP2wAypsPEMKQF0MXJ9v83uvgN&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_CLM_Standard_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0141. R37_Core_Platform_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Core_Platform_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN8BQ6GkVhIpbTYtUrehJt3DXqoLHK1VsD2f6bL%2FfsZZq6xS%2BsjHfb%2FuPCcYeiNWo3tSd%2FhrRHLRZr1gD13H23J2tY95Nuvi4iKv4iuAfYzlrKqqrp21RcmiH2hJarVgecJZtCEacaPIgXIe4vllzIs44zueifJSZGVS8Pwni9beRSpwgfnknCGRpo0eDcR4cGgV9Il%2BdpA0ekjBmHf%2FHjxsgMho6%2FxXluLhWed85FDk6%2BvhUwOZq1IinU7lWPRZ2wZDwwXroCecktZeQL7gG1Jb7XSj%2B2upWqkeF2y0SmggSULBgCRcI7arr7fCNxX74xCJL7tdHdfftzsWrYjQTpVutKJxQLtF%2ByIbvL%2B7PS0ZkiehUKg3aabnuCw6DL0iEY70cSTzLz9bzqdpEW5hT%2Fgf0%2BE1AVuezTpPT5SPNkZ881Kbda172fyZNj2AO%2B%2BUJVlAZBt3YVTgALJfta1FIr%2FDvte%2FbyyC84dxdvQLSJdH2%2F%2Ff6PIv&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Core_Platform_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0142. R37_Coupa_Pay_Base_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Coupa_Pay_Base_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8ncdw0o1ZbqVs3UWlAtBYeeJmO5MKsObbxOaP89zgpoA6pe8yX%2B37deUnQayc3Q3gyD%2FhjQArJbrtij%2FCu5Z0oeCpm7SItu6pNFx3n6VxU7WIm5kUFJUu%2BoCdlzYqJjLNkRzTgzlAAEyLERZXyMi34gRdyXslinpVi9pUl2%2BiiDISJ%2BRSCI5nnjR0cpHgM6A3ozD4HyBrb5%2BDcf%2F8eI%2ByAyFkf4leR4%2FHZCj5wKMX2ur9toAhXOZHNx3IsubO%2BwanhinWgCcekdRRQL%2FgPqb0NtrH6WplWme8rNngjLZAiaaBHkqGR%2B82Hexmbym%2BnIZLvD4c6rT%2FtDyzZEKEfK91YQ0OPfo%2F%2BRTX4%2BeH%2BvOSUPJsKTfVGzfwSlyXHXhuS05HejuT%2B5Gfr5Tgtp1v4M%2F7bdPibgK0vZl3mZ8onGyc%2FRqndtrZaNb%2FGTfcQLjsVWTEhqk27aVRiD0pv2tYjUdyh1vbnjUcI8TDBD3EB%2Bfpk%2B%2FqNrn8D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Coupa_Pay_Base_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0143. R37_Coupa_Pay_Virtual_Card_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Coupa_Pay_Virtual_Card_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87iUPSgtVW6lYQlTaI1sIDL9PFuTJriR18zij%2FPY7Lpg6pe8yX%2B37deUHQd4Ncj%2F7B3OGvEckn282S3VeirEpoBX9fwDteVoc5b%2BYfGl6oRgicVdCWDUu%2BoyNtzZIVac6SLdGIW0MejA9QXsx4XnKR73Mhq5kUszSflz9Ysgku2oCPzAfvB5JZpuw4AMejR2egS%2B2jh1TZPoNh%2BO%2FffYAHIBqs8%2BFLZHh8tEU%2B5lAWm6v%2BowLh5xmRzaZyLPlkncLYcMkO0BFOSesgoJ%2FwBamd9VbZ7kqbVpufSzY6Iy2QJmmgR5Jeyd369kaGprI5DZH8vN%2FXvP6627NkTYRuqnRtDY09uh26J63w293NecmYPI2FYr1JM7vEZcmx7wzJeKS3Iw3%2F8rPVYpqW8RbujP82HZ4TsNXFrIvsTPlkM8gvQWq7qW2n1Z9p0z34y04iFRHRLT%2FEUYk96G7dtg6Jwg67zv6%2Bdgg%2BHMa7MSwgW51sX7%2FR1V8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Coupa_Pay_Virtual_Card_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0144. R37_Custom_Object_Without_License_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Custom_Object_Without_License_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8ndkLaMKut1K0gKg2I1sIDL9PNuTJrjh18zij%2F%2FRwXUEHqHvPlvl93XhD0ZpDrMTzaO%2FwxIoVsu1mye9V0TS1mZS7mVyqv8WGWQ3UQeSnwbQe1qJurjmVf0ZN2dsmqQrBsSzTi1lIAGyIkqnku6sjYi1LO5rJsijdV%2FY1lm%2BiiLYTEfAxhIMm5cuMAOR4DegumcE8BCuV6DsPw37%2F7CA9ANDgf4lfJ8fjkKjEKqKvNdf9OQRkaTuT4VI5l751XmBou2QEM4ZS0jQL6Gf8irXfBKWeute20%2Fb5ko7fSAWmSFnokGZTcrT%2FeythUPpyGSH7Y79u8%2Fbzbs2xNhH6qdOMsjT36HfpnrfDL3e15yZS8SIVSvUmTX%2BKy7NgbSzId6fVIw%2B%2F8bLWYpmW6hT%2Fjv06HPwnY6mLWBT9TPtkM8lOU2m5aZ7T6NW26h3DZqSzKhOguP6RRiT1os%2B46j0Rxh8a4nzceIcTDBD%2FGBfDVyfbfN7p6AQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Custom_Object_Without_License_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0145. R37_Expense_Reporting_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Expense_Reporting_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN8NmGZQrCRS2rRapHZDTbaHvVRXc1mtgk19psv%2B%2Bxlnm7JJ6SMf9%2F2685yg7wa5Gv2zecDXEcknm%2FWCPV62Vb2vK%2BSqLUs%2BU3nNnypRclWDqAqRX9QtsOQrOtLWLFiR5izZEI24MeTB%2BADlRcnzGRf5LhfyQylFlV7MLr%2BxZB1ctAEfmc%2FeDySzTNlxAI4Hj85Al9oXD6myfQbD8N%2B%2FxwAPQDRY58OXyPDwYot8zGFWrK%2F6GwXCVxmRzaZyLLm1TmFsuGB76AinpE0Q0G%2F4F2mc9VbZ7kqbVpvvCzY6Iy2QJmmgR5Jeye3q%2Fk6GpvLpOETy427X8ObzdseSFRG6qdK1NTT26Lbo3rTCLw93pyVj8jQWivUmzewclyWHvjMk45HejzT8zs%2BW82laxlu4E%2F77dPiTgC3PZp1nJ8pHm0F%2BClKbdWM7rX5Om%2B7Bn3cSqYiIbvk%2BjkrsQXertnVIFHbYdfbHtUPw4TDejWEB2fJo%2B%2B8bXf4C&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Expense_Reporting_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0146. R37_Inventory_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Inventory_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8nTkqablZbqVtBVBoQrR0PvEwX58KsOXbwOaP89zguoDKpe8yX%2B37deUnQ60FsRv9k7vHHiOST3XbFHvGqk9dVKdN3c9mkJRRl2rTdIq2g66qr6rrpmoolX9GRsmbFZlnOkh3RiDtDHowPUD6r0rxMi%2FyQF2JeiWKRLYr5N5Zsg4sy4CPzyfuBBOfSjgOkePToDOjMPnvIpO05DMOrf48BHoBosM6Hr4Lj8dnO8jGHcra96d9LKPyCE1k%2BlWPJB%2BskxoYr1oEmnJLWQUC94D%2BkdtZbafWNMq0y31dsdEZYIEXCQI8kvBT7zac7EZqK5jRE4uPhUKf1l%2F2BJRsidFOlW2to7NHt0b0oiQ%2F3d%2BclY%2FIsFor1Jk1%2BicuSY68NiXiktyMNf%2FKz9XKaFvEW7oz%2FNh3%2BJmDri1mX%2FEz5ZDOIz0Fqt62tVvLXtOke%2FGWnIisiotq0i6MCe1B607YOicIOtbY%2Fbx2CD4fxbgwL4OuT7f9vdP0b&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Inventory_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0147. R37_Project_Without_License_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Project_Without_License_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr87cdKsLVZbqVDQKsEW0W4Pe0GHcwyLxDY%2Bh3X%2F%2FRx3m7pJ5TFf7vt15wVB3zm5HsKzucfXASlk282SPVTz%2BUU9mU54NRfA67ZSHGZ1y0HBVCFMBMwfWfYVPWlrlqzKBcu2RANuDQUwIUKimnJR81LsRSk%2FTGU5yy%2Fq6hvLNtFFGwiJ%2BRyCI1kUyg4OOB4CegNdbl8C5Mr2BTj337%2BHCDsgctaH%2BFUWeHixlRgE1NXmsr9WUIZZQWSLsRzLbqxXmBou2RN0hGPSJgroN%2FyLNN4Gq2x3qU2rzfclG7yRFkiTNNAjyaDkbn13K2NT%2BXgcIvlxv29483m3Z9maCP1Y6coaGnr0O%2FRvWuGX%2B9vTkil5ngqleqNmcY7LskPfGZLpSO9Hcr%2Fzs9VinJbpFv6E%2Fz4d%2FiRgq7NZF8WJ8tHGyU9RartpbKfVz3HTPYTzTmVeJkS3%2FCmNSuxBd%2Bu29UgUd9h19seVRwjxMMEPcQHF6mj77xtd%2FQI%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Project_Without_License_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0148. R37_Purchasing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Purchasing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd%2BdG0larLZSt4KoNCBaOx54mc6SU2bNsY2PM8q%2Fn%2BPCVJC6x3w53%2B0cLwgGZcV69I%2F6Fn%2BOSD7Zbpbsvmmq%2BqE41Bz7vuHVfF5weAc1rw%2FlbNZX8xxmPUu%2BoSNp9JKVac6SLdGIW00etA9QXjY8r3iR7%2FNC1I0o5mlev%2F%2FOkk1wkRp8ZD56b0lkWWdGCxyPHp0GlZonD2lnhgys%2Fe%2FffYAtEFnjfPgqMjw%2BmTIfc6jKzdXwoYPCzzIik03lWPLRuA5jwyU7gCKckrZBQD7jK9I6401n1JXUvdQ%2Flmx0WhggSULDgCR8J3brzzciNBUPpyESn%2Fb7lrdfd3uWrInQTZWujaZxQLdD9yw7vLu9OS8Zk6exUKw3aWaXuCw5DkqTiEd6O5L9k5%2BtFtO0iLdwZ%2Fy36fA3AVtdzLrIzpRPNlZ8CVLbTWuU7H5Pmx7AX3Yq0iIisueHOCpwAKnWfe%2BQKOxQKfPr2iH4cBjvxrCAbHWy%2FfeNrl4A&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Purchasing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0149. R37_Sourcing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Sourcing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8nsYM7Kqut1K0gKg2I1sIDL9PVuTFrjm18zij%2FPU7KUEHqHvPlvl93XhD0Nqj1kB7dHf4YkFKx3SzZ%2FRznQr7pZqVsAEoJs0N54FqWc9lIjXLGte5Y8RUjGe%2BWrKk4K7ZEA24dJXApQ7y5KrksBd9zoWZXSswrIeQ3Vmyyi3GQJuZjSoFUXWs%2FBCjxmDA6sJV%2FSlBp39cQwn%2F%2F7jMcgCj4mPKXqPH45Bs%2BcJDN5rp%2Fp0GktzWRr8dyrHjvo8ap4ZI9gCUck7ZZwDzjX6SNPnnt7bVxnXHfl2yITnkgQ8pBj6SSVrv1x1uVm6rDaYjUh%2F2%2BLdvPuz0r1kQYx0o33tHQY9xhfDYav9zdnpeckldToaneqFlf4rLi2FtHajrS65HCn%2FxstRin1XSLeMZ%2FnQ4vCdjqYtZFfaZ8sgnqU5bablpvjf41brqHdNlJVGJCTFc%2BTKMKezB23XURifIOrfU%2FbyJCyodJccgLqFcn23%2Ff6Oo3&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Sourcing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0150. R37_Supplier_Risk_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Supplier_Risk_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbT9swFP4rkd%2BdxCG9xGorFbppldgW0bIHXpBxTsDCsTMfh3X%2FHscF1E0qj%2Flyvts5XqDodM%2FXg38yN%2FB7APTJdrMk95UsoZ1BQx%2FatqJlCxWt2GRG560sJmx%2BUeYVI8kvcKisWZIizUmyRRxga9AL4wOUF1Oal5Tl%2B5zxyZSzeTq9mN2RZBNclBE%2BMp%2B875FnmbRDLygcPDgjdGqfvUil7TLR9%2F%2F9uw9wLxB763z4Yhkcnm2RD7koi81l90UK5mcZos3GciT5ap2E2HBJWqERxqR1EFAv8IHUznorrb5UplHmcUkGZ7gVqJAb0QFyL%2Flu%2Ff2ah6b84TiE%2FNt%2BX9P6525PkjUiuLHSlTU4dOB24F6UhNub69OSMXkaC8V6o2Z2jkuSQ6cN8nikzyP1b%2FnJajFO83gLd8L%2FnC7eE5DV2ayL7ET5aNPzH0Fqu6mtVvLvuOlO%2BPNOLGURUQ1t4yiHTii9bhoHiGGHWts%2FVw6ED4fxbggLyFZH23%2Ff6OoV&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Supplier_Risk_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0151. R37_Supply_Chain_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Supply_Chain_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9owFP4rkd%2BdW0NoLECiZdOQui0qdA97qQ7msFpNbM%2FH6di%2Fr2O2ik2ij%2Flyvts5nhH0nRXLwT%2Fpe%2Fw5IPlkvZqzx2Y3yeuDnHK4ui55hXjNd4dmx6Gp62o6kcUUJiz5ho6U0XNWpjlL1kQDrjV50D5AeVnzvOJFvs0LMalF0aTNVfWdJavgojT4yHzy3pLIMmkGCxyPHp2GLjXPHlJp%2Bgys%2Fe%2FfY4AtEFnjfPgqMjw%2BmzIfcqjK1U3%2FQULhpxmRycZyLPlonMTYcM4O0BGOSdsgoF7wDWmd8Uaa7kbpvdI%2F5mxwWhggRUJDjyS8FJvl5zsRmordaYjEp%2B225e3XzZYlSyJ0Y6Vbo2no0W3QvSiJD%2Fd35yVj8jQWivVGzewSlyXHvtMk4pHej2T%2F5GeL2Tgt4i3cGf99OvxNwBYXs86yM%2BWTjRVfgtR61ZpOyd%2Fjpnvwl52KtIiI2vNDHBXYg%2BqW%2B71DorDDrjO%2Fbh2CD4fxbggLyBYn23%2Ff6OIV&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR37%2FR37_Supply_Chain_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0173. R40_CLM_Standard_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_CLM_Standard_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87cUKStlZbqVtBVBoQrYUHXqarc2PWEtv4nFH%2Be5wUUEHqHvPlvl93XhL0nZObITyZe%2Fw%2BIIVkt12xh3k1O2JZAj%2FWleClqBd8Xtc5F%2BrNsShm7WKRVyz5gp60NStWpIIlO6IBd4YCmBAhUdRclDwXB5HLqpZFlZbz%2FCtLttFFGwgT8ykERzLLlB0ccDwF9Aa61D4HSJXtM3Duv38PEXZA5KwP8SvP8PRsCzEIKIvtTf9WQR5mGZHNxnIseWe9wqnhij1CRzgmbaKAfsG%2FSONtsMp2N9q02nxbscEbaYE0SQM9kgxK7jcf7mRsKo%2FnIZLvD4eGN5%2F2B5ZsiNCPlW6toaFHv0f%2FohV%2Bvr%2B7LDklT6dCU71RM7vGZcmp7wzJ6UivR3K%2F87P1cpyW0y38Bf91OvxJwNZXsy6zC%2BWzjZMfo9Ru29hOq5%2FjpnsI153yNJ8Q3fLHaVRiD7rbtK1HorjDrrM%2Fbj1CiIcJfogLyNZn23%2Ff6PoX&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_CLM_Standard_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0176. R40_Core_Platform_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Core_Platform_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu8YbKeuh5JIabNpkdrNarI97KWi%2BGZFxUC5uM3%2B%2FbCzTemk9NHH93zdyxxlb7xYDfHR3sHzABizzXpB7h%2Babs%2BbQlF%2BsQc6KwugTVlf0qaqqq76UHPe1CT7DgG1swtS5pxkG8QBNhajtDFBvKwpn9GC73ghLmpR1nk1%2B0GydTLRVsaJ%2BBijR8GYcoOXFA4RgpUmd09R5sr1THr%2F37%2F7BHuJ6F2I6atgcHhyJR%2B4nJXrq%2F6jkkW8ZIiOjd1I9skFBVPBBdlLgzAGbZOAfoF%2FSBtcdMqZK207bX8uyBCscBI1Cit7QBGV2K5ub0QqKh6OQyg%2B73Ytbb9udyRbIUIYK107i0MPYQvhRSv4dndzWnJKnk%2BFpnqjJjvHJdmhNxbFdKP3I%2Fk%2F%2BclyPk6L6RThhP8%2BXf5NQJZns87ZifLRxosvSWqzbp3R6te46V7G805FXkyI7uh%2BGhXQS21WXRcAMe3QGPd6HUDGdJgYhrQAtjzavn2iy98%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Core_Platform_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0177. R40_Coupa_Pay_Base_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Coupa_Pay_Base_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TtIs3ay2UreCqDQgWgsPvEw358asObbxOaP893NSQAWpe8yX%2B37deUHQGy%2FXQ3yyd%2FhjQIrZdrNk97Wqqq4qOg4wv%2BI1NCV%2FgGbGZ11xeaVgfnmBM5Z9xUDa2SWr8oJlW6IBt5Yi2Jigomp4UfOy2BelvGhk1eT1N5Ztkoe2ECfeU4yepBDKDR44HiIGCyZ3zxFy5XoB3v%2F37z7BHoi8CzF9lQIPz64qhgLqanPdv1NQxrkgcmKsxrL3Liic%2Bi3ZIxjCMWebBPQL%2FkXa4KJTzlxr22n7fcmGYKUD0iQt9EgyKrlbf7yVqad8OA6R%2FLDft7z9vNuzbE2EYax04ywNPYYdhhet8Mvd7WnJKXk%2BFZrqjZriHJdlh95YktOJ3o7kf%2Bdnq8U4LadLhBP%2B23T4k4CtzmZdiBPlo42Xn5LUdtM6o9WvcdM9xPNOZV5OiO744zQqsQdt1l0XkCjt0Bj38yYgxHSYGIa0ALE62v77Qlev&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Coupa_Pay_Base_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0178. R40_Coupa_Pay_Virtual_Card_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Coupa_Pay_Virtual_Card_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu62bNdxEyEJkDYbFqDdjCbdYZeClZlVqCx5otxl%2F36yshZZgfTIJ%2FJ9kJoTdLoXq8E%2FmTv8NSD5ZLNesId6P6llVV%2Bk9XQPaVXOMJ22j1V6MZNyls8m0wJylnxHR8qaBSuzUG2IBtwY8mB8gPKyTvMqLfJdXohJLco6m5aTHyxZBxVlwMfJJ%2B97EpxLO%2FSQ4sGjM6Az%2B%2Bwhk7bj0Pfv3h4C3ANRb50PVcHx8GzLfMihKtdX3ScJhb%2FkRJaP4Vjy2TqJMeGC7UETjk6bQKBe8A1pnPVWWn2lTKvMzwUbnBEWSJEw0CEJL8V2dXsjQlLxeGwi8WW3a9Lm23bHkhURujHStTU0dOi26F6UxPu7m9OQ0XkWA8V4Iyc%2FN8uSQ6cNiXikjy31%2F%2Fyz5XzsFvEW7mT%2B43F4dcCWZ73O%2BQnzUaYXXwPVZt1YreSfcdMd%2BPNKRVZERLXpPrYK7EDpVds6JAo71Nr%2BvnYIPhzGuyEsgC%2BPsv%2F%2F0eVf&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Coupa_Pay_Virtual_Card_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0179. R40_Expense_Reporting_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Expense_Reporting_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8dJ1mbtlZbqVtBVBoQrYUHXibXuWHWHNv4OqP8%2BzkuoILUPebknq97vUTRa8c3Q3gyD%2FBjAAzZbrsij7NSVmUNUypvOkEnx5uOLrrZnB6Psmunbb1YLGYk%2BwoelTUrUuUFyXaIA%2BwMBmFChIqqpsWElsWhKPm05lWdz%2BfTbyTbRhdlREjMpxAccsakHZygcArgjdC5fQ4il7Znwrn%2F%2Fj1G2AlEZ32IXyWD07OtiqEQk2p727%2BTogwzhmjZWI5k762XkBquSCc0wpi0iQLqBf4ijbfBSqtvlWmV%2Bb4igzfcClTIjegBeZB8v%2Fl4z2NTfjwPIf9wODS0%2Bbw%2FkGyDCH6sdGcNDj34PfgXJeHLw%2F1lyZQ8T4VSvVGTXeOS7NRrgzwd6e1I7nd%2Bsl6O0zzdwl%2Fw36aLPwnI%2BmrWJbtQPts4%2FilK7baN1Ur%2BGjfdi3DdqczLhKiWdmmUQy%2BU3rStB8S4Q63tzzsPIsTDBD%2FEBbD12fbfN7p%2BBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Expense_Reporting_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0180. R40_Inventory_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Inventory_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu82tkO8CiWR0qbTInWb1aR72EtF8HWLioFxcZf9%2B2GyVdmk9NHH93zdywLFoB1fj%2BHZ3MOPETBk282SPHaiuqpm8z5vGnbIGZOQHzrGcpj181423aGfzUj2DTwqa5akLkqSbRFH2BoMwoQIlXWTlyyvyn1Z8XnD66uiZOw7yTbRRRkREvM5BIecUmlHJ3I4BvBG6MK%2BBFFIO1Dh3H%2F%2FHiPsBKKzPsSvisLxxdblWApWb66HWymq8IEiWjqVI9lH6yWkhkvSC40wJW2jgHqFN6T1Nlhp9bUynTJPSzJ6w61AhdyIAZAHyXfrz3c8NuWH0xDyT%2Ft9m7dfd3uSrRHBT5VurMFxAL8D%2F6okPNzfnZdMyYtUKNWbNOklLsmOgzbI05Hej%2BT%2B5CerxTTN0y38Gf99uvibgKwuZl3QM%2BWTjeNfotR201qt5K9p04MIl52qokqI6vI%2BjXIYhNLrrvOAGHeotf1540GEeJjgx7gAujrZ%2FvtGV78B&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Inventory_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0181. R40_Invoicing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Invoicing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndkKAxAIkWjYNqd2iwvawl8o1l9WqY7s%2Bp2P%2FfZ3QTmwSfbzPd9%2BPOy9QdNrxdR8ezR0894Ah2W6W5L6eMBCzSZlWRV2kZcvytJ7M2xTKqpbz6UNbS0aSH%2BBRWbMkRRarLWIPW4NBmBAhVsxSVqY527OcT2e8qLJpVf0kySaqKCPCOPkYgkNOqbS9EykcA3gjdGafgsik7ahw7r%2B3%2Bwg7geisD7HKKRyfbMF6Jspic9V9kiIPc4po6RCOJJ%2BtlzAmXJJWaITBaRMJ1Av8RRpvg5VWXylzUObXkvTecCtQITeiA%2BRB8t369obHpPzh1IT8y37fpM233Z4ka0TwQ6Rra7DvwO%2FAvygJ3%2B9uzkOOzrMx0Bhv4KSXZkly7LRBPh7pY0vuzT9ZLYZuPt7Cn81%2FPC7eHZDVRa8LesZ8knH8a6TabhqrlfwzbLoT4bJSnuUjog5pO7Zy6ITS68PBA2Lcodb297UHEeJhgu%2FjAujqJPvvH129Ag%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Invoicing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0182. R40_Purchasing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Purchasing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8TJyFNgtVWKhS0SmyLaNkDL%2BjOcYeFY3u%2BDuv%2BPY67oW5SeczJPV%2F3eo4wKMtWo3%2FW9%2BLnKNAnm%2FWCPLWzpm7K4iKFvuFpVVRlCg3wtO73eVtXl5y3LUm%2BCYfS6AUps5wkG8RRbDR60D5AeVmneZUW%2BS4v2KxmZZtdzh5Jsg4mUoOPxGfvLTJKuRktpOLghdOgMvPiIeNmoGDtf%2F%2BeAmwB0Rrnw1dBxeHFlPmYQ1Wur4YbDoVvKKKhUzeS3BrHRSy4IHtQKKagXRCQr%2BId6Zzxhht1JXUv9Y8FGZ1mBlAi0zAIZJ6z7erzHQtF2ffjELJPu12Xdl%2B3O5KsEIWbKl0bjeMg3Fa4V8nFw%2F3dacmYPIuFYr1Jk57jkuQwKI0s3ujjSPZPfrKcT9MsnsKd8D%2Bmw98EZHk265yeKB9tLPsSpDbrzijJf0%2BbHsCfdyqyIiKyT%2FdxlIkBpFr1vROIYYdKmV%2FXToAPh%2FFuDAugy6Ptv090%2BQY%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Purchasing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0183. R40_Sourcing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Sourcing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd%2BdOF7TMqutVCjTKrEtooWHvaCbxAULx%2FZ8Hdb9exx3Qx1SeczJPV%2F3eo7QaydWQ3gyt%2FLXIDFkm%2FWCPDR7flHu%2BYyyqmzopKmAXlSc0YZ%2FamDaVN2sa0h2Lz0qaxaE54xkG8RBbgwGMCFCjE8pm9CS7Vgpqqngn3M2m%2Fwk2Tq6KAMhMZ9CcCiKorWDAyoPQXoDOrfPAfLW9gU49%2B7fQ4QdIDrrQ%2FwqC3l4tpwNDCZ8fdlft1CGWYFoi7Ecyb5Y38rUcEH2oFGOSesooF7kG1J7G2xr9aUynTKPCzJ4IyygQmGglyhCK7arbzciNhXNcQjF192upvWP7Y5kK0Tpx0pX1uDQS7%2BV%2FkW18u725rRkSp6nQqneqFmc45Ls0GuDIh3p40jub36ynI%2FTIt3Cn%2FA%2FpsO%2FBGR5Nuu8OFE%2B2jjxPUpt1rXVqv0zbrqHcN6pzMuEqI7u06iQPSi96jovEeMOtba%2Fr7yEEA8T%2FBAXUCyPtv%2B%2F0eUr&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Sourcing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0184. R40_Supplier_Risk_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Supplier_Risk_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87cdIsaFZbqVtBVBoQrWUPe5muzpVZc%2Bzgc0b573FcQAWpe7zPd9%2BPO88JejPI1Rie7T1%2BH5FCtlkv2FPTIZRK1Xzf7Sted7NrDoe64Wpfz1QnlMBGsOwBPWlnF6zKY7UhGnFjKYANERJVw0XNS7ETpbxqZHWdz6qrR5ato4q2ENLkcwgDyaJQbhyA4zGgt2By9xIgV64vYBj%2Be3uK8ABEg%2FMhVmWBxxdXiVFAXa1v%2BvcKyvCuIHLFFI5lH5xXmBIu2AEM4eS0jQT6Ff8irXfBKWdutO20%2FbZgo7fSAWmSFnokGZTcrj7dyZhU7k9NJD%2Fudi1vv2x3LFsRoZ8i3TpLY49%2Bi%2F5VK%2Fx6f3ceMjnPU6AUb%2BIsLs2y7NgbSzId6W1Lw2%2F%2FbDmfumW6hT%2Bbf3sc%2Fjhgy4te58UZ80lmkJ8j1WbdOqPVz2nTPYTLSmVeJkR3%2FJBaJfagzarrPBLFHRrjftx6hBAPE%2FwYF1AsT7L%2F%2FtHlLw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Supplier_Risk_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0185. R40_Supply_Chain_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Supply_Chain_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd%2BdOCFpiNVWKhS0SmyLaNnDXpDn3A4Lx858Hdb9%2BznuQB1SeczJPV%2F3eo6i1wNfjf7J3MOvEdAnm%2FWCPNZNU7G6ErTO9zUtoWnoZVNd0ouuyhtZyqKsCpJ8A4fKmgUpUkaSDeIIG4NeGB8gVswoK2nOdizn1YxfsHRW5N9Jsg4uyggfmU%2FeD8izTNpxEBQOHpwROrXPXqTS9pkYhnf%2FHgM8CMTBOh%2B%2B8gwOz7ZgIxNlsb7qb6TIfZ0h2mwqR5Jb6yTEhguyFxphStoGAfUCb0jrrLfS6itlOmV%2BLsjoDLcCFXIjekDuJd%2BuPt%2Fx0JT%2FOA4h%2F7TbtbT9ut2RZIUIbqp0bQ2OPbgtuBcl4eH%2B7rRkTJ7GQrHepJmd45Lk0GuDPB7p40jDv%2FxkOZ%2BmebyFO%2BF%2FTBevCcjybNZ5dqJ8tBn4lyC1WbdWK%2Fln2nQv%2FHmnPM0jojq6j6MceqH0quscIIYdam1%2FXzsQPhzGuzEsIFsebf9%2Fo8u%2F&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR40%2FR40_Supply_Chain_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0186. R41_CLM_Standard_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_CLM_Standard_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXftS2LCNuDELWogaYXY6aGXYCKNGyIUyXKo1P37UnQTuAGco57mbTOcEwzS8NXontQd%2FhqRXLRZL9gD1vVlUzZVXGLdxFWDED%2FuZxCX1R6ry1lVl0XPou9oSWi1YEWSsWhDNOJGkQPlPJQVTZxVcZ7tspzXDS%2BzZJbPfrBo7V2EAheYT84Z4mna6dFAjAeHVoFM9LODpNNDCsa8%2B%2FfgYQNERlvnv%2FIUD8%2B6yMYMqmJ9NXzqIHcXKZFOp3Is%2Bqxth6Hhgu1BEk5JWy8gXvANaa12utPySqheqJ8LNlrFNZAgrmBA4q7j29XtDfdN%2BeNxiPiX3a6N22%2FbHYtWRGinStda0Tig3aJ9ER3e392clgzJk1Ao1Js003NcFh0GqYiHI30cyfzLz5bzaZqHW9gT%2Fsd0eE3AlmezztMT5aON4V%2B91Gbdaim6P9OmB3DnnfIkD4jo430Y5TiAkKu%2Bt0jkdyil%2Fn1tEZw%2FjLOjX0C6PNr%2B%2F0aXfwE%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_CLM_Standard_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0189. R41_Core_Platform_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Core_Platform_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr87cVxCqQVItGwaUrtFhe1hL9VhjtVqYqc%2Bp2P%2FfR3TTmwSfcyX%2B37deUrQNp1a9OHR3uNzjxSy1XLGHkqoUGy3gssLPeGjsS75BMZXXFYoq5GUe3FVsewHejLOzpjMBctWRD2uLAWwIUJCjrkY8VJsRKmqsboo88ml%2FMmyZXQxFkJiPobQkSoK7foOOB4CegtN7p4C5Nq1BXTdf%2F8eItwBUed8iF9lgYcnJ0UvYCSX1%2B0nDWW4LIhcMZRj2WfnNaaGM7aHhnBIWkcB84J%2Fkdq74LRrro3dGftrxnpvlQMypCy0SCpotV7c3arYVG2PQ6S%2BbDY1r7%2BtNyxbEKEfKt04S32Lfo3%2BxWj8fn97WjIlz1OhVG%2FQLM5xWXZoG0sqHenjSN1bfjafDtMq3cKf8D%2Bmw3sCNj%2BbdVqcKB9tOvU1Sq2WtWuM%2FjNsuoVw3qnMy4SYHd%2BnUYUtmGax23kkijtsGvf7xiOEeJjg%2B7iAYn60%2FfeNzl8B&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Core_Platform_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0190. R41_Coupa_Pay_Base_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Coupa_Pay_Base_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbT9swFP4rkd8dx7khrLZSoaBVYltECw97QQfXDAvH9nwc1v37OSmbClJ5zJfz3c7xDKE3XiyH%2BGxv1a9BYczWqzl5qMuSS37W0KqCc1pLqCg0nNO2btuyknXTPLYku1cBtbNzUuYFydaIg1pbjGBjgoqypUVNebEtuGhaUfH8vG1%2FkGyVXLSFODGfY%2FQoGJNu8EDVPqpgweTuJUIuXc%2FA%2Bw%2F%2FHhLsAdG7ENMXZ2r%2F4spiKKAuVxf9lQQezxiiY2M5kl27INXUcE6ewKAak3ZJQL%2Bq%2F0gXXHTSmQttd9r%2BnJMhWOEANQoLvUIRpdgsv96I1FQ8HoZQfNluO9p932xJtkRUYax06SwOvQobFV61VHe3N8clp%2BT5VGiqN2qyU1yS7XtjUUxH%2BjySf8tPFrNxWky3CEf8z%2BnwLwFZnMw6Y0fKBxsvviWp9apzRss%2F46Z7iKedeM4nRO%2Fo0zQqVA%2FaLHe7oBDTDo1xvy%2BDgpgOE8OQFsAWB9v3b3TxFw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Coupa_Pay_Base_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0191. R41_Coupa_Pay_Virtual_Card_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Coupa_Pay_Virtual_Card_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9sgFP4rFu8YcK5FSaS02bRI7WY12R72Up0QsqJioBzcZf%2B%2B2GmnbFL66M%2Fnu53DDKGxQS7b9Oju9XOrMRXr1Zw8jIRQwGFKxQgGdAjTMd1NeEXFVXW1U4cJh8GOFD90ROPdnFQlJ8UasdVrhwlcyhCvxpQPqeBbLuRoLAeDsppMf5JilV2Mg9QzH1MKKBlTvg1A9THp6MCW%2FilBqXzDIIT%2F%2Fj1kOABi8DHlL8H08clXvOUwrFbXzScFIk0YomddOVJ89lHpvuGcHMCi7pLWWcC86L9IHX3yyttr4%2FbG%2FZqTNjrpAQ1KB41GmZTcLO9uZW4qd6chlF%2B225rW3zZbUiwRdewq3XiHbaPjRscXo%2FT3%2B9vzkn3ysi%2FU1%2Bs02SUuKY6NdSj7I30cKbzlJ4tZNy37W8Qz%2Fsd0eE9AFhezztiZ8skmyK9Zar2qvTXqT7fpBtJlJ1GKHjF7euhHpW7A2OV%2BHzVi3qG1%2FvdN1JDyYVJs8wLY4mT77xtdvAI%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Coupa_Pay_Virtual_Card_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0192. R41_Custom_Object_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Custom_Object_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TtI0Baut1K2bqLRBtBYeeJkO98qsJbbxOaP89zguoA6pe7zPd9%2BPO88J%2Bs7J1RCezAP%2BGJBCtlkv2GP1fjatcDrjMzw0vIYa%2BbsGDrycVFBCPVFNVbDsC3rS1ixYlcdqQzTgxlAAEyJUVA0val4Wu6KU00ZOJnlTNF9Zto4q2kBIk08hOJJCKDs44HgM6A10uX0OkCvbC3Duv7fHCDsgctaHWJUCj8%2B2KoYC6mp91d8oKMNMEFkxhmPZrfUKU8IFO0BHODptI4F%2BwX9I622wynZX2uy1%2Bb5ggzfSAmmSBnokGZTcru7vZEwqv52aSH7Y7VreftruWLYiQj9GuraGhh79Fv2LVvj54e48ZHKep0Ap3sgpLs2y7Nh3hmQ60tuW3B%2F%2FbDkfu2W6hT%2Bbf3sc%2Fjpgy4te5%2BKM%2BSTj5MdItVm3ttPq17jpHsJlpTIvE6L3%2FJBaJfagu9V%2B75Eo7rDr7M9rjxDiYYIf4gLE8iT7%2Bo8ufwM%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Custom_Object_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0193. R41_Expense_Reporting_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Expense_Reporting_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd8TO4EAswCJlk1Dareo0D3spTLOZbXq2J6v07J%2FP8esFatEH3Nyz9e9nqPotOOrPjyaO%2FjdA4Zss16Qh%2Bm%2BbusZO%2BRyxsb5mDGZixGb5u1kPzuwsv5UV1OS%2FQCPypoFqQpGsg1iDxuDQZgQIVZN8sgt2Y6VvJ7w0aiYzMY%2FSbaOLsqIkJiPITjklErbO5HDMYA3Qhf2KYhC2o4K5979e4iwE4jO%2BhC%2FSgrHJ1uxnolxtb7qPktRhilFtHQoR7Iv1ktIDRfkIDTCkLSJAuoZ3pDG22Cl1VfKtMr8WpDeG24FKuRGdIA8SL5d3d7w2JTvT0PIv%2B52Td583%2B5ItkIEP1S6tgb7DvwW%2FLOScH93c14yJS9SoVRv0KSXuCQ7dtogT0f6OJL7l58s58M0T7fwZ%2FyP6eI1AVlezDqnZ8onG8e%2FRanNurFayT%2FDpjsRLjuVRZkQ1eaHNMqhE0qv2tYDYtyh1vbl2oMI8TDB93EBdHmy%2Ff%2BNLv8C&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Expense_Reporting_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0194. R41_Inventory_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Inventory_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXdqr4wStgEnbhADaSvETg%2B9BGNq3BCRSJZDpe7fl6KbwC3gHPU0b5vhnGDorViN%2Fknf488RySeb9YI9ytm%2BKZsGeImzktddfeCAsuL7uiqg6qomPyBLvqEjZfSClWnOkg3RiBtNHrQPUF42PK95ke%2FyQnxoRFWnRfPxO0vWwUVp8JH55L0lkWXSjBY4Hj06DX1qnj2k0gwZWPvfv8cAWyCyxvnwVWR4fDZlPuZQl%2Bur4ZOEws8yIpNN5VhyY5zE2HDBDtATTknbIKBe8A1pnfFGmv5K6U7pHws2Oi0MkCKhYUASXort6vOdCE3F%2FjRE4na3a3n7dbtjyYoI3VTp2mgaB3RbdC9K4sP93XnJmDyNhWK9STO7xGXJceg1iXik9yPZv%2FnZcj5Ni3gLd8Z%2Fnw6vCdjyYtZ5dqZ8srHiS5DarFvTK%2Fl72vQA%2FrJTkRYRUR0%2FxFGBA6h%2B1XUOicIO%2B978unYIPhzGuzEsIFuebP99o8s%2F&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Inventory_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0195. R41_Invoicing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Invoicing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu8YSNykRUmktNm0SN1mNeke9lJR%2B7KiYmBc3GX%2FvtjZqmxS%2Bujje77uZYGqs0Gu%2B%2FTk7uBnD5iK7WZJHqaz6eyq0oK2V5eaVvPLij62QlOuQeh2PgWuNSm%2BQUTj3ZJMSk6KLWIPW4dJuZQhPplRXlHB91zIi5mcVmXFL76TYpNdjFNpZD6lFFAy1vg%2BKAqHBNEpW%2FrnpMrGd0yF8N%2B%2FhwwHhRh8TPlLMDg8%2Bwnvuaomm%2BvuQ6NEmjNEz4ZypPjoYwNjwyXRyiIMSessYF7gDamjT77x9tq41rgfS9JHJ71Cg9KpDlCmRu7Wn29lbiofj0MoP%2B33Na2%2F7vakWCNCHCrdeId9B3EH8cU0cH93e1pyTF6OhcZ6gyY7xyXFobMO5Xik9yOFP%2FnJajFMy%2FEW8YT%2FPl39TUBWZ7Mu2Iny0SbIL1lqu6m9Nc3vYdOdSuedRClGxLRUj6MSOmXsum0jIOYdWut%2F3URQKR8mxT4vgK2Otv%2B%2B0dUr&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Invoicing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0196. R41_Project_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Project_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9sgEP5XLN6xwYmTCCWR0mbTInWb1WR72EtF8WVFxcA43GX%2F%2FTDppmxS%2Bsh3d9%2BPO5Yoe%2BPFZohP9h5%2BDICx2G1X5GExZ03NONBjoyZ0yicdXbBHSdlxrMz5VC0aUnyFgNrZFalLRood4gA7i1HamCBWzyibUs4OjItmJiZNOZ9NvpFim1S0lTFPPsXoUVSVcoOXFE4RgpWmdM9Rlsr1lfT%2Bv9pDgr1E9C7E9OIVnJ5dzQYmp%2FX2pn%2BnJI%2FzCtFVYzhSvHdBQU64IkdpEEanbSLQL%2FAXaYOLTjlzo22n7fcVGYIVTqJGYWUPKKIS%2B83HO5GSisdzE4oPh0NL28%2F7Ayk2iBDGSLfO4tBD2EN40Qq%2B3N9dhszOyxwoxxs5q2uzpDj1xqLIR3rbkn%2F1T9bLsVvkW4SL%2BbfH5R8HZH3V67K6YD7LePEpUe22rTNa%2FRo33ct4XYmXPCO6o8fcKqCX2my6LgBi2qEx7udtABnTYWIY0gKq9Vn23z%2B6%2Fg0%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Project_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0197. R41_Purchasing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Purchasing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ndkIpxWorFbpplWCLaLeHvaCLcx0WiW18Duv%2B%2BznuNpVJ5TFf7vt15zlB3zm5GsKTecCXASlkm%2FWCPVbXZbWfIeQIM8wn2OxzUFORNwqby5mCRrQVy76hJ23NglWFYNmGaMCNoQAmREhU01xM8lLsRCkvp%2FJiWpQX199Zto4u2kBIzKcQHEnOlR1cdDsE9Aa6wj4HKJTtOTj337%2FHCDsgctaH%2BFVyPDzbSgwCJtX6pv%2BgoAxXnMjysRzLPlqvMDVcsD10hGPSOgroV%2FyH1N4Gq2x3o02rzY8FG7yRFkiTNNAjyaDkdnV%2FJ2NT2RyHSH7a7eq8%2FrLdsWxFhH6sdGsNDT36LfpXrfDrw91pyZS8SIVSvVGTn%2BOy7NB3hmQ60vuR3J%2F8bDkfp2W6hT%2Fhv0%2BHvwnY8mzWOT9RPto4%2BTlKbda17bT6NW66h3DeqSzKhOg236dRiT3obtW2HoniDrvO%2Frz1CCEeJvghLoAvj7Zv3%2BjyNw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Purchasing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0198. R41_Sourcing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Sourcing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8nTrIspVZbqVtBVBoQrR0PvEzX5MKsObbxOaP89zguoDKpe8yX%2B37deUEwKCvWo3%2FS9%2FhjRPLJdrNkj33VXUFVHdISZ3laFX2dznM4pLOuhvbQz%2Bbz7polX9GRNHrJyixnyZZoxK0mD9oHKC%2FrNK%2FSIt%2FnhbiuxVWd1e%2FqbyzZBBepwUfmk%2FeWBOetGS2kePToNKjMPHvIWjNwsPbVv8cAWyCyxvnwVXA8PpsyH3Ooys3N8L6Fws84keFTOZZ8MK7F2HDJelCEU9ImCMgX%2FIc0znjTGnUjdSf19yUbnRYGSJLQMCAJ34rd%2BtOdCE3F4TRE4uN%2B36TNl92eJWsidFOlW6NpHNDt0L3IFh%2Fu785LxuRZLBTrTZr8Epclx0FpEvFIb0eyf%2FKz1WKaFvEW7oz%2FNh3%2BJmCri1kX%2FEz5ZGPF5yC13TRGyfbXtOkB%2FGWnIisiIru0j6MCB5Bq3XUOicIOlTI%2Fbx2CD4fxbgwL4KuT7f9vdPUb&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Sourcing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0199. R41_Supplier_Risk_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Supplier_Risk_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87cdI006y2UreCqDQgWgsPvEw358qsJbbxOaP89zjuQAWpe8yX%2B37deUEw9E6ux%2FBk7vHHiBSy7WbJHuYzaK5qpbjoVM1rwGsOjQB%2BUNjMq9nhUcw7ln1FT9qaJatywbIt0YhbQwFMiJCoGi5qXoq9KOW8kbMmv26abyzbRBdtICTmUwiOZFEoOzrgeAzoDfS5fQ6QKzsU4Nx%2F%2Fx4i7IDIWR%2FiV1ng8dlWYhRQV5ub4Z2CMlwVRLaYyrHsvfUKU8MlO0BPOCVto4B%2Bwb9I622wyvY32nTafF%2By0RtpgTRJAwOSDEru1h%2FvZGwqH09DJD%2Fs9y1vP%2B%2F2LFsToZ8q3VpD44B%2Bh%2F5FK%2Fxyf3deMiXPU6FUb9IsLnFZdhx6QzId6e1I7jU%2FWy2maZlu4c%2F4b9PhTwK2uph1UZwpn2yc%2FBSltpvW9lr9mjY9QLjsVOZlQnTHD2lU4gC6X3edR6K4w763P289QoiHCX6MCyhWJ9t%2F3%2BjqNw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Supplier_Risk_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0200. R41_Supply_Chain_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Supply_Chain_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8nTkLaMKutVOimVYItomUPe0FX5zosHDvzOdD993PcgTqk8pgv9%2F2684yg071YDv7R3OHvAckn69WcPUyLFkDu2hTrTzKt2hrSy6qoUllLnBT7Cez2NUt%2BoCNlzZyVWc6SNdGAa0MejA9QXk7TvEqLfJsXYjIVF5fZRVn%2FZMkquCgDPjIfve9JcC7t0EOKB4%2FOgM7sk4dM2o5D37%2F79xDgHoh663z4KjgenmyZDzlU5eqq%2Byyh8DUnsnwsx5Iv1kmMDedsD5pwTNoEAfWMb0jjrLfS6itlWmV%2BzdngjLBAioSBDkl4KTbL2xsRmordcYjE1%2B22SZvvmy1LlkToxkrX1tDQoduge1YS7%2B9uTkvG5FksFOuNmvwclyWHThsS8UgfR%2Br%2F5WeL2Tgt4i3cCf9jOrwmYIuzWWf8RPlo04tvQWq9aqxW8s%2B46Q78eaciKyKi2nQfRwV2oPSybR0ShR1qbV%2BuHYIPh%2FFuCAvgi6Pt%2F2908Rc%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR41%2FR41_Supply_Chain_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0201. R42_CLM_Standard_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_CLM_Standard_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87jtM0bFZbqVtBVBoQrYUHXqabc2XWEtv4nFH%2Be5wUUEHqHvPlvl93XhD0nVfrIT7Ze%2Fw%2BIMVsu1myBwkt4nXV8nk5e%2BSVbGf8upQVr0u4AtSHEsqaZV8wkHF2ycq8YNmWaMCtpQg2Jqgoa15UXBb7Qqp5rWZXeT2vvrJsk1yMhTgxn2L0pITQbvDA8RgxWOhy9xwh164X4P1%2F%2Fx4S7IHIuxDTlxR4fHZlMRRQlZub%2Fq0GGd8IIifGcix754LGqeGSHaAjHJM2ScC84F%2BkCS467bobY1tjvy3ZEKxyQIaUhR5JRa126w93KjVVj6chUu%2F3%2B4Y3n3Z7lq2JMIyVbp2loceww%2FBiNH6%2BvzsvOSXPp0JTvVFTXOKy7Nh3ltR0pNcj%2Bd%2F52WoxTqvpFuGM%2Fzod%2FiRgq4tZF%2BJM%2BWTj1ccktd00rjP657jpHuJlJ5nLCTEtP0yjCnsw3bptAxKlHXad%2B3EbEGI6TAxDWoBYnWz%2FfaOrXw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_CLM_Standard_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0204. R42_Core_Platform_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Core_Platform_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr87sUNKO6utVOimVYItomUPe0GHcwyLxM58DnT%2F%2FRx3oA6pPPrz3ffj7uYEXdur1RAe7Q3%2BHpBCtlkv2B3IUlQzkFxiM%2BXVmRB8NqsmfKLvzybVFFDiJ5b9QE%2FG2QUrc8GyDdGAG0sBbIiQKM%2B5qLgUOyHV5FxVMpdi9pNl66hiLITU%2BRhCT6ootBt64LgP6C20uXsKkGvXFdD37%2F7uItwDUe98iC9Z4P7JlWIQUJXri%2B6zBhmmBZErxnAs%2B%2BK8xpRwwR6gJRyd1pHAPOMbUnsXnHbthbGNsb8WbPBWOSBDykKHpIJW29X1lYpJ1f2hiNTX3a7m9fftjmUrIvRjpEtnaejQb9E%2FG423N1fHIZPzPAVK8UbO4lQvy%2FZda0mlJX1sqf%2Fnny3nY7VKu%2FBH%2FR%2B3w6sDtjzpdV4cMR9kevUtUm3WtWuN%2FjNOuoNwWikeQEJMwx9SqcIOTLtqGo9EcYZt614uPUKIiwl%2BiAMolgfZ%2F290%2BRc%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Core_Platform_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0205. R42_Coupa_Pay_Base_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Coupa_Pay_Base_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2ByZdduPCEJkDYbFqDbjCbdw14K1mZWobLkiXKX%2Ff1kZS2yAumbdOLx7kjNCXo9yNXoH80t%2FhqRfLJZL9h9meOHfTkr%2BKyu97yciYLX4cg7rKqLCmohoGbJd3SkrFmwIhUs2RCNuDHkwfgAieKSi5LnYidyWV3KMk%2FzuvrBknVQUQZ8ZD56P5DMstaOA3A8eHQGdGqfPKSt7TMYhjdv9wEegGiwzodbnuHhyRZiFFAW66v%2BYwu5n2VENpvCseSTdS3GhAu2B004OW1CA%2FWMr0jjrLet1VfKdMr8XLDRGWmBFEkDPZL0rdyuvtzIkFQ%2BHItIft7tGt582%2B5YsiJCN0W6tobGHt0W3bNq8e725jRkdJ7GQDHe1DM7x2XJodeGZFzS%2B5aGf%2F7Zcj5Vy7gLd8J%2Fnw4vDtjyrNd5dtL5KDPIr6HVZt1Yrdo%2F06R78OeVwgeIiOr4PpZK7EHpVdc5JAoz1Nr%2BvnYIPizGuzEMIFseZf%2F%2Fo8u%2F&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Coupa_Pay_Base_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0206. R42_Coupa_Pay_Virtual_Card_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Coupa_Pay_Virtual_Card_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXdqs7wRtgEnblEDSSvEbg%2B9BBNq3BChSIVDpe7fh6KTwi3gHPU0b5vhgqDVnVj3%2FtHc4XOP5JPtZsnuDxWMJoVELqf5A6%2FkfMRnRTnnuSyb8aioRjOcsuQHOlLWLFmZ5izZEvW4NeTB%2BADl5YTnFS%2FyfV6I8URUs3Q8L3%2ByZBNclAEfmY%2FedySyTNq%2BA45Hj86ATu2Th1TaNoOu%2B%2B%2FffYA7IOqs8%2BGryPD4ZMu8z6EqN1ftJwmFn2ZENhvKseSzdRJjwyU7gCYcktZBQL3gX6R21ltp9ZUyjTK%2Flqx3RlggRcJAiyS8FLv17Y0ITcXDaYjEl%2F2%2B5vW33Z4layJ0Q6Vra6hv0e3QvSiJ3%2B9uzkvG5GksFOsNmtklLkuOrTYk4pE%2BjtS95WerxTAt4i3cGf9jOrwnYKuLWRfZmfLJphNfg9R2U1ut5J9h0y34y05FWkRENfwQRwW2oPS6aRwShR1qbX9fOwQfDuNdHxaQrU62%2F77R1Ss%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Coupa_Pay_Virtual_Card_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0207. R42_Expense_Reporting_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Expense_Reporting_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLLbtswEPwVgXc9KCuKTdgGnDhBDaStEDs99BJsqXVDhCJVLpW6f1%2BKbgI3gHMjhzs7M7ucE3S6F6vBP5l7%2FDUg%2BWSzXrBHWfD9tJpO0kt%2BwdOqmlTprIJwmvIS6na2lxNkyTd0pKxZsDIrWLIhGnBjyIPxASrKOi2qlBe7gouLWlSzrKjr7yxZBxVlwEfmk%2Fc9iTyXdughxYNHZ0Bn9tlDJm2XQ9%2B%2Fe3sMcA9EvXU%2B3HiOh2dbFkMBVbm%2B6m4kcH%2BZE9l8DMeSW%2BskxoQLtgdNODptQgP1gm9I46y30uorZVplfi7Y4IywQIqEgQ5JeCm2q893IiQVP45FJD7tdk3afN3uWLIiQjdGuraGhg7dFt2Lkvhwf3caMjrPYqAYb%2ByZn%2BOy5NBpQyIu6WNL%2FT%2F%2FbDkfq0XchTvhf0yHVwdsedbrPD%2FpfJTpxZfQarNurFbyzzjpDvx5JZ7xiKg23cdSgR0ovWpbh0Rhhlrb39cOwYfFeDeEAeTLo%2Bz%2Ff3T5Fw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Expense_Reporting_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0208. R42_Inventory_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Inventory_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87dkqSFqut1K0gKg2I1sIDL9PNuTFriW18zij%2F%2FZwUUEHqHvPlvl93XhL0nVebIT7aW%2FwxIMVst12xO71YgJ5XFS8BkZdvasmhxZrPa6yhun%2FbLsqCZV8xkHF2xWa5ZNmOaMCdpQg2JkjOai5LXsiDLFRVq0rmZfGNZdtkYizEifgYoyclhHaDB47HiMFCl7unCLl2vQDv%2F%2Ft3l2APRN6FmL4KgccnN5ODhHK2verfaSjiXBA5MXZj2XsXNE4FV%2BwBOsIxaJMEzDP%2BRZrgotOuuzK2Nfb7ig3BKgdkSFnokVTUar%2F5eKNSUXV%2FGiL14XBoePN5f2DZhgjDWOnaWRp6DHsMz0bjl9ub85JT8nwqNNUbNcUlLsuOfWdJTTd6PZL%2FnZ%2Btl%2BO0mk4Rzviv0%2BFPAra%2BmHUpzpRPNl59SlK7beM6o3%2BNm%2B4hXnYq8mJCTMsfplGFPZhu07YBidIOu879vA4IMR0mhiEtQKxPtv8%2B0fUL&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Inventory_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0209. R42_Invoicing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Invoicing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu6ypdROECEJkDYrGqDbjCbdoZeCtplVqC1potxl%2F36ysxXZgPTIJ%2FJ9kFoQdK1T6z68mAf80SOFZLtZsmdZ5NUhn895Vc0Lnlcy51BMZ7wocFY0Aq5ACpZ8Q0%2FamiWbpLHaEvW4NRTAhAiJyZSLnEuxF1IVU1WIdFrkTyzZRBVtIIyTLyE4UllW294Bx2NAb6BN7WuAtLZdBs799%2FYcYQdEzvoQK5nh8dVORC8gn2yuu081yDDLiGw2hGPJrfU1jgmX7AAt4eC0jAT6Dd%2BR0ttga9tea9No833Jem%2BUBdKkDHRIKtRqt%2F58r2JSVZ2aSN3t9yUvv%2B72LFkToR8i3VhDfYd%2Bh%2F5N1%2Fj4cH8ecnSejoHGeANndmmWJceuNaTGI31syf3xz1aLoVuNt%2FBn8x%2BPw18HbHXR6yI7Yz7JOPUlUm03pW11%2FWvYdAfhspJM5Yjohh%2FGVoUd6HbdNB6J4g7b1v688QghHib4Pi4gW51k%2F%2F2jq98%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Invoicing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0210. R42_Purchasing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Purchasing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87cbK0m6y2UreCqDQgWgsPvEw358asObbxOaP89zjuQAWpe7zPd9%2BPOy8IBuPleoxP9g5%2FjEix2G6W7B4uoG6hbfmVAMXbtrnicIkPfK76edPDrE0VK75iIO3skjWlYMWWaMStpQg2Jkg0cy5aXou9qOVsLmd1KcTFN1Zskoq2EPPkU4yeZFUpN3rgeIgYLJjSPUcolRsq8P6%2Ft%2FsEeyDyLsRU1RUenl0jRgFts7ke3imo42VF5KopHCveu6AwJ1yyRzCEk9MuEegX%2FIt0wUWnnLnWttf2%2B5KNwUoHpElaGJBkVHK3%2FngrU1L5cGwi%2BWG%2F73j3ebdnxZoIwxTpxlkaBww7DC9a4Ze729OQ2XmZA%2BV4E2d1bpYVh8FYkvlIb1vyr%2F7ZajF1y3yLcDL%2F9jj8ccBWZ70uqhPmo4yXnxLVdtM5o9WvadMDxPNKdVlnRPf8MbdKHECbdd8HJEo7NMb9vAkIMR0mhjEtoFodZf%2F9o6vf&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Purchasing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0211. R42_Sourcing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Sourcing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd%2Bd2GmTtlZbqVtBVBoQrYUHXiYvuWXWHNv4OqP8%2BzkuoILUPebknq97vUTZayc2Q3gy9%2FBjAAzZbrsiD9WRTWaL2YR2fMHotJvP6COfTuh8Pu%2FquuomZV2R7Ct4VNasSJkzku0QB9gZDNKECLGypmxKOTswLqpaVDyvFuU3km2jizIyJOZTCA5FUbR2cJLCKYA3Uuf2Oci8tX0hnfvv30OEnUR01of4xQs4PduSDUxOy%2B1N%2F66VPMwKRFuM5Uj23voWUsMVOUqNMCZtooB6gb9I422wrdU3ynTKfF%2BRwRthJSoURvaAIrRiv%2Fl4J2JT8XgeQvHhcGho83l%2FINkGEfxY6dYaHHrwe%2FAvqoUv93eXJVPyPBVK9UbN4hqXZKdeGxTpSG9Hcr%2Fzk%2FVynBbpFv6C%2FzZd%2FklA1lezLosL5bONE5%2Bi1G7bWK3aX%2BOmexmuO%2FGcJ0R19JhGBfRS6U3XeUCMO9Ta%2Frz1IEM8TPBDXECxPtv%2B%2B0bXrw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Sourcing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0212. R42_Supplier_Risk_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Supplier_Risk_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8nTtKkBautVOimVYItomUPe0GHcx0Wju35HNb993PSgTqk8pgv9%2F2685yg006s%2BvBk7vBXjxSSzXrBHhAhLyTM0mldVWmFszqF8rFIywlc1Pv2spKzCUu%2BoydlzYKVWc6SDVGPG0MBTIhQXk7TvEqLfJcXop6KuswuJ9MfLFlHF2UgjMynEBwJzqXtHaR4COgN6Mw%2BB8ik7Tg49%2B7fQ4QdEDnrQ%2FwqOB6ebZn3OVTl%2Bqr7JKEIM05k%2BVCOJZ%2Btlzg2XLA9aMIhaRMF1Au%2BIY23wUqrr5Rplfm5YL03wgIpEgY6JBGk2K5ub0RsKh6PQyS%2B7HZN2nzb7liyIkI%2FVLq2hvoO%2FRb9i5J4f3dzWnJMno2FxnqDJj%2FHZcmh04bEeKSPI7l%2F%2BdlyPkyL8Rb%2BhP8xHV4TsOXZrHN%2Bony0ceJrlNqsG6uV%2FDNsuoNw3qnIihFRbbofRwV2oPSqbT0SxR1qbX9fe4QQDxN8HxfAl0fb%2F9%2Fo8i8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Supplier_Risk_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0213. R42_Worker_Management_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Worker_Management_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXeJkiwvIWwDTtyiBtJWiJ0eegkm1KghIpEsh0rdvw9Ft4FbwDnqad42wyVB31mxGfyTvsOfA5JPdtsVe7gqpm0FzWM6bxdVWskW04WERZpflfOZlGVVTVqWfENHyugVK7OcJTuiAXeaPGgfoLycpXmVFvkhL8R0JqaTbD5ZfGfJNrgoDT4yn7y3JDiXZrCQ4tGj09Bl5tlDJk3Pwdr%2F%2Fj0E2AKRNc6Hr4Lj8dmU%2BZBDVW6v%2Bw8SCj%2FnRIaP5Vjy0TiJseGKtdARjknrIKBe8A2pnfFGmu5a6UbpHys2OC0MkCKhoUcSXor95vOtCE3F42mIxKfDoU7rr%2FsDSzZE6MZKN0bT0KPbo3tREu%2Fvbs9LxuRZLBTrjZr8Epclx77TJOKR3o9k%2F%2BRn6%2BU4LeIt3Bn%2FfTr8TcDWF7Mu%2BZnyycaKL0Fqt61Np%2BTvcdM9%2BMtORVZERDVpG0cF9qC6TdM4JAo77Drz68Yh%2BHAY74awAL4%2B2f77Rtev&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Worker_Management_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0214. R43_CLM_Standard_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_CLM_Standard_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu62bDdxayEJkDYbFqDdjCbbYZeCsZlVqCypotxl%2F76y0g7ZgPTIJ%2FJ9kJoR9MqK5eAf9T0%2BD0g%2BWa%2Fm7AHauui6ep9iV12lEyzrdFd201BeTSu4qHZY71nyAx1Jo%2BeszHKWrIkGXGvyoH2A8rJK80la5Nu8ENNKTC%2Byurr8yZJVUJEafJx89N6S4Lw1g4UUDx6dBpWZJw9Za3oO1v739hBgC0TWOB%2BqguPhyZT5kMOkXF33n1oo%2FCUnMnwMx5LPxrUYE87ZHhTh6LQJBPIF%2FyKNM960Rl1L3Un9a84Gp4UBkiQ09EjCt2KzvLsVIanYHZtIfNlum7T5ttmyZEmEbox0YzQNPboNuhfZ4vf729OQ0XkWA8V4Iyc%2FN8uSQ680iXikjy3ZN%2F9sMRu7RbyFO5n%2FeBzeHbDFWa8zfsJ8lLHia6BarxqjZPtn3HQP%2FrxSkRURkV26j60Ce5Bq2XUOicIOlTK%2FbxyCD4fxbggL4Iuj7L9%2FdPEK&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_CLM_Standard_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0217. R43_Core_Platform_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Core_Platform_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu8Y28Fui5JIabNpkdrNarI97KW6s8mKioFxcZf9%2B2LSTtmk9NHH93zdyxxh0E6sxvBo7uWvUWLINusFeeA9r6uGN%2FTycj%2BjHIoZhWpf06a8aq5mZV1xDiT7Jj0qaxakyguSbRBHuTEYwIQIFVVDC07LYleUom5EXec1r7%2BTbB1dlIGQmI8hOBSMdXZ0QOUhSG9A5%2FYpQN7ZgYFz%2F%2F17iLADRGd9iF8lk4cnWxVjAbxaXw8fOijDBUO0bCpHso%2FWdzI1XJA9aJRT0jYKqGf5F2m9Dbaz%2BlqZXpmfCzJ6IyygQmFgkChCJ7aru1sRm4ofxyEUn3a7lrZftjuSrRClnyrdWIPjIP1W%2BmfVya%2F3t6clU%2FI8FUr1Jk12jkuyw6ANinSk9yO51%2FxkOZ%2BmRbqFP%2BG%2FT4e3BGR5NuucnSgfbZz4HKU269Zq1f2ZNj1AOO9U5mVCVE%2F3aVTIAZRe9b2XiHGHWtvfN15CiIcJfowLYMuj7b9vdPkC&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Core_Platform_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0218. R43_Coupa_Pay_Base_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Coupa_Pay_Base_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJfb9sgEP8qFu82tps5KUoipU2rRWo3q8n2sJfqii8rKgbK4S779sNkm7JJqcQLx%2F3%2B3TEn6LUTqyE8mwd8HZBCtlkv2GNd76tm2nX59HJW5RPZPOWzadPk5SXMugtZXtQSWPYVPSlrFqwuSpZtiAbcGApgQiyVdWyf5FW5KyvxoYmnqJvJN5ato4oyEBLyOQRHgnNpBwc5HgJ6A7qwLwEKaXsOzv339hjLDoic9SHeKo6HF1uXQwmTen3V30iowpQTWT6GY9mt9RJTwgXbgyYcnbaRQL3h30rrbbDS6itlOmW%2BL9jgjbBAioSBHkkEKbar%2BzsRk4qnYxOJj7tdm7eftzuWrYjQj5GuraGhR79F%2F6Ykfnm4Ow2ZnBcpUIo3cvJzWJYdem1IpCW9b8n99s%2BW87FbpF34E%2Fz7cPjjgC3Pep3zE%2BajjBOfItVm3Vqt5M9x0j2E80pVUaWK6vJ9ahXYg9KrrvNIFGeotf1x7RFCXEzwQxwAXx5l%2F%2F2jy18%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Coupa_Pay_Base_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0219. R43_Coupa_Pay_Virtual_Card_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Coupa_Pay_Virtual_Card_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJhb9owEP0rkb8nTkIIYAESLZuG1G5RYfuwL9XVHKvVxHZ9Tsf%2BfR3TTmwSlfzFz%2FfuvXfnOUHXWrHq%2FaO%2Bw%2BceySeb9YLdT0d1UeejMj3AdJZW5ahKAR5mKeTjGmUxOYyrGUt%2BoCNl9IKVWc6SDVGPG00etA9QXtZpXqVFvssLMa7DycbTyU%2BWrIOK0uAj89F7S4JzaXoLKR49Og1tZp48ZNJ0HKz97%2B0%2BwBaIrHE%2B3AqOxydT5n0OVbm%2B6j5JKPyEExk%2BhGPJZ%2BMkxoQLdoCWcHDahAbqBf8ijTPeSNNeKb1X%2BteC9U4LA6RIaOiQhJdiu7q9ESGpeDgVkfiy2zVp8227Y8mKCN0Q6dpo6jt0W3QvSuL3u5vzkNF5FgPFeENPfonLkmPXahJxSR9bsm%2F%2B2XI%2BVIu4C3fG%2F5gO7w7Y8qLXOT%2FrfJKx4mtotVk3plXyzzDpDvxlpSIrIqL26SGWCuxAtav93iFRmGHbmt%2FXDsGHxXjXhwHw5Un23z%2B6fAU%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Coupa_Pay_Virtual_Card_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0220. R43_Expense_Reporting_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Expense_Reporting_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd%2BdxFbaFKutVOimVWJbRMseeEGucwGLxPZ8Hdb9%2BzkuoDKpPObknq97PUfZd06shvBkbuD3ABiyzXpB7lXVsunFjFNe1xWt%2BETRGdQXFPb7qWJs1u65Itkv8KitWRCelyTbIA6wMRikCREq%2BZSWFWXlrmRiMhWTOufV7I5k6%2BiijQyJ%2BRSCQ1EUyg5OUjgE8EZ2uX0OMle2L6Rz%2F%2F27j7CTiM76EL9YAYdny8uhlBVfX%2FZflGShLhBtMZYj2VfrFaSGC%2FIgO4QxaRMF9Au8I423wSrbXWrTavO4IIM3wkrUKIzsAUVQYrv6fi1iU7E%2FDqH4tts1tPm53ZFshQh%2BrHRlDQ49%2BC34F63g9ub6tGRKnqdCqd6oWZzjkuzQdwZFOtLnkdxrfrKcj9Mi3cKf8D%2Bny7cEZHk267w4UT7aOPEjSm3Wje20%2BjtuupfhvBPLWUJ0Sx%2FSqIBe6m7Vth4Q4w67zv658iBDPEzwQ1xAsTzafnyjy38%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Expense_Reporting_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0221. R43_Inventory_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Inventory_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TkLSrFZbqVtBVBoQrR0PvEy35MqsOXbwOaP89zguoDKpe8yX%2B37deUHQ60GuR%2F9k7vDHiOST7WbJHuYHwDmUFb%2Bqs5qXdVfxR7zqeDVvEaHGCqBkyVd0pKxZsiLNWLIlGnFryIPxAcqKGc9Knmf7LJfVTFZ1OivefWPJJrgoAz4yn7wfSArR2nEAjkePzoBO7bOHtLW9gGF49e8hwAMQDdb58JULPD7bIhszKIvNdf%2B%2BhdzXgsiKqRxLPljXYmy4ZAfQhFPSJgioF%2FyHNM5621p9rUynzPclG52RFkiRNNAjSd%2FK3frTrQxN5eNpiOTH%2Fb7hzZfdniVrInRTpRtraOzR7dC9qBbv727PS8bkaSwU602a4hKXJcdeG5LxSG9HGv7kZ6vFNC3jLdwZ%2F206%2FE3AVhezLsSZ8slmkJ%2BD1HbTWK3aX9Ome%2FCXnfI0j4jq%2BCGOSuxB6XXXOSQKO9Ta%2FrxxCD4cxrsxLECsTrb%2Fv9HVbw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Inventory_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0222. R43_Invoicing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Invoicing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbT9swFP4rkd%2Bda106q61U6KZVYltEyx54QYfkdFg4dubjsO7f47iAuknlMV%2FOdzvHc4JO93I1%2BEdzg78HJJ9s1gt23wIIUUyRF9Ve8En1acahqgS%2FgH3ZYiVanAmW%2FERHypoFK9OcJRuiATeGPBgfoLyc8nzCi3yXF1JMpZil%2BUTcsWQdXJQBH5mP3vcks6yxQw8cDx6dAZ3aJw9pY7sM%2Bv6%2Ff%2FcB7oGot86HryLDw5Mt8yGHSbm%2B7D43UPiLjMhmYzmWfLGuwdhwwfagCcekdRBQz%2FiO1M5621h9qUyrzK8FG5yRFkiRNNAhSd%2FI7erbtQxN5cNxiOTX3a7m9Y%2FtjiUrInRjpStraOjQbdE9qwZvb65PS8bkaSwU642a2TkuSw6dNiTjkT6O1L%2FmZ8v5OC3jLdwJ%2F2M6vCVgy7NZ59mJ8tGml9%2BD1GZdW62av%2BOmO%2FDnnYq0iIhq%2BT6OSuxA6VXbOiQKO9Ta%2FrlyCD4cxrshLCBbHm3%2FfaPLFw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Invoicing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0223. R43_Purchasing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Purchasing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu8YcGI7RUmktNm0SN1mNdke9lIRQlZUDIyLu%2BzfF5Ntyialjz6%2B5%2Bte5iB64%2FlqiE%2F2Qf0YFMRis16gx1bKasr2NaazusHTZn%2BDZzWdYNHeHNtJy2hFG1R8VQG0swtUlRQVG4BBbSxEYWOCaNVgOsWM7ijjdcPrWcmqyTdUrJOLtiJm5lOMHjgh0g1eYHWKKlhhSvccRSldT4T3%2F%2F17TLAXAN6FmL4YUadnV9GBimm1vu3fScFiSwAcGcuh4r0LUuWGC3QUBtSYtEsC%2BkX9RbrgopPO3Gp70Pb7Ag3BcidAA7eiV8Cj5NvVx3uemvL9eQj4h92uw93n7Q4VKwAVxkp3zsLQq7BV4UVL9eXh%2FrJkTl7mQrneqEmucVFx6o0Fno%2F0diT%2FOz9azsdpnm8RLvhv08WfBGh5NeucXCifbTz%2FlKQ2684ZLX%2BNm%2B5FvO7ESpYRfcDHPMpVL7RZHQ5BAaQdGuN%2B3gUlYjpMDENaAFmebf99o8tX&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Purchasing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0224. R43_Sourcing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Sourcing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TkLaBqut1K0gKg2I1o4HXqZbcmHWEtv4nFH%2B%2BzkuTAWpe8yX%2B37deUkw9FZuRv%2Bob%2FHniOST3XbF7iGb5VBVc%2F4eqpKXXdFygKbjXVlmXV7iQ7FYsOQbOlJGr1iRZizZEY240%2BRB%2BwBlxZxnJc%2BzQ5bL2VzOqrRavPvOkm1wURp8ZD56b0kK0ZjRAsejR6ehT82Th7QxgwBr%2F%2Ft3H2ALRNY4H75ygccnU2RjBmWxvRo%2BNJD7hSAyYirHko%2FGNRgbrlgHPeGUtA4C6hlfkdoZbxrTXyndKv1jxUanpQFSJDUMSNI3cr%2F5fCNDU%2FlwGiL56XCoef11f2DJhgjdVOnaaBoHdHt0z6rBu9ub85IxeRoLxXqTprjEZclx6DXJeKS3I9k%2F%2Bdl6OU3LeAt3xn%2BbDn8TsPXFrEtxpnyysfJLkNpta9Or5ve06QH8Zac8zSOiWt7FUYkDqH7Ttg6Jwg773vy6dgg%2BHMa7MSxArE%2B2%2F77R9Qs%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Sourcing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0225. R43_Supplier_Risk_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Supplier_Risk_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8TX2izzmordSuISgOitfDAy3RwT5m1xA4%2Bzij%2Ffo4LqCB1j%2Flyvts5nhN0ba9XQ3x09%2FhjQIrFZr1gD1IZJa%2BFKmdvDJQTmIoSaqlKrGczrNVEHeoZK75gIOvdgqlKsGJDNODGUQQXEyRUXYpJKcVOSD2t9fS6kldfWbFOJtZBzMTHGHvSnBs%2F9FDiMWJw0Fb%2BKUJlfMeh7%2F%2F795DgHoh6H2L6khyPT16JQcBErW%2B6twZkvOJEno%2FdWPHOB4O54IIdoCUcgzZJwD7jX6QJPnrj2xvr9tZ9X7AhOO2BLGkHHZKORm9XH%2B50Kqq%2FnYZIv9%2FtmrL5tN2xYkWEYax06x0NHYYthmdr8PP93XnJnLzKhXK9UZNf4rLi2LWOdL7R65H63%2FnZcj5O63yKcMZ%2FnQ5%2FErDlxaxzfqZ8sun1xyS1WTe%2BtebXuOkO4mUnWcmM2H15yKMaO7Dtar8PSJR22Lb%2B521AiOkwMQxpAXx5sv33iS5fAA%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Supplier_Risk_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0226. R43_Worker_Management_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Worker_Management_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXdJlCtvhG3AiRPUQNoKsdtDL8GUGjdEKJLlUKn796HopHALOEc9zdtmuCDotBPrPjyae%2FzVI4Vsu1myh5rLDzhHmc%2FaGeY1tDKfT6cyx1lVcY6yhfrAsm%2FoSVmzZKOCs2xL1OPWUAATIsRHk5zXecX3vBLjiRjPi8m4%2Fs6yTXRRBkJiPobgSJSltL2DHI8BvQFd2KcAhbRdCc799%2B8hwg6InPUhflUlHp%2FsiPcc6tHmqruRUIVpSWTLoRzLbq2XmBou2QE04ZC0iQLqGf8ijbfBSquvlGmV%2BblkvTfCAikSBjokEaTYrT%2FdidhU%2FDgNkfi43zd582W3Z9maCP1Q6doa6jv0O%2FTPSuLX%2B7vzkil5kQqleoNmeYnLsmOnDYl0pPcjudf8bLUYpkW6hT%2Fjv0%2BHtwRsdTHrojxTPtk48TlKbTeN1Ur%2BGTbdQbjsVBVVQlSbH9KowA6UXretR6K4Q63t72uPEOJhgu%2FjAsrVyfbfN7p6AQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Worker_Management_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0227. R44_CLM_Standard_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_CLM_Standard_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ndryUgtVWKnQTldgW0W4Pe0FX5zosEjvzOaz77%2Be4A5VJ5TFf7vt15xlB1%2FZqOYRHe4%2B%2FBqSQrVdz9iA%2FXF7KyfQiv2qwyiucXuU7aKq8nGjYg5Aod8Cy7%2BjJODtnshAsWxMNuLYUwIYICXmRi8gQW1GqyVQJUZSV%2FMGyVXQxFkJiPobQk%2BJcu6GHHA8BvYW2cE8BCu06Dn3%2F37%2BHCPdA1Dsf4lfJ8fDkpBgEVHJ13X3UUIYpJ3J8LMeyT85rTA3nbA8t4Zi0jgLmGV%2BR2rvgtGuvjW2M%2FTlng7fKARlSFjokFbTaLD%2FfqdhU7Y5DpG632zqvv262LFsSoR8r3ThLQ4d%2Bg%2F7ZaPx2f3daMiUvUqFUb9Tk57gsO3StJZWO9H6k%2Fl9%2BtpiN0yrdwp%2Fw36fDSwK2OJt1xk%2BUjza9%2BhKl1qvatUb%2FGTfdQTjvVBZlQkyT79Oowg5Mu2waj0Rxh23rft94hBAPE%2FwQF8AXR9u3b3TxFw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_CLM_Standard_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0230. R44_Core_Platform_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Core_Platform_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu%2FYxnPjFCWR0mbTIrWb1WR72Et1jemKioFycZf9%2B2GyVtmk9NHH93zdywJh0I6vx%2FBo7uTzKDFk282S3Nd1VXYMGO0vqobWs6ajl%2BxDT5uZmMOs6i7nXUOy79KjsmZJqrwk2RZxlFuDAUyIUFnNaFlTVu5Lxi8aXrK8ntc%2FSLaJLspASMzHEBzyohB2dEDlIUhvQOf2KUAu7FCAc%2F%2F9u4%2BwA0RnfYhfrJCHJ1uVYwl1tbkaPgpgoSkQbTGVI9kn64VMDZfkATTKKWkbBdSLfENab4MVVl8p0yvzc0lGb7gFVMgNDBJ5EHy3vr3hsSnvjkPIP%2B%2F3LW2%2F7vYkWyNKP1W6tgbHQfqd9C9KyG93N6clU%2FI8FUr1Js3iHJdkh0Eb5OlI70dyf%2FOT1WKa5ukW%2FoT%2FPh1eE5DV2ayL4kT5aOP4lyi13bRWK%2FF72vQA4bwTy1lCVE8f0iiXAyi97nsvEeMOtba%2Frr2EEA8T%2FBgXUKyOtv%2B%2B0dUf&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_Core_Platform_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0231. R44_Expense_Reporting_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Expense_Reporting_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ntquUdFZbqVCmVWJbRDse9oJuzhUsEjvzOaz77%2Be4MBWk8pgv9%2F2685yga3u1GsKjvcXfA1LINusFuwc5LUWFZT6dlfu83KPOP%2BH0Ii8bMcOyKmdQSZbdoSfj7IJNCsGyDdGAG0sBbIiQmFzkosyl2AmpppUSsqgq%2BZNl6%2BhiLITEfAyhJ8W5dkMPOR4Cegtt4Z4CFNp1HPr%2B3b%2F7CPdA1Dsf4pfkeHhyEzEIKCfry%2B5agwwVJ3J8LMeyz85rTA0XbA8t4Zi0jgLmGf8jtXfBaddeGtsY%2B7Bgg7fKARlSFjokFbTarr7eqNhU%2FToOkfqy29V5%2FX27Y9mKCP1Y6cpZGjr0W%2FTPRuOP25vTkil5kQqleqMmP8dl2aFrLal0pI8j9S%2F52XI%2BTqt0C3%2FC%2F5gOrwnY8mzWOT9RPtr06luU2qxr1xr9d9x0B%2BG8kyxkQkyT79Oowg5Mu2oaj0Rxh23r%2Flx5hBAPE%2FwQF8CXR9u3b3T5Dw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_Expense_Reporting_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0232. R44_External_orders_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_External_orders_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8ncbKspVZbqVtBVBoQrYUHXqabc2HWHNv4nFH%2BexwXUEHqHvPlvl93XhIM2onNGJ7MPX4fkUK2267YA%2FbIGwlX%2BZv%2BCvPmGuY5IDb5QlaLRSdn%2Fax7ZNkX9KSsWbG64CzbEY24MxTAhAjxepbzJq%2F4gVfiei54XVSz%2BivLttFFGQiJ%2BRSCI1GW0o4OcjwG9AZ0YZ8DFNIOJTj337%2BHCDsgctaH%2BFWVeHy2NR85NPX2ZngroQrzksiWUzmWvbNeYmq4Yj1owilpGwXUC%2F5FWm%2BDlVbfKNMp823FRm%2BEBVIkDAxIIkix33y4E7GpeDwNkXh%2FOLR5%2B2l%2FYNmGCP1U6dYaGgf0e%2FQvSuLn%2B7vzkil5kQqlepNmeYnLsuOgDYl0pNcjud%2F52Xo5TYt0C3%2FGf50OfxKw9cWsy%2FJM%2BWTjxMcotdu2Viv5c9r0AOGyU1VUCVFd3qdRgQMovek6j0Rxh1rbH7ceIcTDBD%2FGBZTrk%2B2%2Fb3T9Cw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_External_orders_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0233. R44_Inventory_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Inventory_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN8NhtKgWEmktNm0SN2GmnQPe6ku5litgu35TJf99zOkm9JJ6SMf9%2F2684Kg75xcD%2BHJ3OPPASkk282SPR7UXF21Ys6xrBQvm3nFoZ2VfHaAvM3n1eGqKFjyDT1pa5asSAVLtkQDbg0FMCFCophxUfJc7EUuryspirQS199Zsoku2kCYmE8hOJJZpuzggOMxoDfQpfY5QKpsn4Fz%2F%2F17jLADImd9iF95hsdnW4hBQFlsbvoPCvJQZUQ2G8ux5KP1CqeGS9ZCRzgmraOAfsF%2FSO1tsMp2N9o02vxYssEbaYE0SQM9kgxK7taf72RsKg%2BnIZKf9vua1193e5asidCPlW6toaFHv0P%2FohU%2B3N%2Bdl5ySp1Ohqd6omV3isuTYd4bkdKT3I7nX%2FGy1GKfldAt%2Fxn%2BfDn8TsNXFrIvsTPlk4%2BSXKLXd1LbT6ve46R7CZac8zSdEN7ydRiX2oLt103gkijvsOvvr1iOEeJjgh7iAbHWyfftGV38A&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_Inventory_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0234. R44_Invoicing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Invoicing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8TO2nagNVWKnTTKrEtomUPvKBbxwELx%2FZ8Hdb9e5wUUDepPObk3PNxr%2BcInXZ81Ycncyt%2F9xJDslkvyEPbzi6Lpi3SRlxcpOVltU%2F3%2B3yWsqooC5g1FZtOSfJLelTWLEiRMZJsEHu5MRjAhAixItLLNGc7lvNpxdkkm0zKe5Kso4syEMbJpxAcckqF7R2k8hCkN6Az%2BxwgE7aj4Nx%2F%2Fx4i7ADRWR%2FiV07l4dkWrGdQFuur7ouAPFQU0dKhHEm%2BWi%2Fk2HBBWtAoh6R1FFAv8gOpvQ1WWH2lTKPM44L03nALqJAb6CTyIPh29f2Gx6Z8fyQh%2F7bb1Wn9c7sjyQpR%2BqHStTXYd9JvpX9RQt7d3pyWHJNnY6Gx3qBJz82S5NBpg3w80ueR3Ft%2BspwPbD7ewp%2FMfz4O7wnI8mzWOT1RPto4%2FiNKbda11Ur8HTbdQTjvlGf5iKgmbUcqlx0ovWoaLxHjDrW2f669hBAPE3wfF0CXR9t%2F3%2BjyFQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_Invoicing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0235. R44_Purchasing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Purchasing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8dJ27agNVWKnTTKsEW0bKHvSA3uQwLx%2FZ8Hdb9%2BznuQB1SeczJPV%2F3eo6y106shvBk7uDXABiyzXpBHqDraj6Dik5b4LS64DW9rPaXdFrDnk%2B6fcnrGcm%2Bg0dlzYLwvCDZBnGAjcEgTYhQwWe0qGhZ7IpSTGtRTPJJNftBsnV0UUaGxHwKwaFgrLWDkxQOAbyROrfPQeat7Zl07t2%2Fhwg7ieisD%2FGrZHB4trwYClnx9VX%2FqZVlqBmiZWM5kn22voXUcEEepUYYkzZRQL3AG9J4G2xr9ZUynTI%2FF2TwRliJCoWRPaAIrdiubm9EbCr2xyEUX3a7hjbftjuSrRDBj5WurcGhB78F%2F6JauL%2B7OS2ZkuepUKo3arJzXJIdem1QpCN9HMn9y0%2BW83FapFv4E%2F7HdPmagCzPZp2zE%2BWjjRNfo9Rm3Vit2j%2FjpnsZzjuVeZkQ1dHHNCqgl0qvus4DYtyh1vb3tQcZ4mGCH%2BIC2PJo%2B%2F8bXf4F&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_Purchasing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0236. R44_Sourcing_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Sourcing_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndrJQkAVItHQaUrdFhe5hL9WRHK1Vx%2FZ8Tsf%2B%2Bzlmq9gk%2Bpgv9%2F2685yg106uhvBs7vHHgBSyzXrBHidTEN2H%2FSTHSSXyelZf5XuYYl6Kwwxm%2B1p0NbDsG3pS1ixYVQiWbYgG3BgKYEKERHWVizoydqKUk6kUdVF%2BZ9k6eigDIfGeQ3AkOW%2Ft4CDHY0BvQBf2JUDR2p6Dc%2F%2F9e4ywAyJnfYhfJcfji63EIKCu1tf9bQtlmHIiy8dqLPtofYup34IdQBOOOZsooF7xDWm8Dba1%2BlqZTpmnBRu8kRZIkTTQI8nQyu3q852MPeX%2BNETy027X5M3X7Y5lKyL0Y6Uba2jo0W%2FRv6oWH%2B7vzkum5EUqlOqNmvwSl2XHXhuS6UTvR3J%2F8rPlfJyW6RL%2BjP8%2BHf4mYMuLWef8TPlk4%2BSXKLVZN1ar9te46R7CZaeyKBOiuvyQRiX2oPSq6zwSxR1qbX%2FeeIQQDxP8EBfAlyfbf1%2Fo8jc%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_Sourcing_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0237. R44_Supplier_Risk_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Supplier_Risk_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZDdpGiEJkDYbGqDbjCbbw14KRmZWobLkiXKX%2FX1lpR3SAembdOLx7kjNCFrTyWUfHu09%2Fu6RQrZezdmDUNV%2BX01VDvGUj5pLzHeATX41mY5342lZVlcXLPuBnrSzc1YVgmVroh7XlgLYECFRXeZilJdiK0o5nkgxKi4m058sW0UVbSEk5mMIHUnOles7yPEQ0FswhXsKUCjXcui6%2F94eItwBUed8iLeS4%2BHJVaIXMKpW1%2B0nBWWYcCLHh3As%2B%2By8wpRwzvZgCAendWygn%2FEfUnsXnHLmWttG219z1nsrHZAmaaFFkkHJzfLLnYxJ5e5YRPJ2u63z%2Bttmy7IlEfoh0o2z1LfoN%2BiftcLv93enIZPzIgVK8Yae%2FByXZYfWWJJpSR9b6l79s8VsqJZpF%2F6E%2FzEd3hywxVmvM37S%2BSjTya%2Bx1XpVO6PV32HSLYTzSmVRJkQ3%2BT6VSmxBm2XTeCSKMzTG%2FbnxCCEuJvg%2BDoAvjrLv%2F%2BjiBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_Supplier_Risk_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0238. R44_Worker_Management_API.json
+
+- URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Worker_Management_API.json
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8njkvTFqutVOimVWJbRMseeEHX5AIWju35HNb99zgpoG5SecyX%2B37deU7QaidXXXgyt%2Fi7QwrJZr1gD02xnxWzi31aTESRji8uMd1fTkQKBdQNYi2wmbLkF3pS1izYKMtZsiHqcGMogAkRykeTNB%2BnIt%2FlQhZTmY%2BzmZjds2QdXZSBMDCfQnAkOa9s5yDFQ0BvQGf2OUBW2ZaDc%2F%2F9e4iwAyJnfYhfguPh2Y7yLofxaH3VfqlAhCknsrwvx5Kv1lc4NFywBjRhn7SMAuoFP5DS22Arq6%2BUqZV5XLDOG2mBFEkDLZIMldyuvt%2FI2FTuj0Mkv%2B12ZVr%2B3O5YsiJC31e6toa6Fv0W%2FYuq8O725rTkkDwbCg31ek1%2BjsuSQ6sNyeFIn0dyb%2FnZct5Py%2BEW%2FoT%2FOR3eE7Dl2axzfqJ8tHHyR5TarEurVfW333QL4byTyMSAqDpthlGJLSi9qmuPRHGHWts%2F1x4hxMME38UF8OXR9t83unwF&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR44%2FR44_Worker_Management_API.json
+- Kind hint: json
+- Seen from 1 source page(s)
+
+## 0241. implementation-best-practices
+
+- URL: https://compass.coupa.com/en-us/get-started/implementation-best-practices
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu625MxJUCEJkDYbFqDrjCbdYZeCtplVqCxpotxl%2F36yshbZgPTIJ%2FJ9kFoQ9NrJ9RCezD3%2BHJBCtt0s2WOHMK1m0zJvynmVV%2B10njcIIj9Ac3WoYIZNJ1j2DT0pa5ZsUsRqSzTg1lAAEyIkJrNcVHkp9qKU07kUs0J8qL6zbBNVlIGQJp9CcCQ5b%2B3gIMdjQG9AF%2FY5QNHanoNz%2F709RtgBkbM%2BxKrkeHy2EzEIqCab6%2F5jC2WYcyLLx3As%2B2R9iynhkh1AE45O60igXvANqb0NtrX6WplOmR9LNngjLZAiaaBHkqGVu%2FWXWxmTyubURPLzfl%2Fn9dfdnmVrIvRjpBtraOjR79C%2FqBYf7m%2FPQybnRQqU4o2c%2FNIsy469NiTTkd635P76Z6vF2C3TLfzZ%2FPvj8OqArS56XfAz5pOMk3eRaruprVbt73HTPYTLSmVRJkR1%2BSG1SuxB6XXXeSSKO9Ta%2FrrxCCEeJvghLoCvTrL%2F%2FtHVHw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fget-started%2Fimplementation-best-practices
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0243. portals-and-resources
+
+- URL: https://compass.coupa.com/en-us/get-started/portals-and-resources
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8ntkNJN6ut1K0gKg2I1o4HXqabc2HWHDv4nFH%2B%2BzkpTAWpe8yX%2B37deUHQ2V6th%2FjobvHngBSz7WbJ7hEaWUFV5g3IJp%2FN2sv8sqlkXj5ojdW7tkWYs%2BwbBjLeLVlZCJZtiQbcOorgYoJEWeVilkuxF1K9nytRFeLi4jvLNsnFOIgT8zHGnhTn2g895HiIGBzYwj9FKLTvOPT9f%2F%2FuE9wDUe9DTF%2BS4%2BHJl2IQMCs3V90HDTLOOZHnYzmWffRB49RwyVqwhGPSOgmYZ3xF6uCj195eGdcY92PJhuCUBzKkHHRIKmq1W3%2B%2BUampejgOkfq039d5%2FXW3Z9maCMNY6do7GjoMOwzPRuPd7c1pySl5MRWa6o2a%2FByXZYfOOlLTkd6O1P%2FJz1aLcVpNtwgn%2FLfp8DcBW53NuuAnykebXn1JUttN7a3Rv8dNdxDPO8lCTohp8nYaVdiBseumCUiUdmit%2F3UdEGI6TAxDWgBfHW3%2FfaOrFw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fget-started%2Fportals-and-resources
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0244. welcome-to-coupa
+
+- URL: https://compass.coupa.com/en-us/get-started/welcome-to-coupa
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbjtMwEP2VyO%2BOnd6x2krdLYhKC0TbwgMvq6kzy1qb2MbjLOXvcVxABan7mJM5txkvCbrWq00fn%2Bw9fu%2BRYrHbrtiDnB%2F1%2BLiQ%2FA3MJJ80cOQwReByoZsKpiCnMGPFFwxknF2xUSlZsSPqcWcpgo0JkqMZlxNeyYOs1HSu5KwcjxdfWbFNLsZCzMynGD0pIbTrPXA8RQwW2tI9Ryi16wR4%2F9%2B%2FhwR7IPIuxPRVCTw9u5HsJUxG25vurYYqzgWRE0M5VrxzQWNuuGKP0BIOSeskYF7wL1IHF5127Y2xjbHfVqwPVjkgQ8pCh6SiVvvNhzuVmqrjeYjU%2B8Oh5vWn%2FYEVGyIMQ6VbZ6nvMOwxvBiNn%2B%2FvLkvm5GUulOsNmuIalxWnrrWk8pFej%2BR%2F52fr5TCt8i3CBf91OvxJwNZXsy7FhfLZxquPSWq3rV1r9M9h0x3E605VWWXENPwxjyrswLSbpglIlHbYtu7HbUCI6TAx9GkBYn22%2FfeNrn8B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fget-started%2Fwelcome-to-coupa
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0245. your-coupa-journey
+
+- URL: https://compass.coupa.com/en-us/get-started/your-coupa-journey
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8T22nWUqut1K0gKg2I1o4HXibXuWPWHNv4OqP8exwXUJnUPebknq97vUDZGy%2FWQ3yyd%2FBjAIzFdrMkD4d3ajqZzGXJQLGy6dSkPBw6XjZXivF6Nm%2FmvCHFVwionV2SumKk2CIOsLUYpY0JYvW0ZE3J2Z5xcTUTbFpN%2BfwbKTbJRVsZM%2FMpRo%2BCUuUGL0s4RghWmso9R1kp11Pp%2Fat%2FDwn2EtG7ENMXp3B8djUbmGzqzXX%2FXkkeZxTR0bEcKT64oCA3XJJHaRDGpG0S0C%2FwD2mDi045c61tp%2B33JRmCFU6iRmFlDyiiErv1p1uRmorDaQjFx%2F2%2BLdsvuz0p1ogQxko3zuLQQ9hBeNEK7u9uz0vm5FUulOuNmvQSlxTH3lgU%2BUhvR%2FJ%2F8pPVYpwW%2BRbhjP82Xf5NQFYXsy7omfLJxovPSWq7aZ3R6te46V7Gy0684hnRXfmYRwX0Upt11wVATDs0xv28CSBjOkwMQ1oAXZ1s%2F3%2Bjq98%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fget-started%2Fyour-coupa-journey
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0246. learning
+
+- URL: https://compass.coupa.com/en-us/learning
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8TOyFtitVWKhS0SmyLaNnDXtCd4w4Lx%2FZ8Hdb9%2BznuQB1SeczJPV%2F3eo7Qa8dXQ3gy9%2FLXIDFkm%2FWCPMJ0v69n3UXesVmX1w2w%2FFJMJnnTzFhTs4vJrAKSfZMelTULUhWMZBvEQW4MBjAhQqya5qzOS7ZjJZ80nE2Ly6b8TrJ1dFEGQmI%2BheCQUyrs4CCXhyC9AV3Y5wCFsD0F5979e4ywA0RnfYhfJZWHZ1uxgUFdra%2F6GwFlaCiipWM5kt1aL2RquCB70CjHpG0UUC%2FyDWm9DVZYfaVMp8zPBRm84RZQITfQS%2BRB8O3q8x2PTfmP4xDyT7tdm7dftzuSrRClHytdW4NDL%2F1W%2Bhcl5MP93WnJlLxIhVK9UZOe45Ls0GuDPB3p40juX36ynI%2FTPN3Cn%2FA%2FpsNrArI8m3VOT5SPNo5%2FiVKbdWu1En%2FGTfcQzjuVRZkQ1eX7NMplD0qvus5LxLhDre3vay8hxMMEP8QF0OXR9v83uvwL&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Flearning
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0248. track-your-certifications
+
+- URL: https://compass.coupa.com/en-us/learning/track-your-certifications
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8TOyFtgtVW6lYQlQZEa%2BGBl8l1bpk1xza%2Bzij%2Ffo4LqCB1jzm55%2BteL1AM2vH1GB7NPfwYAUO23SzJA8g3Yjbv%2Bxya%2BpDXsmnzljVv87pt2llVN%2FPjoSbZV%2FCorFmSqmAk2yKOsDUYhAkRYtU8Z3Vesj0r%2BazhrClmbfuNZJvooowIifkYgkNOqbSjEzmcAngjdGGfgiikHahw7r9%2FDxF2AtFZH%2BJXSeH0ZCs2MlFXm5vhnRRlaCiipVM5kr23XkJquCRHoRGmpF0UUM%2FwF%2Bm8DVZafaNMr8z3JRm94VagQm7EAMiD5Lv1xzsem%2FLDeQj5h%2F2%2By7vPuz3J1ojgp0q31uA4gN%2BBf1YSvtzfXZZMyYtUKNWbNOk1LslOgzbI05Fej%2BR%2B5yerxTTN0y38Bf91uviTgKyuZl3QC%2BWzjeOfotR201mt5K9p04MI153KokyI6vNjGuUwCKXXfe8BMe5Qa%2Fvz1oMI8TDBj3EBdHW2%2FfeNrl4A&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Flearning%2Ftrack-your-certifications
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0249. products
+
+- URL: https://compass.coupa.com/en-us/products
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbhMxEPyVk999ttMrl1pJpLQBEanAqQk88FJtLhtq9c42Xl8Jf4%2FPARSQ0jd7vLMzs%2BsZQd95vRzik33A7wNSLNarOXusQe4O9VTxXX19w6urmysOqppymKqqknU6I7DiCwYyzs7ZpJSsWBMNuLYUwcYEyckbLiuu5FYqfV1rOS0rqb6yYpVUjIWYmU8xetJCtG7wwPEYMVjoSvccoWxdL8D7%2F94eE%2ByByLsQ000JPD67iRwkVJPVbf%2B2BRVrQeTEGI4V71xoMSecswN0hKPTJjUwL%2FgXaYKLrnXdrbF7Y7%2FN2RCsdkCGtIUeScdWb5Yf7nVKqnenItLvt9uGN582W1YsiTCMke6cpaHHsMHwYlr8%2FHB%2FHjI7L3OgHG%2FsKS5xWXHsO0s6L%2Bl1S%2F63f7aYjdU67yKc8V%2Bnwx8HbHHR60ycdT7JeP0xtVqvGteZ9uc46R7iZSVVqoyYPT%2FkUo09mG653wckSjPsOvfjLiDEtJgYhjQAsTjJ%2FvtHF78A&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0250. category-strategy
+
+- URL: https://compass.coupa.com/en-us/products/category-strategy
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZM9dXCEJkDYbFqDbjCbdw14KVmZWobLkiXKX%2FX1lZSuyAekjT7zjHak5QW8GuRrDo73FnyNSyDbrBbvHsgF1qd7lM7Vv8hr2Kr9UXZ2XTVXP8EFA0wiWfUNP2tkFq4pYbYhG3FgKYEOERPU%2BF5EhdqKUFzMpmqK5qL%2BzbB2naAshMR9DGEhyrtw4QI6HgN6CKdxTgEK5nsMw%2FPd2H%2BEBiAbnQ6xKjocnV4lRQF2tr%2FoPCsow40SOT%2BFY9tF5hSnhgu3BEE5O2yign%2FEVab0LTjlzpW2n7Y8FG72VDkiTtNAjyaDkdvX5Rsak8uHYRPLTbtfm7dftjmUrIvRTpGtnaezRb9E%2Fa4V3tzenIZPzIgVK8SZNfo7LskNvLMl0pLctDX%2F8s%2BV86pbpFv6E%2FzYd%2Fjpgy7Ne5%2FxE%2BThmkF%2Bi1GbdOqPV72nTPYTzk8qiTIju8n1qldiDNquu80gUd2iM%2B3XtEUI8TPBjXABfHsf%2B%2B0eXLw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcategory-strategy
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0251. contingent-workforce
+
+- URL: https://compass.coupa.com/en-us/products/contingent-workforce
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ncaIEiNVWKnTTKrEtomUPvKDDuYKFY3s%2Bh3X%2F%2FZwUUJlUHvPlvl93nhH02onlEJ7MDf4ekEKyXs3ZvWyariirOu2K%2BiKtiqZMoet42kBddc1OyvrhjCW%2F0JOyZs7KjLNkTTTg2lAAEyLEy7OUV2nBt7wQ9bngF1lT3bFkFU2UgTARn0JwJPJc2sFBivuA3oDO7HOATNo%2BB%2Bf%2B%2B3cfYQdEzvoQv4oc98%2B25AOHqlxd9l8kFOE8J7L52I0lX62XOBWcsx1owjFoGwXUC74jrbfBSqsvlemUeZyzwRthgRQJAz2SCFJslt%2BvRSwqHg5DJL5tt23a%2FtxsWbIkQj9WurKGhh79Bv2Lknh7c31cckqeTYWmeqNmforLkn2vDYnpRp9Hcq%2F52WI2TovpFP6I%2Fzkd3hKwxcmss%2FxI%2BWDjxI8otV61Viv5d9x0D%2BG0U5EVE6K6dDeNCuxB6WXXeSSKO9Ta%2FrnyCCEeJvghLiBfHGw%2FPtHFPw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcontingent-workforce
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0252. contract-management
+
+- URL: https://compass.coupa.com/en-us/products/contract-management
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87cdJ0ZVZbqVtBVBoQrYUHXqabc2HWHNv4nFH%2Be5wUUEHqHvPlvl93XhL0xsvNEJ%2FsPX4fkGK2267YA7QCxeyq4m%2Bq60deq5niUM8r3s3bWbXoalV2Lcu%2BYCDt7IpVuWDZjmjAnaUINiZIVFdc1LwUB1HK%2BUKK67ycl19Ztk0u2kKcmE8xepJFodzggeMxYrBgcvccIVeuL8D7%2F%2F49JNgDkXchpq%2BywOOzq8QgoK62N%2F1bBWVcFESuGMux7J0LCqeGK9aBIRyTNklAv%2BBfpAkuOuXMjbattt9WbAhWOiBN0kKPJKOS%2B82HO5maysfTEMn3h0PDm0%2F7A8s2RBjGSrfO0tBj2GN40Qo%2F39%2Bdl5yS51Ohqd6oWVzisuzYG0tyOtLrkfzv%2FGy9HKfldItwxn%2BdDn8SsPXFrMviTPlk4%2BXHJLXbNs5o9XPcdA%2FxslOZlxOiW95NoxJ70GbTtgGJ0g6NcT9uA0JMh4lhSAso1ifbf9%2Fo%2Bhc%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcontract-management
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0254. coupa-pay
+
+- URL: https://compass.coupa.com/en-us/products/coupa-pay
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8T26WXzWordSuISgOiteOBl8lxTpg1xzY%2Bzij%2FHscFVCZ1j%2Flyvts5XqLsjRebIT7Ze%2FgxAMZit12Rx6bpmq5r35WqaefldMqvyyt5NS%2FnTE47vmBqtuhI8RUCamdXZFIxUuwQB9hZjNLGBLHJvGTTkrMD42K2EOy6mnH%2BjRTb5KKtjJn5FKNHQalyg5clHCMEK03lnqOslOup9P7Vv8cEe4noXYjpi1M4PrsJG1Kyyfamf68kjwuK6OhYjhQfXFCQG65IJw3CmLROAvoF%2FiF1cNEpZ260bbX9viJDsMJJ1Cis7AFFVGK%2F%2BXQnUlPRnIZQfDwc6rL%2Bsj%2BQYoMIYax06ywOPYQ9hBet4OH%2B7rxkTl7lQrneqEkvcUlx7I1FkY%2F0diT%2FJz9ZL8dpkW8Rzvhv0%2BXfBGR9MeuSnimfbLz4nKR229oZrX6Nm%2B5lvOzEK54R3ZZdHhXQS202bRsAMe3QGPfzNoCM6TAxDGkBdH2y%2Ff%2BNrn8D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcoupa-pay
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0255. invoice
+
+- URL: https://compass.coupa.com/en-us/products/invoice
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ndtKsHVZbqdBNq8S2iJY98IIuzhUsEtvzOaz773FSQN2k8pgv9%2F2685yga51c9eHR3ODvHikkm%2FWC3TcTqKdQ79O9QJGWRZmndV3O0iaffp6oi7KssWbJL%2FSkrVmwIhMs2RD1uDEUwIQIiWKaijLNxU7k8tNM5iKbXJR3LFlHF20gjMzHEBxJzpXtHaR4COgNtJl9CpAp23Fw7r9%2F9xF2QOSsD%2FEr53h4soXoBZTF%2BrL7oiAPM05k%2BVCOJV%2BtVzg2XLA9tIRD0ioK6Gd8Rypvg1W2vdSm0eZhwXpvpAXSJA10SDIouV19v5axqayPQyS%2F7XZVWv3c7liyIkI%2FVLqyhvoO%2FRb9s1Z4e3N9WnJMno2FxnqDJj%2FHZcmhaw3J8UgfR3Kv%2BdlyPkzL8Rb%2BhP8xHd4SsOXZrHN%2Bony0cfJHlNqsK9tq9XfYdAfhvFOe5SOim3Q%2FjkrsQLerpvFIFHfYtvbPlUcI8TDB93EBfHm0%2FfeNLl8A&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Finvoice
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0256. procure
+
+- URL: https://compass.coupa.com/en-us/products/procure
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbjtMwEP2VyO9OnEubYrWVulsQlRaItoUHXlbGmbLWOrbxOEv5%2B3VcQAWp%2BzjHM%2Bcy4yWKQTu%2BGcOjuYcfI2DIdtsVeZgdq6avqpouqranTXOs6ZuWzWjdywXMFqKuS0ayL%2BBRWbMiVR6rHeIIO4NBmBAhVs0pa2jJDqzks5aXLJ%2FP268k20YVZURIk48hOORFIe3oBIVTAG%2BEzu1TELm0QyGc%2B%2B%2FtIcJOIDrrQ6zKAk5PtmIjE021vRneSlGGtkC0xRSOZO%2Bsl5ASrshRaITJaRcJ1DP8RTpvg5VW3yjTK%2FN9RUZvuBWokBsxAPIg%2BX7z4Y7HpPzbuQn5%2B8Oho92n%2FYFkG0TwU6Rba3AcwO%2FBPysJn%2B%2FvLkMm53kKlOJNnMW1WZKdBm2QpyO9bsn99k%2FWy6mbp1v4i%2FnXx8UfB2R91euyuGA%2Byzj%2BMVLttp3VSv6aNj2IcF2pzMuEqJ4eUyuHQSi96XsPiHGHWtuftx5EiIcJfowLKNZn2X%2F%2F6PoF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fprocure
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0257. product-compliance-downloads
+
+- URL: https://compass.coupa.com/en-us/products/product-compliance-downloads
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8dO2nWLlZbqdBNq8S2iJY98IIujgsWjp35Oqz79zguoG5SeczJPV%2F3eo7QmV6shvBor9XvQWHINusFuYPPvKwmsqSyns5oxeuC1hVM6b2sy4ms6n0LE5L9Uh61swtS5pxkG8RBbSwGsCFCvJxSXtGC73ghPs1EwfNpXdySbB1dtIWQmI8h9CgYk27ogapDUN6Cyd1TgFy6jkHf%2F%2FfvLsI9IPbOh%2FhVMHV4ciUfOFTl%2BqL7IqEIM4bo2FiOZF%2Bdlyo1XJA9GFRj0iYK6Gf1jjTeBSedudC21fZhQQZvhQPUKCx0CkWQYrv6fiViU3F%2FHELxbbdraPNzuyPZClH5sdKlszh0ym%2BVf9ZS3VxfnZZMyfNUKNUbNdk5LskOnbEo0pE%2BjtS%2F5ifL%2BTgt0i38Cf9jOrwlIMuzWefsRPlo04sfUWqzbpzR8u%2B46Q7CeaciLxKiW7pPo0J1oM2qbb1CjDs0xv259ApCPEzwQ1wAWx5t%2F32jyxc%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-compliance-downloads
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0260. roadmaps-overview
+
+- URL: https://compass.coupa.com/en-us/products/product-documentation/roadmaps-overview
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu8YsFwnRkmktNm0SN1mNeke9lJRfLOiYvC4uMv%2B%2FbDTTemk9NHH93zdywJVZ3u5HuKTu4OfA2DMtpsleajgUNbisaTzYg60nPOK1lDNaTurVdXWnHNdk%2BwbBDTeLUmRc5JtEQfYOozKxQTxoqK8pILvuZBXMylEflVV30m2SS7GqTgxn2LsUTKm%2FdArCscIwSmb%2B%2Beocu07pvr%2Bv38PCe4VYu9DTF%2BCwfHZF3zgqiw2190HrUScMUTPxnIk%2B%2BiDhqnhkhyURRiTNknAvMA%2FpAk%2Beu3ttXGtcT%2BWZAhOeoUGpVMdoIxa7tafb2VqKh9PQyg%2F7fcNbb7u9iRbI0IYK914h0MHYQfhxWi4v7s9Lzklz6dCU71Rk13ikuzYWYdyOtL7kfrX%2FGS1GKfldItwxn%2Bfrv4mIKuLWRfsTPlk08svSWq7abw1%2Bve46U7Fy04iFxNiWnqYRiV0yth12wZATDu01v%2B6CaBiOkwMQ1oAW51s377R1R8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Froadmaps-overview
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0264. supplier-integration-resources
+
+- URL: https://compass.coupa.com/en-us/products/product-documentation/suppliers/supplier-integration-resources
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8Tx1HSUqut1K0gKg2I1sIDL5Nn3zJrjm18nVH%2BPY4LqCB1jzm55%2BteL1EMxvPNGJ%2FsPXwfAWOx267IA8iFUG29KJVSsmy7ui0fZ2pedrPjYsEUmx3bjhRfIKB2dkWaqibFDnGEncUobExQ3czKRGP1oWa8m3PWVG%2B67isptslFWxEz8ylGj5xS6UYvSjhFCFaYyj1HUUk3UOH9f%2F8eEuwFonchpi9G4fTsmnqsRdtsb4a3UrA4p4iOTuVI8c4FCbnhihyFQZiS9klAv8BfpA8uOunMjbZK228rMgbLnUCN3IoBkEfJ95sPdzw15Y%2FnIeTvD4e%2B7D%2FtD6TYIEKYKt06i%2BMAYQ%2FhRUv4fH93WTInr3KhXG%2FSpNe4pDgNxiLPR3o9kv%2Bdn6yX0zTPtwgX%2FNfp4k8Csr6adUkvlM82nn9MUrtt74yWP6dNDyJed2IVy4hW5TGPchiENhulAiCmHRrjftwGEDEdJoYxLYCuz7b%2FvtH1Lw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fsuppliers%2Fsupplier-integration-resources
+- Kind hint: page
+- Seen from 1 source page(s)
+
+## 0265. review-lines-on-a-purchase-order-for-partial-confirmations
+
+- URL: https://compass.coupa.com/en-us/products/product-documentation/supply-chain-collaboration/review-lines-on-a-purchase-order-for-partial-confirmations
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2ByrcRtGiEJkDYbFqDbjCbbw14KRqZXobKkiXKX%2FX1lZxuyASn0pBOPd0dqQdAZL9d9fLIP%2BKNHitl2s2SPcD1X1c285M30asYrbIEf5gJ4q6aQTtvObg4s%2B4qBtLNLNslLlm2JetxaimBjgsrJNS8rLsp9KeTVTIppLkT1jWWbpKItxJH5FKMnWRTK9R44HiMGCyZ3zxFy5boCvP%2Fv7THBHoi8CzHdRIHHZzcp%2BxKqyea2e6dAxFlB5IohHMveu6BwTLhkLRjCwWmdGugX%2FIvUwUWnnLnVttH2%2B5L1wUoHpEla6JBkVHK3%2FngvU1J5OBWR%2FLDf17z%2BvNuzbE2EYYh05yz1HYYdhhet8MvD%2FXnI0Xk%2BBhrjDT2LS1yWHTtjSY5LetuS%2F%2B2frRZDtRx3Ec74b9PhjwO2uuh1UZx1Psl4%2BSm12m5qZ7T6NUy6g3hZSeRiRHTD27FUYgfarJsmIFGaoTHu511AiGkxMfRpAMXqJPvvH129Ag%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fsupply-chain-collaboration%2Freview-lines-on-a-purchase-order-for-partial-confirmations
+- Kind hint: page
+- Seen from 1 source page(s)
+
+## 0266. instance-specific-integration-documentation
+
+- URL: https://compass.coupa.com/en-us/products/product-documentation/total-spend-management-platform/instance-specific-integration-documentation
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TtKsLVZbqVtBVBoQrYUHXqarc2XWEtv4nFH%2BexwXUEHqHvPlvl93XhD0nZPrITyZB%2Fw%2BIIVsu1myRzU9HNR0jhzmR%2BB1Vbd8Pq2BT24mbYmzCVbQsuwLetLWLFmVFyzbEg24NRTAhAgV1ZQXNS%2BLfVHKm5ksJ3n1pvrKsk100QZCYj6F4EgKoezggOMpoDfQ5fY5QK5sL8C5%2F%2F49RtgBkbM%2BxK9S4OnZVsVQQF1tbvu3CsowE0RWjOVY9s56hanhkh2hIxyTNlFAv%2BBfpPE2WGW7W21abb4t2eCNtECapIEeSQYld%2BsP9zI2lYfzEMn3%2B33Dm0%2B7PcvWROjHSnfW0NCj36F%2F0Qo%2FP9xflkzJ81Qo1Rs1xTUuy059Z0imI70eyf3Oz1aLcVqmW%2FgL%2Fut0%2BJOAra5mXYgL5bONkx%2Bj1HbT2E6rn%2BOmewjXncq8TIhu%2BTGNSuxBd%2Bu29UgUd9h19sedRwjxMMEPcQFidbb9942ufgE%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Finstance-specific-integration-documentation
+- Kind hint: page
+- Seen from 1 source page(s)
+
+## 0267. bank-files-overview
+
+- URL: https://compass.coupa.com/en-us/products/product-documentation/treasury-management-product-documentation/banking/bank-connectivity/bank-files-overview
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd8TOyGUxgIkWjYNqduiQvewl8o4l9WqY3u%2BTsf%2BfR2zVWwSfczJPV%2F3eo6i146vhvBk7uHnABiyzXpBHrumYd1VdZVPZjDN62ra5ULO9vnkULLr64bt5aEh2TfwqKxZkKpgJNsgDrAxGIQJEWKRzeq8ZDtW8umMl5OirpvvJFtHF2VESMynEBxySqUdnMjhGMAboQv7HEQhbU%2BFc%2F%2F9e4ywE4jO%2BhC%2FSgrHZ1uxgYm6Wt%2F0H6Qow4wiWjqWI9lH6yWkhgtyEBphTNpGAfUCb0jrbbDS6htlOmV%2BLMjgDbcCFXIjekAeJN%2BuPt%2Fx2JTvT0PIP%2B12bd5%2B3e5ItkIEP1a6tQaHHvwW%2FIuS8HB%2Fd14yJS9SoVRv1KSXuCQ79togT0d6P5L7k58s5%2BM0T7fwZ%2Fz36eJvArK8mHVOz5RPNo5%2FiVKbdWu1kr%2FHTfciXHYqizIhqssPaZRDL5RedZ0HxLhDre2vWw8ixMMEP8QF0OXJ9t83unwF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftreasury-management-product-documentation%2Fbanking%2Fbank-connectivity%2Fbank-files-overview
+- Kind hint: page
+- Seen from 1 source page(s)
+
+## 0268. automation-views-in-treasury-management
+
+- URL: https://compass.coupa.com/en-us/products/product-documentation/treasury-management-product-documentation/getting-started-with-treasury-management/automated-processes-and-integrations/automation-views-in-treasury-management
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXeJFCtlIWwDTtyiBpJWiN0eegnG1KQhIpEKh0rdvy9FN4FbwDnqad42wxlB3w1qOYZHe4fPI1LI1qs5u9fl2Q7lDvNWyou8asVFDrWAHGEnqroWlTyvWfYdPRln50wWgmVrohHXlgLYECEhz3JR5aXYilLVl%2BpDXVwK%2BYNlq%2BhiLITEfAxhIMW5duMQ5fcBvYWucE8BCu16DsPw37%2F7CA9ANDgf4lfJcf%2FkpBgFVHJ11X%2FUUIZzTuT4VI5ln5zXmBrO2QN0hFPSJgqYF3xDGu%2BC0667MrY19uecjd4qB2RIWeiRVNBqs7y9UbGp2h2GSH3ebpu8%2BbrZsmxJhH6qdO0sjT36DfoXo%2FHb3c1xyZS8SIVSvUmTn%2BKybN93llQ60vuRhr%2F52WI2Tat0C3%2FEf58OrwnY4mTWGT9SPtgM6kuUWq8a1xn9e9p0D%2BG0U1mUCTFt%2FpBGFfZgumXbeiSKO%2Bw69%2BvaI4R4mODHuAC%2BONj%2B%2B0YXfwA%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftreasury-management-product-documentation%2Fgetting-started-with-treasury-management%2Fautomated-processes-and-integrations%2Fautomation-views-in-treasury-management
+- Kind hint: page
+- Seen from 3 source page(s)
+
+## 0270. about-coupa-releases
+
+- URL: https://compass.coupa.com/en-us/products/release-notes/about-coupa-releases
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87ibOkLVZbqVtBVBoQrR0PvEy39MqsObbxOaP89zguoDKpe8yX%2B37deU7QaydXQ3gyd%2FhjQArZZr1gD00lsJmJGb%2BaHgSvJ5XgMK0P%2FHFa1tCIssEJsOwrelLWLFiVlyzbEA24MRTAhAiV1YSXNRflrhSyeSevZnmEvrFsHV2UgZCYTyE4kkXR2cEBx2NAb0Dn9jlA3tm%2BAOde%2FXuIsAMiZ32IX6LA47OtyqGEulpf9%2B87EGFaENliLMeyD9Z3mBou2AE04Zi0jQLqBf8hrbfBdlZfK7NX5vuCDd5IC6RIGuiRZOjkdvXpVsam8vE0RPLjbtfy9st2x7IVEfqx0o01NPTot%2BhfVIf3d7fnJVPyPBVK9UbN4hKXZcdeG5LpSG9Hcn%2Fys%2BV8nJbpFv6M%2FzYd%2FiZgy4tZ58WZ8snGyc9RarNurVbdr3HTPYTLTiIXCVF7fkijEntQerXfeySKO9Ta%2FrzxCCEeJvghLqBYnmz%2Ff6PL3w%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Frelease-notes%2Fabout-coupa-releases
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0272. spend-analysis
+
+- URL: https://compass.coupa.com/en-us/products/spend-analysis
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8nsUuaCqutVOgQldgW0bIHXtBhX4dFYmc%2Bh3X%2F%2FRx3Q92k8pgv9%2F2685yga3u5GsKLvccfA1LINusFe1Ka72utL%2FOZEjqvoH7OL3ml8vpiWk1BV0JwZNk39GScXbBJwVm2IRpwYymADRHikzrnVS74jgs5nUkxLcSsfmTZOroYCyExX0LoSZalckMPOR4Cegtt4V4DFMp1JfT9f%2F%2BeItwDUe98iF%2BixMOrm%2FCBQzVZX3WfFIgwK4lcOZZj2Y3zClPDBdtDSzgmbaKAecN3pPEuOOXaK2O1sd8XbPBWOiBD0kKHJIOS29XnOxmbyufjEMnb3a7Jm6%2FbHctWROjHStfO0tCh36J%2FMwof7u9OS6bkRSqU6o2a5Tkuyw5da0mmI30cqf%2BTny3n47RMt%2FAn%2FI%2Fp8DcBW57NOi9PlI82vfwSpTbrxrVG%2FRo33UE47yQKkRCj830aldiBaVdaeySKO2xb9%2FPaI4R4mOCHuIByebT9940ufwM%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fspend-analysis
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0273. strategic-sourcing
+
+- URL: https://compass.coupa.com/en-us/products/strategic-sourcing
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8dx2mbgtVWKnTTKsEW0W4Pe0HGuRkWjm18Hdb9e5wUpm5SeczJPV%2F3eoGyM16s%2B%2Fho7%2BC5B4zZdrMk962aq0bBhFbqYUKnVcHpBS8uaHM5UTArJ5fQtiT7AQG1s0tS5gXJtog9bC1GaWOCirKixZTyYl9wMZsLPsurav6TZJvkoq2MI%2FMxRo%2BCMeV6LykcIgQrTe6eosyV65j0%2Fr9%2F9wn2EtG7ENMXZ3B4cmXRF3Jabq66T0ryOGeIjg3lSPbZBQVjwyVppUEYktZJQL%2FAX6QOLjrlzJW2jba%2FlqQPVjiJGoWVHaCISuzWtzciNRUPxyEUX%2Fb7mtbfdnuSrREhDJWuncW%2Bg7CD8KIVfL%2B7OS05Js%2FHQmO9QZOd45Ls0BmLYjzSx5H8W36yWgzTYrxFOOF%2FTJfvCcjqbNYFO1E%2B2njxNUltN7UzWv0ZNt3JeN6J53xEdEPbcVRAJ7VZN00AxLRDY9zv6wAypsPE0KcFsNXR9t83unoF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fstrategic-sourcing
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0274. supplier-management
+
+- URL: https://compass.coupa.com/en-us/products/supplier-management
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbT9swFP4rkd9zcdrSYrWVCt20SmyLaNkDL%2BjUOQELx858HNb9exwXUDepPObL%2BW7neE7Q6k6sev9kbvF3j%2BSTzXrBHmaT0fSymcmUNzhKx7gv0lnJy5RPZTMCKfc1Akt%2BoSNlzYKVWcGSDVGPG0MejA9QUV6kxTjlxa7gYjIVfJJdXJb3LFkHF2XAR%2BaT9x2JPJe27yDFg0dnQGf22UMmbZtD1%2F337yHAHRB11vnwxXM8PNuy6AsYl%2Bur9osE7qc5kc2Hciz5ap3E2HDBGtCEQ9IqCKgX%2FEAqZ72VVl8pUyvzuGC9M8ICKRIGWiThpdiuvt%2BI0FTsj0Mkvu12VVr93O5YsiJCN1S6tob6Ft0W3YuSeHd7c1oyJs9ioVhv0MzPcVlyaLUhEY%2F0eaTuLT9bzodpEW%2FhTvif0%2BE9AVuezTrPT5SPNp34EaQ268pqJf8Om27Bn3fiGY%2BIqtMmjgpsQelVXTskCjvU2v65dgg%2BHMa7PiwgXx5t%2F32jy1c%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fsupplier-management
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0275. supply-chain-collaboration
+
+- URL: https://compass.coupa.com/en-us/products/supply-chain-collaboration
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd%2Bd2GlDGqut1K0gKg2I1sIDL5Pn3DJrjm18nVH%2BPU4KqCB1jzm55%2BteL1H2xovNEJ%2FsPXwfAGO2267IQ1U1syOUC%2Fq4qBmdz6oZbeqK0bpRTAJvOGs6kn2BgNrZFSlzRrId4gA7i1HamCBWvqFsTjk7MC6qWvAqbxbNV5Jtk4u2Mk7Mpxg9iqJQbvCSwilCsNLk7jnKXLm%2BkN7%2F9%2B8hwV4iehdi%2BuIFnJ5dyQYm5%2BX2pn%2BrJI91geiKsRzJ3rmgYGq4IkdpEMakbRLQL%2FAXaYOLTjlzo22n7bcVGYIVTqJGYWUPKKIS%2B82HO5GaisfzEIr3h0NL20%2F7A8k2iBDGSrfO4tBD2EN40Qo%2B399dlpyS51Ohqd6oWVzjkuzUG4tiOtLrkfzv%2FGS9HKfFdItwwX%2BdLv8kIOurWZfFhfLZxouPSWq3bZ3R6ue46V7G60485xOiO3qcRgX0UptN1wVATDs0xv24DSBjOkwMQ1pAsT7b%2FvtG178A&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fsupply-chain-collaboration
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0276. supply-chain-design-and-planning
+
+- URL: https://compass.coupa.com/en-us/products/supply-chain-design-and-planning
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr87iSMWiAVItLQaUrdFhfahL9XhHKtVx858Tsf%2B%2Bzlhq9gk%2Bpgv9%2F2685ygNZ1c9eHF3uOPHikkm%2FWCPTcKC8Cq5IDlnk%2Bm04LPoJxxdRCzWXHYN5WoWPKInrSzC1akOUs2RD1uLAWwIUJ5UfJ8wkW%2By4X8NJWiTEVVPbFkHV20hTAyX0LoSGaZcn0HHI8BvQWTutcAqXJtBl3337%2FnCHdA1Dkf4pfI8PjqirzPYVKsr9obBSJMMyKXDeVYcuu8wrHhgh3AEA5J6yig3%2FAdqb0LTjlzpW2j7fcF672VDkiTtNAiyaDkdvXlTsamcn8aIvl5t6t5%2FW27Y8mKCP1Q6dpZ6lv0W%2FRvWuHD%2Fd15yTF5OhYa6w2a2SUuS46tsSTHI30cqfuTny3nw7Qcb%2BHP%2BB%2FT4W8CtryYdZ6dKZ9sOvk1Sm3WtTNa%2FRo23UK47CRSMSK64YdxVGIL2qyaxiNR3KEx7ue1RwjxMMH3cQHZ8mT77xtd%2FgY%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fsupply-chain-design-and-planning
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0277. total-spend-management-platform
+
+- URL: https://compass.coupa.com/en-us/products/total-spend-management-platform
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN%2FBQAg0VhIpbTYtUruhJt3DXqoLXFarYHs%2B02X%2F%2FYyzVlml9JGP%2B37deU7Qd0asBvek7vHXgOSizXrBHrPDZI9VUcXZbLqPi1kFMUzLSYxtm5c4meEhLVn0HS1JrRYsT1IWbYgG3ChyoJyH0ryM0yLO0l2aiWklsjKZFFc%2FWLT2LlKBC8wn5wwJzhs9GIjx6NAq6BL97CBpdM%2FBmHf%2FHj1sgMho6%2FxXxvH4rPN0SKHI19f9pwYyV3EizcdyLPqsbYOh4YIdoCMck9ZeQL7gG1Jb7XSju2upWql%2BLthgldBAkoSCHkm4RmxXd7fCNxX70xCJL7tdHdfftjsWrYjQjpVutKKhR7tF%2ByIbfLi%2FPS8ZkiehUKg3avJLXBYd%2B06RCEf6OJL5l58t5%2BO0CLewZ%2FyP6fCagC0vZp3zM%2BWTjRFfvdRmXetONn%2FGTffgLjtlSRYQ2caHMCqwB9mt2tYikd9h1%2BnfNxbB%2BcM4O%2FgF8OXJ9v83uvwL&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Ftotal-spend-management-platform
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0279. travel-and-expense
+
+- URL: https://compass.coupa.com/en-us/products/travel-and-expense
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr87cULaZFZbqdBNq8S2iJY98IKu6TEsEtvzOaz773FcQN2k8pgv9%2F2684yg76xcDv5R3%2BDvAckn69Wc3U%2FyiwlAXvCqKgpe4g54vatrXosasRZTnIiSJT%2FRkTJ6zopUsGRNNOBakwftAySKKRclz8VW5HJSybJKP02rO5asgovS4CPz0XtLMstaM1jgePDoNHSpefKQtqbPwNr%2F%2Ft0H2AKRNc6HrzzDw5MpxCCgLFaX%2FecWcl9lRCYby7Hki3EtxoZz9gAd4Zi0CQLqGd%2BRxhlvWtNdKr1X%2BtecDU5LA6RIauiRpG%2FlZvntWoamcnccIvl1u21482OzZcmSCN1Y6cpoGnp0G3TPqsXbm%2BvTkjF5GgvFeqNmdo7LkkPfaZLxSB9Hsq%2F52WI2Tst4C3fC%2F5gObwnY4mzWWXaifLSx8nuQWq8a06n277jpHvx5pzzNI6L2%2FCGOSuxBdcv93iFR2GHXmT9XDsGHw3g3hAVki6Ptv2908QI%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Ftravel-and-expense
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0280. treasury-management
+
+- URL: https://compass.coupa.com/en-us/products/treasury-management
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd%2BdOFkgzAIkWjYNqd2iwvawl8o4l9WqY3u%2BTsv%2BfR3TTmwSfczJPV%2F3eo6i146vhvBg7uD3ABiyzXpB7if1pNlPZ1PaVQegdbn%2FQGf7yZTWDStBNtWMCSDZD%2FCorFmQKmck2yAOsDEYhAkRYtWUspqWbMdKPml4Pcsb9vEnydbRRRkREvMhBIe8KKQdnKBwDOCN0Ll9DCKXti%2BEc%2F%2F9u4%2BwE4jO%2BhC%2FygKOj7ZiAxN1tb7qP0lRhqZAtMVYjmSfrZeQGi7IQWiEMWkbBdQT%2FEVab4OVVl8p0ynza0EGb7gVqJAb0QPyIPl2dXvDY1O%2BPw0h%2F7LbtbT9tt2RbIUIfqx0bQ0OPfgt%2BCcl4fvdzXnJlDxPhVK9UbO4xCXZsdcGeTrS%2B5Hca36ynI%2FTPN3Cn%2FHfp4u3BGR5Meu8OFM%2B2Tj%2BNUpt1q3VSv4ZN92LcNmpzMuEqI4e0iiHXii96joPiHGHWtvnaw8ixMMEP8QFFMuT7b9vdPkC&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Ftreasury-management
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0281. support
+
+- URL: https://compass.coupa.com/en-us/support
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd8TJ5lLwAIkWjYNqd2iwvawl8o4l9WqY7u%2BTsf%2B%2FRyzVmwSfczJPV%2F3eo6i146vhvBo7uF5AAzZZr0gD3Iv2OHQTPKrarLP2X5S5lPW1Dmrp92MsU7KZkqy7%2BBRWbMgdVGSbIM4wMZgECZEqKwnecnyqtyVFb9qOJsV1YfZD5Kto4syIiTmYwgOOaXSDk7kcAzgjdCFfQqikLanwrn%2F%2Fj1E2AlEZ32IXxWF45Oty6EUrF5f9x%2BlqEJDES0dy5Hsk%2FUSUsMFOQiNMCZto4B6gTek9TZYafW1Mp0yPxdk8IZbgQq5ET0gD5JvV3e3PDbl%2B9MQ8s%2B7XZu3X7c7kq0QwY%2BVbqzBoQe%2FBf%2BiJHy7vz0vmZIXqVCqN2rSS1ySHXttkKcjvR%2FJ%2Fc1PlvNxmqdb%2BDP%2B%2B3TxmoAsL2ad0zPlk43jX6LUZt1areTvcdO9CJedqqJKiOryQxrl0AulV13nATHuUGv768aDCPEwwQ9xAXR5sv33jS7%2FAA%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fsupport
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0283. compliance
+
+- URL: https://compass.coupa.com/en-us/trust/compliance
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9owFP4rkd9zrSFgARItm4bUbVGhe9hLdZocVquO7fk4Hfv3dcxWsUn0MV%2FOdzvHC4JeWbEe%2FJO%2Bw58Dkk%2B2myV7mE1gNuXzWdrxukx5VcxT4FOecjgc8Oqq5pPZI0u%2BoSNp9JJVWcGSLdGAW00etA9QUU3TgqdlsS9KMakFn2d1WX9nySa4SA0%2BMp%2B8tyTyvDWDhRSPHp0GlZlnD1lr%2Bhys%2Fe%2FfQ4AtEFnjfPgqczw%2Bm6oYCuDV5rr%2F0ELp65zI5GM5lnw0rsXYcMkOoAjHpE0QkC%2F4hjTOeNMadS11J%2FWPJRucFgZIktDQIwnfit36860ITcXjaYjEp%2F2%2BSZuvuz1L1kToxko3RtPQo9uhe5Et3t%2FdnpeMybNYKNYbNfNLXJYce6VJxCO9H8n%2Byc9Wi3FaxFu4M%2F77dPibgK0uZl3kZ8onGyu%2BBKntpjFKtr%2FHTffgLzuVWRkR2aWHOCqwB6nWXeeQKOxQKfPrxiH4cBjvhrCAfHWy%2FfeNrl4B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Ftrust%2Fcompliance
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0286. security
+
+- URL: https://compass.coupa.com/en-us/trust/security
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9owFP4rkd9zIwkpFiDRsmlI7RYVuoe9VAfnsFp17MzH6di%2Fn2PWilWij%2Flyvts5nhN0querwT3pe%2Fw1ILlos16wx7qq9vVhNo1nYj%2BNy6Iq4v1V3sYzLGYFFEUBVcGi72hJGr1gkyRj0YZowI0mB9p5KJtM46yM82yX5byqeZUlZV3%2BYNHau0gNLjCfnOuJp6kwQw8xHh1aDSoxzw4SYboU%2Bv7dv0cP90DUG%2Bv8V57i8dlMsiGDcrK%2B7j4JyF2dEpl0LMeiz8YKDA0X7ACKcEzaeAH5gm9IY40zwqhrqVupfy7YYDU3QJK4hg6JO8G3q7tb7pvy%2FWmI%2BJfdrombb9sdi1ZEaMdKN0bT0KHdon2RAh%2Fub89LhuRJKBTqjZrpJS6Ljp3SxMORPo7U%2F8vPlvNxmodb2DP%2Bx3R4TcCWF7PO0zPlk03Pv3qpzboxSoo%2F46Y7cJed8iQPiGzjQxjl2IFUq7a1SOR3qJT5fWMRnD%2BMs4NfQLo82f7%2FRpd%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Ftrust%2Fsecurity
+- Kind hint: page
+- Seen from 508 source page(s)
+
+## 0288. x285073.xml
+
+- URL: https://compass.coupa.com/x285073.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9owFP4rkd%2BdC0oIWIBEy6YhdVtU6B76Uh2ck9ZqYmc%2BTsf%2B%2FRzTVnQSfcyX893O8YKga3uxHtyTvsXfA5KLtpsle4A8y6Z5UfByliPPZ03ND9Oy4YeimaGsy2LeAIt%2BoSVl9JJN4pRFW6IBt5ocaOehdDLlac6zdJ9moihFkcbzYn7Poo13URpcYD4515NIEmmGHjgeHVoNbWyeHcTSdAn0%2FX%2F%2FHjzcA1FvrPNfWYLHZzNJhxTyyeaq%2ByIhc2VCZJKxHIu%2BGisxNFyyBlrCMWnlBdQLviOVNc5I014pXSv9uGSD1cIAKRIaOiThpNitv98I31QcTkMkvu33Fa9%2B7vYsWhOhHStdG01Dh3aH9kVJvLu9OS8ZksehUKg3aiaXuCw6dq0mEY70eaT%2BNT9bLcZpEW5hz%2Fif0%2BEtAVtdzLpIzpRPNr344aW2m8q0Sv4dN92Bu%2ByUxVlAVM2bMCqwA9Wu69oikd9h25o%2F1xbB%2BcM4O%2FgFJKuT7cc3uvoH&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fget-started%2Fimplementation-best-practices%2Fplatform-design-considerations%2Freason-insights
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0306. x294001.xml
+
+- URL: https://compass.coupa.com/x294001.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbhMxEPyVk9999h1JrrGSSGkDIlKBU5PywEvl%2BjbUqs82Xl8Jf4%2FPARQqpY%2B7ntmZ2fUCZW%2B8WA%2Fxyd7BjwEwFtvNkjxMq4bzhr%2BjHVzN6WSuZnR%2BqGs6U91jxeuZBOCk%2BAoBtbNLUpep2iIOsLUYpY2plVCUT2jF97wS00ZMJ%2BWsufpGik1S0VbGzHyK0aNgTLnBSwrHCMFKU7rnKEvleia9f%2FX2kNpeInoXYqoqBsdnV%2FOBy0m9ue7fK1nFhiE6NoYjxQcXFOSES3KQBmF02qYB%2BgX%2BddrgolPOXGvbaft9SYZghZOoUVjZA4qoxG796VakpOLxBELxcb9vaftltyfFGhHCGOnGWRx6CDsIL1rB%2Fd3tecjsvMyBcrxxJrvEJcWxNxZFPtLblvwf%2F2S1GNEi3yKc8d%2Bmy78OyOqi1wU7m3yS8eJzGrXdtM5o9WvcdC%2FjZaWqrHJHd%2FSQoQJ6qc266wIgph0a437eBJAxHSaGIS2ArU6y%2F%2F%2FR1W8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Fcompany-setup%2Flist-of-international-country-codes
+- Kind hint: legacy_xml_alias
+- Seen from 2 source page(s)
+
+## 0307. x294101.xml
+
+- URL: https://compass.coupa.com/x294101.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87cdI0FVZbqVtBVBoQrYUHXqarc2PWHNv4nFH%2Be5wUUEHqHu%2Fz3ffjzkuC3ni5GeKTvcfvA1LMdtsVexA4m89KRF4L6HjdqIYf8Tjn8KaaHRezpkEULPuCgbSzK1blqdoRDbizFMHGBImq4aLmpTiIUs4Xcl7nC1F%2FZdk2qWgLcZp8itGTLArlBg8cTxGDBZO75wi5cn0B3v%2F39pBgD0TehZiqssDTs6vEIKCutjf9WwVlXBRErhjDseydCwqnhCv2CIZwdNomAv2Cf5E2uOiUMzfadtp%2BW7EhWOmANEkLPZKMSu43H%2B5kSiqP5yaS7w%2BHlref9geWbYgwjJFunaWhx7DH8KIVfr6%2Fuww5Oc%2BnQFO8kbO4NsuyU28syelIr1vyv%2F2z9XLsltMtwsX86%2BPwxwFbX%2FW6LC6YzzJefkxUu23rjFY%2Fx033EK8rlXk5Ibrjj1OrxB602XRdQKK0Q2Pcj9uAENNhYhjSAor1WfbfP7r%2BBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Fcompany-setup%2Fsftp-account-management
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0308. x294250.xml
+
+- URL: https://compass.coupa.com/x294250.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd%2Bd29JGtdpK3Qqi0oBoLTzwMp04p8yaYxsfZ5R%2Fj5MOVJC6x3w53%2B0cLwl67cRmCE%2FmAX8MSCHZbVfssQaYtzfVkVddjbxqy5q3x1nLF7Kd1%2FVNPlvggiVf0ZOyZsXKNGfJjmjAnaEAJkQoL%2Bc8r3iRH%2FJCzGoxq9JFUX5jyTa6KANhYj6F4EhkmbSDA46ngN6ATu1zgFTaPgPn%2Fvv3GGEHRM76EL%2BKDE%2FPtsyHHKpye9u%2Fk1CEOiOy2ViOJe%2Btlzg1XLEjaMIxaRMF1Av%2BRRpvg5VW3yrTKfN9xQZvhAVSJAz0SCJIsd98vBexqWjPQyQ%2BHA4Nbz7vDyzZEKEfK91ZQ0OPfo%2F%2BRUn88nB%2FWXJKnk6FpnqjZnaNy5JTrw2J6UhvR3Kv%2Bdl6OU6L6Rb%2Bgv82Hf4kYOurWZfZhfLZxolPUWq3baxW8te46R7CdaciLSZEdfw4jQrsQelN13kkijvU2v688wghHib4IS4gW59t%2F32j698%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Fplatform-plus%2Fcustom-objects
+- Kind hint: legacy_xml_alias
+- Seen from 2 source page(s)
+
+## 0309. x294274.xml
+
+- URL: https://compass.coupa.com/x294274.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXdKokBvhG3AiVvUQNoKsdNDL8GEmiREJFLlUKn796XoNnALOEc9zdtmuCTo2l5thvBsb%2FHHgBSy3XbF7iucyoWUks%2Bq2YLLatrw%2BWJScTlvJOhGgJhLln1DT8bZFavykmU7ogF3lgLYEKGymvJSclEeSqEmMzWZ5FJU31m2jS7GQkjM5xB6UkWh3dADx2NAb6HN3UuAXLuugL7%2F7999hHsg6p0P8UsUeHxxVTmUIKvtVfdBgwizgsgVYzmWfXReY2q4Yo%2FQEo5J6yhgXvENqb0LTrv2ytjG2KcVG7xVDsiQstAhqaDVfvP5RsWm6uE0ROrT4VDz%2Buv%2BwLINEfqx0rWzNHTo9%2Bhfjca725vzkil5ngqleqNmcYnLsmPXWlLpSO9H6v%2FkZ%2BvlOK3SLfwZ%2F306%2FE3A1hezLosz5ZNNr75Eqd22dq3Rv8ZNdxAuO4lcJMQ0%2FDGNKuzAtJum8UgUd9i27ue1RwjxMMEPcQHF%2BmT77xtd%2FwY%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Fapi-response-filters
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0310. x294296.xml
+
+- URL: https://compass.coupa.com/x294296.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN8BQ6FFVhIpbVY1UrehJt1DX6qLuaxWje35TJf99zNkq7JJ6SMf9%2F2684yg104sh%2FBiHvDHgBSS9WrOnpsSm6Lm%2B3TXdDytqssmbcqiSPm%2BlrLeNQ00NUu%2BoSdlzZyVGWfJmmjAtaEAJkSIl5cpr9KCb3kh6itR11lVXjyxZBVdlIEwMV9CcCTyXNrBQYqHgN6AzuxrgEzaPgfn%2Fvv3HGEHRM76EL%2BKHA%2BvtuQDh6pcXfefJBThKiey%2BViOJbfWS5waztkeNOGYtI0C6g3fkdbbYKXV18p0ynyfs8EbYYEUCQM9kghSbJaf70VsKnbHIRJ3222btl83W5YsidCPlW6soaFHv0H%2FpiQ%2BPtyflpySZ1Ohqd6omZ%2FjsuTQa0NiOtLHkdyf%2FGwxG6fFdAt%2Fwv%2BYDn8TsMXZrLP8RPlo48SXKLVetVYr%2BWvcdA%2FhvFORFROiunQ%2FjQrsQell13kkijvU2v688QghHib4IS4gXxxt%2F32ji98%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Fenterprises-and-multiple-erp-support
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0311. x294308.xml
+
+- URL: https://compass.coupa.com/x294308.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TqKEIKut1K0gKg2I1sIDL9PVuTJrjm18zij%2FPU46UEHqHvPlvl93XhAMxsv1GB%2FtPf4YkWK23SzZQ1s1bd0A8vZQN7wu%2B54fmvYtV2UNVd03UB%2BOLPuKgbSzS1blBcu2RCNuLUWwMUFF9YYXNS%2BLfVHKppVNk7dF%2FY1lm%2BSiLcSZ%2BRijJymEcqMHjqeIwYLJ3VOEXLlBgPf%2F%2FXtIsAci70JMX6XA05OrirGAutrcDO8UlLEVRE5M5Vj23gWFc8MlO4IhnJJ2SUA%2F41%2BkCy465cyNtr2235dsDFY6IE3SwoAko5K79cc7mZrKw3mI5If9vuPd592eZWsiDFOlW2dpHDDsMDxrhV%2Fu7y5LzsnzudBcb9IU17gsOw3GkpyP9Hok%2F5KfrRbTtJxvES74r9PhTwK2upp1IS6UzzZefkpS203njFa%2Fpk0PEK87lXk5I7rnx3lU4gDarPs%2BIFHaoTHu521AiOkwMYxpAWJ1tv33ja5%2BAw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Finstance-specific-integration-documentation
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0313. x294550.xml
+
+- URL: https://compass.coupa.com/x294550.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2ByZcdrFiEJkDYbFqDbjCbdQ18KWqFbobLkiXKX%2FX1lpy2yASmgF514vDtSc4LWdHLVh0d7g797pJBs1gt235R1U1wI4HkxrXk5aRpe57Ocf65RlUrMZmIiWPILPWlnF6xI421D1OPGUgAbIiSKCy5KnoudyOWnaTzppJzesWQdVbSFMDIfQ%2BhIZplyfQccDwG9BZO6pwCpcm0GXfff232EOyDqnA%2Fxlmd4eHKF6AWUxfqy%2FaIgD9OMyGVDOJZ8dV7hmHDBGjCEg9MqNtDP%2BI5U3gWnnLnUdq%2Ftw4L13koHpElaaJFkUHK7%2Bn4tY1JZH4tIftvtKl793O5YsiJCP0S6cpb6Fv0W%2FbNWeHtzfRpydJ6OgcZ4Q8%2FsHJclh9ZYkuOSPrbUvfpny%2FlQLcdd%2BBP%2Bx3R4c8CWZ73Os5POR5lO%2FoitNuvKGa3%2BDpNuIZxXytN8RPSeN2OpxBa0We33HoniDI1xf648QoiLCb6PA8iWR9l%2F%2F%2BjyBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Fworkflows-and-approvals%2Fremote-approvals-via-api
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0314. x295096.xml
+
+- URL: https://compass.coupa.com/x295096.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtsgFP0Vi3eMcZ2kQUmktNm0SO1mNeke9lJhfLuiYvC4uMv%2BfpisVVYplXjhcM8959zLAmVnerEewpO9g18DYMi2myV5UJOGl3PeUJgWQCt5MaPz6aWiTctLaJp5VVUFyb6DR%2B3skpR5vG0RB9haDNKGCBXllBYV5cW%2B4GIyiyefTC5%2BkGwTVbSVITGfQuhRMKbc0EsKhwDeSpO75yBz5Tom%2B%2F7d20OEe4nYOx%2FijTM4PLuyGApZlZur7pOSPMwYomNjOJJ9dl5BSrgkj9IgjE7r2EC%2FwBtSexeccuZK21bbn0syeCucRI3Cyg5QBCV269sbEZOK5liE4st%2BX9P6225PsjUi%2BDHStbM4dOB34F%2B0gvu7m9OQyXmeAqV4Y092jkuyQ2csirSkjy31%2F%2FyT1WKsFmkX%2FoT%2FMV2%2BOiCrs14X7KTzUaYXX2Or7aZ2Rqs%2F46Q7Gc4r8ZwnRLf0MZUK6KQ267b1gBhnaIz7fe1BhriY4Ic4ALY6yv7%2FR1d%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Finvoicing%2Finvoice-progression-through-statuses
+- Kind hint: legacy_xml_alias
+- Seen from 2 source page(s)
+
+## 0315. x295150.xml
+
+- URL: https://compass.coupa.com/x295150.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2bDetHSEJkDYbGqDbjCbbw14K2qZXobKkiXKX%2FX1lpx3SASmgF514vDtSC4JeWbEe%2FKO%2Bx98Dko%2B2myV7mLfFZd7WXQzlRRHPuhLj8qKr47oDSOt5WeCsZNEPdCSNXrI8SVm0JRpwq8mD9gFK86s4ncVZuk8zcVmEk1zNs58s2gQVqcFPzEfvLQnOGzNYiPHg0WlQiXnykDSm52Dtf28PAbZAZI3z4ZZxPDyZPB1SmOWb6%2F5TA5kvOJHhYzgWfTauwSnhknWgCEenVWggn%2FEfUjnjTWPUtdSt1L%2BWbHBaGCBJQkOPJHwjdusvdyIkFfWxiMTtfl%2FF1bfdnkVrInRjpBujaejR7dA9ywa%2F39%2BdhpycJ1OgKd7Yk5%2FjsujQK01iWtLHluyrf7ZajNVi2oU74X9MhzcHbHXW64KfdD7KWPE1tNpuKqNk83ecdA%2F%2BvFKWZBMi27ibSgX2INW6bR0ShRkqZf7cOAQfFuPdEAbAV0fZ93909QI%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Finvoicing%2Ftax-code-automation
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0316. x295731.xml
+
+- URL: https://compass.coupa.com/x295731.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZMd1GiEJkDYbFqDdjCbdw14K1mZWobakiXKX%2Ff1kZS2yAimgF514vDtSc4K%2Bs3I1%2BCd9h78GJJ9s1gv20OJkX1WI6Uw8TtLysipSgKJMy1IgVrNJUcxmLPmOjpTRC1ZkgiUbogE3mjxoHyBRVKko01zsRC4vpuFk04vqB0vWQUVp8JH55L0lyXljBgspHjw6DV1mnj1kjek5WPvu7SHAFoiscT7cco6HZ1OIQUBZrK%2F6Tw3kfsqJDB%2FDseSzcQ3GhAu2h45wdFqHBuoF35DaGW8a010p3Sr9c8EGp6UBUiQ19EjSN3K7ur2RIal8PBaR%2FLLb1Wn9bbtjyYoI3Rjp2mgaenRbdC%2Bqwfu7m9OQ0XkWA8V4Y09%2BjsuSQ99pknFJH1uy%2F%2Fyz5XyslnEX7oT%2FMR1eHbDlWa9zftL5KGPl19Bqs65Np5o%2F46R78OeV8iyPiGrTfSyV2IPqVm3rkCjMsOvM72uH4MNivBvCAPjyKPv%2FH13%2BBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fprocurement%2Fclosing-purchase-orders
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0317. x295747.xml
+
+- URL: https://compass.coupa.com/x295747.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8TJ2m6gtVWKnTTKsEW0bKHvaAb53ZYJLbxdVj37%2Be4A3VI5TEn556Pez0n6DsrVoN%2F1Hf4PCD5ZLNesIemacpGXs7SCvZFWjUyTy8m5ad0OrtELCaylVCx5Ac6UkYvWJnlLNkQDbjR5EH7AOWBnldpke%2FyQkxnYnqRleXkJ0vWwUVp8HHy0XtLgnNpBgspHjw6DV1mnjxk0vQcrH337yHAFoiscT58FRwPT6bMhxyqcn3Vf5ZQ%2BBknMnwsx5IvxkmMDRdsDx3hmLQOAuoF35DaGW%2Bk6a6UbpX%2BtWCD08IAKRIaeiThpdiubm9EaCqaI4nE192uTuvv2x1LVkToxkrXRtPQo9uie1ES7%2B9uTkvG5FksFOuNmvzcLEsOfadJxCN9HMn%2By8%2BW85Et4i3cyfzH4%2FCagC3PZp3zE%2BWjjRXfgtRmXZtOyT%2Fjpnvw552KrIiIatN9pArsQXWrtnVIFHbYdeb3tUPw4TDeDWEBfHm0%2Ff%2BNLv8C&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fprocurement%2Fexternal-purchase-orders-faq
+- Kind hint: legacy_xml_alias
+- Seen from 2 source page(s)
+
+## 0318. x295749.xml
+
+- URL: https://compass.coupa.com/x295749.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd8dxyGE1gIkWjYNqd2iwvawl8okl9WqY7u%2BTsf%2B%2FRyzTXQSfczJPV%2F3eo6y106shvBkHuBlAAzZZr0gj9dVDbzkE1oVdU0rfi3p%2FlBNaL2fdt3kUFV1vSfZN%2FCorFmQMi9ItkEcYGMwSBMiVJQ1LSrKi13BxXQmpld5OSu%2Fk2wdXZSRITGfQnAoGGvt4CSFYwBvpM7tc5B5a3smnfvv32OEnUR01of4xRkcn21ZDIWsyvVN%2F6GVPMwYomVjOZJ9tL6F1HBBDlIjjEmbKKBe4R%2FSeBtsa%2FWNMp0yPxZk8EZYiQqFkT2gCK3Yru7vRGwq9qchFJ92u4Y2X7Y7kq0QwY%2BVbq3BoQe%2FBf%2BqWvj6cHdeMiXPU6FUb9Rkl7gkO%2FbaoEhHej%2BS%2B5OfLOfjtEi38Gf89%2BnybwKyvJh1zs6UTzZOfI5Sm3VjtWp%2FjZvuZbjsxHOeENXRQxoV0EulV13nATHuUGv789aDDPEwwQ9xAWx5sn37Rpe%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fprocurement%2Ffields-that-cause-a-purchase-order-revision
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0319. x295859.xml
+
+- URL: https://compass.coupa.com/x295859.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr87TkLcMqutVOimVYItomUPe0Gucx0Wie35HOj%2B%2BznuQB1SebzPd9%2BPO89Q9p0TyyE8mjv4PQCGbL2ak4cdFGrCOaf1jgOtLyc1%2FTTdTylMymrH64uLfVuQ7Ad41NbMSZXHao04wNpgkCZEqKgmtKhpWWyLUvCp4Jc55%2BVPkq2iijYypMnHEBwKxpQdnKRwCOCN7HL7FGSubM%2Bkc%2B%2FeHiLsJKKzPsSqZHB4slUxFLKuVlf9ZyXLMGWIlo3hSPbFegUp4ZzsZYcwOm0igX6GN6TxNlhluyttWm1%2BzcngjbASNQoje0ARlNgsb29ETCp2xyYUX7fbhjbfN1uSLRHBj5GurcGhB78B%2F6wV3N%2FdnIZMzvMUKMUbOdm5WZId%2Bs6gSEf62JL7558sZmO3SLfwJ%2FMfj8tXB2Rx1uuMnTAfZZz4FqnWq8Z2Wv0ZN93LcF6pzMuE6JbuU6uAXupu2bYeEOMOu86%2BXHuQIR4m%2BCEugC2Osv%2F%2F0cVf&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fprocurement%2Frequisition-status-definitions
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0320. x296407.xml
+
+- URL: https://compass.coupa.com/x296407.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr87cWgoYAESLZuG1G1RoXvYS3U4x2o1sT2f07H%2Fvo7ZKjaJPubLfb%2FuPCfoWidXfXgy9%2FizRwrZZr1gjzib7WcwG%2FOmOkx4VYHi06vqmqOCclxOqqv9uGTZN%2FSkrVmwUS5YtiHqcWMogAkREqNrLipeip0o5XgqhcjFtPrOsnV00QZCYj6F4EgWhbK9A47HgN5Am9vnALmyXQHO%2FffvMcIOiJz1IX6VBR6f7Uj0AqrR%2Bqb7EBOGSUFki6Ecyz5arzA1XLADtIRD0joK6Bd8Q2pvg1W2vdGm0ebHgvXeSAukSRrokGRQcrv6fCdjU7k%2FDZH8tNvVvP663bFsRYR%2BqHRrDfUd%2Bi36F63w4f7uvGRKnqdCqd6gWVzisuzYtYZkOtL7kdyf%2FGw5H6ZluoU%2F479Ph78J2PJi1nlxpnyycfJLlNqsa9tq9XvYdAfhslOZlwnRDT%2BkUYkd6HbVNB6J4g7b1v669QghHib4Pi6gWJ5s%2F32jy1c%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Fearly-access-program-(eap)
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0321. x297495.xml
+
+- URL: https://compass.coupa.com/x297495.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndhJSmAVItGwaUrtFhe1hL9XhHKvVxE59Tsv%2B%2Bzlmm%2Bgk%2Bpgv9%2F2685yga3u5GvyjucfnAcknm%2FWCPahcTQssP6TNrMR0Iqb7dFbmV2lZwkHsYVJV1Ywl39GRtmbBikywZEM04MaQB%2BMDJIqrVEzSXOxELquZFCKrRPWDJevgog34yHz0vifJubJDDykePToDbWafPGTKdhz6%2Fr9%2FDwHugai3zoevnOPxyRZiEDAp1tfdRwW5n3Iiy8dyLPlkncLYcMEO0BKOSesgoF%2FwH1I7662y7bU2jTY%2FF2xwRlogTdJAhyS9ktvV3a0MTeX%2BNETy825Xp%2FXX7Y4lKyJ0Y6Uba2jo0G3RvWiF3%2B5vz0vG5FksFOuNmvwSlyXHrjUk45Hej9T%2Fyc%2BW83Faxlu4M%2F77dPibgC0vZp3zM%2BWTTS%2B%2FBKnNuratVr%2FGTXfgLzvlWR4R3aSHOCqxA92umsYhUdhh29rXG4fgw2G8G8IC%2BPJk%2B%2FaNLn8D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcoupa-contract-lifecycle-management-standard%2Fcreate-and-manage-agreement-templates
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0322. x297533.xml
+
+- URL: https://compass.coupa.com/x297533.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87cbKkGVZbqVtBVBoQrYUHXqaLc2PWEtv4nFH%2Be5wUUEHqHvPlvl93XhIMvZObMTyZe%2Fw%2BIoVkt12xh1bUV%2FUVFLy9riteLirgbVvWvGoxV7lSXV2ULPmCnrQ1K1akgiU7ohF3hgKYECFRLLgoeS4OIpfVtRQirRZvvrJkG120gTAzn0JwJLNM2dEBx2NAb6BP7XOAVNkhA%2Bf%2B%2B%2FcQYQdEzvoQv%2FIMj8%2B2EKOAstjeDG8V5KHOiGw2lWPJO%2BsVzg1X7BF6wilpEwX0C%2F5FGm%2BDVba%2F0abT5tuKjd5IC6RJGhiQZFByv%2FlwJ2NT2Z6GSL4%2FHBrefNofWLIhQj9VurWGxgH9Hv2LVvj5%2Fu685Jw8nQvN9SbN7BKXJcehNyTnI70eyf3Oz9bLaVrOt%2FBn%2FNfp8CcBW1%2FMuszOlE82Tn6MUrttY3utfk6bHiBcdsrTfEZ0xx%2FnUYkD6H7TdR6J4g773v649QghHib4MS4gW59s%2F32j618%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcoupa-contract-lifecycle-management-standard%2Fthe-contract-record%2Fcontract-hierarchy
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0323. x298143.xml
+
+- URL: https://compass.coupa.com/x298143.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNbxshEP0rK%2B4s4KwdB9mWnLhVLaXtKnZ76CUi7KRBYYEybOr%2B%2B7C4rdxKzpE3M%2B9jhgWq3ga5HtKTu4MfA2Cqtpslub%2Fiml9ciDnt%2BOWUNlwL%2BgCNoFxcdbNcgbmYkuorRDTeLcmk5qTaIg6wdZiUSxnikxnlDRV8z4WcziXn9Uw030i1ySrGqVQmn1IKKBnTfgiKwiFBdMrW%2FjmpWvueqRD%2Bq91nOCjE4GPKL8Hg8OwnfOCqmWyu%2B3daiXTJED0bw5HqvY8aSsIleVQWYXTaZgLzAn%2BRNvrktbfXxnXGfV%2BSITrpFRqUTvWAMmm5W3%2B8lTmpfDg2ofyw37e0%2Fbzbk2qNCHGMdOMdDj3EHcQXo%2BHL3e1pyOK8LoFKvJGTnZsl1aG3DmU50tuWwm%2F%2FZLUYu2W5RTyZf3tc%2FXFAVme9LtgJ81EmyE%2BZartpvTX617jpXqXzSqIWBTEdfSytEnpl7LrrIiDmHVrrf95EUCkfJsUhL4CtjrL%2F%2FtHVKw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcontingent-workforce%2Fccw-api-overview
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0324. x298145.xml
+
+- URL: https://compass.coupa.com/x298145.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu8Y8OK0QUmktNm0SO1mNdke9lLdYrKiYnC5uMv%2B%2FTBZq2xS%2Bujje77uZY7Q2V6uhvjo7vTzoDEWm%2FWC3M%2FEh1bxKaezelLTyQWv6eyST2ld7cW%2BBWjr9oEU33VA492CVCUnxQZx0BuHEVxMEK%2BmlE%2Bo4DsuZH0puSh5Vf0gxTq5GAcxMx9j7FEypvzQA9WHqIMDW%2FqnCKXyHYO%2B%2F%2B%2FffYJ7QOx9iOlLMH148hUfOEyq9VX3UYGIFwzRs7EcKT75oHRuuCB7sKjHpE0SMC%2F6DWmCj155e2Vca9zPBRmCkx7QoHTQaZRRye3q9kampvLhOITy827X0ObrdkeKFaIOY6Vr73DodNjq8GKU%2FnZ3c1oyJy9zoVxv1GTnuKQ4dNahzEd6P1L%2FNz9ZzsdpmW8RTvjv0%2BE1AVmezTpnJ8pHm15%2BSVKbdeOtUb%2FHTXcQzzuJUmTEtHSfR6XuwNhV2waNmHZorf91HTTEdJgYhrQAtjza%2FvtGl38A&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcontingent-workforce%2Fcandidate-lookup-api
+- Kind hint: legacy_xml_alias
+- Seen from 2 source page(s)
+
+## 0325. x298147.xml
+
+- URL: https://compass.coupa.com/x298147.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8d222gYLWVCt20SmyLaNkDL8h1bsEisT1fh3X%2FHscF1E0qjzm55%2BteT1F1rZeLPj7ZW%2FjdA8ZitZyRB7GbNGI81lQ0DdAK9BndbreX9FxUk52%2BrEQzGZPiFwQ0zs7IqOSkWCH2sLIYlY0J4qNzyisq%2BIYLeXYhuSj5xfieFMvkYqyKmfkUo0fJmHa9VxT2EYJVbemeoyq165jy%2Fr9%2FDwn2CtG7ENOXYLB%2FdiPec1WNllfdF61EnDBEx4ZypPjqgobccEZ2qkUYktZJwLzAB1IHF5127ZWxjbGPM9IHK51Cg9KqDlBGLdeL7zcyNZXbwxDKb5tNTeuf6w0pFogQhkrXzmLfQVhDeDEa7m5vjkvm5GUulOsNmuwUlxT7rrUo85E%2Bj%2BTf8pP5dJiW%2BRbhiP85Xb0nIPOTWafsSPlg4%2BWPJLVa1q41%2Bu%2Bw6U7F006iFBkxDd3lUQmdMu2iaQIgph22rftzHUDFdJgY%2BrQANj%2FY%2FvtG568%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcontingent-workforce%2Fcandidate-confirmation-api
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0326. x298151.xml
+
+- URL: https://compass.coupa.com/x298151.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLLbtswEPwVgXeJlORHQtgGnLhFDaStEDs95BKsqXVCRCJZLpW6fx9KTgK3gHMhwOHOzswuZwRt4%2BSyC0%2FmFn93SCFZr%2BbsAfbTi1IVl%2BnlJB4j3EO6EwLSWkyL8ajEcrIrWfILPWlr5qzIBEvWRB2uDQUwIUKimKRilOZiK3I5vpAiz8rJ%2BJ4lq6iiDYSB%2BRSCI8m5sp2DFA8BvYEms88BMmVbDs799%2FYQYQdEzvoQbznHw7MtRCdgVKyu2i8K8jDlRJb34Vjy1XqFQ8I520ND2DutYgP9gh9I5W2wyjZX2tTaPM5Z5420QJqkgRZJBiU3y%2B83MiaVu2MRyW%2FbbZVWPzdbliyJ0PeRrq2hrkW%2FQf%2BiFd7d3pyGHJxnQ6AhXt%2BTn%2BOy5NA2huSwpM8tuTf%2FbDHrq%2BWwC3%2FC%2F5wO7w7Y4qzXGT%2FpfJRx8kdstV5VttHqbz%2FpFsJ5pTzLB0TX6X4oldiCbpZ17ZEozrBp7J9rjxDiYoLv4gD44ij77x9dvAI%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcontingent-workforce%2Fcontingent-worker-lookup-api
+- Kind hint: legacy_xml_alias
+- Seen from 2 source page(s)
+
+## 0327. x298153.xml
+
+- URL: https://compass.coupa.com/x298153.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8TO2l6wWordSuISgOiteOBl%2Bk0OWHWEtv4OKP8exwXUJnUPebL%2BW7neEnQd1ZuBv%2Bk7%2FHHgOST3XbFHo%2FvJvlUNPP0OClFWh7LIoVyjmkrJrN22kDbzpAlX9GRMnrFikywZEc04E6TB%2B0DJIpZKso0FweRy%2BlCiiJbLPJvLNkGF6XBR%2BaT95Yk57UZLKR48ug0dJl59pDVpudg7at%2FjwG2QGSN8%2BEr53h6NoUYBJTF9qZ%2FX0Pu55zI8LEcSz4YV2NsuGItdIRj0ioIqBf8h1TOeFOb7kbpRunvKzY4LQ2QIqmhR5K%2BlvvNpzsZmsrjeYjkx8OhSqsv%2BwNLNkToxkq3RtPQo9uje1E1PtzfXZaMybNYKNYbNfk1LktOfadJxiO9Hcn%2Byc%2FWy3Faxlu4C%2F7bdPibgK2vZl3yC%2BWzjZWfg9RuW5lO1b%2FGTffgrzvlWR4R1aRtHJXYg%2Bo2TeOQKOyw68zPW4fgw2G8G8IC%2BPps%2B%2F8bXf8G&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcontingent-workforce%2Fmanaging-your-api-consumer-apps-and-credentials
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0328. x298253.xml
+
+- URL: https://compass.coupa.com/x298253.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdj9MwEPwrkd%2BT2E36gdVW6l1BVDoguhYeeDntJVvOOsc2Xuco%2Fx7HBVSQeo873pmd2fWSoNdObobwZO7x%2B4AUst12xR64mE2POF%2FkRzGZ5XWN03zxOJvnoq6Ad%2FPqTbfgLPuCnpQ1KzYpYrUjGnBnKIAJEeKRyOtc8AMXcrqQvCqqqv7Ksm2cogyExHwKwZEsy9YODnI8BfQGdGGfAxSt7Utw7r%2B3hwg7IHLWh1iJEk%2FPdsIHDvVke9O%2FbUGEeUlkyzEcy95Z32JKuGJH0ISj0yYKqBf8izTeBttafaNMp8y3FRu8kRZIkTTQI8nQyv3mw52MSeXjuYnk%2B8OhyZtP%2BwPLNkTox0i31tDQo9%2Bjf1Etfr6%2FuwyZnBcpUIo3apbXuCw79dqQTEd63ZL77Z%2Btl2O3TLfwF%2FzX6fDHAVtf9bosL5TPY5z8GKV228Zq1f4cN91DuD5JFCIhqsuPqVViD0pvus4jUdyh1vbHrUcI8TDBD3EB5fo89t8%2Fuv4F&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Finventory%2Fcycle-counts
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0329. x298279.xml
+
+- URL: https://compass.coupa.com/x298279.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87cdKSUqut1K0gKg2I1sIDL9PVuTJrjm18zij%2F%2FZwUUEHqHvPlvl93XhB0xst1Hx%2FtPf7okWK23SzZA1aAs%2BOh5hW2NZ%2BWquZzrCdciWl9mIGai2PFsq8YSDu7ZFUuWLYl6nFrKYKNCRJVzcWUl2IvSvnmrRSTfDKffWPZJrloC3FkPsboSRaFcr0HjqeIwYLJ3VOEXLmuAO%2F%2F%2B%2FeQYA9E3oWYvsoCT0%2BuEr2AabW56d4pKOOsIHLFUI5l711QODZcsiMYwiFpkwT0M%2F5FmuCiU87caNtq%2B33J%2BmClA9IkLXRIMiq5W3%2B8k6mpPJyHSH7Y7xvefN7tWbYmwjBUunWW%2Bg7DDsOzVvjl%2Fu6y5Jg8HwuN9QbN4hqXZafOWJLjkV6P5H%2FnZ6vFMC3HW4QL%2Fut0%2BJOAra5mXRQXymcbLz8lqe2mcUarX8OmO4jXncq8HBHd8uM4KrEDbdZtG5Ao7dAY9%2FM2IMR0mBj6tIBidbb9942uXgA%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Finventory%2Fpick-lists
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0330. x298737.xml
+
+- URL: https://compass.coupa.com/x298737.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8nTrIAqQVItGwaUrtFhe1hL9XhHKtVx059Tsf%2B%2Bzlmrdgk%2Bpgv9%2F2685yg071YDf7R3OPzgOSTzXrBHmRVlHuY1inuqzKtDvUkvWrrWQqT2bSsrw5y0rYs%2BY6OlDULVmY5SzZEA24MeTA%2BQHk5TfMqLfJdXohJLfIPWVVVP1iyDi7KgI%2FMR%2B97EpxLO%2FSQ4tGjM6Az%2B%2BQhk7bj0Pf%2F%2FXsIcA9EvXU%2BfBUcj0%2B2zIccqnJ93X2UUPgZJ7J8LMeST9ZJjA0X7ACacEzaBAH1gm9I46y30uprZVplfi7Y4IywQIqEgQ5JeCm2q7tbEZqK%2FWmIxOfdrkmbr9sdS1ZE6MZKN9bQ0KHbontREr%2Fd356XjMmzWCjWGzX5JS5Ljp02JOKR3o%2FU%2F83PlvNxWsRbuDP%2B%2B3R4TcCWF7PO%2BZnyyaYXX4LUZt1YreTvcdMd%2BMtORVZERLXpIY4K7EDpVds6JAo71Nr%2BunEIPhzGuyEsgC9Ptv%2B%2B0eUf&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Frisk-aware-(rpm)%2Fcreate-or-update-your-supplier-risk-aware-feed
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0331. x298787.xml
+
+- URL: https://compass.coupa.com/x298787.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXdKlOJ4IWwDTtyiBtJWiJ0eegnG1LghQpEsh0rdvw8lt4FbwDnqad42wzlBa7xcdfHJ3uPPDilmm%2FWCPaK6njXjMfA9HoCP8Erw%2FaEZ82o6mewbHM2mDbDsGwbSzi5YlQuWbYg63FiKYGOCRDXmYsRLsROlvJ5KcZVPy9l3lq2Ti7YQB%2BZTjJ5kUSjXeeB4jBgsmNw9R8iVawvw%2Fr9%2Fjwn2QORdiOmrLPD47CrRCRhV65v2g4IyTgoiV%2FTlWPbRBYVDwwU7gCHsk9ZJQL%2FgG1IHF51y5kbbRtsfC9YFKx2QJmmhRZJRye3q851MTeX%2BNETy025X8%2FrrdseyFRGGvtKts9S1GLYYXrTCh%2Fu785JD8nwoNNTrNYtLXJYdW2NJDkd6P5L%2Fk58t5%2F20HG4Rzvjv0%2BFvAra8mHVenCmfbLz8kqQ269oZrX73m24hXnYq83JAdMMPw6jEFrRZNU1AorRDY9yv24AQ02Fi6NICiuXJ9t83unwF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fservices-procurement%2Fintroduction-to-services-procurement
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0332. x304265.xml
+
+- URL: https://compass.coupa.com/x304265.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN8Ntks2YiWR0qbVInUbatI97KW6wbFaBZv5TJf99zNkrbJK6SMf9%2F2684Kga3u9HsKjvcNfA1JItpsle5Cz%2BaxQouByBpLnKkdezJuG54VSomrmAi9qlnxDT8bZJVOpYMmWaMCtpQA2REioD1zkXIq9kHpWaHGRzlXxnSWb6GIshIn5GEJPOssqN%2FTA8RDQW2hT9xQgrVyXQd%2B%2F%2BfcQ4R6IeudD%2FJIZHp6cEoOAXG0uu%2BsKZPiYEblsLMeSG%2BcrnBouWQMt4Zi0jALmGV%2BR0rvgKtdeGlsb%2B3PJBm%2B1AzKkLXRIOlR6t%2F58q2NT%2FeM4RPrTfl%2Fy8utuz5I1Efqx0pWzNHTod%2BifTYX3d7enJafk6VRoqjdqZue4LDl0rSU9Hen9SP2%2F%2FGy1GKf1dAt%2Fwn%2BfDi8J2Ops1kV2ony06fWXKLXdlK411Z9x0x2E804ylRNiat5Moxo7MO26rj0SxR22rft95RFCPEzwQ1xAtjra%2Fv9GV38B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Frelease-notes%2Farchived-release-notes%2Frelease-26%2Fnew-features%2Fcore-apps%2Fexpense-category-translations
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0333. x305489.xml
+
+- URL: https://compass.coupa.com/x305489.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8Tx0lvWG2lbgVRaUC0djzwMrnOCbPm2MbHGeXf47iAyqTuMV%2FOdzvHSxS9dnwzhCdzDz8GwJDttivyOJ8e5109g7yTs3k%2Bmck6f7fo6rxlCya747GtpxXJvoJHZc2KVEVJsh3iADuDQZgQobKa5eUkZ%2BWhZHy64OWkYDX7RrJtdFFGhMR8CsEhp1TawYkcTgG8Ebqwz0EU0vZUOPfq32OEnUB01of4xSicnm1VDqWYVNub%2Fr0ULMwpoqVjOZJ9sF5CargindAIY9ImCqgX%2BIc03gYrrb5RplXm%2B4oM3nArUCE3ogfkQfL95tMdj0358TyE%2FOPh0OTNl%2F2BZBtE8GOlW2tw6MHvwb8oCQ%2F3d5clU%2FIiFUr1Rk16jUuyU68N8nSktyO5P%2FnJejlO83QLf8F%2Fmy7%2BJiDrq1mX9EL5bOP45yi12zZWK%2Flr3HQvwnUnVrCEqDbv0iiHXii9aVsPiHGHWtuftx5EiIcJfogLoOuz7f9vdP0b&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Frelease-notes%2Farchived-release-notes%2Frelease-30%2Fnew-features%2Fother-platform-enhancements
+- Kind hint: legacy_xml_alias
+- Seen from 2 source page(s)
+
+## 0334. x330965.xml
+
+- URL: https://compass.coupa.com/x330965.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd%2Bd2KFZM6ut1K0gKg2I1o4HXibHvWHWHDv4OqP8exwXUJnUPebknq97vUDZm0Gsx%2FBk7%2BHHCBiy7WZJHhmroZ3PO1rW9Ts643BN66pTtK2u25bLsquqmmRfwaN2dknKnJFsizjC1mKQNkSIlVeUzShne8ZFVQt2lfPZ%2FBvJNtFFWxkS8ymEAUVRKDcOksIxgLfS5O45yFy5vpDD8OrfY4QHiTg4H%2BIXL%2BD47Eo2MjkrNzf9eyV5mBeIrpjKkeyD8wpSwyXppEGYkjZRQL%2FAP6TxLjjlzI22B22%2FL8norXASNQore0ARlNitP92J2FS0pyEUH%2Ff7hjZfdnuSrRHBT5VuncWxB78D%2F6IVPNzfnZdMyfNUKNWbNItLXJIde2NRpCO9HWn4k5%2BsFtO0SLfwZ%2Fy36fJvArK6mHVRnCmfbAbxOUptN40zWv2aNt3LcNmJ5zwh%2BkC7NCqgl9qsDwcPiHGHxriftx5kiIcJfowLKFYn2%2F%2Ff6Oo3&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Frelease-notes%2Fmay-2023-release-(r36)%2Fwhats-new-in-this-release%2Fplatform%2Fintegration%2Fintegration-control-center
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0335. x333218.xml
+
+- URL: https://compass.coupa.com/x333218.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXcttOWNsA04cYsaSFshdnrIJRhT44SIRLIcKnX%2FPhSdBG4B56inedsM5wRtY8Wq80%2F6Fn93SD7ZrBfs4TAuRzXMxumEz8q0lPU03Zd8lE5mU5T7PR8iH7LkFzpSRi%2FYICtYsiHqcKPJg%2FYBKgbjtChTXuwKLkZTUYyzYVHes2QdXJQGH5lP3lsSeS5NZyHFo0enocnMs4dMmjYHa%2F%2F79xBgC0TWOB%2B%2BeI7HZzMougLKwfqq%2FSKB%2B0lOZPK%2BHEu%2BGicxNlywAzSEfdIqCKgX%2FEAqZ7yRprlSulb6ccE6p4UBUiQ0tEjCS7Fdfb8RoanYn4ZIfNvtqrT6ud2xZEWErq90bTR1Lbotuhcl8e725rxkTJ7FQrFer5lf4rLk2DaaRDzS55HsW362nPfTIt7CnfE%2Fp8N7Ara8mHWenymfbKz4EaQ268o0Sv7tN92Cv%2BzEMx4RVaeHOCqwBdWs6tohUdhh05g%2F1w7Bh8N414UF5MuT7b9vdPkK&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Frelease-notes%2Fjanuary-2024-release-(r38)%2Fwhats-new-in-this-release%2Fcontract-management%2Fcontract-line-definitions
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0337. x341843.xml
+
+- URL: https://compass.coupa.com/x341843.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ncTJCgwVItGwaUrtFhe1hL9XhHKtVx059Tsf%2B%2Bzlmrdgk%2Bpgv9%2F2685yg071YDf7R3OPzgOSTzXrBHrDGqSz3dVpPYJ9OcMbTuprV6VULRVVVbX2AGUu%2BoyNlzYKVGWfJhmjAjSEPxgeIl9OUT9KC73ghqlrwaVaVH36wZB1clAEfmY%2Fe9yTyXNqhhxSPHp0BndknD5m0XQ59%2F9%2B%2FhwD3QNRb58NXkePxyZZ84DAp19fdRwmFv8qJbD6WY8kn6yTGhgt2AE04Jm2CgHrBN6Rx1ltp9bUyrTI%2FF2xwRlggRcJAhyS8FNvV3a0ITcX%2BNETi827XpM3X7Y4lKyJ0Y6Uba2jo0G3RvSiJ3%2B5vz0vG5FksFOuNmvklLkuOnTYk4pHej9T%2Fzc%2BW83FaxFu4M%2F77dHhNwJYXs87zM%2BWTTS%2B%2BBKnNurFayd%2Fjpjvwl52KrIiIatNDHBXYgdKrtnVIFHaotf114xB8OIx3Q1hAvjzZ%2FvtGl38A&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcategory-planner%2Funderstand-category-planner-roles-and-permissions
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)
+
+## 0338. x61032.xml
+
+- URL: https://compass.coupa.com/x61032.xml
+- Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN8NJiWBWEmktNm0SN2GmnQPfamu5mitgs18psv%2B%2BxrSVtmk9JGP%2B37deUHQNp1c9%2F7J3ODvHslH282S3Wd1UU%2FnWc0f8lzxTCDwAoqUF9Min1fTi3w2z1j0Cx1pa5ZsEgsWbYl63BryYHyAxGTGRcZTsRepnBZSzOJCXNyxaBNctAE%2FMp%2B870gmibJ9BxwPHp2BJrbPHmJl2wS67r9%2F9wHugKizzoevNMHDs52IXkA22Vy2XxSkPk%2BIbDKUY9FX6xSODZeshoZwSFoGAf2CH0jprLfKNpfaVNo8LlnvjLRAmqSBFkl6JXfr79cyNJUPxyGS3%2Fb7kpc%2Fd3sWrYnQDZWurKG%2BRbdD96IV3t5cn5Yck8djobHeoJmc47Lo0DaG5HikzyN1b%2FnZajFMy%2FEW7oT%2FOR3eE7DV2ayL5ET5aNPJH0Fquylto9XfYdMt%2BPNOaZyOiK54PY5KbEE366pySBR22DT2z5VD8OEw3vVhAcnqaPvvG129Ag%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fsupplier-information-management-(rpm)
+- Kind hint: legacy_xml_alias
+- Seen from 1 source page(s)

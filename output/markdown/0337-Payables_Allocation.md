@@ -1,0 +1,50 @@
+---
+title: "Payables :: Allocation"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/payables-allocation"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/payables-allocation"
+status_code: 200
+fetched_at: "2026-04-09T12:00:23+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Export"
+  - "Payables :: Allocation"
+---
+
+# Payables :: Allocation
+
+Allocations move the payment responsibility from one document to
+another. Our first use case is to allocate a prepayment (milestone)
+for an order to the associated invoice, so that it will not be
+overpaid. The format is set up so that we can allocate from any
+type of payable document to any type of payable document. We built
+in enough flexibility to allow integration to reference the source
+documents (e.g. order milestone and invoice) rather than needing to
+dig up the associated “payable” ids.
+
+## Payable Allocation
+
+| Field Name | Description | Field Type | Required/Unique | Possible Values |
+| --- | --- | --- | --- | --- |
+| type | Describes the type of row | | No/No | |
+| id | ID | integer | No/No | |
+| payable-from-id | ID of payable sending the allocation | integer | No/No | |
+| payable-from-type | Type of payable sending the allocation | string(255) | No/No | |
+| payable-from-amount | Amount of sent allocation in the sender's currency | decimal(46,20) | Yes/No | |
+| payable-from-currency | Currency of the sending payable | | Yes/No | |
+| source-transaction-from-id | Source transaction ID of the sending payable | | No/No | |
+| source-transaction-from-type | Source Transaction type of the sending payable | | No/No | |
+| source-transaction-from-reference | Source Transaction Reference | | No/No | |
+| payable-to-id | ID of payable receiving the allocation | integer | No/No | |
+| payable-to-type | Type of payable receiving the allocation | string(255) | No/No | |
+| payable-to-amount | Amount of received allocation in the receiver's currency | decimal(46,20) | Yes/No | |
+| payable-to-currency | Currency of the receiving payable | | Yes/No | |
+| source-transaction-to-id | Source transaction ID of the receiving payable | | No/No | |
+| source-transaction-to-type | Source transaction type of the receiving payable | | No/No | |
+| source-transaction-to-reference | Source transaction reference of the receiving payable | | No/No | |
+| status | Status | string(255) | No/No | |
+| source | One of erp, coupa_pay, ui | string(255) | No/No | coupa_pay, erp, ui, api, csv, early_pay_discount |
+| reason-code | One of payment, auto_payment, epr, epr_rejected, manual | string(40) | No/No | payment, auto_payment, epr, epr_rejected, manual |
+| payment-reference-id | Reference ID of the payament | integer | No/No | |
+| payment-reference-type | Type of the payment reference | string(255) | No/No | |
+| last-exported-at | Last date the allocation was exported | datetime | No/No | |

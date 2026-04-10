@@ -1,0 +1,111 @@
+Account Import
+
+Overview
+
+Note:
+
+Adding a note to ensure topic is generated with an incremental publish.
+
+The Accounts Import process read files from ./Incoming/Accounts/ in the SFTP. These files will be moved to the archive folder located at ./Incoming/Archive/Accounts/ before being processed in alphanumeric order. Due to a flattened record structure, delta (change only) files are preferred.
+
+Validations
+-
+
+Chart of Accounts needs be created and active in Coupa.
+
+-
+
+There cannot be gaps in an account string. An account with Segment-1 and Segment-3 set, but not Segment-2 will return an error. If this situation cannot be avoided, a text value like NULL can be used as the Segment-2 value. It would likely require modifications to other business processes or objects.
+
+Account
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Name 	No 	No 	string(1024) 	This is the nickname for the account. Users can view and search against this field through the user interface.
+Active 	Yes 	No 	boolean 	A false value will inactivate the account making it no longer available to users. A true value will make it active and available to users.
+Chart of Accounts 	Yes 	No 	 	Chart of Accounts Name. Must exist in Coupa
+Segment 1 	Yes 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 2 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 3 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 4 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 5 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 6 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 7 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 8 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 9 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 10 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 11 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 12 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 13 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 14 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 15 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 16 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 17 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 18 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 19 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+Segment 20 	No 	No 	string(100) 	Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)
+
+Account Group
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Name 	Yes 	Yes 	string(80) 	Name
+Chart of Accounts 	Yes 	No 	 	Chart of Accounts
+Segment 1 Column 	No 	No 	string(255) 	Does not require a value unless operator is set to 'match'. Valid values when operator is set to match are 'department_id' (User's Department ID) and 'custom_field_1' through 'custom_field_20' (existing User's Custom Fields)
+Segment 1 Operator 	No 	No 	string(255) 	If value is '' (match any value) Segment # Column and Segment # Value is blank. If 'match' (Segment # Column is 'department_id' or 'custom_field_#' and Segment # Value is blank). Segment # Column is blank and Segment # Value comparison value for operators: 'eq' (segmetn value equals),'starts_with' (segment value begins with),'ends_with' (segment value ends),'con' (segment value contains ),'not_con' (segment value does not contain)
+Segment 1 Value 	No 	No 	string(255) 	Required for Operators of 'eq', 'starts_with', 'ends_with', 'con', 'not_con'. Blank for Operators '' or 'match'.
+Segment 2 Column 	No 	No 	string(255) 	Segment 2 Column
+Segment 2 Operator 	No 	No 	string(255) 	Segment 2 Operator
+Segment 2 Value 	No 	No 	string(255) 	Segment 2 Value
+Segment 3 Column 	No 	No 	string(255) 	Segment 3 Column
+Segment 3 Operator 	No 	No 	string(255) 	Segment 3 Operator
+Segment 3 Value 	No 	No 	string(255) 	Segment 3 Value
+Segment 4 Column 	No 	No 	string(255) 	Segment 4 Column
+Segment 4 Operator 	No 	No 	string(255) 	Segment 4 Operator
+Segment 4 Value 	No 	No 	string(255) 	Segment 4 Value
+Segment 5 Column 	No 	No 	string(255) 	Segment 5 Column
+Segment 5 Operator 	No 	No 	string(255) 	Segment 5 Operator
+Segment 5 Value 	No 	No 	string(255) 	Segment 5 Value
+Segment 6 Column 	No 	No 	string(255) 	Segment 6 Column
+Segment 6 Operator 	No 	No 	string(255) 	Segment 6 Operator
+Segment 6 Value 	No 	No 	string(255) 	Segment 6 Value
+Segment 7 Column 	No 	No 	string(255) 	Segment 7 Column
+Segment 7 Operator 	No 	No 	string(255) 	Segment 7 Operator
+Segment 7 Value 	No 	No 	string(255) 	Segment 7 Value
+Segment 8 Column 	No 	No 	string(255) 	Segment 8 Column
+Segment 8 Operator 	No 	No 	string(255) 	Segment 8 Operator
+Segment 8 Value 	No 	No 	string(255) 	Segment 8 Value
+Segment 9 Column 	No 	No 	string(255) 	Segment 9 Column
+Segment 9 Operator 	No 	No 	string(255) 	Segment 9 Operator
+Segment 9 Value 	No 	No 	string(255) 	Segment 9 Value
+Segment 10 Column 	No 	No 	string(255) 	Segment 10 Column
+Segment 10 Operator 	No 	No 	string(255) 	Segment 10 Operator
+Segment 10 Value 	No 	No 	string(255) 	Segment 10 Value
+Segment 11 Column 	No 	No 	string(255) 	Segment 11 Column
+Segment 11 Operator 	No 	No 	string(255) 	Segment 11 Operator
+Segment 11 Value 	No 	No 	string(255) 	Segment 11 Value
+Segment 12 Column 	No 	No 	string(255) 	Segment 12 Column
+Segment 12 Operator 	No 	No 	string(255) 	Segment 12 Operator
+Segment 12 Value 	No 	No 	string(255) 	Segment 12 Value
+Segment 13 Column 	No 	No 	string(255) 	Segment 13 Column
+Segment 13 Operator 	No 	No 	string(255) 	Segment 13 Operator
+Segment 13 Value 	No 	No 	string(255) 	Segment 13 Value
+Segment 14 Column 	No 	No 	string(255) 	Segment 14 Column
+Segment 14 Operator 	No 	No 	string(255) 	Segment 14 Operator
+Segment 14 Value 	No 	No 	string(255) 	Segment 14 Value
+Segment 15 Column 	No 	No 	string(255) 	Segment 15 Column
+Segment 15 Operator 	No 	No 	string(255) 	Segment 15 Operator
+Segment 15 Value 	No 	No 	string(255) 	Segment 15 Value
+Segment 16 Column 	No 	No 	string(255) 	Segment 16 Column
+Segment 16 Operator 	No 	No 	string(255) 	Segment 16 Operator
+Segment 16 Value 	No 	No 	string(255) 	Segment 16 Value
+Segment 17 Column 	No 	No 	string(255) 	Segment 17 Column
+Segment 17 Operator 	No 	No 	string(255) 	Segment 17 Operator
+Segment 17 Value 	No 	No 	string(255) 	Segment 17 Value
+Segment 18 Column 	No 	No 	string(255) 	Segment 18 Column
+Segment 18 Operator 	No 	No 	string(255) 	Segment 18 Operator
+Segment 18 Value 	No 	No 	string(255) 	Segment 18 Value
+Segment 19 Column 	No 	No 	string(255) 	Segment 19 Column
+Segment 19 Operator 	No 	No 	string(255) 	Segment 19 Operator
+Segment 19 Value 	No 	No 	string(255) 	Segment 19 Value
+Segment 20 Column 	No 	No 	string(255) 	Segment 20 Column
+Segment 20 Operator 	No 	No 	string(255) 	Segment 20 Operator
+Segment 20 Value 	No 	No 	string(255) 	Segment 20 Value

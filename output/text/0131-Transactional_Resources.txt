@@ -1,0 +1,3 @@
+Transactional Resources
+
+Transactional data is generated from an activity within Coupa, like requisitions, purchase orders, invoices, and expenses. Integrating with these APIs will allow you to easily upload these data to any other software you may use, creating a streamlined process.

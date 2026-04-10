@@ -1,0 +1,19 @@
+Order Line Allocations API
+
+Association
+
+This resource is associated with Purchase Order Lines API.
+
+Elements
+
+The following elements are available for the Purchase Order Line API:
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+amount 	amount 	 	 	 	yes 	yes 	decimal(32,4)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+pct 	pct 	yes 	 	 	yes 	yes 	decimal(16,10)
+period 	period 	 	 	 	yes 	yes 	 Period
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

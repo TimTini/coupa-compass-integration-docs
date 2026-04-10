@@ -1,0 +1,29 @@
+Rate Card Line API
+
+Use the Rate Card Line API to create, update, or query rate card lines.
+
+See Integration Best Practices for more info.
+
+Associated APIs
+- Rate Card API
+
+Elements
+
+The following elements are available for the Rate Card Line API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+name 	Name 	true 	true 	any 	yes 	yes 	string(255)
+code 	Code 	false 	false 	any 	yes 	yes 	string(255)
+price 	Price 	true 	false 	any 	yes 	yes 	decimal(30,6)
+rate-card-line-type 	Rate card line type 	true 	false 	any 	yes 	yes 	integer
+rate-card-type 	Rate card type 	true 	false 	any 	yes 	yes 	integer
+uom 	UOM 	false 	false 	any 	yes 	yes 	UoM
+currency 	Currency 	false 	false 	any 	yes 	yes 	Currency
+active 	Active 	false 	false 	any 	yes 	yes 	boolean
+id 	Coupa unique identifier 	false 	false 	any 	yes 	yes 	integer
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+rate-card-id 	Rate card ID 	false 	false 	any 	yes 	yes 	integer
+created-by 	User who created 	false 	false 	any 	yes 	yes 	 User
+updated-by 	User who updated 	false 	false 	any 	yes 	yes 	 User
+commodity 	Commodity 	false 	false 	any 	 	yes 	Commodity

@@ -1,0 +1,43 @@
+---
+title: "Project Memberships (/project_memberships)"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/projects-api-(projects)/project-memberships-(project_memberships)"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/projects-api-(projects)/project-memberships-(project_memberships)"
+status_code: 200
+fetched_at: "2026-04-09T11:59:17+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Projects API (/projects)"
+  - "Project Memberships (/project_memberships)"
+---
+
+# Project Memberships (/project_memberships)
+
+## Actions
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| POST | /api/project_memberships | create | Create a project membership |
+| DELETE | /api/project_memberships/:id | destroy | Delete a project membership |
+| GET | /api/project_memberships | index | Query Project memberships |
+| GET | /api/project_memberships/:id | show | Show a project membership |
+| PUT | /api/project_memberships/:id | update | Update a project membership |
+
+## Elements
+
+Keys: id
+
+| **Element** | **Description** | **Req'd** | **Unique** | **Allowable Value** | **In** | **Out** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Field Name | Field Description | Required Field? | Unique? | Allowable Value | Api_In Field? | Api_Out Field? | Data Type |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| id | Coupa unique identifier | | | | | yes | integer |
+| owner | Indicates whether the user is admin or not | | | | yes | yes | boolean |
+| participant | Indicates whether the user is participant or not | | | | yes | yes | boolean |
+| project | Project | | | | yes | yes | Project |
+| project-id | Project ID | | | | yes | yes | integer |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| user | user | | | | yes | yes | User |
+| user-id | User Id | | | | yes | yes | integer |

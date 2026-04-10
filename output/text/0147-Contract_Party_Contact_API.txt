@@ -1,0 +1,13 @@
+Contract Party Contact API
+
+Elements
+
+The following elements are available for the Contract Party Contact API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+signatory-action 	 	no 	no 	any 	yes 	yes 	integer
+id 	Coupa unique identifier 	no 	no 	any 	yes 	yes 	integer
+fullname 	 	no 	no 	any 	yes 	yes 	string(255)
+phone 	 	no 	no 	any 	yes 	yes 	string(255)
+email 	 	no 	no 	any 	yes 	yes 	string(255)
+signatory-date 	 	no 	no 	any 	yes 	yes 	datetime

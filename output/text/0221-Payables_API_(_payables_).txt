@@ -1,0 +1,13 @@
+Payables API (/payables/)
+
+Introduction
+
+The URL to access the Payables API is: /api/payables/
+
+See Integration Best Practices for more info.
+
+- Payable Allocations API
+- External Payables API
+- Payables/Invoices API
+- Payables/Orders API
+- Payables/Order Reconciliation Lines API

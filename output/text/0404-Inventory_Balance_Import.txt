@@ -1,0 +1,16 @@
+Inventory Balance Import
+
+Inventory Balance
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Item Number 	No 	No 	 	Item Number
+Item Name 	No 	No 	 	Item Name
+Warehouse 	Yes 	No 	 	Warehouse Name
+Aisle 	No 	No 	 	Warehouse Location Aisle
+Bin 	No 	No 	 	Warehouse Location Bin
+Level 	No 	No 	 	Warehouse Location Level
+Quantity 	No 	No 	integer 	Quantity
+UOM 	No 	No 	 	Unit of Measure
+Price 	No 	No 	 	Price
+Currency 	No 	No 	 	Currency
+Active 	No 	No 	 	Active

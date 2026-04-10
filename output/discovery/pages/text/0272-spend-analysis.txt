@@ -1,0 +1,9 @@
+spend-analysis
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/spend-analysis
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8nsUuaCqutVOgQldgW0bIHXtBhX4dFYmc%2Bh3X%2F%2FRx3Q92k8pgv9%2F2685yga3u5GsKLvccfA1LINusFe1Ka72utL%2FOZEjqvoH7OL3ml8vpiWk1BV0JwZNk39GScXbBJwVm2IRpwYymADRHikzrnVS74jgs5nUkxLcSsfmTZOroYCyExX0LoSZalckMPOR4Cegtt4V4DFMp1JfT9f%2F%2BeItwDUe98iF%2BixMOrm%2FCBQzVZX3WfFIgwK4lcOZZj2Y3zClPDBdtDSzgmbaKAecN3pPEuOOXaK2O1sd8XbPBWOiBD0kKHJIOS29XnOxmbyufjEMnb3a7Jm6%2FbHctWROjHStfO0tCh36J%2FMwof7u9OS6bkRSqU6o2a5Tkuyw5da0mmI30cqf%2BTny3n47RMt%2FAn%2FI%2Fp8DcBW57NOi9PlI82vfwSpTbrxrVG%2FRo33UE47yQKkRCj830aldiBaVdaeySKO2xb9%2FPaI4R4mOCHuIByebT9940ufwM%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fspend-analysis
+
+Observed redirect page title: Coupa Portals - Sign In

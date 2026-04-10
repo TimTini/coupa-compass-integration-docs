@@ -1,0 +1,219 @@
+<article class="" id="easy_form_widget_responses_api">
+<h1 class="title">Easy Form Widget Responses API</h1>
+<div class="body">
+<div class="" id="overview-d957e154596">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Easy Form Widget Reponses API is associated with the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/easy-form-responses-api-(easy_form_responses)" title="">Easy Form Responsess</a> API.</p>
+</div>
+<div class="" id="elements-d957e154604">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">answer</td>
+<td class="entry" align="" colspan="3">
+<p class="">End user response. Depending on the widget type, this field may contain text,
+                  name, id, child easy form response, or a list of values.</p>
+<p class="">For example:
+                  <pre>
+<code class="codeblock">"easy-form-widget-responses": [
+    {
+      "id": 13584,
+      "field-name": "lookup_1",
+      "answer": "San Francisco"
+    },
+{
+      "id": 13585,
+      "field-name": "child_easy_form_widget_2",
+      "answer": {
+        "child-easy-form-responses": [
+          {
+    ....
+{
+      "id": 13589,
+      "field-name": "business_groups",
+      "answer": "[\"7\"]"
+    },
+    {
+      "id": 13590,
+      "field-name": "supplier_owner",
+      "answer": "360"
+    }</code>
+</pre>
+</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">With the May 2023 release the StateIsoCode will be available for SIM Easy Form
+                    Responses. The easy_form_widget_response for region will have its answer changed
+                    from: <code class="ph codeph">state, country</code> to: {country: country, state: state,
+                    state_iso_code: ISO-3166-2 codes} For example, if the country does not have
+                    state options, the experience will be like the following {country: Antarctica,
+                    state: NA, state_iso_code: nil}</p>
+</div>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="" colspan="3">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">easy-form-id</td>
+<td class="entry" align="">Easy form ID associated with this easy form response</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer(11)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">easy-form-response-id</td>
+<td class="entry" align="">Easy form response ID associated with this widget</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer(11)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">easy-form-widget-id</td>
+<td class="entry" align="">Easy form widget ID associated with this widget response</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer(11)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">encrypted-answer</td>
+<td class="entry" align="">The answer for widget response</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(20000)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">field-name</td>
+<td class="entry" align="">The value of the widget's <b>Reporting Name</b> field
+on form builder page</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer(11)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Type of widget response</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="" colspan="3">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">widget-label</td>
+<td class="entry" align="">User name for widget</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">widget-type</td>
+<td class="entry" align="">Type of widget</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier_visible_attachment</td>
+<td class="entry" align="">Supplier visible attachment</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">boolean</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

@@ -1,0 +1,893 @@
+<article class="" id="supplier_sites_api_supplier_sites">
+<h1 class="title">Supplier Sites API (/supplier_sites)</h1>
+<div class="body">
+<p class="">The URL to access supplier sites is: <code class="ph codeph">https://&lt;instance&gt;/api/suppliers/:supplier_id/supplier_sites</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Supplier API GET calls include Supplier Sites in response payloads. For more information, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285429.xml" title="">Postman Collection for Coupa APIs</a>.</p>
+</div>
+<div class="" id="actions-d957e73634">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Supplier Sites API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">/api/suppliers/:supplier_id/supplier_sites</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Create supplier site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">/api/suppliers/:supplier_id/supplier_sites</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query supplier sites</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">/api/suppliers/:supplier_id/supplier_sites/:id</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show supplier site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PATCH</p>
+</td>
+<td class="entry" align="">
+<p class="">/api/suppliers/:supplier_id/supplier_sites/:id</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update supplier site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">/api/suppliers/:supplier_id/supplier_sites/:id</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update supplier site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">/api/suppliers/:supplier_id/supplier_sites/:id</p>
+</td>
+<td class="entry" align="">
+<p class="">delete</p>
+</td>
+<td class="entry" align="">
+<p class="">Deletes the supplier site by id</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e73795">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Supplier Sites API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Required Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api_In Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api_Out Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">active</p>
+</td>
+<td class="entry" align="">
+<p class="">True if the site is active. Defaults to "true" if value not provided in payload in POST operation.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">true, false</p>
+<p class="">
+<p class="">
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">account-types</p>
+</td>
+<td class="entry" align="">
+<p class="">Account types</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-types-api-(account_types)" title="">AccountType</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">addresses</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Site addresses</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow_change_requests</p>
+</td>
+<td class="entry" align="">
+<p class="">Allows suppliers to create change requests from CSP</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-order-confirmation-item-substitutions</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow supplier to propose item substitute on Order Confirmations</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer-hold</p>
+</td>
+<td class="entry" align="">
+<p class="">Hold all POs for buyer review</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">true, false</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">code</p>
+</td>
+<td class="entry" align="">
+<p class="">supplier_code</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(20)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">contacts</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Site contacts</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">content-groups</p>
+</td>
+<td class="entry" align="">
+<p class="">Content group that controls visibility of supplier site to end users. Defaults to "Everyone" content group if no value is provided in the payload in POST operation.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/content-groups-api-(business_groups)" title="">ContentGroup</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who created</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-domain</p>
+</td>
+<td class="entry" align="">
+<p class="">"From" , our domain</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (if po-method = cxml)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-http-username</p>
+</td>
+<td class="entry" align="">
+<p class="">User name required to access the Supplier's online store</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-identity</p>
+</td>
+<td class="entry" align="">
+<p class="">"From", our identity</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (if po-method = cxml)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-protocol</p>
+</td>
+<td class="entry" align="">
+<p class="">Transmission protocol</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (if po-method = cxml)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-secret</p>
+</td>
+<td class="entry" align="">
+<p class="">Shared secret</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (if po-method = cxml)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-ssl-version</p>
+</td>
+<td class="entry" align="">
+<p class="">Specify the SSL version used for cXML communication with the supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">TLSv1_2, TLSv1_1, TLSv1</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-supplier-domain</p>
+</td>
+<td class="entry" align="">
+<p class="">"To", supplier domain</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (if po-method = cxml)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-supplier-identity</p>
+</td>
+<td class="entry" align="">
+<p class="">"To", supplier identity</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (if po-method = cxml)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-url</p>
+</td>
+<td class="entry" align="">
+<p class="">URL where POs are sent if PO transmission is "cxml"</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (if po-method = cxml)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default_locale</p>
+</td>
+<td class="entry" align="">
+<p class="">Default Locale for sending emails to this supplier site</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">disable-cert-verify</p>
+</td>
+<td class="entry" align="">
+<p class="">Specify whether to ignore SSL certificate mismatch errors</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">true, false</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa Internal ID of the Supplier Site record</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Site name</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-method</p>
+</td>
+<td class="entry" align="">
+<p class="">Default payment method, selectable from drop down</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Default payment term, selectable from drop down</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (only if supplier site is associated with payment term)</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/payment-terms-api-(payment_terms)" title="">Payment Term</a>
+</p>
+<p class="">Payment term should exist in Coupa.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-change-method</p>
+</td>
+<td class="entry" align="">
+<p class="">Purchase order change transmission method</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">cxml, xml, email, prompt, mark_as_sent, buy_online</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-email</p>
+</td>
+<td class="entry" align="">
+<p class="">Email where POs are sent if PO transmission is "email"</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (if po-method = email)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-method</p>
+</td>
+<td class="entry" align="">
+<p class="">Purchase order transmission method</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">cxml, xml, email, prompt, mark_as_sent, buy_online</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shipping-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier shipping term, selectable from drop down</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes (only if supplier site is associated with shipping term)</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/shipping-terms-api-(shipping_terms)" title="">Shipping Term</a>
+</p>
+<p class="">Shipping term must exist in Coupa.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_id</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier id</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who updated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

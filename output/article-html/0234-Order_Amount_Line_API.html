@@ -1,0 +1,659 @@
+<article class="" id="order_amount_line_api">
+<h1 class="title">Order Amount Line API</h1>
+<div class="body">
+<div class="" id="association-d957e214600">
+<h2 class="title sectiontitle">Association</h2>
+<p class="">This resource is associated with <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-lines-api-da-5961-da-5961" title="">Purchase Order
+          Lines API</a>.</p>
+</div>
+<div class="" id="elements-d957e214608">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Order Amount
+Line API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">account</td>
+<td class="entry" align="">account</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Account </td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-allocations</td>
+<td class="entry" align="">account_allocations</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/order-line-allocations-api" title="">OrderLineAllocation</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-type</td>
+<td class="entry" align="">chart of accounts</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-types-api-(account_types)" title="">AccountType</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total</td>
+<td class="entry" align="">accounting_total</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total-currency</td>
+<td class="entry" align="">accounting_total_currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Currency </td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount-components</td>
+<td class="entry" align="">Amount components</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/account-group-api" title="">AmountComponent</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">asset-tags</td>
+<td class="entry" align="">asset_tags</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/asset-tags-api" title="">AssetTag</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">attachments</td>
+<td class="entry" align="">attachments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Attachment </td>
+</tr>
+<tr class="">
+<td class="entry" align="">bulk-price</td>
+<td class="entry" align="">Bulk price</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/bulk-price-api" title="">BulkPrice</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">commodity</td>
+<td class="entry" align="">commodity</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Commodity </td>
+</tr>
+<tr class="">
+<td class="entry" align="">contract</td>
+<td class="entry" align="">contract</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Contract </td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">User </td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">Currency of transaction</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Currency </td>
+</tr>
+<tr class="">
+<td class="entry" align="">department</td>
+<td class="entry" align="">department</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Department </td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">description</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">easy-form-response-id</td>
+<td class="entry" align="">Easy Form Response Id</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">external-reference-number</td>
+<td class="entry" align="">External Reference Number</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">external-reference-type</td>
+<td class="entry" align="">External Reference Type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">staff_augmentation, sow_project</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">extra-line-attribute</td>
+<td class="entry" align="">Extra line attribute</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/extralineattributesorderlineattribute-api-da-5838-da-5838" title="">ExtraLineAttributes::OrderLineAttribute</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">form-response</td>
+<td class="entry" align="">form_response</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/form-api" title="">FormResponse</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoiced</td>
+<td class="entry" align="">invoiced</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">item</td>
+<td class="entry" align="">item</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Item </td>
+</tr>
+<tr class="">
+<td class="entry" align="">line-num</td>
+<td class="entry" align="">line_num</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">manufacturer-name</td>
+<td class="entry" align="">Manufacturer Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">manufacturer-part-number</td>
+<td class="entry" align="">Manufacturer Part Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">match-type</td>
+<td class="entry" align="">Match type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">direct_matching, 3-way-fifo, 3-way, 2-way, none</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">milestones</td>
+<td class="entry" align="">Milestones</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Procurement::Milestone </td>
+</tr>
+<tr class="">
+<td class="entry" align="">need-by-date</td>
+<td class="entry" align="">need_by_date</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-header-id</td>
+<td class="entry" align="">order_header_id</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-header-number</td>
+<td class="entry" align="">Order header number</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">period</td>
+<td class="entry" align="">period</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Period </td>
+</tr>
+<tr class="">
+<td class="entry" align="">price</td>
+<td class="entry" align="">price</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quantity</td>
+<td class="entry" align="">quantity</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">receipt-approval-required</td>
+<td class="entry" align="">Receipt Approval Required</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">receipt-required</td>
+<td class="entry" align="">receipt_required</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">received</td>
+<td class="entry" align="">received</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">receiving-warehouse</td>
+<td class="entry" align="">Receiving warehouse</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Warehouse </td>
+</tr>
+<tr class="">
+<td class="entry" align="">reporting-total</td>
+<td class="entry" align="">reporting_total</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">requester</td>
+<td class="entry" align="">requester</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">rfq-form-response</td>
+<td class="entry" align="">rfq_form_response</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/form-api" title="">FormResponse</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">savings-pct</td>
+<td class="entry" align="">savings_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(8,2)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">service-type</td>
+<td class="entry" align="">Service type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">source-part-num</td>
+<td class="entry" align="">source_part_num</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">transaction status</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(50)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">sub-line-num</td>
+<td class="entry" align="">sub_line_num</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supp-aux-part-num</td>
+<td class="entry" align="">supp_aux_part_num</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier</td>
+<td class="entry" align="">supplier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Supplier </td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-order-number</td>
+<td class="entry" align="">supplier_order_number</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">third-party-supplier</td>
+<td class="entry" align="">Third party supplier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Supplier </td>
+</tr>
+<tr class="">
+<td class="entry" align="">total</td>
+<td class="entry" align="">total</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">uom</td>
+<td class="entry" align="">unit of measure</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/unit-of-measure-api" title="">Uom</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">User </td>
+</tr>
+<tr class="">
+<td class="entry" align="">version</td>
+<td class="entry" align="">version</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">line_owner</td>
+<td class="entry" align="">Line owner</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order_line_tax_detail</td>
+<td class="entry" align="">Oder line tax detail</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

@@ -1,0 +1,4908 @@
+<article class="" id="transactional_data_file_formats">
+<h1 class="title">Transactional Data File Formats</h1>
+<div class="body">
+<p class="">Customers, before attempting to integrate the file formats described in this document, please review the following notes first:</p>
+<div class="" id="if_you_are_in_the_middle_of_an_implementation-d160e2465">
+<h2 class="title sectiontitle">If you are in the middle of an implementation</h2>
+<p class="">Please contact your Coupa Solutions Architect for assistance with file imports.</p>
+</div>
+<div class="" id="if_you_have_legacy_custom_integration_formats_that_differ_significantly_from_what_is_described_below-d160e2469">
+<h2 class="title sectiontitle">If you have legacy, custom integration formats that differ significantly from what is described below</h2>
+<p class="">Please contact your Coupa CVM about switching to the formats described in this document.</p>
+</div>
+<div class="" id="everyone_else-d160e2473">
+<h2 class="title sectiontitle">Everyone else</h2>
+<p class="">Please contact Coupa support for assistance with adding any of the fields below to an existing integration file.</p>
+</div>
+<div class="" id="contingent_worker_cw">
+<h2 class="title sectiontitle">Contingent Worker (CW)</h2>
+<p class="">
+<b>Description:</b> Contingent Worker data export that customers consume into enterprise applications to manage access provisioning, asset provisioning, etc.</p>
+<p class="">
+<b>Supported load:</b> Delta File</p>
+<p class="">
+<b>Supported Delimiters:</b> Pipe(|), Comma(,)</p>
+<p class="">
+<b>Supported file extensions:</b> .csv, .txt</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Fields</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type &amp; Length</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowed Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Example</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Status Flag</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">N, T, X, C, R, RT [Status : N – New Contingent Worker, T – Terminate Contingent Worker, X – No Show Contingent Worker, C – CW info Changes, R – Rehire, utilization of previously assigned CW’s external reference ID, RT- Rollback termination].</p>
+</td>
+<td class="entry" align="">
+<p class="">N</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">CCW CW Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW-CW-000001</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">External reference ID 1</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Blank or 000001</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">External reference ID 2</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Blank or 0NST1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">External reference ID 3</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Blank or QR12E</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">CCW ID</p>
+</td>
+<td class="entry" align="">
+<p class="">string(15)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">00001231</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Last Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Pearson</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">First Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Michael</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Middle Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">B</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Start Date</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any Date, YYYY-MM-DD</p>
+</td>
+<td class="entry" align="">
+<p class="">2018-03-01</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">End Date</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any Date, YYYY-MM-DD</p>
+</td>
+<td class="entry" align="">
+<p class="">2019-04-01</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Email</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">mikeHarshley_test@coupatest</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Phone Number</p>
+</td>
+<td class="entry" align="">
+<p class="">String(20)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Phone number captured in system</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Manager ID</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">038976</p>
+<p class="">
+<p class="">
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Manager Email</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">robertc@CCW.com</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Alternate Hiring Manager Email</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">joec@CCW.com</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Work Location Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, work Location code assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">NJB01F02C1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Job Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">A23G</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Job Title</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Talent Acquisition Consultant</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Supplier Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Test Tech Solutions</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Supplier Email</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">jamescon@Customer.com</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Supplier Reference Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">0099898780</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Supplier City</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Cuyahoga</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Supplier State</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Ohio</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Supplier Zip Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">43532</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Regular Bill Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number(45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">200.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW-Req-30234</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Termination Reason</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Engagement Completed</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Type of Service</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">80936</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 1 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 1 name assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 1 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 1 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 2 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 2 name assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 2 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 2 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 3 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 3 name assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 3 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 3 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 4 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 4 name assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 4 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 4 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 5 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 5 name assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 5 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 5 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 6 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 6 name assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 6 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 6 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 7 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 7 name assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 7 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 7 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 8 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 8 name assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 8 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 8 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 9 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 9 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 9 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 9 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 10 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 10 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 10 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 10 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 11 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 10 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 11 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment 11 code assigned to CW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 1</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 2</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 3</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 4</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 5</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 6</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 7</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 8</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 9</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Requisition Question 10</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="contingent_worker_external_reference_number">
+<h2 class="title sectiontitle">Contingent Worker External Reference Number</h2>
+<p class="">
+<b>Description:</b> Customer’s system ID assigned to uniquely identified CW. Used as a reference check when processing CW Export, invoice from CCW <b>[ Example changes, terminations to CCW, timesheet management, building rehire business logic in customer’s HR system (if applicable)]. </b>External Reference ID 2 and External Reference ID 3 are available only for CW export configured at Confirm CW, or if a customer chooses to update these fields after a candidate is confirmed.</p>
+<p class="">
+<b>Supported load:</b> Delta File (recommended)</p>
+<p class="">
+<b>Supported Delimiters:</b> Pipe(|), Comma(,)</p>
+<p class="">
+<b>Supported file extensions:</b> .csv, .txt</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Fields</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type &amp; Length</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowed Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Example</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">CCW CW Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW-CW-000001</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">CW external reference ID 1</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW external reference ID in Customer’s system (89876790)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">CW external reference ID 2</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW external reference ID in Customer’s system (89876790)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">CW external reference ID 3</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW external reference ID in Customer’s system (89876790)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Work Email</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">sam.peter@ccwdoc.com</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="invoice_data">
+<h2 class="title sectiontitle">Invoice Data</h2>
+<p class="">
+<b>Description:</b> Batch data approved in CCW, which can include data related to approved timesheet, approved expense, Payment line Item against a Statement of Work.</p>
+<p class="">
+<b>Supported load:</b> Delta File</p>
+<p class="">
+<b>Supported Delimiters:</b> Pipe(|), Comma(,)</p>
+<p class="">
+<b>Supported file extensions:</b> .csv, .txt</p>
+</div>
+<div class="" id="invoice_header">
+<h2 class="title sectiontitle">Invoice header</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Sr. No.</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Fields</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type &amp; Length</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowed Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Example</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Record Type</p>
+</td>
+<td class="entry" align="">
+<p class="">string(1)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Static value ‘H’</p>
+</td>
+<td class="entry" align="">
+<p class="">H</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Batch Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Batch Number</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW-BAT000001-1019</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Batch Creation Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Batch Creation date</p>
+<p class="">ISO8601 format of YYYY-MM-DD</p>
+</td>
+<td class="entry" align="">
+<p class="">2018-12-16</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Batch Approval Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Batch Approve date</p>
+<p class="">ISO8601 format of YYYY-MM-DD</p>
+</td>
+<td class="entry" align="">
+<p class="">2018-12-16</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Invoice Number</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW-INV-000001-1019</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Total Invoice Lines</p>
+</td>
+<td class="entry" align="">
+<p class="">int</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Total number of lines in invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Total Net Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number(45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Total Invoice Amount without Tax</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">100.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Total Tax Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number(45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Total Tax Amount</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">0.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">9</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Total Gross Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number(45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Total Invoice Amount with Tax Amount</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">100.00</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="invoice_lines">
+<h2 class="title sectiontitle">Invoice lines</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="" rowspan="2">
+<p class="">
+<b>Sr. No.</b>
+</p>
+</th>
+<th class="entry " align="" rowspan="2">
+<p class="">
+<b>Fields</b>
+</p>
+</th>
+<th class="entry " align="" rowspan="2">
+<p class="">
+<b>Data Type &amp; Length</b>
+</p>
+</th>
+<th class="entry " align="" rowspan="2">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="" colspan="3">
+<p class="">
+<b>Business Logic</b>
+</p>
+</th>
+<th class="entry " align="" rowspan="2">
+<p class="">
+<b>Example</b>
+</p>
+</th>
+</tr>
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Timesheet</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Expense</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>SOW (Fixed)</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Record Type</p>
+</td>
+<td class="entry" align="">
+<p class="">string(1)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Static value ‘L’</p>
+</td>
+<td class="entry" align="">
+<p class="">Static value ‘L’</p>
+</td>
+<td class="entry" align="">
+<p class="">Static value ‘L’</p>
+</td>
+<td class="entry" align="">
+<p class="">L</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Number</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Number</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Number</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW-INV-000001-MMYY</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice line number</p>
+</td>
+<td class="entry" align="">
+<p class="">int</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice line number</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice line number</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice line number</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice line Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Week ending date</p>
+</td>
+<td class="entry" align="">
+<p class="">Expense from Date</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment line item approved date</p>
+</td>
+<td class="entry" align="">
+<p class="">2018-12-16</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Line Type</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Static value “Timesheet”</p>
+</td>
+<td class="entry" align="">
+<p class="">Static value “Expense”</p>
+</td>
+<td class="entry" align="">
+<p class="">Static value “SOW”</p>
+</td>
+<td class="entry" align="">
+<p class="">Timesheet</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Line Item description</p>
+</td>
+<td class="entry" align="">
+<p class="">string(1550)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW number – Week Ending Date</p>
+</td>
+<td class="entry" align="">
+<p class="">CW number – Expense from Date</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment line item description</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW-CW-00001 – 2018-12-16</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Report ID</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Timesheet Number</p>
+</td>
+<td class="entry" align="">
+<p class="">Expense Report Number</p>
+</td>
+<td class="entry" align="">
+<p class="">SOW Number</p>
+</td>
+<td class="entry" align="">
+<p class="">1604479</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Expense Type</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Expense type associated with the invoice line</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be Blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Hotel</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">9</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Test Supplier INC</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW Supplier Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Number in CCW</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Number in CCW</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Number in CCW</p>
+</td>
+<td class="entry" align="">
+<p class="">SUP-9987</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">11</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier HR Reference Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Customer’s ERP system’s supplier number (Accounting vendor ID - if configured in CCW, else will be sent blank)</p>
+</td>
+<td class="entry" align="">
+<p class="">Customer’s ERP system’s supplier number (Accounting vendor ID - if configured in CCW, else will be sent blank)</p>
+</td>
+<td class="entry" align="">
+<p class="">Customer’s ERP system’s supplier number (Accounting vendor ID - if configured in CCW, else will be sent blank)</p>
+</td>
+<td class="entry" align="">
+<p class="">00909088</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">12</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier’s vendor ID in Customer’s ERP (vendor ID - if configured in CCW, else will be sent blank)</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier’s vendor ID in Customer’s ERP (vendor ID - if configured in CCW, else will be sent blank)</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier’s vendor ID in Customer’s ERP (vendor ID - if configured in CCW, else will be sent blank)</p>
+</td>
+<td class="entry" align="">
+<p class="">0010005</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">13</p>
+</td>
+<td class="entry" align="">
+<p class="">Remit to Line 1</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location line 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location line 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location line 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Centerpoint at East Gate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">14</p>
+</td>
+<td class="entry" align="">
+<p class="">Remit to Line 2</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location line 2</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location line 2</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location line 2</p>
+</td>
+<td class="entry" align="">
+<p class="">161 Gaither Drive, Suite 210</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">15</p>
+</td>
+<td class="entry" align="">
+<p class="">Remit to City</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location city</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location city</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location city</p>
+</td>
+<td class="entry" align="">
+<p class="">Mount Laurel</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">16</p>
+</td>
+<td class="entry" align="">
+<p class="">Remit to State</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location state</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location state</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location state</p>
+</td>
+<td class="entry" align="">
+<p class="">NJ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">17</p>
+</td>
+<td class="entry" align="">
+<p class="">Remit to Postal Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(20)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location postal code</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location postal code</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location postal code</p>
+</td>
+<td class="entry" align="">
+<p class="">08054</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">18</p>
+</td>
+<td class="entry" align="">
+<p class="">Remit to Country</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location Country.</p>
+<p class="">ISO 3-Alpha representation (Static info)</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location Country.</p>
+<p class="">ISO 3-Alpha representation (Static info)</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, Supplier’s Remit location Country.</p>
+<p class="">ISO 3-Alpha representation (Static info)</p>
+</td>
+<td class="entry" align="">
+<p class="">USA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">19</p>
+</td>
+<td class="entry" align="">
+<p class="">Billing Supplier Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Billing Supplier Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Billing Supplier Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Billing Supplier Name</p>
+</td>
+<td class="entry" align="">
+<p class="">My MSP</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">20</p>
+</td>
+<td class="entry" align="">
+<p class="">Billing Supplier Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Billing Supplier's vendor ID in Customer's ERP (vendor ID if configured in CCW, otherwise will be sent blank)</p>
+</td>
+<td class="entry" align="">
+<p class="">Billing Supplier's vendor ID in Customer's ERP (vendor ID if configured in CCW, otherwise will be sent blank)</p>
+</td>
+<td class="entry" align="">
+<p class="">Billing Supplier's vendor ID in Customer's ERP (vendor ID if configured in CCW, otherwise will be sent blank)</p>
+</td>
+<td class="entry" align="">
+<p class="">99897909</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">21</p>
+</td>
+<td class="entry" align="">
+<p class="">Requirement Id</p>
+</td>
+<td class="entry" align="">
+<p class="">String(20)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Requirement number against CW is hired</p>
+</td>
+<td class="entry" align="">
+<p class="">Requirement number against CW is hired</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW-REQ-1234</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">22</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW number</p>
+</td>
+<td class="entry" align="">
+<p class="">CW number</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW-CW-00001</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">23</p>
+</td>
+<td class="entry" align="">
+<p class="">Purchase Order Number</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">PO number related to billing supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">PO number related to billing supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">PO number related to billing supplier</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">24</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa Purchase Order ID</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa PO ID</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa PO ID</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa PO ID</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">25</p>
+</td>
+<td class="entry" align="">
+<p class="">Purchase Order Line Number</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Line number on PO</p>
+</td>
+<td class="entry" align="">
+<p class="">Line number on PO</p>
+</td>
+<td class="entry" align="">
+<p class="">Line number on PO</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">26</p>
+</td>
+<td class="entry" align="">
+<p class="">PO Classification</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">When PO is there, it will be Supplier, MSP, Coupa, otherwise the value will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">When PO is there, it will be Supplier, MSP, Coupa, otherwise the value will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">When PO is there, it will be Supplier, MSP, Coupa, otherwise the value will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">27</p>
+</td>
+<td class="entry" align="">
+<p class="">CW First Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW First Name</p>
+</td>
+<td class="entry" align="">
+<p class="">CW First Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Alax</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">28</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Last Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Last Name</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Last Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">29</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager ID</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager ID</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager ID</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">69767</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">30</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager Email</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager Email</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager Email</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">vindyan@gmail.com</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">31</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager First Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager First Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager First Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Steve</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">32</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager Last Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager Last Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager Last Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Smith</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">33</p>
+</td>
+<td class="entry" align="">
+<p class="">CW external reference ID</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CT # 1 for CW</p>
+</td>
+<td class="entry" align="">
+<p class="">CT # 1 for CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">00001</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">34</p>
+</td>
+<td class="entry" align="">
+<p class="">Work Location ID</p>
+</td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location ID</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location ID</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW0078</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">35</p>
+</td>
+<td class="entry" align="">
+<p class="">Work Location Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location Name</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Locan</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">36</p>
+</td>
+<td class="entry" align="">
+<p class="">County</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location County</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location County</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Cuyahoga</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">37</p>
+</td>
+<td class="entry" align="">
+<p class="">State</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location state</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location state</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Ohio</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">38</p>
+</td>
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+<td class="entry" align="">
+<p class="">string(3)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location country</p>
+<p class="">ISO 3166 alpha-3</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location country</p>
+<p class="">ISO 3166 alpha-3</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">USA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">39</p>
+</td>
+<td class="entry" align="">
+<p class="">Postal Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location Postal Code</p>
+</td>
+<td class="entry" align="">
+<p class="">CW Work Location Postal Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">76429</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">40</p>
+</td>
+<td class="entry" align="">
+<p class="">Pay Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(300)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Populated, if hours are entered against a pay code</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">41</p>
+</td>
+<td class="entry" align="">
+<p class="">Regular Hours</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class=""># of regular hours for the period / Week ending date</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">40.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">42</p>
+</td>
+<td class="entry" align="">
+<p class="">Over Time hours</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class=""># of OT hours for the period / Week ending date</p>
+<p class="">2 decimal precision, 0.00 if there is no OT Bill rate</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">5.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">43</p>
+</td>
+<td class="entry" align="">
+<p class="">Double Time hours</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class=""># of DT hours for the period / Week ending date</p>
+<p class="">2 decimal precision, 0.00 if there is no OT Bill rate</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">5.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">44</p>
+</td>
+<td class="entry" align="">
+<p class="">Total Hours</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Total # of hours for the period / Week ending date 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">40.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">45</p>
+</td>
+<td class="entry" align="">
+<p class="">Regular bill Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bill rate for Regular Hrs.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">46</p>
+</td>
+<td class="entry" align="">
+<p class="">Over Time bill Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bill rate for Over Time Hrs.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">47</p>
+</td>
+<td class="entry" align="">
+<p class="">Double Time bill Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bill rate for Double Time Hrs.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">48</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Regular Bill Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Bill rate for Regular Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">49</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Over Time Bill Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Bill rate for Over Time Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">50</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Double Time Bill Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Bill rate for Double Time Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">51</p>
+</td>
+<td class="entry" align="">
+<p class="">Regular Pay Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Pay rate for Regular Hrs.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">52</p>
+</td>
+<td class="entry" align="">
+<p class="">Over Time Pay Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Pay rate for Over Time Hrs.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">53</p>
+</td>
+<td class="entry" align="">
+<p class="">Double Time Pay Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Pay rate for Double Time Hrs.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">54</p>
+</td>
+<td class="entry" align="">
+<p class="">Regular Pay Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Pay Amount for Regular Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">200.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">55</p>
+</td>
+<td class="entry" align="">
+<p class="">Over Time Pay Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Pay Amount for Over Time Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">250.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">56</p>
+</td>
+<td class="entry" align="">
+<p class="">Double Time Pay Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Pay Amount for Double Time Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">300.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">57</p>
+</td>
+<td class="entry" align="">
+<p class="">Final Regular Pay Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Final Pay Amount for Regular Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">200.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">58</p>
+</td>
+<td class="entry" align="">
+<p class="">Final Over Time Pay Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Final Pay Amount for Over Time Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">250.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">59</p>
+</td>
+<td class="entry" align="">
+<p class="">Final Double Time Pay Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Final Pay Amount for Double Time Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">300.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">60</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Regular Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Pay Amount for Regular Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">61</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Over Time Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Pay Amount for Over Time Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">62</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Double Time Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Pay Amount for Double Time Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">25.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">63</p>
+</td>
+<td class="entry" align="">
+<p class="">Total Supplier Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Total Pay Amount for Time Hrs. 2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">75.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">64</p>
+</td>
+<td class="entry" align="">
+<p class="">MSP Fee</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">MSP Fee if applicable.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">MSP Fee if applicable.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">MSP Fee if applicable.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">2.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">65</p>
+</td>
+<td class="entry" align="">
+<p class="">VMS Fee</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">VMS Fee if applicable.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">VMS Fee if applicable.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">VMS Fee if applicable.</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">0.50</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">66</p>
+</td>
+<td class="entry" align="">
+<p class="">Line Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Total Line Amount</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Total Line Amount</p>
+<p class="">&gt;2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">Total Line Amount</p>
+<p class="">2 decimal precision</p>
+</td>
+<td class="entry" align="">
+<p class="">100.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">67</p>
+</td>
+<td class="entry" align="">
+<p class="">Line Tax Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">number (45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Total line tax amount</p>
+<p class="">2 decimal precision, 0.00 if there is no tax</p>
+</td>
+<td class="entry" align="">
+<p class="">Total line tax amount</p>
+<p class="">2 decimal precision, 0.00 if there is no tax</p>
+</td>
+<td class="entry" align="">
+<p class="">Total line tax amount</p>
+<p class="">2 decimal precision, 0.00 if there is no tax</p>
+</td>
+<td class="entry" align="">
+<p class="">0.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">68</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(3)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency for invoice</p>
+<p class="">ISO 4217, 3-Alpha</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency for invoice</p>
+<p class="">ISO 4217, 3-Alpha</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency for invoice</p>
+<p class="">ISO 4217, 3-Alpha</p>
+</td>
+<td class="entry" align="">
+<p class="">USD</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">69</p>
+</td>
+<td class="entry" align="">
+<p class="">Job Title</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">CW's Job Title</p>
+</td>
+<td class="entry" align="">
+<p class="">CW's Job Title</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">Sr. Developer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">70</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-1 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 1 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 1 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">78967-52</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">71</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-1</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 1 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 1 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">78967-52</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">72</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-2 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 2 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 2 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">73</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-2</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 2 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 2 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">74</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-3 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 3 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 3 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">75</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-3</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 3 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 3 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">76</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-4 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 4 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 4 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">77</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-4</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 4 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 4 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">78</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-5 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 5 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 5 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">79</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-5</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 5 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 5 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">80</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-6 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 6 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 6 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">81</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-6</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 6 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 6 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">82</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-7 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 7 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 7 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">83</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-7</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 7 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 7 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">84</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-8 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 8 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 8 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">85</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-8</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 8 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 8 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">86</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-9 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 9 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 9 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">87</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-9</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 9 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 9 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">88</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-10</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 10 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 10 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">89</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-10 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 10 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 10 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">90</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-11</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 11 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 11 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">91</p>
+</td>
+<td class="entry" align="">
+<p class="">Master Data Segment-11 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 11 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Segment 11 assigned to CW</p>
+</td>
+<td class="entry" align="">
+<p class="">Will be blank</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">92</p>
+</td>
+<td class="entry" align="">
+<p class="">Chart Of Account Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">For customers using CCW with Coupa Core, COA name associated to account.</p>
+<p class="">Will be empty for standalone customers</p>
+</td>
+<td class="entry" align="">
+<p class="">For customers using CCW with Coupa Core, COA name associated to account.</p>
+<p class="">Will be empty for standalone customers</p>
+</td>
+<td class="entry" align="">
+<p class="">For customers using CCW with Coupa Core, COA name associated to account.</p>
+<p class="">Will be empty for standalone customers</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">93</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(500)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Code</p>
+</td>
+<td class="entry" align="">
+<p class="">0100-999-2521</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">94</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(500)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">95</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-1</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 1 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 1 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 1 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">0100</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">96</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-1 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 1 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 1 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 1 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 1 Name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">97</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-2</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 2 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 2 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 2 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">999</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">98</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-2 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 2 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 2 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 2 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 2 Name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">99</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-3</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 3 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 3 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 3 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">2521</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-3 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 3 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 3 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 3 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 3 Name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">101</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-4</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 4 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 4 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 4 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">102</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-4 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 4 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 4 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 4 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">103</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-5</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 5 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 5 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 5 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">104</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-5 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 5 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 5 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 5 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">105</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-6</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 6 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 6 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 6 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">106</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-6 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 6 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 6 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 6 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">107</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-7</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 7 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 7 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 7 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">108</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-7 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 7 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 7 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 7 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">109</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-8</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 8 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 8 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 8 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">110</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-8 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 8 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 8 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 8 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">111</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-9</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 9 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 9 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 9 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">112</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-9 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 9 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 9 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 9 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">113</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-10</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 10 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 10 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 10 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">114</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-10 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 10 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 10 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 10 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">115</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-11</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 11 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 11 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 11 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">116</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-11 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 11 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 11 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 11 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">117</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-12</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 12 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 12 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 12 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">118</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-12 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 12 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 12 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 12 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">119</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-13</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 13 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 13 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 13 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">120</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-13 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 13 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 13 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 13 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">121</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-14</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 14 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 14 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 14 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">122</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-14 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 14 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 14 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 14 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">123</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-15</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 15 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 15 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 15 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">124</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-15 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 15 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 15 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 15 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">125</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-16</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 16 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 16 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 16 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">126</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-16 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 16 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 16 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 16 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">127</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-17</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 17 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 17 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 17 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">128</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-17 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 17 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 17 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 17 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">129</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-18</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 18 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 18 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 18 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">130</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-18 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 18 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 18 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 18 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">131</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-19</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 19 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 19 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 19 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">132</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-19 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 19 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 19 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 19 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">133</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-20</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 20 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 20 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 20 Code</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">134</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment-20 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(2000)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 20 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 20 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Segment 20 Name</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+</div>
+</div>
+</article>

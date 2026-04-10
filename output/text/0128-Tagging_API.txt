@@ -1,0 +1,14 @@
+Tagging API
+
+Use the Tagging API to bring in and export tags to your third-party system.
+
+Elements
+
+Element 	 Description 	 Type 	 API In 	 API Out 	 Required 	 Length 	 Allowable Values
+active 	Tagging active state 	boolean 	yes 	yes
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	datetime 	 	yes
+created-by 	User who created 	 User 	 	yes
+description 	Description on the Tag on an Object (Tags on different objects can have different descriptions) 	text 	yes 	yes
+id 	Coupa unique identifier 	integer 	 	yes
+tag 	tag 	 Tag 	yes 	yes
+updated-by 	User who most recently updated the tag. 	integer 	 	yes

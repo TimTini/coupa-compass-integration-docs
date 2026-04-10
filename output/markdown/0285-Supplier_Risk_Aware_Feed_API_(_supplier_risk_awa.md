@@ -1,0 +1,125 @@
+---
+title: "Supplier Risk Aware Feed API (/supplier_risk_aware_feed)"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/supplier-risk-aware-feed-api-(supplier_risk_aware_feed)"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/supplier-risk-aware-feed-api-(supplier_risk_aware_feed)"
+status_code: 200
+fetched_at: "2026-04-09T12:00:05+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Supplier Risk Aware Feed API (/supplier_risk_aware_feed)"
+---
+
+# Supplier Risk Aware Feed API (/supplier_risk_aware_feed)
+
+Use the Supplier Risk Aware Feed API to load your governance, risk, and compliance (GRC) data into Risk Aware.
+
+The [Supplier Risk Aware Feed](https://compass.coupa.com/x298737.xml) API lets you load your governance, risk, and compliance (GRC) data into Risk Aware.
+
+The URL to access Order Lists is: `https://{your_instance}/api/supplier_risk_aware_feed/`
+
+## Actions
+
+The Supplier Risk Aware Feed API allows you to:
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| POST | `/api/supplier_risk_aware_feed` | create | Create a new Supplier Risk Feed for a specific supplier. Cannot submit a POST request when the corresponding supplier status is `evaluating`. |
+| GET | `/api/supplier_risk_aware_feed` | index | Get a list of Supplier Risk Feeds |
+| GET | `/api/supplier_risk_aware_feed/:id` | show | Get a specific Supplier Risk Feed |
+| PUT | `/api/supplier_risk_aware_feed/:id` | update | Update a specific Supplier Risk Feed |
+
+You can get a feed for a supplier, even if you don't know the ID of the feed by querying by `supplier[id]` , `supplier[name]` , or `supplier[number]` .
+
+## Elements
+
+The Supplier Risk Aware Feed API contains the following elements:
+
+| **Element** | **Description** | **Req'd** | **Unique** | **Allowable Value** | **In** | **Out** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | yes | datetime | | | |
+| id | Coupa unique identifier | | | | | yes | integer |
+| number-field-01 | Number field 1. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| number-field-02 | Number field 2. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| number-field-03 | Number field 3. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| number-field-04 | Number field 4. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| number-field-05 | Number field 5. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| number-field-06 | Number field 6. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| number-field-07 | Number field 7. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| number-field-08 | Number field 8. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| number-field-09 | Number field 9. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| number-field-10 | Number field 10. At least one number field is required. | | | decimal or nil=true | yes | yes | decimal(32,4) |
+| supplier-id | Supplier ID | Yes | Yes | | | yes | integer |
+| supplier | When performing a POST specify any one of these supplier elements `id` , `name` , or `number` . to positively identify the supplier. | yes | yes | [Supplier](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)-da-5797-da-5797) | | | |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | yes | datetime | | | |
+
+To set a number field to nil, use `nil=true` in the number field attribute. For example: <number-field-01 nil="true"/> . This is handy when you want to delete a value.
+
+## Sample payloads
+
+**GET a feed for a specific supplier**
+
+You can get a feed for a supplier, even if you don't know the ID of the feed by querying by `supplier[id]` , `supplier[name]` , or `supplier[number]` .
+
+**Example Query**
+
+```text
+GET https://{your-instance}/api/supplier_risk_aware_feed?supplier[name]={name of the supplier in Coupa}
+```
+
+**Example Response**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<supplier-risk-aware-feeds type="array">
+<supplier-risk-aware-feed>
+<id type="integer">22</id>
+<created-at type="dateTime">2019-03-05T08:12:26+13:00</created-at>
+<updated-at type="dateTime">2019-03-05T08:12:26+13:00</updated-at>
+<number-field-01 nil="true"/>
+<number-field-02 type="decimal">4.1235</number-field-02>
+<number-field-03 type="decimal">1.1111</number-field-03>
+<number-field-04 type="decimal">1.0</number-field-04>
+<number-field-05 type="decimal">1.0</number-field-05>
+<number-field-06 type="decimal">1.0</number-field-06>
+<number-field-07 type="decimal">1.0</number-field-07>
+<number-field-08 type="decimal">1.0</number-field-08>
+<number-field-09 type="decimal">1.0</number-field-09>
+<number-field-10 type="decimal">1.0</number-field-10>
+<supplier>
+...
+</supplier>
+</supplier-risk-aware-feed>
+</supplier-risk-aware-feeds>
+```
+
+**POST a new feed**
+
+You can create a new feed for a supplier by specifying one of `` , `` , or `` . A given supplier can only have one Risk Aware feed.
+
+**Example query and payload**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<supplier-risk-aware-feed>
+<number-field-01 nil="true"/>
+<number-field-02 type="decimal">4.1235</number-field-02>
+<number-field-03 type="decimal">1.1111</number-field-03>
+<number-field-04 type="decimal">1.0</number-field-04>
+<number-field-05 type="decimal">1.0</number-field-05>
+<number-field-06 type="decimal">1.0</number-field-06>
+<number-field-07 type="decimal">1.0</number-field-07>
+<number-field-08 type="decimal">1.0</number-field-08>
+<number-field-09 type="decimal">1.0</number-field-09>
+<number-field-10 type="decimal">1.0</number-field-10>
+<supplier>
+<id>{Coupa's ID for the supplier}</id>
+<name>{the name of the supplier}</name>
+<number>{the supplier number}</number>
+</supplier>
+</supplier-risk-aware-feed>
+```
+
+The response to a POST or PUT is the same as a GET.

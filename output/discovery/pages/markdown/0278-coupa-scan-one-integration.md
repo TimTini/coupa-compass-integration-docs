@@ -1,0 +1,38 @@
+---
+title: "Coupa Scan One Integration | Coupa"
+url: "https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/other-integration-playbooks/coupa-scan-one-integration"
+final_url: "https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/other-integration-playbooks/coupa-scan-one-integration"
+content_type: "text/html"
+classification: "placeholder"
+fetched_at: "2026-04-10T01:57:47+00:00"
+---
+
+# Coupa Scan One Integration | Coupa
+
+The discovered page did not expose a standard <article> block, so a placeholder was generated.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/other-integration-playbooks/coupa-scan-one-integration](https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/other-integration-playbooks/coupa-scan-one-integration)
+
+Page text preview: Coupa Scan One Integration | Coupa
+
+Skip to Content
+
+EN
+- EN - English
+- DE - Deutsch
+- JA - 日本語
+- FR - Français
+
+What can we help you find? Products Total Spend Management Platform Integration Playbooks and Resources Other Integration Playbooks Coupa Scan One Integration
+
+Coupa Scan One Integration
+
+Revised: 24 July 2017
+
+Coupa and Scan One have partnered to create seamless integration between the two systems for the benefit of our mutual customers. You can learn more about the Coupa and Scan One relationship by contacting our Coupa Alliances Group at alliances@coupa.com. Below is a high-level overview diagram of the integration. By standardizing the object transfer between the two systems, we provide a fully integrated system that can help our customers achieve invoice automation.
+
+The following is a breakdown of general business and system level events and integrations:
+
+- Customer selects Coupa and Scan One to deliver an automated P2P platform
+- Customer works with Scan One to establish a lock-box for receiving all the supplier invoices
+- Coupa and Scan One will enable the integrations. Coupa starts synchronizing the master data such as Suppliers, GL Codes, etc into Scan One as

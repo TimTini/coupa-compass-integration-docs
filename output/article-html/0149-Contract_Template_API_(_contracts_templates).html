@@ -1,0 +1,326 @@
+<article class="" id="contract_template_api_contracts_templates">
+<h1 class="title">Contract Template API (/contracts/templates)</h1>
+<div class="body">
+<p class="">In support of <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x297495.xml" title="">Contract Template
+Management</a> you can now restrict access to contract templates by
+assigning a contract template to a content group. The Contract
+Template API allows your system to get them.</p>
+<p class="">The URL to access contract templates
+is: <code class="ph codeph">https://&lt;instance&gt;/api/contracts/templates</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration
+Best Practices</a> for more info.</p>
+<div class="" id="actions-d957e135423">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Contract Template API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/contracts/templates</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query contract templates</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/contracts/templates/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show contract template</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e135502">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Contract
+Template API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">active</td>
+<td class="entry" align="">Is Template Active</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""> yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">authoring-method</td>
+<td class="entry" align="">Authoring Method</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">msword,</p>
+<p class="">
+msword_and_online</p>
+</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">content-groups</td>
+<td class="entry" align="" colspan="2">Business Groups</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""> yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/content-groups-api-(business_groups)" title="">Content Groups</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">contract-classification</td>
+<td class="entry" align="" colspan="2">Contract classification</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="" colspan="5">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="" colspan="2">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="" colspan="2">Description</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""> yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">fill-with-counterparty</td>
+<td class="entry" align="">Fill with Counterparty</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">hierarchy-type</td>
+<td class="entry" align="" colspan="2">Hierarchy Type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="" colspan="3">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">name</td>
+<td class="entry" align="">Name</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""> yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">template-generator-id</td>
+<td class="entry" align="">Template Generator ID</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(1024)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="" colspan="5">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="" colspan="2">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">template_generator_type</td>
+<td class="entry" align="" colspan="2">Template Generator Typetemplate_generator_type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supporting_document</td>
+<td class="entry" align="" colspan="2">Supporting Documentsupporting_document</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">source</td>
+<td class="entry" align="">Identifier for Contract Template Source</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">contract_types</td>
+<td class="entry" align="">Contract Types</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/contract-types-api" title="">Contract Types</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">contract_hierarchy_types</td>
+<td class="entry" align="">Contract Hierarchy Types</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">ContractHierarchyType</td>
+</tr>
+<tr class="">
+<td class="entry" align=""></td>
+<td class="entry" align="" colspan="2"></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align=""></td>
+<td class="entry" align="" colspan="2"></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align=""></td>
+<td class="entry" align="" colspan="2"></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align=""></td>
+<td class="entry" align="" colspan="2"></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align=""></td>
+<td class="entry" align="" colspan="2"></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

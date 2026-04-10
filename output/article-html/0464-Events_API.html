@@ -1,0 +1,630 @@
+<article class="" id="events_api">
+<h1 class="title">Events API</h1>
+<div class="body">
+<p class="">Use the Events API's to create, update, or query the Event Data. This includes specific
+      endpoints to take action (create/update/delete) as well as events related to fact-sheets ,
+      rows, fields and labels.</p>
+<p class="">The URL to access the API's is :
+        <span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/events</span>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div class="" id="actions-d26e1140">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Performs Get action to retrieve all Events</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Creates one or more events objects.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Updates one or more events . Can perform mass updates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">delete</p>
+</td>
+<td class="entry" align="">
+<p class="">Deletes one more more events. Can perform mass deletes.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show one event data.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update one event at a time using the ID</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">delete</p>
+</td>
+<td class="entry" align="">
+<p class="">Delete one event at a time.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d26e1327">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">These are the elements available for
+        the Events API</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Field Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Field Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out *</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">ID of the Event</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">market-id</p>
+</td>
+<td class="entry" align="">
+<p class="">The id of the market that the event belongs to. Once set, it cannot be
+                  modified.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">state</p>
+</td>
+<td class="entry" align="">
+<p class="">Status / Current Phase of the event</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Setup,Active,Terminated (Case-Sensitive)</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the Event</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">description</p>
+</td>
+<td class="entry" align="">
+<p class="">Short Description of the Event</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">reference-number</p>
+</td>
+<td class="entry" align="">
+<p class="">A field for a reference number for identifying the event</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">event-number</p>
+</td>
+<td class="entry" align="">
+<p class="">A unique id of the event. This value is an incremental value</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">time-zone</p>
+</td>
+<td class="entry" align="">
+<p class="">Timezone for the event</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">settings</p>
+</td>
+<td class="entry" align="">
+<p class="">Settings for the event</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Response payload does not show null values.</p>
+</div>
+</div>
+<div class="" id="examples-d26e1764">
+<h2 class="title sectiontitle">Examples</h2>
+<p class="">In this example, we queried for a
+        Events API. We did a GET to the
+          URL:</p>
+<p class="">
+<span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/events</span>
+</p>
+</div>
+<div class="" id="events_get_response">
+<h2 class="title sectiontitle">Events GET Response</h2>
+<pre>
+<code class="codeblock">
+        {
+		"total": 5,
+		"events": [
+				{
+						"id": "9219595375673293031",
+						"market-id": "9219595214580536433",
+						"state": "Setup",
+						"name": "APC Training Project",
+						"description": "For Bids",
+						"event-number": 10,
+						"settings": {
+								"currency": "USD"
+						}
+				},
+				{
+						"id": "9219601944812992706",
+						"market-id": "9219596879086622384",
+						"state": "Setup",
+						"name": "API - Data storage",
+						"description": "Hamno Testing",
+						"event-number": 11,
+						"time-zone": "Europe/Stockholm",
+						"settings": {
+								"currency": "EUR"
+						}
+				},
+				{
+						"id": "9219592828238410706",
+						"market-id": "9219592396342653837",
+						"state": "Active",
+						"name": "**IT Hardware and Services 2014",
+						"description": "Indirect Services",
+						"reference-number": "MC-IN-15/02",
+						"event-number": 613,
+						"settings": {
+								"currency": "GBP"
+						}
+				},			 
+				{
+						"id": "9219593444808990596",
+						"market-id": "9219593040793966498",
+						"state": "Terminated",
+						"name": "!*** Test procedures ***! (for backup purposes only)",
+						"description": "Tasks to be performed when a new release is about to be launched",
+						"event-number": 1602,
+						"settings": {
+								"currency": "USD"
+						}
+				},
+				{
+						"id": "9219594228963465852",
+						"market-id": "9219592396342653837",
+						"state": "Setup",
+						"name": "**Air Freight Tender example - sanitised 9/12/15",
+						"description": "Example Air Freight tender",
+						"reference-number": "MC-A15-01",
+						"event-number": 13,
+						"settings": {
+								"currency": "SEK"
+						}
+				}				
+	 ]
+}</code>
+</pre>
+</div>
+<div class="" id="create_update_delete">
+<h2 class="title sectiontitle">Create/Update/Delete</h2>
+<p class="">The following describes
+        how you can use the Coupa API to perform actions on Events.</p>
+</div>
+<div class="" id="create-d26e1979">
+<h2 class="title sectiontitle">Create</h2>
+<p class="">
+<code class="ph codeph">/api/events</code>
+</p>
+<p class="">The
+        below payload creates two
+      Events.</p>
+<pre>
+<code class="codeblock">
+        Payload: 
+{
+		"events": [
+				{
+						"market-id": "9220538753220565329",
+						"name": "IT Hardware and Services 2021",
+						"description": "direct Services",
+						"reference-number": "DEMO-ref1",
+						"settings": {
+								"currency": "USD"
+						}
+				},
+				{
+						"market-id": "9220538753220565329",
+						"state": "Setup",
+						"name": "Services ONLY",
+						"description": "same market with state, timezone and no reference number ",
+						"time-zone": "Europe/Stockholm",
+						"settings": {
+								"currency": "EUR"
+						}
+				}
+		]
+}
+
+Response: 201
+{
+		"result": [
+				{
+						"type": "api.post.added",
+						"description": "2 objects created."
+				}
+		],
+		"added": 2,
+		"events": [
+				{
+						"id": "9220538753252871154"
+				},
+				{
+						"id": "9220538753252871160"
+				}
+		]
+}		</code>
+</pre>
+</div>
+<div class="" id="update-d26e2119">
+<h2 class="title sectiontitle">Update</h2>
+<p class="">
+<code class="ph codeph">/api/events</code>
+</p>
+<p class="">The
+        below payload updates a
+      Events.</p>
+<pre>
+<code class="codeblock">
+        To update one or more Event at a time: 
+Payload:
+{
+		"events": [
+				{
+						"id": "9220538753252871154",
+						"state": "Active",
+						"name": "IT Hardware and Services 2021-ABC",
+						"description": "direct Services - ABC",
+						"reference-number": "DEMO-reference"
+				},
+				{
+						"id": "9220538753252871160",
+						"name": "Services channges ONLY"
+				}
+		]
+}
+
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "api.put.updated",
+						"description": "2 objects updated."
+				}
+		],
+		"updated": 2
+}
+
+You can update all fields except event-number and market-id.</code>
+</pre>
+</div>
+<div class="" id="delete">
+<h2 class="title sectiontitle">Delete</h2>
+<p class="">
+<code class="ph codeph">/api/events</code>
+</p>
+<p class="">The above API
+        can be used to delete more than one event at a
+          time.</p>
+<pre>
+<code class="codeblock">
+        Payload:
+{
+		"events": [
+				{
+						"id": "9220538753252871154"
+				}
+		]
+}
+
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "event.deleted.logMsg",
+						"description": "The event IT Hardware and Services 2021-ABC was deleted."
+				}
+		],
+		"deleted": 1
+}</code>
+</pre>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Updates
+          are done in a lenient manner, i.e. if updating one resource fails, the other ones might be
+          successful. The payload deleted one event. For deletion or updates, event ID is
+          required.</p>
+</div>
+<p class="">Successful requests will return <code class="ph codeph">HTTP 200 Response</code>.
+        The body of the response will include the created requisition. Unsuccessful requests will
+        return</p>
+<pre>
+<code class="codeblock">HTTP 400 Bad
+Request</code>
+</pre>
+<p class="">. The body of the response will include validation errors formatted as
+        XML.</p>
+</div>
+</div>
+</article>

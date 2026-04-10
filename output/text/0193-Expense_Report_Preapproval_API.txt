@@ -1,0 +1,17 @@
+Expense Report Preapproval API
+
+Association
+
+This resource is associated with Expense Lines API.
+
+Elements
+
+Field Name 	 Field Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api-In Field? 	 Api-Out Field? 	 Data Type
+amount 	Amount 	 	 	 	 	yes 	decimal(32,4)
+available-amount 	Available amount 	 	 	 	 	yes
+available-amount-currency 	Available amount currency 	 	 	 	 	yes
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+currency 	Currency 	 	 	 	 	yes 	 Currency
+expense-preapproval 	Expense preapproval 	 	 	 	 	yes 	 Expense Preapproval
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime

@@ -1,0 +1,20 @@
+Customer Support Contact API
+
+Association
+
+This resource is associated with the Suppliers API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+user_id 	 	true 	true 	any 	yes 	yes 	integer
+active 	 	false 	false 	any 	yes 	yes 	boolean
+purposes 	 	false 	false 	any 	yes 	yes 	[]
+id 	Coupa unique identifier 	false 	false 	any 	yes 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+email 	 	false 	false 	any 	yes 	yes
+fullname 	 	false 	false 	any 	yes 	yes
+created_by 	User who created 	false 	false 	any 	yes 	yes
+updated_by 	User who updated 	false 	false 	any 	yes 	yes
+user 	User 	false 	false 	any 	 	yes

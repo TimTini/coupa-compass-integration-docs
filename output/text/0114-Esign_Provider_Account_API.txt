@@ -1,0 +1,14 @@
+Esign Provider Account API
+
+Use this API to export Esign provider account information.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+id 	Coupa unique identifier 	no 	no 	any 	 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime
+name 	 	yes 	yes 	any 	 	yes 	string(255)
+provider 	 	yes 	no 	docusign, adobesign 	 	yes 	string(255)
+created_by 	User who created 	no 	no 	any 	 	yes
+updated_by 	User who updated 	no 	no 	any 	 	yes

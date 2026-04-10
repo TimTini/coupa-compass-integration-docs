@@ -1,0 +1,16 @@
+Contract Clause API
+
+This API supports future functionality.
+
+Elements
+
+The following elements are available for the Contract Clause API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+contract-id 	 	no 	no 	any 	yes 	yes 	integer
+clause-type-id 	 	no 	no 	any 	yes 	yes 	integer
+clause-type-name 	Clause type name 	no 	no 	any 	yes 	yes
+contract-clause-reference 	 	no 	no 	any 	yes 	yes
+id 	Coupa unique identifier 	no 	no 	any 	yes 	yes 	integer
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	yes 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	yes 	yes 	datetime

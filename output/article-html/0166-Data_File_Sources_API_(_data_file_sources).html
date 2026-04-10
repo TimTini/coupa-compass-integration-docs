@@ -1,0 +1,510 @@
+<article class="" id="data_file_sources_api_data_file_sources-d957e150682">
+<h1 class="title">Data File Sources API (/data_file_sources)</h1>
+<div class="body">
+<div class="" id="overview-d957e150684">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The URL to access the approvals
+API is: <code class="ph codeph">https://&lt;instance&gt;/api/data_file_sources</code>.</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best
+Practices</a> for more info.</p>
+</div>
+<div class="" id="actions-d957e150697">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/data_file_sources</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query data file sources</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/data_file_sources/load_file</code>
+</td>
+<td class="entry" align="">load_file</td>
+<td class="entry" align="">/api/data_file_sources/load_file</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/data_file_sources/load_files</code>
+</td>
+<td class="entry" align="">load_files</td>
+<td class="entry" align="">/api/data_file_sources/load_files</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/data_file_sources/load_from_coupa_file_service</code>
+</td>
+<td class="entry" align="">load_from_coupa_file_service</td>
+<td class="entry" align="">Load from Coupa file service</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/data_file_sources/load_from_sftp</code>
+</td>
+<td class="entry" align="">load_from_sftp</td>
+<td class="entry" align="">Upload flat file and process via data file source</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/data_file_sources/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show data file source</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/data_file_sources/validate_api_key</code>
+</td>
+<td class="entry" align="">validate_api_key</td>
+<td class="entry" align="">Validate API key</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e150885">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">end-time</td>
+<td class="entry" align="">end_time</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">file-content-type</td>
+<td class="entry" align="">file_content_type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">file-file-name</td>
+<td class="entry" align="">file_file_name</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">file-file-size</td>
+<td class="entry" align="">file_file_size</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integration-id</td>
+<td class="entry" align="">Unique identifier for integration</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integration-run-id</td>
+<td class="entry" align="">Unique identifier for integration run</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">progress</td>
+<td class="entry" align="">progress</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">records-count</td>
+<td class="entry" align="">number of records in the CSV (grouping of related header +
+lines)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">records-created</td>
+<td class="entry" align="">number of records created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">records-updated</td>
+<td class="entry" align="">number of records updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">result-text</td>
+<td class="entry" align="">result_text</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">source-for</td>
+<td class="entry" align="">source_for</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(50)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">start-time</td>
+<td class="entry" align="">start_time</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">transaction status</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(50)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(50)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors</td>
+<td class="entry" align="">upload_errors</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""> Upload Error  </td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors-count</td>
+<td class="entry" align="">number of upload errors</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="upload_error_elements">
+<h2 class="title sectiontitle">Upload Error Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">field-errors</td>
+<td class="entry" align="">field_errors</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">field-with-error</td>
+<td class="entry" align="">field_with_error</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">first-column</td>
+<td class="entry" align="">first_column</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">row</td>
+<td class="entry" align="">row</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">value</td>
+<td class="entry" align="">value</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

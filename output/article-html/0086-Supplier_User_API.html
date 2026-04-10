@@ -1,0 +1,1649 @@
+<article class="" id="supplier_user_api">
+<h1 class="title">Supplier User API</h1>
+<div class="body">
+<div class="" id="associations-d957e75235">
+<h2 class="title sectiontitle">Associations</h2>
+<p class="">This API is associated with the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)-da-5797-da-5797" title="">Suppliers API</a>.</p>
+</div>
+<div class="" id="elements-d957e75243">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Supplier User API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Required Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api_In Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api_Out Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">account-groups</p>
+</td>
+<td class="entry" align="">
+<p class="">account_groups</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Group</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">account-security-type</p>
+</td>
+<td class="entry" align="">
+<p class="">account_security_type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">active</p>
+</td>
+<td class="entry" align="">
+<p class="">A false value will inactivate the account making it no longer available to users. A true value will make it active and available to users.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">true</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">aic-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have an AI Classification License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-employee-payment-account-creation</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow the user to create an Employee Payment Account, regardless of the Employee Payment Channel.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-user-to-upload-invoice-from-mobile</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow user to upload Invoice images from Coupa Mobile to Invoice Inbox</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">analytics-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have an Analytics License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">api-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Is an API User?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">approval-groups</p>
+</td>
+<td class="entry" align="">
+<p class="">approval_groups</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)/user-groups-api" title="">User Group</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">Maximum amount allowed to approve.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">authentication-method</p>
+</td>
+<td class="entry" align="">
+<p class="">What Authentication Method will be used (Coupa_Credentials, LDAP, SAML)?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">avatar-thumb-url</p>
+</td>
+<td class="entry" align="">
+<p class="">Avatar url</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">business-function</p>
+</td>
+<td class="entry" align="">
+<p class="">The employee's main job role in your company, e.g. Sales, Executive, Administrative, Managerial, etc.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">business-group-security-type</p>
+</td>
+<td class="entry" align="">
+<p class="">business_group_security_type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">0, 1</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">can-expense-for</p>
+</td>
+<td class="entry" align="">
+<p class="">can_expense_for</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">category_planner_user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Category Planner License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">category_strategy_user</td>
+<td class="entry" align="">Does the user have a Category Strategy License?</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ccw-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Contingent Workforce License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">clm-advanced-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Contract Lifecycle Management Advanced License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">content-groups</p>
+</td>
+<td class="entry" align="">
+<p class="">Content groups</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/content-groups-api-(business_groups)" title="">Business Group</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">contract-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">Contract approval limit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">contract-self-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">Contract self approval limit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">contracts-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Contracts License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">country-of-residence</p>
+</td>
+<td class="entry" align="">
+<p class="">Country of residence</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who created</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default-account</p>
+</td>
+<td class="entry" align="">
+<p class="">default_account</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/accounts-api-(accounts)" title="">Account</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default-account-type</p>
+</td>
+<td class="entry" align="">
+<p class="">default_account_type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-types-api-(account_types)" title="">Account Type</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default-address</p>
+</td>
+<td class="entry" align="">
+<p class="">default_address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)-da-5757-da-5757" title="">Address</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default-currency</p>
+</td>
+<td class="entry" align="">
+<p class="">default_currency</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)" title="">Currency</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default-locale</p>
+</td>
+<td class="entry" align="">
+<p class="">Default locale</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">department</p>
+</td>
+<td class="entry" align="">
+<p class="">department</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/departments-api-(departments)" title="">Department</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">email</p>
+</td>
+<td class="entry" align="">
+<p class="">email</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">employee-number</p>
+</td>
+<td class="entry" align="">
+<p class="">employee number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">employee-payment-channel</p>
+</td>
+<td class="entry" align="">
+<p class="">Determine how expenses will be paid to the employee. 'ERP' per default and can be switched to 'CoupaPay' if instance allows it.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">escalation-threshold</p>
+</td>
+<td class="entry" align="">
+<p class="">Escalation threshold</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">expense-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">expense_approval_limit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">expense-self-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">expense_self_approval_limit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">expense-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have an Expense License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">expenses-delegated-to</p>
+</td>
+<td class="entry" align="">
+<p class="">Expenses delegated to</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">firstname</p>
+</td>
+<td class="entry" align="">
+<p class="">first name</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">fullname</p>
+</td>
+<td class="entry" align="">
+<p class="">full name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">generate-password-and-notify</p>
+</td>
+<td class="entry" align="">
+<p class="">Set to Yes if you want the system to invite the user to the system and have them set up their password</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes, No</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa unique identifier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">inventory-organizations</p>
+</td>
+<td class="entry" align="">
+<p class="">inventory_organizations</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Inventory Organization</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">inventory-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Inventory user</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">invoice_approval_limit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-self-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">Maximum amount allowed for Invoice self approvals</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">lastname</p>
+</td>
+<td class="entry" align="">
+<p class="">last name</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">legal-entity</p>
+</td>
+<td class="entry" align="">
+<p class="">Legal Entity</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/expenses-api-(expense_reports)/legal-entity-api" title="">Legal Entity</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">login</p>
+</td>
+<td class="entry" align="">
+<p class="">login</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">manager</p>
+</td>
+<td class="entry" align="">
+<p class="">Manager</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">mention-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Mention Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">middlename</p>
+</td>
+<td class="entry" align="">
+<p class="">middle name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">password</p>
+</td>
+<td class="entry" align="">
+<p class="">Changed password</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">phone-mobile</p>
+</td>
+<td class="entry" align="">
+<p class="">phone mobile</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Phone Number</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">phone-work</p>
+</td>
+<td class="entry" align="">
+<p class="">phone work</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Phone Number</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">purchasing-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Purchasing License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requisition-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">requisition_approval_limit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requisition-self-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">requisition_self_approval_limit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">risk-assess-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Risk Assess License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">roles</p>
+</td>
+<td class="entry" align="">
+<p class="">roles</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Role</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">salesforce-enabled</p>
+</td>
+<td class="entry" align="">
+<p class="">salesforce_enabled</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">salesforce-id</p>
+</td>
+<td class="entry" align="">
+<p class="">salesforce_id</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">self-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">Maximum amount allowed for self approvals</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">seniority-level</p>
+</td>
+<td class="entry" align="">
+<p class="">The employee's job grade or band in your company's hierarchy.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">sourcing-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Sourcing user</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">spend-guard-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Spend Guard License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">sso-identifier</p>
+</td>
+<td class="entry" align="">
+<p class="">User's Single Sign-on ID (SSO ID)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supply-chain-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Supply Chain License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">travel-user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Travel License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">treasury_user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Treasury License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who updated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">user-groups</p>
+</td>
+<td class="entry" align="">
+<p class="">User groups</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)/user-groups-api" title="">User Group</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">work-confirmation-approval-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">work_confirmation_approval_limit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Approval Limit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">working-warehouses</p>
+</td>
+<td class="entry" align="">
+<p class="">working_warehouses</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)/warehouse-api" title="">Warehouse</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">msp_user</p>
+</td>
+<td class="entry" align="">
+<p class="">Boolean flag to tell if the user is of MSP type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoicing_user</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the user have a Invoicing License?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

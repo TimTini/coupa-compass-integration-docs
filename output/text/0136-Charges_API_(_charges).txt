@@ -1,0 +1,443 @@
+Charges API (/charges)
+
+Overview
+
+The URL to access charges is: https://{your_instance_name}/api/charges or you can see the OpenAPI docs here: https://{your_instance_name}/api_docs/14.
+
+Actions
+
+Verb
+
+Path
+
+Action
+
+Description
+
+GET
+
+/api/charges
+
+index
+
+Query Charges
+
+GET
+
+/api/charges/:id
+
+show
+
+Show Charges
+
+Elements
+
+Element
+
+Description
+
+Req'd
+
+Unique
+
+Allowable Value
+
+In
+
+Out
+
+Data Type
+
+account-type-id
+
+Chart of Accounts ID associated with the charge
+
+yes
+
+integer(11)
+
+accounting-currency
+
+Currency Code for Accounting Total
+
+yes
+
+accounting-total
+
+Amount of charge in Chart Of Accounts Accounting Currency
+
+yes
+
+decimal
+
+card-provider-account
+
+Card Provider Account
+
+yes
+
+yes
+
+string(255)
+
+charge-allocations
+
+Account Allocations for charge
+
+yes
+
+Charge Allication
+
+charge-date
+
+Date of the charge
+
+yes
+
+yes
+
+yes
+
+datetime
+
+charge-tax-lines
+
+Tax lines for charge
+
+yes
+
+[]
+
+coupa-pay-id
+
+Unique Coupa Pay ID
+
+yes
+
+yes
+
+integer(11)
+
+coupa-pay-statement-id
+
+Unique Coupa Pay Statement ID
+
+yes
+
+yes
+
+integer(11)
+
+created-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+datetime
+
+created-by
+
+User who created
+
+yes
+
+User
+
+currency
+
+Base currency of the card
+
+yes
+
+yes
+
+Currency
+
+document_id
+
+Transactional document ID associated with the charged card
+
+yes
+
+integer
+
+document-type
+
+Type of transactional document associated with the charged card
+
+yes
+
+string(255)
+
+expense-holding-account
+
+Expense holding account
+
+exported
+
+Indicates if transaction has been exported
+
+yes
+
+boolean
+
+external-ref-id
+
+Unique 3rd party system ID
+
+yes
+
+yes
+
+yes
+
+string(255)
+
+holding-account
+
+Holding account
+
+yes
+
+id
+
+Unique Coupa ID
+
+yes
+
+integer(11)
+
+issuer-bank
+
+Issuer's Bank
+
+yes
+
+issuer-reconciliation-id
+
+Issuer Reconciliation ID
+
+yes
+
+string(255)
+
+last-exported-at
+
+Date and time transaction was last exported in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+datetime
+
+legal_entity_name
+
+Legal Entity name
+yes 	string
+
+mcc
+
+Merchant Category Code
+
+yes
+
+yes
+
+string(255)
+
+merchant-currency
+
+Currency the card was charged in
+
+yes
+
+yes
+
+Currency
+
+merchant-reference
+
+Card provided merchant information
+
+yes
+
+yes
+
+string(255)
+
+merchant-total
+
+Total the merchant charged in merchant currency
+
+yes
+
+yes
+
+decimal(30,6)
+
+order-header-currency
+
+Currency from the charged card's Purchase Order
+
+yes
+
+string(6)
+
+order-header-id
+
+Purchase Order ID associated with the charged card
+
+yes
+
+integer(11)
+
+order-header-number
+
+Purchase Order Number associated with the charged card
+
+yes
+
+string(20)
+
+order-header-total
+
+Total amount on the charged card's Purchase Order
+
+yes
+
+string(255)
+
+payment_partner
+
+yes
+
+posting_date
+
+Date the charge posted
+
+yes
+
+yes
+
+datetime
+
+statement
+
+Statement
+
+yes
+
+CoupaPay::Statement
+
+statement-id
+
+Unique Coupa ID
+
+yes
+
+yes
+
+integer(11)
+
+statement-name
+
+Name of the Statement that this Charge belongs to
+
+yes
+
+string(255)
+
+supplier
+
+supplier
+
+yes
+
+yes
+
+Supplier
+
+supplier-id
+
+Unique Coupa Supplier ID
+
+yes
+
+integer(11)
+
+supplier-name
+
+Supplier in Coupa that made the charge
+
+yes
+
+string(255)
+
+total
+
+Total of the charge in the card base currency
+
+yes
+
+yes
+
+decimal(30,6)
+
+updated-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+datetime
+
+updated-by
+
+User who updated
+
+yes
+
+User
+
+virtual-card
+
+Virtual card
+
+yes
+
+yes
+
+CoupaPay::VirtualCard
+
+virtual-card-id
+
+Coupa ID for associated Virtual Card
+
+yes
+
+integer(11)
+
+Example API Calls
+
+Element
+
+Details
+
+URL
+
+https://{instancename}/api/charges/{id}
+
+Operation
+
+GET
+
+Parameters
+
+Query parameters
+
+Request body
+
+None
+
+Example requests
+GET VCard on PO Charges: https://<<customer>>.coupahost.com/api/charges?exported=false&virtual_card[document_type]=OrderHeader GET VCard on CoupaPay Invoice Payments: https://<<customer>>.coupahost.com/api/charges?exported=false&virtual_card[document_type]=CoupaPay::Payment GET Supplier Ghost Card Charges: https://<<customer>>.coupahost.com/api/charges?exported=false&virtual_card[document_type]=CoupaPay::PaymentAccount GET Expense PreApproval Charges: https://<<customer>>.coupahost.com/api/charges?exported=false&virtual_card[document_type]=ExpensePreapproval GET Travel Charges: https://<<customer>>.coupahost.com/api/charges?exported=false&virtual_card[document_type]=Travel::TripBooking GET Unbacked Charges: https://<<customer>>.coupahost.com/api/charges?exported=false&virtual_card[document_type][blank]=true GET Charges linked to specific statement: https://<<customer>>.coupahost.com/api/charges?statement-id=<<STATEMENT_ID>> GET Charges with only holding account: https://<<customer>>.coupahost.com/api/charges?holding_account_id[blank]=false&allocation_count=0 GET Charges with charge allocations in it: https://<<customer>>.coupahost.com/api/charges?allocation_count[gt]=0

@@ -1,0 +1,909 @@
+<article class="" id="reference1">
+<h1 class="title">Worker API</h1>
+<p class="font-size-lg">Access and update worker data. For example, you can work with worker avatars, create, query, and invite workers, and update worker records.</p>
+<div class="body refbody">
+<div class="" id="associations-d957e264268">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers/:id/avatar</code>
+</td>
+<td class="entry" align="">avatar_delete</td>
+<td class="entry" align="">Get all worker assigments.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers/:id/avatar</code>
+</td>
+<td class="entry" align="">
+<p class="">avatar_show</p>
+</td>
+<td class="entry" align="">Get assignment data for a single worker.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers/:id/avatar</code>
+</td>
+<td class="entry" align="">
+<p class="">avatar_update</p>
+</td>
+<td class="entry" align="">Update worker avatar.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers/:id/avatar</code>
+</td>
+<td class="entry" align="">
+<p class="">avatar_update</p>
+</td>
+<td class="entry" align="">Update worker avatar.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create worker.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query worker.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers/:id/invite_worker</code>
+</td>
+<td class="entry" align="">invite_worker</td>
+<td class="entry" align="">Invite a worker.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show a worker.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Show a worker.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/workers/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Show a worker.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Scopes</h2>
+<p class="">This API requires the following scopes:</p>
+<ul class="ul">
+<li class="li">core.services_procurement.workers.read</li>
+<li class="li">core.services_procurement.workers.write</li>
+</ul>
+</div>
+<div class="" id="elements-d957e264277">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">active</p>
+</td>
+<td class="entry" align="">
+<p class="">Active</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">avatar-content-type</td>
+<td class="entry" align="">Avatar Content Type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">avatar-file-name</td>
+<td class="entry" align="">Avatar File Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">country-of-citizenship</td>
+<td class="entry" align="">Worker Nationality</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Country</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">country-of-residence</p>
+</td>
+<td class="entry" align="">
+<p class="">Country of residence</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who created</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">current-title</p>
+</td>
+<td class="entry" align="">
+<p class="">Current title</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">date-of-birth</td>
+<td class="entry" align="">Date of Birth</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">date</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external-identifiers</p>
+</td>
+<td class="entry" align="">
+<p class="">External identifiers</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Worker::WorkerExternalReferenceIdentifier</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">first-name</p>
+</td>
+<td class="entry" align="">
+<p class="">First name</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">gender</p>
+</td>
+<td class="entry" align="">
+<p class="">Gender</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">gender-code</p>
+</td>
+<td class="entry" align="">
+<p class="">Gender code</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa unique identifier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Last name</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">middle-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Middle name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">national-identifiers</p>
+</td>
+<td class="entry" align="">
+<p class="">National identifiers</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Worker::WorkerNationalIdentifier</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">nationality</p>
+</td>
+<td class="entry" align="">
+<p class="">Nationality</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">portal-access</p>
+</td>
+<td class="entry" align="">
+<p class="">Portal access</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">portal-access-info</td>
+<td class="entry" align="">Portal Access Info</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">Status</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)-da-5797-da-5797" title="">Supplier</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">total-experience-in-years</p>
+</td>
+<td class="entry" align="">
+<p class="">Total experience in years</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(19,2)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who updated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">worker-addresses</p>
+</td>
+<td class="entry" align="">
+<p class="">Worker addresses</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-address-api" title="Access Worker address data when working with the Worker API.">Worker::WorkerAddress</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">worker-documents</p>
+</td>
+<td class="entry" align="">
+<p class="">Worker documents</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-documents-api" title="Access and worker document data, such as worker attachments and document type.">Worker::WorkerDocument</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">worker-emails</p>
+</td>
+<td class="entry" align="">
+<p class="">Worker emails</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-email-api" title="Access Worker email data when working with the Worker API.">Worker::WorkerEmail</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">worker-phone-numbers</p>
+</td>
+<td class="entry" align="">
+<p class="">Worker phone numbers</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-phone-number-api" title="Access Worker phone number data when working with the Worker API.">Worker::WorkerPhoneNumber</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">worker-skills</p>
+</td>
+<td class="entry" align="">
+<p class="">Worker skills</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Worker::WorkerSkill</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<example>
+<h2 class="title">Get workers</h2>
+<dl class="dl">
+<dt class="dt dlterm">Method</dt>
+<dd class="dd">
+<p class="">GET <code class="ph codeph">/api/workers</code>
+</p>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;.coupadev.com/api/workers' \
+--header 'Accept: application/json' \
+--header 'Accept: application/xml' \
+--header 'Accept: application/octet-stream' \
+--header 'Authorization: ••••••' \
+--header 'Cookie: _mkra_ctxt=e02b500d225375af25ce02956b7b1cae29525e55fa9ff4667d28169023f67f60--200'</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example response</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">[
+    {
+        "id": 1,
+        "created-at": "2025-07-28T03:43:08-07:00",
+        "updated-at": "2025-07-30T18:00:44-07:00",
+        "first-name": "Test",
+        "last-name": "Worker",
+        "middle-name": null,
+        "active": true,
+        "status": "assigned",
+        "current-title": "",
+        "total-experience-in-years": "10.0",
+        "portal-access": "Not Registered",
+        "date-of-birth": "2000-07-01",
+        "avatar-file-name": null,
+        "avatar-content-type": null,
+        "gender-code": "m",
+        "gender": "Male",
+        "supplier": {
+            "id": 132,
+            "name": "FieldQA supplier SM",
+            "display-name": "FieldQA Supplier SM"
+        },
+        "country-of-residence": {
+            "id": 222,
+            "code": "AE",
+            "name": "United Arab Emirates"
+        },
+        "nationality": null,
+        "portal-access-info": null,
+        "worker-emails": [
+            {
+                "id": 1,
+                "created-at": "2025-07-28T03:43:08-07:00",
+                "updated-at": "2025-07-28T03:43:08-07:00",
+                "email-address": "stage@coupa.com",
+                "email-type": "work"
+            }
+        ],
+        "worker-skills": [],
+        "worker-addresses": [
+            {
+                "id": 382,
+                "created-at": "2025-07-28T03:43:08-07:00",
+                "updated-at": "2025-07-28T03:43:08-07:00",
+                "street1": "abc",
+                "street2": null,
+                "street3": null,
+                "street4": null,
+                "city": "asd",
+                "state": "AZ",
+                "state-iso-code": null,
+                "postal-code": "1237710",
+                "active": true,
+                "worker-address-purpose": {
+                    "id": 33,
+                    "code": "Home",
+                    "name": "Home"
+                }
+            }
+        ],
+        "external-identifiers": [],
+        "worker-documents": [],
+        "worker-phone-numbers": [
+            {
+                "id": 1,
+                "created-at": "2025-07-28T03:43:08-07:00",
+                "updated-at": "2025-07-28T03:43:08-07:00",
+                "phone-type": "mobile",
+                "phone-number": {
+                    "number": "022345678",
+                    "extension": "",
+                    "country-code": "AL"
+                }
+            }
+        ],
+        "national-identifiers": [],
+        "created-by": {
+            "id": 371,
+            "login": "amandeep.vashishtha@coupa.com",
+            "employee-number": null,
+            "fullname": "Amandeep V"
+        },
+        "updated-by": {
+            "id": 371,
+            "login": "amandeep.v@coupa.com",
+            "employee-number": null,
+            "fullname": "Amandeep V"
+        }
+    },
+    {
+        "id": 2,
+        "created-at": "2025-07-30T03:54:59-07:00",
+        "updated-at": "2025-07-30T03:54:59-07:00",
+        "first-name": "Test 2",
+        "last-name": "Worker",
+        "middle-name": null,
+        "active": true,
+        "status": "open",
+        "current-title": "",
+        "total-experience-in-years": "4.0",
+        "portal-access": "Not Registered",
+        "date-of-birth": "1990-07-03",
+        "avatar-file-name": null,
+        "avatar-content-type": null,
+        "gender-code": "f",
+        "gender": "Female",
+        "supplier": {
+            "id": 132,
+            "name": "FieldQA supplier SM",
+            "display-name": "FieldQA Supplier SM"
+        },
+        "country-of-residence": {
+            "id": 223,
+            "code": "US",
+            "name": "United States"
+        },
+        "nationality": null,
+        "portal-access-info": null,
+        "worker-emails": [
+            {
+                "id": 2,
+                "created-at": "2025-07-30T03:54:59-07:00",
+                "updated-at": "2025-07-30T03:54:59-07:00",
+                "email-address": "stage+testworker@Coupa.com",
+                "email-type": "personal"
+            }
+        ],
+        "worker-skills": [],
+        "worker-addresses": [
+            {
+                "id": 399,
+                "created-at": "2025-07-30T03:54:59-07:00",
+                "updated-at": "2025-07-30T03:54:59-07:00",
+                "street1": "abc",
+                "street2": null,
+                "street3": null,
+                "street4": null,
+                "city": "new york",
+                "state": "NY",
+                "state-iso-code": null,
+                "postal-code": "1112223",
+                "active": true,
+                "worker-address-purpose": {
+                    "id": 33,
+                    "code": "Home",
+                    "name": "Home"
+                }
+            }
+        ],
+        "external-identifiers": [],
+        "worker-documents": [],
+        "worker-phone-numbers": [
+            {
+                "id": 2,
+                "created-at": "2025-07-30T03:54:59-07:00",
+                "updated-at": "2025-07-30T03:54:59-07:00",
+                "phone-type": "mobile",
+                "phone-number": {
+                    "number": "07410410123",
+                    "extension": "",
+                    "country-code": "IN"
+                }
+            }
+        ],
+        "national-identifiers": [],
+        "created-by": {
+            "id": 371,
+            "login": "amandeep.v@coupa.com",
+            "employee-number": null,
+            "fullname": "Amandeep V"
+        },
+        "updated-by": {
+            "id": 371,
+            "login": "amandeep.v@coupa.com",
+            "employee-number": null,
+            "fullname": "Amandeep V"
+        }
+    }
+]</code>
+</pre>
+</dd>
+</dl>
+</example>
+</div>
+<nav role="navigation" class="related-links">
+<ul class="ullinks child-links-section">
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-address-api">Worker Address API</a>
+<br>Access Worker address data when working with the Worker API.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-documents-api">Worker Documents API</a>
+<br>Access and worker document data, such as worker attachments and document type.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-email-api">Worker Email API</a>
+<br>Access Worker email data when working with the Worker API.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-phone-number-api">Worker Phone Number API</a>
+<br>Access Worker phone number data when working with the Worker API.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-derived-phone-number-api">Worker Derived Phone Number API</a>
+<br>Access Worker derived phone number data when working with the Worker API.</li>
+</ul>
+</nav>
+</article>

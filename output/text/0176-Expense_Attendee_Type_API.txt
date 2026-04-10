@@ -1,0 +1,17 @@
+Expense Attendee Type API
+
+Association
+
+This resource is associated with Expense Lines API via Expense Attendee API.
+
+Warning:
+
+Deactivating the Employee, Company Users expense attendee type is not recommended, because it will result in a loss of search functionality for Coupa Mobile users attempting to find employees for inclusion on an expense report.
+
+Elements
+
+Field Name 	 Field Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+name 	Name 	yes 	 	 	 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime

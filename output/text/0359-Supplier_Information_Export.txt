@@ -1,0 +1,213 @@
+Supplier Information Export
+
+Overview
+
+Talk to your CAM or CVM if you'd like to enable SIM in your instance. Export of these records once enabled is included as a Standard CSV Export.
+
+Note:
+
+Some additional/optional fields may need to be added to the ITF to be used in a CSV export. Integration Transaction Formats (ITF) are used to export records to third party systems. You can remove unneeded standard fields, add optional fields, reorder the fields, and publish the default for a record to make it active. Go to: Setup > Integration Documentation > Bulk Export Documentation or by URL go to /integration_transactional_formats.
+
+For more information about ISO codes, see List of international country codes.
+
+Supplier Information
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+RecordType 	Specifies the header format for the row. 	 	No/No
+SIM ID 	Coupa's unique identifier for the SIM record. 	integer 	No/No
+Supplier ID 	Coupa's unique identifier for the supplier associated with the SIM record. 	integer 	No/Yes
+Buyer ID 	Coupa's unique identifier for the buyer who created the SIM record. 	integer 	No/No
+SIM Status 	The current approval status of the SIM record. 	string(255) 	Yes/No 	draft, information_requested, pending_approval, approved, declined, pending_mapping
+Company Name 	The name of the SIM record. 	string(100) 	Yes/No
+Display Name 	A user-friendly name for the supplier. 	string(255) 	No/No
+Supplier Number 	Supplier Number 	 	No/No
+Parent Company Name 	Parent Supplier Company Name as it exists in Coupa. Must exist in Coupa. 	 	No/No
+Industry 	The default industry for the supplier. 	string(255) 	No/No
+Preferred Currency 	The currency the supplier would like to use to do business. 	 	No/No
+Preferred Language 	The language the supplier would like to use to do business. 	 	No/No
+Inco Terms 	Three letter Incoterm code for the supplier's commercial terms. 	string(255) 	No/No 	EXW, FCA, CPT, CIP, DAT, DAP, DDP, FAS, FOB, CFR, CIF, DPU
+Commodity 	The supplier's default commodity. 	 	No/No
+Minority Indicator 	Indicates if the supplier is a minority supplier. 	boolean 	No/No
+Minority Type 	Three letter code for the minority type. Required if Minority Indicator is set to true. 	integer 	No/No 	1, 2, 3, 4, 1, 2, 3, 4
+Tax Region 	The tax jurisdiction. 	 	No/No
+Tax Classification 	US tax categories. 	 	No/No
+Federal Tax ID 	The supplier's Employer Identification Number (for US businesses). 	 	No/No
+SSN 	The supplier's Social Security Number (for personal US businesses). 	 	No/No
+DUNS 	The supplier's Data Universal Numbering System number. 	 	No/No
+Tax Exempt Explanation 	If the supplier is tax exempt, they need to provide an explanation. 	 	No/No
+Income Type 	The type of income for the supplier. 	 	No/No
+Federal Reportable 	Indicates if the supplier is required to report federal taxes. 	 	No/No
+International Tax ID 	The supplier's tax ID (for non-US businesses). 	 	No/No
+International Tax Classification 	Non-US tax categories. 	 	No/No
+International Explanation 	If the supplier is tax exempt, they need to provide an explanation. 	text 	No/No
+Backend System Invoicing 	The type of ERP that Coupa integrates with for invoices. 	string(255) 	No/No 	SAP, Oracle
+Backend System Catalog 	The type of ERP that Coupa integrates with for catalogs. 	string(255) 	No/No 	CatBase, Elastic, iPartner Product Suite, Claritum, Contalog, CatalognTime, Advizia, Aravo, MatrixCMX, SigmaCommerce
+Payment Term 	The supplier's default payment terms. Must match an exisiting payment term in Coupa. Use the payment term code. 	 	No/No
+Supplier Region 	The supplier's geographic region. 	string(255) 	No/No 	AMER, EMEA, APAC, Japan
+Govt Agency Interaction Indicator 	Govt agency interaction indicator for the ERP. 	boolean 	No/No
+Govt Agency Interaction 	Text for the govt agency interaction indicator that's fed to the ERP. 	text 	No/No
+Organization Type 	Describes the type of organization for the supplier. 	string(255) 	No/No 	Corporation, Foreign Corporation, Individual, Foreign Individual, Partnership, Foreign Partnership
+Bribery Policy Indicator 	Bribery policy indicator for the ERP. 	boolean 	No/No
+Bribery Policy Text 	Text for the bribery policy indicator that's fed to the ERP. 	text 	No/No
+Govt Allegation Indicator 	Govt allegation indicator for the ERP. 	boolean 	No/No
+Govt Allegation Text 	Text for the govt allegation indicator that's fed to the ERP. 	string(255) 	No/No
+Third Party Interaction Indicator 	Third party interaction indiciator for the ERP. 	boolean 	No/No
+Third Party Interaction Text 	Text for the third party interaction indicator that's fed to the ERP. 	text 	No/No
+Country of Operation 	The country where the supplier is based. 	 	No/No
+Goods or Services Provided 	A short description of the what the supplier provides. 	string(255) 	No/No
+Pay Group 	A list of different ways the supplier can be paid. 	 	No/No
+Invoice Amount Limit 	A preset limit for the maximum value of an invoice submitted by the supplier. 	 	No/No
+Hold Payment Indicator 	Prevent the supplier from being automatically paid through the ERP. 	 	No/No
+Hold Payment Text 	Text for the hold payment indicator that's fed to the ERP. 	 	No/No
+Separate Remit To 	Enable if the remit different than the primary address. 	 	No/No
+Comment Source 	Field indicating who made the comment. 	string(255) 	No/No
+Comment 	Field for the actual comment. 	text 	No/No
+Exported 	Indicates if the SIM record has exported to the ERP. 	 	No/No
+Last Exported Date and Time 	Shows the last time the SIM record was exported to the ERP. 	datetime 	No/No
+Created Date and Time 	Shows when the SIM record was created. 	datetime 	No/No
+Created-By id 	Coupa's unique identifier for the user. 	 	No/No
+Created-By Lastname, Firstname 	The full name of the created-by user. 	 	No/No
+Created-By email 	The email address of the created-by user. 	 	No/No
+Updated Date and Time 	Shows when the SIM record was last updated. 	datetime 	No/No
+Updated-By id 	Coupa's unique identifier for the user. 	 	No/No
+Updated-By Lastname, Firstname 	The full name of the updated-by user. 	 	No/No
+Updated-By email 	The email address of the updated-by user. 	 	No/No
+Logo file name 	The name of the supplier logo file, including file extension. 	string(255) 	No/No
+Logo content type 	The type of image file used by the supplier logo. 	string(255) 	No/No
+Logo file size 	The file size of the supplier logo. 	integer 	No/No
+Logo updated at 	Shows the last time the supplier logo was updated. 	datetime 	No/No
+Website 	The address of the supplier's website. 	string(255) 	No/No
+Allow cXML Invoicing 	Indicates if the supplier is allowed to send invoices via cXML. 	boolean 	No/No
+Hold Invoices for AP Review 	Indicates if invoices from this supplier should be reviewed by AP being approved to pay. Also known as AP Hold. 	boolean 	No/No
+Send Invoices to Approvals 	Indicates if the supplier's invoices will always be sent to approval, regardless of inovice tolerance settings. 	boolean 	No/No
+Allow Invoicing with no Backing Doc from Connect 	Indicates if the supplier can create an invoice via the supplier portal without a purchase order. 	boolean 	No/No
+Allow Invoicing with Unbacked Lines from Connect 	Indicates if the supplier can create an invoice lines via the supplier portal without a purchase order. 	boolean 	No/No
+Invoice Matching Level 	Selects the supplier's matching level: none, 2-way, or 3-way. 	string(255) 	No/No
+Shipping Term 	The default shipping term for the supplier. 	 	No/No
+Tax Code 	The default tax code for the supplier. 	 	No/No
+Savings Percentage 	The savings percentage for using the supplier. 	decimal(8,2) 	No/No
+Allow Invoicing from Connect 	Indicates if the supplier is allowed to create an invoice via the supplier portal. 	boolean 	No/No
+Allow Choosing Billing Account in Invoicing 	Indicates if the supplier can choose a billing account when creating an invoice. 	boolean 	No/No
+Invoice Inbound Emails 	This field is for the invoice inbox. Specify specific email address for the supplier. 	text 	No/No
+Default Invoice Email 	This field is useful when you've whitelisted addresses. Replies to any supplier email will go to this preferred email instead of the invoice email address. 	string(255) 	No/No
+Inbound Invoice Email Domain 	This field is for the invoice inbox. Specifiy an email domain for the supplier. 	string(255) 	No/No
+Duplicate Exists 	There's already a supplier record that has similar fields: name, display name, DUNS, etc. 	boolean 	No/No
+One Time Supplier 	Indicates is the supplier is an One Time Supplier 	boolean 	No/No
+Scope Three Emissions 	Indicates if the supplier is tracking Scope Three Emissions 	boolean 	No/No
+Strategic Supplier 	Indicates if the supplier is a Strategic Supplier 	boolean 	No/No
+
+Supplier Information allowable values Pay Group values
+
+1=Direct Debit, 2=Standard, 3=Customer Refund, 4=Employee, 5=Intercompany, 6=Lease, 7=Partner Referral, 8=Rent, 9=Tax, 10=Util/Telecom
+Minority Type values
+
+1=HIS, 2=NAT, 3=AFR, 4=ASN
+Tax Classication values
+
+1=1099, 2=C Corp, 3=Customer Refund, 4=Exempt 1099, 5=Tax Authority, 6=Tax & Gov, 7=Vendor, 8=Non-Profit, 9=Partner Referral, 10=S Corp, 11=Foreign Company
+International Tax Classification values
+
+1=Active NFFE, 2=Passive NFFE, 3=Exempt beneficial owner, 4=Deemed compliant FFI, 5=Canadian Financial Institution, 6=Other Partner Jurisdiction Financial Institution, 7=Participating Foreign Financial Institution, 8=Non Participating Financial Institution, 9=Specified U.S. Person, 10=Not a Specified U.S. Person
+
+Supplier Information Address
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+RecordType 	Specifies the header format for the row. 	 	No/No
+Supplier Information ID 	Coupa's unique identifier for the SIM record associated with this address. 	integer 	No/Yes
+Address ID 	Coupa's unique identifier for this address record. 	integer 	No/No
+Address Type 	The type of address of this record. 	string(255) 	Yes/No 	RTA, Primary, Standard
+Location Code 	A free field for storing info about the location from the ERP. 	string(255) 	No/No
+Address Name 	A user-friendly name to identify this address. 	string(255) 	No/No
+Street Address 	The first address line. 	string(255) 	No/No
+Street Address 2 	The second address line. 	string(255) 	No/No
+Postal Code 	The postal code of the address. 	string(255) 	No/No
+City 	The city of the address. 	string(255) 	No/No
+State or Region 	The state or region of the address 	string(255) 	No/No
+State ISO Code 	The state iso code of the address 	string(255) 	No/No
+Country 	The country of the address. 	 	No/No
+Account Currency 	Account Currency 	 	No/No
+PO Box 	The post office box of the address. 	string(255) 	No/No
+PO Box Postal Code 	The post office box postal code. 	string(255) 	No/No
+Account Type 	The type of account for the supplier. 	 	No/No
+Intermediary Bank Name 	The name of the intermediary bank name. 	 	No/No
+Bank Address 	The address line for the bank. 	 	No/No
+Bank City 	The city line for the bank. 	 	No/No
+Bank State or Region 	The state or region of the bank. 	 	No/No
+Bank Postal Code 	The postal code of the bank. 	 	No/No
+Bank Country 	The country of the bank. 	 	No/No
+Bank Work Phone 	The telephone number of the bank. 	 	No/No
+Bank Fax Phone 	The fax number of the bank. 	 	No/No
+Bank Name 	Bank Name. 	 	No/No
+Bank Account Name 	The name on the bank account. 	 	No/No
+Bank Account Number 	The bank account number. 	 	No/No
+International Bank Account Number 	The international bank account number 	 	No/No
+Bank Routing Number 	The bank routing number. 	 	No/No
+Bank Wire Routing Number 	The bank wire routing number. 	 	No/No
+IBAN Number 	The bank's International Bank Account Number. 	 	No/No
+Sort Code 	The bank's Sort Code. 	 	No/No
+Bank Code 	Bank Code 	 	No/No
+IFSC 	IFSC 	 	No/No
+Transit Number And Institution Number 	Transit Number And Institution Number 	 	No/No
+SWIFT Code 	The bank's SWIFT code. 	 	No/No
+BSB Number 	The bank's BSB number. 	 	No/No
+BIC 	The bank's Bank Identifier Code. 	 	No/No
+BIC Routing Code 	The bank's BIC Routing Code. 	 	No/No
+Created Date and Time 	The date and time that the address record was created. 	datetime 	No/No
+Updated Date and Time 	The date and time that the address record was last updated. 	datetime 	No/No
+Payment Method 	The method of payment accepted by the supplier. 	string(255) 	No/No 	tran, cash, cred, pcard
+Tax Numbers 	Tax Numbers 	 	No/No
+Tax Countries 	Tax Countries 	 	No/No
+Purpose 	The names of the address purposes. 	string 	No/No
+Remit To Contact Email 	The email address of the individual responsible for Remit To information 	string(255) 	No/No
+Credit Card Email 	Email address to whom the Virtual Credit card will be delivered 	string(255) 	No/No
+Beneficiary Account Type 	The type of beneficiary account for the supplier. 	 	No/No 	cacc, svgs, ondp, moma, tras
+
+Supplier Information Artifact
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+RecordType 	Specifies the header format for the row. 	 	No/No
+Supplier Information ID 	Coupa's unique identifier for the SIM record associated with this attachment record. 	integer 	No/No
+Attachment ID 	Coupa's unique identifier for this attachment record. 	integer 	No/No
+Attachment Type 	The type of document that's attached to the SIM record. 	string(255) 	No/No
+Attachment Meta Type 	More detailed information about the type of document attached to the SIM record, based on the attachment type. 	string(255) 	No/No
+Supplier ID 	Coupa's unique identifier for the supplier associated with the SIM record. 	string(255) 	No/No
+Effective Date 	The date when the document first becomes effective. 	datetime 	No/No
+Expiry Date 	The latest date when the document is effective. 	datetime 	No/No
+Description 	A brief description of the document that's attached to the SIM record. 	string(255) 	No/No
+Created Date and Time 	Shows when the SIM record was created. 	datetime 	No/No
+Created-By id 	Coupa's unique identifier for the user. 	 	No/No
+Created-By Lastname, Firstname 	The full name of the created-by user. 	 	No/No
+Created-By email 	The email address of the created-by user. 	 	No/No
+Updated Date and Time 	Shows when the SIM record was last updated. 	datetime 	No/No
+Updated-By id 	Coupa's unique identifier for the user. 	 	No/No
+Updated-By Lastname, Firstname 	The full name of the updated-by user. 	 	No/No
+Updated-By email 	The email address of the updated-by user. 	 	No/No
+
+Supplier Information Contact
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+RecordType 	Specifies the header format for the row. 	 	No/No
+Supplier Information ID 	Coupa's unique identifier for the related SIM record associated with this contact. 	integer 	No/No
+Contact ID 	Coupa's unique identifier for this contact record. 	integer 	No/No
+Contact Type 	The job role of the supplier contact. 	string(255) 	Yes/No 	Primary, Standard
+Prefix 	The name prefix of the supplier contact. 	string(255) 	No/No
+Suffix 	The name suffix of the supplier contact. 	string(255) 	No/No
+Additional Name Field 	Any additional names of the supplier contact. 	string(255) 	No/No
+First Name 	The first name of the supplier contact. 	string(255) 	No/No
+Last Name 	The last name of the supplier contact. 	string(255) 	No/No
+Full Name 	The full name of the supplier contact. 	string(255) 	No/No
+Email 	The email address of the supplier contact. 	string(255) 	No/No
+Reference Code 	The reference code of the supplier contact. 	string(255) 	No/No
+Work Phone 	The work phone number of the supplier contact. 	 	No/No
+Mobile Phone 	The mobile phone number of the supplier contact. 	 	No/No
+Fax Phone 	The fax number of the supplier contact. 	 	No/No
+Notes 	A short note about the supplier contact. 	string(255) 	No/No
+Created Date and Time 	Shows when the SIM record was created 	datetime 	No/No
+Created-By id 	Coupa's unique identifier for the user. 	 	No/No
+Created-By Lastname, Firstname 	The full name of the created-by user. 	 	No/No
+Created-By email 	The email address of the created-by user. 	 	No/No
+Updated Date and Time 	Shows when the SIM record was last updated. 	datetime 	No/No
+Updated-By id 	Coupa's unique identifier for the user. 	 	No/No
+Updated-By Lastname, Firstname 	The full name of the updated-by user. 	 	No/No
+Updated-By email 	The email address of the updated-by user. 	 	No/No
+Purpose 	The names of the address purposes. 	string 	No/No

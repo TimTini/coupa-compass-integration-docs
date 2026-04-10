@@ -1,0 +1,24 @@
+---
+title: "Supplier Sharing Setting Export"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/supplier-sharing-setting-export"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndgzrwAIkWjYNqduiQvfQl%2BpwjtaqY2c%2Bp2P%2FfZ3QVmwSfcyX%2B37deUbQ2FYtu%2FjobvB3hxSz9WrO7nU9mU4mu30%2B2knMx1B%2BygG1zPcohawvdI1TybJfGMh4N2eyECxbE3W4dhTBxQQJeZGLcS6m21IqIdRIFqUc3bFslVyMgzgwH2NsSXGufddCjoeIwYEt%2FFOEQvuGQ9v%2B9%2B8%2BwS0QtT7E9FVyPDx5KToBY7m6bL5oKONnTuR5X45lX33QODScsz1Ywj5plQTMM74jVfDRa28vjauNe5izLjjlgQwpBw2Silptlt%2BvVWqqdschUt%2B22yqvfm62LFsSYegrXXlHXYNhg%2BHZaLy9uT4tOSQvhkJDvV6Tn%2BOy7NBYR2o40seR2tf8bDHrp9Vwi3DC%2F5gObwnY4mzWGT9RPtq06keSWq8qb43%2B22%2B6gXjeqSzKATF1vh9GFTZg7LKuAxKlHVrr%2F1wFhJgOE0OXFsAXR9t%2F3%2BjiBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fsupplier-sharing-setting-export"
+status_code: 200
+fetched_at: "2026-04-09T12:00:29+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Export"
+  - "Supplier Sharing Setting Export"
+---
+
+# Supplier Sharing Setting Export
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/supplier-sharing-setting-export](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/supplier-sharing-setting-export)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndgzrwAIkWjYNqduiQvfQl%2BpwjtaqY2c%2Bp2P%2FfZ3QVmwSfcyX%2B37deUbQ2FYtu%2FjobvB3hxSz9WrO7nU9mU4mu30%2B2knMx1B%2BygG1zPcohawvdI1TybJfGMh4N2eyECxbE3W4dhTBxQQJeZGLcS6m21IqIdRIFqUc3bFslVyMgzgwH2NsSXGufddCjoeIwYEt%2FFOEQvuGQ9v%2B9%2B8%2BwS0QtT7E9FVyPDx5KToBY7m6bL5oKONnTuR5X45lX33QODScsz1Ywj5plQTMM74jVfDRa28vjauNe5izLjjlgQwpBw2Silptlt%2BvVWqqdschUt%2B22yqvfm62LFsSYegrXXlHXYNhg%2BHZaLy9uT4tOSQvhkJDvV6Tn%2BOy7NBYR2o40seR2tf8bDHrp9Vwi3DC%2F5gObwnY4mzWGT9RPtq06keSWq8qb43%2B22%2B6gXjeqSzKATF1vh9GFTZg7LKuAxKlHVrr%2F1wFhJgOE0OXFsAXR9t%2F3%2BjiBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fsupplier-sharing-setting-export](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndgzrwAIkWjYNqduiQvfQl%2BpwjtaqY2c%2Bp2P%2FfZ3QVmwSfcyX%2B37deUbQ2FYtu%2FjobvB3hxSz9WrO7nU9mU4mu30%2B2knMx1B%2BygG1zPcohawvdI1TybJfGMh4N2eyECxbE3W4dhTBxQQJeZGLcS6m21IqIdRIFqUc3bFslVyMgzgwH2NsSXGufddCjoeIwYEt%2FFOEQvuGQ9v%2B9%2B8%2BwS0QtT7E9FVyPDx5KToBY7m6bL5oKONnTuR5X45lX33QODScsz1Ywj5plQTMM74jVfDRa28vjauNe5izLjjlgQwpBw2Silptlt%2BvVWqqdschUt%2B22yqvfm62LFsSYegrXXlHXYNhg%2BHZaLy9uT4tOSQvhkJDvV6Tn%2BOy7NBYR2o40seR2tf8bDHrp9Vwi3DC%2F5gObwnY4mzWGT9RPtq06keSWq8qb43%2B22%2B6gXjeqSzKATF1vh9GFTZg7LKuAxKlHVrr%2F1wFhJgOE0OXFsAXR9t%2F3%2BjiBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fsupplier-sharing-setting-export)
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

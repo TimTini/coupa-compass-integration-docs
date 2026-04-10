@@ -1,0 +1,604 @@
+<article class="" id="supplier_items_api_supplier_items">
+<h1 class="title">Supplier Items API (/supplier_items)</h1>
+<div class="body">
+<p class="">Use the supplier items API to create, update, or query goods
+provided by suppliers that your employees will select from when
+creating a requisition.</p>
+<p class="">The URL to access supplier items is:
+      <pre>
+<code class="codeblock">https://&lt;instance&gt;/api/supplier items</code>
+</pre>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration
+Best Practices</a> for more info.</p>
+<div class="" id="actions-d957e70457">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Supplier Items API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/items/:item_id/supplier_items</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create supplier item</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/supplier_items</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create supplier item</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/items/:item_id/supplier_items</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query supplier items</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/supplier_items</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query supplier items</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/supplier_items/search</td>
+<td class="entry" align="">search</td>
+<td class="entry" align="">Advanced supplier item search</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/items/:item_id/supplier_items/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show supplier item</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/supplier_items/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show supplier item</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/items/:item_id/supplier_items/:id</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update supplier item</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/supplier_items/:id</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update supplier item</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">/api/supplier_items/:id</td>
+<td class="entry" align="">delete</td>
+<td class="entry" align="">Delete supplier item</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e70702">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Supplier Items
+API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">availability</td>
+<td class="entry" align="">Availability</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">in_stock, out_of_stock, backordered</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">availability-date</td>
+<td class="entry" align="">Availability Date</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">catalog</td>
+<td class="entry" align="">catalog</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">contract</td>
+<td class="entry" align="">contract</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)" title="">Contract</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">contract-term</td>
+<td class="entry" align="">contract_term</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/contract-terms-api" title="">ContractTerm</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">Currency of transaction</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)" title="">Currency</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">item</td>
+<td class="entry" align="">item</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/items-api-(items)" title="">Item</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lead-time</td>
+<td class="entry" align="">lead_time</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">manufacturer</td>
+<td class="entry" align="">manufacturer</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">minimum_order_quantity</td>
+<td class="entry" align="">minimum_order_quantity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">order_increment</td>
+<td class="entry" align="">order_increment</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">preferred</td>
+<td class="entry" align="" colspan="3">Indicates preferred supplier for this item. Change
+to <code class="ph codeph">preferred_flag</code> when using this element as a
+query parameter.
+Example: <code class="ph codeph">/api/supplier_items?item[item_number]=&lt;item_id&gt;&amp;preferred_flag=false</code>
+</td>
+<td class="entry" align="">true, false</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price</td>
+<td class="entry" align="">price</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-change</td>
+<td class="entry" align="">price_change</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">float</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-1</td>
+<td class="entry" align="">price_tier_1</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-10</td>
+<td class="entry" align="">price_tier_10</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-11</td>
+<td class="entry" align="">price_tier_11</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-12</td>
+<td class="entry" align="">price_tier_12</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-13</td>
+<td class="entry" align="">price_tier_13</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-14</td>
+<td class="entry" align="">price_tier_14</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-15</td>
+<td class="entry" align="">price_tier_15</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-16</td>
+<td class="entry" align="">price_tier_16</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-17</td>
+<td class="entry" align="">price_tier_17</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-18</td>
+<td class="entry" align="">price_tier_18</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-19</td>
+<td class="entry" align="">price_tier_19</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-2</td>
+<td class="entry" align="">price_tier_2</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-20</td>
+<td class="entry" align="">price_tier_20</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-3</td>
+<td class="entry" align="">price_tier_3</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-4</td>
+<td class="entry" align="">price_tier_4</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-5</td>
+<td class="entry" align="">price_tier_5</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-6</td>
+<td class="entry" align="">price_tier_6</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-7</td>
+<td class="entry" align="">price_tier_7</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-8</td>
+<td class="entry" align="">price_tier_8</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-tier-9</td>
+<td class="entry" align="">price_tier_9</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">savings-pct</td>
+<td class="entry" align="">savings_pct</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier</td>
+<td class="entry" align="">supplier</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)-da-5797-da-5797" title="">Supplier</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-aux-part-num</td>
+<td class="entry" align="">supplier_aux_part_num</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-part-num</td>
+<td class="entry" align="">supplier_part_num</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">unspsc-code</td>
+<td class="entry" align="">UNSPSC code</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class=""> The supplier_number, contract_name, item_name, and currency_code must already exist in
+          the system.</p>
+</div>
+</div>
+</div>
+</article>

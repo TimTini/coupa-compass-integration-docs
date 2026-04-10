@@ -1,0 +1,50 @@
+Payables :: External :: Payable Import
+
+External Payable
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Source Reference* 	Yes 	No 	string(255) 	Unique reference number from source system
+Source Name* 	Yes 	No 	string(50) 	Source system name
+Document Number* 	Yes 	No 	string(255) 	Document number
+Document Type* 	Yes 	No 	string(50) 	Document type 	valid_document_types
+Document Date* 	Yes 	No 	datetime 	Document date
+Document Amount* 	Yes 	No 	decimal(30,6) 	Total document amount
+Due Date* 	Yes 	No 	datetime 	Due date
+Payable Amount 	Yes 	No 	decimal(30,6) 	Amount to pay
+Status 	No 	No 	string(50) 	A value of 'voided' will void the specified payable, all other values will be ignored
+Currency Code 	No 	No 	 	Currency code
+Chart of Accounts 	No 	No 	 	Chart of Accounts name
+Legal Entity 	No 	No 	 	Legal Entity name
+Payee ID 	No 	No 	 	Payee ID
+Payee Number 	No 	No 	 	Payee Number
+Payee Name 	No 	No 	 	Payee Name
+Discount Amount 	No 	No 	 	Discount amount
+Discount Due Date 	No 	No 	 	Discount due date
+Employee ID 	No 	No 	 	Employee ID
+Employee Login 	No 	No 	 	Employee Login
+Employee Email 	No 	No 	 	Employee Email
+Remit-To Code 	No 	No 	 	Remit-To address code
+
+Payable Allocation
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+ID 	No 	No 	integer 	Coupa ID of allocation. Only used for reversing allocations. No other updates are allowed
+Payable From ID 	No 	No 	integer 	Coupa ID of payable to allocate from
+Source Transaction From ID 	No 	Yes 	string 	Coupa ID of document associated with the payable from. This is the order, invoice, etc
+Source Transaction From Reference 	No 	No 	string 	External identifier of document associated with the payable from. Order number, invoice number, etc
+Payable To ID 	No 	No 	integer 	Coupa ID of payable to allocated to
+Source Transaction To ID 	No 	Yes 	string 	Coupa ID of document associated with the payable to
+Source Transaction To Reference 	No 	No 	string 	External identifier of document associated with the payable to
+Status 	No 	No 	string(255) 	Status of the allocation (can be draft, committed, batched, voided, completed
+Source 	No 	No 	string(255) 	What triggered the creation of this allocation: valid values are coupa_pay, erp, ui, api, csv 	coupa_pay, erp, ui, api, csv, early_pay_discount
+Reason Code 	No 	No 	string(40) 	Why this allocation was created. valid values are: payment, auto_payment, epr, epr_rejected, manual 	payment, auto_payment, epr, epr_rejected, manual
+Payment Reference ID 	No 	No 	integer 	Coupa ID of the payment reference
+Payment Reference Type 	No 	No 	string(255) 	Type of the payment reference
+Last Exported At 	No 	No 	datetime 	Last Time Allocation was exported
+Payable From Type 	No 	No 	string(255) 	Type of payable to allocate from. options are: milestone (use this for orders), invoice, expense, expense_preapproval, virtual_card_expense_preapproval, trip_booking, external_payable, supplier_payable, employee_payable
+Payable To Type 	No 	No 	string(255) 	Type of payable to allocate to
+Payble From Amount 	Yes 	No 	decimal(46,20) 	Amount to allocate from Payable From
+Payable To Amount 	Yes 	No 	decimal(46,20) 	Amount to allocate to Payable To
+Payable From currency code 	No 	No 	 	Currency code of allocation from Payable From
+Payable To currency code 	No 	No 	 	Currency code of allocation to Payable To
+Reverse 	No 	No 	 	Flag indicating whether the allocation should be reversed. If this is provided, ID must also be provided and no other values are considered.

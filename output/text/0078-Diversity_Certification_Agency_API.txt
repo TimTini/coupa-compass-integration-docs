@@ -1,0 +1,17 @@
+Diversity Certification Agency API
+
+Associations
+
+This API is associated with the Suppliers API.
+
+Elements
+
+The following elements are available for the Diversity Certification Agency API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+id 	Coupa unique identifier 	 	 	any 	 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	any 	 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	any 	 	yes 	datetime
+name 	Name 	 	 	any 	 	yes 	string(255)
+region_type 	Region type 	 	 	any 	 	yes 	string(255)
+code 	Code 	 	 	any 	 	yes 	string(255)

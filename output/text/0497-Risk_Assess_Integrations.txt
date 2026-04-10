@@ -1,0 +1,8 @@
+Risk Assess Integrations
+
+This section contains information about the Risk Assess integrations.
+
+- Get Started with the Risk Assess Quick Integration
+- Risk Assess Quick Integration File Formats
+- Risk Assess REST API
+Retrieve Risk Assess data such as suppliers associated with the tenant and supplier extension fields.

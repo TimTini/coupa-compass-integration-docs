@@ -1,0 +1,137 @@
+<article class="" id="coupa_saml_faq">
+<h1 class="title">Coupa SAML FAQ</h1>
+<p class="">
+<p class="">Check out these frequently asked questions about Coupa SSO connections.</p>
+</p>
+<div class="body">
+<div class="" id="how_to_setup_saml_with_coupa">
+<h2 class="title sectiontitle">How to setup SAML with Coupa?</h2>
+<p class="">To start the configuration please read this FAQ and complete step 1 in <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-sso-setup" title="">Configuration Setup</a>. Provide your Coupa's Implementation contact requirements listed in step 2. Coupa Engineer will help setup IdP connection at Coupa end, the setup is not completely self service. Admin within Coupa has freedom to disable SAML, change login URL, logout URL and timeout URL.</p>
+</div>
+<div class="" id="which_saml_protocol_does_coupa_support">
+<h2 class="title sectiontitle">Which SAML protocol does Coupa support?</h2>
+<p class="">SAML V2.0</p>
+</div>
+<div class="" id="where_are_saml_v2.0_specification">
+<h2 class="title sectiontitle">Where are SAML V2.0 specification?</h2>
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="http://saml.xml.org/saml-specifications" title="">http://saml.xml.org/saml-specifications</a>
+</p>
+</div>
+<div class="" id="how_do_i_validate_saml_response_xml">
+<h2 class="title sectiontitle">How do I validate SAML response xml?</h2>
+<p class="">Please verify the xml against <code class="ph codeph">http://docs.oasis-open.org/security/saml/v2.0/saml-schema-protocol-2.0.xsd</code>
+</p>
+<pre>
+<code class="codeblock">$ xmllint --noout --schema
+saml-schema-protocol-2.0.xsd saml_response.xml</code>
+</pre>
+</div>
+<div class="" id="how_to_track_and_view_saml_responses">
+<h2 class="title sectiontitle">How to track and view SAML responses?</h2>
+<p class="">Firefox add-on saml-tracer tracks HTTPS flow, decode and parse SAML response <code class="ph codeph">https://addons.mozilla.org/en-US/firefox/addon/saml-tracer/</code>
+</p>
+</div>
+<div class="" id="what_is_login_url">
+<h2 class="title sectiontitle">What is Login URL?</h2>
+<p class="">Login URL under <b>Setup &gt; Security Control</b> is simply HTTP 302 redirect.</p>
+<p class="">For IdP Initiated SSO enter login URL of the IdP login screen. Coupa application will redirect user to IdP hosted login page to authenticate their users. Users will not see the Coupa sign in page.</p>
+<p class="">For SP-Initiated SSO you can build the URL provided you know the EntityID at IdP. to redirect to start SP Initiation.</p>
+<p class="">
+<b>For test/staging</b>
+</p>
+<p class="">
+<code class="ph codeph">https://sso-stg1.coupahost.com/sp/startSSO.ping?PartnerIdpId= &lt;stage_IdP_entityid&gt;&amp;TARGET=https://{your-test_site}.coupahost.com/sessions/saml_post</code>
+</p>
+<p class="">
+<b>For production</b>
+</p>
+<p class="">
+<code class="ph codeph">https://sso-prd1.coupahost.com/sp/startSSO.ping?PartnerIdpId= &lt;prod_IdP_entityid&gt;&amp;TARGET=https://{your_site}.coupahost.com/sessions/saml_post</code>
+</p>
+</div>
+<div class="" id="why_does_coupa_need_a_logout_url">
+<h2 class="title sectiontitle">Why does Coupa need a Logout URL?</h2>
+<p class="">When users Logout from Coupa Application, Coupa will clear the user session and redirects users to the Logout URL configured under Setup -&gt; Security Control. Its simple redirect and not SLO implementation. There is no need for your user to signout from IdP. Logout URL is can be internal site or any landing page for your users once they are done using Coupa Application.</p>
+</div>
+<div class="" id="what_is_timeout_url_and_how_does_timeout_work_with_saml_implementation">
+<h2 class="title sectiontitle">What is Timeout URL and how does timeout work with SAML implementation?</h2>
+<p class="">Coupa application has session expiration timeout set under System-&gt;Security Control. After session timeout Coupa will redirect to the Timeout URL (Same as Login URL), which will start IdP Initiated or SP Initiated SSO based on URL. In most cases Timeout URL is same as Login URL. Users will see login page based on Coupa session expiration and IdP timeout set for users.</p>
+</div>
+<div class="" id="what_information_does_coupa_use_to_identify_idp_user">
+<h2 class="title sectiontitle">What information does Coupa use to identify IdP user?</h2>
+<p class="">Coupa uses the NameID value from the SAML response to lookup the corresponding Coupa user. The "Single Sign-On ID" must be provided during user creation for SAML login to succeed. The Single Sign-On ID can be configured by editing the user in the User interface or User integration using Coupa API.</p>
+</div>
+<div class="" id="is_there_way_to_access_coupa_and_bypass_saml">
+<h2 class="title sectiontitle">Is there way to access Coupa and bypass SAML?</h2>
+<p class="">Coupa provides this support interface to bypass the SSO authentication process. The URL is <code class="ph codeph">https://{your-site}.coupahost.com/sessions/support_login</code>
+<b>. </b>This is intended for administrators only since normal users may not have a Coupa password set when in Coupa when they were created. This prevents them from logging in with anything other than your SSO. You can optionally create a user with a Coupa password to log in through this support interface. This is useful for users that are not part of IdP but still need to access Coupa.</p>
+</div>
+<div class="" id="when_does_coupa_need_a_relaystate">
+<h2 class="title sectiontitle">When does Coupa need a RelayState?</h2>
+<p class="">RelayState is must for IdP-Initiated SSO and is not required for SP-Initiated SSO. RelayState is required by Service Provider to identify customer's Coupa instance. RelayState can be passed as QueryString or separate POST variable along SAMLResponse.</p>
+<p class="">This will result in the following suffix after the ACS URL: <code class="ph codeph">/sp/ACS.saml2?RelayState=https://&lt;coupa-instance-domain-name&gt;/sessions/saml_post</code>.</p>
+<p class="">One easy way is to append RelayState as QueryString to AssertionConsumerService URL you find in in stage or production metadata xml<b>. </b>
+</p>
+</div>
+<div class="" id="what_is_the_work_flow_for_idp-initiated_sso_and_sp-initiated_sso">
+<h2 class="title sectiontitle">What is the work flow for IdP-Initiated SSO and SP-Initiated SSO?</h2>
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="http://documentation.pingidentity.com/display/PF/IdP-Initiated+SSO--POST" title="">http://documentation.pingidentity.com/display/PF/IdP-Initiated+SSO--POST</a>
+</p>
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="http://documentation.pingidentity.com/display/PF/SP-Initiated+SSO--POST-POST" title="">http://documentation.pingidentity.com/display/PF/SP-Initiated+SSO--POST-POST</a>
+</p>
+</div>
+<div class="" id="how_should_we_setup_saml_for_stage_and_production_coupa_instance">
+<h2 class="title sectiontitle">How should we setup SAML for Stage and Production Coupa Instance?</h2>
+<p class="">The Assertion end point URL (AssertionConsumerService) for Coupa Stage is <code class="ph codeph">https://sso-stg1.coupahost.com/sp/ACS.saml2</code> and for Coupa production is <code class="ph codeph">https://sso-prd1.coupahost.com/sp/ACS.saml2</code>. To have SAML working on both stage and production there needs to be two connection one for stage and another for production. If you do not have stage and only have production IdP, you can still create two different connection for Coupa Stage and Coupa Production instance. RelayState will be different for Stage and Production connection.</p>
+</div>
+<div class="" id="can_we_do_user_provisioning_using_saml">
+<h2 class="title sectiontitle">Can we do user provisioning using SAML?</h2>
+<p class="">Current Coupa SAML setup is only for authentication and not user provision within Coupa. Authorization is done via Coupa user role. SAML role is to authenticate user.</p>
+</div>
+<div class="" id="what_idp_systems_has_coupa_integrated_with">
+<h2 class="title sectiontitle">What IdP systems has Coupa integrated with?</h2>
+<p class="">Any IdP system that implements SAML 2.0. ADFS 2.0, PingFederate, Novell Access Manager, Oracle Access Manager, Tivoli access manager, open source project like Shibboleth, custom built solutions, etc. We currently do not provide IdP sample code, they are available online and from open source projects.</p>
+</div>
+<div class="" id="seeing_invalid_inresponseto_attribute_hg3av..............fg_-_unsolicited_responses_cannot_have_an_inresponseto._error">
+<h2 class="title sectiontitle">Seeing "Invalid InResponseTo attribute (Hg3Av..............FG) - unsolicited responses cannot have an InResponseTo." error</h2>
+<p class="">Three reasons for such errors:</p>
+<ol class="ol">
+<li class="li">SAML response from IdP side is using same AuthnToken, replaying the SAML</li>
+<li class="li">Duplicate SAML POST from the same login page, for example two POST with same SAML response.</li>
+<li class="li">Configured PingFederate on IdP side with RelayState in ACS URL and using SP-Initiation with Coupa.</li>
+</ol>
+<p class="">1 and 2 can be detected by any using Firefox and saml_tracer plugin or any HTTP tracking tool. 3 is valid of IdP side using PingFederate, they should not set RelayState for SP-Init setup with Coupa.</p>
+</div>
+<div class="" id="gather_saml_trace_to_troubleshoot_sso_related_issues">
+<h2 class="title sectiontitle">Gather SAML Trace to troubleshoot SSO related issues</h2>
+<p class="">From a support perspective, we sometimes need to gather data related to SAML / SSO authentication failure.</p>
+<p class="">There are 2 browser-based tools we can use for this, which are easy enough:</p>
+<p class="">
+<b>Firefox</b>
+</p>
+<p class="">SAML Tracer: <a data-scope="external" data-name="" target="_blank" href="https://addons.mozilla.org/en-us/firefox/addon/saml-tracer/" title="">https://addons.mozilla.org/en-us/firefox/addon/saml-tracer/</a>
+</p>
+<p class="">Once installed will appear like following screenshot and need to be opened while doing the SSO Connection:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_user_authentication/images/image1.png" alt="" title="" width="">
+<p class="">The data you need to collect is found as a POST*, under the SAML tab:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_user_authentication/images/image2.png" alt="" title="" width="">
+<p class="">
+<b>Chrome</b>
+</p>
+<p class="">SAML Tracer: <a data-scope="external" data-name="" target="_blank" href="https://chrome.google.com/webstore/detail/saml-chrome-panel/paijfdbeoenhembfhkhllainmocckace?hl=en" title="">https://chrome.google.com/webstore/detail/saml-chrome-panel/paijfdbeoenhembfhkhllainmocckace?hl=en</a>
+</p>
+<p class="">Once installed this will add a tab on your Developers Tool in Chrome, and again, you will find a POST* and you will have to look at the SAML tab:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_user_authentication/images/image3.png" alt="" title="" width="">
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_user_authentication/images/image4.png" alt="" title="" width="">
+<p class="">*POST call are done towards:</p>
+<p class="">
+<code class="ph codeph">https://devsso35.coupahost.com</code> for Sandox and for dev environment</p>
+<p class="">
+<code class="ph codeph">https://prdsso40.coupahost.com</code> for Production instances</p>
+</div>
+</div>
+</article>

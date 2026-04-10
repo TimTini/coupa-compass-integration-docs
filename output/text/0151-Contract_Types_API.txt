@@ -1,0 +1,19 @@
+Contract Types API
+
+Associations
+
+This resource is associated with Contracts API.
+
+Elements
+
+The following elements are available for the Contract Types API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+active 	Active 	no 	no 	any 	yes 	yes 	boolean
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime
+created-by 	User who created 	no 	no 	any 	 	yes 	 User
+description 	Description 	no 	no 	any 	yes 	yes 	text
+id 	Coupa unique identifier 	no 	no 	any 	 	yes 	integer
+name 	Name 	yes 	yes 	any 	yes 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime
+updated-by 	User who updated 	no 	no 	any 	 	yes 	 User

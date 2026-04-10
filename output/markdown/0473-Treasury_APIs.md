@@ -1,0 +1,49 @@
+---
+title: "Treasury APIs"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-apis"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-apis"
+status_code: 200
+fetched_at: "2026-04-09T12:00:55+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Treasury Integrations"
+  - "Treasury APIs"
+---
+
+# Treasury APIs
+
+Retrieve and update Treasury Management data such as cash flows and account balances.
+
+## Overview
+
+Treasury REST APIs are structured in the same way as Coupa Core APIs with the following considerations:
+
+- Only JSON is supported.
+
+- When using the offset parameter, order by the object ID to prevent any data issues.
+
+To view specific endpoints and object structures, see these resources:
+
+- To see REST APIs in your Treasury Management instance, see [View Treasury API Documentation](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-apis/view-treasury-api-documentation).
+
+- To download the Postman collection, see [Postman Collection for Coupa APIs](https://compass.coupa.com/x285429.xml). Only the JSON collection includes Treasury APIs.
+
+For more information, see the [Coupa Core API](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api).
+
+## Authentication flow
+
+The Treasury API uses Coupa Core OpenID Connect (OIDC) authentication in your Coupa Core instance. Use the following authentication flow:
+
+- Create an OIDC client in your Coupa Core instance with a **Grant Type** set to **Client Credentials**. Apply scopes to your client depending on which endpoint you need to access. For specific steps for creating a client in Coupa Core and accessing a token, see [OAuth 2.0 and OIDC](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/oauth-2.0-and-oidc).
+
+- Generate the access token using your Coupa Core instance.
+
+- Send subsequent Treasury API requests to your Treasury Management URL. See the Base URL section below.
+
+## Base URL
+
+The Treasury REST API uses your Treasury Management instance URL, for example: 
+
+`https://.ctm.coupahost.com/v1/cash-management/account-balances`
+
+- [View Treasury API Documentation](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-apis/view-treasury-api-documentation)

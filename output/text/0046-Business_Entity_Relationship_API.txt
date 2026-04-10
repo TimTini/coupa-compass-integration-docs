@@ -1,0 +1,18 @@
+Business Entity Relationship API
+
+Association
+
+This resource is associated with the Business Entitites API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+business_entity_id 	Business Entity ID 	false 	false 	any 	yes 	yes 	integer
+related_business_entity_id 	Related Business Entity ID 	false 	true 	any 	yes 	yes 	integer
+relationship_type 	Relationship Type 	true 	false 	parent_child 	yes 	yes 	string(255)
+status 	Status 	false 	false 	any 	yes 	yes 	string(255)
+id 	Coupa unique identifier 	false 	false 	any 	yes 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+created_by 	User who created 	false 	false 	any 	yes 	yes
+updated_by 	User who updated 	false 	false 	any 	yes 	yes

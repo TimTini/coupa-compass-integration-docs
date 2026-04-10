@@ -1,0 +1,9 @@
+x295731.xml
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/x295731.xml
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZMd1GiEJkDYbFqDdjCbdw14K1mZWobakiXKX%2Ff1kZS2yAimgF514vDtSc4K%2Bs3I1%2BCd9h78GJJ9s1gv20OJkX1WI6Uw8TtLysipSgKJMy1IgVrNJUcxmLPmOjpTRC1ZkgiUbogE3mjxoHyBRVKko01zsRC4vpuFk04vqB0vWQUVp8JH55L0lyXljBgspHjw6DV1mnj1kjek5WPvu7SHAFoiscT7cco6HZ1OIQUBZrK%2F6Tw3kfsqJDB%2FDseSzcQ3GhAu2h45wdFqHBuoF35DaGW8a010p3Sr9c8EGp6UBUiQ19EjSN3K7ur2RIal8PBaR%2FLLb1Wn9bbtjyYoI3Rjp2mgaenRbdC%2Bqwfu7m9OQ0XkWA8V4Y09%2BjsuSQ99pknFJH1uy%2F%2Fyz5XyslnEX7oT%2FMR1eHbDlWa9zftL5KGPl19Bqs65Np5o%2F46R78OeV8iyPiGrTfSyV2IPqVm3rkCjMsOvM72uH4MNivBvCAPjyKPv%2FH13%2BBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fprocurement%2Fclosing-purchase-orders
+
+Observed redirect page title: Coupa Portals - Sign In

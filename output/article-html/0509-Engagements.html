@@ -1,0 +1,276 @@
+<article class="" id="engagements">
+<h1 class="title">Engagements</h1>
+<div class="body">
+<p class="">The Engagements quick integration import allows Hiperos 3PM
+users to directly upload spreadsheets via the HTTPS protocol. This
+allows customers to perform inbound imports in an automated manner
+without the need of a Engagement interface.</p>
+<div class="" id="post_url-d126e7388">
+<h2 class="title sectiontitle">Post URL</h2>
+<p class="">
+<code class="ph codeph">https://&lt;CRA_TENANT&gt;.hiperos.com/QuickIntegration/Engagements</code>
+</p>
+</div>
+<div class="" id="engagements-d126e7395">
+<h2 class="title sectiontitle">Engagements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Field</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">EngagementNumber</td>
+<td class="entry" align="">Enter a reference key that uniquely identifies the engagement
+record in Hiperos 3PM.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">EngagementName (*)</td>
+<td class="entry" align="">Enter the name of the engagement.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Enter a short description of the engagement.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">EngagementMgrUsername (*)</td>
+<td class="entry" align="">Enter the username of the internal Client manager. Must match an
+existing username.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Organizations (*)</td>
+<td class="entry" align="">Enter the names of the organizations participating in this
+engagement. Must match an existing organization defined under
+Organization Unit Management. Multiple values must be separated
+with the pipe character (|).</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Activated</td>
+<td class="entry" align="">[Yes or No] Enter Yes to mark the engagement as active.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">true/false</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ContractNumber</td>
+<td class="entry" align="">Enter the contract reference number assigned to the contract
+upon creation.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ContractAmount</td>
+<td class="entry" align="">Enter the total (or annual) dollar value assigned to the
+contract.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">CurrencyCode</td>
+<td class="entry" align="">
+<p class="">Enter the currency code.AUD &gt; Australian Dollar</p>
+<p class="">
+CAD &gt; Canadian Dollar</p>
+<p class="">
+CNY &gt; Chinese Yuan</p>
+<p class="">
+EUR &gt; Euro</p>
+<p class="">
+GBP &gt; British Pound</p>
+<p class="">
+USD &gt; US Dollar</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">AUD &gt; Australian Dollar</p>
+<p class="">
+CAD &gt; Canadian Dollar</p>
+<p class="">
+CNY &gt; Chinese Yuan</p>
+<p class="">
+EUR &gt; Euro</p>
+<p class="">
+GBP &gt; British Pound</p>
+<p class="">
+USD &gt; US Dollar</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">StartDate (*)</td>
+<td class="entry" align="">Enter the start date of contract period of performance.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">DateTime</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ExpirationDate</td>
+<td class="entry" align="">Enter the end date of contract period of performance.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">DateTime</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ContractDocumentFileName</td>
+<td class="entry" align="">Enter the name of the engagement contract.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">AtRiskFee</td>
+<td class="entry" align="">Enter the dollar amount that will be used to calculate
+performance-based compensation for a supplier or relationship based
+on the final score of an assessment from a performance program.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">RiskRating</td>
+<td class="entry" align="">Enter the appropriate assessment of overall risk assigned to the
+engagement. See Setup Data Management on how to create and maintain
+these values.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Geography</td>
+<td class="entry" align="">Enter the location where the contract will be utilized. Must
+match an existing geography defined under Setup Data
+Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Classification</td>
+<td class="entry" align="">Enter the engagement segmentation classification. Classification
+indicates the type of business relationship the client has with the
+engagement (e.g., commodity, strategic) and can be populated with
+any labels the client organization uses to classify suppliers. Must
+match an existing classification defined under Setup Data
+Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Category</td>
+<td class="entry" align="">Enter the services classification for the engagement. Must match
+an existing category defined under Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SubCategory</td>
+<td class="entry" align="">Enter the services subclassification for the engagement. See
+Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">HiperosFamily</td>
+<td class="entry" align="">Enter the category. Must match an existing Hiperos Category
+Family type. Refer to Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">HiperosCategory</td>
+<td class="entry" align="">Enter the Hiperos category. Must match an existing Hiperos
+Category type. Refer to Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">HiperosSubCategory</td>
+<td class="entry" align="">Enter the Hiperos subcategory for the engagement.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ClientAccess</td>
+<td class="entry" align="">
+<p class="">Enter the client access to allow viewing and editing of the
+engagement record.Manager Only</p>
+<p class="">
+Team</p>
+<p class="">
+All</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">(*)Required</p>
+</div>
+</div>
+</article>

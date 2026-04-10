@@ -1,0 +1,91 @@
+---
+title: "Purchase Order Line Change API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-line-change-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-line-change-api"
+status_code: 200
+fetched_at: "2026-04-09T11:59:55+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Purchase Orders API (/purchase_orders)"
+  - "Purchase Order Line Change API"
+---
+
+# Purchase Order Line Change API
+
+## Associations
+
+This resource is associated with [Purchase Order Change API](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-change-api).
+
+## Elements
+
+| **Element** | **Description** | **Req'd** | **Unique** | **Allowable Value** | **In** | **Out** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| account | The account object. See [Account payload behavior](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-line-change-api#account_payload_behavior) below. | yes | | | yes | yes | Account |
+| account-allocations | account_allocations | | | | yes | yes | OrderLineChangeAllocation |
+| asset-tags | Asset tags | | | | yes | | AssetTag |
+| attachments | attachments | | | | | yes | Attachment |
+| commodity | commodity | | | | yes | yes | Commodity |
+| contract | contract | | | | yes | yes | Contract |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| currency | Currency of transaction | yes | | | | yes | Currency |
+| department | department | | | | | yes | Department |
+| description | description | yes | | | yes | yes | string(255) |
+| easy-form-response-id | Easy Form Response Id | | | | | yes | |
+| extra-line-attribute | Extra line attribute | | | | yes | yes | ExtraLineAttributes::OrderLineChangeAttribute |
+| id | Coupa unique identifier | | | | | yes | integer |
+| item | item | | | | yes | yes | Item |
+| line-num | line_num | | | | | yes | string(255) |
+| line-owner | Line owner | | | | | yes | |
+| manufacturer-name | Manufacturer Name | | | | yes | yes | string(255) |
+| manufacturer-part-number | Manufacturer Part Number | | | | yes | yes | string(255) |
+| milestones | Milestones | | | | yes | yes | |
+| minimum-order-quantity | Minimum order quantity | | | | | yes | decimal(30,6) |
+| need-by-date | need_by_date | | | | yes | yes | datetime |
+| order-header-change-id | order_header_change_id | | | | | yes | integer |
+| order-increment | Order increment | | | | | yes | decimal(30,6) |
+| order-line-change-tax-detail | Order line change tax detail | yes | | | yes | | |
+| order-line-id | order_line_id | | | | yes | yes | integer |
+| pending-delete | Pending delete | | | | yes | yes | boolean |
+| period | period | | | | yes | yes | Period |
+| price | price | yes | | | yes | yes | decimal(30,6) |
+| quantity | quantity | yes | | | yes | yes | decimal(30,6) |
+| recurring-rules | Recurring rules | | | | | yes | |
+| savings-pct | savings_pct | | | | yes | yes | decimal(8,2) |
+| service-type | Service type | | | | | yes | string |
+| source-part-num | Source part num | | | | yes | yes | string(255) |
+| supp_aux_part_num | Supp aux part num | | | | yes | yes | text |
+| supplier | supplier | | | | | yes | Supplier |
+| total | total | yes | | | | yes | decimal(30,4) |
+| uom | unit of measure | | | | yes | yes | Uom |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+
+## Account payload behavior
+
+The Account payload can differ depending on whether you're using static or dynamic accounts:
+
+- For lines that use static accounts, the [Account](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/accounts-api-(accounts)) object uses `account_type_id` to reference the account type.
+
+- For lines that use dynamic accounts, the [Account](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/accounts-api-(accounts)) object uses the [account type](https://compass.coupa.com/x285781.xml) object's `id` element to reference the account type.
+
+Static account payload sample
+
+```text
+<account>
+<account_type_id>1</account_type_id>
+<code>account-code-goes-here</code>
+</account>
+```
+
+Dynamic account payload sample
+
+```text
+<account>
+<account_type>
+<id>1</id>
+</account_type>
+<code>account-code-goes-here</code>
+</account>
+```

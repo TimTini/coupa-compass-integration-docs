@@ -1,0 +1,77 @@
+<article class="" id="reference1">
+<h1 class="title">Risk Assess Program Object</h1>
+<p class="font-size-lg">The Program object contains evaluation program data related to an evaluation. The Program object contails framework, regulations, scoring setup, and timeline for the evaluation process.</p>
+<div class="body refbody">
+<div class="">
+<h2 class="title sectiontitle">Associations</h2>
+<p class="">Access the Program object through the Evaluations API. For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations" title="Retrieve evaluation data from your Coupa Risk Assess tenant, such as evaluation scores, comments, and attachments.">Risk Assess Evaluations API</a>.</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Program object:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">entityId</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique identifier for the program in CRA.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+<td class="entry" align="">
+<p class="">Designation of the program.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+<td class="entry" align="">
+<p class="">Current status of the program within CRA.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">links</td>
+<td class="entry" align="">Array of objects</td>
+<td class="entry" align="">Contains HATEOAS-style links, which facilitate navigation to specific APIs. Only currently populated for supplier-related objects, for example, a riskableObject that pertains to a supplier. For other APIs, the value is null.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

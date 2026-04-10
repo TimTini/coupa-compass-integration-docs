@@ -1,0 +1,134 @@
+<article class="" id="payment_term_import">
+<h1 class="title">Payment Term Import</h1>
+<div class="body">
+<div class="" id="section_xdy_nhl_f1c">
+<h2 class="title sectiontitle">Payment Terms</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Code</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Payment Term Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Description of Payment Term</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Days For Net Payment</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Number of days in order to pay the invoice</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Days For Discount Payment</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Number of days in order to receive discount rate</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Discount Rate (%)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">float</td>
+<td class="entry" align="">Discount percentage if paid within number of days for discount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align="">Type of Payment Term</td>
+<td class="entry" align="">DaysAfterNetPaymentTerm, SpecificDayPaymentTerm, BaseEomToDaysPaymentTerm, DaysToBaseEomPaymentTerm</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Discount Cutoff Day</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Invoices before this day are eligible for discount else they will fall into the next month</td>
+<td class="entry" align="">1..31</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Discount Due Month</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">It is used to calculate the invoice's discount due date along with the discount due day</td>
+<td class="entry" align="">0..6</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Discount Due Day</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">It is used to calculate the invoice's discount due date.</td>
+<td class="entry" align="">1..31</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Net Cutoff Day</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">To determine payment due date if the invoice should be counted against this month or next</td>
+<td class="entry" align="">1..31</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Net Due Month</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">To determine the invoice's payment due date</td>
+<td class="entry" align="">0..6</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Net Due Day</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">To determine the invoice's payment due date</td>
+<td class="entry" align="">1..31</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Content Groups</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Enter in content groups (for security)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Active</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Is this Payment Term available for selection? Yes/No</td>
+<td class="entry" align="">true</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

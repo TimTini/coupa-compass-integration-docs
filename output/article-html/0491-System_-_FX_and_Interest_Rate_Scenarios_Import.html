@@ -1,0 +1,674 @@
+<article class="" id="system_-_fx_and_interest_rate_scenarios_import">
+<h1 class="title">System - FX and Interest Rate Scenarios Import</h1>
+<div class="body">
+<div class="" id="format_descriptions-d94e6949">
+<h2 class="title sectiontitle">Format Descriptions</h2>
+<p class="">
+<a data-scope="peer" data-name="" target="" href="/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/System_-_FX_and_Interest_Rate_Scenarios_Import.pdf" title="">PDF
+      Version</a>
+</p>
+</div>
+<div class="" id="fx_rate_not_per_period">
+<h2 class="title sectiontitle">FX Rate Not Per Period</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="fx_rate_per_period">
+<h2 class="title sectiontitle">FX Rate Per Period</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Date (from)</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date as of which the rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="interest_rate_not_per_period">
+<h2 class="title sectiontitle">Interest Rate Not Per Period</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Days</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">*</p>
+</td>
+<td class="entry" align="">
+<p class="">Number of days in the time range.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Time Range</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">*</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Interest Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">* - Only one field is mandatory, depending on the scenario type (time range or
+        not).</p>
+</div>
+<div class="" id="interest_rate_per_period_no_multicurve">
+<h2 class="title sectiontitle">Interest Rate Per Period, No
+        Multicurve</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">From</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date as of which the rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Days</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">*</p>
+</td>
+<td class="entry" align="">
+<p class="">Number of days in the time range.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Time Range</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">*</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Interest Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">* - Only one field is mandatory, depending on the scenario type (time range or
+        not).</p>
+</div>
+<div class="" id="interest_rate_per_period_no_multicurve-d94e7477">
+<h2 class="title sectiontitle">Interest Rate Per Period,
+        No Multicurve</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">From</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date as of which the rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Days</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Number of days in the time range.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Time Range</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Interest Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Interest type</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">0 = Discount 1 = Tenor</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Tenor</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">*</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">* - If Interest type = 1 (Tenor), this field is mandatory. If Interest rate = 0
+        (Discount), this field must be empty.</p>
+</div>
+<div class="" id="import_function-d94e7700">
+<h2 class="title sectiontitle">Import Function</h2>
+<p class="">The import function is
+        available on <b>Commodity Scenarios</b>, <b>Interest Rate Change Scenarios</b>, <b>Interest
+          Scenarios</b>, <b>Rate Change Scenarios</b>, and <b>Rate Scenarios</b>.</p>
+<p class="">For any
+        configured scenario, click the <b>Details</b> button to open the details pop-up window.
+        Under <b>Import From File</b>, use the <b>Choose File</b> button to select a file for
+        import.</p>
+<p class="">The import function processes files in standard text formats:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII</p>
+</li>
+<li class="li">
+<p class="">Unicode</p>
+</li>
+</ul>
+<p class="">One file contains data about one specific scenario. That scenario must be set up in
+        Coupa Treasury prior to the file import.</p>
+<p class="">Each imported data set overwrites any
+        existing data sets.</p>
+</div>
+<div class="" id="format_rules-d94e7738">
+<h2 class="title sectiontitle">Format Rules</h2>
+<p class="">The file cannot contain any
+        headers or format descriptions. Do not enclose text in quotation marks.</p>
+<p class="">One file may
+        contain multiple data sets. Each row contains exactly one data set.</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII Code 13: carriage return shows the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">ASCII Code 10: new line shows the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">The last data set concludes by an end of file (EOF).</p>
+</li>
+</ul>
+<p class="">In the table above, the value for “char” shows how many characters is the maximum
+        length for that field in the imported file.</p>
+<p class="">For decimals, negative numbers are marked
+        with a leading minus sign. There may be a space between the minus sign and the number. For
+        values without decimal places, the decimal separator is optional:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Example: 12345.99, -12345.00, 12345</p>
+</li>
+</ul>
+<p class="">Days and months are always 2-digit values, whereas years are 4 digits.</p>
+<p class="">Date
+        separator, date sequence, and file format must match your user settings.</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Field Separator</b>– semicolon (;)</p>
+</li>
+<li class="li">
+<p class="">
+<b>Decimal Separator</b>– period (.), comma (,), no thousands separators</p>
+</li>
+<li class="li">
+<p class="">
+<b>Decimal</b>: Negative amounts must be marked with a minus sign (-); blanks between
+            the minus sign and the amount are allowed.</p>
+</li>
+<li class="li">
+<p class="">
+<b>Integer</b> – No thousands or decimal separators</p>
+</li>
+<li class="li">
+<p class="">
+<b>Date Separator</b>– slash (/), period (.), comma (,)</p>
+</li>
+<li class="li">
+<p class="">
+<b>Date Sequence</b>– mdy, dmy, ymd</p>
+</li>
+</ul>
+</div>
+<div class="" id="example_data_sets-d94e7796">
+<h2 class="title sectiontitle">Example Data Sets</h2>
+<p class="">
+<b>FX Rate Not Per
+          Period</b>
+</p>
+<p class="">EUR;1</p>
+<p class="">USO;1,20156</p>
+<p class="">CHF;1,5751</p>
+<p class="">
+<b>FX Rate Per Period
+        </b>
+</p>
+<p class="">11.10.2019;USD;1,2362</p>
+<p class="">11.10.2019;JPY;135,19</p>
+<p class="">11.10.2019;GBP;0,6887</p>
+<p class="">
+<b>Interest
+          Rate Not Per Period
+        </b>
+</p>
+<p class="">EUR;1;1D;2,156</p>
+<p class="">EUR;7;1W;2,218</p>
+<p class="">EUR;14;2W;2,496</p>
+<p class="">
+<b>Interest Rate
+          Per Period, No Multi-Curve
+        </b>
+</p>
+<p class="">11.10.2019;EUR;1;1D;2,156</p>
+<p class="">11.10.2019;EUR;7;1W;2,218</p>
+<p class="">11.10.2019;EUR;14;2W;2,496</p>
+<p class="">
+<b>Interest
+          Rate Per Period, With Multi-Curve
+        </b>
+</p>
+<p class="">11.10.2019;EUR;1;1D;2,156;0</p>
+<p class="">11.10.2019;EUR;7;1W;2,218;0</p>
+<p class="">11.10.2019;EUR;14;2W;2,496;0</p>
+<p class="">11.10.2019;EUR;1;1D;2,056;1;3M</p>
+<p class="">11.10.2019;EUR;7;1W;2,118;1;3M</p>
+<p class="">11.10.2019;EUR;14;2W;2,396;1;3M</p>
+</div>
+</div>
+</article>

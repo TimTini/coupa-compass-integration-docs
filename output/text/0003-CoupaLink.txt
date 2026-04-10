@@ -1,0 +1,35 @@
+CoupaLink
+
+CoupaLink is Coupa's API-based open integration platform. It allows technology partners and independent software vendors (ISVs) to integrate their products with Coupa. CoupaLink supports APIs for various solution areas like:
+
+-
+
+Contracts,
+
+-
+
+Tax Engines,
+
+-
+
+ERP Integrations,
+
+-
+
+Invoicing
+
+-
+
+Payments
+
+-
+
+Travel and Expenses
+
+-
+
+Middleware Platforms
+
+Partners are able to work closely with Coupa to define streamlined business processes integrated via the APIs that result in a well-architected end to end solution for our customers. These integrated solutions help our customers adopt Coupa faster at a significantly lower cost resulting in quantifiable value for their organizations.
+
+Go to https://www.coupa.com/coupalink/ to learn more.

@@ -1,0 +1,3 @@
+Resources
+
+We've organized our API endpoints by the type of object. Choose from the following categories.

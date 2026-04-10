@@ -1,0 +1,25 @@
+---
+title: "Risk Assess Parent Relationship Object"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/risk-assess-parent-relationship-object"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNj9MwEP0rke%2BO4yQtxWordbcgKi0QbQsHLqvBmbLWJnbwOEv59zguoILUPeZl3teMlwR9N6jNGB7tPX4fkUK2267Yw2xWLWQlNYeyRl7Pq5ZDhcjL42J%2BrFupq5lk2Wf0ZJxdsTIvWLYjGnFnKYANESrKOS9qXrw%2ByFIVUhWLfFZ%2BYdk2mhgLIREfQxhICaHdOADHU0BvocvdU4Bcu17AMPz37yHCAxANzof4JQWenlxZjAXU5famf6NBhleCyImpG8veOq8xFVyxI3SEU9AmCphn%2FIs03gWnXXdjbGvstxUbvVUOyJCy0COpoNV%2B8%2F5OxaLq63mI1LvDoeHNx%2F2BZRsi9FOlW2dp7NHv0T8bjZ%2Fu7y5LpuR5KpTqTZriGpdlp76zpNKNXo40%2FM7P1stpWqVT%2BAv%2By3T4k4Ctr2Zdigvls82gPkSp3bZxndE%2Fp033EK47yVwmxLT8mEYV9mC6Tdt6JIo77Dr349YjhHiY4Me4ALE%2B2%2F77RNe%2FAA%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Frisk-assess-parent-relationship-object"
+status_code: 200
+fetched_at: "2026-04-09T12:01:06+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Risk Assess Integrations"
+  - "Risk Assess REST API"
+  - "GET Relationships"
+  - "Risk Assess Parent Relationship Object"
+---
+
+# Risk Assess Parent Relationship Object
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/risk-assess-parent-relationship-object](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/risk-assess-parent-relationship-object)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNj9MwEP0rke%2BO4yQtxWordbcgKi0QbQsHLqvBmbLWJnbwOEv59zguoILUPeZl3teMlwR9N6jNGB7tPX4fkUK2267Yw2xWLWQlNYeyRl7Pq5ZDhcjL42J%2BrFupq5lk2Wf0ZJxdsTIvWLYjGnFnKYANESrKOS9qXrw%2ByFIVUhWLfFZ%2BYdk2mhgLIREfQxhICaHdOADHU0BvocvdU4Bcu17AMPz37yHCAxANzof4JQWenlxZjAXU5famf6NBhleCyImpG8veOq8xFVyxI3SEU9AmCphn%2FIs03gWnXXdjbGvstxUbvVUOyJCy0COpoNV%2B8%2F5OxaLq63mI1LvDoeHNx%2F2BZRsi9FOlW2dp7NHv0T8bjZ%2Fu7y5LpuR5KpTqTZriGpdlp76zpNKNXo40%2FM7P1stpWqVT%2BAv%2By3T4k4Ctr2Zdigvls82gPkSp3bZxndE%2Fp033EK47yVwmxLT8mEYV9mC6Tdt6JIo77Dr349YjhHiY4Me4ALE%2B2%2F77RNe%2FAA%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Frisk-assess-parent-relationship-object](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNj9MwEP0rke%2BO4yQtxWordbcgKi0QbQsHLqvBmbLWJnbwOEv59zguoILUPeZl3teMlwR9N6jNGB7tPX4fkUK2267Yw2xWLWQlNYeyRl7Pq5ZDhcjL42J%2BrFupq5lk2Wf0ZJxdsTIvWLYjGnFnKYANESrKOS9qXrw%2ByFIVUhWLfFZ%2BYdk2mhgLIREfQxhICaHdOADHU0BvocvdU4Bcu17AMPz37yHCAxANzof4JQWenlxZjAXU5famf6NBhleCyImpG8veOq8xFVyxI3SEU9AmCphn%2FIs03gWnXXdjbGvstxUbvVUOyJCy0COpoNV%2B8%2F5OxaLq63mI1LvDoeHNx%2F2BZRsi9FOlW2dp7NHv0T8bjZ%2Fu7y5LpuR5KpTqTZriGpdlp76zpNKNXo40%2FM7P1stpWqVT%2BAv%2By3T4k4Ctr2Zdigvls82gPkSp3bZxndE%2Fp033EK47yVwmxLT8mEYV9mC6Tdt6JIo77Dr349YjhHiY4Me4ALE%2B2%2F77RNe%2FAA%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Frisk-assess-parent-relationship-object)
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

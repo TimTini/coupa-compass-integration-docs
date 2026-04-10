@@ -1,0 +1,46 @@
+---
+title: "Supplier Remit To API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)/supplier-remit-to-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)/supplier-remit-to-api"
+status_code: 200
+fetched_at: "2026-04-09T11:59:21+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Suppliers API (/suppliers)"
+  - "Supplier Remit To API"
+---
+
+# Supplier Remit To API
+
+## Associations
+
+This API resource is available through [Invoices API](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-5926-da-5926).
+
+## Elements
+
+| **Element** | **Description** | **Req'd** | **Unique** | **Allowable Value** | **In** | **Out** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| city | City | yes | | | yes | yes | string(255) |
+| company-registration-number | Company Registration Number | | | | | yes | |
+| country | country | | | | yes | yes | |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| disclosure | Disclosure | | | | | yes | text |
+| id | Coupa unique identifier | | | | | yes | integer |
+| name | Name | | | | | yes | string(255) |
+| postal-code | Postal Code | yes | | | yes | yes | string(255) |
+| preferred-language | Preferred Language | | | | | yes | string(255) |
+| registered-company | Registered company | | | | | yes | Registered Company |
+| remit-to-code | Remit-to code | | yes | | yes | | string(255) |
+| state | State | | | | yes | yes | string(255) |
+| street1 | Street 1 | yes | | | yes | yes | string(255) |
+| street2 | Street 2 | | | | yes | yes | string(255) |
+| street3 | Street 3 | | | | yes | yes | string(255) |
+| street4 | Street 4 | | | | yes | yes | string(255) |
+| supplier-name | Supplier Name | | | | | yes | |
+| tax-number | Tax Number | yes | | | | yes | string(255) |
+| tax-prefix | Tax Prefix | | | | | yes | string(255) |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| validated-source | Indicates whether the address was originally created on the CSP (supplier) or via buyer integration (buyer). | | | | | yes | string(50) |

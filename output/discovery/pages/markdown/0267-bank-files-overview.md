@@ -1,0 +1,18 @@
+---
+title: "bank-files-overview"
+url: "https://compass.coupa.com/en-us/products/product-documentation/treasury-management-product-documentation/banking/bank-connectivity/bank-files-overview"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd8TOyGUxgIkWjYNqduiQvewl8o4l9WqY3u%2BTsf%2BfR2zVWwSfczJPV%2F3eo6i146vhvBk7uHnABiyzXpBHrumYd1VdZVPZjDN62ra5ULO9vnkULLr64bt5aEh2TfwqKxZkKpgJNsgDrAxGIQJEWKRzeq8ZDtW8umMl5OirpvvJFtHF2VESMynEBxySqUdnMjhGMAboQv7HEQhbU%2BFc%2F%2F9e4ywE4jO%2BhC%2FSgrHZ1uxgYm6Wt%2F0H6Qow4wiWjqWI9lH6yWkhgtyEBphTNpGAfUCb0jrbbDS6htlOmV%2BLMjgDbcCFXIjekAeJN%2BuPt%2Fx2JTvT0PIP%2B12bd5%2B3e5ItkIEP1a6tQaHHvwW%2FIuS8HB%2Fd14yJS9SoVRv1KSXuCQ79togT0d6P5L7k58s5%2BM0T7fwZ%2Fz36eJvArK8mHVOz5RPNo5%2FiVKbdWu1kr%2FHTfciXHYqizIhqssPaZRDL5RedZ0HxLhDre2vWw8ixMMEP8QF0OXJ9t83unwF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftreasury-management-product-documentation%2Fbanking%2Fbank-connectivity%2Fbank-files-overview"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:57:14+00:00"
+---
+
+# bank-files-overview
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/treasury-management-product-documentation/banking/bank-connectivity/bank-files-overview](https://compass.coupa.com/en-us/products/product-documentation/treasury-management-product-documentation/banking/bank-connectivity/bank-files-overview)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd8TOyGUxgIkWjYNqduiQvewl8o4l9WqY3u%2BTsf%2BfR2zVWwSfczJPV%2F3eo6i146vhvBk7uHnABiyzXpBHrumYd1VdZVPZjDN62ra5ULO9vnkULLr64bt5aEh2TfwqKxZkKpgJNsgDrAxGIQJEWKRzeq8ZDtW8umMl5OirpvvJFtHF2VESMynEBxySqUdnMjhGMAboQv7HEQhbU%2BFc%2F%2F9e4ywE4jO%2BhC%2FSgrHZ1uxgYm6Wt%2F0H6Qow4wiWjqWI9lH6yWkhgtyEBphTNpGAfUCb0jrbbDS6htlOmV%2BLMjgDbcCFXIjekAeJN%2BuPt%2Fx2JTvT0PIP%2B12bd5%2B3e5ItkIEP1a6tQaHHvwW%2FIuS8HB%2Fd14yJS9SoVRv1KSXuCQ79togT0d6P5L7k58s5%2BM0T7fwZ%2Fz36eJvArK8mHVOz5RPNo5%2FiVKbdWu1kr%2FHTfciXHYqizIhqssPaZRDL5RedZ0HxLhDre2vWw8ixMMEP8QF0OXJ9t83unwF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftreasury-management-product-documentation%2Fbanking%2Fbank-connectivity%2Fbank-files-overview](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd8TOyGUxgIkWjYNqduiQvewl8o4l9WqY3u%2BTsf%2BfR2zVWwSfczJPV%2F3eo6i146vhvBk7uHnABiyzXpBHrumYd1VdZVPZjDN62ra5ULO9vnkULLr64bt5aEh2TfwqKxZkKpgJNsgDrAxGIQJEWKRzeq8ZDtW8umMl5OirpvvJFtHF2VESMynEBxySqUdnMjhGMAboQv7HEQhbU%2BFc%2F%2F9e4ywE4jO%2BhC%2FSgrHZ1uxgYm6Wt%2F0H6Qow4wiWjqWI9lH6yWkhgtyEBphTNpGAfUCb0jrbbDS6htlOmV%2BLMjgDbcCFXIjekAeJN%2BuPt%2Fx2JTvT0PIP%2B12bd5%2B3e5ItkIEP1a6tQaHHvwW%2FIuS8HB%2Fd14yJS9SoVRv1KSXuCQ79togT0d6P5L7k58s5%2BM0T7fwZ%2Fz36eJvArK8mHVOz5RPNo5%2FiVKbdWu1kr%2FHTfciXHYqizIhqssPaZRDL5RedZ0HxLhDre2vWw8ixMMEP8QF0OXJ9t83unwF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftreasury-management-product-documentation%2Fbanking%2Fbank-connectivity%2Fbank-files-overview)
+
+Observed redirect page title: Coupa Portals - Sign In

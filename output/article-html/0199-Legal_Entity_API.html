@@ -1,0 +1,538 @@
+<article class="" id="legal_entity_api">
+<h1 class="title">Legal Entity API</h1>
+<div class="body">
+<div class="" id="associations-d957e176224">
+<h2 class="title sectiontitle">Associations</h2>
+<p class="">The API resource is associated with the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/expenses-api-(expense_reports)/expense-reports-api" title="">Expenses API</a>.</p>
+</div>
+<div class="" id="elements-d957e176233">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">bill-to-address</p>
+</td>
+<td class="entry" align="">
+<p class="">Bill to address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who created</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">User</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa unique identifier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name</p>
+</td>
+<td class="entry" align="">
+<p class="">true</p>
+</td>
+<td class="entry" align="">
+<p class="">true</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who updated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">User</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">abbreviation</p>
+</td>
+<td class="entry" align="">
+<p class="">Abbreviation</p>
+</td>
+<td class="entry" align="">
+<p class="">true</p>
+</td>
+<td class="entry" align="">
+<p class="">true</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">active</p>
+</td>
+<td class="entry" align="">
+<p class="">Active</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">parent</p>
+</td>
+<td class="entry" align="">
+<p class="">Parent</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Legal Entity</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">currency</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">true</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">bill-to-addresses</p>
+</td>
+<td class="entry" align="">
+<p class="">Bill to Address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Address</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">swift_code</p>
+</td>
+<td class="entry" align="">
+<p class="">SWIFT Code</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(11)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">accounting_method</p>
+</td>
+<td class="entry" align="">
+<p class="">Accounting Method</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">ifrs, ifrs_9, us_gaap</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(7)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">corporate_sector</p>
+</td>
+<td class="entry" align="">
+<p class="">Corporate Sector</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(16)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">use_fx_rates_reciprocal</p>
+</td>
+<td class="entry" align="">
+<p class="">Use FX rates reciprocal</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">description</p>
+</td>
+<td class="entry" align="">
+<p class="">Description</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(500)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external_identification_lei</p>
+</td>
+<td class="entry" align="">
+<p class="">Legal Entity Identifier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(20)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external_identification_name_matching</p>
+</td>
+<td class="entry" align="">
+<p class="">Deviating Name Matching</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external_identification_name_trading</p>
+</td>
+<td class="entry" align="">
+<p class="">Deviating Name Trading</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external_identification_swift</p>
+</td>
+<td class="entry" align="">
+<p class="">Deviating SWIFT Code</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(11)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external_identification_company_code</p>
+</td>
+<td class="entry" align="">
+<p class="">Company Code</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(11)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external_identification_creditor_id</p>
+</td>
+<td class="entry" align="">
+<p class="">SEPA Creditor ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(35)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external_identification_ic_identifier_gl</p>
+</td>
+<td class="entry" align="">
+<p class="">IC Identifier for GL Exports</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

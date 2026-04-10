@@ -1,0 +1,41 @@
+Account Validation Rules API Example Calls
+
+Different Query Options for Account Validation Rules
+
+Here are more examples of how to use the Account Validation Rules API to query and get the result set you want.
+
+This Query will give you the account validation rules which are not active
+
+https://<instance>.coupahost.com/api/account_validation_rules?active=false
+
+This query will give you the account validation rules created by a particular user with id == 55
+
+https://<instance>.coupahost.com/api/account_validation_rules?id=68&[created_by[id]]=55
+
+Account Validation Rule API Example
+
+In this example, we queried for a single Account Validation Rule record with an ID of 68.
+
+We did a GET to the URL:
+
+https://<instance url>/api/account_validation_rules/68
+
+or
+
+https://<instance url>/api/account_validation_rules?id=68
+
+Here is the response matching the search criteria: <?xml version="1.0" encoding="UTF-8"?> <account-validation-rule> <id type="integer">68</id> <created-at type="datetime">2013-10-30T09:20:53-06:00</created-at> <updated-at type="datetime">2014-01-08T13:22:14-07:00</updated-at> <name>AS_BS_A1001_1</name> <error-message>TEST_1 - Invalid Combination</error-message> <description>CAS_CBS</description> <active type="boolean">false</active> <segment-1-condition nil="true" /> <segment-1-min>BS1001</segment-1-min> <segment-1-max>BS1001</segment-1-max> <segment-2-condition>blank_value</segment-2-condition> <segment-2-min nil="true" /> <segment-2-max nil="true" /> <segment-3-condition nil="true" /> <segment-3-min>BS11200</segment-3-min> <segment-3-max>BS11200</segment-3-max> <segment-4-condition nil="true" /> <segment-4-min nil="true" /> <segment-4-max nil="true" /> <segment-5-condition nil="true" /> <segment-5-min nil="true" /> <segment-5-max nil="true" /> <segment-6-condition nil="true" /> <segment-6-min nil="true" /> <segment-6-max nil="true" /> <segment-7-condition nil="true" /> <segment-7-min nil="true" /> <segment-7-max nil="true" /> <segment-8-condition nil="true" /> <segment-8-min nil="true" /> <segment-8-max nil="true" /> <segment-9-condition nil="true" /> <segment-9-min nil="true" /> <segment-9-max nil="true" /> <segment-10-condition nil="true" /> <segment-10-min nil="true" /> <segment-10-max nil="true" /> <segment-11-condition nil="true" /> <segment-11-min nil="true" /> <segment-11-max nil="true" /> <segment-12-condition nil="true" /> <segment-12-min nil="true" /> <segment-12-max nil="true" /> <segment-13-condition nil="true" /> <segment-13-min nil="true" /> <segment-13-max nil="true" /> <segment-14-condition nil="true" /> <segment-14-min nil="true" /> <segment-14-max nil="true" /> <segment-15-condition nil="true" /> <segment-15-min nil="true" /> <segment-15-max nil="true" /> <segment-16-condition nil="true" /> <segment-16-min nil="true" /> <segment-16-max nil="true" /> <segment-17-condition nil="true" /> <segment-17-min nil="true" /> <segment-17-max nil="true" /> <segment-18-condition nil="true" /> <segment-18-min nil="true" /> <segment-18-max nil="true" /> <segment-19-condition nil="true" /> <segment-19-min nil="true" /> <segment-19-max nil="true" /> <segment-20-condition nil="true" /> <segment-20-min nil="true" /> <segment-20-max nil="true" /> <account-type> <id type="integer">9</id> <created-at type="datetime">2013-08-02T15:23:09-06:00</created-at> <updated-at type="datetime">2014-04-14T09:43:03-06:00</updated-at> <name>A0001</name> <active type="boolean">true</active> <currency> <id type="integer">1</id> <code>USD</code> </currency> <primary-contact> <id type="integer">66</id> <created-at type="datetime">2013-08-02T15:23:09-06:00</created-at> <updated-at type="datetime">2013-09-30T15:46:28-06:00</updated-at> <email>APQuestions@vailresorts.com</email> <name-prefix nil="true" /> <name-suffix nil="true" /> <name-additional nil="true" /> <name-given>CBS Billing/AP</name-given> <name-family>Contact</name-family> <name-fullname nil="true" /> <notes nil="true" /> <created-by> <id type="integer">15</id> <login>Tester</login> <email>Tester@testing.com</email> <employee-number>156720</employee-number> <firstname>Test</firstname> <lastname>ER</lastname> <salesforce-id nil="true" /> </created-by> <updated-by> <id type="integer">12</id> <login>Testinguser</login> <email>testinguser@test.com</email> <employee-number /> <firstname>Teasting</firstname> <lastname>USer</lastname> <salesforce-id nil="true" /> </updated-by> </primary-contact> <primary-address> <id type="integer">162</id> <created-at type="datetime">2013-08-02T15:23:09-06:00</created-at> <updated-at type="datetime">2013-09-30T15:46:28-06:00</updated-at> <name nil="true" /> <street1>390 Test Crescent</street1> <street2>Suite 1000</street2> <city>Testcity</city> <state>CA</state> <postal-code>80021</postal-code> <attention nil="true" /> <active type="boolean">true</active> <business-group-name nil="true" /> <country> <id type="integer">223</id> <code>US</code> <name>United States</name> </country> <created-by> <id type="integer">15</id> <login>Testin</login> <email>Testing@test.com</email> <employee-number>156720</employee-number> <firstname>Tst</firstname> <lastname>usr</lastname> <salesforce-id nil="true" /> </created-by> <updated-by> <id type="integer">12</id> <login>tsuer</login> <email>tsuer.test@test.com</email> <employee-number /> <firstname>test</firstname> <lastname>usr</lastname> <salesforce-id nil="true" /> </updated-by> </primary-address> <created-by> <id type="integer">15</id> <login>Tester2</login> <email>Tst2@test.com</email> <employee-number>156720</employee-number> <firstname>Test</firstname> <lastname>User2</lastname> <salesforce-id nil="true" /> </created-by> <updated-by> <id type="integer">15</id> <login>testing3</login> <email>tstuser3@test.com</email> <employee-number>156720</employee-number> <firstname>Test</firstname> <lastname>User3</lastname> <salesforce-id nil="true" /> </updated-by> </account-type> <created-by> <id type="integer">55</id> <login>test.coupa</login> <email>test.coupa@coupa.com</email> <employee-number nil="true" /> <firstname>Edi</firstname> <lastname>Integration</lastname> <salesforce-id nil="true" /> </created-by> <updated-by> <id type="integer">55</id> <login>test.coupa</login> <email>test.coupa@coupa.com</email> <employee-number nil="true" /> <firstname>Edi</firstname> <lastname>Integration</lastname> <salesforce-id nil="true" /> </updated-by> </account-validation-rule>
+
+Account Validation Rule Create - inactive Status
+
+In this example we are creating a Account Validation Rule in inactive status. We are using Coupasystem ID's for chart of account reference objects.
+
+We posted it to the URL: https://<instance url>/api/account_validation_rules. This created the account_validation_rules in inactive status <?xml version="1.0" encoding="UTF-8"?> <account-validation-rule> <name>TESTRULE</name> <error-message>TESTRULE- Invalid Combination</error-message> <description>Testrule</description> <active type="boolean">false</active> <segment-1-condition nil="true" /> <segment-1-min>V0070</segment-1-min> <segment-1-max>V0070</segment-1-max> <segment-2-condition nil="true" /> <segment-2-min>582</segment-2-min> <segment-2-max>582</segment-2-max> <segment-3-condition nil="true" /> <segment-3-min>0832</segment-3-min> <segment-3-max>5034</segment-3-max> <account-type> <name>V0070</name> </account-type> </account-validation-rule>
+
+Account Validation Rules API Put Example
+
+Example for a PUT:
+
+To update the status for a Account Validation Rule
+
+URL: https://<instance>/api/account_validation_rules/<id> <?xml version="1.0" encoding="UTF-8"?> <account-validation-rule> <active type="boolean">true</active> </account-validation-rule>

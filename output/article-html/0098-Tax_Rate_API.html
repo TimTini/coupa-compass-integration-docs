@@ -1,0 +1,411 @@
+<article class="" id="tax_rate_api">
+<h1 class="title">Tax Rate API</h1>
+<div class="body">
+<div class="" id="association-d957e93972">
+<h2 class="title sectiontitle">Association</h2>
+<p class="">This resource is associated with <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/tax-line-api" title="">Tax Line</a> and <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/withholding-tax-line-api" title="">Withholding Tax Line API</a>.</p>
+</div>
+<div class="" id="elements-d957e93983">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">active</td>
+<td class="entry" align="">Tax rate is enabled or disabled</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">true, false</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">country</td>
+<td class="entry" align="">Country where the tax code is applied</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Country </td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="" colspan="4">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">customer-accounting</td>
+<td class="entry" align="">Customer accounting</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes, no</p>
+<p class="">true, false</p>
+</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">effective-date</td>
+<td class="entry" align="">Date when tax rate is become active</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">exempt</td>
+<td class="entry" align="">Whether Tax Rate is exempt or not</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">true, false</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">expiration-date</td>
+<td class="entry" align="">Date when tax rate is expiring</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">percentage</td>
+<td class="entry" align="">Tax Rate percentage</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">reverse-charge</td>
+<td class="entry" align="">Whether Tax Rate is Reverse Charge or not</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">true, false</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax_description</td>
+<td class="entry" align="">Tax rate description</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-rate-type</td>
+<td class="entry" align="">Tax rate type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/tax-registrations-api-(tax_registrations)/tax-rate-type-api" title="">Tax Rate Type</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="" colspan="4">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">out_of_scope</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="">
+<h2 class="title sectiontitle">API Tax Rate Lookups Use New Attributes</h2>
+<p class="">You can now use a combination of business-relevant attributes to look up a <b>tax rate</b> when creating or updating tax lines via the <b>Invoices API</b>. This enhancement brings the API behavior in line with the CSV upload logic for tax rates.</p>
+<p class="">
+<p class="">The Invoices API now supports tax rate lookups using the following fields:</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>id</b>
+</p>
+</li>
+<li class="li">
+<p class="">
+<b>tax_rate_type</b> (ID or description)</p>
+</li>
+<li class="li">
+<p class="">
+<b>country</b> (ID or code)</p>
+</li>
+<li class="li">
+<p class="">
+<b>percentage</b>
+</p>
+</li>
+<li class="li">
+<p class="">
+<b>exempt</b>
+</p>
+</li>
+<li class="li">
+<p class="">
+<b>reverse_charge</b>
+</p>
+</li>
+<li class="li">
+<p class="">
+<b>out_of_scope</b>
+</p>
+</li>
+<li class="li">
+<p class="">
+<b>customer_accounting</b>
+</p>
+</li>
+</ul>
+<p class="">The following table describes the valid combination rules.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Rule</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Description</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>ID Takes Precedence and Requires Validity</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">If you provide an <b>id</b> in your payload, the system will return the tax rate based only on that <b>id</b>. If the <b>id</b> is invalid, you get an error, even if other fields are correct.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Require Percentage and Country</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">You have to provide at least a <b>percentage</b> and a <b>country</b>. If either percentage or country is not included, the system will return an error.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Non-Zero Percentage Cannot Be Exempt or Reverse Charge</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">If you send a valid combination of fields, the system will try to find and return the matching tax rate. For example, if you send a non-zero percentage along with a valid country, it will look for the matching tax rate. However, if you send a non-zero percentage and also set either <b>exempt</b> = true or <b>reverse_charge</b> = true, the system will return an error, since these fields cannot be used together.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>0% Percentage Determines Standard or Special Rates</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">If you set percentage = 0% and don’t set exempt or reverse_charge or set them both to false, the system will return the standard 0% tax rate if it exists. If you set percentage = 0% along with either <b>exempt</b> = true or <b>reverse_charge</b> = true, the system will return the corresponding exempt or reverse charge tax rate if it’s available.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Require Tax Rate Type for Multiple Types</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">For countries that support multiple tax rate types, if you provide the <b>tax_rate_type,</b> the system will return the tax rate matching that type. If you don’t provide it, the system will return an error.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Disallow Extra/Unsupported Fields</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">If your payload includes any extra fields that aren’t supported, you will get an error.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Default Special Tax Attributes to False</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">If you don’t provide values for <b>exempt</b>, <b>reverse_charge</b>, <b>out_of_scope</b>, or <b>customer_accounting</b>, they will be treated as false by default.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>ID Takes Precedence Over All Other Fields</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">If you send both an <b>id</b> and a <b>country</b> code, the system will use the ID to return the tax rate. Similarly, if you send both an <b>id</b> and a <b>tax_rate_type</b> description, the ID will take precedence. An invalid <b>id</b> will always cause an error, even if other fields are valid.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">Accepted formats examples:</p>
+<p class="">For <b>tax_rate_type</b>: either <b>id</b> or <b>description.</b>
+</p>
+<pre>
+<code class="codeblock">"tax_rate_type": {
+  "id": "",
+  "description": ""
+}
+</code>
+</pre>
+<p class="">For <b>country</b>:  either <b>id</b> or <b>code</b>
+</p>
+<pre>
+<code class="codeblock">"country": {
+ "id": "",
+ "code": ""
+}</code>
+</pre>
+<p class="">The <b>example</b> (json) below shows the <b>tax_rate</b> section from the payload.</p>
+<pre>
+<code class="codeblock">"tax-rate": {
+    "percentage": "10",
+    "country": {
+        "code": "MX"
+    },
+    "tax-rate-type": {
+        "description": "VAT"
+    }
+}
+</code>
+</pre>
+<p class="">The <b>example</b> (xml) below shows the <b>tax_rate</b> section from the payload.</p>
+<pre>
+<code class="codeblock">&lt;tax-rate&gt;
+    &lt;percentage&gt;10&lt;/percentage&gt;
+    &lt;exempt type="boolean"&gt;false&lt;/exempt&gt;
+    &lt;reverse_charge type="boolean"&gt;false&lt;/reverse_charge&gt;
+    &lt;country&gt;
+        &lt;code&gt;MX&lt;/code&gt;
+      &lt;/country&gt;
+      &lt;tax_rate_type&gt;
+          &lt;description&gt;VAT&lt;/description&gt;
+      &lt;/tax_rate_type&gt;
+&lt;/tax-rate&gt;
+</code>
+</pre>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">If no tax rate can be found for the given input, the API will return the error: <b>Unable to find valid TaxRate record for tax_rate with keys {"percentage"=&gt;"404"}. Possible keys are ["id", "code", "description", "tax_rate_type", "country", "percentage", "exempt", "reverse_charge", "out_of_scope", "customer_accounting"]. Please verify your XML.</b>
+</li>
+<li class="li">For invalid percentage values like <b>123test</b> or <b>test123</b>, <b>123test</b> is converted to <b>123</b>, while <b>test123</b> becomes <b>0</b>. The behavior is the same in CSV.</li>
+</ul>
+<p class="">
+</div>
+<p class="">
+</div>
+</div>
+</article>

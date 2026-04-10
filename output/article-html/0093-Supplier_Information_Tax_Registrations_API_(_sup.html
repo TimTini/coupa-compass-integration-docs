@@ -1,0 +1,232 @@
+<article class="" id="supplier_information_tax_registrations_api_supplier_information_tax_registrations">
+<h1 class="title">Supplier Information Tax Registrations API
+(/supplier_information_tax_registrations)</h1>
+<div class="body">
+<p class="">The URL to access supplier information
+is: <code class="ph codeph">https://&lt;instance&gt;/api/supplier_information_tax_registrations</code>
+</p>
+<p class="">SIM API permissions must be included with your API key to
+enable proper usage. Existing API keys without SIM API
+permissions won't be able to access
+the <code class="ph codeph">/api/supplier_information_tax_registrations</code>
+resource. See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x294382.xml" title="">API
+Key Security</a> and <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best
+Practices</a> for more info.</p>
+<div class="" id="actions-d957e89547">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Supplier Information Tax Registrations API allows you
+to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/supplier_information_tax_registrations</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create supplier information tax registration</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/supplier_information_tax_registrations/:id</code>
+</td>
+<td class="entry" align="">destroy</td>
+<td class="entry" align="">/api/supplier_information_tax_registrations/:id</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/supplier_information_tax_registrations/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show supplier information tax registration</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/supplier_information_tax_registrations/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update supplier information tax registration</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/supplier_information_tax_registrations/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update supplier information tax registration</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e89691">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Supplier
+Information Tax Registrations API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">number</td>
+<td class="entry" align="">Tax Number</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(940)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier_information_address_id</td>
+<td class="entry" align="">Primary Address ID</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier_information_id</td>
+<td class="entry" align="">Supplier Information ID</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">active</td>
+<td class="entry" align="">Tax Registration Status</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">local</td>
+<td class="entry" align="">Local Tax Number</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">country</td>
+<td class="entry" align="">Country Sub Object</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Tax Registration ID</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created_at</td>
+<td class="entry" align="">Created Date and Time</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated_at</td>
+<td class="entry" align="">Last Updated Date and Time</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created_by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated_by</td>
+<td class="entry" align="">User who last updated</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

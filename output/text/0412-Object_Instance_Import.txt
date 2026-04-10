@@ -1,0 +1,7 @@
+Object Instance Import
+
+Custom Object Instance
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Id 	No 	No 	integer 	Coupa unique identifier
+Tags 	No 	No 	 	Object Instances Tags. Separate tags with spaces. For tags with more than one word, surround the tag in double quotations.

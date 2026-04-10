@@ -1,0 +1,2316 @@
+<article class="" id="pos_and_po_changes_integration_into_your_erp">
+<h1 class="title">PO's and PO Changes Integration into your ERP</h1>
+<p class="">
+<p class="">Step-by-step instructions to integrate your Coupa PO's and PO Changes with your ERP.</p>
+</p>
+<div class="body">
+<div class="" id="general_api_setup_considerations-d957e20569">
+<h2 class="title sectiontitle">General API setup
+        considerations</h2>
+<ul class="ul">
+<li class="li">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api" title="">Get Started with the Coupa
+              API</a>
+</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/oauth-2.0-and-oidc/openid-connect-clients" title="">Open Connect API Access</a>
+            (R29 onward)</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/differences-between-xml-and-json-in-coupa" title="">JSON/XML</a>
+</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x305489.xml" title="">GraphQL</a> (R30 onward)</p>
+</li>
+</ul>
+</div>
+<div class="" id="limited_payload_-_fields_api_filters">
+<h2 class="title sectiontitle">Limited payload - fields &amp; API
+        filters</h2>
+<p class="">Coupa's API returns a lot of data by default (for example: full objects
+        for associated objects). The API return payloads can be very large and therefore
+        slow.</p>
+<p class="">To make things easier, Coupa includes a Fields query parameter and API Filters
+        to return a limited JSON or XML response instead of the entire schema and all associations
+        for an object. For more information, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285425.xml" title="">API Response
+        Filters.</a>
+</p>
+</div>
+<div class="" id="use_cases_described_in_this_article-d957e20602">
+<h2 class="title sectiontitle">Use cases described in this
+        article</h2>
+<p class="">The assumption in this document is that the Purchase Order number in the
+        ERP is driven by the Coupa Purchase Order Number. This Article describes three different
+        options to Integrate Coupa Purchase Orders into your ERP (for both creation and
+        updates).</p>
+<p class="">These options will change the way you can monitor your integrations from
+        Coupa:</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Option 1</b>: Simple monitoring based on custom field(s) you define on the Order
+            Header</p>
+</li>
+<li class="li">
+<p class="">
+<b>Option 2</b>: Advanced monitoring using Integration History records</p>
+</li>
+<li class="li">
+<p class="">
+<b>Option 3</b>: Leverage full Coupa integration monitoring</p>
+</li>
+</ul>
+<p class="">For the three options, the Coupa POs are pushed to the ERP based on the Export
+        flag.</p>
+<p class="">In case of an error, in the Integration of a PO, a manual change will be
+        required on the PO in the Coupa UI: this change will reset the Export flag, and the PO will
+        therefore be considered in the next run.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/tip.png" style="width:24px;">
+<span style="font-weight: 700;">Tip: </span>
+<p class="">You can contact Coupa
+          Support to enable this option: <b>Reset PO last exported at for every change</b>. This
+          setting only applies to the UI. Changes made with API won’t change the Exported
+          status.</p>
+</div>
+</div>
+<div class="" id="create_dedicated_integration_and_contact_for_api-d957e20636">
+<h2 class="title sectiontitle">Create
+        dedicated Integration and Contact for API</h2>
+<p class="">For option 2 &amp; 3 described above,
+        you need to create:</p>
+<ol class="ol">
+<li class="li">
+<p class="">A dedicated Integration for each API Orchestration you implement.</p>
+</li>
+<li class="li">
+<p class="">One or several Integration contact(s) for each integration, that will be alerted for
+            any failed integration.</p>
+</li>
+</ol>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/tip.png" style="width:24px;">
+<span style="font-weight: 700;">Tip: </span>
+<p class="">You can contact Coupa Support to enable this option: <b>Enable link
+            to Integration History by Document Type</b>. This setting adds a link in the setup page
+          to view full Integration History per document type</p>
+</div>
+</div>
+<div class="" id="option_1_simple_monitoring_based_on_custom_field_s-d957e20654">
+<h2 class="title sectiontitle">Option 1:
+        Simple monitoring based on custom field(s)</h2>
+<p class="">
+<b>Description</b>
+</p>
+<p class="">In this
+        scenario, for each PO we will add the current Integration status in one or several PO header
+        custom field(s). We added a custom field <code class="ph codeph">cf-integration-status</code> with the
+        name of <code class="ph codeph">Integration Status</code>. Use the Standard PO Data Table to follow up the
+        Integration status of your documents at this
+          url:</p>
+<pre>
+<code class="codeblock">https://&lt;your instance hostname&gt;/order_headers</code>
+</pre>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/po-integration-01.png" alt="" title="" width="">
+</p>
+<p class="">
+<b>Orchestration
+          diagram</b>
+</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/po-orchistration.png" alt="" title="" width="">
+<p class="">
+<b>Steps / API calls details</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 1</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Get the list and details of the Coupa Purchase Orders to create/update in the
+                    ERP. Selection criteria includes the Export Flag and PO Status. Query parameter
+                      <i>show_deleted_lines</i> can be necessary to handle the PO update in the
+                    ERP</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/purchase_orders/</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">filter=<i>&lt;your API filter name&gt;</i>
+</code>
+</p>
+<p class="">
+<code class="ph codeph">offset=10</code>
+</p>
+<p class="">
+<code class="ph codeph">exported=false</code>
+</p>
+<p class="">
+<code class="ph codeph">show_deleted_lines=true*</code>
+</p>
+<p class="">
+<code class="ph codeph">status[in]=issued,canceled,closed</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/purchase_orders?filter=<i>&lt;your API filter
+                  name&gt;</i>&amp;offset=10&amp;exported=false&amp;show_deleted_lines=true&amp;status[in]=issued,canceled,closed</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/step-1.png" alt="" title="" width="">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>The <code class="ph codeph">show_deleted_lines=true</code> query parameter is
+          for PO changes.</div>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 2</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mark individual PO as exported</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/purchase_orders/<i>&lt;Purchase Order
+                  id&gt;</i>
+</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">exported=true</code>
+</p>
+<p class="">
+<code class="ph codeph">fields=["id","exported"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/purchase_orders/<i>&lt;Purchase Order
+                    id&gt;</i>?exported=true&amp;fields=["id","exported"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A *</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+	"id": &lt;Purchase Order id&gt;,
+	"exported": true
+	}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">For this call you do not need a payload if you include <code class="ph codeph">?exported=true</code> in
+          the URL. That’s where the creation/update of the PO in the ERP happens.</p>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 3</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Update a Custom Fields for Reporting</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/purchase_orders/<i>&lt;Purchase Order
+                  id&gt;</i>
+</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">fields=["id","exported",{ "custom_fields": {}
+}]</code>
+</pre>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">https://<i>&lt;your instance
+hostname&gt;</i>/api/purchase_orders/<i>&lt;Purchase Order
+id&gt;</i>?fields=["id","exported",{ "custom_fields": {}
+}]</code>
+</pre>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{ "custom-fields": {
+		"&lt;your custom-field name&gt;": "Success: The PO was properly replicated in your ERP"
+}}</code>
+</pre>
+<p class="">or</p>
+<pre>
+<code class="codeblock">{ "custom-fields": {
+		"&lt;your custom-field name&gt;": "Error: The PO was properly replicated in your ERP"
+}}</code>
+</pre>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{ "id": &lt;Purchase Order id&gt;,
+		"exported": true,
+		"custom-fields": {
+				"&lt;your custom-field name&gt;": "Success: The PO was properly replicated in your ERP"
+}}</code>
+</pre>
+<p class="">or</p>
+<pre>
+<code class="codeblock">{ "id": &lt;Purchase Order id&gt;,
+		"exported": true,
+		"custom-fields": {
+				"&lt;your custom-field name&gt;": "Error: The PO was properly replicated in your ERP"
+}}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="option_2_advanced_monitoring_using_integration_history-d957e21072">
+<h2 class="title sectiontitle">Option 2:
+        Advanced monitoring using Integration History</h2>
+<p class="">
+<b>Description</b>
+</p>
+<p class="">In this scenario, for each PO
+        we:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Resolve the previous Integration History Record for the document</p>
+</li>
+<li class="li">
+<p class="">Create an Integration History Record</p>
+</li>
+<li class="li">
+<p class="">Create an Alert to the Integration Contact in case of an error</p>
+</li>
+</ul>
+<p class="">Use the Standard PO Integration History Data Table to follow up the Integration status
+        of your documents. You can find it at:</p>
+<pre>
+<code class="codeblock">https://&lt;your instance hostname&gt;/integration_history_records/purchase_orders</code>
+</pre>
+<p class="">You can use a
+        filter on Response Code to differentiate between documents successfully replicated and
+        documents that failed.</p>
+<p class="">
+<b>Orchestration Diagram</b>
+</p>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/po-int-orchistration.png" alt="" title="" width="">
+</p>
+<p class="">
+<b>Steps / API calls details</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 1</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Get the list and details of the Coupa Purchase Orders to create/update in
+                    the ERP. Selection criteria includes the Export Flag and PO Status. Query
+                    parameter <i>show_deleted_lines</i> can be necessary to handle the PO update in
+                    the ERP</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/purchase_orders/</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">filter=<i>&lt;your API filter
+                    name&gt;</i>
+</code>
+</p>
+<p class="">
+<code class="ph codeph">offset=10</code>
+</p>
+<p class="">
+<code class="ph codeph">exported=false</code>
+</p>
+<p class="">
+<code class="ph codeph">show_deleted_lines=true</code>
+</p>
+<p class="">
+<code class="ph codeph">status[in]=buyer_hold,issued,canceled,closed,soft_closed</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/purchase_orders?filter=<i>&lt;your API filter
+                      name&gt;</i>&amp;offset=10&amp;exported=false&amp;show_deleted_lines=true&amp;status[in]=buyer_hold,issued,canceled,closed,soft_closed</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/step-2.png" alt="" title="" width="">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 2</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mark individual PO as exported</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/purchase_orders/<i>&lt;Purchase Order
+                  id&gt;</i>
+</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">exported=true</code>
+</p>
+<p class="">
+<code class="ph codeph">fields=["id","exported"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/purchase_orders/<i>&lt;Purchase Order
+                    id&gt;</i>?exported=true&amp;fields=["id","exported"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;Purchase Order id&gt;,
+		"exported": true
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">This is where the creation/update of the PO in the ERP happens.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 3a</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Get unresolved Integration History Record</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_history_records</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">resolved=false</code>
+</p>
+<p class="">
+<code class="ph codeph">document-type=OrderHeader</code>
+</p>
+<p class="">
+<code class="ph codeph">document-id=&lt;Purchase
+                    Order
+                    id&gt;</code>
+</p>
+<p class="">
+<code class="ph codeph">fields=["id","document-id","status","resolved"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_history_records?resolved=false&amp;document-type=OrderHeader&amp;document-id=<i>&lt;Purchase
+                      Order
+                  id&gt;</i>&amp;fields=["id","document-id","status","resolved"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">[
+		{
+				"id": &lt;Old Integration History Record id&gt;,
+				"document-id": &lt;Purchase Order id&gt;,
+				"status": "Error",
+				"resolved": false
+		}
+]</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 3b</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Resolve previous Integration History Record</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_history_records/<i>&lt;Old Integration
+                      History Record id&gt;</i>/resolve</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">fields=["id","document-id","status","resolved"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_history_records/<i>&lt;Old Integration
+                      History Record
+                    id&gt;</i>/resolve?fields=["id","document-id","status","resolved"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">[
+		{
+				"id": &lt;Old Integration History Record id&gt;,
+				"document-id": &lt;Purchase Order id&gt;,
+				"status": "Error",
+				"resolved": true
+		}
+]</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 4a</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Create Integration History (Success)</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_history_records</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">fields=["id","document-id","status"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_history_records?fields=["id","document-id","status"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"document-type": "OrderHeader",
+		"document-id": &lt;Purchase Order id&gt;,
+		"document-status":"&lt;Purchase Order status&gt;",
+		"contact-alert-type": "Functional",
+		"status": "Success",
+		"integration": {"code":"&lt;Customer Integration id&gt;"},
+		"responses": [
+				{
+						"response-code": "Success-1234",
+						"response-message": "The integration in the ERP went well"
+				}
+		]
+}</code>
+</pre>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;New Integration History Record id&gt;,
+		"document-id": &lt;Purchase Order id&gt;,
+		"status": "Success"
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 4b</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Create Integration History (Error) and alert to Integration
+                  Contact</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_history_records/create_alert</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">fields=["id","document-id","status"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_history_records/create_alert?fields=["id","document-id","status"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"document-type": "OrderHeader",
+		"document-id": &lt;Purchase Order id&gt;,
+		"document-status":"&lt;Purchase Order status&gt;",
+		"contact-alert-type": "Functional",
+		"status": "Error",
+		"integration": {"code":"&lt;Customer Integration id&gt;"},
+		"responses": [
+				{
+						"response-code": "Failure-CC",
+						"response-message": "Line 1: Cost center CA234 is closed for ordering"
+				},
+				{
+						"response-code": "Failure-date",
+						"response-message": "Line 2: Delivery date cannot be in the past"
+				}
+		]
+}</code>
+</pre>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;New Integration History Record id&gt;,
+		"document-id": &lt;Purchase Order id&gt;,
+		"status": "Error"
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="option_3_leverage_full_coupa_integration_monitoring">
+<h2 class="title sectiontitle">Option 3: Leverage full
+        Coupa integration monitoring</h2>
+<p class="">
+<b>Description</b>
+</p>
+<p class="">In this scenario, we create
+        an Integration run that tracks</p>
+<ul class="ul">
+<li class="li">
+<p class="">The status of the Integration (pending/started/errored/successful/failed)</p>
+</li>
+<li class="li">
+<p class="">The total number of PO processed</p>
+</li>
+<li class="li">
+<p class="">The number of Success and Errors</p>
+</li>
+<li class="li">
+<p class="">The list of Integration Errors and their statuses (resolved or not)</p>
+</li>
+</ul>
+<p class="">For each PO we:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Resolve the previous Integration History Record for the document</p>
+</li>
+<li class="li">
+<p class="">Create an Integration History Record</p>
+</li>
+<li class="li">
+<p class="">In case of an error, create an Integration Error and an Alert to the Integration
+            Contact</p>
+</li>
+</ul>
+<p class="">You can monitor all Integration Runs for your Integration
+        at:</p>
+<pre>
+<code class="codeblock">https://&lt;your instance hostname&gt;/integrations/&lt;your integration id&gt;/integration_runs</code>
+</pre>
+<p class="">Use
+        the Standard PO Integration Error Data Table to list all POs with Integration Error pending
+        resolution. It's located
+        at:</p>
+<pre>
+<code class="codeblock">https://&lt;your instance hostname&gt;/integration_errors</code>
+</pre>
+<p class="">Use
+        the Standard PO Integration History Data Table to list all POs successfully Integrated. It's
+        located
+          at:</p>
+<pre>
+<code class="codeblock">https://&lt;your instance hostname&gt;/integration_history_records/purchase_orders</code>
+</pre>
+<p class="">
+<b>Orchestration
+          diagram</b>
+</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/orchestration-3.png" alt="" title="" width="">
+<p class="">
+<b>Steps / API calls details</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 1</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Create Integration Run</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_runs</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"integration": {
+				"code": "{{integration_code}}"
+		}}</code>
+</pre>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;Integration Run ID&gt;,
+		...
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 2</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Get the list and details of the Coupa Purchase Orders to create/update in the
+                    ERP. Selection criteria includes the Export Flag and PO Status. Query parameter
+                      <i>show_deleted_lines</i> can be necessary to handle the PO update in the
+                    ERP</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/purchase_orders/</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">filter=<i>&lt;your API filter name&gt;</i>
+</code>
+</p>
+<p class="">
+<code class="ph codeph">offset=10</code>
+</p>
+<p class="">
+<code class="ph codeph">exported=false</code>
+</p>
+<p class="">
+<code class="ph codeph">show_deleted_lines=true</code>
+</p>
+<p class="">
+<code class="ph codeph">status[in]=buyer_hold,issued,canceled,closed,soft_closed</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/purchase_orders?filter=<i>&lt;your API filter
+                      name&gt;</i>&amp;offset=10&amp;exported=false&amp;show_deleted_lines=true&amp;status[in]=buyer_hold,issued,canceled,closed,soft_closed</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/step-3.png" alt="" title="" width="">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 3</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Start Integration Run</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_runs/<i>&lt;Integration Run
+                    ID&gt;</i>/run</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"total_records": &lt;Total Number of POs from Step 2&gt;
+}</code>
+</pre>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;Integration Run ID&gt;,
+		...
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 4</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mark individual PO as exported</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/purchase_orders/<i>&lt;Purchase Order
+                  id&gt;</i>
+</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">exported=true</code>
+</p>
+<p class="">
+<code class="ph codeph">fields=["id","exported"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/purchase_orders/<i>&lt;Purchase Order
+                    id&gt;</i>?exported=true&amp;fields=["id","exported"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;Purchase Order id&gt;,
+		"exported": true
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">This is where the creation/update of the PO in the ERP happens.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 5a</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Get unresolved Integration History Record</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_history_records</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">resolved=false</code>
+</p>
+<p class="">
+<code class="ph codeph">document-type=OrderHeader</code>
+</p>
+<p class="">
+<code class="ph codeph">document-id=<i>&lt;Purchase Order id&gt;</i>
+</code>
+</p>
+<p class="">
+<code class="ph codeph">fields=["id","document-id","status","resolved"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_history_records?resolved=false&amp;document-type=OrderHeader&amp;document-id=<i>&lt;Purchase
+                      Order
+                  id&gt;</i>&amp;fields=["id","document-id","status","resolved"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">[
+		{
+				"id": &lt;Old Integration History Record id&gt;,
+				"document-id": &lt;Purchase Order id&gt;,
+				"status": "Error",
+				"resolved": false
+		}
+]</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 5b</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Resolve previous Integration History Record</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_history_records/<i>&lt;Old Integration
+                      History Record id&gt;</i>/resolve</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">fields=["id","document-id","status","resolved"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_history_records/<i>&lt;Old Integration
+                      History Record
+                    id&gt;</i>/resolve?fields=["id","document-id","status","resolved"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">[
+		{
+				"id": &lt;Old Integration History Record id&gt;,
+				"document-id": &lt;Purchase Order id&gt;,
+				"status": "Error",
+				"resolved": true
+		}
+]</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 6a</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Get unresolved Integration Error Record</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_errors</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">resolved=false</code>
+</p>
+<p class="">
+<code class="ph codeph">document-type=OrderHeader</code>
+</p>
+<p class="">
+<code class="ph codeph">document-id=<i>&lt;Purchase Order id&gt;</i>
+</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_errors?resolved=false&amp;document-type=OrderHeader&amp;document-id=<i>&lt;Purchase
+                      Order id&gt;</i>
+</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">[
+		{
+				"id": &lt;Old Integration Error Record id&gt;,
+				"document-type": ”OrderHeader”,
+				"document-id": &lt;Purchase Order id&gt;,
+				"status": "Error",
+		"resolved": false
+		...
+		}
+]</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 6b</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Resolve previous Integration History Record</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_errors/<i>&lt;Old Integration Error Record
+                      id&gt;</i>/resolve</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">[
+		{
+				"id": &lt;Old Integration Error Record id&gt;,
+				"document-id": &lt;Purchase Order id&gt;,
+				"status": "Error",
+				"resolved": true
+				...
+		}
+]</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 7a</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Create Integration History (Success) It must reference the Integration
+                  Run</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_history_records</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">fields=["id","document-id","status"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Sample URL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_history_records?fields=["id","document-id","status"]</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"document-type": "OrderHeader",
+		"document-id": &lt;Purchase Order id&gt;,
+		"document-status":"&lt;Purchase Order status&gt;",
+		"contact-alert-type": "Functional",
+		"status": "Success",
+		"integration": {"code":"&lt;Customer Integration id&gt;"},
+		"integration-run": {"id":&lt;Integration Run ID&gt;},
+		"responses": [
+				{
+						"response-code": "Success-1234",
+						"response-message": "The integration in the ERP went well"
+				}
+		]}</code>
+</pre>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;New Integration History Record id&gt;,
+		"document-id": &lt;Purchase Order id&gt;,
+		"status": "Success"
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 7b</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Create Integration Error and alert to Integration Contact It must reference
+                    the Integration Run</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                    hostname&gt;</i>/api/integration_errors/create_alert</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"document-type": "OrderHeader",
+		"document-id": &lt;Purchase Order id&gt;,
+		"document-status":"&lt;Purchase Order status&gt;",
+		"contact-alert-type": "Functional",
+		"status": "Error",
+		"integration-run-id": "&lt;Integration Run ID&gt;",
+		"responses": [
+				{
+						"response-code": "Failure-CC",
+						"response-message": "Line 1: Cost center CA234 is closed for ordering"
+				},
+				{
+						"response-code": "Failure-date",
+						"response-message": "Line 2: Delivery date cannot be in the past"
+				}
+		]
+}</code>
+</pre>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;New Integration Error Record id&gt;,
+		"document-id": &lt;Purchase Order id&gt;,
+		"status": "Error"
+		 ...
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step 8</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Successfully End Integration Run</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_runs/<i>&lt;Integration Run
+                    ID&gt;</i>/success</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;Integration Run ID&gt;,
+		"status": "successful"
+		...
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">If there is a general failure during the Integration run</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Step x</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Raise Failure for the Integration Run</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>API</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://<i>&lt;your instance
+                      hostname&gt;</i>/api/integration_runs/<i>&lt;Integration Run
+                    ID&gt;</i>/fail</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Params</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Query Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">N/A</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Response Body sample</b>
+</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">{
+		"id": &lt;Integration Run ID&gt;,
+		"status": "failed"
+		...
+}</code>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

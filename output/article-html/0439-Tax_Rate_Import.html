@@ -1,0 +1,142 @@
+<article class="" id="tax_rate_import">
+<h1 class="title">Tax Rate Import</h1>
+<div class="body">
+<div class="" id="overview-d117e176272">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Tax Rate Import process reads files from
+the <code class="ph codeph">./Incoming/TaxRates/</code> in the SFTP. These
+files will be moved to the archive folder located
+at <code class="ph codeph">./Incoming/Archive/TaxRates/</code> before being
+processed in alpha-numeric order.</p>
+</div>
+<div class="" id="keys-d117e176281">
+<h2 class="title sectiontitle">Keys</h2>
+<ul class="ul">
+<li class="li">Tax Rate Id</li>
+<li class="li">Country Code</li>
+<li class="li">Tax Rate Type</li>
+<li class="li">Percentage</li>
+</ul>
+</div>
+<div class="" id="validations-d117e176294">
+<h2 class="title sectiontitle">Validations</h2>
+<p class="">You can update any field if you specify Tax Rate
+Id. If there is no Tax Rate Id, then Coupa uses the
+combination of Country Code, Tax Rate Type and Percentage to
+look up an existing record.</p>
+</div>
+<div class="" id="section_anw_k54_g1c">
+<h2 class="title sectiontitle">Tax Rate</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Country Code</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The country code where the tax rate will be applied</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate Type</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The type of Tax Rate (ex: VAT, GST)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Percentage</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">Tax Percentage Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Internal ID of tax rate.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Active</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Determines if the tax rate is enabled or disabled</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exempt</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Determines if the tax rate is exempt or not</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reverse Charge</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Determines tax rate is reverse charge or not</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Customer Accounting</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Determines if the tax rate is customer accounting</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Out of Scope</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Determines tax rate is out of scope or not</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Tax Rate Description</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Effective Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">The date when the tax rate will become active</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expiration Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">The date when the tax rate will expire</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

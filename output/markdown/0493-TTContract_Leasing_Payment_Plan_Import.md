@@ -1,0 +1,103 @@
+---
+title: "TTContract Leasing Payment Plan Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-csv-format-descriptions-(classic)/ttcontract-leasing-payment-plan-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-csv-format-descriptions-(classic)/ttcontract-leasing-payment-plan-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:59+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Treasury Integrations"
+  - "Treasury CSV Format Descriptions (classic)"
+  - "TTContract Leasing Payment Plan Import"
+---
+
+# TTContract Leasing Payment Plan Import
+
+## Format Description
+
+[PDF Version](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/TTContract_Leasing_Payment_Plan_Import.pdf)
+
+| **#** | **Name** | **Type** | **Mandatory** | **Comment** |
+| --- | --- | --- | --- | --- |
+| 1 | ID / Leasing number | integer / char - 20 | Yes | Either the unique identifier, as defined by Coupa Treasury, or the alphanumerical value for the Leasing Number field. |
+| 2 | Date | date | Yes | Due date of the amount(s). |
+| 3 | Interest amount | decimal | Yes | |
+| 4 | Amortization amount | decimal | No | |
+| 5 | Leasing rate (net) | decimal | No | |
+| 6 | Leasing rate (gross) | decimal | No | |
+| 7 | VAT | decimal | No | |
+| 8 | Interest calculated from | decimal | * | |
+| 9 | Interest calculated to | date | * | |
+| 10 | Residual value (net) | date | Yes | |
+| 11 | Residual value (gross) | decimal | Yes | |
+
+* Mandatory with interest repayments
+
+## Import Function
+
+The import function is
+under Special Functions on Treasury > Financial Instruments > Leases.
+
+![](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/treasury_integrations/images/image16.png)
+
+The import function processes files in standard text
+formats:
+
+- ASCII
+
+- Unicode
+
+Use the Identification dropdown to choose whether field 1 selects the deal ID or the
+Loan Number.
+
+For each deal, the file must contain the complete leasing payment plan.
+Each imported data set overwrites any existing data sets.
+
+If the file contains data
+about multiple leasing deals, the data for each deal must be grouped into a single
+block.
+
+All cash flows for the same leasing deal must be in chronological
+order.
+
+## Format Rules
+
+The file cannot contain any
+headers or format descriptions. Do not enclose text in quotation marks.
+
+One file may
+contain multiple data sets. Each row contains exactly one data set.
+
+- ASCII Code 13: carriage return shows the end of a data set.
+
+- ASCII Code 10: new line shows the end of a data set.
+
+- The last data set concludes by an end of file (EOF).
+
+In the table above, the value for “char” shows how many characters is the maximum
+length for that field in the imported file.
+
+Days and months are always 2-digit values,
+whereas years are 4 digits. Date separator, date sequence, and file format must match your
+user settings.
+
+- **Field Separator** – semicolon (;), comma (,)
+
+- **Decimal Separator** – period (.), comma (,)
+
+- **Integer** – No thousands or decimal separators
+
+- **Date Separator** – slash (/), period (.), comma (,)
+
+- **Date Sequence** – mdy, dmy, ymd
+
+## Sample Datasets
+
+Field delimiter: ; I Date
+delimiter: / I Date sequence: mdy I Decimal
+separator:
+
+LNR54;01/29/2010;25.12;24.88;50;59.5;19
+.0;12/31/2009;01/01/2010;100;689
+
+LNR54;01/29/2010;0;50;50;59.5;19.0;;;50;589

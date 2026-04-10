@@ -1,0 +1,9 @@
+Expense Import Transaction Type Filter Map Import
+
+Expense Import Transaction Type Filter Map
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Corp Card Integration Name 	Yes 	No 	 	Corporate Card Integration Name
+Card Type 	Yes 	No 	 	Card Type
+Transaction Type 	Yes 	No 	 	Transaction Type
+Filter 	Yes 	No 	 	Filter

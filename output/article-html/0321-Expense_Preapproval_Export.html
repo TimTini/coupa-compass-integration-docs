@@ -1,0 +1,325 @@
+<article class="" id="expense_preapproval_export">
+<h1 class="title">Expense Preapproval Export</h1>
+<div class="body">
+<p class="">Export of these records is included as a Standard CSV Export.</p>
+<div class="" id="section_u2v_ffq_11c">
+<h2 class="title sectiontitle">Expense Preapproval</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">RecordType</td>
+<td class="entry" align="">The type of record type found in each row</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ID</td>
+<td class="entry" align="">ID for the expense preapproval</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">The description entered by the user often describing why they are requesting expense preapproval</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">The type of form that the admin has configured for its users when requesting expense preapprovals</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Preapproved Amount</td>
+<td class="entry" align="">Total amount requested by the user on expense preapproval form</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">Currency code related to requested preapproval amount</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Available Amount</td>
+<td class="entry" align="">The available amount left on a preapproval after a portion of the expense preapproval has been reconciled with an Expense Report</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Available Amount Currency</td>
+<td class="entry" align="">Currency code related to remaining requested preapproval amount</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Available</td>
+<td class="entry" align="">When Preapproval is archived then Available is set to No; however, when it is still active, is set to Yes</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Start Date</td>
+<td class="entry" align="">The start date entered by user on expense preapproval in the format YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">End Date</td>
+<td class="entry" align="">The end date entered by user on expense preapproval in the format YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Preapproval User Fullname</td>
+<td class="entry" align="">Full name of the user for whom the preapproval is created</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created By Fullname</td>
+<td class="entry" align="">Full name of the user who created the expense preapproval</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated By Fullname</td>
+<td class="entry" align="">Full name of the user who updated the expense preapproval</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created At</td>
+<td class="entry" align="">Time of record creation in the format YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated At</td>
+<td class="entry" align="">Time that the record was updated in the format YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reporting Total</td>
+<td class="entry" align="">The total expense preapproval amount requested in the company's dashboard currency</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Form Response</td>
+<td class="entry" align="">The form response name set by the admin when publishing expense preapproval form</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expense Reports</td>
+<td class="entry" align="">One or many expense reports that the expense preapproval is associated to</td>
+<td class="entry" align="">[]</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Cash Advance Applied Amount</td>
+<td class="entry" align="">The total cash advance amount requested on expense preapproval form</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Cash Advance Applied Amount Currency</td>
+<td class="entry" align="">Currency code related to requested cash advance amount</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Cash Advance Outstanding Amount</td>
+<td class="entry" align="">The available cash advance amount left on a preapproval after a portion of the expense preapproval has been reconciled with an Expense Report</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Cash Advance Outstanding Amount Currency</td>
+<td class="entry" align="">Currency code related to remaining cash advance amount on expense preapproval</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Virtual Card Applied Amount</td>
+<td class="entry" align="">The total amount of the virtual card that was applied to the expense preapproval</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Virtual Card Applied Amount Currency</td>
+<td class="entry" align="">Currency code related to virtual card amount applied to the expense preapproval</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Virtual Card Outstanding Amount</td>
+<td class="entry" align="">The available virtual card amount left on a preapproval after a portion of the expense preapproval has been reconciled with an Expense Report</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Virtual Card Outstanding Amount Currency</td>
+<td class="entry" align="">Currency code related to remaining virtual card amount on expense preapproval</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_efk_gfq_11c">
+<h2 class="title sectiontitle">Expense Preapproval Line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">RecordType</td>
+<td class="entry" align="">The type of record type found in each row</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ID</td>
+<td class="entry" align="">ID for the expense preapproval line</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expense Preapproval ID</td>
+<td class="entry" align="">ID for the expense preapproval</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">The type of expense preapproval line: Flight, Hotel, Car Rental, Train, Transportation, or None</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Estimated Amount</td>
+<td class="entry" align="">The estimated price of a segment predicted by Coupa's Community Intelligence Price Prediction</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Estimated Amount Currency</td>
+<td class="entry" align="">Currency code related to the estimated amount requested on expense preapproval</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requested Amount</td>
+<td class="entry" align="">Total amount requested by the user on expense preapproval form</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requested Amount Currency</td>
+<td class="entry" align="">Currency code related to the requested amount on expense preapproval line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Type Name</td>
+<td class="entry" align="">The COA of the account selected in account code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">The accounting string that is assigned to the expense preapproval line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Accounting Total</td>
+<td class="entry" align="">The total expense preapproval amount requested in the COAs currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Accounting Total Currency</td>
+<td class="entry" align="">Currency code related to the accounting total on the expense preapproval line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created At</td>
+<td class="entry" align="">The time of record creation in the format YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated At</td>
+<td class="entry" align="">Time that the record was updated in the format YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

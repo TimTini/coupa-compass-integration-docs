@@ -1,0 +1,156 @@
+<article class="" id="lookup_values_api_example_calls">
+<h1 class="title">Lookup Values API Example Calls</h1>
+<div class="body">
+<div class="" id="different_query_options_for_lookup_values">
+<h2 class="title sectiontitle">Different Query Options for Lookup Values</h2>
+<p class="">Here are more examples of how to use the Lookup Values API to
+query and get the result set you want.</p>
+<p class="">This Query will give you the lookup values which are active</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/lookup_values?active=true</code>
+</p>
+<p class="">This query will give you the lookup values which were created
+after a certain date</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/lookup_values?created_at[gt]=2014-04-22</code>
+</p>
+<p class="">This query will give you all the lookup values for all the
+lookups which were created after a certain date</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/lookup_values?[lookup][created-at][gt]=2014-04-22</code>
+</p>
+</div>
+<div class="" id="lookup_values_api_get_example">
+<h2 class="title sectiontitle">Lookup Values API Get Example</h2>
+<p class="">In this example, we queried for a single lookup value with an ID
+of 1.</p>
+<p class="">We did a GET to the URL:</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/lookup_values/1</code>
+</pre>
+</p>
+<p class="">
+        or<pre>
+<code class="codeblock">
+<code class="ph codeph">https://&lt;instance url&gt;/api/lookup_values?1</code>
+</code>
+</pre>
+</p>
+<p class="">Here is the response matching the search criteria:</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;lookup-value&gt;
+	 &lt;id type="integer"&gt;1&lt;/id&gt;
+	 &lt;created-at type="datetime"&gt;2014-04-23T11:24:10-07:00&lt;/created-at&gt;
+	 &lt;updated-at type="datetime"&gt;2014-04-24T09:08:41-07:00&lt;/updated-at&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;name&gt;TestAccount1&lt;/name&gt;
+	 &lt;description&gt;DescAccountNo1&lt;/description&gt;
+	 &lt;external-ref-num&gt;ExtRefAccnt1&lt;/external-ref-num&gt;
+	 &lt;external-ref-code&gt;ExtRefAccnt1&lt;/external-ref-code&gt;
+	 &lt;parent-id nil="true" /&gt;
+	 &lt;lookup-id type="integer"&gt;1&lt;/lookup-id&gt;
+	 &lt;depth type="integer"&gt;0&lt;/depth&gt;
+	 &lt;account-type nil="true" /&gt;
+	 &lt;lookup&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2014-04-23T11:22:10-07:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2014-04-23T11:22:10-07:00&lt;/updated-at&gt;
+			&lt;active type="boolean"&gt;true&lt;/active&gt;
+			&lt;name&gt;Account&lt;/name&gt;
+			&lt;description&gt;Account&lt;/description&gt;
+			&lt;fixed-depth type="integer"&gt;0&lt;/fixed-depth&gt;
+			&lt;level-1-name /&gt;
+			&lt;level-2-name /&gt;
+			&lt;level-3-name /&gt;
+			&lt;level-4-name /&gt;
+			&lt;level-5-name /&gt;
+			&lt;level-6-name /&gt;
+			&lt;level-7-name /&gt;
+			&lt;level-8-name /&gt;
+			&lt;level-9-name /&gt;
+			&lt;level-10-name /&gt;
+	 &lt;/lookup&gt;
+	 &lt;created-by&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+			&lt;login&gt;coupasupport&lt;/login&gt;
+			&lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Coupa&lt;/firstname&gt;
+			&lt;lastname&gt;Support&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;mycustom-userfield /&gt;
+	 &lt;/created-by&gt;
+	 &lt;updated-by&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+			&lt;login&gt;coupasupport&lt;/login&gt;
+			&lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Coupa&lt;/firstname&gt;
+			&lt;lastname&gt;Support&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;mycustom-userfield /&gt;
+	 &lt;/updated-by&gt;
+&lt;/lookup-value&gt;</code>
+</pre>
+</div>
+<div class="" id="lookup_values_create">
+<h2 class="title sectiontitle">Lookup Values Create</h2>
+<p class="">In this example we are inserting a Lookup Values for one of the
+existing Lookups in COUPA. We are not using any Coupa system ID's
+for any of the reference objects.</p>
+<p class="">We posted it to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/lookup_values.</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;lookup-value&gt;
+	 &lt;name&gt;TestAccount2&lt;/name&gt;
+	 &lt;description&gt;DescAccountNo2&lt;/description&gt;
+	 &lt;external-ref-num&gt;ExtRefAccnt2&lt;/external-ref-num&gt;
+	 &lt;external-ref-code&gt;ExtRefAccnt2&lt;/external-ref-code&gt;
+	 &lt;active&gt;yes&lt;/active&gt;
+	 &lt;lookup&gt;
+			&lt;name&gt;Account&lt;/name&gt;
+	 &lt;/lookup&gt;
+&lt;/lookup-value&gt;</code>
+</pre>
+</div>
+<div class="" id="lookup_values_api_put_example">
+<h2 class="title sectiontitle"> Lookup Values API PUT Example</h2>
+<p class="">Example for a PUT:</p>
+<p class="">
+<b>To activate or deactivate a lookup value</b>
+</p>
+<p class="">
+URL: <code class="ph codeph">https://&lt;instance&gt;/api/lookup_values/&lt;id&gt;</code>
+</p>
+<p class="">
+<b>Sample Code for deactivating a lookup value</b>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;lookup-value&gt;
+	 &lt;active&gt;false&lt;/active&gt;
+&lt;/lookup-value&gt;</code>
+</pre>
+<p class="">To Update the description of a lookup value</p>
+<p class="">URL:
+<code class="ph codeph">https://&lt;instance&gt;/api/lookup_values/&lt;id&gt;</code>
+</p>
+<p class="">
+<b>Sample Code to Update the lookup for a lookup
+value</b>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;lookup-value&gt;
+	 &lt;lookup-id&gt;2&lt;/lookup-id&gt;
+&lt;/lookup-value&gt; </code>
+</pre>
+</div>
+</div>
+</article>

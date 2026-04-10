@@ -1,0 +1,14 @@
+Expense Line Virtual Card API
+
+Association
+
+This resource is associated with Expense Lines API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+amount 	Original preapproved amount 	 	 	 	 	yes 	decimal(32,4)
+currency 	Original preapproved currency 	 	 	 	 	yes

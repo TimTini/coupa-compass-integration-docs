@@ -1,0 +1,319 @@
+<article class="" id="supplier_risk_aware_feed_api_supplier_risk_aware_feed">
+<h1 class="title">Supplier Risk Aware Feed API (/supplier_risk_aware_feed)</h1>
+<p class="">
+<p class="">Use the Supplier Risk Aware Feed API to load your governance, risk, and compliance (GRC) data into Risk Aware.</p>
+</p>
+<div class="body">
+<p class="">The <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x298737.xml" title="">Supplier Risk Aware Feed</a> API lets you load your governance, risk, and compliance (GRC) data into Risk Aware.</p>
+<p class="">The URL to access Order Lists is: <code class="ph codeph">https://{your_instance}/api/supplier_risk_aware_feed/</code>
+</p>
+<div class="" id="actions-d957e268810">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Supplier Risk Aware Feed API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/supplier_risk_aware_feed</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create a new Supplier Risk Feed for a specific supplier. Cannot submit a POST request when the corresponding supplier status is <code class="ph codeph">evaluating</code>. </td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/supplier_risk_aware_feed</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Get a list of Supplier Risk Feeds</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/supplier_risk_aware_feed/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Get a specific Supplier Risk Feed</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/supplier_risk_aware_feed/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update a specific Supplier Risk Feed</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">You can get a feed for a supplier, even if you don't know the ID of the feed by querying by <code class="ph codeph">supplier[id]</code> , <code class="ph codeph">supplier[name]</code> , or <code class="ph codeph">supplier[number]</code> .</p>
+</div>
+<div class="" id="elements-d957e268944">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The Supplier Risk Aware Feed API contains the following elements:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="" colspan="4">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-01</td>
+<td class="entry" align="">Number field 1. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-02</td>
+<td class="entry" align="">Number field 2. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-03</td>
+<td class="entry" align="">Number field 3. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-04</td>
+<td class="entry" align="">Number field 4. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-05</td>
+<td class="entry" align="">Number field 5. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-06</td>
+<td class="entry" align="">Number field 6. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-07</td>
+<td class="entry" align="">Number field 7. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-08</td>
+<td class="entry" align="">Number field 8. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-09</td>
+<td class="entry" align="">Number field 9. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-field-10</td>
+<td class="entry" align="">Number field 10. At least one number field is required.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal or nil=true</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-id</td>
+<td class="entry" align="">Supplier ID</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier</td>
+<td class="entry" align="" colspan="4">When performing a POST specify any one of these supplier elements <code class="ph codeph">id</code> , <code class="ph codeph">name</code> , or <code class="ph codeph">number</code> . to positively identify the supplier.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)-da-5797-da-5797" title="">Supplier</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="" colspan="4">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">To set a number field to nil, use <code class="ph codeph">nil=true</code> in the number field attribute. For example: &lt;number-field-01 nil="true"/&gt; . This is handy when you want to delete a value.</p>
+</div>
+<div class="" id="sample_payloads-d957e269518">
+<h2 class="title sectiontitle">Sample payloads</h2>
+<p class="">
+<b>GET a feed for a specific supplier</b>
+</p>
+<p class="">You can get a feed for a supplier, even if you don't know the ID of the feed by querying by <code class="ph codeph">supplier[id]</code> , <code class="ph codeph">supplier[name]</code> , or <code class="ph codeph">supplier[number]</code> .</p>
+<p class="">
+<b>Example Query</b>
+</p>
+<pre id="pre_rtc_2ml_w1c" xml:space="preserve">GET https://{your-instance}/api/supplier_risk_aware_feed?supplier[name]={name of the supplier in Coupa}</pre>
+<p class="">
+<b>Example Response</b>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier-risk-aware-feeds type="array"&gt;
+		&lt;supplier-risk-aware-feed&gt;
+				&lt;id type="integer"&gt;22&lt;/id&gt;
+				&lt;created-at type="dateTime"&gt;2019-03-05T08:12:26+13:00&lt;/created-at&gt;
+				&lt;updated-at type="dateTime"&gt;2019-03-05T08:12:26+13:00&lt;/updated-at&gt;
+				&lt;number-field-01 nil="true"/&gt;
+				&lt;number-field-02 type="decimal"&gt;4.1235&lt;/number-field-02&gt;
+				&lt;number-field-03 type="decimal"&gt;1.1111&lt;/number-field-03&gt;
+				&lt;number-field-04 type="decimal"&gt;1.0&lt;/number-field-04&gt;
+				&lt;number-field-05 type="decimal"&gt;1.0&lt;/number-field-05&gt;
+				&lt;number-field-06 type="decimal"&gt;1.0&lt;/number-field-06&gt;
+				&lt;number-field-07 type="decimal"&gt;1.0&lt;/number-field-07&gt;
+				&lt;number-field-08 type="decimal"&gt;1.0&lt;/number-field-08&gt;
+				&lt;number-field-09 type="decimal"&gt;1.0&lt;/number-field-09&gt;
+				&lt;number-field-10 type="decimal"&gt;1.0&lt;/number-field-10&gt;
+				&lt;supplier&gt;
+					 ...
+				&lt;/supplier&gt;
+		&lt;/supplier-risk-aware-feed&gt;
+&lt;/supplier-risk-aware-feeds&gt; </code>
+</pre>
+<p class="">
+<b>POST a new feed</b>
+</p>
+<p class="">You can create a new feed for a supplier by specifying one of <code class="ph codeph">&lt;id&gt;</code> , <code class="ph codeph">&lt;name&gt;</code> , or <code class="ph codeph">&lt;number&gt;</code> . A given supplier can only have one Risk Aware feed.</p>
+<p class="">
+<b>Example query and payload</b>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier-risk-aware-feed&gt;
+		&lt;number-field-01 nil="true"/&gt;
+		&lt;number-field-02 type="decimal"&gt;4.1235&lt;/number-field-02&gt;
+		&lt;number-field-03 type="decimal"&gt;1.1111&lt;/number-field-03&gt;
+		&lt;number-field-04 type="decimal"&gt;1.0&lt;/number-field-04&gt;
+		&lt;number-field-05 type="decimal"&gt;1.0&lt;/number-field-05&gt;
+		&lt;number-field-06 type="decimal"&gt;1.0&lt;/number-field-06&gt;
+		&lt;number-field-07 type="decimal"&gt;1.0&lt;/number-field-07&gt;
+		&lt;number-field-08 type="decimal"&gt;1.0&lt;/number-field-08&gt;
+		&lt;number-field-09 type="decimal"&gt;1.0&lt;/number-field-09&gt;
+		&lt;number-field-10 type="decimal"&gt;1.0&lt;/number-field-10&gt;
+		&lt;supplier&gt;
+				&lt;id&gt;{Coupa's ID for the supplier}&lt;/id&gt;
+				&lt;name&gt;{the name of the supplier}&lt;/name&gt;
+				&lt;number&gt;{the supplier number}&lt;/number&gt;
+		&lt;/supplier&gt;
+&lt;/supplier-risk-aware-feed&gt;</code>
+</pre>
+</div>
+<div class="" id="example_query_and_payload">
+<p class="">The response to a POST or PUT is the same as a GET.</p>
+</div>
+</div>
+</article>

@@ -1,0 +1,94 @@
+---
+title: "Catalog Items Example Calls"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/accounts-api-(accounts)/catalog-items-example-calls"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/accounts-api-(accounts)/catalog-items-example-calls"
+status_code: 200
+fetched_at: "2026-04-09T11:59:07+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Accounts API (/accounts)"
+  - "Catalog Items Example Calls"
+---
+
+# Catalog Items Example Calls
+
+## Create Sample Item
+
+In this example we are creating an item.
+
+We posted it to the URL:
+`https://.coupahost.com/api/items`
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<active>true</active>
+<description>Example API Created Item</description>
+<item-number>ExpAPI1001</item-number>
+<name>Example API Item 1001</name>
+<commodity>
+<name>IT</name>
+</commodity>
+<uom>
+<code>EA</code>
+</uom>
+<reorder-alerts />
+</item>
+```
+
+Below is the response that I received back when I posted the
+above:
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id type="integer">51</id>
+<active type="boolean">true</active>
+<created-at type="datetime">2011-04-05T09:01:49-07:00</created-at>
+<description>Example API Created Item</description>
+<item-number>ExpAPI1001</item-number>
+<name>Example API Item 1001</name>
+<updated-at type="datetime">2011-04-05T09:01:49-07:00</updated-at>
+<test-text-field type="string" />
+<commodity>
+<active type="boolean">true</active>
+<created-at type="datetime">2008-10-27T20:04:00Z</created-at>
+<id type="integer">2</id>
+<name>IT</name>
+<updated-at type="datetime">2010-02-25T00:32:35Z</updated-at>
+<created-by>
+<email>example@coupa.com</email>
+<employee-number />
+<firstname>Example</firstname>
+<id type="integer">101</id>
+<lastname>User</lastname>
+<login>example</login>
+</created-by>
+<updated-by>
+<email>example+ke@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<id type="integer">16</id>
+<lastname>Eisner</lastname>
+<login>administrator</login>
+</updated-by>
+<code type="string" />
+</commodity>
+<api-user>
+<email>example+supportAPI@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Example</firstname>
+<id type="integer">44</id>
+<lastname>API User</lastname>
+<login>example+supportAPI@coupa.com</login>
+</api-user>
+<uom>
+<code>EA</code>
+<id type="integer">1</id>
+</uom>
+<reorder-alerts />
+</item>
+```

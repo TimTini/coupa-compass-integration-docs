@@ -1,0 +1,568 @@
+<article class="" id="candidate_confirmation_api">
+<h1 class="title">Candidate Confirmation API</h1>
+<div class="body">
+<p class="">The CCW Candidate Confirmation API is designed for customers who manage some or all candidate onboarding activities through third-party applications and want to automate the process of confirming candidates, one at a time, as contingent workers (CWs). The API can process a request to confirm a single candidate, with no other data passed in the request.</p>
+<p class="">The CCW Candidate Lookup API can be used, in conjunction, to find candidates that meet the criteria necessary for confirmation. The Candidate Confirmation API can then confirm each eligible candidate, one by one.</p>
+<p class="">The base URL to access the CCW Candidate Confirmation API is: <code class="ph codeph">https://&lt;instance&gt;/api/candidates/&lt;id&gt;/confirm</code>
+</p>
+<p class="">Refer to the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/ccw-api-overview" title="">CCW API Overview</a> to learn how to be authenticated by CCW APIs.</p>
+<div class="" id="example_request">
+<h2 class="title sectiontitle">Example Request</h2>
+<p class="">The CCW Candidate Confirm API is supported by the PUT method to confirm one candidate as a CW, by passing only that candidate's unique ID in the API request, with no explicit Request Body required. In the example below, "12345" is the unique ID retrieved from a Candidate Lookup API request:</p>
+<pre>
+<code class="codeblock">PUT /api/candidates/12345/confirm
+HOST: &lt;CCW FQDN&gt;
+Authorization: Bearer &lt;token&gt;
+Accept: "application/json"
+Correlation-Id: Z098Jth56Nkio343YY1vXt</code>
+</pre>
+</div>
+<div class="" id="example_responses">
+<h2 class="title sectiontitle">Example Responses</h2>
+<p class="">Below is an example of a successful response. The requested candidate ID is validated and then confirmed. CCW indicates that the confirmation was a success by sending a response with the HTTP 200 response code and the Candidate ID:</p>
+<pre>
+<code class="codeblock">{
+    "id":"12345"
+}</code>
+</pre>
+<p class="">In the following example the confirmation request has failed. The HTTP error code is returned, along with applicable error messages:</p>
+<pre>
+<code class="codeblock">{  
+ "error_code": "string",
+ "error_summary": "string",
+ "error_causes": [     
+  {  
+    "error_sub_code": "string",
+    "error_sub_code_desc": "string",
+  }
+ ]
+}</code>
+</pre>
+</div>
+<div class="" id="error_codes">
+<h2 class="title sectiontitle">Error Codes</h2>
+<p class="">When a Confirm API request fails, the response will include one of the following error codes:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>HTTP Status Code</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Error Code</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Error Sub Code</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Error Message</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000001</p>
+</td>
+<td class="entry" align="">
+<p class="">Bad request. Missing one or more of the mandatory HTTP headers</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000006</p>
+</td>
+<td class="entry" align="">
+<p class="">The Start Date cannot be a past date</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000007</p>
+</td>
+<td class="entry" align="">
+<p class="">Invalid start day</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000008</p>
+</td>
+<td class="entry" align="">
+<p class="">End date must be after Start date</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000009</p>
+</td>
+<td class="entry" align="">
+<p class="">Contract period exceeds the length of service requirements of &lt;configured number of days/weeks/months/years&gt; &lt;days/weeks/months/years&gt;</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000010</p>
+</td>
+<td class="entry" align="">
+<p class="">Invalid Account &lt;account&gt;</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000012</p>
+</td>
+<td class="entry" align="">
+<p class="">A candidate or worker with this CCW ID already exists</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000013</p>
+</td>
+<td class="entry" align="">
+<p class="">The Start Date cannot be a future date</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000019</p>
+</td>
+<td class="entry" align="">
+<p class="">Task Order is not Valid. Either it is canceled, Inactive or not found</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000020</p>
+</td>
+<td class="entry" align="">
+<p class="">Work Package is not Valid. Either it is canceled, Inactive or not found</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000023</p>
+</td>
+<td class="entry" align="">
+<p class="">Candidate did not meet the confirmation criteria</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000024</p>
+</td>
+<td class="entry" align="">
+<p class="">The candidate is already confirmed</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000025</p>
+</td>
+<td class="entry" align="">
+<p class="">OT Pay Rate must be greater than or equal to the Pay Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000026</p>
+</td>
+<td class="entry" align="">
+<p class="">DT Pay Rate must be greater than or equal to OT Pay Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000027</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier OT Bill Rate must be greater than or equal to the Supplier Bill Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000028</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier DT Bill Rate must be greater than or equal to the Supplier OT Bill Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000029</p>
+</td>
+<td class="entry" align="">
+<p class="">Final OT Bill Rate must be greater than or equal to the Final Bill Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000030</p>
+</td>
+<td class="entry" align="">
+<p class="">Final DT Bill Rate must be greater than or equal to Final OT Bill Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000031</p>
+</td>
+<td class="entry" align="">
+<p class="">Bill Rate must be greater than or equal to the Pay Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000032</p>
+</td>
+<td class="entry" align="">
+<p class="">Final Bill Rate must be greater than or equal to Supplier Bill Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000033</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier OT Bill Rate must be greater than or equal to the OT Pay Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000034</p>
+</td>
+<td class="entry" align="">
+<p class="">Final OT Bill Rate must be greater than or equal to Supplier OT Bill Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000035</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier DT Bill Rate must be greater than or equal to DT Pay Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000036</p>
+</td>
+<td class="entry" align="">
+<p class="">Final DT Bill Rate must be greater than or equal to Supplier DT Bill Rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000037</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Bill rate should be the same as Final Bill rate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000038</p>
+</td>
+<td class="entry" align="">
+<p class="">Request cannot be completed as the requisition is closed</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000039</p>
+</td>
+<td class="entry" align="">
+<p class="">Request cannot be completed as the requisition is cancelled</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">401</p>
+</td>
+<td class="entry" align="">
+<p class="">E4010000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4010001</p>
+</td>
+<td class="entry" align="">
+<p class="">Authentication failed. Check the credentials associated with your consumer app</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">401</p>
+</td>
+<td class="entry" align="">
+<p class="">E4010000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4010002</p>
+</td>
+<td class="entry" align="">
+<p class="">Authentication failed. Access token is invalid or expired</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">403</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030001</p>
+</td>
+<td class="entry" align="">
+<p class="">Not Authorized. The user does not have the rights to perform the action</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">403</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030002</p>
+</td>
+<td class="entry" align="">
+<p class="">Not Authorized. Invalid scope</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">403</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030003</p>
+</td>
+<td class="entry" align="">
+<p class="">Not Authorized. The API user is invalid. Ensure user is active and set as an API user</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">404</p>
+</td>
+<td class="entry" align="">
+<p class="">E4040000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4040001</p>
+</td>
+<td class="entry" align="">
+<p class="">Not found</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">405</p>
+</td>
+<td class="entry" align="">
+<p class="">E4050000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4050001</p>
+</td>
+<td class="entry" align="">
+<p class="">Method Not Supported. Service does not support the requested HTTP method</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">500</p>
+</td>
+<td class="entry" align="">
+<p class="">E5000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E5000001</p>
+</td>
+<td class="entry" align="">
+<p class="">A system or application error occurred, Please contact Coupa CW Admin</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+</div>
+</div>
+</article>

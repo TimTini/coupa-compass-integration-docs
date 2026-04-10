@@ -1,0 +1,249 @@
+<article class="" id="purchase_order_revisions_api_example_calls">
+<h1 class="title">Purchase Order Revisions API Example Calls</h1>
+<div class="body">
+<div class="" id="overview-d957e225833">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Purchase Order Revisions API allows you to read access to PO Change History. This API
+        contains a record for each change to a PO, whether the change results in the PO being resent
+        to the supplier (like a new line or modified quantity on a line) or if the change is
+        internal (like changing an Account Code).</p>
+<p class="">The API is similar in structure to the Purchase Order API with three main differences:</p>
+<ol class="ol">
+<li class="li">The record contains a 'revision-record' element. This contains information about the
+          specific 'internal revision' or change to the PO captured in this record.</li>
+<li class="li"> With few exceptions, only fields which have changed fields are visible. The only fields
+          which will be visible regardless of the change are the PO ID, the PO Line ID, or the
+          &lt;created/&gt; and &lt;deleted/&gt; fields which appear as 'true' if that has been added
+          or removed.</li>
+<li class="li"> Each non PO ID or PO Line ID field element contains two new elements &lt;from/&gt; and
+          &lt;to/&gt;. The &lt;to/&gt; field will contain the new values which were created or
+          updated in this revision while the &lt;from/&gt; field contains the values from the
+          previous revision. This is explained in more detail below in the Field Definitions
+          section.</li>
+</ol>
+<p class="">The URL to access purchase orders is:
+          <code class="ph codeph">https://&lt;instance&gt;/api/purchase_order_revisions</code>
+</p>
+</div>
+<div class="" id="search_criteria">
+<h2 class="title sectiontitle">Search Criteria</h2>
+<p class="">The 'base' path for any query parameters is within the
+revision-record element. Passing in id=123 would pull the
+revision-record with the ID 123, not the revision records for PO
+123. In order to search for specific POs you would need to use the
+special parameter of"purchase_order_id" and set the value to the
+desired Purchase Order Number.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<b>Reference Object</b>
+</td>
+<td class="entry" align="">
+<b>Search Criteria Options</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Purchase Order ID</td>
+<td class="entry" align="">purchase_order_id</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Internal Revision Number</td>
+<td class="entry" align="">revision</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Date the Change was made</td>
+<td class="entry" align="">created-at</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="field_definitions-d957e225937">
+<h2 class="title sectiontitle">Field Definitions</h2>
+<p class="">&lt;to/&gt; and &lt;from/&gt; fields which are associative
+objects will contain the full associative object.</p>
+<p class="">
+<b>Simple Field Update</b>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;status&gt;
+	 &lt;from type="string"&gt;draft&lt;/from&gt;
+	 &lt;to type="string"&gt;created&lt;/to&gt;
+&lt;/status&gt; </code>
+</pre>
+<p class="">
+<b>Associative Field Update</b>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;updated-by&gt;
+	 &lt;from&gt;
+			&lt;id type="integer"&gt;37&lt;/id&gt;
+			&lt;login&gt;test_user@coupa.com&lt;/login&gt;
+			&lt;email&gt;test_user@coupa.com&lt;/email&gt;
+			&lt;employee-number /&gt;
+			&lt;firstname&gt;Test&lt;/firstname&gt;
+			&lt;lastname&gt;User&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;custom_field_on_the_user&gt;ABC&lt;/custom_field_on_the_user&gt;
+	 &lt;/from&gt;
+	 &lt;to&gt;
+			&lt;id type="integer"&gt;24&lt;/id&gt;
+			&lt;login&gt;update_user@coupa.com&lt;/login&gt;
+			&lt;email&gt;update_user@coupa.com&lt;/email&gt;
+			&lt;employee-number /&gt;
+			&lt;firstname&gt;Update&lt;/firstname&gt;
+			&lt;lastname&gt;User&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;custom_field_on_the_user&gt;DEF&lt;/custom_field_on_the_user&gt;
+	 &lt;/to&gt;
+&lt;/updated-by&gt; </code>
+</pre>
+</div>
+<div class="" id="sample_api_get_response">
+<h2 class="title sectiontitle">Sample API GET Response</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;order-header-revision&gt;
+	 &lt;revision-record&gt;
+			&lt;revision type="integer"&gt;1&lt;/revision&gt;
+			&lt;id type="integer"&gt;30&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2010-12-11T14:27:15-08:00&lt;/created-at&gt;
+			&lt;created-by type="integer"&gt;1&lt;/created-by&gt;
+	 &lt;/revision-record&gt;
+	 &lt;comments /&gt;
+	 &lt;test-text-field&gt;
+			&lt;from type="string"&gt;test_receipts&lt;/from&gt;
+			&lt;to type="string" /&gt;
+	 &lt;/test-text-field&gt;
+	 &lt;id type="integer"&gt;2143&lt;/id&gt;
+	 &lt;order-lines&gt;
+			&lt;order-line&gt;
+				 &lt;testfield&gt;
+						&lt;from type="string" /&gt;
+						&lt;to type="string" /&gt;
+				 &lt;/testfield&gt;
+				 &lt;id type="integer"&gt;3060&lt;/id&gt;
+				 &lt;line-num type="integer"&gt;1&lt;/line-num&gt;
+				 &lt;need-by-date&gt;
+						&lt;from type="datetime"&gt;2010-07-23T07:00:00-07:00&lt;/from&gt;
+						&lt;to type="datetime"&gt;2010-07-23T00:00:00-07:00&lt;/to&gt;
+				 &lt;/need-by-date&gt;
+				 &lt;source-part-num&gt;
+						&lt;from type="string" /&gt;
+						&lt;to type="string" /&gt;
+				 &lt;/source-part-num&gt;
+				 &lt;updated-at&gt;
+						&lt;from type="datetime"&gt;2010-12-10T20:40:45-08:00&lt;/from&gt;
+						&lt;to type="datetime"&gt;2010-12-11T14:27:13-08:00&lt;/to&gt;
+				 &lt;/updated-at&gt;
+				 &lt;updated-by&gt;
+						&lt;from&gt;
+							 &lt;email&gt;matt.support+supportAPI@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;Matt&lt;/firstname&gt;
+							 &lt;id type="integer"&gt;44&lt;/id&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;login&gt;matt.support+supportAPI@coupa.com&lt;/login&gt;
+						&lt;/from&gt;
+						&lt;to&gt;
+							 &lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+						&lt;/to&gt;
+				 &lt;/updated-by&gt;
+			&lt;/order-line&gt;
+			&lt;order-line&gt;
+				 &lt;testfield&gt;
+						&lt;from type="string" /&gt;
+						&lt;to type="string" /&gt;
+				 &lt;/testfield&gt;
+				 &lt;id type="integer"&gt;3061&lt;/id&gt;
+				 &lt;line-num type="integer"&gt;2&lt;/line-num&gt;
+				 &lt;need-by-date&gt;
+						&lt;from type="datetime"&gt;2010-12-11T04:40:42-08:00&lt;/from&gt;
+						&lt;to type="datetime"&gt;2010-12-11T00:00:00-08:00&lt;/to&gt;
+				 &lt;/need-by-date&gt;
+				 &lt;source-part-num&gt;
+						&lt;from type="string" /&gt;
+						&lt;to type="string" /&gt;
+				 &lt;/source-part-num&gt;
+				 &lt;updated-at&gt;
+						&lt;from type="datetime"&gt;2010-12-10T20:40:45-08:00&lt;/from&gt;
+						&lt;to type="datetime"&gt;2010-12-11T14:27:13-08:00&lt;/to&gt;
+				 &lt;/updated-at&gt;
+				 &lt;updated-by&gt;
+						&lt;from&gt;
+							 &lt;email&gt;matt.support+supportAPI@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;Matt&lt;/firstname&gt;
+							 &lt;id type="integer"&gt;44&lt;/id&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;login&gt;matt.support+supportAPI@coupa.com&lt;/login&gt;
+						&lt;/from&gt;
+						&lt;to&gt;
+							 &lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+						&lt;/to&gt;
+				 &lt;/updated-by&gt;
+			&lt;/order-line&gt;
+	 &lt;/order-lines&gt;
+	 &lt;ship-to-user&gt;
+			&lt;from&gt;
+				 &lt;email&gt;coupauser+2010-12-10T20:40:37-0800@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;Test&lt;/firstname&gt;
+				 &lt;id type="integer"&gt;144&lt;/id&gt;
+				 &lt;lastname&gt;Account&lt;/lastname&gt;
+				 &lt;login&gt;query_user_2010-12-10T20:40:37-0800&lt;/login&gt;
+			&lt;/from&gt;
+			&lt;to&gt;
+				 &lt;email&gt;coupauser+2010-12-10T17:48:07-0800@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Test&lt;/firstname&gt;
+				 &lt;id type="integer"&gt;45&lt;/id&gt;
+				 &lt;lastname&gt;Account&lt;/lastname&gt;
+				 &lt;login&gt;flow_user_2010-12-10T17:48:07-0800&lt;/login&gt;
+			&lt;/to&gt;
+	 &lt;/ship-to-user&gt;
+	 &lt;updated-at&gt;
+			&lt;from type="datetime"&gt;2010-12-10T20:40:46-08:00&lt;/from&gt;
+			&lt;to type="datetime"&gt;2010-12-11T14:27:14-08:00&lt;/to&gt;
+	 &lt;/updated-at&gt;
+	 &lt;updated-by&gt;
+			&lt;from&gt;
+				 &lt;email&gt;matt.support+supportAPI@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;Matt&lt;/firstname&gt;
+				 &lt;id type="integer"&gt;44&lt;/id&gt;
+				 &lt;lastname&gt;Support&lt;/lastname&gt;
+				 &lt;login&gt;matt.Support+supportAPI@coupa.com&lt;/login&gt;
+			&lt;/from&gt;
+			&lt;to&gt;
+				 &lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+				 &lt;id type="integer"&gt;1&lt;/id&gt;
+				 &lt;lastname&gt;Support&lt;/lastname&gt;
+				 &lt;login&gt;coupasupport&lt;/login&gt;
+			&lt;/to&gt;
+	 &lt;/updated-by&gt;
+	 &lt;version&gt;
+			&lt;from type="integer"&gt;1&lt;/from&gt;
+			&lt;to type="integer"&gt;2&lt;/to&gt;
+	 &lt;/version&gt;
+&lt;/order-header-revision&gt; </code>
+</pre>
+</div>
+</div>
+</article>

@@ -1,0 +1,9 @@
+x333218.xml
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/x333218.xml
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXcttOWNsA04cYsaSFshdnrIJRhT44SIRLIcKnX%2FPhSdBG4B56inedsM5wRtY8Wq80%2F6Fn93SD7ZrBfs4TAuRzXMxumEz8q0lPU03Zd8lE5mU5T7PR8iH7LkFzpSRi%2FYICtYsiHqcKPJg%2FYBKgbjtChTXuwKLkZTUYyzYVHes2QdXJQGH5lP3lsSeS5NZyHFo0enocnMs4dMmjYHa%2F%2F79xBgC0TWOB%2B%2BeI7HZzMougLKwfqq%2FSKB%2B0lOZPK%2BHEu%2BGicxNlywAzSEfdIqCKgX%2FEAqZ7yRprlSulb6ccE6p4UBUiQ0tEjCS7Fdfb8RoanYn4ZIfNvtqrT6ud2xZEWErq90bTR1Lbotuhcl8e725rxkTJ7FQrFer5lf4rLk2DaaRDzS55HsW362nPfTIt7CnfE%2Fp8N7Ara8mHWenymfbKz4EaQ268o0Sv7tN92Cv%2BzEMx4RVaeHOCqwBdWs6tohUdhh05g%2F1w7Bh8N414UF5MuT7b9vdPkK&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Frelease-notes%2Fjanuary-2024-release-(r38)%2Fwhats-new-in-this-release%2Fcontract-management%2Fcontract-line-definitions
+
+Observed redirect page title: Coupa Portals - Sign In

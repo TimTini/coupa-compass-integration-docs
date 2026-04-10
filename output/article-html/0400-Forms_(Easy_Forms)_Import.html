@@ -1,0 +1,787 @@
+<article class="" id="forms_easy_forms_import">
+<h1 class="title">Forms (Easy Forms) Import</h1>
+<div class="body">
+<div class="" id="overview-d117e137302">
+<h2 class="title sectiontitle">Overview </h2>
+<p class="">The Forms import process reads files from <code class="ph codeph">./Incoming/EasyForm/</code> in the
+        SFTP. These files will be moved to the archive folder located at
+          <code class="ph codeph">./Incoming/Archive/EasyForm/</code> before being processed in alphanumeric
+        order.</p>
+</div>
+<div class="" id="keys_and_validations">
+<h2 class="title sectiontitle">Keys and validations</h2>
+<p class="">
+<code class="ph codeph">Name</code> is the key field to update an existing Form.</p>
+</div>
+<div class="" id="section_osf_yx4_21c">
+<h2 class="title sectiontitle">Possible values</h2>
+<dl class="dl">
+<dt class="dt dlterm">Type</dt>
+<dd class="dd">invoice, invoice_line, supplier_information, sim_remit-to, sim_contract,
+            contingent_worker, contract, expense_preapproval, supplier_review, user, sourcing</dd>
+</dl>
+</div>
+<div class="" id="section_ekd_vx4_21c">
+<h2 class="title sectiontitle">Form</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Form</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Form</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Form ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Form ID is used to find easy form for update</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Child form name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Type of the easy form</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sub Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Sub Type. Can be set only for SIM Contact</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Action*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Action for the easy form. The allowable type of action depends on the type of form being created.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Content Groups</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Easy form content groups separated by semicolon. Max 100 characters per content group name.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Description of the easy form</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Auto Approve</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Easy form auto approve. Possible values are yes or no</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Auto Apply</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Easy form auto apply. Possible values are yes or no</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Auto Reminder</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Easy form auto reminder. Possible values are yes or no</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requester Reminder</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Easy Form auto requester reminder. Possible values are yes or no.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Preferred</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Preferred</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Design Element</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Design Element</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Type of the object field</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Alignment</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Alignment of the design element. Possible values are vertical or horizontal</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Text</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Text of the design element</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Conditional</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If this field is currently conditional or not</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Condition Source Reporting Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Reporting name of a widget that will be used in a condition</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Conditional Source Selection</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Value of a widget that will be used in a condition</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Widget Id</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Widget Identifier</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">General Field</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">General Field</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Label</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Label of the general field</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reporting Name*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Reporting name of the general field</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Hint</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Hint of the object field</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If this object field is currently required or not</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Encrypted</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If this object field is currently encrypted or not</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Options</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">General field options can be set only for radio buttons widget</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Object Field</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object Field</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ignore Content Group Restrictions</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object field ignore content group restrictions can be set only for content groups widget</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contextual User Default</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Contextual user default for certain widgets on invoicing forms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Value</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default value for the object field</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Send to Supplier</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If object's attachment is visible to supplier users or not</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Subform</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Subform</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="design_element_columns">
+<h2 class="title sectiontitle">Design element columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Hidden</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Design Element</td>
+<td class="entry" align="">Indicates the type of row</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">-</td>
+<td class="entry" align="">Design Element</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type*</td>
+<td class="entry" align="">
+<p class="">The type of the design element.</p>
+<p class="">Note</p>
+<p class="">If a form includes a page break widget, there must be a page break widget in the
+                  first widget position. This widget cannot be moved or deleted. </p>
+<p class="">All widgets displayed below the page break widget until the next page break
+                  widget are associated with that page. </p>
+</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">header, descriptive_text, section_break, new_line, page_break</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sub Type</td>
+<td class="entry" align="">Sub Type. Can be set only for SIM Contact</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Alignment</td>
+<td class="entry" align="">Alignment of the design element. Possible values are vertical or
+                horizontal</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">vertical, horizontal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Text</td>
+<td class="entry" align="">The text of the design element</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Not valid for section_break and new_line</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="general_field_columns">
+<h2 class="title sectiontitle">General field columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Hidden</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">General Field</td>
+<td class="entry" align="">Indicated the type of row</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">-</td>
+<td class="entry" align="">General Field</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type*</td>
+<td class="entry" align="">The type of the general field</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">check_box, date, multiple_check_boxes, radio_buttons, text_area,
+                text_field</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Label</td>
+<td class="entry" align="">The label of the general field</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reporting Name*</td>
+<td class="entry" align="">Reporting name of the general field</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Hint</td>
+<td class="entry" align="">The hint of the object field</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Required</td>
+<td class="entry" align="">If this general field is currently required or not</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">True, False</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Encrypted</td>
+<td class="entry" align="">If this general field is currently encrypted or not</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">True, False</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Options</td>
+<td class="entry" align="">General field options can be set only for radio buttons widget</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="object_field_columns">
+<h2 class="title sectiontitle">Object field columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Hidden</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Object Field</td>
+<td class="entry" align="">Indicates the type of row</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">-</td>
+<td class="entry" align="">Object Field</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type*</td>
+<td class="entry" align="">The type of the object field</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">See Object field types below.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Label</td>
+<td class="entry" align="">The label of the object field</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Hint</td>
+<td class="entry" align="">The hint of the object field</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Required</td>
+<td class="entry" align="">If this object field is currently required or not</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">True, False</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Encrypted</td>
+<td class="entry" align="">If this object field is currently encrypted or not</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">True, False</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ignore Content Group Restrictions</td>
+<td class="entry" align="">Object field ignore content group restrictions can be set only for content
+                groups widget</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">True, False</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Value</td>
+<td class="entry" align="">The default value for the object field</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="form_types_and_actions">
+<h2 class="title sectiontitle">Form types and actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Form Type</b>
+</th>
+<th class="entry " align="">
+<b>Available actions</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Invoice</td>
+<td class="entry" align="">New, Modify Another_user,
+                modify_another_user_in_the_requester's_content_groups,
+                modify_the_user_filling_out_the_form, create_a_new_user,</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Line</td>
+<td class="entry" align="">New</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Information</td>
+<td class="entry" align="">New Supplier Request - Searchable (Internal), Supplier Update (External), New
+                Supplier Request - Inline Only (Internal), Supplier Update - Searchable
+                (Internal)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SIM - Remit-To</td>
+<td class="entry" align="">New - Add New Remit-To's, Update - View Existing Remit-To's</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SIM - Contact</td>
+<td class="entry" align="">"Add new, view and edit Contact Details"</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract</td>
+<td class="entry" align="">New</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expense Preapproval</td>
+<td class="entry" align="">New</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Review</td>
+<td class="entry" align="">New (Internal)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">User</td>
+<td class="entry" align="">New, Modify another user, Modify another user in the requester's content
+                groups, Modify the user filling out the form, Create a new user</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sourcing</td>
+<td class="entry" align="">New Sourcing Questionnaire</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>Forms for custom objects can have New and Edit actions.</div>
+</p>
+</div>
+<div class="" id="object_field_types">
+<h2 class="title sectiontitle">Object field types</h2>
+<p class="">The <code class="ph codeph">Type</code> column for the Object field can contain different values based on
+        the type of object you're creating. Use this table to determine the allowable values for
+        your Form.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>If your Form is a/an...</b>
+</th>
+<th class="entry " align="">
+<b>These are the allowable values for the Type field</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Invoice</td>
+<td class="entry" align="">Invoice #, Currency, Chart of Accounts, Supplier, Attachments, Supplier Note,
+                Image Scan</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Line</td>
+<td class="entry" align="">Price, Billing, Description</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Information</td>
+<td class="entry" align="">Name, Display Name, Parent Company Name, Industry, Preferred Currency, Inco
+                Terms, Default Commodity, Minority Indicator, Minority Type, Tax Region, Tax
+                Classification, Federal Tax ID, DUNS Number, Tax-Exempt Other Explanation, Tax Code,
+                Income Type, Federal Reportable, International Tax ID, International Tax
+                Classification, International Other Explanation, Backend Invoicing System, Backend
+                Catalog System, Supplier Owner, Content Groups, Payment Terms, Supplier Region,
+                Government Agency Interaction Indicator, Government Agency Interaction, Organization
+                Type, Policy for Bribery and Corruption Indicator, Policy for Bribery and
+                Corruption, Government Allegation for Fraud and Bribery Indicator, Government
+                Allegation for Fraud and Bribery, Third-Party Interaction Indicator, Third-Party
+                Interaction, Country of Operation, Goods and Services Provided, Pay Group, Invoice
+                Amount Limit, Hold Payment Indicator, Hold Payment, Separate Remit-To, Comment
+                Source, Comment, Duplicates Exist, Supplier Insights, Federal Tax Form, State Tax
+                Form, Small Business Enterprise, Minority Business Enterprise, Women Business
+                Enterprise, LGBT, NDA, Bank Form, Veteran-Owned, Insurance, Certificate, Workers
+                Compensation Insurance, Public Liability Insurance, Child Labor Free, ISO 9001, ISO
+                14001, Food Safety, Custom Certificate 1, Custom Certificate 2, Code of Conduct, ISO
+                TS 16949, Dodd-Frank-Conflict Minerals, QAA ZVEI Quality Assurance A, W-8BEN,
+                W-8BEN-E, 8233, Sole Proprietorship, Limited Liability Corporation (LLC),
+                Non-Resident Alien, Professional Indemnity Insurance, Product Liability Insurance,
+                Massachusetts Gaming Commission License, Maryland Gaming and Lottery Control
+                Commission License, Michigan Gaming Control Board License, PO Email, PO Method, PO
+                Change Method, Hold POs for buyer review, cXML URL, cXML Domain, cXML Identity, cXML
+                Supplier Domain, cXML Supplier Identity, cXML Secret, cXML Protocol, cXML SSL
+                Version, Disable Cert Verify, cXML HTTP username, cXML HTTP password, Primary
+                Address, Remit To Location, Primary Contact</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SIM - Remit-To</td>
+<td class="entry" align="">Location Code, Address Name, Account Currency, Street Address, Street Address
+                2, Postal Code, City, State Region, Country, Beneficiary Name, Bank Account Number,
+                Bank Routing Number, IBAN Number, Sort Code, SWIFT Code (BIC) BSB Number,
+                Intermediary SWIFT Code (BIC), Intermediary IBAN Number, Account Type, Intermediary
+                Bank Name, Bank Address, Bank City, Bank State or Region, Bank Postal Code, Bank
+                Country, Active</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SIM - Contact</td>
+<td class="entry" align="">First Name, Last Name, Email address, Mobile Phone, Work Phone, Fax</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract</td>
+<td class="entry" align="">Contract Name, Contract #, Supplier, Starts, Expires, Owner, Supplier Account
+                #, Currency, Attachments, Savings %, Minimum Spend, Maximum Spend, Term Type</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Review</td>
+<td class="entry" align="">Overall Rating, HSE Rating, Price Rating, Delivery Rating, Quality Rating,
+                Behavior Rating, Overall Review, HSE Description, Price Description, Delivery
+                Description, Quality Description, Behavior Description, Ease of Contracting
+                Collaboration, Overall Contracting Experience, Ease of Sourcing, Quality of
+                Handling, Recommend Supplier, Up-Time</td>
+</tr>
+<tr class="">
+<td class="entry" align="">User</td>
+<td class="entry" align="">Login, First Name, Last Name, Email, Mention Name, Employee Number, Next
+                Approver, Default Currency, Default Chart of Accounts, Phone Work, Phone Mobile,
+                Department, Roles, Projects and Groups, Account Security Type, Account Groups,
+                Content Group Security Type, Content Groups, Default Address, Status, Default
+                Locale, SSO Identifier, Authentication Method, Pcard, Requisition Approval Limit,
+                Requisition Self Approval Limit, Expense Approval Limit, Expense Self Approval
+                Limit, Invoice Approval Limit, Invoice Self Approval Limit, Contract Approval Limit,
+                Contract Self Approval Limit, Purchasing License, Expense License, Sourcing License,
+                Inventory License, Contracts License, Analytics License, AI Classification License,
+                Ccw user, GPO Entity</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sourcing</td>
+<td class="entry" align="">None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

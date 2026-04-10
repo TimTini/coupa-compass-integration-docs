@@ -1,0 +1,18 @@
+---
+title: "review-lines-on-a-purchase-order-for-partial-confirmations"
+url: "https://compass.coupa.com/en-us/products/product-documentation/supply-chain-collaboration/review-lines-on-a-purchase-order-for-partial-confirmations"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2ByrcRtGiEJkDYbFqDbjCbbw14KRqZXobKkiXKX%2FX1lZxuyASn0pBOPd0dqQdAZL9d9fLIP%2BKNHitl2s2SPcD1X1c285M30asYrbIEf5gJ4q6aQTtvObg4s%2B4qBtLNLNslLlm2JetxaimBjgsrJNS8rLsp9KeTVTIppLkT1jWWbpKItxJH5FKMnWRTK9R44HiMGCyZ3zxFy5boCvP%2Fv7THBHoi8CzHdRIHHZzcp%2BxKqyea2e6dAxFlB5IohHMveu6BwTLhkLRjCwWmdGugX%2FIvUwUWnnLnVttH2%2B5L1wUoHpEla6JBkVHK3%2FngvU1J5OBWR%2FLDf17z%2BvNuzbE2EYYh05yz1HYYdhhet8MvD%2FXnI0Xk%2BBhrjDT2LS1yWHTtjSY5LetuS%2F%2B2frRZDtRx3Ec74b9PhjwO2uuh1UZx1Psl4%2BSm12m5qZ7T6NUy6g3hZSeRiRHTD27FUYgfarJsmIFGaoTHu511AiGkxMfRpAMXqJPvvH129Ag%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fsupply-chain-collaboration%2Freview-lines-on-a-purchase-order-for-partial-confirmations"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:57:14+00:00"
+---
+
+# review-lines-on-a-purchase-order-for-partial-confirmations
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/supply-chain-collaboration/review-lines-on-a-purchase-order-for-partial-confirmations](https://compass.coupa.com/en-us/products/product-documentation/supply-chain-collaboration/review-lines-on-a-purchase-order-for-partial-confirmations)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2ByrcRtGiEJkDYbFqDbjCbbw14KRqZXobKkiXKX%2FX1lZxuyASn0pBOPd0dqQdAZL9d9fLIP%2BKNHitl2s2SPcD1X1c285M30asYrbIEf5gJ4q6aQTtvObg4s%2B4qBtLNLNslLlm2JetxaimBjgsrJNS8rLsp9KeTVTIppLkT1jWWbpKItxJH5FKMnWRTK9R44HiMGCyZ3zxFy5boCvP%2Fv7THBHoi8CzHdRIHHZzcp%2BxKqyea2e6dAxFlB5IohHMveu6BwTLhkLRjCwWmdGugX%2FIvUwUWnnLnVttH2%2B5L1wUoHpEla6JBkVHK3%2FngvU1J5OBWR%2FLDf17z%2BvNuzbE2EYYh05yz1HYYdhhet8MvD%2FXnI0Xk%2BBhrjDT2LS1yWHTtjSY5LetuS%2F%2B2frRZDtRx3Ec74b9PhjwO2uuh1UZx1Psl4%2BSm12m5qZ7T6NUy6g3hZSeRiRHTD27FUYgfarJsmIFGaoTHu511AiGkxMfRpAMXqJPvvH129Ag%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fsupply-chain-collaboration%2Freview-lines-on-a-purchase-order-for-partial-confirmations](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2ByrcRtGiEJkDYbFqDbjCbbw14KRqZXobKkiXKX%2FX1lZxuyASn0pBOPd0dqQdAZL9d9fLIP%2BKNHitl2s2SPcD1X1c285M30asYrbIEf5gJ4q6aQTtvObg4s%2B4qBtLNLNslLlm2JetxaimBjgsrJNS8rLsp9KeTVTIppLkT1jWWbpKItxJH5FKMnWRTK9R44HiMGCyZ3zxFy5boCvP%2Fv7THBHoi8CzHdRIHHZzcp%2BxKqyea2e6dAxFlB5IohHMveu6BwTLhkLRjCwWmdGugX%2FIvUwUWnnLnVttH2%2B5L1wUoHpEla6JBkVHK3%2FngvU1J5OBWR%2FLDf17z%2BvNuzbE2EYYh05yz1HYYdhhet8MvD%2FXnI0Xk%2BBhrjDT2LS1yWHTtjSY5LetuS%2F%2B2frRZDtRx3Ec74b9PhjwO2uuh1UZx1Psl4%2BSm12m5qZ7T6NUy6g3hZSeRiRHTD27FUYgfarJsmIFGaoTHu511AiGkxMfRpAMXqJPvvH129Ag%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fsupply-chain-collaboration%2Freview-lines-on-a-purchase-order-for-partial-confirmations)
+
+Observed redirect page title: Coupa Portals - Sign In

@@ -1,0 +1,457 @@
+<article class="" id="approvals_api_approvals">
+<h1 class="title">Approvals API (/approvals)</h1>
+<div class="body">
+<p class="">Use the approvals API to create, update, or query the approval
+of a document. This includes specific endpoints to take action
+(reject/hold/approve) as well as requisition details like
+requestor, line items, and shipping details.</p>
+<p class="">The URL to access the approvals API is:
+      <pre>
+<code class="codeblock">https://&lt;instance&gt;/api/approvals/&lt;approval id&gt;</code>
+</pre>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration
+Best Practices</a> for more info. To learn more about implementing
+remote approvals, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x294550.xml" title="">Remote Approvals via
+API</a>.</p>
+<div class="" id="actions-d957e118577">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/approvals/:id/approve</code>
+</td>
+<td class="entry" align="">approve</td>
+<td class="entry" align="">Perform Approve action on an approval</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/approvals/:id/hold</code>
+</td>
+<td class="entry" align="">hold</td>
+<td class="entry" align="">Perform Hold action on an approval</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/approvals</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query approvals</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/approvals/:id/reject</code>
+</td>
+<td class="entry" align="">reject</td>
+<td class="entry" align="">Perform Reject action on an approval</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/approvals/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show approval</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/approvals/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update approval</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e118742">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">These are the elements available for the Approvals API</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Field Name</b>
+</th>
+<th class="entry " align="">
+<b>Field Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">approvable-id</td>
+<td class="entry" align="">The document ID that was approved</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">approvable-type</td>
+<td class="entry" align="">The document type that was approved (requisition, purchase
+order, etc)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">approval-chain-id</td>
+<td class="entry" align="">ID of the approval chain this approval is located in</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">approval-date</td>
+<td class="entry" align="">The date the approval occurred</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">approved-by</td>
+<td class="entry" align="">The user name that made the approval</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">approver</td>
+<td class="entry" align="">approver</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>, Approval
+Group </td>
+</tr>
+<tr class="">
+<td class="entry" align="">approver-id</td>
+<td class="entry" align="">The user ID that made the approval</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">approver-type</td>
+<td class="entry" align="">The role of the approver</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">delegate</td>
+<td class="entry" align="">delegate</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>, Approval
+Group </td>
+</tr>
+<tr class="">
+<td class="entry" align="">delegate-id</td>
+<td class="entry" align="">The delegate ID that made the approval (if applicable)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">delegates</td>
+<td class="entry" align="">Delegates</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Delegate Approval </td>
+</tr>
+<tr class="">
+<td class="entry" align="">holdable</td>
+<td class="entry" align="">Hold the approval or not</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">note</td>
+<td class="entry" align="">Reason for approval or reject</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">position</td>
+<td class="entry" align="">The position in the approval chain this approval occurred</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">reasons</td>
+<td class="entry" align="">Reasons</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Approval Reason </td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">The status of the approval (approved, escalated, rejected,
+etc)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(50)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">How the approval occured (override approval, approval chain
+approval, etc)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="example-d957e119713">
+<h2 class="title sectiontitle">Example</h2>
+<p class="">In this example, we queried for a single approval with an ID of
+12622. We did a GET to the URL: </p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/approvals/12622 </code>
+</pre>
+</p>
+</div>
+<div class="" id="approvals_get_response">
+<h2 class="title sectiontitle">Approvals GET Response</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;approval&gt;
+	 &lt;id type="integer"&gt;12622&lt;/id&gt;
+	 &lt;created-at type="datetime"&gt;2012-02-15T14:56:22-08:00&lt;/created-at&gt;
+	 &lt;updated-at type="datetime"&gt;2012-04-23T11:49:25-07:00&lt;/updated-at&gt;
+	 &lt;position type="integer"&gt;1&lt;/position&gt;
+	 &lt;approval-chain-id nil="true" /&gt;
+	 &lt;status&gt;approved&lt;/status&gt;
+	 &lt;approval-date type="datetime"&gt;2012-02-15T14:56:59-08:00&lt;/approval-date&gt;
+	 &lt;note /&gt;
+	 &lt;type&gt;ManagementHierarchyApproval&lt;/type&gt;
+	 &lt;approvable-type&gt;RequisitionHeader&lt;/approvable-type&gt;
+	 &lt;approvable-id type="integer"&gt;2696&lt;/approvable-id&gt;
+	 &lt;approver&gt;
+			&lt;id type="integer"&gt;3&lt;/id&gt;
+			&lt;login&gt;vpierre&lt;/login&gt;
+			&lt;email&gt;upgrade+vp@coupa.com&lt;/email&gt;
+			&lt;employee-number /&gt;
+			&lt;firstname&gt;Victor (CFO)&lt;/firstname&gt;
+			&lt;lastname&gt;Pierre&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+	 &lt;/approver&gt;
+	 &lt;created-by&gt;
+			&lt;id type="integer"&gt;9&lt;/id&gt;
+			&lt;login&gt;bjenkins&lt;/login&gt;
+			&lt;email&gt;upgrade+bj@coupa.com&lt;/email&gt;
+			&lt;employee-number /&gt;
+			&lt;firstname&gt;Bob (VP Procurement)&lt;/firstname&gt;
+			&lt;lastname&gt;Jenkins&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+	 &lt;/created-by&gt;
+&lt;updated-by&gt;
+			&lt;id type="integer"&gt;17&lt;/id&gt;
+			&lt;login&gt;coupa_metrics_gatherer&lt;/login&gt;
+			&lt;email&gt;do_not_reply_metrics@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Coupa&lt;/firstname&gt;
+			&lt;lastname&gt;Metrics&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+	 &lt;/updated-by&gt;
+&lt;/approval&gt;</code>
+</pre>
+</div>
+<div class="" id="approving_or_rejecting">
+<h2 class="title sectiontitle">Approving or Rejecting</h2>
+<p class="">The following describes how you can use the Coupa API to perform
+actions on Approvals.</p>
+</div>
+<div class="" id="approving">
+<h2 class="title sectiontitle">Approving</h2>
+<p class="">
+<code class="ph codeph">/api/approvals/{id}/approve</code>
+</p>
+</div>
+<div class="" id="rejecting">
+<h2 class="title sectiontitle">Rejecting</h2>
+<p class="">
+<code class="ph codeph">/api/approvals/{id}/reject</code>
+</p>
+</div>
+<div class="" id="adding_reason">
+<h2 class="title sectiontitle">Adding Reason</h2>
+<p class="">In both cases, an approval must be Pending (and not already
+approved or rejected) for the action to be valid. It is also
+possible to provide a "Reason" for the rejection through the XML
+request directly. For example, to reject an approval by id of 12612
+and provide a reason of "Rejected by Integration", you would use
+the following request:  </p>
+<p class="">
+<pre>
+<code class="codeblock">PUT https://{instance url}/api/approvals/12612/reject?reason=Rejected%20by%20Integration</code>
+</pre>
+</p>
+<p class="">Successful requests will return <code class="ph codeph">HTTP 200 Response</code>. The body of the
+        response will include the created requisition. Unsuccessful requests will return
+        <pre>
+<code class="codeblock">HTTP 400 Bad Request</code>
+</pre>. The body of the response will include
+        validation errors formatted as XML.</p>
+</div>
+</div>
+</article>

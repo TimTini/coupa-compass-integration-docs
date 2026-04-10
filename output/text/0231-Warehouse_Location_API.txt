@@ -1,0 +1,21 @@
+Warehouse Location API
+
+Associations
+
+This resource is associated with Pick Lists/Fulfillment Reservations API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+active 	When true, the location is active 	 	 	 	yes 	yes 	boolean
+aisle 	aisle 	yes 	yes 	 	yes 	yes 	string(255)
+bin 	bin 	 	 	 	yes 	yes 	string(255)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+level 	level 	 	 	 	yes 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User
+warehouse-id 	Warehouse 	 	 	 	 	yes 	integer
+warehouse-name 	Warehouse name 	 	 	 	 	yes
+label 	Display label 	 	 	 	 	yes 	string

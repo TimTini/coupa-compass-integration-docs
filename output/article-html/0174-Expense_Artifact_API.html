@@ -1,0 +1,699 @@
+<article class="" id="expense_line_attendee_api">
+<h1 class="title">
+<b>Expense Artifact API</b>
+</h1>
+<p class="">
+<p class="">Use this API to attach files to expense reports and expense lines.</p>
+</p>
+<div class="body">
+<div class="" id="association-d957e163751">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Artifact is Coupa-speak for attachments. This API endpoint lets you attach files to <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/expenses-api-(expense_reports)/expense-reports-api" title="">expense reports</a> and <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/expenses-api-(expense_reports)/expense-lines-api" title="">expense lines</a>. <div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">For attachments classified as a supported image type, the API supports downloading a preview (640x640) and thumbnail (128x128) version.</p>
+<p class="">For attachments classified as a non-image file, the API supports downloading the original file (e.g pdf)</p>
+<p class="">:style can have value of 'preview' or 'thumb' .. it allows a smaller size of image to be downloaded (only applies to artifacts of supported image types)</p>
+</div>
+</p>
+</div>
+<div class="" id="attributes">
+<h2 class="title sectiontitle">Actions</h2>
+</div>
+<p class="">The Expense Artifacts API lets you:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">Verb</p>
+</th>
+<th class="entry " align="">
+<p class="">Path</p>
+</th>
+<th class="entry " align="">
+<p class="">Action</p>
+</th>
+<th class="entry " align="">
+<p class="">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">/api/expense_reports/:expense_report_id/expense_lines/
+:expense_line_id/expense_artifacts</code>
+</pre>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Create expense artifact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/expense_lines/:expense_line_id/expense_artifacts</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Create expense artifact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">/api/expense_reports/:expense_report_id/expense_lines/
+:expense_line_id/expense_artifacts/:id/image(/:style)</code>
+</pre>
+</td>
+<td class="entry" align="">
+<p class="">image</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Query expense artifact image. <code class="ph codeph">:style</code> is optional and can be <code class="ph codeph">preview</code>' or <code class="ph codeph">thumb</code> in order to fetch a smaller version of the image.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">/api/expense_lines/:expense_line_id/expense_artifacts/:id
+/image(/:style)</code>
+</pre>
+</td>
+<td class="entry" align="">
+<p class="">image</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Query expense artifact image. <code class="ph codeph">:style</code> is optional and can be <code class="ph codeph">preview</code>' or <code class="ph codeph">thumb</code> in order to fetch a smaller version of the image.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">/api/expense_reports/:expense_report_id/expense_lines/
+:expense_line_id/expense_artifacts</code>
+</pre>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Query expense artifacts</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/expense_lines/expense_artifacts</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Query expense artifacts</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/expense_lines/:expense_line_id/expense_artifacts</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Query expense artifacts</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">/api/expense_reports/:expense_report_id/expense_lines/
+:expense_line_id/expense_artifacts/:id</code>
+</pre>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Show expense artifact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/expense_lines/expense_artifacts/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Show expense artifact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">/api/expense_lines/:expense_line_id/expense_artifacts/
+:id</code>
+</pre>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Show expense artifact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">/api/expense_reports/:expense_report_id/expense_lines/
+:expense_line_id/expense_artifacts/:id</code>
+</pre>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Update expense artifact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/expense_lines/expense_artifacts/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Update expense artifact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">/api/expense_lines/:expense_line_id/expense_artifacts/
+:id</code>
+</pre>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Update expense artifact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<pre>
+<code class="codeblock">/api/expense_lines/expense_artifacts/:id/
+update_with_ocr_response</code>
+</pre>
+</td>
+<td class="entry" align="">
+<p class="">update_with_ocr_response</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Update expense artifact with OCR response.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/expense_reports/:expense_report_id/download</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">retrieves expense report attachments</p>
+</td>
+<td class="entry" align="" colspan="1">
+<p class="">Response payload is a zip archive with folders for each expense line that has receipt attachments. When images have been converted to PDFs or when PDFs are digitally signed, then only those final receipt attachment files are included in the downloaded zip archive. Available with R29 and more recent.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="" id="section_evn_mwp_cbc">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">Element</p>
+</th>
+<th class="entry " align="">
+<p class="">Description</p>
+</th>
+<th class="entry " align="">
+<p class="">Req'd</p>
+</th>
+<th class="entry " align="">
+<p class="">Unique</p>
+</th>
+<th class="entry " align="">
+<p class="">Allowable Value</p>
+</th>
+<th class="entry " align="">
+<p class="">In</p>
+</th>
+<th class="entry " align="">
+<p class="">Out</p>
+</th>
+<th class="entry " align="">
+<p class="">Data Type</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="" colspan="4">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who created</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">User<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">
+					 
+				</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external-src-ref</p>
+</td>
+<td class="entry" align="">
+<p class="">External system's unique identifier for transaction</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa unique identifier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">image-content-type</p>
+</td>
+<td class="entry" align="">
+<p class="">image_content_type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">image-file-name</p>
+</td>
+<td class="entry" align="">
+<p class="">image_file_name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">image-file-size</p>
+</td>
+<td class="entry" align="">
+<p class="">image_file_size</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">image-rotation</p>
+</td>
+<td class="entry" align="">
+<p class="">Image rotation angle</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ocr-status</p>
+</td>
+<td class="entry" align="">
+<p class="">OCR Status</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">source-content-type</p>
+</td>
+<td class="entry" align="">
+<p class="">source_content_type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">source-file-name</p>
+</td>
+<td class="entry" align="">
+<p class="">source_file_name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">source-file-size</p>
+</td>
+<td class="entry" align="">
+<p class="">source_file_size</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="" colspan="4">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who updated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">User<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">
+					 
+				</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">url</p>
+</td>
+<td class="entry" align="">
+<p class="">External link to artifact</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">digitization-status</p>
+</td>
+<td class="entry" align="">
+<p class="">Digitization status</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(25)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">digitization-error</p>
+</td>
+<td class="entry" align="">
+<p class="">Digitization error</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">digitized-receipt-file-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Digitized receipt file name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">digitized-receipt-content-type</p>
+</td>
+<td class="entry" align="">
+<p class="">Digitized receipt content type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">digitized-receipt-file-size</p>
+</td>
+<td class="entry" align="">
+<p class="">Digitized receipt file size</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+</div>
+</article>

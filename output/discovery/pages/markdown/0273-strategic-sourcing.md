@@ -1,0 +1,18 @@
+---
+title: "strategic-sourcing"
+url: "https://compass.coupa.com/en-us/products/strategic-sourcing"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8dx2mbgtVWKnTTKsEW0W4Pe0HGuRkWjm18Hdb9e5wUpm5SeczJPV%2F3eoGyM16s%2B%2Fho7%2BC5B4zZdrMk962aq0bBhFbqYUKnVcHpBS8uaHM5UTArJ5fQtiT7AQG1s0tS5gXJtog9bC1GaWOCirKixZTyYl9wMZsLPsurav6TZJvkoq2MI%2FMxRo%2BCMeV6LykcIgQrTe6eosyV65j0%2Fr9%2F9wn2EtG7ENMXZ3B4cmXRF3Jabq66T0ryOGeIjg3lSPbZBQVjwyVppUEYktZJQL%2FAX6QOLjrlzJW2jba%2FlqQPVjiJGoWVHaCISuzWtzciNRUPxyEUX%2Fb7mtbfdnuSrREhDJWuncW%2Bg7CD8KIVfL%2B7OS05Js%2FHQmO9QZOd45Ls0BmLYjzSx5H8W36yWgzTYrxFOOF%2FTJfvCcjqbNYFO1E%2B2njxNUltN7UzWv0ZNt3JeN6J53xEdEPbcVRAJ7VZN00AxLRDY9zv6wAypsPE0KcFsNXR9t83unoF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fstrategic-sourcing"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:57:48+00:00"
+---
+
+# strategic-sourcing
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/strategic-sourcing](https://compass.coupa.com/en-us/products/strategic-sourcing)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8dx2mbgtVWKnTTKsEW0W4Pe0HGuRkWjm18Hdb9e5wUpm5SeczJPV%2F3eoGyM16s%2B%2Fho7%2BC5B4zZdrMk962aq0bBhFbqYUKnVcHpBS8uaHM5UTArJ5fQtiT7AQG1s0tS5gXJtog9bC1GaWOCirKixZTyYl9wMZsLPsurav6TZJvkoq2MI%2FMxRo%2BCMeV6LykcIgQrTe6eosyV65j0%2Fr9%2F9wn2EtG7ENMXZ3B4cmXRF3Jabq66T0ryOGeIjg3lSPbZBQVjwyVppUEYktZJQL%2FAX6QOLjrlzJW2jba%2FlqQPVjiJGoWVHaCISuzWtzciNRUPxyEUX%2Fb7mtbfdnuSrREhDJWuncW%2Bg7CD8KIVfL%2B7OS05Js%2FHQmO9QZOd45Ls0BmLYjzSx5H8W36yWgzTYrxFOOF%2FTJfvCcjqbNYFO1E%2B2njxNUltN7UzWv0ZNt3JeN6J53xEdEPbcVRAJ7VZN00AxLRDY9zv6wAypsPE0KcFsNXR9t83unoF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fstrategic-sourcing](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8dx2mbgtVWKnTTKsEW0W4Pe0HGuRkWjm18Hdb9e5wUpm5SeczJPV%2F3eoGyM16s%2B%2Fho7%2BC5B4zZdrMk962aq0bBhFbqYUKnVcHpBS8uaHM5UTArJ5fQtiT7AQG1s0tS5gXJtog9bC1GaWOCirKixZTyYl9wMZsLPsurav6TZJvkoq2MI%2FMxRo%2BCMeV6LykcIgQrTe6eosyV65j0%2Fr9%2F9wn2EtG7ENMXZ3B4cmXRF3Jabq66T0ryOGeIjg3lSPbZBQVjwyVppUEYktZJQL%2FAX6QOLjrlzJW2jba%2FlqQPVjiJGoWVHaCISuzWtzciNRUPxyEUX%2Fb7mtbfdnuSrREhDJWuncW%2Bg7CD8KIVfL%2B7OS05Js%2FHQmO9QZOd45Ls0BmLYjzSx5H8W36yWgzTYrxFOOF%2FTJfvCcjqbNYFO1E%2B2njxNUltN7UzWv0ZNt3JeN6J53xEdEPbcVRAJ7VZN00AxLRDY9zv6wAypsPE0KcFsNXR9t83unoF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fstrategic-sourcing)
+
+Observed redirect page title: Coupa Portals - Sign In

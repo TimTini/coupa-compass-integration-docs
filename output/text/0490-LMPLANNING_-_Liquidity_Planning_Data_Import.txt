@@ -1,0 +1,517 @@
+LMPLANNING - Liquidity Planning Data Import
+
+Format Descriptions
+
+PDF Version
+
+LMPLN 8
+
+#
+
+Name
+
+Type
+
+Mandatory
+
+Comment
+
+1
+
+Value Date
+
+date
+
+Yes
+
+Due date of planned cash flows.
+
+2
+
+Amount
+
+float
+
+Yes
+
+3
+
+Currency
+
+char - 3
+
+Yes
+
+Currency as ISO code.
+
+4
+
+Category
+
+integer
+
+No
+
+ID # of planning category as defined in Coupa Treasury. Only categories that are assigned to entities on Planning & Risk > Configuration > Planning Structuresare permitted.
+
+5
+
+Account Name
+
+char - 50
+
+No
+
+Name of the account as as defined in Coupa Treasury.
+
+6
+
+Remark
+
+char - 400
+
+No
+
+7
+
+Hedge Name
+
+char - 50
+
+No
+
+Abbreviation of the underlying hedge assignment, as defined in Coupa Treasury.
+
+8
+
+Project
+
+char- 50
+
+No
+
+Internal reference of the project, as defined in Coupa Treasury.
+
+LMPLN 9
+
+#
+
+Name
+
+Type
+
+Mandatory
+
+Comment
+
+1
+
+Value Date
+
+date
+
+Yes
+
+Due date of planned cash flows.
+
+2
+
+Amount
+
+float
+
+Yes
+
+3
+
+Currency
+
+char - 3
+
+Yes
+
+Currency as ISO code.
+
+4
+
+Category
+
+integer
+
+No
+
+ID # of planning category as defined in Coupa Treasury. Only categories that are assigned to entities on Planning & Risk > Configuration > Planning Structuresare permitted.
+
+5
+
+Account Name
+
+char - 50
+
+No
+
+Name of the account as as defined in Coupa Treasury.
+
+6
+
+Remark
+
+char - 400
+
+No
+
+7
+
+Hedge Name
+
+char - 50
+
+No
+
+Abbreviation of the underlying hedge assignment, as defined in Coupa Treasury.
+
+8
+
+Project
+
+char- 50
+
+No
+
+Internal reference of the project, as defined in Coupa Treasury.
+
+9
+
+Counterparty
+
+char - 50
+
+No
+
+Abbreviation of the internal counterparty, as defined in Coupa Treasury.
+
+LMPLN 15
+
+#
+
+Name
+
+Type
+
+Mandatory
+
+Comment
+
+1
+
+Value Date
+
+date
+
+Yes
+
+Due date of planned cash flows.
+
+2
+
+Amount
+
+float
+
+Yes
+
+3
+
+Currency
+
+char - 3
+
+Yes
+
+Currency as ISO code.
+
+4
+
+Category
+
+integer
+
+No
+
+ID # of planning category as defined in Coupa Treasury. Only categories that are assigned to entities on Planning & Risk > Configuration > Planning Structuresare permitted.
+
+5
+
+Account Name
+
+char - 50
+
+No
+
+Name of the account as as defined in Coupa Treasury.
+
+6
+
+Remark
+
+char - 400
+
+No
+
+7
+
+Hedge Name
+
+char - 50
+
+No
+
+Abbreviation of the underlying hedge assignment, as defined in Coupa Treasury.
+
+8
+
+Project
+
+char- 50
+
+No
+
+Internal reference of the project, as defined in Coupa Treasury.
+
+9
+
+Counterparty
+
+char - 50
+
+No
+
+Abbreviation of the internal counterparty, as defined in Coupa Treasury.
+
+10
+
+Portfolio
+
+char - 50
+
+No
+
+Internal reference of the portfolio, as defined in Coupa Treasury.
+
+11
+
+Rate
+
+char - 50
+
+No
+
+12
+
+Probability
+
+integer
+
+No
+
+13
+
+G/L Account
+
+char - 50
+
+No
+
+14
+
+Inactive
+
+integer
+
+No
+
+15
+
+Entity
+
+char - 50
+
+Yes
+
+Only mandatory for server import.
+
+Field Definition Delete Lines
+
+#
+
+Name
+
+Type
+
+Mandatory
+
+Comment
+
+1
+
+Entity Identification
+
+char - 50
+
+Yes
+
+Abbreviation / Company Code.
+
+2
+
+x, y, or z
+
+char - 1
+
+Yes
+
+x – Delete all data sets.
+
+y – Delete all data sets from server import.
+
+z – Delete all data sets from file import.
+
+3
+
+Category Identification
+
+integer
+
+No
+
+ID - If empty, choose all.
+
+4
+
+ValueDateFrom
+
+date
+
+No
+
+Defines the date (included) from which the datasets will be deleted. If empty, all datasets from the beginning of the plan until ValueDateTo will be removed.
+
+5
+
+ValueDateUntil
+
+date
+
+No
+
+Defines the date (included) up to which the datasets will be deleted. If empty, all datasets from the beginning of ValueDateFrom will be removed.
+
+Import Function
+
+The import function exists on Planning & Risk > Liquidity Planning > Liquidity Planning Data.
+
+The import function processes files in standard text formats:
+
+-
+
+ASCII
+
+-
+
+Unicode
+
+Data sets that already exist will not be overwritten when importing them a second time, but will be added to the list.
+
+Maximum file size: 2.1 MB
+
+The file contains liquidity planning data of one particular entity.
+
+Importing planning data is only possible in periods which are defined in the planning calendar. If a planning record doesn't match the time period in the planning calendar, it will be ignored.
+
+FX rates need to be available for each period in the planning calendar.
+
+Format Rules
+
+Each liquidity planning file format name denotes the number of fields it contains (LMPLN 8 contains 8 fields, LMPLN 15 contains 15 fields). If the file has more than the expected number of fields, Coupa Treasury shows an error message.
+
+The file must not contain any headers or format descriptions.
+
+In the tables above, the value for “char” shows how many characters is the maximum length for that field in the imported file.
+
+Each row in the file contains exactly one data set:
+
+-
+
+ASCII Code 13: carriage return denotes the end of a data set.
+
+-
+
+ASCII Code 10: new-line denotes the end of a data set.
+
+-
+
+The last data set concludes with an end-of-file (EOF).
+
+Select format variables in the File Import dialog:
+
+The field separator may not be used for any other content or format setting within that file.
+
+Fixed lengths are allowed, but still require field separators.
+
+Days and months are always 2-digit values, whereas years are 4 digits. Date separator, date sequence, and file format must match your user settings.
+
+-
+
+Entity– The entity assigned to the data set
+
+-
+
+Field Separator – semicolon (;), comma (,)
+
+-
+
+Date Separator – slash (/), period (.), comma (,), < none >
+
+-
+
+Plan – Liquidity Plan Name
+
+-
+
+Decimal Marker – period (.), comma (,)
+
+-
+
+Date Sequence – mdy, dmy, ymd
+
+-
+
+File Format – ASCII, Unicode
+
+-
+
+Version– LMPLN 8, LMPLN 9, LMPLN 15
+
+-
+
+Entity Identification by – Abbreviation or Company Code
+
+Note:
+
+For numbers without decimals, the decimal separator is optional. Do not use thousands separators or enclose text in quotation marks. Mark negative amounts with a minus sign (-).
+
+Example Data Sets
+
+For any format version, non-mandatory data fields may be empty. Empty fields still require field separators. The sample data sets below contain examples with empty fields.
+
+LMPLN 8
+
+05/17/2021;24738.45;EUR;15;;Cash-Pool Transfer;;Fibu Project
+
+05/17/2021;12000;EUR;;;;;
+
+Delete Lines
+
+Deletion of all data sets for one month and one account:
+
+AERO;x;;01.05.2021;31.05.2021

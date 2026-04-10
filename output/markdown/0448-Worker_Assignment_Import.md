@@ -1,0 +1,24 @@
+---
+title: "Worker Assignment Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/worker-assignment-import"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLLbtswEPwVgXdKlOQ4MWEbcOIWNZC2Quz00EuwodYNEYpkuVTq%2Fn0ouQ3cAs5Ro9l57HJO0BkvV318snf4s0eK2Wa9YA%2FqqrwANZvxGtqSTx7VlF%2FtxSWvZnUtWgFiilOWfcNA2tkFq3LBsg1RjxtLEWxMkKimXEy4mO3KSgohLxKprr%2BzbJ1ctIU4Tj7F6EkWhXK9B46HiMGCyd1zhFy5rgDv%2F%2Fv3kGAPRN6FmL7KAg%2FPrhK9gEm1vu4%2BKCjjZUHkiqEcyz66oHBsuGB7MIRD0iYJ6Bd8Q5rgolPOXGvbavtjwfpgpQPSJC10SDIquV19vpWphHw8kkh%2B2u0a3nzd7li2IsIwVLpxlvoOwxbDi1Z4f3d7WnJMno%2BFxnqDZnFulmWHzliS45Hej%2BT%2F5GfL%2BcCW4y3Cyfz74%2FA3AVuezTovTpSPNl5%2BSVKbdeOMVr%2BHTXcQzzuVeTkiuuX7kSqxA21WbRuQKO3QGPfrJiDEdJgY%2BrSAYnm0%2FfeNLl8B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Fworker-assignment-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:49+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Worker Assignment Import"
+---
+
+# Worker Assignment Import
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/worker-assignment-import](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/worker-assignment-import)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLLbtswEPwVgXdKlOQ4MWEbcOIWNZC2Quz00EuwodYNEYpkuVTq%2Fn0ouQ3cAs5Ro9l57HJO0BkvV318snf4s0eK2Wa9YA%2FqqrwANZvxGtqSTx7VlF%2FtxSWvZnUtWgFiilOWfcNA2tkFq3LBsg1RjxtLEWxMkKimXEy4mO3KSgohLxKprr%2BzbJ1ctIU4Tj7F6EkWhXK9B46HiMGCyd1zhFy5rgDv%2F%2Fv3kGAPRN6FmL7KAg%2FPrhK9gEm1vu4%2BKCjjZUHkiqEcyz66oHBsuGB7MIRD0iYJ6Bd8Q5rgolPOXGvbavtjwfpgpQPSJC10SDIquV19vpWphHw8kkh%2B2u0a3nzd7li2IsIwVLpxlvoOwxbDi1Z4f3d7WnJMno%2BFxnqDZnFulmWHzliS45Hej%2BT%2F5GfL%2BcCW4y3Cyfz74%2FA3AVuezTovTpSPNl5%2BSVKbdeOMVr%2BHTXcQzzuVeTkiuuX7kSqxA21WbRuQKO3QGPfrJiDEdJgY%2BrSAYnm0%2FfeNLl8B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Fworker-assignment-import](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLLbtswEPwVgXdKlOQ4MWEbcOIWNZC2Quz00EuwodYNEYpkuVTq%2Fn0ouQ3cAs5Ro9l57HJO0BkvV318snf4s0eK2Wa9YA%2FqqrwANZvxGtqSTx7VlF%2FtxSWvZnUtWgFiilOWfcNA2tkFq3LBsg1RjxtLEWxMkKimXEy4mO3KSgohLxKprr%2BzbJ1ctIU4Tj7F6EkWhXK9B46HiMGCyd1zhFy5rgDv%2F%2Fv3kGAPRN6FmL7KAg%2FPrhK9gEm1vu4%2BKCjjZUHkiqEcyz66oHBsuGB7MIRD0iYJ6Bd8Q5rgolPOXGvbavtjwfpgpQPSJC10SDIquV19vpWphHw8kkh%2B2u0a3nzd7li2IsIwVLpxlvoOwxbDi1Z4f3d7WnJMno%2BFxnqDZnFulmWHzliS45Hej%2BT%2F5GfL%2BcCW4y3Cyfz74%2FA3AVuezTovTpSPNl5%2BSVKbdeOMVr%2BHTXcQzzuVeTkiuuX7kSqxA21WbRuQKO3QGPfrJiDEdJgY%2BrSAYnm0%2FfeNLl8B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Fworker-assignment-import)
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

@@ -1,0 +1,9 @@
+automation-views-in-treasury-management
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/product-documentation/treasury-management-product-documentation/getting-started-with-treasury-management/automated-processes-and-integrations/automation-views-in-treasury-management
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXeJFCtlIWwDTtyiBpJWiN0eegnG1KQhIpEKh0rdvy9FN4FbwDnqad42wxlB3w1qOYZHe4fPI1LI1qs5u9fl2Q7lDvNWyou8asVFDrWAHGEnqroWlTyvWfYdPRln50wWgmVrohHXlgLYECEhz3JR5aXYilLVl%2BpDXVwK%2BYNlq%2BhiLITEfAxhIMW5duMQ5fcBvYWucE8BCu16DsPw37%2F7CA9ANDgf4lfJcf%2FkpBgFVHJ11X%2FUUIZzTuT4VI5ln5zXmBrO2QN0hFPSJgqYF3xDGu%2BC0667MrY19uecjd4qB2RIWeiRVNBqs7y9UbGp2h2GSH3ebpu8%2BbrZsmxJhH6qdO0sjT36DfoXo%2FHb3c1xyZS8SIVSvUmTn%2BKybN93llQ60vuRhr%2F52WI2Tat0C3%2FEf58OrwnY4mTWGT9SPtgM6kuUWq8a1xn9e9p0D%2BG0U1mUCTFt%2FpBGFfZgumXbeiSKO%2Bw69%2BvaI4R4mODHuAC%2BONj%2B%2B0YXfwA%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftreasury-management-product-documentation%2Fgetting-started-with-treasury-management%2Fautomated-processes-and-integrations%2Fautomation-views-in-treasury-management
+
+Observed redirect page title: Coupa Portals - Sign In

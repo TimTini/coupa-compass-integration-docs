@@ -1,0 +1,15 @@
+Expense Line Mileage Allocation API
+
+Association
+
+This resource is associated with Expense Lines API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+applied-distance 	Applied distance 	 	 	 	 	yes 	decimal(32,4)
+applied-rate 	Applied rate amount 	 	 	 	 	yes 	decimal(32,4)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+expense-mileage-rate-type-id 	Expense mileage rate type 	 	 	 	 	yes 	integer
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime

@@ -1,0 +1,17 @@
+Recorded Characteristic API
+
+Access recorded characteristic data when working with the Quality Collaboration API.
+
+Associations
+
+This resource is associated with the Quality Collaboration API. For more information, see Quality Collaboration API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+id 	Recorded characteristic ID. 	 	 	 	no 	yes 	integer
+characteristicId 	Characteristic ID. 	 	 	 	no 	yes 	integer
+code 	Recorded characteristic code. 	 	 	 	no 	yes 	string
+numericValue 	Numeric value. 	 	 	 	no 	yes 	integer
+qualitativeValue 	Qualitative value. 	 	 	 	no 	yes 	string
+decisionValue 	Decision value. 	 	 	 	no 	yes 	boolean

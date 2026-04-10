@@ -1,0 +1,17 @@
+Expense Trip API
+
+Associations
+
+This resource is associated with Expenses API.
+
+The following elements are available for the Expense Trip API:
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+errors 	Errors 	 	 	 	 	yes
+expense-trip-segments 	Expense trip segments 	 	 	 	 	yes 	[]
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+expense_trip_mileage 	 	no 	no 	any 	yes 	yes
+id 	Coupa unique identifier 	no 	no 	any 	yes 	 	integer
+expense_trip_segments 	 	no 	no 	any 	yes 	 	[]

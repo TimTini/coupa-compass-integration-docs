@@ -1,0 +1,7 @@
+Coupa Core User Authentication
+
+This section is about how Coupa utilizes SAML for SSO.
+
+- SAML Basics
+- Coupa SAML SSO Setup
+- Coupa SAML FAQ

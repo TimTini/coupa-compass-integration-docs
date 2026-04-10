@@ -1,0 +1,48 @@
+<article class="" id="saml_basics">
+<h1 class="title">SAML Basics</h1>
+<p class="">
+<p class="">Introductory information about how Coupa utilizes SAML for SSO.</p>
+</p>
+<div class="body">
+<div class="" id="introduction">
+<h2 class="title sectiontitle">Introduction</h2>
+<p class="">Coupa supports the use of SAML 2.0 (Security Assertion Markup
+Language) for SSO (Single Sign On) support between Coupa and your
+Identity Management solution. This allows the user to click on a
+link to Coupa and automatically be signed in if they were already
+logged in to your SSO.</p>
+<p class="">Once SAML is enabled for your Coupa service you have the ability
+to allow some users to bypass SAML and log in using Coupa
+credentials.  This is a safeguard in case your SAML server is
+offline, and an administrator still needed access to Coupa to
+disable SAML.</p>
+</div>
+<div class="" id="advantages">
+<h2 class="title sectiontitle">Advantages</h2>
+<p class="">Integrating your Coupa instance through SAML provides several
+benefits, including:</p>
+<ul class="ul">
+<li class="li">Users do not need to remember a new password for Coupa</li>
+<li class="li">Coupa does not store or maintain password information,
+alleviating any audit/risk concerns</li>
+<li class="li">Centralize account control through your Intranet and corporate
+standards</li>
+<li class="li">SAML is an industry-accepted standard for SSO</li>
+</ul>
+</div>
+<div class="" id="user_experience">
+<h2 class="title sectiontitle">User Experience</h2>
+<ol class="ol">
+<li class="li">A user visits a webpage on your Coupa instance.</li>
+<li class="li">Coupa redirects the user to your SSO site for
+authentication.</li>
+<li class="li">Your SSO site returns a webpage that directs the user's browser
+to post the SAML response to a Coupa-provided URL.</li>
+<li class="li">Coupa verifies the response. Upon success, the
+newly-authenticated user will not be required to re-authenticate
+with your SSO site until the session times out. The session timeout
+can be configured by an administrator</li>
+</ol>
+</div>
+</div>
+</article>

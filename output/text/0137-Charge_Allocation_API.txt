@@ -1,0 +1,19 @@
+Charge Allocation API
+
+Overview
+
+Coupa Pay Virtual card charges can use charge allocation to apportion charges and percentages of a charge to different accounts. When you have the Coupa Pay Virtual Card entitlement, you can GET a charge or charges with charge allocation data from the Charge API endpoint: https://{your_instance_name}/api/charges or you can see the OpenAPI docs here: https://{your_instance_name}/api_docs/14
+
+Elements
+
+Field Name 	 Field Description 	 Required Field? 	 Unique 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+account 	account 	yes 	 	 	 	yes 	 Account
+amount 	dollar amount for this allocation 	 	 	 	 	yes 	decimal(30,2)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+currency 	Currency 	yes 	 	 	 	yes 	 Currency
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+pct 	percent 	yes 	 	 	 	yes 	decimal(16,10)
+period 	budget period 	 	 	 	 	yes 	 Period
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

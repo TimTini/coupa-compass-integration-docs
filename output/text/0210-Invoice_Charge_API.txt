@@ -1,0 +1,28 @@
+Invoice Charge API
+
+Associations
+
+This API resource is available through Invoices API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+account 	account 	yes 	 	 	yes 	yes 	 Account
+account-allocations 	Account allocations 	 	 	 	yes 	yes 	 Invoice Charge Allocation
+accounting-total 	Accounting total 	 	 	 	 	yes 	decimal(30,4)
+accounting-total-currency 	Accounting total currency 	 	 	 	 	yes 	 Currency
+billing-note 	Billing note 	 	 	 	yes 	yes 	text
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+currency 	Currency 	 	 	 	yes 	yes 	 Currency
+description 	Description 	 	 	 	yes 	yes 	string(1550)
+distributed 	Distributed 	 	 	 	yes 	yes 	boolean
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+line-num 	Line num 	 	 	 	yes 	yes 	integer
+pct 	Pct 	 	 	 	yes 	yes 	decimal(16,10)
+period 	period 	 	 	 	yes 	yes 	 Period
+tax-lines 	Tax lines 	 	 	 	yes 	yes 	 Tax Line
+total 	Total 	 	 	 	yes 	yes 	decimal
+type 	Type 	 	 	 	yes 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

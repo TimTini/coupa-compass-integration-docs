@@ -1,0 +1,225 @@
+<article class="" id="reference1">
+<h1 class="title">Characteristic API</h1>
+<p class="font-size-lg">Access characteristic data when working with the Quality Collaboration API.</p>
+<div class="body refbody">
+<div class="" id="associations-d957e264268">
+<h2 class="title sectiontitle">Associations</h2>
+<p class="">This resource is associated with the Quality Collaboration API. For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api" title="Integrate your external quality management systems to collaborate on quality inspections.">Quality Collaboration API</a>.</p>
+</div>
+<div class="" id="elements-d957e264277">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">ID of the characteristic.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lineNum</td>
+<td class="entry" align="">Line number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">inspectionId</td>
+<td class="entry" align="">Inspection ID.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">name</td>
+<td class="entry" align="">Name of the characteristic.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Type of characteristic.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<ul class="ul">
+<li class="li">required</li>
+<li class="li">optional</li>
+</ul>
+</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">isQuantitative</td>
+<td class="entry" align="">Whether the characteristic is quantitative.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">remarks</td>
+<td class="entry" align="">Remarks associated with the characteristic.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">specification</td>
+<td class="entry" align="">Specification of the characteristic.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">requirement</td>
+<td class="entry" align="">Requirement for the characteristic.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">valueType</td>
+<td class="entry" align="">Type of value.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<ul class="ul">
+<li class="li">
+<p class="">none</p>
+</li>
+<li class="li">
+<p class="">numeric</p>
+</li>
+<li class="li">
+<p class="">decision</p>
+</li>
+<li class="li">
+<p class="">choice</p>
+</li>
+</ul>
+</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">recordingType</td>
+<td class="entry" align="">Recording type.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">summarized</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">characteristicValues</td>
+<td class="entry" align="">Details about the characteristic value.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/characteristic-value-api" title="Access characteristic value data when working with the Quality Collaboration API.">CharacteristicValue</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">expectedResults</td>
+<td class="entry" align="">Details about the expected results.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/expected-result-api" title="Access expected result data when working with the Quality Collaboration API.">ExpectedResult</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">expectedLimits</td>
+<td class="entry" align="">Details about the expected limits.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/expected-limit-api" title="Access expected limit data when working with the Quality Collaboration API.">ExpectedLimit</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">recordedCharacteristic</td>
+<td class="entry" align="">Details about the recorded characteristic.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/recorded-characteristic-api" title="Access recorded characteristic data when working with the Quality Collaboration API.">RecordedCharacteristic</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

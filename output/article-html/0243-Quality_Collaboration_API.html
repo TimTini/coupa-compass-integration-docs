@@ -1,0 +1,1080 @@
+<article class="" id="reference1">
+<h1 class="title">Quality Collaboration API</h1>
+<p class="font-size-lg">Integrate your external quality management systems to collaborate on quality inspections.</p>
+<div class="body refbody">
+<div class="">
+<p class="">Quality Collaboration allows you to use Coupa as the central collaboration point for quality inspections, particularly supplier-performed inspections.</p>
+<p class="">This API enables you to:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Import or trigger new quality inspection requests.</p>
+</li>
+<li class="li">
+<p class="">Receive the final inspection results and status after the buyer and supplier collaboration process is complete.</p>
+</li>
+<li class="li">
+<p class="">Manage attachments related to the inspection and its characteristics.</p>
+</li>
+</ul>
+<p class="">The quality inspection process uses APIs for both inbound and outbound data flow:</p>
+<ol class="ol">
+<li class="li">
+<p class="">Send a POST request to create a new, open Quality Inspection in Coupa.</p>
+</li>
+<li class="li">
+<p class="">Buyers and and suppliers collaborate using the Coupa UI and CSP, exchanging comments, filling results, and uploading attachments.</p>
+</li>
+<li class="li">
+<p class="">Once the buyer accepts or rejects the inspection, use a GET request to read the final status and resolution.</p>
+</li>
+</ol>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">This API is available only for customers that participate in the <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x296407.xml" title="">Early Access Program (EAP)</a>. If you want to be an EAP customer, contact your Coupa representative.</p>
+</div>
+</div>
+<div class="" id="associations-d957e264268">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections</code>
+</p>
+</td>
+<td class="entry" align="">Get all quality inspections</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{id}</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Get details of a quality inspection</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Create a new quality inspection</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{id}/exported</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Mark a quality inspection as exported</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{id}/reset-exported</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Reset exported flag of a quality inspection</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/attachments</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Get all attachments for an inspection (Header)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/attachments</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Add a new attachment at the inspection level (Header)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/characteristics/{characteristic_id}/attachments/{attachment_id}</code>
+</td>
+<td class="entry" align="">Get a specific attachment for a characteristic</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/attachments/{attachment_id}</code>
+</td>
+<td class="entry" align="">Get a specific attachment of a quality inspection</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/attachments/{attachment_id}</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Delete an attachment at the inspection level (Header)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/characteristics/{characteristic_id}/attachments</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Get all attachments for a characteristic (Line)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/characteristics/{characteristic_id}/attachments</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Add a new attachment at the characteristic level (Line)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/characteristics/{characteristic_id}/attachments/{attachment_id}</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Delete an attachment at the characteristic level (Line)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Scopes</h2>
+<p class="">This API requires the following scopes:</p>
+<ul class="ul">
+<li class="li">
+<code class="ph codeph">quality_collaboration.quality_inspection.read</code>
+</li>
+<li class="li">
+<code class="ph codeph">quality_collaboration.quality_inspection.write</code>
+</li>
+</ul>
+</div>
+<div class="" id="elements-d957e264277">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Inspection ID.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Type of inspection.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Inspection</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">Status of the inspection.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<ul class="ul">
+<li class="li">
+<p class="">Open</p>
+</li>
+<li class="li">
+<p class="">In Buyer Review</p>
+</li>
+<li class="li">
+<p class="">In Progress</p>
+</li>
+<li class="li">
+<p class="">Closed</p>
+</li>
+</ul>
+</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">reviewDecision</td>
+<td class="entry" align="">Decision made in the review.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<ul class="ul">
+<li class="li">
+<p class="">Accepted</p>
+</li>
+<li class="li">
+<p class="">Rejected</p>
+</li>
+</ul>
+</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">resolutionReasonText</td>
+<td class="entry" align="">Resolution reason text.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">resolutionReasonType</td>
+<td class="entry" align="">Resolution reason type.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">resolutionReasonCode</td>
+<td class="entry" align="">Resolution reason code.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">requestDate</td>
+<td class="entry" align="">Date of the request.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">dueDate</td>
+<td class="entry" align="">Due date.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplierId</td>
+<td class="entry" align="">ID of the supplier.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">itemId</td>
+<td class="entry" align="">ID of the item.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">itemName</td>
+<td class="entry" align="">Name of the item.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">itemDescription</td>
+<td class="entry" align="">Item description.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">warehouseId</td>
+<td class="entry" align="">Warehouse ID.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">buyerBatchNumber</td>
+<td class="entry" align="">Buyer batch number.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplierPartNumber</td>
+<td class="entry" align="">Supplier part number.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">buyerPartNumber</td>
+<td class="entry" align="">Buyer part number.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">itemQuantity</td>
+<td class="entry" align="">Item quantity.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">sampleSize</td>
+<td class="entry" align="">Sample size.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">uom</td>
+<td class="entry" align="">Unit of measure.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">requestedBy</td>
+<td class="entry" align="">User who requested the inspection.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">refDocumentType</td>
+<td class="entry" align="">Document type.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Purchase Order</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">refDocumentId</td>
+<td class="entry" align="">Document ID.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">refDocumentItem</td>
+<td class="entry" align="">Document item.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">reviewedDate</td>
+<td class="entry" align="">Date of the review</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">reviewedBy</td>
+<td class="entry" align="">User who reviewed.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">submittedDate</td>
+<td class="entry" align="">Date submitted.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">submittedBy</td>
+<td class="entry" align="">User who submitted.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">externalInspectionId</td>
+<td class="entry" align="">ID of the external inspection.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">createdAt</td>
+<td class="entry" align="">When the inspection was created.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">createdBy</td>
+<td class="entry" align="">User who created the inspection.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">modifiedAt</td>
+<td class="entry" align="">Date modified.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">modifiedBy</td>
+<td class="entry" align="">User who modified.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">exported</td>
+<td class="entry" align="">Whether the record is exported.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">characteristics</td>
+<td class="entry" align="">Characteristic records associated with the inspection.</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/characteristic-api" title="Access characteristic data when working with the Quality Collaboration API.">Characteristic</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<example>
+<h2 class="title">Get a quality inspection</h2>
+<dl class="dl">
+<dt class="dt dlterm">Method</dt>
+<dd class="dd">
+<p class="">GET <code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections/{id}</code>
+</p>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;.com/qualitycollaboration/api/v1/quality-inspections/1' \
+--header 'Accept: application/json' \
+--header 'Accept: application/xml' \
+--header 'Authorization: ••••••'</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example response</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">{
+    "id": 1,
+    "type": "Inspection",
+    "status": "Closed",
+    "resolutionReasonText": "accepted",
+    "dueDate": "2025-11-20T10:00:00Z",
+    "supplierId": 1,
+    "itemId": 1,
+    "itemName": "Inspection Material",
+    "itemDescription": "Inspection material",
+    "supplierPartNumber": "SLNG-123",
+    "buyerPartNumber": "BLNG-123",
+    "itemQuantity": 50.000000,
+    "uom": 1,
+    "requestedBy": 10,
+    "refDocumentType": "Purchase Order",
+    "refDocumentId": "EXTPO_003",
+    "refDocumentItem": "0010",
+    "createdAt": "2025-11-04T16:07:02Z",
+    "modifiedAt": "2025-11-04T16:17:49Z",
+    "exported": false,
+    "characteristics": [
+        {
+            "id": 1,
+            "lineNum": 1,
+            "inspectionId": 1,
+            "name": "Color",
+            "type": "required",
+            "isQuantitative": false,
+            "specification": "Clear colourless ",
+            "valueType": "choice",
+            "characteristicValues": [
+                {
+                    "id": 1,
+                    "characteristicId": 1,
+                    "code": "1",
+                    "domain": "COLOR",
+                    "value": "Yellow"
+                },
+                {
+                    "id": 2,
+                    "characteristicId": 1,
+                    "code": "2",
+                    "domain": "COLOR",
+                    "value": "light yellow"
+                },
+                {
+                    "id": 3,
+                    "characteristicId": 1,
+                    "code": "3",
+                    "domain": "COLOR",
+                    "value": "No colour"
+                }
+            ],
+            "expectedResults": {
+                "id": 1,
+                "characteristicId": 1,
+                "numericValue": 3.000000000
+            },
+            "expectedLimits": [],
+            "recordedCharacteristic": {
+                "id": 1,
+                "characteristicId": 1,
+                "code": "1"
+            }
+        },
+        {
+            "id": 2,
+            "lineNum": 2,
+            "inspectionId": 1,
+            "name": "Non-volatile residue",
+            "type": "required",
+            "isQuantitative": true,
+            "specification": "Not more than 0.1%",
+            "valueType": "numeric",
+            "characteristicValues": [],
+            "expectedResults": {
+                "id": 2,
+                "characteristicId": 2,
+                "numericValue": 0.320000000,
+                "valuePrecision": 2
+            },
+            "expectedLimits": [
+                {
+                    "id": 1,
+                    "characteristicId": 2,
+                    "limitType": "min",
+                    "comparisonOperator": "gt",
+                    "comparisonValue": 0.000000
+                },
+                {
+                    "id": 2,
+                    "characteristicId": 2,
+                    "limitType": "max",
+                    "comparisonOperator": "lt",
+                    "comparisonValue": 0.100000
+                }
+            ],
+            "recordedCharacteristic": {
+                "id": 2,
+                "characteristicId": 2,
+                "numericValue": 0.050000000
+            }
+        },
+        {
+            "id": 3,
+            "lineNum": 3,
+            "inspectionId": 1,
+            "name": "Reducing substances",
+            "type": "required",
+            "isQuantitative": true,
+            "specification": "Not more than 70 mg/kg as sulfur dioxide",
+            "valueType": "numeric",
+            "characteristicValues": [],
+            "expectedResults": {
+                "id": 3,
+                "characteristicId": 3,
+                "numericValue": 55.000000000,
+                "valuePrecision": 2
+            },
+            "expectedLimits": [
+                {
+                    "id": 3,
+                    "characteristicId": 3,
+                    "limitType": "min",
+                    "comparisonOperator": "gt",
+                    "comparisonValue": 0.000000
+                },
+                {
+                    "id": 4,
+                    "characteristicId": 3,
+                    "limitType": "max",
+                    "comparisonOperator": "lt",
+                    "comparisonValue": 70.000000
+                }
+            ],
+            "recordedCharacteristic": {
+                "id": 3,
+                "characteristicId": 3,
+                "numericValue": 69.000000000
+            }
+        }
+    ]
+}
+</code>
+</pre>
+</dd>
+</dl>
+</example>
+<example>
+<h2 class="title">Create a quality inspection</h2>
+<dl class="dl">
+<dt class="dt dlterm">Method</dt>
+<dd class="dd">
+<p class="">POST <code class="ph codeph">/qualitycollaboration/api/v1/quality-inspections</code>
+</p>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;/qualitycollaboration/api/v1/quality-inspections' \
+--header 'Accept: application/json' \
+--header 'Accept: application/xml' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+    "type": "inspection",
+    "dueDate": "2025-12-20T10:00:00Z",
+    "supplierId": 1,
+    "itemId": 1,
+    "supplierPartNumber": "SLNG-123",
+    "buyerPartNumber": "BLNG-123",
+    "buyerBatchNumber": "MPNBATCHNO-LNG456",
+    "itemQuantity": 50.0,
+    "sampleSize": 1,
+    "uom": 1,
+    "requestedBy": 10,
+    "refDocumentType": "Purchase Order",
+    "refDocumentId": "EXTPO_004",
+    "refDocumentItem": "0010",
+    "externalInspectionId": "EXT_QI_004",
+    "characteristics": [
+        {
+            "name": "Color",
+            "type": "REQUIRED",
+            "isQuantitative": false,
+            "requirement": "Clear colourless ",
+            "valueType": "CHOICE",
+            "characteristicValues": [
+                {
+                    "code": "1",
+                    "domain": "COLOR",
+                    "value": "Yellow"
+                },
+                {
+                    "code": "2",
+                    "domain": "COLOR",
+                    "value": "light yellow"
+                },
+                {
+                    "code": "3",
+                    "domain": "COLOR",
+                    "value": "No colour"
+                }
+            ],
+            "expectedResults": {
+                "targetValue": "3"
+            },
+            "expectedLimits": []
+        },
+        {
+            "name": "Non-volatile residue",
+            "type": "REQUIRED",
+            "isQuantitative": true,
+            "requirement": "Not more than 0.1%",
+            "valueType": "NUMERIC",
+            "characteristicValues": [],
+            "expectedResults": {
+                "targetValue": ".32",
+                "valuePrecision": "2"
+            },
+            "expectedLimits": [
+                {
+                    "limitType": "MIN",
+                    "comparisonOperator": "GT",
+                    "comparisonValue": "0"
+                },
+                {
+                    "limitType": "MAX",
+                    "comparisonOperator": "LT",
+                    "comparisonValue": "0.1"
+                }
+            ]
+        },
+        {
+            "name": "Reducing substances",
+            "type": "REQUIRED",
+            "isQuantitative": true,
+            "requirement": "Not more than 70 mg/kg as sulfur dioxide",
+            "valueType": "NUMERIC",
+            "characteristicValues": [],
+            "expectedResults": {
+                "targetValue": "55",
+                "valuePrecision": "2"
+            },
+            "expectedLimits": [
+                {
+                    "limitType": "MIN",
+                    "comparisonOperator": "GT",
+                    "comparisonValue": "0"
+                },
+                {
+                    "limitType": "MAX",
+                    "comparisonOperator": "LT",
+                    "comparisonValue": "70"
+                }
+            ]
+        }
+    ]
+}'</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example response</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">{
+    "id": 606,
+    "type": "Inspection",
+    "status": "Open",
+    "dueDate": "2025-12-20T10:00:00Z",
+    "supplierId": 1,
+    "itemId": 1,
+    "itemName": "Inspection Material",
+    "itemDescription": "Inspection material",
+    "supplierPartNumber": "SLNG-123",
+    "buyerPartNumber": "BLNG-123",
+    "itemQuantity": 50.0,
+    "uom": 1,
+    "requestedBy": 10,
+    "refDocumentType": "Purchase Order",
+    "refDocumentId": "EXTPO_004",
+    "refDocumentItem": "0010",
+    "createdAt": "2025-12-02T16:55:45.416467Z",
+    "modifiedAt": "2025-12-02T16:55:51.185949Z",
+    "exported": false,
+    "characteristics": [
+        {
+            "id": 2976,
+            "lineNum": 1,
+            "inspectionId": 606,
+            "name": "Color",
+            "type": "required",
+            "isQuantitative": false,
+            "specification": "Clear colourless ",
+            "valueType": "choice",
+            "characteristicValues": [
+                {
+                    "id": 3193,
+                    "code": "1",
+                    "domain": "COLOR",
+                    "value": "Yellow"
+                },
+                {
+                    "id": 3194,
+                    "code": "2",
+                    "domain": "COLOR",
+                    "value": "light yellow"
+                },
+                {
+                    "id": 3195,
+                    "code": "3",
+                    "domain": "COLOR",
+                    "value": "No colour"
+                }
+            ],
+            "expectedResults": {
+                "id": 2976,
+                "characteristicId": 2976,
+                "numericValue": 3
+            },
+            "recordedCharacteristic": {
+                "id": 2976,
+                "characteristicId": 2976
+            }
+        },
+        {
+            "id": 2977,
+            "lineNum": 2,
+            "inspectionId": 606,
+            "name": "Non-volatile residue",
+            "type": "required",
+            "isQuantitative": true,
+            "specification": "Not more than 0.1%",
+            "valueType": "numeric",
+            "expectedResults": {
+                "id": 2977,
+                "characteristicId": 2977,
+                "numericValue": 0.32,
+                "valuePrecision": 2
+            },
+            "expectedLimits": [
+                {
+                    "id": 3339,
+                    "limitType": "min",
+                    "comparisonOperator": "gt",
+                    "comparisonValue": 0
+                },
+                {
+                    "id": 3340,
+                    "limitType": "max",
+                    "comparisonOperator": "lt",
+                    "comparisonValue": 0.1
+                }
+            ],
+            "recordedCharacteristic": {
+                "id": 2977,
+                "characteristicId": 2977
+            }
+        },
+        {
+            "id": 2978,
+            "lineNum": 3,
+            "inspectionId": 606,
+            "name": "Reducing substances",
+            "type": "required",
+            "isQuantitative": true,
+            "specification": "Not more than 70 mg/kg as sulfur dioxide",
+            "valueType": "numeric",
+            "expectedResults": {
+                "id": 2978,
+                "characteristicId": 2978,
+                "numericValue": 55,
+                "valuePrecision": 2
+            },
+            "expectedLimits": [
+                {
+                    "id": 3341,
+                    "limitType": "min",
+                    "comparisonOperator": "gt",
+                    "comparisonValue": 0
+                },
+                {
+                    "id": 3342,
+                    "limitType": "max",
+                    "comparisonOperator": "lt",
+                    "comparisonValue": 70
+                }
+            ],
+            "recordedCharacteristic": {
+                "id": 2978,
+                "characteristicId": 2978
+            }
+        }
+    ]
+}</code>
+</pre>
+</dd>
+</dl>
+</example>
+</div>
+<nav role="navigation" class="related-links">
+<ul class="ullinks child-links-section">
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/characteristic-api">Characteristic API</a>
+<br>Access characteristic data when working with the Quality Collaboration API.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/characteristic-value-api">Characteristic Value API</a>
+<br>Access characteristic value data when working with the Quality Collaboration API.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/expected-limit-api">Expected Limit API</a>
+<br>Access expected limit data when working with the Quality Collaboration API.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/expected-result-api">Expected Result API</a>
+<br>Access expected result data when working with the Quality Collaboration API.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/recorded-characteristic-api">Recorded Characteristic API</a>
+<br>Access recorded characteristic data when working with the Quality Collaboration API.</li>
+</ul>
+</nav>
+</article>

@@ -1,0 +1,384 @@
+<article class="" id="users">
+<h1 class="title">Users</h1>
+<div class="body">
+<p class="">The Users quick integration import allows Risk Assess users
+to directly upload spreadsheets via the HTTPS protocol. This allows
+customers to perform inbound imports in an automated manner without
+the need for a user interface.</p>
+<div class="" id="post_url">
+<h2 class="title sectiontitle">Post URL</h2>
+<p class="">
+<code class="ph codeph">https://&lt;CRA_TENANT&gt;.hiperos.com/QuickIntegration/Users</code>
+</p>
+</div>
+<div class="" id="users-d126e832">
+<h2 class="title sectiontitle">Users</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Field</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">EmailAddress (*)</td>
+<td class="entry" align="">Enter the email address of the user.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">
+<p class="">Uses regular expressions:</p>
+<p class="">
+Default: ^[\w.+'-]+@[\w\.-]+\.(\w{2,7})$ Used when http context
+doen't exist</p>
+<p class="">
+Filtering on top level domains:
+^[\w.+'-]+@[\w\.-]+\.(TOPLEVELDOMAINLIST)$ Used for a logged in
+user</p>
+<p class="">
+*Note: regex can be chaned per client via a localization change
+request.</p>
+<p class="">
+AND Can't contain ..</p>
+<p class="">
+AND Can't contain .@</p>
+<p class="">
+AND Can't contain whitespace</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">AlternateEmail</td>
+<td class="entry" align="">Enter the alternate email address of the user; this value sets
+the email address different from the username. NOTE: this field
+populates the Email field on the User Profile page and also the
+Contacts page (for suppliers).</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">
+<p class="">Uses regular expressions:</p>
+<p class="">
+Default: ^[\w.+'-]+@[\w\.-]+\.(\w{2,7})$ Used when http context
+doen't exist</p>
+<p class="">
+Filtering on top level domains:
+^[\w.+'-]+@[\w\.-]+\.(TOPLEVELDOMAINLIST)$ Used for a logged in
+user</p>
+<p class="">
+*Note: regex can be chaned per client via a localization change
+request.</p>
+<p class="">
+AND Can't contain ..</p>
+<p class="">
+AND Can't contain .@</p>
+<p class="">
+AND Can't contain whitespace</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">FirstName (*)</td>
+<td class="entry" align="">Enter the first name of the user.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Middle</td>
+<td class="entry" align="" colspan="2">Enter the middle name of the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">LastName (*)</td>
+<td class="entry" align="">Enter the last name of the user.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Prefix</td>
+<td class="entry" align="">Enter the prefix. Must match an existing prefix defined under
+Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Title</td>
+<td class="entry" align="">Enter the title of the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Activated (*)</td>
+<td class="entry" align="">[Yes or No] Enter Yes to activate the user.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Boolean</td>
+<td class="entry" align="">Yes or No</td>
+</tr>
+<tr class="">
+<td class="entry" align="">IsSupplierUser (*)</td>
+<td class="entry" align="">[Yes or No] Enter Yes to indicate the user is a supplier
+user.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Boolean</td>
+<td class="entry" align="">Yes or No</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ExternalSupplierReference</td>
+<td class="entry" align="">Enter the unique reference key to link to external systems (ERP
+system, etc).</td>
+<td class="entry" align="">Yes if IsSupplierUser = yes and SupplierName is empty</td>
+<td class="entry" align="" colspan="3"></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierName</td>
+<td class="entry" align="">Enter the name of the supplier. Must match an existing
+supplier.</td>
+<td class="entry" align="">Yes if IsSupplierUser = yes and ExternalSupplierReference is
+empty</td>
+<td class="entry" align="" colspan="2"></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">IsAdministrator (*)</td>
+<td class="entry" align="">[Yes or No] Enter Yes to indicate the user is an administrator
+.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Boolean</td>
+<td class="entry" align="">Yes or No</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Culture</td>
+<td class="entry" align="">Enter the user language.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">Must match an existing setup data code for Culture setup data
+type. Will set either active or inactive setup codes.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">TurnOffEmails</td>
+<td class="entry" align="">[Yes or No] Enter Yes to not send custom emails.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Boolean</td>
+<td class="entry" align="">Yes or No</td>
+</tr>
+<tr class="">
+<td class="entry" align="">NoticeLinkMode</td>
+<td class="entry" align="">Enter Default, Direct or SSO. See SSO Notice Link Mode.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">DefaultDashboardView</td>
+<td class="entry" align="">Enter Personal, Widgets, or Analytics* to set the default tab on
+the home page. *must be an internal user and have analytics enabled
+for this to work.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PersonalizationMode</td>
+<td class="entry" align="">Enter Open, Locked or Restricted; default value is Open. See
+Personalization Mode/Template.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PersonalizeTemplateName</td>
+<td class="entry" align="">Enter the template name. Must be a string no longer than 256
+characters.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">EnableTabQuickAccess</td>
+<td class="entry" align="">Enter Yes to use the quick access Relationships tab.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Boolean</td>
+<td class="entry" align="">Yes or No</td>
+</tr>
+<tr class="">
+<td class="entry" align="">BusinessPhone</td>
+<td class="entry" align="">Enter the business phone number. 10 digits, US format.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(10)</td>
+<td class="entry" align="">
+<p class="">Uses regular expressions:</p>
+<p class="">
+must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?:
+x[0-9]{1,4})?$</p>
+<p class="">
+must have at least 7 digits</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">MobilePhone</td>
+<td class="entry" align="">Enter the mobile phone number. 10 digits, US format.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(10)</td>
+<td class="entry" align="">
+<p class="">Uses regular expressions:</p>
+<p class="">
+must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?:
+x[0-9]{1,4})?$</p>
+<p class="">
+must have at least 7 digits</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">FaxNumber</td>
+<td class="entry" align="">Enter the fax number. 10 digits, US format.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(10)</td>
+<td class="entry" align="">
+<p class="">Uses regular expressions:</p>
+<p class="">
+must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?:
+x[0-9]{1,4})?$</p>
+<p class="">
+must have at least 7 digits</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">HomePhone</td>
+<td class="entry" align="">Enter the home phone number. Format? US vs International?</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(10)</td>
+<td class="entry" align="">
+<p class="">Uses regular expressions:</p>
+<p class="">
+must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?:
+x[0-9]{1,4})?$</p>
+<p class="">
+must have at least 7 digits</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Country</td>
+<td class="entry" align="">Enter the setup data code or display name of the country from
+the MailCountry setup data type.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">Must match an existing setup data code for Culture setup data
+type. Will set either active or inactive setup codes.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Address1</td>
+<td class="entry" align="">Enter the first line of the user address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Address2</td>
+<td class="entry" align="">Enter the second line of the user address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">City</td>
+<td class="entry" align="">Enter the city of the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">State</td>
+<td class="entry" align="">Enter the setup data code or display name of the state/province
+from either the MailState setup data type if the country column
+value is us or the MailProvince setup data type if the country
+column value is ca.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PostalCode</td>
+<td class="entry" align="">Enter the zip code of the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">County</td>
+<td class="entry" align="">Enter the county of the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">UserGroup</td>
+<td class="entry" align="">Enter the name of the user group. Must match an existing group
+name defined under Group Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SSOUsername</td>
+<td class="entry" align="">Enter the SSO username of the user. See Single Sign On
+(SSO).</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(1000)</td>
+<td class="entry" align="">any</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">(*)Required</p>
+</div>
+</div>
+</article>

@@ -1,0 +1,10 @@
+Attachment
+
+Export of these records is included as a Standard CSV Export.
+
+Attachment
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+Record Type 	Record Type 	 	No/No
+Attachment Name 	The name of attachment 	string(255) 	No/No
+Classifications Name 	All the attachment classifications linked to this attachment 	AttachmentClassification 	No/No

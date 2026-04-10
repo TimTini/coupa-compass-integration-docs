@@ -1,0 +1,243 @@
+---
+title: "Market API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-cso-api/market-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-cso-api/market-api"
+status_code: 200
+fetched_at: "2026-04-09T12:00:54+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The CSO API"
+  - "Market API"
+---
+
+# Market API
+
+Use the Market API's to create, update, or query the Market Data. This includes specific
+endpoints to take action (create/update/delete) as well as events related to markets.
+
+The URL to access the API's is :
+https://<instance>.cso.coupahost.com/api/markets
+
+See [Integration Best Practices](https://compass.coupa.com/x285417.xml) for more info.
+
+## Actions
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| GET | `/api/markets` | index | Performs Get action to retrieve all markets |
+| POST | `/api/markets` | create | Creates one or more market objects. |
+| PUT | `/api/markets` | update | Updates one or more markets . Can perform mass updates. |
+| DELETE | `/api/markets` | delete | Deletes one more more markets. Can perform mass deletes. |
+| GET | `/api/markets/:id` | show | Show one market data. |
+| PUT | `/api/markets/:id` | update | Update one market at a time using the ID |
+| DELETE | `/api/markets/:id` | delete | Delete one market at a time. |
+
+## Elements
+
+These are the elements available for
+the Markets API
+
+| **Field Name** | **Field Description** | **Req'd** | **Unique?** | **Allowable Values** | **In** | **Out** | **Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | A unique auto incremental, system generated ID | | | | | yes | integer |
+| name | Name of the market | | Yes | | yes | yes | string |
+| description | Short description of the market | | | | yes | yes | string |
+
+## Examples
+
+In this example, we queried for a
+markets API. We did a GET to the
+URL:
+
+https://<instance>.cso.coupahost.com/api/markets
+
+## Markets GET Response
+
+```text
+{
+"total": 10,
+"markets": [
+{
+"id": "9219601763469521167",
+"name": "!Bank of Montreal Savings Tracker Demo"
+},
+{
+"id": "9219595277140974408",
+"name": "!JIRA-Tickets"
+},
+{
+"id": "9219593060488131385",
+"name": "!Market 1",
+"description": "Logistics and Transportation"
+},
+{
+"id": "9220538753220565326",
+"name": "Arj Market 1",
+"description": "XPO logistics"
+},
+{
+"id": "9220538753220565329",
+"name": "Arj Market 2",
+"description": "XPO Transportation"
+},
+{
+"id": "9219592846040196615",
+"name": "Common Information"
+},
+{
+"id": "9219593864376360801",
+"name": "Consulting"
+},
+{
+"id": "9219601774059719348",
+"name": "D - Nikisha's Demo Market"
+},
+{
+"id": "9219601938334799391",
+"name": "E-Integrations"
+},
+{
+"id": "9219601936493380282",
+"name": "E-Top Tips to Audit Events"
+}
+]
+}
+```
+
+## Create/Update/Delete
+
+The following
+describes how you can use the Coupa API to perform actions on Markets.
+
+## Create
+
+`/api/markets`
+
+The
+below payload creates two
+markets.
+
+```text
+Payload:
+{
+"markets": [
+{
+"name": "Arjun Market 1",
+"description": "XPO logistics"
+},
+{
+"name": "Arjun Market 2",
+"description": "XPO Transportation"
+}
+]
+}
+
+Response: 201
+{
+"result": [
+{
+"type": "api.post.added",
+"description": "2 objects created."
+}
+],
+"added": 2,
+"markets": [
+{
+"id": "9220538753220565326"
+},
+{
+"id": "9220538753220565329"
+}
+]
+}
+```
+
+## Update
+
+`/api/markets`
+
+The
+below payload updates a
+market.
+
+```text
+To update one or more market at a time:
+Payload:
+{
+"markets": [
+{
+"name": "Arj Market 1",
+"description": "XPO logistics updated"
+},
+{
+"name": "Arj Market 2",
+"description": "XPO Transportation updated"
+}
+]
+}
+
+Response: 200 OK
+{
+"result": [
+{
+"type": "api.put.updated",
+"description": "2 objects updated."
+}
+],
+"updated": 2
+}
+```
+
+## Delete
+
+`/api/markets`
+
+The
+below payload is to delete more than one market at a time. Please remember that deleting
+markets individually or mass , will result in deletion of associated events as
+well.
+
+```text
+Payload:
+{
+"markets": [
+{
+"id": "9220538753220565326"
+},
+{
+"name": "Arjun Market 2"
+}
+]
+}
+
+Response: 200 OK
+{
+"result": [
+{
+"type": "market.deleted.logMsg",
+"description": "The market Arjun Market 1 was deleted."
+}
+],
+"deleted": 1
+}
+```
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+Updates
+are done in a lenient manner, i.e. if updating one resource fails, the other ones might be
+successful. See delete payload above for example. The payload deleted only one market. For
+deletion or updates, an ID is required in the payload.
+
+Successful requests
+will return `HTTP 200 Response`. The body of the response will include the
+created requisition. Unsuccessful requests will return
+
+```text
+HTTP 400 Bad
+Request
+```
+
+. The body of the response will include validation errors formatted as
+XML.

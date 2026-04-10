@@ -1,0 +1,45 @@
+---
+title: "Supplier Locations"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-quick-integration-file-formats/supplier-locations"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-quick-integration-file-formats/supplier-locations"
+status_code: 200
+fetched_at: "2026-04-09T12:01:01+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Risk Assess Integrations"
+  - "Risk Assess Quick Integration File Formats"
+  - "Supplier Locations"
+---
+
+# Supplier Locations
+
+The Supplier Locations quick integration import allows Risk
+Assess users to directly upload spreadsheets via the HTTPS
+protocol. This allows customers to perform inbound imports in an
+automated manner without the need for an Engagement interface.
+
+## Post URL
+
+`https://.hiperos.com/QuickIntegration/SupplierLocations`
+
+## Supplier Locations
+
+| **Field** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| ExternalReference (*) | Enter the unique reference key to link to external systems (ERP system, etc). NOTE: this field is required but can be left blank if the SupplierName is populated. | Yes | | | any |
+| LocationNumber | Enter the location number of the supplier address. | | | String(256) | any |
+| SupplierName (*) | Enter the name of the supplier. NOTE: this field is required but can be left blank if the ExternalReference is populated. | Yes | | String(256) | any |
+| Type (*) | Enter the location type. Must match an existing address type defined under Setup Data Management. | Yes | | String(64) | any |
+| Country | Enter the supplier country. | | | String(64) | any |
+| Address1 (*) | Enter the first line of the supplier address. | Yes | | String(256) | any |
+| Address2 | Enter the second line of the supplier address. | | | String(256) | any |
+| Address3 | Enter the third line of the supplier address. | | | String(256) | any |
+| Address4 | Enter the fourth line of the supplier address. | | | String(256) | any |
+| City (*) | Enter the supplier city. | Yes | | String(64) | any |
+| State | Enter the supplier state. | | | String(64) | any |
+| PostalCode | Enter the supplier zip code. | | | String(64) | any |
+| County | Enter the supplier county. | | | String(64) | any |
+| SupplierContact (*) | Enter the contact of the supplier address. See Supplier Contact. | Yes | yes | String(256) | any |
+| DUNSNumber | Enter the D-U-N-S Number of the supplier address. | | | String(256) | only format allowed is nn-nnn-nnnn |
+
+(*)Required

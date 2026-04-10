@@ -1,0 +1,141 @@
+---
+title: "Expense Delegates API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/expense-delegates-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/expense-delegates-api"
+status_code: 200
+fetched_at: "2026-04-09T11:59:39+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Expense Delegates API"
+---
+
+# Expense Delegates API
+
+Get expense delegates data from Coupa to use in your third-party systems. 
+
+## Introduction
+
+The URLs to access expense delegates is: `https:///api/expense_delegations`.
+
+## Actions
+
+The Expense Delegates API allows you to perform the following actions:
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| GET | `/api/expense_delegations` | show | Get all delegates in the /expense_delegations table |
+
+## Elements
+
+The following elements are available for the Expense Delegates API:
+
+| **Element** | **Description** | **Required Field?** | **Unique?** | **Allowable Value** | **Api-In Field?** | **Api-Out Field?** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | Coupa unique identifier | | | | | yes | integer |
+| created-by-id | Identifies the user who created this expense delegation record. Automatically created by Coupa. | | | | | yes | integer |
+| updated-by-id | Identifies the user who last updated this expense delegation record. Automatically created by Coupa. | | | | | yes | integer |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| expense-delegate-for | Identifies the user that expense delegates are created for. | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| expenses-delegated-to | Identifies the user that is designated as the delegate. | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+
+## Example cURL request
+
+This cURL request sends a GET call to `/api/expense_delegations`.
+
+```text
+curl --location 'https://<your-instance>.com/api/expense_delegations' \
+--header 'Accept: application/xml' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--header 'Cookie: _mkra_ctxt=5849d15968776318f7c19861021bcb280b3a06d139c39bcdd851759b21c2ee2a--200'
+```
+
+## Example response
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<expense-delegations type="array">
+<expense-delegation>
+<id type="integer">1</id>
+<created-at type="dateTime">2023-09-26T15:37:30-04:00</created-at>
+<updated-at type="dateTime">2023-09-26T15:37:30-04:00</updated-at>
+<created-by-id nil="true"/>
+<updated-by-id nil="true"/>
+<expense-delegate-for>
+<id type="integer">1144</id>
+<login>suryatest99</login>
+<employee-number></employee-number>
+<firstname>ITERATE_ONCE</firstname>
+<lastname>Test99</lastname>
+<fullname>ITERATE_ONCE Test99</fullname>
+<email>upgrade+sg@coupa.com</email>
+<salesforce-id nil="true"/>
+<avatar-thumb-url nil="true"/>
+<custom-fields>
+<mp-html></mp-html>
+<userbusinessunit nil="true"/>
+<ap-custom-field- nil="true"/>
+</custom-fields>
+</expense-delegate-for>
+<expenses-delegated-to>
+<id type="integer">1145</id>
+<login>delegatetest</login>
+<employee-number></employee-number>
+<firstname>ITERATE_ONCE</firstname>
+<lastname>Test</lastname>
+<fullname>DelegateUsr Test</fullname>
+<email>upgrade+du@coupa.com</email>
+<salesforce-id nil="true"/>
+<avatar-thumb-url nil="true"/>
+<custom-fields>
+<mp-html></mp-html>
+<userbusinessunit nil="true"/>
+<ap-custom-field- nil="true"/>
+</custom-fields>
+</expenses-delegated-to>
+</expense-delegation>
+<expense-delegation>
+<id type="integer">2</id>
+<created-at type="dateTime">2023-11-16T15:05:12-05:00</created-at>
+<updated-at type="dateTime">2023-11-16T15:05:12-05:00</updated-at>
+<created-by-id nil="true"/>
+<updated-by-id nil="true"/>
+<expense-delegate-for>
+<id type="integer">1685</id>
+<login>colinuser1</login>
+<employee-number></employee-number>
+<firstname>Colin </firstname>
+<lastname>Expense</lastname>
+<fullname>Colin Expense</fullname>
+<email>test@coupa.com</email>
+<salesforce-id nil="true"/>
+<avatar-thumb-url nil="true"/>
+<custom-fields>
+<mp-html></mp-html>
+<userbusinessunit nil="true"/>
+<ap-custom-field- nil="true"/>
+</custom-fields>
+</expense-delegate-for>
+<expenses-delegated-to>
+<id type="integer">1688</id>
+<login>colinuser3</login>
+<employee-number></employee-number>
+<firstname>Expense</firstname>
+<lastname>Manager</lastname>
+<fullname>Expense Manager</fullname>
+<email>test@coupa.com</email>
+<salesforce-id nil="true"/>
+<avatar-thumb-url nil="true"/>
+<custom-fields>
+<mp-html></mp-html>
+<userbusinessunit nil="true"/>
+<ap-custom-field- nil="true"/>
+</custom-fields>
+</expenses-delegated-to>
+</expense-delegation>
+</expense-delegations>
+```

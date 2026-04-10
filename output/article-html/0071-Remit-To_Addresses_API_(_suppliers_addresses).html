@@ -1,0 +1,415 @@
+<article class="" id="remit-to_addresses_api_suppliers_addresses">
+<h1 class="title">Remit-To Addresses API (/suppliers/addresses)</h1>
+<div class="body">
+<p class="">Use the remit to address API to create, update, or query
+addresses. This address will be used in send payment to
+suppliers.</p>
+<p class="">The URL to access remit-to
+addresses is: <code class="ph codeph">https://&lt;instance&gt;/api/suppliers/&lt;supplierid&gt;/addresses</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration
+Best Practices</a> for more info.</p>
+<div class="" id="actions-d957e58447">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Remit-To Addresses API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/invoices/:invoice_id/remit_to_addresses</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create remit to address</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/suppliers/:supplier_id/addresses</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create remit to address</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/suppliers/:supplier_id/remit_to_addresses/:id</code>
+</td>
+<td class="entry" align="">destroy</td>
+<td class="entry" align="">Delete remit to address</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/suppliers/:supplier_id/addresses/:id</code>
+</td>
+<td class="entry" align="">destroy</td>
+<td class="entry" align="">Delete remit to address</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/invoices/:invoice_id/remit_to_addresses</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query remit to addresss</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/suppliers/:supplier_id/addresses</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query remit to addresss</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/invoices/:invoice_id/remit_to_addresses/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show remit to address</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/suppliers/:supplier_id/addresses/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show remit to address</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/invoices/:invoice_id/remit_to_addresses/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update remit to address</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/suppliers/:supplier_id/addresses/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update remit to address</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/suppliers/:supplier_id/addresses/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update remit to address</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e58724">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Remit-To Addresses
+API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">active</td>
+<td class="entry" align="">Is the item given for this supplier &amp; contract active? and
+if NOT then DELETE</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">city</td>
+<td class="entry" align="">City Name</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">country</td>
+<td class="entry" align="">ISO Country Code</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Country</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">external-src-name</td>
+<td class="entry" align="">Name of the source system.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">external-src-ref</td>
+<td class="entry" align="">Reference number from source system.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa Internal Address ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">local-tax-number</td>
+<td class="entry" align="">local_tax_number</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">name</td>
+<td class="entry" align="">Address 'Nickname'</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">postal-code</td>
+<td class="entry" align="">Postal Code</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-code</td>
+<td class="entry" align="">Remit To Code (if a Supplier address)</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">state</td>
+<td class="entry" align="">State Abbreviation. This field accepts any value.  You can
+navigate to <code class="ph codeph">/addresses</code> in your instance to see a list
+of states/regions associated with each country.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">street1</td>
+<td class="entry" align="">Address Line 1</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">street2</td>
+<td class="entry" align="">Address Line 2</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">street3</td>
+<td class="entry" align="">Address Line 3</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">street4</td>
+<td class="entry" align="">Address Line 4</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">vat-country</td>
+<td class="entry" align="">vat_country</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Country</td>
+</tr>
+<tr class="">
+<td class="entry" align="">vat-number</td>
+<td class="entry" align="">vat_number</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">order_header_confirmations</td>
+<td class="entry" align="">Order Header Confirmation</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">state_iso_code</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/order-confirmations-api-(order_header_confirmations)" title="">OrderHeaderConfirmation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">You can create a remit-to address in active and inactive status. If you don't send a
+              value for the active flag, the system doesn't assign any status.</li>
+<li class="li">The supplier and country must already exist in the system.</li>
+</ul>
+</div>
+</p>
+</div>
+</div>
+<nav role="navigation" class="related-links">
+<ul class="ullinks child-links-section">
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/remit-to-addresses-api-(suppliersaddresses)/remit-to-addresses-api-example-calls">Remit to Addresses API Example Calls</a>
+</li>
+</ul>
+</nav>
+</article>

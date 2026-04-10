@@ -1,0 +1,3668 @@
+[
+  {
+    "index": 1,
+    "url": "https://compass.coupa.com/Integrate/Technical_Documentation/API/Get_Started/Get_Started",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-change-api"
+    ],
+    "slug": "0001-Get_Started"
+  },
+  {
+    "index": 2,
+    "url": "https://compass.coupa.com/Integrate/Technical_Documentation/API/Resources/Transactional/invoices/invoices",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-5926-da-5926"
+    ],
+    "slug": "0002-invoices"
+  },
+  {
+    "index": 3,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R21_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0003-R21_CSV_Export_Formats"
+  },
+  {
+    "index": 4,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R21_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0004-R21_CSV_Import_Formats"
+  },
+  {
+    "index": 5,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R22_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0005-R22_CSV_Export_Formats"
+  },
+  {
+    "index": 6,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R22_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0006-R22_CSV_Import_Formats"
+  },
+  {
+    "index": 7,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R23_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0007-R23_CSV_Export_Formats"
+  },
+  {
+    "index": 8,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R23_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0008-R23_CSV_Import_Formats"
+  },
+  {
+    "index": 9,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R24_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0009-R24_CSV_Export_Formats"
+  },
+  {
+    "index": 10,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R24_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0010-R24_CSV_Import_Formats"
+  },
+  {
+    "index": 11,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R25_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0011-R25_CSV_Export_Formats"
+  },
+  {
+    "index": 12,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R25_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0012-R25_CSV_Import_Formats"
+  },
+  {
+    "index": 13,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R27_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0013-R27_CSV_Export_Formats"
+  },
+  {
+    "index": 14,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R27_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0014-R27_CSV_Import_Formats"
+  },
+  {
+    "index": 15,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R28_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0015-R28_CSV_Export_Formats"
+  },
+  {
+    "index": 16,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R28_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0016-R28_CSV_Import_Formats"
+  },
+  {
+    "index": 17,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R29_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0017-R29_CSV_Export_Formats"
+  },
+  {
+    "index": 18,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R29_CSV_Import-Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0018-R29_CSV_Import-Formats"
+  },
+  {
+    "index": 19,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R30_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0019-R30_CSV_Export_Formats"
+  },
+  {
+    "index": 20,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R30_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0020-R30_CSV_Import_Formats"
+  },
+  {
+    "index": 21,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R31_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0021-R31_CSV_Export_Formats"
+  },
+  {
+    "index": 22,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R31_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0022-R31_CSV_Import_Formats"
+  },
+  {
+    "index": 23,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R32_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0023-R32_CSV_Export_Formats"
+  },
+  {
+    "index": 24,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R32_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0024-R32_CSV_Import_Formats"
+  },
+  {
+    "index": 25,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R33_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0025-R33_CSV_Export_Formats"
+  },
+  {
+    "index": 26,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R33_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0026-R33_CSV_Import_Formats"
+  },
+  {
+    "index": 27,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R34_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0027-R34_CSV_Export_Formats"
+  },
+  {
+    "index": 28,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R34_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0028-R34_CSV_Import_Formats"
+  },
+  {
+    "index": 29,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R35_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0029-R35_CSV_Export_Formats"
+  },
+  {
+    "index": 30,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/CSV/R35_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0030-R35_CSV_Import_Formats"
+  },
+  {
+    "index": 31,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R21/R21_API_Schema.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0031-R21_API_Schema"
+  },
+  {
+    "index": 32,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Contracts_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0032-R22_Contracts_API"
+  },
+  {
+    "index": 33,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0033-R22_Core_Platform_API"
+  },
+  {
+    "index": 34,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0034-R22_Expense_Reporting_API"
+  },
+  {
+    "index": 35,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0035-R22_Purchasing_API"
+  },
+  {
+    "index": 36,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0036-R22_Sourcing_API"
+  },
+  {
+    "index": 37,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R23/R23_Contracts_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0037-R23_Contracts_API"
+  },
+  {
+    "index": 38,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R23/R23_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0038-R23_Core_Platform_API"
+  },
+  {
+    "index": 39,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R23/R23_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0039-R23_Expense_Reporting_API"
+  },
+  {
+    "index": 40,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R23/R23_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0040-R23_Purchasing_API"
+  },
+  {
+    "index": 41,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R23/R23_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0041-R23_Sourcing_API"
+  },
+  {
+    "index": 42,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R24/R24_Contracts_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0042-R24_Contracts_API"
+  },
+  {
+    "index": 43,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R24/R24_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0043-R24_Core_Platform_API"
+  },
+  {
+    "index": 44,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R24/R24_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0044-R24_Expense_Reporting_API"
+  },
+  {
+    "index": 45,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R24/R24_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0045-R24_Purchasing_API"
+  },
+  {
+    "index": 46,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R24/R24_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0046-R24_Sourcing_API"
+  },
+  {
+    "index": 47,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R25/R25_Contracts_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0047-R25_Contracts_API"
+  },
+  {
+    "index": 48,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R25/R25_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0048-R25_Core_Platform_API"
+  },
+  {
+    "index": 49,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R25/R25_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0049-R25_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 50,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R25/R25_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0050-R25_Expense_Reporting_API"
+  },
+  {
+    "index": 51,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R25/R25_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0051-R25_Purchasing_API"
+  },
+  {
+    "index": 52,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R25/R25_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0052-R25_Sourcing_API"
+  },
+  {
+    "index": 53,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R26/R26_Contracts_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0053-R26_Contracts_API"
+  },
+  {
+    "index": 54,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R26/R26_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0054-R26_Core_Platform_API"
+  },
+  {
+    "index": 55,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R26/R26_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0055-R26_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 56,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R26/R26_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0056-R26_Expense_Reporting_API"
+  },
+  {
+    "index": 57,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R26/R26_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0057-R26_Purchasing_API"
+  },
+  {
+    "index": 58,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R26/R26_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0058-R26_Sourcing_API"
+  },
+  {
+    "index": 59,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R26/R26_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0059-R26_Supplier_Risk_API"
+  },
+  {
+    "index": 60,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R27/R27_Contracts_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0060-R27_Contracts_API"
+  },
+  {
+    "index": 61,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R27/R27_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0061-R27_Core_Platform_API"
+  },
+  {
+    "index": 62,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R27/R27_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0062-R27_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 63,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R27/R27_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0063-R27_Expense_Reporting_API"
+  },
+  {
+    "index": 64,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R27/R27_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0064-R27_Inventory_API"
+  },
+  {
+    "index": 65,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R27/R27_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0065-R27_Purchasing_API"
+  },
+  {
+    "index": 66,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R27/R27_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0066-R27_Sourcing_API"
+  },
+  {
+    "index": 67,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R27/R27_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0067-R27_Supplier_Risk_API"
+  },
+  {
+    "index": 68,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R28/R28_Contracts_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0068-R28_Contracts_API"
+  },
+  {
+    "index": 69,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R28/R28_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0069-R28_Core_Platform_API"
+  },
+  {
+    "index": 70,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R28/R28_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0070-R28_Expense_Reporting_API"
+  },
+  {
+    "index": 71,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R28/R28_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0071-R28_Inventory_API"
+  },
+  {
+    "index": 72,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R28/R28_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0072-R28_Purchasing_API"
+  },
+  {
+    "index": 73,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R28/R28_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0073-R28_Sourcing_API"
+  },
+  {
+    "index": 74,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R28/R28_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0074-R28_Supplier_Risk_API"
+  },
+  {
+    "index": 75,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R29/R29_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0075-R29_CLM_Standard_API"
+  },
+  {
+    "index": 76,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R29/R29_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0076-R29_Core_Platform_API"
+  },
+  {
+    "index": 77,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R29/R29_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0077-R29_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 78,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R29/R29_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0078-R29_Expense_Reporting_API"
+  },
+  {
+    "index": 79,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R29/R29_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0079-R29_Inventory_API"
+  },
+  {
+    "index": 80,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R29/R29_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0080-R29_Purchasing_API"
+  },
+  {
+    "index": 81,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R29/R29_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0081-R29_Sourcing_API"
+  },
+  {
+    "index": 82,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R29/R29_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0082-R29_Supplier_Risk_API"
+  },
+  {
+    "index": 83,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R30/R30_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0083-R30_Core_Platform_API"
+  },
+  {
+    "index": 84,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R30/R30_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0084-R30_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 85,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R30/R30_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0085-R30_Expense_Reporting_API"
+  },
+  {
+    "index": 86,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R30/R30_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0086-R30_Inventory_API"
+  },
+  {
+    "index": 87,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R30/R30_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0087-R30_Purchasing_API"
+  },
+  {
+    "index": 88,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R30/R30_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0088-R30_Supplier_Risk_API"
+  },
+  {
+    "index": 89,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R31/R31_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0089-R31_CLM_Standard_API"
+  },
+  {
+    "index": 90,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R31/R31_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0090-R31_Core_Platform_API"
+  },
+  {
+    "index": 91,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R31/R31_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0091-R31_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 92,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R31/R31_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0092-R31_Expense_Reporting_API"
+  },
+  {
+    "index": 93,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R31/R31_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0093-R31_Inventory_API"
+  },
+  {
+    "index": 94,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R31/R31_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0094-R31_Purchasing_API"
+  },
+  {
+    "index": 95,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R31/R31_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0095-R31_Sourcing_API"
+  },
+  {
+    "index": 96,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R31/R31_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0096-R31_Supplier_Risk_API"
+  },
+  {
+    "index": 97,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R32/R32_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0097-R32_CLM_Standard_API"
+  },
+  {
+    "index": 98,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R32/R32_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0098-R32_Core_Platform_API"
+  },
+  {
+    "index": 99,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R32/R32_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0099-R32_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 100,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R32/R32_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0100-R32_Expense_Reporting_API"
+  },
+  {
+    "index": 101,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R32/R32_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0101-R32_Inventory_API"
+  },
+  {
+    "index": 102,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R32/R32_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0102-R32_Purchasing_API"
+  },
+  {
+    "index": 103,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R32/R32_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0103-R32_Sourcing_API"
+  },
+  {
+    "index": 104,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R32/R32_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0104-R32_Supplier_Risk_API"
+  },
+  {
+    "index": 105,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R33/R33_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0105-R33_CLM_Standard_API"
+  },
+  {
+    "index": 106,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R33/R33_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0106-R33_Core_Platform_API"
+  },
+  {
+    "index": 107,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R33/R33_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0107-R33_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 108,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R33/R33_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0108-R33_Expense_Reporting_API"
+  },
+  {
+    "index": 109,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R33/R33_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0109-R33_Inventory_API"
+  },
+  {
+    "index": 110,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R33/R33_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0110-R33_Purchasing_API"
+  },
+  {
+    "index": 111,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R33/R33_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0111-R33_Sourcing_API"
+  },
+  {
+    "index": 112,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R33/R33_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0112-R33_Supplier_Risk_API"
+  },
+  {
+    "index": 113,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0113-R34_CLM_Standard_API"
+  },
+  {
+    "index": 114,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0114-R34_Core_Platform_API"
+  },
+  {
+    "index": 115,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0115-R34_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 116,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0116-R34_Expense_Reporting_API"
+  },
+  {
+    "index": 117,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0117-R34_Inventory_API"
+  },
+  {
+    "index": 118,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0118-R34_Purchasing_API"
+  },
+  {
+    "index": 119,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0119-R34_Sourcing_API"
+  },
+  {
+    "index": 120,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0120-R34_Supplier_Risk_API"
+  },
+  {
+    "index": 121,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R35/R35_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0121-R35_CLM_Standard_API"
+  },
+  {
+    "index": 122,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R35/R35_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0122-R35_Core_Platform_API"
+  },
+  {
+    "index": 123,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R35/R35_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0123-R35_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 124,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R35/R35_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0124-R35_Expense_Reporting_API"
+  },
+  {
+    "index": 125,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R35/R35_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0125-R35_Inventory_API"
+  },
+  {
+    "index": 126,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R35/R35_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0126-R35_Purchasing_API"
+  },
+  {
+    "index": 127,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R35/R35_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0127-R35_Sourcing_API"
+  },
+  {
+    "index": 128,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R35/R35_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0128-R35_Supplier_Risk_API"
+  },
+  {
+    "index": 129,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R35/R35_Supply_Chain_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0129-R35_Supply_Chain_API"
+  },
+  {
+    "index": 130,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0130-R36_CLM_Standard_API"
+  },
+  {
+    "index": 131,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0131-R36_Core_Platform_API"
+  },
+  {
+    "index": 132,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Coupa_Pay_Base_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0132-R36_Coupa_Pay_Base_API"
+  },
+  {
+    "index": 133,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0133-R36_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 134,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0134-R36_Expense_Reporting_API"
+  },
+  {
+    "index": 135,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0135-R36_Inventory_API"
+  },
+  {
+    "index": 136,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0136-R36_Purchasing_API"
+  },
+  {
+    "index": 137,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0137-R36_Sourcing_API"
+  },
+  {
+    "index": 138,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0138-R36_Supplier_Risk_API"
+  },
+  {
+    "index": 139,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R36/R36_Supply_Chain_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0139-R36_Supply_Chain_API"
+  },
+  {
+    "index": 140,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0140-R37_CLM_Standard_API"
+  },
+  {
+    "index": 141,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0141-R37_Core_Platform_API"
+  },
+  {
+    "index": 142,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Coupa_Pay_Base_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0142-R37_Coupa_Pay_Base_API"
+  },
+  {
+    "index": 143,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0143-R37_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 144,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Custom_Object_Without_License_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0144-R37_Custom_Object_Without_License_API"
+  },
+  {
+    "index": 145,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0145-R37_Expense_Reporting_API"
+  },
+  {
+    "index": 146,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0146-R37_Inventory_API"
+  },
+  {
+    "index": 147,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Project_Without_License_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0147-R37_Project_Without_License_API"
+  },
+  {
+    "index": 148,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0148-R37_Purchasing_API"
+  },
+  {
+    "index": 149,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0149-R37_Sourcing_API"
+  },
+  {
+    "index": 150,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0150-R37_Supplier_Risk_API"
+  },
+  {
+    "index": 151,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R37/R37_Supply_Chain_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0151-R37_Supply_Chain_API"
+  },
+  {
+    "index": 152,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0152-R38_CLM_Standard_API"
+  },
+  {
+    "index": 153,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0153-R38_Core_Platform_API"
+  },
+  {
+    "index": 154,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Coupa_Pay_Base_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0154-R38_Coupa_Pay_Base_API"
+  },
+  {
+    "index": 155,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0155-R38_Expense_Reporting_API"
+  },
+  {
+    "index": 156,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0156-R38_Inventory_API"
+  },
+  {
+    "index": 157,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Invoicing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0157-R38_Invoicing_API"
+  },
+  {
+    "index": 158,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0158-R38_Purchasing_API"
+  },
+  {
+    "index": 159,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0159-R38_Sourcing_API"
+  },
+  {
+    "index": 160,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0160-R38_Supplier_Risk_API"
+  },
+  {
+    "index": 161,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Supply_Chain_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0161-R38_Supply_Chain_API"
+  },
+  {
+    "index": 162,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R38/R38_Worker_Management_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0162-R38_Worker_Management_API"
+  },
+  {
+    "index": 163,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0163-R39_CLM_Standard_API"
+  },
+  {
+    "index": 164,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0164-R39_Core_Platform_API"
+  },
+  {
+    "index": 165,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Coupa_Pay_Base_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0165-R39_Coupa_Pay_Base_API"
+  },
+  {
+    "index": 166,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0166-R39_Expense_Reporting_API"
+  },
+  {
+    "index": 167,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0167-R39_Inventory_API"
+  },
+  {
+    "index": 168,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Invoicing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0168-R39_Invoicing_API"
+  },
+  {
+    "index": 169,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0169-R39_Purchasing_API"
+  },
+  {
+    "index": 170,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0170-R39_Sourcing_API"
+  },
+  {
+    "index": 171,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0171-R39_Supplier_Risk_API"
+  },
+  {
+    "index": 172,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Supply_Chain_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0172-R39_Supply_Chain_API"
+  },
+  {
+    "index": 173,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0173-R40_CLM_Standard_API"
+  },
+  {
+    "index": 174,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0174-R40_CSV_Export_Formats"
+  },
+  {
+    "index": 175,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0175-R40_CSV_Import_Formats"
+  },
+  {
+    "index": 176,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0176-R40_Core_Platform_API"
+  },
+  {
+    "index": 177,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Coupa_Pay_Base_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0177-R40_Coupa_Pay_Base_API"
+  },
+  {
+    "index": 178,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0178-R40_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 179,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0179-R40_Expense_Reporting_API"
+  },
+  {
+    "index": 180,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0180-R40_Inventory_API"
+  },
+  {
+    "index": 181,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Invoicing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0181-R40_Invoicing_API"
+  },
+  {
+    "index": 182,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0182-R40_Purchasing_API"
+  },
+  {
+    "index": 183,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0183-R40_Sourcing_API"
+  },
+  {
+    "index": 184,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0184-R40_Supplier_Risk_API"
+  },
+  {
+    "index": 185,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R40/R40_Supply_Chain_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0185-R40_Supply_Chain_API"
+  },
+  {
+    "index": 186,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0186-R41_CLM_Standard_API"
+  },
+  {
+    "index": 187,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0187-R41_CSV_Export_Formats"
+  },
+  {
+    "index": 188,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0188-R41_CSV_Import_Formats"
+  },
+  {
+    "index": 189,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0189-R41_Core_Platform_API"
+  },
+  {
+    "index": 190,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Coupa_Pay_Base_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0190-R41_Coupa_Pay_Base_API"
+  },
+  {
+    "index": 191,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0191-R41_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 192,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Custom_Object_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0192-R41_Custom_Object_API"
+  },
+  {
+    "index": 193,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0193-R41_Expense_Reporting_API"
+  },
+  {
+    "index": 194,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0194-R41_Inventory_API"
+  },
+  {
+    "index": 195,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Invoicing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0195-R41_Invoicing_API"
+  },
+  {
+    "index": 196,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Project_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0196-R41_Project_API"
+  },
+  {
+    "index": 197,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0197-R41_Purchasing_API"
+  },
+  {
+    "index": 198,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0198-R41_Sourcing_API"
+  },
+  {
+    "index": 199,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0199-R41_Supplier_Risk_API"
+  },
+  {
+    "index": 200,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R41/R41_Supply_Chain_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0200-R41_Supply_Chain_API"
+  },
+  {
+    "index": 201,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0201-R42_CLM_Standard_API"
+  },
+  {
+    "index": 202,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0202-R42_CSV_Export_Formats"
+  },
+  {
+    "index": 203,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0203-R42_CSV_Import_Formats"
+  },
+  {
+    "index": 204,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0204-R42_Core_Platform_API"
+  },
+  {
+    "index": 205,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Coupa_Pay_Base_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0205-R42_Coupa_Pay_Base_API"
+  },
+  {
+    "index": 206,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0206-R42_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 207,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0207-R42_Expense_Reporting_API"
+  },
+  {
+    "index": 208,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0208-R42_Inventory_API"
+  },
+  {
+    "index": 209,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Invoicing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0209-R42_Invoicing_API"
+  },
+  {
+    "index": 210,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0210-R42_Purchasing_API"
+  },
+  {
+    "index": 211,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0211-R42_Sourcing_API"
+  },
+  {
+    "index": 212,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0212-R42_Supplier_Risk_API"
+  },
+  {
+    "index": 213,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Worker_Management_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0213-R42_Worker_Management_API"
+  },
+  {
+    "index": 214,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0214-R43_CLM_Standard_API"
+  },
+  {
+    "index": 215,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0215-R43_CSV_Export_Formats"
+  },
+  {
+    "index": 216,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0216-R43_CSV_Import_Formats"
+  },
+  {
+    "index": 217,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0217-R43_Core_Platform_API"
+  },
+  {
+    "index": 218,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Coupa_Pay_Base_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0218-R43_Coupa_Pay_Base_API"
+  },
+  {
+    "index": 219,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Coupa_Pay_Virtual_Card_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0219-R43_Coupa_Pay_Virtual_Card_API"
+  },
+  {
+    "index": 220,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0220-R43_Expense_Reporting_API"
+  },
+  {
+    "index": 221,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0221-R43_Inventory_API"
+  },
+  {
+    "index": 222,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Invoicing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0222-R43_Invoicing_API"
+  },
+  {
+    "index": 223,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0223-R43_Purchasing_API"
+  },
+  {
+    "index": 224,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0224-R43_Sourcing_API"
+  },
+  {
+    "index": 225,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0225-R43_Supplier_Risk_API"
+  },
+  {
+    "index": 226,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Worker_Management_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0226-R43_Worker_Management_API"
+  },
+  {
+    "index": 227,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_CLM_Standard_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0227-R44_CLM_Standard_API"
+  },
+  {
+    "index": 228,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_CSV_Export_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0228-R44_CSV_Export_Formats"
+  },
+  {
+    "index": 229,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_CSV_Import_Formats.xlsx",
+    "kind_hint": "xlsx",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0229-R44_CSV_Import_Formats"
+  },
+  {
+    "index": 230,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Core_Platform_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0230-R44_Core_Platform_API"
+  },
+  {
+    "index": 231,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Expense_Reporting_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0231-R44_Expense_Reporting_API"
+  },
+  {
+    "index": 232,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_External_orders_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0232-R44_External_orders_API"
+  },
+  {
+    "index": 233,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Inventory_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0233-R44_Inventory_API"
+  },
+  {
+    "index": 234,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Invoicing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0234-R44_Invoicing_API"
+  },
+  {
+    "index": 235,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Purchasing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0235-R44_Purchasing_API"
+  },
+  {
+    "index": 236,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Sourcing_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0236-R44_Sourcing_API"
+  },
+  {
+    "index": 237,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Supplier_Risk_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0237-R44_Supplier_Risk_API"
+  },
+  {
+    "index": 238,
+    "url": "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R44/R44_Worker_Management_API.json",
+    "kind_hint": "json",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/core-api-and-csv-download-formats"
+    ],
+    "slug": "0238-R44_Worker_Management_API"
+  },
+  {
+    "index": 239,
+    "url": "https://compass.coupa.com/en-us/community",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0239-community"
+  },
+  {
+    "index": 240,
+    "url": "https://compass.coupa.com/en-us/get-started",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0240-get-started"
+  },
+  {
+    "index": 241,
+    "url": "https://compass.coupa.com/en-us/get-started/implementation-best-practices",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0241-implementation-best-practices"
+  },
+  {
+    "index": 242,
+    "url": "https://compass.coupa.com/en-us/get-started/implementation-overview",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0242-implementation-overview"
+  },
+  {
+    "index": 243,
+    "url": "https://compass.coupa.com/en-us/get-started/portals-and-resources",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0243-portals-and-resources"
+  },
+  {
+    "index": 244,
+    "url": "https://compass.coupa.com/en-us/get-started/welcome-to-coupa",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0244-welcome-to-coupa"
+  },
+  {
+    "index": 245,
+    "url": "https://compass.coupa.com/en-us/get-started/your-coupa-journey",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0245-your-coupa-journey"
+  },
+  {
+    "index": 246,
+    "url": "https://compass.coupa.com/en-us/learning",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0246-learning"
+  },
+  {
+    "index": 247,
+    "url": "https://compass.coupa.com/en-us/learning/coupa-training-partners",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0247-coupa-training-partners"
+  },
+  {
+    "index": 248,
+    "url": "https://compass.coupa.com/en-us/learning/track-your-certifications",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0248-track-your-certifications"
+  },
+  {
+    "index": 249,
+    "url": "https://compass.coupa.com/en-us/products",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0249-products"
+  },
+  {
+    "index": 250,
+    "url": "https://compass.coupa.com/en-us/products/category-strategy",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0250-category-strategy"
+  },
+  {
+    "index": 251,
+    "url": "https://compass.coupa.com/en-us/products/contingent-workforce",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0251-contingent-workforce"
+  },
+  {
+    "index": 252,
+    "url": "https://compass.coupa.com/en-us/products/contract-management",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0252-contract-management"
+  },
+  {
+    "index": 253,
+    "url": "https://compass.coupa.com/en-us/products/core-platform/integration-playbooks-and-resources/integration-knowledge-articles",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation"
+    ],
+    "slug": "0253-integration-knowledge-articles"
+  },
+  {
+    "index": 254,
+    "url": "https://compass.coupa.com/en-us/products/coupa-pay",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0254-coupa-pay"
+  },
+  {
+    "index": 255,
+    "url": "https://compass.coupa.com/en-us/products/invoice",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0255-invoice"
+  },
+  {
+    "index": 256,
+    "url": "https://compass.coupa.com/en-us/products/procure",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0256-procure"
+  },
+  {
+    "index": 257,
+    "url": "https://compass.coupa.com/en-us/products/product-compliance-downloads",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0257-product-compliance-downloads"
+  },
+  {
+    "index": 258,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-5926-da-5926"
+    ],
+    "slug": "0258-address-api-(addresses)"
+  },
+  {
+    "index": 259,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-5926-da-5926"
+    ],
+    "slug": "0259-invoices-api-(invoices)"
+  },
+  {
+    "index": 260,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/roadmaps-overview",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0260-roadmaps-overview"
+  },
+  {
+    "index": 261,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/supplier-resources",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0261-supplier-resources"
+  },
+  {
+    "index": 262,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/supplier-resources/for-suppliers/core-supplier-onboarding/get-started-with-the-csp/programs-for-you/coupa-advanced",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-supplier-portal-rest-api"
+    ],
+    "slug": "0262-coupa-advanced"
+  },
+  {
+    "index": 263,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/supplier-resources/for-suppliers/coupa-supplier-portal/set-up-the-csp/invoices/tokens-in-the-coupa-supplier-portal",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-supplier-portal-rest-api"
+    ],
+    "slug": "0263-tokens-in-the-coupa-supplier-portal"
+  },
+  {
+    "index": 264,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/suppliers/supplier-integration-resources",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation"
+    ],
+    "slug": "0264-supplier-integration-resources"
+  },
+  {
+    "index": 265,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/supply-chain-collaboration/review-lines-on-a-purchase-order-for-partial-confirmations",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/order-confirmations-api-(order_header_confirmations)"
+    ],
+    "slug": "0265-review-lines-on-a-purchase-order-for-partial-confirmations"
+  },
+  {
+    "index": 266,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/total-spend-management-platform/instance-specific-integration-documentation",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/invoices-import"
+    ],
+    "slug": "0266-instance-specific-integration-documentation"
+  },
+  {
+    "index": 267,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/treasury-management-product-documentation/banking/bank-connectivity/bank-files-overview",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-sftp-integrations/treasury-original-file-export-types"
+    ],
+    "slug": "0267-bank-files-overview"
+  },
+  {
+    "index": 268,
+    "url": "https://compass.coupa.com/en-us/products/product-documentation/treasury-management-product-documentation/getting-started-with-treasury-management/automated-processes-and-integrations/automation-views-in-treasury-management",
+    "kind_hint": "page",
+    "source_count": 3,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-sftp-integrations",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-sftp-integrations/treasury-csv-exports",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-sftp-integrations/treasury-original-file-export-types"
+    ],
+    "slug": "0268-automation-views-in-treasury-management"
+  },
+  {
+    "index": 269,
+    "url": "https://compass.coupa.com/en-us/products/release-notes",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0269-release-notes"
+  },
+  {
+    "index": 270,
+    "url": "https://compass.coupa.com/en-us/products/release-notes/about-coupa-releases",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0270-about-coupa-releases"
+  },
+  {
+    "index": 271,
+    "url": "https://compass.coupa.com/en-us/products/release-notes/coupa-treasury-application-ip-addresses",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation"
+    ],
+    "slug": "0271-coupa-treasury-application-ip-addresses"
+  },
+  {
+    "index": 272,
+    "url": "https://compass.coupa.com/en-us/products/spend-analysis",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0272-spend-analysis"
+  },
+  {
+    "index": 273,
+    "url": "https://compass.coupa.com/en-us/products/strategic-sourcing",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0273-strategic-sourcing"
+  },
+  {
+    "index": 274,
+    "url": "https://compass.coupa.com/en-us/products/supplier-management",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0274-supplier-management"
+  },
+  {
+    "index": 275,
+    "url": "https://compass.coupa.com/en-us/products/supply-chain-collaboration",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0275-supply-chain-collaboration"
+  },
+  {
+    "index": 276,
+    "url": "https://compass.coupa.com/en-us/products/supply-chain-design-and-planning",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0276-supply-chain-design-and-planning"
+  },
+  {
+    "index": 277,
+    "url": "https://compass.coupa.com/en-us/products/total-spend-management-platform",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0277-total-spend-management-platform"
+  },
+  {
+    "index": 278,
+    "url": "https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/other-integration-playbooks/coupa-scan-one-integration",
+    "kind_hint": "page",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/invoices-import"
+    ],
+    "slug": "0278-coupa-scan-one-integration"
+  },
+  {
+    "index": 279,
+    "url": "https://compass.coupa.com/en-us/products/travel-and-expense",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0279-travel-and-expense"
+  },
+  {
+    "index": 280,
+    "url": "https://compass.coupa.com/en-us/products/treasury-management",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0280-treasury-management"
+  },
+  {
+    "index": 281,
+    "url": "https://compass.coupa.com/en-us/support",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0281-support"
+  },
+  {
+    "index": 282,
+    "url": "https://compass.coupa.com/en-us/trust",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0282-trust"
+  },
+  {
+    "index": 283,
+    "url": "https://compass.coupa.com/en-us/trust/compliance",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0283-compliance"
+  },
+  {
+    "index": 284,
+    "url": "https://compass.coupa.com/en-us/trust/coupa-accessibility-statement",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0284-coupa-accessibility-statement"
+  },
+  {
+    "index": 285,
+    "url": "https://compass.coupa.com/en-us/trust/data-privacy",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0285-data-privacy"
+  },
+  {
+    "index": 286,
+    "url": "https://compass.coupa.com/en-us/trust/security",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0286-security"
+  },
+  {
+    "index": 287,
+    "url": "https://compass.coupa.com/en-us/trust/system-up-time-and-metrics",
+    "kind_hint": "page",
+    "source_count": 508,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupalink",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0287-system-up-time-and-metrics"
+  },
+  {
+    "index": 288,
+    "url": "https://compass.coupa.com/x285073.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/purchase-order-change-import"
+    ],
+    "slug": "0288-x285073"
+  },
+  {
+    "index": 289,
+    "url": "https://compass.coupa.com/x285417.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 48,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/accounts-api-(accounts)",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-validation-rules-api-(account_validation_rules)",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)-da-5757-da-5757",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/announcements-api-(announcements)",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/budget-lines-api-(budget-lines)",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/business-entities-api-(business_entities)",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/content-groups-api-(business_groups)",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)"
+    ],
+    "slug": "0289-x285417"
+  },
+  {
+    "index": 290,
+    "url": "https://compass.coupa.com/x285425.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/orchestration-documents/invoices-integration-into-your-erp",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/orchestration-documents/pos-and-po-changes-integration-into-your-erp"
+    ],
+    "slug": "0290-x285425"
+  },
+  {
+    "index": 291,
+    "url": "https://compass.coupa.com/x285429.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 7,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/oauth-2.0-and-oidc/openid-connect-clients",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)-da-5797-da-5797",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)/supplier-sites-api-(supplier_sites)",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-api-(supplier_information)-da-5810-da-5810",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-sites-api-(supplier_information_sites)-da-5815-da-5815",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-apis"
+    ],
+    "slug": "0291-x285429"
+  },
+  {
+    "index": 292,
+    "url": "https://compass.coupa.com/x285439.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/oauth-2.0-and-oidc/openid-connect-clients"
+    ],
+    "slug": "0292-x285439"
+  },
+  {
+    "index": 293,
+    "url": "https://compass.coupa.com/x285441.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/oauth-2.0-and-oidc/openid-connect-clients"
+    ],
+    "slug": "0293-x285441"
+  },
+  {
+    "index": 294,
+    "url": "https://compass.coupa.com/x285475.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export"
+    ],
+    "slug": "0294-x285475"
+  },
+  {
+    "index": 295,
+    "url": "https://compass.coupa.com/x285535.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import"
+    ],
+    "slug": "0295-x285535"
+  },
+  {
+    "index": 296,
+    "url": "https://compass.coupa.com/x285781.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-line-change-api"
+    ],
+    "slug": "0296-x285781"
+  },
+  {
+    "index": 297,
+    "url": "https://compass.coupa.com/x285819.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/charges-api-(charges)/charge-allocation-api"
+    ],
+    "slug": "0297-x285819"
+  },
+  {
+    "index": 298,
+    "url": "https://compass.coupa.com/x285915.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/charges-api-(charges)/charge-allocation-api"
+    ],
+    "slug": "0298-x285915"
+  },
+  {
+    "index": 299,
+    "url": "https://compass.coupa.com/x285917.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)/user-groups-api"
+    ],
+    "slug": "0299-x285917"
+  },
+  {
+    "index": 300,
+    "url": "https://compass.coupa.com/x285969.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/rate-card-line-api"
+    ],
+    "slug": "0300-x285969"
+  },
+  {
+    "index": 301,
+    "url": "https://compass.coupa.com/x286047.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/expenses-api-(expense_reports)/expense-attendee-api"
+    ],
+    "slug": "0301-x286047"
+  },
+  {
+    "index": 302,
+    "url": "https://compass.coupa.com/x286119.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/withholding-tax-line-api"
+    ],
+    "slug": "0302-x286119"
+  },
+  {
+    "index": 303,
+    "url": "https://compass.coupa.com/x286199.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 3,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)/requisition-line-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)/requisition-line-tax-detail-api",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)/requisition-line-template-api"
+    ],
+    "slug": "0303-x286199"
+  },
+  {
+    "index": 304,
+    "url": "https://compass.coupa.com/x286205.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)/requisition-amount-line-api"
+    ],
+    "slug": "0304-x286205"
+  },
+  {
+    "index": 305,
+    "url": "https://compass.coupa.com/x293075.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/work-confirmation-header-api"
+    ],
+    "slug": "0305-x293075"
+  },
+  {
+    "index": 306,
+    "url": "https://compass.coupa.com/x294001.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-api-(supplier_information)-da-5810-da-5810",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/supplier-information-export"
+    ],
+    "slug": "0306-x294001"
+  },
+  {
+    "index": 307,
+    "url": "https://compass.coupa.com/x294101.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-sftp-integrations"
+    ],
+    "slug": "0307-x294101"
+  },
+  {
+    "index": 308,
+    "url": "https://compass.coupa.com/x294250.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/custom-object-api-(custom_objectsid)",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/easy-form-responses-api-(easy_form_responses)"
+    ],
+    "slug": "0308-x294250"
+  },
+  {
+    "index": 309,
+    "url": "https://compass.coupa.com/x294274.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+    ],
+    "slug": "0309-x294274"
+  },
+  {
+    "index": 310,
+    "url": "https://compass.coupa.com/x294296.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/enterprise-import"
+    ],
+    "slug": "0310-x294296"
+  },
+  {
+    "index": 311,
+    "url": "https://compass.coupa.com/x294308.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/contract-import"
+    ],
+    "slug": "0311-x294308"
+  },
+  {
+    "index": 312,
+    "url": "https://compass.coupa.com/x294382.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-sites-api-(supplier_information_sites)-da-5815-da-5815",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-tax-registrations-api(supplier_information_tax_registrations)"
+    ],
+    "slug": "0312-x294382"
+  },
+  {
+    "index": 313,
+    "url": "https://compass.coupa.com/x294550.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/approvals-api-(approvals)"
+    ],
+    "slug": "0313-x294550"
+  },
+  {
+    "index": 314,
+    "url": "https://compass.coupa.com/x295096.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)-da-5926-da-5926",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-supplier-portal-rest-api/get-invoices"
+    ],
+    "slug": "0314-x295096"
+  },
+  {
+    "index": 315,
+    "url": "https://compass.coupa.com/x295150.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/tax-code-rule-import"
+    ],
+    "slug": "0315-x295150"
+  },
+  {
+    "index": 316,
+    "url": "https://compass.coupa.com/x295731.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)"
+    ],
+    "slug": "0316-x295731"
+  },
+  {
+    "index": 317,
+    "url": "https://compass.coupa.com/x295747.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/external-orders-import"
+    ],
+    "slug": "0317-x295747"
+  },
+  {
+    "index": 318,
+    "url": "https://compass.coupa.com/x295749.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)"
+    ],
+    "slug": "0318-x295749"
+  },
+  {
+    "index": 319,
+    "url": "https://compass.coupa.com/x295859.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)"
+    ],
+    "slug": "0319-x295859"
+  },
+  {
+    "index": 320,
+    "url": "https://compass.coupa.com/x296407.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api"
+    ],
+    "slug": "0320-x296407"
+  },
+  {
+    "index": 321,
+    "url": "https://compass.coupa.com/x297495.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/contract-template-api-(contractstemplates)"
+    ],
+    "slug": "0321-x297495"
+  },
+  {
+    "index": 322,
+    "url": "https://compass.coupa.com/x297533.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)"
+    ],
+    "slug": "0322-x297533"
+  },
+  {
+    "index": 323,
+    "url": "https://compass.coupa.com/x298143.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/api-explorer"
+    ],
+    "slug": "0323-x298143"
+  },
+  {
+    "index": 324,
+    "url": "https://compass.coupa.com/x298145.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/api-explorer",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/managing-your-api-consumer-apps-and-credentials"
+    ],
+    "slug": "0324-x298145"
+  },
+  {
+    "index": 325,
+    "url": "https://compass.coupa.com/x298147.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/api-explorer"
+    ],
+    "slug": "0325-x298147"
+  },
+  {
+    "index": 326,
+    "url": "https://compass.coupa.com/x298151.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/api-explorer",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/managing-your-api-consumer-apps-and-credentials"
+    ],
+    "slug": "0326-x298151"
+  },
+  {
+    "index": 327,
+    "url": "https://compass.coupa.com/x298153.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/ccw-api-overview"
+    ],
+    "slug": "0327-x298153"
+  },
+  {
+    "index": 328,
+    "url": "https://compass.coupa.com/x298253.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/cycle-count-lines-api-(cycle_count_lines)"
+    ],
+    "slug": "0328-x298253"
+  },
+  {
+    "index": 329,
+    "url": "https://compass.coupa.com/x298279.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)"
+    ],
+    "slug": "0329-x298279"
+  },
+  {
+    "index": 330,
+    "url": "https://compass.coupa.com/x298737.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/supplier-risk-aware-feed-api-(supplier_risk_aware_feed)"
+    ],
+    "slug": "0330-x298737"
+  },
+  {
+    "index": 331,
+    "url": "https://compass.coupa.com/x298787.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-lines-api-da-5961-da-5961"
+    ],
+    "slug": "0331-x298787"
+  },
+  {
+    "index": 332,
+    "url": "https://compass.coupa.com/x304265.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/expenses-api-(expense_reports)/expense-category-translation-api"
+    ],
+    "slug": "0332-x304265"
+  },
+  {
+    "index": 333,
+    "url": "https://compass.coupa.com/x305489.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 2,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/orchestration-documents/invoices-integration-into-your-erp",
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/orchestration-documents/pos-and-po-changes-integration-into-your-erp"
+    ],
+    "slug": "0333-x305489"
+  },
+  {
+    "index": 334,
+    "url": "https://compass.coupa.com/x330965.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/build-on-the-coupa-platform/coupas-app-marketplace"
+    ],
+    "slug": "0334-x330965"
+  },
+  {
+    "index": 335,
+    "url": "https://compass.coupa.com/x333218.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/object-line-api"
+    ],
+    "slug": "0335-x333218"
+  },
+  {
+    "index": 336,
+    "url": "https://compass.coupa.com/x341667.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)"
+    ],
+    "slug": "0336-x341667"
+  },
+  {
+    "index": 337,
+    "url": "https://compass.coupa.com/x341843.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/category-import"
+    ],
+    "slug": "0337-x341843"
+  },
+  {
+    "index": 338,
+    "url": "https://compass.coupa.com/x61032.xml",
+    "kind_hint": "legacy_xml_alias",
+    "source_count": 1,
+    "sources_preview": [
+      "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/easy-form-responses-api-(easy_form_responses)"
+    ],
+    "slug": "0338-x61032"
+  }
+]

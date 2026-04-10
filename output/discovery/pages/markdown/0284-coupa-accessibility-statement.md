@@ -1,0 +1,41 @@
+---
+title: "Coupa Accessibility Statement | Coupa"
+url: "https://compass.coupa.com/en-us/trust/coupa-accessibility-statement"
+final_url: "https://compass.coupa.com/en-us/trust/coupa-accessibility-statement"
+content_type: "text/html"
+classification: "placeholder"
+fetched_at: "2026-04-10T01:57:49+00:00"
+---
+
+# Coupa Accessibility Statement | Coupa
+
+The discovered page did not expose a standard <article> block, so a placeholder was generated.
+
+**Requested URL:** [https://compass.coupa.com/en-us/trust/coupa-accessibility-statement](https://compass.coupa.com/en-us/trust/coupa-accessibility-statement)
+
+Page text preview: Coupa Accessibility Statement | Coupa
+
+Skip to Content
+
+EN
+- EN - English
+- DE - Deutsch
+- JA - 日本語
+- FR - Français
+
+What can we help you find? Trust Coupa Accessibility Statement
+
+Coupa Accessibility Statement
+
+Revised: 21 July 2025
+
+Overview of Accessibility Approach for End-Users of All Abilities
+
+Coupa is committed to accessibility for end-users of all abilities in our web-based and mobile applications. Compliance to accessibility requirements is a strategic goal across the product development organization.
+
+Although accessibility efforts typically aim to serve users who may have an impairment of vision, auditory sense, motor function, or cognitive ability, Coupa believes product enhancements supporting these needs can provide a more usable product for all our users.
+
+We are continuously applying accessibility requirements in our processes, such as UX and functional design, as well as in our automated testing, internal accessibility reviews, and external third party reviews of our accessibility towards relevant standards and best practices, for continuous improvement over time.
+Our Standards and Best Practices
+
+Coupa has adopted the standard Web Content Accessibility Guidelines

@@ -1,0 +1,122 @@
+Forms (Easy Forms) Import
+
+Overview
+
+The Forms import process reads files from ./Incoming/EasyForm/ in the SFTP. These files will be moved to the archive folder located at ./Incoming/Archive/EasyForm/ before being processed in alphanumeric order.
+
+Keys and validations
+
+Name is the key field to update an existing Form.
+
+Possible values Type invoice, invoice_line, supplier_information, sim_remit-to, sim_contract, contingent_worker, contract, expense_preapproval, supplier_review, user, sourcing
+
+Form
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Form 	No 	No 	 	Form
+Form ID 	No 	No 	 	Form ID is used to find easy form for update
+Name* 	Yes 	Yes 	string(255) 	Child form name
+Type* 	Yes 	No 	string(255) 	Type of the easy form
+Sub Type 	No 	No 	 	Sub Type. Can be set only for SIM Contact
+Action* 	Yes 	No 	string(255) 	Action for the easy form. The allowable type of action depends on the type of form being created.
+Content Groups 	No 	No 	 	Easy form content groups separated by semicolon. Max 100 characters per content group name.
+Description 	No 	No 	string(255) 	Description of the easy form
+Auto Approve 	No 	No 	boolean 	Easy form auto approve. Possible values are yes or no
+Auto Apply 	No 	No 	boolean 	Easy form auto apply. Possible values are yes or no
+Auto Reminder 	No 	No 	 	Easy form auto reminder. Possible values are yes or no
+Requester Reminder 	No 	No 	 	Easy Form auto requester reminder. Possible values are yes or no.
+Preferred 	No 	No 	string(255) 	Preferred
+Design Element 	No 	No 	 	Design Element
+Type* 	Yes 	No 	 	Type of the object field
+Alignment 	No 	No 	 	Alignment of the design element. Possible values are vertical or horizontal
+Text 	No 	No 	 	Text of the design element
+Conditional 	No 	No 	 	If this field is currently conditional or not
+Condition Source Reporting Name 	No 	No 	 	Reporting name of a widget that will be used in a condition
+Conditional Source Selection 	No 	No 	 	Value of a widget that will be used in a condition
+Widget Id 	No 	No 	 	Widget Identifier
+General Field 	No 	No 	 	General Field
+Label 	No 	No 	 	Label of the general field
+Reporting Name* 	Yes 	No 	 	Reporting name of the general field
+Hint 	No 	No 	 	Hint of the object field
+Required 	No 	No 	 	If this object field is currently required or not
+Encrypted 	No 	No 	 	If this object field is currently encrypted or not
+Options 	No 	No 	 	General field options can be set only for radio buttons widget
+Object Field 	No 	No 	 	Object Field
+Ignore Content Group Restrictions 	No 	No 	 	Object field ignore content group restrictions can be set only for content groups widget
+Contextual User Default 	No 	No 	 	Contextual user default for certain widgets on invoicing forms
+Default Value 	No 	No 	 	Default value for the object field
+Send to Supplier 	No 	No 	 	If object's attachment is visible to supplier users or not
+Subform 	No 	No 	 	Subform
+
+Design element columns
+
+Column 	 Description 	 Hidden 	 Req'd 	 Unique 	 Type 	 Allowable Values
+Design Element 	Indicates the type of row 	false 	false 	false 	- 	Design Element
+Type*
+
+The type of the design element.
+
+Note
+
+If a form includes a page break widget, there must be a page break widget in the first widget position. This widget cannot be moved or deleted.
+
+All widgets displayed below the page break widget until the next page break widget are associated with that page.
+false 	true 	false 	string(255) 	header, descriptive_text, section_break, new_line, page_break
+Sub Type 	Sub Type. Can be set only for SIM Contact 	false 	false 	false 	string(255) 	any
+Alignment 	Alignment of the design element. Possible values are vertical or horizontal 	false 	false 	false 	string(255) 	vertical, horizontal
+Text 	The text of the design element 	false 	false 	false 	 	Not valid for section_break and new_line
+
+General field columns
+
+Column 	 Description 	 Hidden 	 Req'd 	 Unique 	 Type 	 Allowable Values
+General Field 	Indicated the type of row 	false 	false 	false 	- 	General Field
+Type* 	The type of the general field 	false 	true 	false 	string(255) 	check_box, date, multiple_check_boxes, radio_buttons, text_area, text_field
+Label 	The label of the general field 	false 	false 	false 	string(255) 	any
+Reporting Name* 	Reporting name of the general field 	false 	true 	false 	string(255) 	any
+Hint 	The hint of the object field 	false 	false 	false 	string(255) 	any
+Required 	If this general field is currently required or not 	false 	false 	false 	boolean 	True, False
+Encrypted 	If this general field is currently encrypted or not 	false 	false 	false 	boolean 	True, False
+Options 	General field options can be set only for radio buttons widget 	false 	false 	false 	 	any
+
+Object field columns
+
+Column 	 Description 	 Hidden 	 Req'd 	 Unique 	 Type 	 Allowable Values
+Object Field 	Indicates the type of row 	false 	false 	false 	- 	Object Field
+Type* 	The type of the object field 	false 	true 	false 	string(255) 	See Object field types below.
+Label 	The label of the object field 	false 	false 	false 	string(255) 	any
+Hint 	The hint of the object field 	false 	false 	false 	string(255) 	any
+Required 	If this object field is currently required or not 	false 	false 	false 	boolean 	True, False
+Encrypted 	If this object field is currently encrypted or not 	false 	false 	false 	boolean 	True, False
+Ignore Content Group Restrictions 	Object field ignore content group restrictions can be set only for content groups widget 	false 	false 	false 	boolean 	True, False
+Default Value 	The default value for the object field 	false 	false 	false 	string(255) 	any
+
+Form types and actions
+
+Form Type 	 Available actions
+Invoice 	New, Modify Another_user, modify_another_user_in_the_requester's_content_groups, modify_the_user_filling_out_the_form, create_a_new_user,
+Invoice Line 	New
+Supplier Information 	New Supplier Request - Searchable (Internal), Supplier Update (External), New Supplier Request - Inline Only (Internal), Supplier Update - Searchable (Internal)
+SIM - Remit-To 	New - Add New Remit-To's, Update - View Existing Remit-To's
+SIM - Contact 	"Add new, view and edit Contact Details"
+Contract 	New
+Expense Preapproval 	New
+Supplier Review 	New (Internal)
+User 	New, Modify another user, Modify another user in the requester's content groups, Modify the user filling out the form, Create a new user
+Sourcing 	New Sourcing Questionnaire
+
+Note: Forms for custom objects can have New and Edit actions.
+
+Object field types
+
+The Type column for the Object field can contain different values based on the type of object you're creating. Use this table to determine the allowable values for your Form.
+
+If your Form is a/an... 	 These are the allowable values for the Type field
+Invoice 	Invoice #, Currency, Chart of Accounts, Supplier, Attachments, Supplier Note, Image Scan
+Invoice Line 	Price, Billing, Description
+Supplier Information 	Name, Display Name, Parent Company Name, Industry, Preferred Currency, Inco Terms, Default Commodity, Minority Indicator, Minority Type, Tax Region, Tax Classification, Federal Tax ID, DUNS Number, Tax-Exempt Other Explanation, Tax Code, Income Type, Federal Reportable, International Tax ID, International Tax Classification, International Other Explanation, Backend Invoicing System, Backend Catalog System, Supplier Owner, Content Groups, Payment Terms, Supplier Region, Government Agency Interaction Indicator, Government Agency Interaction, Organization Type, Policy for Bribery and Corruption Indicator, Policy for Bribery and Corruption, Government Allegation for Fraud and Bribery Indicator, Government Allegation for Fraud and Bribery, Third-Party Interaction Indicator, Third-Party Interaction, Country of Operation, Goods and Services Provided, Pay Group, Invoice Amount Limit, Hold Payment Indicator, Hold Payment, Separate Remit-To, Comment Source, Comment, Duplicates Exist, Supplier Insights, Federal Tax Form, State Tax Form, Small Business Enterprise, Minority Business Enterprise, Women Business Enterprise, LGBT, NDA, Bank Form, Veteran-Owned, Insurance, Certificate, Workers Compensation Insurance, Public Liability Insurance, Child Labor Free, ISO 9001, ISO 14001, Food Safety, Custom Certificate 1, Custom Certificate 2, Code of Conduct, ISO TS 16949, Dodd-Frank-Conflict Minerals, QAA ZVEI Quality Assurance A, W-8BEN, W-8BEN-E, 8233, Sole Proprietorship, Limited Liability Corporation (LLC), Non-Resident Alien, Professional Indemnity Insurance, Product Liability Insurance, Massachusetts Gaming Commission License, Maryland Gaming and Lottery Control Commission License, Michigan Gaming Control Board License, PO Email, PO Method, PO Change Method, Hold POs for buyer review, cXML URL, cXML Domain, cXML Identity, cXML Supplier Domain, cXML Supplier Identity, cXML Secret, cXML Protocol, cXML SSL Version, Disable Cert Verify, cXML HTTP username, cXML HTTP password, Primary Address, Remit To Location, Primary Contact
+SIM - Remit-To 	Location Code, Address Name, Account Currency, Street Address, Street Address 2, Postal Code, City, State Region, Country, Beneficiary Name, Bank Account Number, Bank Routing Number, IBAN Number, Sort Code, SWIFT Code (BIC) BSB Number, Intermediary SWIFT Code (BIC), Intermediary IBAN Number, Account Type, Intermediary Bank Name, Bank Address, Bank City, Bank State or Region, Bank Postal Code, Bank Country, Active
+SIM - Contact 	First Name, Last Name, Email address, Mobile Phone, Work Phone, Fax
+Contract 	Contract Name, Contract #, Supplier, Starts, Expires, Owner, Supplier Account #, Currency, Attachments, Savings %, Minimum Spend, Maximum Spend, Term Type
+Supplier Review 	Overall Rating, HSE Rating, Price Rating, Delivery Rating, Quality Rating, Behavior Rating, Overall Review, HSE Description, Price Description, Delivery Description, Quality Description, Behavior Description, Ease of Contracting Collaboration, Overall Contracting Experience, Ease of Sourcing, Quality of Handling, Recommend Supplier, Up-Time
+User 	Login, First Name, Last Name, Email, Mention Name, Employee Number, Next Approver, Default Currency, Default Chart of Accounts, Phone Work, Phone Mobile, Department, Roles, Projects and Groups, Account Security Type, Account Groups, Content Group Security Type, Content Groups, Default Address, Status, Default Locale, SSO Identifier, Authentication Method, Pcard, Requisition Approval Limit, Requisition Self Approval Limit, Expense Approval Limit, Expense Self Approval Limit, Invoice Approval Limit, Invoice Self Approval Limit, Contract Approval Limit, Contract Self Approval Limit, Purchasing License, Expense License, Sourcing License, Inventory License, Contracts License, Analytics License, AI Classification License, Ccw user, GPO Entity
+Sourcing 	None

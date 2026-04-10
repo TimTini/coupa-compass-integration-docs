@@ -1,0 +1,11 @@
+Contract Classification API
+
+Elements
+
+The following elements are available for the Contract Classification API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+active 	Active 	 	 	 	 	yes 	boolean
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+name 	Name 	 	 	 	 	yes 	string(255)
+contract-classification 	Contract classification 	 	 	 	yes 	yes 	any

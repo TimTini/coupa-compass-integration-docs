@@ -1,0 +1,129 @@
+<article class="" id="oauth_2.0_transition_guide">
+<h1 class="title">Set Up an OpenID Connect Client</h1>
+<div class="body">
+<p class="">Configure an OpenID Connect (OIDC) OAuth client to authenticate your users.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">API keys are deprecated. You must transition any existing keys to OAuth clients and revoke the keys under <b>Setup &gt; API Keys</b>. This transition only affects customer-created API integrations to the Coupa Core platform, and does not not affect applications such as Treasury, CSO, Supply Chain Design &amp; Planning.</p>
+</div>
+<div class="" id="section_jyv_2np_cbc">
+<h2 class="title sectiontitle">Create an OAuth client and assign scopes</h2>
+<ol class="ol">
+<li class="li">
+<p class="">Navigate to <b>Setup &gt; Oauth2/OpenID Connect Clients</b> (/oauth2/clients).</p>
+</li>
+<li class="li">
+<p class="">Click <b>Create</b>.</p>
+</li>
+<li class="li">
+<p class="">Select <b>Client Credentials</b> in the <b>Grant type</b> dropdown.</p>
+</li>
+<li class="li">
+<p class="">Complete the fields and select the scopes (access permissions) the Client needs.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">If you want to give a client access to all API endpoints and operations, you will need to add all scopes to that client.</p>
+</div>
+</li>
+<li class="li">
+<p class="">Once you save the client, note the client credentials: <b>Identifier</b>, <b>Secret</b>, <b>Oidc Scopes</b>.</p>
+</li>
+</ol>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oath_client_info.jpg" alt="" title="" width="">
+</div>
+<div class="" id="section_op3_kmp_cbc">
+<h2 class="title sectiontitle">Generate access token</h2>
+<p class="">Send a request to the OAuth client using an HTTP client like Postman in order to generate an access token. You can also send a cURL request using your terminal.</p>
+<ol class="ol">
+<li class="li">
+<p class="">If using the terminal, use the command line to perform a Curl POST:</p>
+<pre>
+<code class="codeblock">curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "client_id=<i>
+<b>&lt;CLIENT_ID&gt;</b>
+</i>&amp;grant_type=client_credentials&amp;scope=<i>
+<b>&lt;SPACE_SEPARATED_LIST_OF_SCOPES&gt;</b>
+</i>&amp;client_secret=<i>
+<b>&lt;CLIENT_SECRET&gt;</b>
+</i>"
+    https://&lt;INSTANCE_DOMAIN&gt;/oauth2/token</code>
+</pre>
+</li>
+<li class="li">
+<p class="">If using an HTTP Client like Postman or another REST Client, configure an OAuth2/OIDC Client connection to use the Coupa API.</p>
+</li>
+<li class="li">
+<p class="">Select <b>POST</b>.</p>
+</li>
+<li class="li">
+<p class="">Set the URL to the instance name where you defined the Client above. For example: <span class="filepath">https://{your_instance_address}/oauth2/token</span>.</p>
+</li>
+<li class="li">
+<p class="">Set the headers key value for Content-Type = <code class="ph codeph">application/x-www-form-urlencoded</code>
+</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/Content-Type_POST_example.png" alt="" title="" width="">
+</li>
+<li class="li">
+<p class="">In the POST body set the following values:</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>client_id</b> = &lt;Your Client Identifier value&gt;</p>
+</li>
+<li class="li">
+<p class="">
+<b>grant_type</b> = <code class="ph codeph">client_credentials</code>
+</p>
+</li>
+<li class="li">
+<p class="">
+<b>scope</b> = &lt;Copy/paste all the scopes that you selected in Client credentials setup without the comma.&gt;</p>
+</li>
+<li class="li">
+<p class="">
+<b>client_secret</b> = &lt;Copy/paste the <b>Coupa Client Secret</b> value&gt; <img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/POST_body_settings.png" alt="" title="" width="">
+</p>
+</li>
+</ul>
+</li>
+<li class="li">
+<p class="">Click <b>Send</b>. The POST response has the <code class="ph codeph">access_token</code> that was generated to authorize API calls within the defined scope for the next 24 hours ( <code class="ph codeph">expires_in</code> 86,399 seconds).</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/POST_response_example.png" alt="" title="" width="">
+</li>
+<li class="li">
+<p class="">Copy your <code class="ph codeph">access_token</code> value from the response body and use it as the <b>Token value</b> in <b>Authorization</b> headers for your Coupa API calls within the scope you defined for this Client connection.</p>
+</li>
+<li class="li">
+<p class="">Create a new tab to make API calls to GET, POST, or PUT etc. and in the <b>Authorization</b> part of the request builder define the ‘TYPE’ = OAuth 2.0.</p>
+</li>
+<li class="li">
+<p class="">Paste the <code class="ph codeph">access_token</code> as the <b>Token</b> field value.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/Token_field_value_example.png" alt="" title="" width="">
+</li>
+<li class="li">
+<p class="">Go to <b>Headers</b> and enter a value of <code class="ph codeph">application/xml</code> or <code class="ph codeph">application/json</code> in the <b>Accept key</b> field. Define the other request parameters according to the call and the interface you are attempting to use.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/Accept_key_field_example.png" alt="" title="" width="">
+</li>
+<li class="li">
+<p class="">Click <b>Send</b>. With that <code class="ph codeph">access_token</code> set in the <b>Authorization</b> header you can make GET, PUT or POST calls to the Client scopes you defined for that connection.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/Successful_request_example.png" alt="" title="" width="">
+</li>
+</ol>
+</div>
+<div class="" id="section_l5j_d4p_cbc">
+<h2 class="title sectiontitle">Build Middleware script/flow for token creation and refresh every 20 hours</h2>
+<p class="">Depending on the middleware, configurations may vary. However, it is important to ensure that all integrations using Coupa API keys are updated to use the OAuth token. To generate and refresh this token, a new script/flow might need to be created to ensure this is updated every 20 hours. Most of the adapters in the middlewares will refresh the token automatically once the setup is done.<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Warning: </span>
+<p class="">Changing the scopes in a Client will impact the token generation script/adapter since these are passed in the token generation request.</p>
+</div>
+</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/Flow_example.png" alt="" title="" width="">
+</div>
+<div class="" id="section_dg5_j4p_cbc">
+<h2 class="title sectiontitle">Update Integrations to use new token generated by script</h2>
+<p class="">All existing integrations must adopt the OAuth connection and use the token generated by the new script/flow. This can be done in phases, for example, where master data integrations are transitioned first followed by transactional data integrations at a later stage.</p>
+</div>
+</div>
+</article>

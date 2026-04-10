@@ -1,0 +1,146 @@
+<article class="" id="api_return_formats">
+<h1 class="title">API Return Formats</h1>
+<div class="body">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Coupa now offers more advanced <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x294274.xml" title="">API Filters</a> that let you define a specific output. We suggest using these filters instead of the shallow format, which will be deprecated in a future release.</p>
+</div>
+<p class="">Coupa's API returns a lot of data by default (for example: full objects for associated objects). The API return payloads can be very large and therefore slow. This can be a problem for customers that do not need the extraneous data.</p>
+<p class="">To make things easier, Coupa has a return format <code class="ph codeph">return_object=shallow</code> that returns a limited JSON or XML response instead of the entire schema, and all associations, for an object. If no return_object is specified then the full return value is returned.</p>
+<div class="" id="how_it_works-d957e501">
+<h2 class="title sectiontitle">How It Works</h2>
+<p class="">The optional query parameter <code class="ph codeph">return_object</code> supports the following 3 values:</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<code class="ph codeph">none</code> : Nothing is returned. This is only supported for PUT and POST (not queries, like GET, where it doesn't make sense).</p>
+</li>
+<li class="li">
+<p class="">
+<code class="ph codeph">limited</code> : Only IDs are returned. This is supported for all commands.</p>
+</li>
+<li class="li">
+<p class="">
+<code class="ph codeph">shallow</code> : This parameter returns all attributes/fields of the object being called and only the IDs and natural keys of the one-deep associations.</p>
+</li>
+</ul>
+<p class="">The parameter <code class="ph codeph">return_object=shallow</code> is supported for the following:</p>
+<ul class="ul">
+<li class="li">
+<p class="">POST commands</p>
+</li>
+<li class="li">
+<p class="">PUT commands</p>
+</li>
+<li class="li">
+<p class="">GET commands</p>
+</li>
+</ul>
+<p class="">The <code class="ph codeph">fields</code> query operator allows you to pass the fields you want in the response body. The format of the <code class="ph codeph">fields</code> value is JSON. Please refer to the example below:</p>
+<p class="">
+<code class="ph codeph">?fields=["id","invoice_number",{"invoice_lines":["id","line_num"]}]</code>
+</p>
+</div>
+<div class="" id="return_object">
+<h2 class="title sectiontitle">Return Object</h2>
+<p class="">You can use the <code class="ph codeph">return_object</code> parameter to control the response body format on any basic create, update, or query calls.</p>
+<p class="">On create and update return_object values supported are: none, limited, and shallow.</p>
+<p class="">On query calls values supported are: limited and shallow.</p>
+</div>
+<div class="" id="example_limited_response_on_query">
+<h2 class="title sectiontitle">Example: limited response on query</h2>
+<pre xml:space="preserve">Query:  https://example.coupahost.com/api/expense_reports?return_object=limited
+Response Code:  200
+Response Body:
+{“id”:1}</pre>
+</div>
+<div class="" id="example_none_response_on_create">
+<h2 class="title sectiontitle">Example: none response on create</h2>
+<pre xml:space="preserve">      POST:  https://example.coupahost.com/api/ex...rn_object=none
+      Request Body:
+      {
+       "id":2,
+      "currency":{
+         "code":"USD"
+       },
+       "expense-lines":[
+         {
+           "description":"Airfare to Reno",
+           "merchant":"American Airlines",
+           "reason":"",
+           "amount":"255.0",
+           "expense-date":"2010-02-05T00:00:00-08:00",
+           "start-date":"2010-02-05T00:00:00-08:00",
+           "expense-category":{
+             "name":"Airfare",
+           }
+         },
+       ],
+      }
+      Response Code:  200
+      Response Body:</pre>
+</div>
+<div class="" id="example_shallow_response_on_create">
+<h2 class="title sectiontitle">Example: shallow response on create</h2>
+<pre xml:space="preserve">      Query:  https://example.coupahost.com/api/ex...object=shallow
+      Response Code:  200
+      Response Body:
+      {
+       "id":158,
+       "created-at":"2010-09-22T20:42:57-07:00",
+       "updated-at":"2014-04-24T14:56:49-07:00",
+       "title":"",
+       "status":"pending_approval",
+       "submitted-at":"2014-04-24T14:56:49-07:00",
+       "auditor-note":null,
+       "reject-reason":null,
+       "paid":false,
+       "total":"567.07",
+       "audit-score":26,
+       "exported":false,
+       "last-exported-at":null,
+       "external-src-ref":null,
+       "external-src-name":null,
+       "currency":{
+         "id":1,
+         "code":"USD"
+       },
+       "expensed-by":{
+         "id":20,
+         "login":"user_login",
+         "email":"user_login@coupa.com"
+       },
+       "created-by":{
+         "id":20,
+         "login":"user_login",
+         "email":"user_login@coupa.com"
+       },
+       "updated-by":{
+         "id":20,
+         "login":"user_login",
+         "email":"user_login@coupa.com"
+       },
+       "expense-lines":[
+         {
+           "id":546,
+           "external-src-ref":null
+         },
+         {
+           "id":547,
+           "external-src-ref":null
+         },
+         {
+           "id":548,
+           "external-src-ref":null
+         },
+         {
+           "id":549,
+           "external-src-ref":null
+         }
+       ],
+       "comments":[ ]
+      }</pre>
+</div>
+</div>
+</article>

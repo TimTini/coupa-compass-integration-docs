@@ -1,0 +1,17 @@
+Bulk Price API
+
+This API is used to manage bulk pricing on orders and invoices.
+
+Associations
+
+This API is associated with Order Line API and Invoice Lines API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+id 	Coupa unique identifier 	 	True 	 	 	yes 	integer
+price 	Bulk Price 	 	 	any 	yes 	yes 	decimal(30,6)
+qty 	Bulk Price Qty 	 	 	any 	yes 	yes 	decimal(30,6)
+uom 	Unit of Measure 	True 	 	any 	yes 	yes 	 UoM
+conversion_numerator 	UOM conversion numerator 	False 	False 	any 	yes 	yes 	decimal(30,6)
+conversion_denominator 	UOM conversion_denominator 	False 	False 	any 	yes 	yes 	decimal(30,6)

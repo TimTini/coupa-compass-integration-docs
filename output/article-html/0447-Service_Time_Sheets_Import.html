@@ -1,0 +1,883 @@
+<article class="" id="service_time_sheets_import">
+<h1 class="title">Service/Time Sheets Import</h1>
+<div class="body">
+<div class="" id="overview-d117e184223">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">This loader is available for Services Maestro customers.</p>
+<p class="">The Service/Time Sheets import process reads files from 
+                <code class="ph codeph">./Incoming/ServiceTimeSheets</code> in the standard SFTP setup. These files are moved to the archive folder located at 
+                <code class="ph codeph">./Incoming/Archive/ServiceTimeSheets</code> before being processed in alphanumeric order.
+            </p>
+<p class="">You can also find this integration object in your Coupa instance at: 
+                <code class="ph codeph">https://{your_instance}/integration_documents/bulk_show/WorkConfirmation::Header</code>.
+            </p>
+</div>
+<div class="" id="section_bv1_z55_g1c">
+<h2 class="title sectiontitle">Service Sheets</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Sheet Header</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Specifies the type of row.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">PO number of the associated PO.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The name of the supplier.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Used to cross-reference the supplier number from your financial system.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">External Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">External Reference</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Time Sheet Line</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Time Sheet Line</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">PO Line Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Week Start Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Week Start Date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Day 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Day 1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Day 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Day 2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Day 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Day 3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Day 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Day 4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Day 5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Day 5</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Day 6</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Day 6</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Day 7</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Day 7</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Line</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Service Line</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Price</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Currency</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Actual Completion</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Actual Completion</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">UOM</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">UOM</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="time_sheet_line">
+<h2 class="title sectiontitle">Time sheet line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Column Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Values</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Time Sheet Line</p>
+</td>
+<td class="entry" align="">
+<p class="">Specifies the type of row</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Time Sheet Line</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PO Line Number</p>
+</td>
+<td class="entry" align="">
+<p class="">Line number of the associated PO line</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">string(20)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Week Start Date</p>
+</td>
+<td class="entry" align="">
+<p class="">Date when the work began. Can't be in the future.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Can't be future. Format must include dashes. Acceptable formats are:</p>
+<ul class="ul">
+<li class="li">
+<p class="">dd-mm-yyyy</p>
+</li>
+<li class="li">
+<p class="">mm-dd-yyyy</p>
+</li>
+<li class="li">
+<p class="">yyyy-mm-dd</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Day 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Hours worked. Sum of hours for all days must be greater than zero.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,3)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Day 2</p>
+</td>
+<td class="entry" align="">
+<p class="">Hours worked. Sum of hours for all days must be greater than zero.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,3)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Day 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Hours worked. Sum of hours for all days must be greater than zero.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,3)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Day 4</p>
+</td>
+<td class="entry" align="">
+<p class="">Hours worked. Sum of hours for all days must be greater than zero.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,3)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Day 5</p>
+</td>
+<td class="entry" align="">
+<p class="">Hours worked. Sum of hours for all days must be greater than zero.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,3)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Day 6</p>
+</td>
+<td class="entry" align="">
+<p class="">Hours worked. Sum of hours for all days must be greater than zero.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,3)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Day 7</p>
+</td>
+<td class="entry" align="">
+<p class="">Hours worked. Sum of hours for all days must be greater than zero.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,3)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">My Custom Field</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom Field</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">Note</p>
+<p class="">
+<code class="ph codeph">Day 1</code> is always the first day of the week. Currently, it's always Sunday, but in future releases, the actual day (Sunday, Monday, etc) of 
+                <code class="ph codeph">Day 1</code> could be determined by your locale.
+            </p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Service Sheet Line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Sheet Header</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Service Sheet Header</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Sheet</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Service Sheet</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Sheet Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Service Sheet Line Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">Quantity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Unit Of Measure</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Unit Of Measure</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">Total</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Rate Card Summary</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Rate Card Summary</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="service_line">
+<h2 class="title sectiontitle">Service line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Column Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Values</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Service Line</p>
+</td>
+<td class="entry" align="">
+<p class="">Specifies the type of row</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Service Line</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Price</p>
+</td>
+<td class="entry" align="">
+<p class="">For service quantity lines, must match the PO's line. For service amount lines, can be any valid amount.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,6)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">Must match the PO line's currency code</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">string(6)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Quantity</p>
+</td>
+<td class="entry" align="">
+<p class="">For amount-based lines, must be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,6)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Actual Completion</p>
+</td>
+<td class="entry" align="">
+<p class="">Time and date of when the work was completed</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">UOM</p>
+</td>
+<td class="entry" align="">
+<p class="">For service quantity lines, Must match the PO line. For service amount lines, must be blank.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="rate_card_line_when_applicable">
+<h2 class="title sectiontitle">Rate card line (when applicable)</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Column Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Values</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">PO line number</p>
+</td>
+<td class="entry" align="">
+<p class="">Line number of the associated PO line</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align="">
+<p class="">string(20)</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Rate line</p>
+</td>
+<td class="entry" align="">
+<p class="">Specify the rate line</p>
+</td>
+<td class="entry" align="">
+<p class="">TRUE</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Describes the service associated with the rate. Typically the same as the Rate line field</p>
+</td>
+<td class="entry" align="">
+<p class="">TRUE</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Code</p>
+</td>
+<td class="entry" align="">
+<p class="">Describes the service associated with the rate.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Line type</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount, Quantity, or Resource</p>
+</td>
+<td class="entry" align="">
+<p class="">TRUE</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Price</p>
+</td>
+<td class="entry" align="">
+<p class="">Total budget for the request</p>
+</td>
+<td class="entry" align="">
+<p class="">TRUE</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Quantity</p>
+</td>
+<td class="entry" align="">
+<p class="">For amount-based lines, must be blank</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">UOM</p>
+</td>
+<td class="entry" align="">
+<p class="">Unit of measure. Required for Quantity-based lines.</p>
+</td>
+<td class="entry" align="">
+<p class="">FALSE</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

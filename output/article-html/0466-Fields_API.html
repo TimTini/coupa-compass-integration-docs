@@ -1,0 +1,786 @@
+<article class="" id="fields_api">
+<h1 class="title">Fields API</h1>
+<div class="body">
+<p class="">
+<b>Fact fields</b> are the columns in the fact sheet and, as any other field in the event,
+      they have a name, a formula name, and a data type to specify the values to be held.</p>
+<p class="">Fact fields define the data to be held, just like item fields or columns in an Excel work
+      sheet. Each fact row should contain only one value for each fact field in order to be able to
+      use the data efficiently.</p>
+<p class="">Use the Fields API's to create, update, or query the Fields Data. This includes specific
+      endpoints to take action (create/update/delete) as well as data associated related to
+      rows.</p>
+<p class="">The URL to access the API's is :
+        <span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields</span>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div class="" id="actions-d26e3322">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Performs Get action to retrieve all Fields that belong to a fact sheet.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Creates one or more Fields for a fact sheet.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Updates one or more Fields on a fact sheet . Can perform mass updates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">delete</p>
+</td>
+<td class="entry" align="">
+<p class="">Deletes one more Fields on a fact sheet. Can perform mass deletes.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields/{field-id}</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show individual field data for the fact sheet id.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields/{field-id}</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update individual field for one fact sheet ID using field id.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields/{field-id}</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">delete</p>
+</td>
+<td class="entry" align="">
+<p class="">Delete individual field for one fact sheet ID using field id.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d26e3509">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">These are the elements available for
+        the Fields API</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Field Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Field Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out *</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">ID of the field</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ordinal</p>
+</td>
+<td class="entry" align="">
+<p class="">The ordinal value for the field.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type</p>
+</td>
+<td class="entry" align="">
+<p class="">The type of the field.</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the Field.</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">formula-name</p>
+</td>
+<td class="entry" align="">
+<p class="">The formula name of the field.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">description</p>
+</td>
+<td class="entry" align="">
+<p class="">A short description of the field.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">required</p>
+</td>
+<td class="entry" align="">
+<p class="">The required flag of the field.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">decimals</p>
+</td>
+<td class="entry" align="">
+<p class="">The number of decimals for numeric field</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">bidder-input</p>
+</td>
+<td class="entry" align="">
+<p class="">This indicates whether or not this field shall be filled by a bidder.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">options</p>
+</td>
+<td class="entry" align="">
+<p class="">The options of field if its a multiple choice field.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">distinguishing</p>
+</td>
+<td class="entry" align="">
+<p class="">If this field should be included in distinguishing row.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">formula</p>
+</td>
+<td class="entry" align="">
+<p class="">the formula for the formula type field</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">min-value</p>
+</td>
+<td class="entry" align="">
+<p class="">The minimum value of numeric fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">max-value</p>
+</td>
+<td class="entry" align="">
+<p class="">The maximum value of numeric fields and the allowed length of text fields.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exclude-limits</p>
+</td>
+<td class="entry" align="">
+<p class="">Whether or not max and min limits shall be included or excluded.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Response payload does not show null values.</p>
+</div>
+</div>
+<div class="" id="examples-d26e4199">
+<h2 class="title sectiontitle">Examples</h2>
+<p class="">In this example, we queried for a
+        Fields
+          API.</p>
+<p class="">
+<span class="filepath">https://&lt;instance&gt;.cso.coupacloud.com/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields</span>
+</p>
+<p class="">
+<span class="filepath">https://&lt;instance&gt;.cso.coupacloud.com/api/events/{event-id}/fact-sheets?name[contains]=factsheetname</span>
+</p>
+<p class="">We
+        did a GET to the URL below for a sample Event-id = <code class="ph codeph">9219593444837772101</code> and
+        Fact sheet id =
+          <code class="ph codeph">9220538753431210838</code>:</p>
+<p class="">
+<span class="filepath">https://&lt;instance&gt;.cso.coupacloud.com/api/events/9220538753252871154/fact-sheets/9220538753431210838/fields</span>
+</p>
+</div>
+<div class="" id="fields_get_response">
+<h2 class="title sectiontitle">Fields GET
+      Response</h2>
+<pre>
+<code class="codeblock">
+        {
+		"total": 6,
+		"fields": [
+				{
+						"id": "9220538753431213703",
+						"ordinal": 1,
+						"type": "Text",
+						"name": "name-fld",
+						"formula-name": "name_fld",
+						"description": "name field for api",
+						"distinguishing": true
+				},
+				{
+						"id": "9220538753431215951",
+						"ordinal": 2,
+						"type": "Numeric",
+						"name": "num-fld",
+						"formula-name": "num_fld",
+						"description": "number field",
+						"decimals": 2,
+						"distinguishing": false,
+						"exclude-limits": false
+				},
+				{
+						"id": "9220538753431226586",
+						"ordinal": 3,
+						"type": "Binary",
+						"name": "checkbox-demo",
+						"formula-name": "checkbox_demo",
+						"description": "checkbox demo field",
+						"distinguishing": true
+				},
+				{
+						"id": "9220538753431234950",
+						"ordinal": 4,
+						"type": "Option",
+						"name": "demo-multi-fld",
+						"formula-name": "demo_multi_fld",
+						"description": "demo multi fields",
+						"options": {
+								"default": 0,
+								"values": [
+										{
+												"name": "first",
+												"value": 1.0
+										},
+										{
+												"name": "second",
+												"value": 2.0
+										},
+										{
+												"name": "other",
+												"value": 0.0
+										}
+								]
+						},
+						"distinguishing": true
+				},
+				{
+						"id": "9220538753431237952",
+						"ordinal": 5,
+						"type": "Formula",
+						"name": "demo-formula",
+						"formula-name": "demo_formula",
+						"description": "demo formula",
+						"required": false,
+						"distinguishing": false,
+						"formula": "demo_factsheet.num_fld"
+				},
+				{
+						"id": "9220538753431240094",
+						"ordinal": 6,
+						"type": "StringFormula",
+						"name": "demo-txt-formula",
+						"formula-name": "demo_txt_formula",
+						"description": "demo text formula field",
+						"distinguishing": false,
+						"formula": "demo_factsheet.name_fld"
+				}
+		]
+}</code>
+</pre>
+</div>
+<div class="" id="create_update_delete-d26e4482">
+<h2 class="title sectiontitle">Create/Update/Delete</h2>
+<p class="">The following
+        describes how you can use the Coupa API to perform actions on Fields</p>
+</div>
+<div class="" id="create-d26e4486">
+<h2 class="title sectiontitle">Create</h2>
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields</code>
+</p>
+<p class="">The
+        below payload creates new field(s) on an event<code class="ph codeph">(9219593444837772101</code> and Fact
+        sheet id =
+      <code class="ph codeph">9220538753431210838</code>:</p>
+<pre>
+<code class="codeblock">
+        Payload
+{
+		"fields": [
+				{
+						"type": "Text",
+						"name": "name-fld-api",
+						"formula-name": "name_fld-api",
+						"description": "name field for api",
+						"distinguishing": true
+				}
+				{
+						"type": "StringFormula",
+						"name": "demo-txt-formula-api",
+						"formula-name": "demo_txt_formula_api",
+						"description": "demo text formula field",
+						"distinguishing": false,
+						"formula": "demo_factsheet.name_fld_api"
+				}
+		]
+}
+
+Response: 201
+{
+		"result": [
+				{
+						"type": "api.post.added",
+						"description": "2 objects created."
+				}
+		],
+		"added": 2,
+		"fields": [
+				{
+						"id": "9220538753532394472"
+				}
+				{
+						"id": "9220538753530117686"
+				}
+		]
+}	 
+
+Note: Formula field only takes "_". </code>
+</pre>
+</div>
+<div class="" id="update-d26e4623">
+<h2 class="title sectiontitle">Update</h2>
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields</code>
+</p>
+<p class="">The
+        below payload updates a
+      Field(s).</p>
+<pre>
+<code class="codeblock">
+        To update one or more Fields at a time: 
+Payload:
+{
+		"fields": [
+				{
+						"id": "9220538753530117686",
+						"type": "Text",
+						"name": "name-fld-api-upd",
+						"formula-name": "name_fld_api-upd",
+						"description": "name field for api",
+						"distinguishing": false
+				},
+				{
+						"id": "9220538753532394472",
+						"type": "StringFormula",
+						"name": "demo-txt-formula-api-upd",
+						"formula-name": "demo_txt_formula_api_upd",
+						"description": "demo text formula field update",
+						"distinguishing": true,
+						"formula": "demo_factsheet.name_fld_api_upd"
+				}
+		]
+}
+
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "api.put.updated",
+						"description": "2 objects updated."
+				}
+		],
+		"updated": 2
+}</code>
+</pre>
+</div>
+<div class="" id="delete-d26e4736">
+<h2 class="title sectiontitle">Delete</h2>
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields</code>
+</p>
+<p class="">The
+        above API can be used to delete more than one Field at a
+          time.</p>
+<pre>
+<code class="codeblock">
+        Payload:
+{
+		"fields": [
+				{
+						"id": "9220538753530117686"
+				},
+				{
+						"id": "9220538753532394472"
+				}
+		]
+}
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "fieldDeletionCompleted",
+						"description": "The following fields were deleted: demo-txt-formula-api-upd, name-fld-api-upd. 
+						In total, 0 values were removed for these fields."
+				}
+		],
+		"deleted": 2
+}</code>
+</pre>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Updates
+          are done in a lenient manner, i.e. if updating one resource fails, the other ones might be
+          successful. The payload deleted two fields. For deletion or updates, event ID is
+          required.</p>
+</div>
+<p class="">Successful requests will return <code class="ph codeph">HTTP 200 Response</code>.
+        The body of the response will include the created requisition. Unsuccessful requests will
+        return</p>
+<pre>
+<code class="codeblock">HTTP 400 Bad
+Request</code>
+</pre>
+<p class="">. The body of the response will include validation errors formatted as
+        XML.</p>
+</div>
+</div>
+</article>

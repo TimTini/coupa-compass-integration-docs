@@ -1,0 +1,255 @@
+<article class="" id="payables_expense">
+<h1 class="title">Payables :: Expense</h1>
+<div class="body">
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<b>Column Name</b>
+</td>
+<td class="entry" align="">
+<b>Description</b>
+</td>
+<td class="entry" align="">
+<b>Req'd</b>
+</td>
+<td class="entry" align="">
+<b>Unique</b>
+</td>
+<td class="entry" align="">
+<b>Type</b>
+</td>
+<td class="entry" align="">
+<b>Allowable Values</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible value is Expense</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">The ID of the expense</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">The date the expense was created on</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">The date the expense was last updated on</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">The status of the expense</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">paid-date</td>
+<td class="entry" align="">The date the expense was marked as fully paid</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">paid-total</td>
+<td class="entry" align="">The total amount paid</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">remaining-total</td>
+<td class="entry" align="">The total amount remaining to be paid</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">remittance-total</td>
+<td class="entry" align="">The total remittance amount required</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total</td>
+<td class="entry" align="">The total of the expense in the CoA currency</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">exported</td>
+<td class="entry" align="">A flag indicating if the expense has been marked as exported</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">last-exported-at</td>
+<td class="entry" align="">The date that the expense was last marked as exported</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">document-type</td>
+<td class="entry" align="">The type of expense</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-channel</td>
+<td class="entry" align="">The payment channel on the associated ExpenseReport</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">payable-type</td>
+<td class="entry" align="">The type of associated payable. Value is ExpenseReport</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">payable-id</td>
+<td class="entry" align="">The ID of the associated ExpenseReport</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">chart-of-account-code</td>
+<td class="entry" align="">The Chart of Accounts name</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">legal-entity-name</td>
+<td class="entry" align="">The Chart of Accounts Legal Entity name</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-1</td>
+<td class="entry" align="">Integration Custom Field 1</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-2</td>
+<td class="entry" align="">Integration Custom Field 2</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-3</td>
+<td class="entry" align="">Integration Custom Field 3</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-4</td>
+<td class="entry" align="">Integration Custom Field 4</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-5</td>
+<td class="entry" align="">Integration Custom Field 5</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-6</td>
+<td class="entry" align="">Integration Custom Field 6</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-7</td>
+<td class="entry" align="">Integration Custom Field 7</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-8</td>
+<td class="entry" align="">Integration Custom Field 8</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-9</td>
+<td class="entry" align="">Integration Custom Field 9</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-field-10</td>
+<td class="entry" align="">Integration Custom Field 10</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>

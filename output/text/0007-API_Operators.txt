@@ -1,0 +1,76 @@
+API Operators
+
+Coupa supports a number of operators to enable you to query with precision.
+
+Operator 	Description 	Example
+(none/default) 	Returns the exact match.
+
+https://example.coupahost.com/api/purchase_orders?id=100
+
+Return the Purchase Order with a Coupa ID of 100.
+
+contains 	Returns results that contain the search term. Not available for datetime fields.
+
+https://example.coupahost.com/api/suppliers?name[contains]=.com
+
+Returns the first 50 suppliers containing ".com" in the Supplier Name field.
+
+starts_with 	Returns results that start with the search term. Not available for datetime fields.
+
+https://example.coupahost.com/api/budget_lines?notes[starts_with]=San%20Francisco
+
+Returns the first 50 budget lines beginning with "San Francisco".
+
+ends_with 	Returns results that end with the search term. Not available for datetime fields.
+
+https://example.coupahost.com/api/items?name[ends_with]=Gray
+
+Returns the first 50 items with a name ending in "Gray".
+
+gt 	Returns results that are greater than (>) the search term.
+
+https://example.coupahost.com/api/purchase_orders/version[gt]=1
+
+Example returns the first 50 purchase orders that have a version of 2 or higher (>1).
+
+lt 	Returns results that are less than (<) the search term.
+
+https://example.coupahost.com/api/suppliers?updated-at[lt]=2010-01-15
+
+Returns the first 50 supplier records which were last updated before, but not including, January 15th 2010.
+
+gt_or_eq 	Returns results that are greater than or equal to (>=) the search term.
+
+https://example.coupahost.com/api/purchase_orders/version[gt_or_eq]=3
+
+Returns the first 50 purchase orders that have a version of 3 or higher (>=3).
+
+lt_or_eq 	Returns results that are less than or equal to (<=) the search term.
+
+https://example.coupahost.com/api/purchase_orders/version[lt_or_eq]=1
+
+Returns the first 50 purchase order records which were last updated before and including January 15th 2010.
+
+not_eq 	Returns results that are not equal to (!=) the search term.
+
+https://example.coupahost.com/api/purchase_orders?status[not_eq]=active
+
+Returns the first 50 purchase order records not in "active" status.
+
+in 	Returns values that match multiple terms (shorthand for multiple OR conditions).
+
+https://example.coupahost.com/api/invoices?account-type[name][in]=SAP100,SAP200
+
+Returns the first 50 invoice records where the Chart of Account name is SAP100 or SAP200.
+
+not_in 	Excludes multiple values from the query results.
+
+https://example.coupahost.com/api/invoices?status[not_in]=ap_hold,booking_hold
+
+Returns the first 50 invoices where the Status does not equal ap_hold or booking_hold.
+
+blank 	Boolean operator that returns values that are or are not blank. Not available for datetime fields.
+
+https://example.coupahost.com/api/suppliers?po-email[blank]=true
+
+Returns the first 50 supplier records with a blank PO Email Address.

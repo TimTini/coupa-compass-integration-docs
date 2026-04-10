@@ -1,0 +1,63 @@
+Singapore IP Addresses
+
+IP addresses that should be whitelisted by Singaporean suppliers and customers.
+
+Below is a list of Coupa customer sandbox and production environment IP addresses for those suppliers who need to whitelist this information for cXML document exchange.
+
+IP Addresses
+
+All addresses below should be whitelisted as data could come from any one of these IPs.
+
+Address Ranges
+
+Date Added
+
+18.143.206.96/28 (18.143.206.97 through 18.143.206.110)
+
+May 2023
+
+18.136.158.79
+
+May 2022
+
+52.221.175.195
+
+May 2022
+
+18.141.66.192/27 (18.141.66.192 through 18.141.66.223)
+
+Feb 2020
+
+18.140.177.144/28 (18.140.177.144 through 18.140.177.159)
+
+Nov 2019
+
+52.220.191.96/27 (52.220.191.96 to 52.220.191.127)
+
+Oct 2016
+
+SFTP
+
+Below is a list of Coupa SFTP service sandbox and production environment IPs, and applies ONLY to customers using Coupa SFTP.
+
+Address Ranges
+
+Date Added
+
+52.220.191.96/27 (52.220.191.96 to 52.220.191.127)
+
+Oct 2016
+
+LDAP
+
+Address Ranges
+
+Date Added
+
+52.220.191.96/27 (52.220.191.96 to 52.220.191.127)
+
+Oct 2016
+
+Outbound Email from Coupa
+
+Coupa uses Amazon SES as outbound-only email sending provider. The Amazon SES IP addresses are subject to change. To query a current list of IP addresses used to send outbound emails, see Amazon SES IP addresses.

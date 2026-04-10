@@ -1,0 +1,8 @@
+Expense Category Translation Import
+
+Expense Category Translation
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Expense Category Key** 	Yes 	No 	 	Expense Category Key
+Locale** 	Yes 	No 	string(255) 	Coupa Locale Code
+Name** 	Yes 	Yes 	string(255) 	Translated Name

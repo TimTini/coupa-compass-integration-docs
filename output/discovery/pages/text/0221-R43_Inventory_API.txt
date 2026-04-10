@@ -1,0 +1,9 @@
+R43_Inventory_API.json
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R43/R43_Inventory_API.json
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TkLSrFZbqVtBVBoQrR0PvEy35MqsOXbwOaP89zguoDKpe8yX%2B37deUHQ60GuR%2F9k7vDHiOST7WbJHuYHwDmUFb%2Bqs5qXdVfxR7zqeDVvEaHGCqBkyVd0pKxZsiLNWLIlGnFryIPxAcqKGc9Knmf7LJfVTFZ1OivefWPJJrgoAz4yn7wfSArR2nEAjkePzoBO7bOHtLW9gGF49e8hwAMQDdb58JULPD7bIhszKIvNdf%2B%2BhdzXgsiKqRxLPljXYmy4ZAfQhFPSJgioF%2FyHNM5621p9rUynzPclG52RFkiRNNAjSd%2FK3frTrQxN5eNpiOTH%2Fb7hzZfdniVrInRTpRtraOzR7dC9qBbv727PS8bkaSwU602a4hKXJcdeG5LxSG9HGv7kZ6vFNC3jLdwZ%2F206%2FE3AVhezLsSZ8slmkJ%2BD1HbTWK3aX9Ome%2FCXnfI0j4jq%2BCGOSuxB6XXXOSQKO9Ta%2FrxxCD4cxrsxLECsTrb%2Fv9HVbw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR43%2FR43_Inventory_API.json
+
+Observed redirect page title: Coupa Portals - Sign In

@@ -1,0 +1,1313 @@
+<article class="" id="supplier_information_export">
+<h1 class="title">Supplier Information Export</h1>
+<div class="body">
+<div class="" id="overview-d117e82566">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Talk to your CAM or CVM if you'd like to enable SIM in your instance. Export of these records once enabled is included as a Standard CSV Export.<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Some additional/optional fields may need to be added to the ITF to be used in a CSV export. Integration Transaction Formats (ITF) are used to export records to third party systems. You can remove unneeded standard fields, add optional fields, reorder the fields, and publish the default for a record to make it active. Go to: <span class="menucascade">
+<span class="uicontrol">Setup</span> &gt; <span class="uicontrol">Integration Documentation</span> &gt; <span class="uicontrol">Bulk Export Documentation</span>
+</span> or by URL go to <code class="ph codeph">/integration_transactional_formats</code>.</p>
+<p class="">For more information about ISO codes, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x294001.xml" title="">List of international country codes</a>.</p>
+</div>
+</p>
+</div>
+<div class="" id="section_x3g_lpy_11c">
+<h2 class="title sectiontitle">Supplier Information</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">RecordType</td>
+<td class="entry" align="">Specifies the header format for the row.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SIM ID</td>
+<td class="entry" align="">Coupa's unique identifier for the SIM record.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier ID</td>
+<td class="entry" align="">Coupa's unique identifier for the supplier associated with the SIM record.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/Yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer ID</td>
+<td class="entry" align="">Coupa's unique identifier for the buyer who created the SIM record.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SIM Status</td>
+<td class="entry" align="">The current approval status of the SIM record.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align="">draft, information_requested, pending_approval, approved, declined, pending_mapping</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Company Name</td>
+<td class="entry" align="">The name of the SIM record.</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Display Name</td>
+<td class="entry" align="">A user-friendly name for the supplier.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Parent Company Name</td>
+<td class="entry" align="">Parent Supplier Company Name as it exists in Coupa. Must exist in Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Industry</td>
+<td class="entry" align="">The default industry for the supplier.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Preferred Currency</td>
+<td class="entry" align="">The currency the supplier would like to use to do business.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Preferred Language</td>
+<td class="entry" align="">The language the supplier would like to use to do business.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inco Terms</td>
+<td class="entry" align="">Three letter Incoterm code for the supplier's commercial terms.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">EXW, FCA, CPT, CIP, DAT, DAP, DDP, FAS, FOB, CFR, CIF, DPU</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Commodity</td>
+<td class="entry" align="">The supplier's default commodity.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Minority Indicator</td>
+<td class="entry" align="">Indicates if the supplier is a minority supplier.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Minority Type</td>
+<td class="entry" align="">Three letter code for the minority type. Required if Minority Indicator is set to true.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">1, 2, 3, 4, 1, 2, 3, 4</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Region</td>
+<td class="entry" align="">The tax jurisdiction.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Classification</td>
+<td class="entry" align="">US tax categories.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Federal Tax ID</td>
+<td class="entry" align="">The supplier's Employer Identification Number (for US businesses).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SSN</td>
+<td class="entry" align="">The supplier's Social Security Number (for personal US businesses).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">DUNS</td>
+<td class="entry" align="">The supplier's Data Universal Numbering System number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Exempt Explanation</td>
+<td class="entry" align="">If the supplier is tax exempt, they need to provide an explanation.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Income Type</td>
+<td class="entry" align="">The type of income for the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Federal Reportable</td>
+<td class="entry" align="">Indicates if the supplier is required to report federal taxes.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">International Tax ID</td>
+<td class="entry" align="">The supplier's tax ID (for non-US businesses).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">International Tax Classification</td>
+<td class="entry" align="">Non-US tax categories.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">International Explanation</td>
+<td class="entry" align="">If the supplier is tax exempt, they need to provide an explanation.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Backend System Invoicing</td>
+<td class="entry" align="">The type of ERP that Coupa integrates with for invoices.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">SAP, Oracle</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Backend System Catalog</td>
+<td class="entry" align="">The type of ERP that Coupa integrates with for catalogs.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">CatBase, Elastic, iPartner Product Suite, Claritum, Contalog, CatalognTime, Advizia, Aravo, MatrixCMX, SigmaCommerce</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Term</td>
+<td class="entry" align="">The supplier's default payment terms. Must match an exisiting payment term in Coupa. Use the payment term code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Region</td>
+<td class="entry" align="">The supplier's geographic region.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">AMER, EMEA, APAC, Japan</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Govt Agency Interaction Indicator</td>
+<td class="entry" align="">Govt agency interaction indicator for the ERP.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Govt Agency Interaction</td>
+<td class="entry" align="">Text for the govt agency interaction indicator that's fed to the ERP.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Organization Type</td>
+<td class="entry" align="">Describes the type of organization for the supplier.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Corporation, Foreign Corporation, Individual, Foreign Individual, Partnership, Foreign Partnership</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bribery Policy Indicator</td>
+<td class="entry" align="">Bribery policy indicator for the ERP.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bribery Policy Text</td>
+<td class="entry" align="">Text for the bribery policy indicator that's fed to the ERP.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Govt Allegation Indicator</td>
+<td class="entry" align="">Govt allegation indicator for the ERP.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Govt Allegation Text</td>
+<td class="entry" align="">Text for the govt allegation indicator that's fed to the ERP.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Third Party Interaction Indicator</td>
+<td class="entry" align="">Third party interaction indiciator for the ERP.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Third Party Interaction Text</td>
+<td class="entry" align="">Text for the third party interaction indicator that's fed to the ERP.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Country of Operation</td>
+<td class="entry" align="">The country where the supplier is based.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Goods or Services Provided</td>
+<td class="entry" align="">A short description of the what the supplier provides.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay Group</td>
+<td class="entry" align="">A list of different ways the supplier can be paid.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Amount Limit</td>
+<td class="entry" align="">A preset limit for the maximum value of an invoice submitted by the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Hold Payment Indicator</td>
+<td class="entry" align="">Prevent the supplier from being automatically paid through the ERP.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Hold Payment Text</td>
+<td class="entry" align="">Text for the hold payment indicator that's fed to the ERP.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Separate Remit To</td>
+<td class="entry" align="">Enable if the remit different than the primary address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Comment Source</td>
+<td class="entry" align="">Field indicating who made the comment.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Comment</td>
+<td class="entry" align="">Field for the actual comment.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exported</td>
+<td class="entry" align="">Indicates if the SIM record has exported to the ERP.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Last Exported Date and Time</td>
+<td class="entry" align="">Shows the last time the SIM record was exported to the ERP.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created Date and Time</td>
+<td class="entry" align="">Shows when the SIM record was created.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By id</td>
+<td class="entry" align="">Coupa's unique identifier for the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By Lastname, Firstname</td>
+<td class="entry" align="">The full name of the created-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By email</td>
+<td class="entry" align="">The email address of the created-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated Date and Time</td>
+<td class="entry" align="">Shows when the SIM record was last updated.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By id</td>
+<td class="entry" align="">Coupa's unique identifier for the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By Lastname, Firstname</td>
+<td class="entry" align="">The full name of the updated-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By email</td>
+<td class="entry" align="">The email address of the updated-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Logo file name</td>
+<td class="entry" align="">The name of the supplier logo file, including file extension.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Logo content type</td>
+<td class="entry" align="">The type of image file used by the supplier logo.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Logo file size</td>
+<td class="entry" align="">The file size of the supplier logo.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Logo updated at</td>
+<td class="entry" align="">Shows the last time the supplier logo was updated.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Website</td>
+<td class="entry" align="">The address of the supplier's website.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow cXML Invoicing</td>
+<td class="entry" align="">Indicates if the supplier is allowed to send invoices via cXML.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Hold Invoices for AP Review</td>
+<td class="entry" align="">Indicates if invoices from this supplier should be reviewed by AP being approved to pay. Also known as AP Hold.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Send Invoices to Approvals</td>
+<td class="entry" align="">Indicates if the supplier's invoices will always be sent to approval, regardless of inovice tolerance settings.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow Invoicing with no Backing Doc from Connect</td>
+<td class="entry" align="">Indicates if the supplier can create an invoice via the supplier portal without a purchase order.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow Invoicing with Unbacked Lines from Connect</td>
+<td class="entry" align="">Indicates if the supplier can create an invoice lines via the supplier portal without a purchase order.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Matching Level</td>
+<td class="entry" align="">Selects the supplier's matching level: none, 2-way, or 3-way.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Shipping Term</td>
+<td class="entry" align="">The default shipping term for the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Code</td>
+<td class="entry" align="">The default tax code for the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Savings Percentage</td>
+<td class="entry" align="">The savings percentage for using the supplier.</td>
+<td class="entry" align="">decimal(8,2)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow Invoicing from Connect</td>
+<td class="entry" align="">Indicates if the supplier is allowed to create an invoice via the supplier portal.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow Choosing Billing Account in Invoicing</td>
+<td class="entry" align="">Indicates if the supplier can choose a billing account when creating an invoice.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Inbound Emails</td>
+<td class="entry" align="">This field is for the invoice inbox. Specify specific email address for the supplier.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Invoice Email</td>
+<td class="entry" align="">This field is useful when you've whitelisted addresses. Replies to any supplier email will go to this preferred email instead of the invoice email address.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inbound Invoice Email Domain</td>
+<td class="entry" align="">This field is for the invoice inbox. Specifiy an email domain for the supplier.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Duplicate Exists</td>
+<td class="entry" align="">There's already a supplier record that has similar fields: name, display name, DUNS, etc.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">One Time Supplier</td>
+<td class="entry" align="">Indicates is the supplier is an One Time Supplier</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Scope Three Emissions</td>
+<td class="entry" align="">Indicates if the supplier is tracking Scope Three Emissions</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Strategic Supplier</td>
+<td class="entry" align="">Indicates if the supplier is a Strategic Supplier</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_id1_mzs_b1c">
+<h2 class="title sectiontitle">Supplier Information allowable values</h2>
+<dl class="dl">
+<dt class="dt dlterm">Pay Group values</dt>
+<dd class="dd">
+<p class="">1=Direct Debit, 2=Standard, 3=Customer Refund, 4=Employee, 5=Intercompany, 6=Lease, 7=Partner Referral, 8=Rent, 9=Tax, 10=Util/Telecom</p>
+</dd>
+<dt class="dt dlterm">Minority Type values</dt>
+<dd class="dd">
+<p class="">1=HIS, 2=NAT, 3=AFR, 4=ASN</p>
+</dd>
+<dt class="dt dlterm">Tax Classication values</dt>
+<dd class="dd">
+<p class="">1=1099, 2=C Corp, 3=Customer Refund, 4=Exempt 1099, 5=Tax Authority, 6=Tax &amp; Gov, 7=Vendor, 8=Non-Profit, 9=Partner Referral, 10=S Corp, 11=Foreign Company</p>
+</dd>
+<dt class="dt dlterm">International Tax Classification values</dt>
+<dd class="dd">
+<p class="">1=Active NFFE, 2=Passive NFFE, 3=Exempt beneficial owner, 4=Deemed compliant FFI, 5=Canadian Financial Institution, 6=Other Partner Jurisdiction Financial Institution, 7=Participating Foreign Financial Institution, 8=Non Participating Financial Institution, 9=Specified U.S. Person, 10=Not a Specified U.S. Person</p>
+</dd>
+</dl>
+</div>
+<div class="" id="section_ixr_cpy_11c">
+<h2 class="title sectiontitle">Supplier Information Address</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">RecordType</td>
+<td class="entry" align="">Specifies the header format for the row.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Information ID</td>
+<td class="entry" align="">Coupa's unique identifier for the SIM record associated with this address.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/Yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Address ID</td>
+<td class="entry" align="">Coupa's unique identifier for this address record.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Address Type</td>
+<td class="entry" align="">The type of address of this record.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align="">RTA, Primary, Standard</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Location Code</td>
+<td class="entry" align="">A free field for storing info about the location from the ERP.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Address Name</td>
+<td class="entry" align="">A user-friendly name to identify this address.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Street Address</td>
+<td class="entry" align="">The first address line.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Street Address 2</td>
+<td class="entry" align="">The second address line.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Postal Code</td>
+<td class="entry" align="">The postal code of the address.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">City</td>
+<td class="entry" align="">The city of the address.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">State or Region</td>
+<td class="entry" align="">The state or region of the address</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">State ISO Code</td>
+<td class="entry" align="">The state iso code of the address</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Country</td>
+<td class="entry" align="">The country of the address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Currency</td>
+<td class="entry" align="">Account Currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Box</td>
+<td class="entry" align="">The post office box of the address.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Box Postal Code</td>
+<td class="entry" align="">The post office box postal code.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Type</td>
+<td class="entry" align="">The type of account for the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Intermediary Bank Name</td>
+<td class="entry" align="">The name of the intermediary bank name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Address</td>
+<td class="entry" align="">The address line for the bank.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank City</td>
+<td class="entry" align="">The city line for the bank.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank State or Region</td>
+<td class="entry" align="">The state or region of the bank.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Postal Code</td>
+<td class="entry" align="">The postal code of the bank.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Country</td>
+<td class="entry" align="">The country of the bank.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Work Phone</td>
+<td class="entry" align="">The telephone number of the bank.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Fax Phone</td>
+<td class="entry" align="">The fax number of the bank.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Name</td>
+<td class="entry" align="">Bank Name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Account Name</td>
+<td class="entry" align="">The name on the bank account.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Account Number</td>
+<td class="entry" align="">The bank account number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">International Bank Account Number</td>
+<td class="entry" align="">The international bank account number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Routing Number</td>
+<td class="entry" align="">The bank routing number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Wire Routing Number</td>
+<td class="entry" align="">The bank wire routing number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">IBAN Number</td>
+<td class="entry" align="">The bank's International Bank Account Number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sort Code</td>
+<td class="entry" align="">The bank's Sort Code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bank Code</td>
+<td class="entry" align="">Bank Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">IFSC</td>
+<td class="entry" align="">IFSC</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transit Number And Institution Number</td>
+<td class="entry" align="">Transit Number And Institution Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SWIFT Code</td>
+<td class="entry" align="">The bank's SWIFT code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">BSB Number</td>
+<td class="entry" align="">The bank's BSB number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">BIC</td>
+<td class="entry" align="">The bank's Bank Identifier Code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">BIC Routing Code</td>
+<td class="entry" align="">The bank's BIC Routing Code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created Date and Time</td>
+<td class="entry" align="">The date and time that the address record was created.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated Date and Time</td>
+<td class="entry" align="">The date and time that the address record was last updated.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Method</td>
+<td class="entry" align="">The method of payment accepted by the supplier.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">tran, cash, cred, pcard</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Numbers</td>
+<td class="entry" align="">Tax Numbers</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Countries</td>
+<td class="entry" align="">Tax Countries</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Purpose</td>
+<td class="entry" align="">The names of the address purposes.</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Contact Email</td>
+<td class="entry" align="">The email address of the individual responsible for Remit To information</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Credit Card Email</td>
+<td class="entry" align="">Email address to whom the Virtual Credit card will be delivered</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Beneficiary Account Type</td>
+<td class="entry" align="">The type of beneficiary account for the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">cacc, svgs, ondp, moma, tras</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_pk4_jzs_b1c">
+<h2 class="title sectiontitle">Supplier Information Artifact</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">RecordType</td>
+<td class="entry" align="">Specifies the header format for the row.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Information ID</td>
+<td class="entry" align="">Coupa's unique identifier for the SIM record associated with this attachment record.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment ID</td>
+<td class="entry" align="">Coupa's unique identifier for this attachment record.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment Type</td>
+<td class="entry" align="">The type of document that's attached to the SIM record.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment Meta Type</td>
+<td class="entry" align="">More detailed information about the type of document attached to the SIM record, based on the attachment type.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier ID</td>
+<td class="entry" align="">Coupa's unique identifier for the supplier associated with the SIM record.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Effective Date</td>
+<td class="entry" align="">The date when the document first becomes effective.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expiry Date</td>
+<td class="entry" align="">The latest date when the document is effective.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">A brief description of the document that's attached to the SIM record.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created Date and Time</td>
+<td class="entry" align="">Shows when the SIM record was created.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By id</td>
+<td class="entry" align="">Coupa's unique identifier for the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By Lastname, Firstname</td>
+<td class="entry" align="">The full name of the created-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By email</td>
+<td class="entry" align="">The email address of the created-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated Date and Time</td>
+<td class="entry" align="">Shows when the SIM record was last updated.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By id</td>
+<td class="entry" align="">Coupa's unique identifier for the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By Lastname, Firstname</td>
+<td class="entry" align="">The full name of the updated-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By email</td>
+<td class="entry" align="">The email address of the updated-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_dgc_kzs_b1c">
+<h2 class="title sectiontitle">Supplier Information Contact</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">RecordType</td>
+<td class="entry" align="">Specifies the header format for the row.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Information ID</td>
+<td class="entry" align="">Coupa's unique identifier for the related SIM record associated with this contact.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contact ID</td>
+<td class="entry" align="">Coupa's unique identifier for this contact record.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contact Type</td>
+<td class="entry" align="">The job role of the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align="">Primary, Standard</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Prefix</td>
+<td class="entry" align="">The name prefix of the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Suffix</td>
+<td class="entry" align="">The name suffix of the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Additional Name Field</td>
+<td class="entry" align="">Any additional names of the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">First Name</td>
+<td class="entry" align="">The first name of the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Last Name</td>
+<td class="entry" align="">The last name of the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Full Name</td>
+<td class="entry" align="">The full name of the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Email</td>
+<td class="entry" align="">The email address of the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reference Code</td>
+<td class="entry" align="">The reference code of the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Work Phone</td>
+<td class="entry" align="">The work phone number of the supplier contact.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Mobile Phone</td>
+<td class="entry" align="">The mobile phone number of the supplier contact.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fax Phone</td>
+<td class="entry" align="">The fax number of the supplier contact.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Notes</td>
+<td class="entry" align="">A short note about the supplier contact.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created Date and Time</td>
+<td class="entry" align="">Shows when the SIM record was created</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By id</td>
+<td class="entry" align="">Coupa's unique identifier for the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By Lastname, Firstname</td>
+<td class="entry" align="">The full name of the created-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By email</td>
+<td class="entry" align="">The email address of the created-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated Date and Time</td>
+<td class="entry" align="">Shows when the SIM record was last updated.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By id</td>
+<td class="entry" align="">Coupa's unique identifier for the user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By Lastname, Firstname</td>
+<td class="entry" align="">The full name of the updated-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By email</td>
+<td class="entry" align="">The email address of the updated-by user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Purpose</td>
+<td class="entry" align="">The names of the address purposes.</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

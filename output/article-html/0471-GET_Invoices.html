@@ -1,0 +1,346 @@
+<article class="" id="reference1">
+<h1 class="title">GET Invoices</h1>
+<p class="font-size-lg">Use the Coupa Supplier Portal (CSP) REST API to access invoice data in the CSP.</p>
+<div class="body refbody">
+<div class="" id="section1">
+<h2 class="title sectiontitle">Endpoint</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="simpletable properties simpletableborder">
+<thead class="sthead">
+<tr>
+<th>
+<b>Method</b>
+</th>
+<th>
+<b>Endpoint</b>
+</th>
+</tr>
+</thead>
+<tr>
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/v1/invoices</code>
+</p>
+</td>
+</tr>
+<tr>
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/v1/invoice/{id}</code>
+</td>
+</tr>
+</table>
+</div>
+</p>
+</div>
+<div class="" id="section2">
+<h2 class="title sectiontitle">Headers</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Header</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Argument</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Authorization</p>
+</td>
+<td class="entry" align="">
+<p class="">Bearer token</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Content-Type</p>
+</td>
+<td class="entry" align="">
+<p class="">application/json</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Parameters</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<caption>
+<span class="table--title-label">Table 1. </span>
+<span class="title">Query parameters</span>
+</caption>
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Parameter</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">sort_by</td>
+<td class="entry" align="">Order of response values. Available options: <code class="ph codeph">invoice_number:ASC</code>.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">page</td>
+<td class="entry" align="">Page of results to display.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">limit</td>
+<td class="entry" align="">Maximum number of items in the response. Default: 100.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">Document status to include in the response. Available options: <code class="ph codeph">pending_po</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+<p class="">
+</div>
+<div class="">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Invoices API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<b>Required</b>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Unique identifier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice_number</td>
+<td class="entry" align="">Invoice number.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(40)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">original_invoice_number</td>
+<td class="entry" align="">Original invoice number used in case of a Credit Note.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(40)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">total_with_taxes</td>
+<td class="entry" align="">Total with taxes.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">Invoice Status. For more information about invoice statuses, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x295096.xml" title="">Invoice Progression through Statuses</a>.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(50)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice_date</td>
+<td class="entry" align="">Date of invoice.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">original_invoice_date</td>
+<td class="entry" align="">Original invoice date used in case of a Credit Note.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">line_level_taxation</td>
+<td class="entry" align="">Whether taxes are provided at line level in this invoice.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">paid</td>
+<td class="entry" align="">Whether the invoice is paid.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">document_type</td>
+<td class="entry" align="">Invoice or Credit Note</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">enterprise_instance_url</td>
+<td class="entry" align="">URL for your core instance.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created_at</td>
+<td class="entry" align="">Automatically created in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated_at</td>
+<td class="entry" align="">Automatically created in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice_lines</td>
+<td class="entry" align="">Invoice lines associated with the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">InvoiceLine</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax_amount</td>
+<td class="entry" align="">Tax amount (not used if tax is provided at line level)</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">Currency code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Currency</td>
+</tr>
+<tr class="">
+<td class="entry" align="">discount_due_date</td>
+<td class="entry" align="">Discount Due Date calculated based on the discount payment terms.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">net_due_date</td>
+<td class="entry" align="">Net Due Date calculated based on the net payment terms</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">dispute_reason</td>
+<td class="entry" align="">Dispute Reason</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">DisputeReason</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+</div>
+<example>
+<h2 class="title">Get invoices</h2>
+<dl class="dl">
+<dt class="dt dlterm">Endpoint</dt>
+<dd class="dd">
+<p class="">GET <code class="ph codeph">/api/v1/invoices</code>
+</p>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://supplier.coupahost.com/api/v1/invoices?status=pending_po&amp;sort_by=invoice_number:ASC' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ••••••'</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example response</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">{
+  "data": [
+    // ... invoice data objects ...
+    {
+      "id": "680fa552-3ef1-576c-b531-b743ca208134",
+      "invoice_number": "feb27_e2e_1_update2",
+      "original_invoice_number": "fdelc-dchrl-qisty-xeskl",
+      "total_with_taxes": 100,
+      "status": "approved",
+      "invoice_date": "2024-02-27T00:00:00Z",
+      "original_invoice_date": "2024-02-27T11:42:15Z",
+      "line_level_taxation": true,
+      "paid": false,
+      "document_type": "Invoice",
+      "enterprise_instance_url": "https://www.website.com",
+      "created_at": "2024-02-28T05:46:29Z",
+      "updated_at": "2025-08-14T12:30:55Z",
+      "invoice_lines": [
+        // ... invoice_lines data objects ...
+        {
+          "id": "684dd604-77e1-55c1-939e-4aebd152fd0a",
+          "description": "Impressivo 1000 motherboard", 
+          "line_num": 1,
+          "price": 10,
+          "total": 100,
+          "uom": "EA",
+          "status": "missing_po",
+          "quantity": 10,
+          "tax_amount": 0
+        }
+      ],
+      "tax_amount": 0,
+      "currency": "USD",
+      "discount_due_date": "2024-03-18T23:59:59Z",
+      "net_due_date": null,
+      "dispute_reason": ""
+    },
+    ...,
+    ...,
+    ...,
+    ...,
+    ...,
+  ],
+  "total": 25,
+  "limit": 20,
+  "current": 1,
+  "num_pages": 2
+}</code>
+</pre>
+</dd>
+</dl>
+</example>
+</div>
+</article>

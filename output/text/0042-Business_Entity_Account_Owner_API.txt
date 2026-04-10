@@ -1,0 +1,18 @@
+Business Entity Account Owner API
+
+Association
+
+This resource is associated with the Business Entitites API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+user_id 	User ID 	true 	true 	any 	yes 	yes 	integer
+id 	Coupa unique identifier 	false 	false 	any 	yes 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+email 	Email 	false 	false 	any 	yes 	yes
+fullname 	Full Name 	false 	false 	any 	yes 	yes
+purposes 	Purposes 	false 	false 	any 	yes 	yes 	[]
+created_by 	User who created 	false 	false 	any 	yes 	yes
+updated_by 	User who updated 	false 	false 	any 	yes 	yes

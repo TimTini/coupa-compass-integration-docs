@@ -1,0 +1,26 @@
+---
+title: "Quote Request Currency API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-request-currency-api"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu6yZMN1WiEJkDYbFqDbjCbdYZeCkdlWqC1potxl%2F36ysxXZgPTIJ%2FJ9kJoT9J1XqyE%2B2zv8MSDFbLNesAdd4gxmes9hXwGv9hXyK6g1ry7rFiTW9WUpWfYNAxlnF6zMU7UhGnBjKYKNCZJlzWXF5dWuKJWUSs5yWV58Z9k6qRgLcZp8jtGTEkK7wQPHQ8RgocvdS4Rcu16A9%2F%2B9PSTYA5F3IaaqEHh4caUcJFTl%2Brr%2FoKGIM0HkxBiOZR9d0DglXLBH6AhHp00iMK%2F4hjTBRaddd21sa%2BzTgg3BKgdkSFnokVTUarv6fKtSUrU%2FNpH6tNs1vPm63bFsRYRhjHTjLA09hi2GV6Px%2Fu72NOTkPJ8CTfFGTnFulmWHvrOkpiO9b8n%2F8c%2BW87FbTbcIJ%2FPvj8NfB2x51utcnDAfZbz6kqg268Z1Rv8aN91DPK9U5MWEmJY%2FTq0KezDdqm0DEqUddp37eRMQYjpMDENagFgeZf%2F9o8vf&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-request-currency-api"
+status_code: 200
+fetched_at: "2026-04-09T12:00:04+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Sourcing API (/quote_requests)"
+  - "Quote Request Currency API"
+---
+
+# Quote Request Currency API
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-request-currency-api](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-request-currency-api)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu6yZMN1WiEJkDYbFqDbjCbdYZeCkdlWqC1potxl%2F36ysxXZgPTIJ%2FJ9kJoT9J1XqyE%2B2zv8MSDFbLNesAdd4gxmes9hXwGv9hXyK6g1ry7rFiTW9WUpWfYNAxlnF6zMU7UhGnBjKYKNCZJlzWXF5dWuKJWUSs5yWV58Z9k6qRgLcZp8jtGTEkK7wQPHQ8RgocvdS4Rcu16A9%2F%2B9PSTYA5F3IaaqEHh4caUcJFTl%2Brr%2FoKGIM0HkxBiOZR9d0DglXLBH6AhHp00iMK%2F4hjTBRaddd21sa%2BzTgg3BKgdkSFnokVTUarv6fKtSUrU%2FNpH6tNs1vPm63bFsRYRhjHTjLA09hi2GV6Px%2Fu72NOTkPJ8CTfFGTnFulmWHvrOkpiO9b8n%2F8c%2BW87FbTbcIJ%2FPvj8NfB2x51utcnDAfZbz6kqg268Z1Rv8aN91DPK9U5MWEmJY%2FTq0KezDdqm0DEqUddp37eRMQYjpMDENagFgeZf%2F9o8vf&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-request-currency-api](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu6yZMN1WiEJkDYbFqDbjCbdYZeCkdlWqC1potxl%2F36ysxXZgPTIJ%2FJ9kJoT9J1XqyE%2B2zv8MSDFbLNesAdd4gxmes9hXwGv9hXyK6g1ry7rFiTW9WUpWfYNAxlnF6zMU7UhGnBjKYKNCZJlzWXF5dWuKJWUSs5yWV58Z9k6qRgLcZp8jtGTEkK7wQPHQ8RgocvdS4Rcu16A9%2F%2B9PSTYA5F3IaaqEHh4caUcJFTl%2Brr%2FoKGIM0HkxBiOZR9d0DglXLBH6AhHp00iMK%2F4hjTBRaddd21sa%2BzTgg3BKgdkSFnokVTUarv6fKtSUrU%2FNpH6tNs1vPm63bFsRYRhjHTjLA09hi2GV6Px%2Fu72NOTkPJ8CTfFGTnFulmWHvrOkpiO9b8n%2F8c%2BW87FbTbcIJ%2FPvj8NfB2x51utcnDAfZbz6kqg268Z1Rv8aN91DPK9U5MWEmJY%2FTq0KezDdqm0DEqUddp37eRMQYjpMDENagFgeZf%2F9o8vf&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-request-currency-api)
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

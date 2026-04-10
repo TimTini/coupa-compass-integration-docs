@@ -1,0 +1,10104 @@
+---
+title: "R39_Expense_Reporting_API.json"
+url: "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Expense_Reporting_API.json"
+final_url: "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R39/R39_Expense_Reporting_API.json"
+content_type: "application/json"
+classification: "json_asset"
+fetched_at: "2026-04-10T01:56:24+00:00"
+---
+
+# R39_Expense_Reporting_API.json
+
+```json
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "",
+    "title": "Coupa API",
+    "description": "RESTful API that provides robust access to read, edit, or integrate your data with the Coupa platform. The [JSON](/api_docs/2.json) and [YAML](/api_docs/2.yaml) are also available.  To test with OAuth2 OAuth2AccessCode, make sure to include https://r39.coupadev.com/oauth2-redirect.html in the client's Redirect URI list"
+  },
+  "host": "r39.coupadev.com",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "ExpenseArtifact",
+      "description": "Expense Artifacts API"
+    },
+    {
+      "name": "ExpenseReport",
+      "description": "Expense Reports API"
+    },
+    {
+      "name": "ExpenseLine",
+      "description": "Expense Lines API"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "OAuth2AccessCode": []
+    },
+    {
+      "OAuth2ClientCredential": []
+    }
+  ],
+  "paths": {
+    "/expense_artifacts/{id}/image": {
+      "get": {
+        "tags": [
+          "ExpenseArtifact"
+        ],
+        "summary": "Upload expense artifact image",
+        "description": "Upload expense artifact image",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseArtifact object",
+            "schema": {
+              "$ref": "#/definitions/ExpenseArtifact"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/expense_artifacts": {
+      "post": {
+        "tags": [
+          "ExpenseArtifact"
+        ],
+        "summary": "Create expense artifact",
+        "description": "Create expense artifact",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseArtifact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseArtifact"
+            }
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseArtifact"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_artifacts/{id}": {
+      "delete": {
+        "tags": [
+          "ExpenseArtifact"
+        ],
+        "summary": "Delete expense artifact",
+        "description": "Delete expense artifact",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          }
+        }
+      }
+    },
+    "/expense_reports/{id}/submit": {
+      "put": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Create an expense report and attempt to submit it for approval",
+        "description": "Create an expense report and attempt to submit it for approval",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseReport",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseReport object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseReport"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/expense_reports/{id}/add_approver": {
+      "put": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Manually add an approver for an expense report",
+        "description": "Manually add an approver for an expense report",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseReport",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseReport object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseReport"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/expense_reports/{id}/remove_approval": {
+      "put": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Remove an approver who was manually added",
+        "description": "Remove an approver who was manually added",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseReport",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseReport object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseReport"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/expense_reports/{id}/send_back_line": {
+      "put": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Send expense line back to submitter",
+        "description": "Send expense line back to submitter",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseReport",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseReport object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseReport"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/expense_reports/{id}/download": {
+      "get": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Download all receipts associated with an expense report in .zip file format",
+        "description": "Download all receipts associated with an expense report in .zip file format",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseReport object",
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/expense_reports/{expense_report_id}/expense_lines/{expense_line_id}/expense_artifacts/{id}/image(/{style})": {
+      "get": {
+        "tags": [
+          "ExpenseArtifact"
+        ],
+        "summary": "Upload expense artifact image",
+        "description": "Upload expense artifact image",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "expense_report_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "expense_line_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "style",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseArtifact object",
+            "schema": {
+              "$ref": "#/definitions/ExpenseArtifact"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/expense_reports/{expense_report_id}/expense_lines/{expense_line_id}/expense_artifacts": {
+      "post": {
+        "tags": [
+          "ExpenseArtifact"
+        ],
+        "summary": "Create expense artifact",
+        "description": "Create expense artifact",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseArtifact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseArtifact"
+            }
+          },
+          {
+            "in": "path",
+            "name": "expense_report_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "expense_line_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseArtifact"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_reports/{expense_report_id}/expense_lines/{expense_line_id}/expense_artifacts/{id}": {
+      "delete": {
+        "tags": [
+          "ExpenseArtifact"
+        ],
+        "summary": "Delete expense artifact",
+        "description": "Delete expense artifact",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "expense_report_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "expense_line_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          }
+        }
+      }
+    },
+    "/expense_reports/{expense_report_id}/expense_lines": {
+      "get": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Query expense lines",
+        "description": "Query expense lines",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "expense_report_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseLine objects",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ExpenseLine"
+              },
+              "xml": {
+                "name": "expense-lines",
+                "wrapped": true
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Create expense line",
+        "description": "Create expense line",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "expense_report_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_reports/{expense_report_id}/expense_lines/{id}": {
+      "get": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Show expense line",
+        "description": "Show expense line",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "expense_report_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseLine object",
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Update expense line",
+        "description": "Update expense line",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "expense_report_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseLine object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseLine"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Update expense line",
+        "description": "Update expense line",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "expense_report_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseLine object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseLine"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Delete expense line",
+        "description": "Delete expense line",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "expense_report_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          }
+        }
+      }
+    },
+    "/expense_reports": {
+      "get": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Query expense reports",
+        "description": "Query expense reports",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseReport objects",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ExpenseReport"
+              },
+              "xml": {
+                "name": "expense-reports",
+                "wrapped": true
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Create an expense report in draft status",
+        "description": "Create an expense report in draft status",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseReport",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_reports/{id}": {
+      "get": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Show expense report",
+        "description": "Show expense report",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseReport object",
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Update expense report",
+        "description": "Update expense report",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseReport",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseReport object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseReport"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Update expense report",
+        "description": "Update expense report",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseReport",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseReport"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseReport object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseReport"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ExpenseReport"
+        ],
+        "summary": "Delete expense report",
+        "description": "Delete expense report",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          }
+        }
+      }
+    },
+    "/expense_lines/{id}/assign_attendee/{expense_attendee_id}": {
+      "post": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Assign attendee to expense line",
+        "description": "Assign attendee to expense line",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "expense_attendee_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_lines/{id}/unassign_attendee/{expense_attendee_id}": {
+      "delete": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Unassign attendee from expense line",
+        "description": "Unassign attendee from expense line",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "expense_attendee_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          }
+        }
+      }
+    },
+    "/expense_lines/{id}/calculate_mileage": {
+      "post": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Calculate line total based on mileage data",
+        "description": "Calculate line total based on mileage data",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_lines/{id}/calculate_per_diem": {
+      "post": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Calculate line total based on trip data",
+        "description": "Calculate line total based on trip data",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_lines/{id}/calculate_taxes": {
+      "put": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "/expense_lines/{id}/calculate_taxes",
+        "description": "",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseLine object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseLine"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/expense_lines/{id}/estimate_taxes": {
+      "post": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "/expense_lines/{id}/estimate_taxes",
+        "description": "",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_lines/{expense_line_id}/expense_artifacts/{id}/image(/{style})": {
+      "get": {
+        "tags": [
+          "ExpenseArtifact"
+        ],
+        "summary": "Upload expense artifact image",
+        "description": "Upload expense artifact image",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "expense_line_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "style",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseArtifact object",
+            "schema": {
+              "$ref": "#/definitions/ExpenseArtifact"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/expense_lines/{expense_line_id}/expense_artifacts": {
+      "post": {
+        "tags": [
+          "ExpenseArtifact"
+        ],
+        "summary": "Create expense artifact",
+        "description": "Create expense artifact",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseArtifact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseArtifact"
+            }
+          },
+          {
+            "in": "path",
+            "name": "expense_line_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseArtifact"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_lines/{expense_line_id}/expense_artifacts/{id}": {
+      "delete": {
+        "tags": [
+          "ExpenseArtifact"
+        ],
+        "summary": "Delete expense artifact",
+        "description": "Delete expense artifact",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "expense_line_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          }
+        }
+      }
+    },
+    "/expense_lines": {
+      "get": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Query expense lines",
+        "description": "Query expense lines",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseLine objects",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ExpenseLine"
+              },
+              "xml": {
+                "name": "expense-lines",
+                "wrapped": true
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Create expense line",
+        "description": "Create expense line",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/expense_lines/{id}": {
+      "get": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Show expense line",
+        "description": "Show expense line",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseLine object",
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Update expense line",
+        "description": "Update expense line",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseLine object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseLine"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Update expense line",
+        "description": "Update expense line",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ExpenseLine",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ExpenseLine"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ExpenseLine object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ExpenseLine"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ExpenseLine"
+        ],
+        "summary": "Delete expense line",
+        "description": "Delete expense line",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2ClientCredential": {
+      "type": "oauth2",
+      "flow": "application",
+      "tokenUrl": "https://r39.coupadev.com/oauth2/access_tokens",
+      "scopes": {
+        "core.expense.read": "Allows to view expenses",
+        "core.expense.write": "Allows to create or update expenses"
+      }
+    },
+    "OAuth2AccessCode": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://r39.coupadev.com/oauth2/authorizations/new",
+      "tokenUrl": "https://r39.coupadev.com/oauth2/token",
+      "scopes": {
+        "core.expense.read": "Allows to view expenses",
+        "core.expense.write": "Allows to create or update expenses"
+      }
+    }
+  },
+  "definitions": {
+    "Account": {
+      "type": "object",
+      "properties": {
+        "account-type": {
+          "$ref": "#/definitions/AccountType"
+        },
+        "account-type-id": {
+          "type": "integer",
+          "description": "Account Type Id",
+          "format": "integer",
+          "readOnly": true
+        },
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "code": {
+          "type": "string",
+          "description": "All segments concatenated with a hyphen ( - )",
+          "format": "string(1024)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "This is the nickname for the account.  Users can view and search against this field through the user interface.",
+          "format": "string(1024)"
+        },
+        "segment-1": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-10": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-11": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-12": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-13": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-14": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-15": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-16": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-17": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-18": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-19": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-2": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-20": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-3": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-4": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-5": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-6": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-7": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-8": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-9": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "account-type"
+      ]
+    },
+    "AccountGroup": {
+      "type": "object",
+      "properties": {
+        "account-group-type": {
+          "type": "integer",
+          "description": "Type",
+          "format": "integer",
+          "enum": [
+            "1",
+            "2"
+          ]
+        },
+        "account-type": {
+          "$ref": "#/definitions/AccountType"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(80)"
+        },
+        "segment-10-col": {
+          "type": "string",
+          "description": "segment_10_col",
+          "format": "string(255)"
+        },
+        "segment-10-op": {
+          "type": "string",
+          "description": "segment_10_op",
+          "format": "string(255)"
+        },
+        "segment-10-val": {
+          "type": "string",
+          "description": "segment_10_val",
+          "format": "string(255)"
+        },
+        "segment-11-col": {
+          "type": "string",
+          "description": "segment_11_col",
+          "format": "string(255)"
+        },
+        "segment-11-op": {
+          "type": "string",
+          "description": "segment_11_op",
+          "format": "string(255)"
+        },
+        "segment-11-val": {
+          "type": "string",
+          "description": "segment_11_val",
+          "format": "string(255)"
+        },
+        "segment-12-col": {
+          "type": "string",
+          "description": "segment_12_col",
+          "format": "string(255)"
+        },
+        "segment-12-op": {
+          "type": "string",
+          "description": "segment_12_op",
+          "format": "string(255)"
+        },
+        "segment-12-val": {
+          "type": "string",
+          "description": "segment_12_val",
+          "format": "string(255)"
+        },
+        "segment-13-col": {
+          "type": "string",
+          "description": "segment_13_col",
+          "format": "string(255)"
+        },
+        "segment-13-op": {
+          "type": "string",
+          "description": "segment_13_op",
+          "format": "string(255)"
+        },
+        "segment-13-val": {
+          "type": "string",
+          "description": "segment_13_val",
+          "format": "string(255)"
+        },
+        "segment-14-col": {
+          "type": "string",
+          "description": "segment_14_col",
+          "format": "string(255)"
+        },
+        "segment-14-op": {
+          "type": "string",
+          "description": "segment_14_op",
+          "format": "string(255)"
+        },
+        "segment-14-val": {
+          "type": "string",
+          "description": "segment_14_val",
+          "format": "string(255)"
+        },
+        "segment-15-col": {
+          "type": "string",
+          "description": "segment_15_col",
+          "format": "string(255)"
+        },
+        "segment-15-op": {
+          "type": "string",
+          "description": "segment_15_op",
+          "format": "string(255)"
+        },
+        "segment-15-val": {
+          "type": "string",
+          "description": "segment_15_val",
+          "format": "string(255)"
+        },
+        "segment-16-col": {
+          "type": "string",
+          "description": "segment_16_col",
+          "format": "string(255)"
+        },
+        "segment-16-op": {
+          "type": "string",
+          "description": "segment_16_op",
+          "format": "string(255)"
+        },
+        "segment-16-val": {
+          "type": "string",
+          "description": "segment_16_val",
+          "format": "string(255)"
+        },
+        "segment-17-col": {
+          "type": "string",
+          "description": "segment_17_col",
+          "format": "string(255)"
+        },
+        "segment-17-op": {
+          "type": "string",
+          "description": "segment_17_op",
+          "format": "string(255)"
+        },
+        "segment-17-val": {
+          "type": "string",
+          "description": "segment_17_val",
+          "format": "string(255)"
+        },
+        "segment-18-col": {
+          "type": "string",
+          "description": "segment_18_col",
+          "format": "string(255)"
+        },
+        "segment-18-op": {
+          "type": "string",
+          "description": "segment_18_op",
+          "format": "string(255)"
+        },
+        "segment-18-val": {
+          "type": "string",
+          "description": "segment_18_val",
+          "format": "string(255)"
+        },
+        "segment-19-col": {
+          "type": "string",
+          "description": "segment_19_col",
+          "format": "string(255)"
+        },
+        "segment-19-op": {
+          "type": "string",
+          "description": "segment_19_op",
+          "format": "string(255)"
+        },
+        "segment-19-val": {
+          "type": "string",
+          "description": "segment_19_val",
+          "format": "string(255)"
+        },
+        "segment-1-col": {
+          "type": "string",
+          "description": "segment_1_col",
+          "format": "string(255)"
+        },
+        "segment-1-op": {
+          "type": "string",
+          "description": "segment_1_op",
+          "format": "string(255)"
+        },
+        "segment-1-val": {
+          "type": "string",
+          "description": "segment_1_val",
+          "format": "string(255)"
+        },
+        "segment-20-col": {
+          "type": "string",
+          "description": "segment_20_col",
+          "format": "string(255)"
+        },
+        "segment-20-op": {
+          "type": "string",
+          "description": "segment_20_op",
+          "format": "string(255)"
+        },
+        "segment-20-val": {
+          "type": "string",
+          "description": "segment_20_val",
+          "format": "string(255)"
+        },
+        "segment-2-col": {
+          "type": "string",
+          "description": "segment_2_col",
+          "format": "string(255)"
+        },
+        "segment-2-op": {
+          "type": "string",
+          "description": "segment_2_op",
+          "format": "string(255)"
+        },
+        "segment-2-val": {
+          "type": "string",
+          "description": "segment_2_val",
+          "format": "string(255)"
+        },
+        "segment-3-col": {
+          "type": "string",
+          "description": "segment_3_col",
+          "format": "string(255)"
+        },
+        "segment-3-op": {
+          "type": "string",
+          "description": "segment_3_op",
+          "format": "string(255)"
+        },
+        "segment-3-val": {
+          "type": "string",
+          "description": "segment_3_val",
+          "format": "string(255)"
+        },
+        "segment-4-col": {
+          "type": "string",
+          "description": "segment_4_col",
+          "format": "string(255)"
+        },
+        "segment-4-op": {
+          "type": "string",
+          "description": "segment_4_op",
+          "format": "string(255)"
+        },
+        "segment-4-val": {
+          "type": "string",
+          "description": "segment_4_val",
+          "format": "string(255)"
+        },
+        "segment-5-col": {
+          "type": "string",
+          "description": "segment_5_col",
+          "format": "string(255)"
+        },
+        "segment-5-op": {
+          "type": "string",
+          "description": "segment_5_op",
+          "format": "string(255)"
+        },
+        "segment-5-val": {
+          "type": "string",
+          "description": "segment_5_val",
+          "format": "string(255)"
+        },
+        "segment-6-col": {
+          "type": "string",
+          "description": "segment_6_col",
+          "format": "string(255)"
+        },
+        "segment-6-op": {
+          "type": "string",
+          "description": "segment_6_op",
+          "format": "string(255)"
+        },
+        "segment-6-val": {
+          "type": "string",
+          "description": "segment_6_val",
+          "format": "string(255)"
+        },
+        "segment-7-col": {
+          "type": "string",
+          "description": "segment_7_col",
+          "format": "string(255)"
+        },
+        "segment-7-op": {
+          "type": "string",
+          "description": "segment_7_op",
+          "format": "string(255)"
+        },
+        "segment-7-val": {
+          "type": "string",
+          "description": "segment_7_val",
+          "format": "string(255)"
+        },
+        "segment-8-col": {
+          "type": "string",
+          "description": "segment_8_col",
+          "format": "string(255)"
+        },
+        "segment-8-op": {
+          "type": "string",
+          "description": "segment_8_op",
+          "format": "string(255)"
+        },
+        "segment-8-val": {
+          "type": "string",
+          "description": "segment_8_val",
+          "format": "string(255)"
+        },
+        "segment-9-col": {
+          "type": "string",
+          "description": "segment_9_col",
+          "format": "string(255)"
+        },
+        "segment-9-op": {
+          "type": "string",
+          "description": "segment_9_op",
+          "format": "string(255)"
+        },
+        "segment-9-val": {
+          "type": "string",
+          "description": "segment_9_val",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "account-group-type",
+        "account-type",
+        "name"
+      ]
+    },
+    "AccountType": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the chart of account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "dynamic-flag": {
+          "type": "boolean",
+          "description": "Boolean value for determing if account type is dynamic",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "legal-entity-name": {
+          "type": "string",
+          "description": "Legal entity or entities that are associated with this chart of accounts",
+          "format": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(50)"
+        },
+        "primary-address": {
+          "$ref": "#/definitions/Address"
+        },
+        "primary-contact": {
+          "$ref": "#/definitions/Contact"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "currency",
+        "name"
+      ]
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "attention": {
+          "type": "string",
+          "description": "Address Default Attention Line",
+          "format": "string(255)"
+        },
+        "business-group-name": {
+          "type": "string",
+          "description": "Content Group Name for Address",
+          "format": "string"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "external-src-name": {
+          "type": "string",
+          "description": "External Source Name",
+          "format": "string(255)"
+        },
+        "external-src-ref": {
+          "type": "string",
+          "description": "External Source Reference",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "location-code": {
+          "type": "string",
+          "description": "location_code",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(255)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "state": {
+          "type": "string",
+          "description": "State Name for Address",
+          "format": "string(255)"
+        },
+        "state-iso-code": {
+          "type": "string",
+          "description": "ISO Code for the State",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "street3": {
+          "type": "string",
+          "description": "Address Line 3",
+          "format": "string(255)"
+        },
+        "street4": {
+          "type": "string",
+          "description": "Address Line 4",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Address type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "street1"
+      ]
+    },
+    "ApprovalLimit": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "amount",
+          "format": "decimal(32,4)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "subject": {
+          "type": "string",
+          "description": "subject",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "amount",
+        "currency",
+        "name"
+      ]
+    },
+    "AuditStatus": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "BillToAddress": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "attention": {
+          "type": "string",
+          "description": "Address Default Attention Line",
+          "format": "string(255)"
+        },
+        "business-group-name": {
+          "type": "string",
+          "description": "Content Group Name for Address",
+          "format": "string"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "external-src-name": {
+          "type": "string",
+          "description": "External Source Name",
+          "format": "string(255)"
+        },
+        "external-src-ref": {
+          "type": "string",
+          "description": "External Source Reference",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "location-code": {
+          "type": "string",
+          "description": "location_code",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(10)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "state": {
+          "type": "string",
+          "description": "State Name for Address",
+          "format": "string(255)"
+        },
+        "state-iso-code": {
+          "type": "string",
+          "description": "ISO Code for the State",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "street3": {
+          "type": "string",
+          "description": "Address Line 3",
+          "format": "string(255)"
+        },
+        "street4": {
+          "type": "string",
+          "description": "Address Line 4",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Address type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "street1"
+      ]
+    },
+    "BusinessGroup": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(100)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "email": {
+          "type": "string",
+          "description": "email",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name-additional": {
+          "type": "string",
+          "description": "name_additional",
+          "format": "string(255)"
+        },
+        "name-family": {
+          "type": "string",
+          "description": "name_family",
+          "format": "string(255)"
+        },
+        "name-fullname": {
+          "type": "string",
+          "description": "name_fullname",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "name-given": {
+          "type": "string",
+          "description": "name_given",
+          "format": "string(255)"
+        },
+        "name-prefix": {
+          "type": "string",
+          "description": "name_prefix",
+          "format": "string(255)"
+        },
+        "name-suffix": {
+          "type": "string",
+          "description": "name_suffix",
+          "format": "string(255)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "notes",
+          "format": "text"
+        },
+        "phone-fax": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "phone-mobile": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "phone-work": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "photo": {
+          "type": "string",
+          "description": "photo",
+          "format": "string(255)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "CounterpartyAddress": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "attention": {
+          "type": "string",
+          "description": "Address Default Attention Line",
+          "format": "string(255)"
+        },
+        "business-group-name": {
+          "type": "string",
+          "description": "Content Group Name for Address",
+          "format": "string"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "external-src-name": {
+          "type": "string",
+          "description": "External Source Name",
+          "format": "string(255)"
+        },
+        "external-src-ref": {
+          "type": "string",
+          "description": "External Source Reference",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "location-code": {
+          "type": "string",
+          "description": "location_code",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(255)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "state": {
+          "type": "string",
+          "description": "State Name for Address",
+          "format": "string(255)"
+        },
+        "state-iso-code": {
+          "type": "string",
+          "description": "ISO Code for the State",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "street3": {
+          "type": "string",
+          "description": "Address Line 3",
+          "format": "string(255)"
+        },
+        "street4": {
+          "type": "string",
+          "description": "Address Line 4",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Address type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "street1"
+      ]
+    },
+    "Country": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "code",
+          "format": "string(4)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(100)"
+        },
+        "translated-name": {
+          "type": "string",
+          "description": "Translated name",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "code"
+      ]
+    },
+    "CoupaPay-PaymentPartner": {
+      "type": "object",
+      "properties": {
+        "account-types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CoupaPay-PaymentPartner"
+          }
+        },
+        "card-network": {
+          "type": "string",
+          "description": "Card network",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "configuration": {
+          "type": "string",
+          "description": "Configuration",
+          "format": "text"
+        },
+        "coupa-pay-id": {
+          "type": "integer",
+          "description": "Coupa pay",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "currency-id": {
+          "type": "integer",
+          "description": "Currency",
+          "format": "integer"
+        },
+        "financial-counterparty": {
+          "$ref": "#/definitions/FinancialCounterparty"
+        },
+        "financial-counterparty-id": {
+          "type": "integer",
+          "description": "Financial counterparty",
+          "format": "integer"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "issuing-bank": {
+          "type": "string",
+          "description": "Issuing bank",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notes",
+          "format": "text"
+        },
+        "payment-partner-type": {
+          "type": "string",
+          "description": "Payment partner type",
+          "format": "string(255)"
+        },
+        "po-charge-holding-account": {
+          "$ref": "#/definitions/Account"
+        },
+        "product-names": {
+          "type": "string",
+          "description": "Product names"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CoupaPay-PaymentPartner"
+          }
+        },
+        "status": {
+          "type": "string",
+          "description": "Status",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "support-contact": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "name",
+        "payment-partner-type",
+        "type"
+      ]
+    },
+    "CoupaPay-VirtualCard": {
+      "type": "object",
+      "properties": {
+        "card-number": {
+          "type": "string",
+          "description": "Last 4 digits of card",
+          "format": "string(255)"
+        },
+        "card-preview": {
+          "type": "string",
+          "description": "HTML elements to render the virtual card with the proper background image",
+          "readOnly": true
+        },
+        "card-type": {
+          "type": "string",
+          "description": "Card Network Identifier",
+          "format": "string(255)"
+        },
+        "card-url": {
+          "type": "boolean",
+          "description": "URL to redirect the user to the card show page",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "coupa-pay-id": {
+          "type": "integer",
+          "description": "Internal Coupa Pay ID",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "credit-account": {
+          "type": "string",
+          "description": "Account for",
+          "format": "string(255)"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "document-id": {
+          "type": "integer",
+          "description": "ID of Backing Document supporting Virtual Card",
+          "format": "integer"
+        },
+        "document-title": {
+          "type": "string",
+          "description": "Title of Backing Document supporting Virtual Card",
+          "readOnly": true
+        },
+        "document-type": {
+          "type": "string",
+          "description": "Type of Backing Document supporting Virtual Card",
+          "format": "string(255)"
+        },
+        "expiry-month": {
+          "type": "integer",
+          "description": "Expiration Month of card",
+          "format": "integer"
+        },
+        "expiry-year": {
+          "type": "integer",
+          "description": "Expiration Year of card",
+          "format": "integer"
+        },
+        "external-ref-id": {
+          "type": "string",
+          "description": "External Card Issuer Reference ID",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "missing-receipt": {
+          "type": "boolean",
+          "description": "Is there any charge without any receipt attached?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Virtual Card Name",
+          "format": "string(255)"
+        },
+        "order-header-id": {
+          "type": "integer",
+          "description": "PO ID if PO Virtual Card",
+          "format": "integer"
+        },
+        "payment-partner": {
+          "$ref": "#/definitions/CoupaPay-VirtualCardPartner"
+        },
+        "payment-tolerance": {
+          "type": "number",
+          "description": "Tolerance (percentage) used to compute the card authorized amount",
+          "format": "decimal(7,4)",
+          "readOnly": true
+        },
+        "requested-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "requested-by-id": {
+          "type": "integer",
+          "description": "ID of user who triggered card creation",
+          "format": "integer"
+        },
+        "status": {
+          "type": "string",
+          "description": "Card Status",
+          "format": "string(255)",
+          "enum": [
+            "pending",
+            "requested",
+            "active",
+            "inactive",
+            "failed",
+            "update_failed",
+            "generated",
+            "transmission_failed",
+            "sent",
+            "cancelled",
+            "processed",
+            "processing_failed"
+          ]
+        },
+        "status-reason": {
+          "type": "string",
+          "description": "Reason for that card to be in this Status",
+          "format": "string(255)",
+          "readOnly": true,
+          "enum": [
+            "none",
+            "po_soft_close",
+            "po_hard_close",
+            "po_cancellation",
+            "invoice_payment_cancellation",
+            "expense_card_cancellation",
+            "trip_booking_cancellation",
+            "ghost_card_cancellation",
+            "past_validity_period",
+            "tolerance_reached",
+            "partner_creation_failed",
+            "connection_error",
+            "update_failed"
+          ]
+        },
+        "status-reason-translated": {
+          "type": "string",
+          "description": "Translated Status Reason",
+          "readOnly": true
+        },
+        "status-translated": {
+          "type": "string",
+          "description": "Translated Card Status",
+          "readOnly": true
+        },
+        "total-booked": {
+          "type": "number",
+          "description": "Limit card was issued for",
+          "format": "decimal"
+        },
+        "total-charged": {
+          "type": "number",
+          "description": "Amount of charges settle on card",
+          "format": "decimal"
+        },
+        "total-remaining": {
+          "type": "number",
+          "description": "Remaining available amount on card",
+          "format": "decimal",
+          "readOnly": true
+        },
+        "transmission-method": {
+          "type": "string",
+          "description": "Transmission Method used to deliver the card",
+          "format": "string(100)",
+          "readOnly": true,
+          "enum": [
+            "csp",
+            "cxml",
+            "email_by_issuer",
+            "boost",
+            "stripe",
+            "viewable_in_core",
+            "travel_booking_portal"
+          ]
+        },
+        "transmission-status": {
+          "type": "string",
+          "description": "Transmission Status",
+          "format": "string(100)",
+          "readOnly": true,
+          "enum": [
+            "none",
+            "send_pending",
+            "sent",
+            "send_failed"
+          ]
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "utilization-status": {
+          "type": "string",
+          "description": "Utilization Status",
+          "format": "string(100)",
+          "readOnly": true,
+          "enum": [
+            "not_charged",
+            "partially_charged",
+            "fully_charged",
+            "overcharged"
+          ]
+        },
+        "valid-from": {
+          "type": "string",
+          "description": "Start date when card can be charged",
+          "format": "datetime"
+        },
+        "valid-to": {
+          "type": "string",
+          "description": "End Date when card cannot be charged",
+          "format": "datetime"
+        }
+      },
+      "required": [
+        "currency",
+        "external-ref-id",
+        "requested-by-id",
+        "total-booked"
+      ]
+    },
+    "CoupaPay-VirtualCardPartner": {
+      "type": "object",
+      "properties": {
+        "account-types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CoupaPay-PaymentPartner"
+          }
+        },
+        "card-network": {
+          "type": "string",
+          "description": "Card network",
+          "format": "string(255)",
+          "readOnly": true,
+          "enum": [
+            "visa",
+            "mastercard",
+            "amex"
+          ]
+        },
+        "configuration": {
+          "type": "string",
+          "description": "Configuration",
+          "format": "text"
+        },
+        "coupa-pay-id": {
+          "type": "integer",
+          "description": "Coupa pay",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "currency-id": {
+          "type": "integer",
+          "description": "Currency",
+          "format": "integer"
+        },
+        "financial-counterparty": {
+          "$ref": "#/definitions/FinancialCounterparty"
+        },
+        "financial-counterparty-id": {
+          "type": "integer",
+          "description": "Financial counterparty",
+          "format": "integer"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "issuing-bank": {
+          "type": "string",
+          "description": "Issuing bank",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notes",
+          "format": "text"
+        },
+        "payment-partner-type": {
+          "type": "string",
+          "description": "Payment partner type",
+          "format": "string(255)",
+          "enum": [
+            "conferma",
+            "jpmc",
+            "amex",
+            "mastercard"
+          ]
+        },
+        "po-charge-holding-account": {
+          "$ref": "#/definitions/Account"
+        },
+        "product-names": {
+          "type": "string",
+          "description": "Product names"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CoupaPay-PaymentPartner"
+          }
+        },
+        "status": {
+          "type": "string",
+          "description": "Status",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "support-contact": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "currency",
+        "name",
+        "payment-partner-type",
+        "support-contact",
+        "type"
+      ]
+    },
+    "Currency": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "code",
+          "format": "string(6)"
+        },
+        "decimals": {
+          "type": "integer",
+          "description": "Decimal precision",
+          "format": "integer",
+          "readOnly": true
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Enabled",
+          "format": "boolean"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(100)"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "symbol",
+          "format": "string(10)"
+        }
+      },
+      "required": [
+        "code",
+        "name"
+      ]
+    },
+    "Department": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Control whether the Department is Active or Inactive",
+          "format": "boolean",
+          "enum": [
+            "true",
+            "false"
+          ]
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Department Name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Distance": {
+      "type": "object"
+    },
+    "EasyFormWidgetResponse": {
+      "type": "object",
+      "properties": {
+        "answer": {
+          "type": "string",
+          "description": "Answer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "easy-form-id": {
+          "type": "integer",
+          "description": "Easy form ID associated with this easy form response",
+          "format": "integer"
+        },
+        "easy-form-response-id": {
+          "type": "integer",
+          "description": "Easy form response ID associated with this widget",
+          "format": "integer"
+        },
+        "easy-form-widget-id": {
+          "type": "integer",
+          "description": "Easy form widget ID associated with this widget response",
+          "format": "integer"
+        },
+        "encrypted-answer": {
+          "type": "string",
+          "description": "The answer for widget response",
+          "readOnly": true
+        },
+        "field-name": {
+          "type": "string",
+          "description": "Field name",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of widget response",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "widget-label": {
+          "type": "string",
+          "description": "User name for widget",
+          "readOnly": true
+        },
+        "widget-type": {
+          "type": "string",
+          "description": "Type of widget",
+          "readOnly": true
+        }
+      }
+    },
+    "ExchangeRate": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "from-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "rate": {
+          "type": "number",
+          "description": "Exchange Rate",
+          "format": "decimal(30,9)"
+        },
+        "rate-date": {
+          "type": "string",
+          "description": "Effective Date",
+          "format": "datetime"
+        },
+        "to-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "from-currency",
+        "to-currency"
+      ]
+    },
+    "Expense-Mileage-Config": {
+      "type": "object",
+      "properties": {
+        "accumulation-period-start-day-month": {
+          "type": "string",
+          "description": "Accumulation period start day month",
+          "format": "date"
+        },
+        "country": {
+          "$ref": "#/definitions/Expense-Mileage-Config"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "distance-unit": {
+          "type": "string",
+          "description": "Distance unit",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "expense-mileage-tier-rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Expense-Mileage-TierRule"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "mileage-accumulation-rule-enabled": {
+          "type": "boolean",
+          "description": "Mileage accumulation rule enabled",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "passenger-count-prompt": {
+          "type": "string",
+          "description": "Passenger count prompt",
+          "format": "string(255)"
+        },
+        "passenger-count-rule-enabled": {
+          "type": "boolean",
+          "description": "Passenger count rule enabled",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "region-prompt": {
+          "type": "string",
+          "description": "Region prompt",
+          "format": "string(255)"
+        },
+        "region-rule-enabled": {
+          "type": "boolean",
+          "description": "Region rule enabled",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "require-address": {
+          "type": "boolean",
+          "description": "Require address",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "show-map": {
+          "type": "boolean",
+          "description": "Show map",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "simple-fixed-rate-amount": {
+          "type": "number",
+          "description": "Simple fixed rate amount",
+          "format": "decimal(32,4)"
+        },
+        "simple-fixed-rate-currency-id": {
+          "type": "integer",
+          "description": "Simple fixed rate currency",
+          "format": "integer"
+        },
+        "simple-fixed-rate-enabled": {
+          "type": "boolean",
+          "description": "Simple fixed rate enabled",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "vehicle-type-prompt": {
+          "type": "string",
+          "description": "Vehicle type prompt",
+          "format": "string(255)"
+        },
+        "vehicle-type-rule-enabled": {
+          "type": "boolean",
+          "description": "Vehicle type rule enabled",
+          "format": "boolean",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "accumulation-period-start-day-month",
+        "passenger-count-prompt",
+        "region-prompt",
+        "simple-fixed-rate-amount",
+        "simple-fixed-rate-currency-id",
+        "vehicle-type-prompt"
+      ]
+    },
+    "Expense-Mileage-RateType": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "rate-type": {
+          "type": "string",
+          "description": "Rate type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "Expense-Mileage-Region": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/Expense-Mileage-Region"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "location-id": {
+          "type": "string",
+          "description": "Location",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "Expense-Mileage-TierRule": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "distance-range-start": {
+          "type": "integer",
+          "description": "Distance range start",
+          "format": "integer",
+          "readOnly": true
+        },
+        "expense-mileage-rate-type": {
+          "$ref": "#/definitions/Expense-Mileage-RateType"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "Expense-Mileage-VehicleType": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "Expense-PerDiem-Config": {
+      "type": "object",
+      "properties": {
+        "country-id": {
+          "type": "integer",
+          "description": "Country",
+          "format": "integer",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "deductions-section-label": {
+          "type": "string",
+          "description": "Deductions section label",
+          "format": "string(255)"
+        },
+        "expense-per-diem-deductions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Expense-PerDiem-Deduction"
+          }
+        },
+        "expense-per-diem-rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Expense-PerDiem-Rule"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "policy-description": {
+          "type": "string",
+          "description": "Policy description",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "policy-title": {
+          "type": "string",
+          "description": "Policy title",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "rule-set-type": {
+          "type": "string",
+          "description": "Rule set type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "scope": {
+          "type": "string",
+          "description": "Scope",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "deductions-section-label"
+      ]
+    },
+    "Expense-PerDiem-Deduction": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "effective-date": {
+          "type": "string",
+          "description": "Effective date",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Enabled",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "expense-per-diem-deduction-type-id": {
+          "type": "integer",
+          "description": "Expense per diem deduction type",
+          "format": "integer",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "label": {
+          "type": "string",
+          "description": "Label",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "label"
+      ]
+    },
+    "Expense-PerDiem-Rule": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "effective-date": {
+          "type": "string",
+          "description": "Effective date",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Enabled",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "end-after": {
+          "type": "string",
+          "description": "End after",
+          "format": "time"
+        },
+        "end-before": {
+          "type": "string",
+          "description": "End before",
+          "format": "time"
+        },
+        "expense-per-diem-rate-type-id": {
+          "type": "integer",
+          "description": "Expense per diem rate type",
+          "format": "integer",
+          "readOnly": true
+        },
+        "expense-per-diem-rule-conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Expense-PerDiem-RuleCondition"
+          }
+        },
+        "expense-per-diem-time-range-condition": {
+          "$ref": "#/definitions/Expense-PerDiem-TimeRangeCondition"
+        },
+        "hours": {
+          "type": "number",
+          "description": "Hours",
+          "format": "decimal(8,2)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "label": {
+          "type": "string",
+          "description": "Label",
+          "format": "string(255)"
+        },
+        "rank": {
+          "type": "integer",
+          "description": "Rank",
+          "format": "integer",
+          "readOnly": true
+        },
+        "rate-frequency": {
+          "type": "string",
+          "description": "Rate frequency",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "rate-location-type": {
+          "type": "string",
+          "description": "Rate location type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "rate-logic": {
+          "type": "integer",
+          "description": "Rate logic",
+          "format": "integer",
+          "readOnly": true
+        },
+        "rate-percentage": {
+          "type": "number",
+          "description": "Rate percentage",
+          "format": "decimal(30,6)",
+          "readOnly": true
+        },
+        "rule-type": {
+          "type": "string",
+          "description": "Rule type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "start-after": {
+          "type": "string",
+          "description": "Start after",
+          "format": "time"
+        },
+        "start-before": {
+          "type": "string",
+          "description": "Start before",
+          "format": "time"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "end-after",
+        "end-before",
+        "hours",
+        "label",
+        "start-after",
+        "start-before"
+      ]
+    },
+    "Expense-PerDiem-RuleCondition": {
+      "type": "object",
+      "properties": {
+        "comparator": {
+          "type": "string",
+          "description": "Comparator",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "lhs": {
+          "type": "string",
+          "description": "Lhs",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "rhs": {
+          "type": "string",
+          "description": "Rhs",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "Expense-PerDiem-TimeRangeCondition": {
+      "type": "object",
+      "properties": {
+        "conjunction": {
+          "type": "string",
+          "description": "Conjunction",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "end-after": {
+          "type": "string",
+          "description": "End after",
+          "format": "time",
+          "readOnly": true
+        },
+        "end-before": {
+          "type": "string",
+          "description": "End before",
+          "format": "time",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "start-after": {
+          "type": "string",
+          "description": "Start after",
+          "format": "time",
+          "readOnly": true
+        },
+        "start-before": {
+          "type": "string",
+          "description": "Start before",
+          "format": "time",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "Expense-ReconciliationLine": {
+      "type": "object",
+      "properties": {
+        "amount-paid": {
+          "type": "number",
+          "description": "Amount paid",
+          "format": "decimal(46,20)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notes",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "payable-id": {
+          "type": "string",
+          "description": "Payable",
+          "readOnly": true
+        },
+        "payable-type": {
+          "type": "string",
+          "description": "Payable type",
+          "format": "string",
+          "readOnly": true
+        },
+        "payment-date": {
+          "type": "string",
+          "description": "Payment date",
+          "format": "datetime"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "payment-date"
+      ]
+    },
+    "Expense-Trip-Mileage": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "expense-mileage-region": {
+          "$ref": "#/definitions/Expense-Mileage-Region"
+        },
+        "expense-mileage-region-id": {
+          "type": "integer",
+          "description": "Expense mileage region",
+          "format": "integer"
+        },
+        "expense-mileage-vehicle-type": {
+          "$ref": "#/definitions/Expense-Mileage-VehicleType"
+        },
+        "expense-mileage-vehicle-type-id": {
+          "type": "integer",
+          "description": "Expense mileage vehicle type",
+          "format": "integer"
+        },
+        "expense-trip-mileage-allocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Expense-Trip-MileageAllocation"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "original-distance": {
+          "type": "number",
+          "description": "Original distance",
+          "format": "decimal(32,4)"
+        },
+        "passenger-count": {
+          "type": "integer",
+          "description": "Passenger count",
+          "format": "integer"
+        },
+        "total-distance": {
+          "type": "number",
+          "description": "Total distance",
+          "format": "decimal(32,4)"
+        },
+        "total-distance-unit": {
+          "type": "string",
+          "description": "Total distance unit",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "expense-mileage-region-id",
+        "expense-mileage-vehicle-type-id",
+        "total-distance",
+        "total-distance-unit"
+      ]
+    },
+    "Expense-Trip-MileageAllocation": {
+      "type": "object",
+      "properties": {
+        "applied-distance": {
+          "$ref": "#/definitions/Distance"
+        },
+        "applied-rate": {
+          "$ref": "#/definitions/Money"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "expense-mileage-rate-type-id": {
+          "type": "integer",
+          "description": "Expense mileage rate type",
+          "format": "integer",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "Expense-Trip-SegmentMileage": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "original-distance": {
+          "type": "number",
+          "description": "Original distance",
+          "format": "decimal(32,4)"
+        },
+        "original-distance-unit": {
+          "type": "string",
+          "description": "Original distance unit",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseArtifact": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "digitization-error": {
+          "type": "string",
+          "description": "digitization error",
+          "format": "string",
+          "readOnly": true
+        },
+        "digitization-status": {
+          "type": "string",
+          "description": "digitization status",
+          "format": "string(25)",
+          "readOnly": true
+        },
+        "digitized-receipt-content-type": {
+          "type": "string",
+          "description": "digitized_receipt_content_type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "digitized-receipt-file-name": {
+          "type": "string",
+          "description": "digitized_receipt_file_name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "digitized-receipt-file-size": {
+          "type": "integer",
+          "description": "digitized_receipt_file_size",
+          "format": "integer",
+          "readOnly": true
+        },
+        "external-src-ref": {
+          "type": "string",
+          "description": "External system's unique identifier for transaction",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "image-content-type": {
+          "type": "string",
+          "description": "image_content_type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "image-file-name": {
+          "type": "string",
+          "description": "image_file_name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "image-file-size": {
+          "type": "string",
+          "description": "image_file_size",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "image-rotation": {
+          "type": "integer",
+          "description": "Image rotation angle",
+          "format": "integer"
+        },
+        "ocr-status": {
+          "type": "string",
+          "description": "OCR Status",
+          "format": "string(50)"
+        },
+        "placeholder": {
+          "type": "boolean",
+          "description": "Placeholder flag, pending parsing",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "source-content-type": {
+          "type": "string",
+          "description": "source_content_type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "source-file-name": {
+          "type": "string",
+          "description": "source_file_name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "source-file-size": {
+          "type": "string",
+          "description": "source_file_size",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "url": {
+          "type": "string",
+          "description": "External link to artifact",
+          "format": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseAttendee": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "avatar-thumb-url": {
+          "type": "string",
+          "description": "Avatar thumb URL",
+          "readOnly": true
+        },
+        "company": {
+          "type": "string",
+          "description": "Company name",
+          "format": "string(308)"
+        },
+        "company-active": {
+          "type": "string",
+          "description": "Company field in use",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email",
+          "readOnly": true
+        },
+        "expense-attendee-type-custom-field-1": {
+          "type": "string",
+          "description": "Custom field 1",
+          "format": "text"
+        },
+        "expense-attendee-type-custom-field-10": {
+          "type": "string",
+          "description": "Custom field 10",
+          "format": "text"
+        },
+        "expense-attendee-type-custom-field-2": {
+          "type": "string",
+          "description": "Custom field 2",
+          "format": "text"
+        },
+        "expense-attendee-type-custom-field-3": {
+          "type": "string",
+          "description": "Custom field 3",
+          "format": "text"
+        },
+        "expense-attendee-type-custom-field-4": {
+          "type": "string",
+          "description": "Custom field 4",
+          "format": "text"
+        },
+        "expense-attendee-type-custom-field-5": {
+          "type": "string",
+          "description": "Custom field 5",
+          "format": "text"
+        },
+        "expense-attendee-type-custom-field-6": {
+          "type": "string",
+          "description": "Custom field 6",
+          "format": "text"
+        },
+        "expense-attendee-type-custom-field-7": {
+          "type": "string",
+          "description": "Custom field 7",
+          "format": "text"
+        },
+        "expense-attendee-type-custom-field-8": {
+          "type": "string",
+          "description": "Custom field 8",
+          "format": "text"
+        },
+        "expense-attendee-type-custom-field-9": {
+          "type": "string",
+          "description": "Custom field 9",
+          "format": "text"
+        },
+        "expense-attendee-type-id": {
+          "type": "integer",
+          "description": "Attendee type id",
+          "format": "integer"
+        },
+        "expense-attendee-type-name": {
+          "type": "string",
+          "description": "Attendee type name",
+          "readOnly": true
+        },
+        "first-name": {
+          "type": "string",
+          "description": "First name",
+          "format": "string(308)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "last-name": {
+          "type": "string",
+          "description": "Last name",
+          "format": "string(308)"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title",
+          "format": "string(308)"
+        },
+        "title-active": {
+          "type": "string",
+          "description": "Title field in use",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "user-id": {
+          "type": "integer",
+          "description": "ID of user for Employee attendee type",
+          "format": "integer"
+        }
+      },
+      "required": [
+        "first-name",
+        "last-name"
+      ]
+    },
+    "ExpenseAttendeeType": {
+      "type": "object",
+      "properties": {
+        "active-dependent-fields": {
+          "type": "string",
+          "description": "Active dependent fields",
+          "format": "[]",
+          "readOnly": true
+        },
+        "attendee-src": {
+          "type": "string",
+          "description": "Source of attendees",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Attendee type name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "ExpenseCarbonEmission": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "scope-3-emission": {
+          "type": "number",
+          "description": "Scope 3 emission",
+          "format": "decimal(38,6)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseCashAdvance": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Original preapproved amount",
+          "format": "decimal(32,4)"
+        },
+        "available-amount": {
+          "type": "number",
+          "description": "Remaining preapproved amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "available-amount-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/ExpenseCashAdvance"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "reporting-total": {
+          "type": "number",
+          "description": "The reporting total that was approved",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "returned-amount": {
+          "type": "number",
+          "description": "Returned Amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "returned-amount-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "amount"
+      ]
+    },
+    "ExpenseCategory": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean",
+          "enum": [
+            "true",
+            "false"
+          ]
+        },
+        "attendee-tracking-enabled": {
+          "type": "boolean",
+          "description": "Attendee tracking enabled",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "dynamic-category-limit-enabled": {
+          "type": "boolean",
+          "description": "Dynamic category limit enabled",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "expense-attendee-types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseAttendeeType"
+          }
+        },
+        "expense-mileage-config": {
+          "$ref": "#/definitions/Expense-Mileage-Config"
+        },
+        "expense-per-diem-config": {
+          "$ref": "#/definitions/Expense-PerDiem-Config"
+        },
+        "expense-policy": {
+          "$ref": "#/definitions/ExpensePolicy"
+        },
+        "external-key": {
+          "type": "string",
+          "description": "External expense category unique identifier"
+        },
+        "group": {
+          "type": "string",
+          "description": "Group",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "localized-group": {
+          "type": "string",
+          "description": "Localized group",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Scope",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "tax-currencies": {
+          "type": "string",
+          "description": "Tax currencies",
+          "format": "[]",
+          "readOnly": true
+        },
+        "tax-enabled": {
+          "type": "boolean",
+          "description": "Tax enabled",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "translated-name": {
+          "type": "string",
+          "description": "Translation of the expense category name",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "description": "Type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "expense-mileage-config",
+        "expense-per-diem-config",
+        "expense-policy",
+        "name"
+      ]
+    },
+    "ExpenseLine": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "$ref": "#/definitions/Account"
+        },
+        "account-allocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLineAllocation"
+          }
+        },
+        "accounting-total": {
+          "type": "number",
+          "description": "Accounting total",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "accounting-total-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "allow-attach-preapproval": {
+          "type": "boolean",
+          "description": "Can preapproval be allowed to attach to Expense Line?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "amount": {
+          "type": "number",
+          "description": "Amount",
+          "format": "decimal(32,4)"
+        },
+        "approved-amount": {
+          "type": "number",
+          "description": "Approved amount",
+          "format": "decimal(32,4)"
+        },
+        "attach-preapproval": {
+          "type": "string",
+          "description": "Attach passed preapproval to line",
+          "format": "string"
+        },
+        "audit-status": {
+          "$ref": "#/definitions/AuditStatus"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "custom-field-1": {
+          "type": "string",
+          "description": "Custom field 1",
+          "format": "string(255)"
+        },
+        "custom-field-10": {
+          "type": "string",
+          "description": "Custom field 10",
+          "format": "string(255)"
+        },
+        "custom-field-11": {
+          "type": "string",
+          "description": "Custom field 11",
+          "format": "string(255)"
+        },
+        "custom-field-12": {
+          "type": "string",
+          "description": "Custom field 12",
+          "format": "string(255)"
+        },
+        "custom-field-13": {
+          "type": "string",
+          "description": "Custom field 13",
+          "format": "string(255)"
+        },
+        "custom-field-14": {
+          "type": "string",
+          "description": "Custom field 14",
+          "format": "string(255)"
+        },
+        "custom-field-15": {
+          "type": "string",
+          "description": "Custom field 15",
+          "format": "string(255)"
+        },
+        "custom-field-16": {
+          "type": "string",
+          "description": "Custom field 16",
+          "format": "string(255)"
+        },
+        "custom-field-17": {
+          "type": "string",
+          "description": "Custom field 17",
+          "format": "string(255)"
+        },
+        "custom-field-18": {
+          "type": "string",
+          "description": "Custom field 18",
+          "format": "string(255)"
+        },
+        "custom-field-19": {
+          "type": "string",
+          "description": "Custom field 19",
+          "format": "string(255)"
+        },
+        "custom-field-2": {
+          "type": "string",
+          "description": "Custom field 2",
+          "format": "string(255)"
+        },
+        "custom-field-20": {
+          "type": "string",
+          "description": "Custom field 20",
+          "format": "string(255)"
+        },
+        "custom-field-3": {
+          "type": "string",
+          "description": "Custom field 3",
+          "format": "string(255)"
+        },
+        "custom-field-4": {
+          "type": "string",
+          "description": "Custom field 4",
+          "format": "string(255)"
+        },
+        "custom-field-5": {
+          "type": "string",
+          "description": "Custom field 5",
+          "format": "string(255)"
+        },
+        "custom-field-6": {
+          "type": "string",
+          "description": "Custom field 6",
+          "format": "string(255)"
+        },
+        "custom-field-7": {
+          "type": "string",
+          "description": "Custom field 7",
+          "format": "string(255)"
+        },
+        "custom-field-8": {
+          "type": "string",
+          "description": "Custom field 8",
+          "format": "string(255)"
+        },
+        "custom-field-9": {
+          "type": "string",
+          "description": "Custom field 9",
+          "format": "string(255)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description",
+          "format": "string(1550)"
+        },
+        "divisor": {
+          "type": "number",
+          "description": "Divisor unit",
+          "format": "decimal(30,2)"
+        },
+        "employee-reimbursable": {
+          "type": "boolean",
+          "description": "Is the line reimbursable to the employee?",
+          "format": "boolean"
+        },
+        "employee-reimbursable-editable": {
+          "type": "boolean",
+          "description": "Can expense user change the default reimbursable state of an expense line?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "employee-reimbursable-overridden": {
+          "type": "boolean",
+          "description": "Has the expense user changed the default reimbursable state of an expense line?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "end-date": {
+          "type": "string",
+          "description": "Divisor end date",
+          "format": "datetime"
+        },
+        "exchange-rate": {
+          "type": "number",
+          "description": "Exchange rate",
+          "format": "decimal(30,9)"
+        },
+        "expense-artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseArtifact"
+          }
+        },
+        "expense-attendees": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseAttendee"
+          }
+        },
+        "expense-category": {
+          "$ref": "#/definitions/ExpenseCategory"
+        },
+        "expense-category-custom-field-1": {
+          "type": "string",
+          "description": "Expense category custom field 1",
+          "format": "text"
+        },
+        "expense-category-custom-field-10": {
+          "type": "string",
+          "description": "Expense category custom field 10",
+          "format": "text"
+        },
+        "expense-category-custom-field-2": {
+          "type": "string",
+          "description": "Expense category custom field 2",
+          "format": "text"
+        },
+        "expense-category-custom-field-3": {
+          "type": "string",
+          "description": "Expense category custom field 3",
+          "format": "text"
+        },
+        "expense-category-custom-field-4": {
+          "type": "string",
+          "description": "Expense category custom field 4",
+          "format": "text"
+        },
+        "expense-category-custom-field-5": {
+          "type": "string",
+          "description": "Expense category custom field 5",
+          "format": "text"
+        },
+        "expense-category-custom-field-6": {
+          "type": "string",
+          "description": "Expense category custom field 6",
+          "format": "text"
+        },
+        "expense-category-custom-field-7": {
+          "type": "string",
+          "description": "Expense category custom field 7",
+          "format": "text"
+        },
+        "expense-category-custom-field-8": {
+          "type": "string",
+          "description": "Expense category custom field 8",
+          "format": "text"
+        },
+        "expense-category-custom-field-9": {
+          "type": "string",
+          "description": "Expense category custom field 9",
+          "format": "text"
+        },
+        "expense-date": {
+          "type": "string",
+          "description": "Expense date",
+          "format": "datetime"
+        },
+        "expense-line-cash-advance": {
+          "$ref": "#/definitions/ExpenseLineCashAdvance"
+        },
+        "expense-line-daily-per-diems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLineDailyPerDiem"
+          }
+        },
+        "expense-line-imported-data": {
+          "$ref": "#/definitions/ExpenseLineImportedData"
+        },
+        "expense-line-mileage": {
+          "$ref": "#/definitions/ExpenseLineMileage"
+        },
+        "expense-line-per-diem": {
+          "$ref": "#/definitions/ExpenseLinePerDiem"
+        },
+        "expense-line-preapproval": {
+          "$ref": "#/definitions/ExpenseLinePreapproval"
+        },
+        "expense-line-taxes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLineTax"
+          }
+        },
+        "expense-line-virtual-card": {
+          "$ref": "#/definitions/ExpenseLineVirtualCard"
+        },
+        "expense-report-id": {
+          "type": "integer",
+          "description": "Expense report id",
+          "format": "integer",
+          "readOnly": true
+        },
+        "expense-trip": {
+          "$ref": "#/definitions/ExpenseTrip"
+        },
+        "expensed-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "external-src-data": {
+          "type": "string",
+          "description": "External source data",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "external-src-name": {
+          "type": "string",
+          "description": "External source name",
+          "format": "string(255)"
+        },
+        "external-src-ref": {
+          "type": "string",
+          "description": "External source reference",
+          "format": "string(255)"
+        },
+        "foreign-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "foreign-currency-amount": {
+          "type": "number",
+          "description": "Foreign currency amount",
+          "format": "decimal(32,4)"
+        },
+        "foreign-currency-id": {
+          "type": "integer",
+          "description": "Foreign currency id",
+          "format": "integer"
+        },
+        "frugality": {
+          "type": "string",
+          "description": "Frugality rating",
+          "format": "string",
+          "readOnly": true,
+          "enum": [
+            "shame",
+            "praise"
+          ]
+        },
+        "has-preapproval": {
+          "type": "string",
+          "description": "Does Expense Line has preapproval attached?",
+          "format": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "integration": {
+          "$ref": "#/definitions/ExpenseLine"
+        },
+        "itemized-expense-lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItemizedExpenseLine"
+          }
+        },
+        "last-send-back-comment": {
+          "type": "string",
+          "description": "Last comment why line was sent back",
+          "format": "comment",
+          "readOnly": true
+        },
+        "last-send-back-reason": {
+          "type": "string",
+          "description": "Last reason why line was sent back",
+          "format": "reason_insight_event",
+          "readOnly": true
+        },
+        "line-number": {
+          "type": "integer",
+          "description": "Expense line number",
+          "format": "integer",
+          "readOnly": true
+        },
+        "merchant": {
+          "type": "string",
+          "description": "Merchant",
+          "format": "string(255)"
+        },
+        "order-line-id": {
+          "type": "integer",
+          "description": "Order line id",
+          "format": "integer"
+        },
+        "over-limit": {
+          "type": "boolean",
+          "description": "Over limit flag",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "parent-expense-line-id": {
+          "type": "integer",
+          "description": "Parent expense line id",
+          "format": "integer",
+          "readOnly": true
+        },
+        "parent-external-src-data": {
+          "type": "string",
+          "description": "Parent External Source Data",
+          "format": "string",
+          "readOnly": true
+        },
+        "parent-external-src-name": {
+          "type": "string",
+          "description": "Parent External Source Name",
+          "format": "string",
+          "readOnly": true
+        },
+        "parent-external-src-ref": {
+          "type": "string",
+          "description": "Parent External Source Ref",
+          "format": "string",
+          "readOnly": true
+        },
+        "per-diem-trip": {
+          "type": "string",
+          "description": "Expense Per-diem Trip Information",
+          "format": "string",
+          "readOnly": true
+        },
+        "period": {
+          "$ref": "#/definitions/Period"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Reason",
+          "format": "string(255)"
+        },
+        "receipt-total-amount": {
+          "type": "number",
+          "description": "Receipt total amount",
+          "format": "decimal(32,4)"
+        },
+        "receipt-total-currency-id": {
+          "type": "integer",
+          "description": "Receipt total currency id",
+          "format": "integer"
+        },
+        "reporting-total": {
+          "type": "number",
+          "description": "Reporting total",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "requires-receipt": {
+          "type": "boolean",
+          "description": "Requires receipt flag",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "start-date": {
+          "type": "string",
+          "description": "Divisor start date",
+          "format": "datetime"
+        },
+        "status": {
+          "type": "string",
+          "description": "Transaction status",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "suggested-exchange-rate": {
+          "$ref": "#/definitions/ExchangeRate"
+        },
+        "travel-trip-booking": {
+          "$ref": "#/definitions/Travel-TripBooking"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "expense-category",
+        "foreign-currency",
+        "start-date"
+      ]
+    },
+    "ExpenseLineAllocation": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "$ref": "#/definitions/Account"
+        },
+        "accounting-total": {
+          "type": "number",
+          "description": "Accounting total",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "accounting-total-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "amount": {
+          "type": "number",
+          "description": "amount",
+          "format": "decimal(32,4)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "pct": {
+          "type": "number",
+          "description": "pct",
+          "format": "decimal(16,10)"
+        },
+        "period": {
+          "$ref": "#/definitions/Period"
+        },
+        "read-only": {
+          "type": "boolean",
+          "description": "Read-Only flag",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "account",
+        "pct"
+      ]
+    },
+    "ExpenseLineCashAdvance": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Original preapproved amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseLineDailyPerDiem": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "currency": {
+          "$ref": "#/definitions/ExpenseLineDailyPerDiem"
+        },
+        "expense-line-per-diem-id": {
+          "type": "integer",
+          "description": "Expense line per diem",
+          "format": "integer",
+          "readOnly": true
+        },
+        "expense-per-diem-rate-type-id": {
+          "type": "integer",
+          "description": "Expense per diem rate type",
+          "format": "integer",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "locations": {
+          "type": "string",
+          "description": "Locations",
+          "format": "[]",
+          "readOnly": true
+        },
+        "max-rate": {
+          "type": "number",
+          "description": "Max rate",
+          "format": "decimal",
+          "readOnly": true
+        },
+        "per-diem-date": {
+          "type": "string",
+          "description": "Per diem date",
+          "readOnly": true
+        },
+        "per-diem-deductions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLineDailyPerDiemDeduction"
+          }
+        },
+        "rate-applied": {
+          "type": "number",
+          "description": "Rate applied",
+          "format": "decimal(30,6)",
+          "readOnly": true
+        },
+        "rate-destination": {
+          "type": "string",
+          "description": "Rate destination",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseLineDailyPerDiemDeduction": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "currency": {
+          "$ref": "#/definitions/ExpenseLineDailyPerDiemDeduction"
+        },
+        "deduction-applied": {
+          "type": "number",
+          "description": "Deduction applied",
+          "format": "decimal(30,6)",
+          "readOnly": true
+        },
+        "deduction-label": {
+          "type": "string",
+          "description": "Deduction label",
+          "readOnly": true
+        },
+        "expense-line-daily-per-diem-id": {
+          "type": "integer",
+          "description": "Expense line daily per diem",
+          "format": "integer",
+          "readOnly": true
+        },
+        "expense-per-diem-deduction-id": {
+          "type": "integer",
+          "description": "Expense per diem deduction",
+          "format": "integer",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseLineImportedData": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-amount": {
+          "type": "number",
+          "description": "Local amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "local-amount-currency": {
+          "type": "string",
+          "description": "Local amount currency",
+          "readOnly": true
+        },
+        "local-amount-different?": {
+          "type": "boolean",
+          "description": "Local amount different?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseLineMileage": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "distance": {
+          "type": "number",
+          "description": "Distance",
+          "format": "decimal(32,4)"
+        },
+        "distance-unit": {
+          "type": "string",
+          "description": "Distance unit",
+          "format": "string(255)"
+        },
+        "end-address": {
+          "type": "string",
+          "description": "End address",
+          "format": "string(255)"
+        },
+        "expense-line-mileage-allocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLineMileageAllocation"
+          }
+        },
+        "expense-mileage-region": {
+          "$ref": "#/definitions/Expense-Mileage-Region"
+        },
+        "expense-mileage-region-id": {
+          "type": "integer",
+          "description": "Region",
+          "format": "integer"
+        },
+        "expense-mileage-vehicle-type": {
+          "$ref": "#/definitions/Expense-Mileage-VehicleType"
+        },
+        "expense-mileage-vehicle-type-id": {
+          "type": "integer",
+          "description": "Vehicle type",
+          "format": "integer"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "passenger-count": {
+          "type": "integer",
+          "description": "Number of passengers",
+          "format": "integer"
+        },
+        "round-trip": {
+          "type": "boolean",
+          "description": "Round trip",
+          "format": "boolean"
+        },
+        "start-address": {
+          "type": "string",
+          "description": "Start address",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "distance",
+        "distance-unit",
+        "end-address",
+        "expense-mileage-region-id",
+        "expense-mileage-vehicle-type-id",
+        "start-address"
+      ]
+    },
+    "ExpenseLineMileageAllocation": {
+      "type": "object",
+      "properties": {
+        "applied-distance": {
+          "$ref": "#/definitions/Distance"
+        },
+        "applied-rate": {
+          "$ref": "#/definitions/Money"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "expense-mileage-rate-type-id": {
+          "type": "integer",
+          "description": "Expense mileage rate type",
+          "format": "integer",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseLinePerDiem": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "daily-per-diems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLineDailyPerDiem"
+          }
+        },
+        "destination": {
+          "type": "string",
+          "description": "Destination",
+          "format": "string(255)"
+        },
+        "end-at": {
+          "type": "string",
+          "description": "End at",
+          "format": "datetime"
+        },
+        "end-at-timezone": {
+          "type": "string",
+          "description": "End at timezone",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "start-at": {
+          "type": "string",
+          "description": "Start at",
+          "format": "datetime"
+        },
+        "start-at-timezone": {
+          "type": "string",
+          "description": "Start at timezone",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "destination",
+        "end-at",
+        "end-at-timezone",
+        "start-at",
+        "start-at-timezone"
+      ]
+    },
+    "ExpenseLinePreapproval": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "currency": {
+          "$ref": "#/definitions/ExpenseLinePreapproval"
+        },
+        "expense-report-preapproval": {
+          "$ref": "#/definitions/ExpenseReportPreapproval"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseLineTax": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "country": {
+          "$ref": "#/definitions/ExpenseLineTax"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency-id": {
+          "type": "integer",
+          "description": "Currency",
+          "format": "integer",
+          "readOnly": true
+        },
+        "entry-type": {
+          "type": "integer",
+          "description": "Entry type",
+          "format": "integer",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "line-num": {
+          "type": "string",
+          "description": "Line num",
+          "readOnly": true
+        },
+        "std-amount": {
+          "type": "number",
+          "description": "Std amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "tax-code": {
+          "$ref": "#/definitions/ExpenseLineTax"
+        },
+        "tax-rate": {
+          "$ref": "#/definitions/ExpenseLineTax"
+        },
+        "tax-rate-type": {
+          "$ref": "#/definitions/ExpenseLineTax"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "country"
+      ]
+    },
+    "ExpenseLineVirtualCard": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Original preapproved amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpensePolicy": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "allow-divisor": {
+          "type": "boolean",
+          "description": "Allow divisor",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "allow-divisor-end-date": {
+          "type": "boolean",
+          "description": "Allow divisor end date",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "allow-itemization": {
+          "type": "boolean",
+          "description": "allow_itemization",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "divisor-end-name": {
+          "type": "string",
+          "description": "Divisor end name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "divisor-start-name": {
+          "type": "string",
+          "description": "Divisor start name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "divisor-uom-name": {
+          "type": "string",
+          "description": "Divisor uom name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "expense-category-ids": {
+          "type": "string",
+          "description": "expense_category_ids",
+          "format": "[]",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "limit-amount": {
+          "type": "number",
+          "description": "limit_amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "limit-type": {
+          "type": "string",
+          "description": "limit_type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "requires-receipt": {
+          "type": "boolean",
+          "description": "requires_receipt",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "restrict-itemization-categories": {
+          "type": "boolean",
+          "description": "restrict_itemization_categories",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "summary": {
+          "type": "string",
+          "description": "summary",
+          "format": "string(140)",
+          "readOnly": true
+        },
+        "text": {
+          "type": "string",
+          "description": "text",
+          "format": "text",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "ExpensePolicyViolation": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "limit-exceeded": {
+          "type": "number",
+          "description": "limit_exceeded",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "receipt-missing": {
+          "type": "boolean",
+          "description": "receipt_missing",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "ExpensePreapproval": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Original preapproved amount",
+          "format": "decimal(32,4)"
+        },
+        "available": {
+          "type": "boolean",
+          "description": "A flag to show the availability & validity of this preapproval",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "available-amount": {
+          "type": "number",
+          "description": "Remaining preapproved amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "available-amount-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/ExpensePreapproval"
+        },
+        "description": {
+          "type": "string",
+          "description": "Additional information for preapproval request",
+          "format": "string(255)"
+        },
+        "easy-form-widget-responses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EasyFormWidgetResponse"
+          }
+        },
+        "end-date": {
+          "type": "string",
+          "description": "End date",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "expense-cash-advance": {
+          "$ref": "#/definitions/ExpenseCashAdvance"
+        },
+        "expense-preapproval-lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpensePreapprovalLine"
+          }
+        },
+        "expense-virtual-card": {
+          "$ref": "#/definitions/ExpenseVirtualCard"
+        },
+        "for-user": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "start-date": {
+          "type": "string",
+          "description": "Start date",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of preapproval request (trip, cash advance, gifts, entertainment)",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "amount",
+        "description"
+      ]
+    },
+    "ExpensePreapprovalLine": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "$ref": "#/definitions/ExpensePreapprovalLine"
+        },
+        "account-type": {
+          "$ref": "#/definitions/ExpensePreapprovalLine"
+        },
+        "accounting-total": {
+          "type": "number",
+          "description": "Accounting total",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "accounting-total-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "estimated-amount": {
+          "type": "number",
+          "description": "Estimated amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "estimated-amount-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "estimated-reporting-total": {
+          "type": "number",
+          "description": "Estimated reporting total",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notes",
+          "format": "text",
+          "readOnly": true
+        },
+        "requested-amount": {
+          "type": "number",
+          "description": "Requested amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "requested-amount-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "requested-reporting-total": {
+          "type": "number",
+          "description": "Requested reporting total",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "description": "Type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "ExpenseReport": {
+      "type": "object",
+      "properties": {
+        "approvals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseReport"
+          }
+        },
+        "audit-score": {
+          "type": "integer",
+          "description": "Coupa's Audit Score",
+          "format": "integer",
+          "readOnly": true
+        },
+        "auditor-note": {
+          "type": "string",
+          "description": "Auditor Comments on Expense Report",
+          "format": "text"
+        },
+        "comments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseReport"
+          }
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Time of Record Creation",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/ExpenseReport"
+        },
+        "end-date": {
+          "type": "string",
+          "description": "Return Date",
+          "format": "date"
+        },
+        "erp-document-id": {
+          "type": "string",
+          "description": "Expense document id on ERP side.",
+          "format": "string(255)"
+        },
+        "erp-document-status": {
+          "type": "string",
+          "description": "Expense document status on ERP side.",
+          "format": "string(255)"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseReportEventHistory"
+          }
+        },
+        "expense-lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLine"
+          }
+        },
+        "expense-policy-violations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpensePolicyViolation"
+          }
+        },
+        "expense-report-preapprovals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseReportPreapproval"
+          }
+        },
+        "expense-violations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseViolation"
+          }
+        },
+        "expensed-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "exported": {
+          "type": "boolean",
+          "description": "Indicates if transaction has been exported",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "external-src-name": {
+          "type": "string",
+          "description": "External source name",
+          "format": "string(255)"
+        },
+        "external-src-ref": {
+          "type": "string",
+          "description": "External source reference",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa's Expense Report ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "is-trip": {
+          "type": "boolean",
+          "description": "Trip Report",
+          "format": "boolean"
+        },
+        "last-exported-at": {
+          "type": "string",
+          "description": "Date and time transaction was last exported in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime"
+        },
+        "paid": {
+          "type": "boolean",
+          "description": "Has expense report been paid?",
+          "format": "boolean"
+        },
+        "past-due": {
+          "type": "boolean",
+          "description": "Report has passed the due date in the format True or false",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "payment": {
+          "$ref": "#/definitions/Payment"
+        },
+        "payment-channel": {
+          "type": "string",
+          "description": "The payment channel used to reimburse the employee.",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "reconciliation-lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Expense-ReconciliationLine"
+          }
+        },
+        "reimbursable-total-amount": {
+          "type": "number",
+          "description": "Total amount reimbursable to the employee.",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "reimbursable-total-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "reject-reason": {
+          "type": "string",
+          "description": "Reason why report was rejected",
+          "format": "text"
+        },
+        "report-due-date": {
+          "type": "string",
+          "description": "Due date before which report needs to be submitted in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "report-warnings": {
+          "type": "string",
+          "description": "Report level warnining messages",
+          "format": "string",
+          "readOnly": true
+        },
+        "start-date": {
+          "type": "string",
+          "description": "Departure Date",
+          "format": "date"
+        },
+        "status": {
+          "type": "string",
+          "description": "Current Expense Report Status",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "submitted-at": {
+          "type": "string",
+          "description": "Date Expense Report was Submitted for Approval",
+          "format": "datetime"
+        },
+        "submitted-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "title": {
+          "type": "string",
+          "description": "Expense Report Title",
+          "format": "string(255)"
+        },
+        "total": {
+          "type": "number",
+          "description": "Expense Report Total in Transactional Currency",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "travel-trip": {
+          "$ref": "#/definitions/Travel-Trip"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Time of Record Creation",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "ExpenseReportEventHistory": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "status": {
+          "type": "string",
+          "description": "transaction status",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "ExpenseReportPreapproval": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "available-amount": {
+          "type": "string",
+          "description": "Available amount",
+          "readOnly": true
+        },
+        "available-amount-currency": {
+          "type": "string",
+          "description": "Available amount currency",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "currency": {
+          "$ref": "#/definitions/ExpenseReportPreapproval"
+        },
+        "expense-preapproval": {
+          "$ref": "#/definitions/ExpensePreapproval"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseTrip": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "expense-trip-mileage": {
+          "$ref": "#/definitions/Expense-Trip-Mileage"
+        },
+        "expense-trip-segments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseTripSegment"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseTripSegment": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "end-at": {
+          "type": "string",
+          "description": "End at",
+          "readOnly": true
+        },
+        "end-location": {
+          "type": "string",
+          "description": "End location",
+          "format": "string(255)"
+        },
+        "end-location-id": {
+          "type": "string",
+          "description": "End location",
+          "format": "string(255)"
+        },
+        "expense-trip-segment-mileage": {
+          "$ref": "#/definitions/Expense-Trip-SegmentMileage"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "is-travel-segment": {
+          "type": "boolean",
+          "description": "Is travel segment",
+          "format": "boolean"
+        },
+        "segment-num": {
+          "type": "integer",
+          "description": "Segment num",
+          "format": "integer"
+        },
+        "segment-type": {
+          "type": "string",
+          "description": "Segment type",
+          "format": "string(255)"
+        },
+        "start-at": {
+          "type": "string",
+          "description": "Start at",
+          "readOnly": true
+        },
+        "start-location": {
+          "type": "string",
+          "description": "Start location",
+          "format": "string(255)"
+        },
+        "start-location-id": {
+          "type": "string",
+          "description": "Start location",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "end-location",
+        "end-location-id",
+        "start-location",
+        "start-location-id"
+      ]
+    },
+    "ExpenseViolation": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "limit-exceeded": {
+          "type": "number",
+          "description": "Limit exceeded",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "receipt-missing": {
+          "type": "boolean",
+          "description": "Receipt missing",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "violable": {
+          "$ref": "#/definitions/ExpenseViolation"
+        },
+        "violator": {
+          "$ref": "#/definitions/ExpenseLine"
+        }
+      }
+    },
+    "ExpenseVirtualCard": {
+      "type": "object",
+      "properties": {
+        "active-card-url": {
+          "type": "string",
+          "description": "URL of Active Virtual Card",
+          "readOnly": true
+        },
+        "amount": {
+          "type": "number",
+          "description": "Original preapproved amount",
+          "format": "decimal(32,4)"
+        },
+        "available-amount": {
+          "type": "number",
+          "description": "Remaining preapproved amount",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "available-amount-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/ExpenseVirtualCard"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "reporting-total": {
+          "type": "number",
+          "description": "The reporting total that was approved",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "amount"
+      ]
+    },
+    "FinancialCounterparty": {
+      "type": "object",
+      "properties": {
+        "abbreviation": {
+          "type": "string",
+          "description": "Abbreviation",
+          "format": "string(50)"
+        },
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean"
+        },
+        "bank-code": {
+          "type": "string",
+          "description": "Bank Code",
+          "format": "string(16)"
+        },
+        "branch-code": {
+          "type": "string",
+          "description": "Branch Code",
+          "format": "string(10)"
+        },
+        "counterparty-address": {
+          "$ref": "#/definitions/CounterpartyAddress"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description",
+          "format": "string(500)"
+        },
+        "external-identification-lei": {
+          "type": "string",
+          "description": "Legal Entity Identifier (LEI)",
+          "format": "string(20)"
+        },
+        "external-identification-name": {
+          "type": "string",
+          "description": "Deviating Name",
+          "format": "string(100)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "payment-usage": {
+          "type": "string",
+          "description": "Payment Usage",
+          "format": "string(255)"
+        },
+        "swift-code": {
+          "type": "string",
+          "description": "Swift Code",
+          "format": "string(255)"
+        },
+        "treasury-usage": {
+          "type": "string",
+          "description": "Treasury Usage",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "abbreviation",
+        "name"
+      ]
+    },
+    "InventoryOrganization": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "fulfillment-type": {
+          "type": "string",
+          "description": "Fulfillment type",
+          "format": "string(255)",
+          "enum": [
+            "manual",
+            "automatic"
+          ]
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "warehouses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Warehouse"
+          }
+        }
+      },
+      "required": [
+        "currency",
+        "fulfillment-type"
+      ]
+    },
+    "ItemizedExpenseLine": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "$ref": "#/definitions/Account"
+        },
+        "account-allocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLineAllocation"
+          }
+        },
+        "accounting-total": {
+          "type": "number",
+          "description": "Accounting total",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "accounting-total-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "allow-attach-preapproval": {
+          "type": "boolean",
+          "description": "Can preapproval be allowed to attach to Expense Line?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "amount": {
+          "type": "number",
+          "description": "Amount",
+          "format": "decimal(32,4)"
+        },
+        "approved-amount": {
+          "type": "number",
+          "description": "Approved amount",
+          "format": "decimal(32,4)"
+        },
+        "audit-status": {
+          "$ref": "#/definitions/AuditStatus"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "custom-field-1": {
+          "type": "string",
+          "description": "Custom field 1",
+          "format": "string(255)"
+        },
+        "custom-field-10": {
+          "type": "string",
+          "description": "Custom field 10",
+          "format": "string(255)"
+        },
+        "custom-field-11": {
+          "type": "string",
+          "description": "Custom field 11",
+          "format": "string(255)"
+        },
+        "custom-field-12": {
+          "type": "string",
+          "description": "Custom field 12",
+          "format": "string(255)"
+        },
+        "custom-field-13": {
+          "type": "string",
+          "description": "Custom field 13",
+          "format": "string(255)"
+        },
+        "custom-field-14": {
+          "type": "string",
+          "description": "Custom field 14",
+          "format": "string(255)"
+        },
+        "custom-field-15": {
+          "type": "string",
+          "description": "Custom field 15",
+          "format": "string(255)"
+        },
+        "custom-field-16": {
+          "type": "string",
+          "description": "Custom field 16",
+          "format": "string(255)"
+        },
+        "custom-field-17": {
+          "type": "string",
+          "description": "Custom field 17",
+          "format": "string(255)"
+        },
+        "custom-field-18": {
+          "type": "string",
+          "description": "Custom field 18",
+          "format": "string(255)"
+        },
+        "custom-field-19": {
+          "type": "string",
+          "description": "Custom field 19",
+          "format": "string(255)"
+        },
+        "custom-field-2": {
+          "type": "string",
+          "description": "Custom field 2",
+          "format": "string(255)"
+        },
+        "custom-field-20": {
+          "type": "string",
+          "description": "Custom field 20",
+          "format": "string(255)"
+        },
+        "custom-field-3": {
+          "type": "string",
+          "description": "Custom field 3",
+          "format": "string(255)"
+        },
+        "custom-field-4": {
+          "type": "string",
+          "description": "Custom field 4",
+          "format": "string(255)"
+        },
+        "custom-field-5": {
+          "type": "string",
+          "description": "Custom field 5",
+          "format": "string(255)"
+        },
+        "custom-field-6": {
+          "type": "string",
+          "description": "Custom field 6",
+          "format": "string(255)"
+        },
+        "custom-field-7": {
+          "type": "string",
+          "description": "Custom field 7",
+          "format": "string(255)"
+        },
+        "custom-field-8": {
+          "type": "string",
+          "description": "Custom field 8",
+          "format": "string(255)"
+        },
+        "custom-field-9": {
+          "type": "string",
+          "description": "Custom field 9",
+          "format": "string(255)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description",
+          "format": "string(1550)"
+        },
+        "divisor": {
+          "type": "number",
+          "description": "Divisor unit",
+          "format": "decimal(30,2)"
+        },
+        "employee-reimbursable": {
+          "type": "boolean",
+          "description": "Is the line reimbursable to the employee?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "employee-reimbursable-editable": {
+          "type": "boolean",
+          "description": "Can expense user change the default reimbursable state of an expense line?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "employee-reimbursable-overridden": {
+          "type": "boolean",
+          "description": "Has the expense user changed the default reimbursable state of an expense line?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "end-date": {
+          "type": "string",
+          "description": "Divisor end date",
+          "format": "datetime"
+        },
+        "exchange-rate": {
+          "type": "number",
+          "description": "Exchange rate",
+          "format": "decimal(30,9)"
+        },
+        "expense-artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseArtifact"
+          }
+        },
+        "expense-attendees": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseAttendee"
+          }
+        },
+        "expense-category": {
+          "$ref": "#/definitions/ExpenseCategory"
+        },
+        "expense-category-custom-field-1": {
+          "type": "string",
+          "description": "Expense category custom field 1",
+          "format": "text"
+        },
+        "expense-category-custom-field-10": {
+          "type": "string",
+          "description": "Expense category custom field 10",
+          "format": "text"
+        },
+        "expense-category-custom-field-2": {
+          "type": "string",
+          "description": "Expense category custom field 2",
+          "format": "text"
+        },
+        "expense-category-custom-field-3": {
+          "type": "string",
+          "description": "Expense category custom field 3",
+          "format": "text"
+        },
+        "expense-category-custom-field-4": {
+          "type": "string",
+          "description": "Expense category custom field 4",
+          "format": "text"
+        },
+        "expense-category-custom-field-5": {
+          "type": "string",
+          "description": "Expense category custom field 5",
+          "format": "text"
+        },
+        "expense-category-custom-field-6": {
+          "type": "string",
+          "description": "Expense category custom field 6",
+          "format": "text"
+        },
+        "expense-category-custom-field-7": {
+          "type": "string",
+          "description": "Expense category custom field 7",
+          "format": "text"
+        },
+        "expense-category-custom-field-8": {
+          "type": "string",
+          "description": "Expense category custom field 8",
+          "format": "text"
+        },
+        "expense-category-custom-field-9": {
+          "type": "string",
+          "description": "Expense category custom field 9",
+          "format": "text"
+        },
+        "expense-date": {
+          "type": "string",
+          "description": "Expense date",
+          "format": "datetime"
+        },
+        "expense-line-cash-advance": {
+          "$ref": "#/definitions/ExpenseLineCashAdvance"
+        },
+        "expense-line-daily-per-diems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLineDailyPerDiem"
+          }
+        },
+        "expense-line-imported-data": {
+          "$ref": "#/definitions/ExpenseLineImportedData"
+        },
+        "expense-line-mileage": {
+          "$ref": "#/definitions/ExpenseLineMileage"
+        },
+        "expense-line-per-diem": {
+          "$ref": "#/definitions/ExpenseLinePerDiem"
+        },
+        "expense-line-preapproval": {
+          "$ref": "#/definitions/ExpenseLinePreapproval"
+        },
+        "expense-line-taxes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseLineTax"
+          }
+        },
+        "expense-line-virtual-card": {
+          "$ref": "#/definitions/ExpenseLineVirtualCard"
+        },
+        "expense-report-id": {
+          "type": "integer",
+          "description": "Expense report id",
+          "format": "integer",
+          "readOnly": true
+        },
+        "expense-trip": {
+          "$ref": "#/definitions/ExpenseTrip"
+        },
+        "expensed-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "external-src-data": {
+          "type": "string",
+          "description": "External source data",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "external-src-name": {
+          "type": "string",
+          "description": "External source name",
+          "format": "string(255)"
+        },
+        "external-src-ref": {
+          "type": "string",
+          "description": "External source reference",
+          "format": "string(255)"
+        },
+        "foreign-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "foreign-currency-amount": {
+          "type": "number",
+          "description": "Foreign currency amount",
+          "format": "decimal(32,4)"
+        },
+        "foreign-currency-id": {
+          "type": "integer",
+          "description": "Foreign currency id",
+          "format": "integer"
+        },
+        "frugality": {
+          "type": "string",
+          "description": "Frugality",
+          "readOnly": true
+        },
+        "has-preapproval": {
+          "type": "string",
+          "description": "Does Expense Line has preapproval attached?",
+          "format": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "integration": {
+          "$ref": "#/definitions/ExpenseLine"
+        },
+        "last-send-back-comment": {
+          "type": "string",
+          "description": "Last comment why line was sent back",
+          "format": "comment",
+          "readOnly": true
+        },
+        "last-send-back-reason": {
+          "type": "string",
+          "description": "Last reason why line was sent back",
+          "format": "reason_insight_event",
+          "readOnly": true
+        },
+        "line-number": {
+          "type": "string",
+          "description": "Expense line number",
+          "readOnly": true
+        },
+        "merchant": {
+          "type": "string",
+          "description": "Merchant",
+          "format": "string(255)"
+        },
+        "order-line-id": {
+          "type": "integer",
+          "description": "Order line id",
+          "format": "integer"
+        },
+        "over-limit": {
+          "type": "boolean",
+          "description": "Over limit flag",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "parent-expense-line-id": {
+          "type": "integer",
+          "description": "Parent expense line id",
+          "format": "integer",
+          "readOnly": true
+        },
+        "parent-external-src-data": {
+          "type": "string",
+          "description": "Parent External Source Data",
+          "format": "string",
+          "readOnly": true
+        },
+        "parent-external-src-name": {
+          "type": "string",
+          "description": "Parent External Source Name",
+          "format": "string",
+          "readOnly": true
+        },
+        "parent-external-src-ref": {
+          "type": "string",
+          "description": "Parent External Source Ref",
+          "format": "string",
+          "readOnly": true
+        },
+        "per-diem-trip": {
+          "type": "string",
+          "description": "Expense Per-diem Trip Information",
+          "format": "string",
+          "readOnly": true
+        },
+        "period": {
+          "$ref": "#/definitions/Period"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Reason",
+          "format": "string(255)"
+        },
+        "receipt-total-amount": {
+          "type": "number",
+          "description": "Receipt total amount",
+          "format": "decimal(32,4)"
+        },
+        "receipt-total-currency-id": {
+          "type": "integer",
+          "description": "Receipt total currency id",
+          "format": "integer"
+        },
+        "reporting-total": {
+          "type": "number",
+          "description": "Reporting total",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "requires-receipt": {
+          "type": "boolean",
+          "description": "Requires receipt flag",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "start-date": {
+          "type": "string",
+          "description": "Divisor start date",
+          "format": "datetime"
+        },
+        "status": {
+          "type": "string",
+          "description": "Transaction status",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "suggested-exchange-rate": {
+          "$ref": "#/definitions/ExchangeRate"
+        },
+        "travel-trip-booking": {
+          "$ref": "#/definitions/Travel-TripBooking"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "expense-category",
+        "foreign-currency",
+        "start-date"
+      ]
+    },
+    "LegalEntity": {
+      "type": "object",
+      "properties": {
+        "abbreviation": {
+          "type": "string",
+          "description": "Abbreviation",
+          "format": "string(50)"
+        },
+        "accounting-method": {
+          "type": "string",
+          "description": "Accounting Method",
+          "format": "string(7)",
+          "enum": [
+            "ifrs",
+            "ifrs_9",
+            "us_gaap"
+          ]
+        },
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean"
+        },
+        "bill-to-address": {
+          "$ref": "#/definitions/BillToAddress"
+        },
+        "bill-to-addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BillToAddress"
+          }
+        },
+        "corporate-sector": {
+          "type": "string",
+          "description": "Corporate Sector",
+          "format": "string(16)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description",
+          "format": "string(500)"
+        },
+        "external-identification-company-code": {
+          "type": "string",
+          "description": "Company Code",
+          "format": "string(11)"
+        },
+        "external-identification-creditor-id": {
+          "type": "string",
+          "description": "SEPA Creditor ID",
+          "format": "string(35)"
+        },
+        "external-identification-ic-identifier-gl": {
+          "type": "string",
+          "description": "IC Identifier for GL Exports",
+          "format": "string(50)"
+        },
+        "external-identification-lei": {
+          "type": "string",
+          "description": "Legal Entity Identifier",
+          "format": "string(20)"
+        },
+        "external-identification-name-matching": {
+          "type": "string",
+          "description": "Deviating Name Matching",
+          "format": "string(100)"
+        },
+        "external-identification-name-trading": {
+          "type": "string",
+          "description": "Deviating Name Trading",
+          "format": "string(100)"
+        },
+        "external-identification-swift": {
+          "type": "string",
+          "description": "Deviating SWIFT Code",
+          "format": "string(11)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "legal-entity-address": {
+          "$ref": "#/definitions/LegalEntityAddress"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "parent": {
+          "$ref": "#/definitions/LegalEntity"
+        },
+        "swift-code": {
+          "type": "string",
+          "description": "SWIFT Code",
+          "format": "string(11)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "use-fx-rates-reciprocal": {
+          "type": "boolean",
+          "description": "Use FX rates reciprocal",
+          "format": "boolean"
+        }
+      },
+      "required": [
+        "abbreviation",
+        "currency",
+        "name"
+      ]
+    },
+    "LegalEntityAddress": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "attention": {
+          "type": "string",
+          "description": "Address Default Attention Line",
+          "format": "string(255)"
+        },
+        "business-group-name": {
+          "type": "string",
+          "description": "Content Group Name for Address",
+          "format": "string"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "external-src-name": {
+          "type": "string",
+          "description": "External Source Name",
+          "format": "string(255)"
+        },
+        "external-src-ref": {
+          "type": "string",
+          "description": "External Source Reference",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "location-code": {
+          "type": "string",
+          "description": "location_code",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(10)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "state": {
+          "type": "string",
+          "description": "State Name for Address",
+          "format": "string(255)"
+        },
+        "state-iso-code": {
+          "type": "string",
+          "description": "ISO Code for the State",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "street3": {
+          "type": "string",
+          "description": "Address Line 3",
+          "format": "string(255)"
+        },
+        "street4": {
+          "type": "string",
+          "description": "Address Line 4",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Address type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "street1"
+      ]
+    },
+    "Money": {
+      "type": "object"
+    },
+    "Payment": {
+      "type": "object",
+      "properties": {
+        "amount-paid": {
+          "type": "number",
+          "description": "amount_paid",
+          "format": "decimal(32,4)"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category",
+          "readOnly": true
+        },
+        "check-number": {
+          "type": "string",
+          "description": "check_number"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "notes": {
+          "type": "string",
+          "description": "notes",
+          "format": "string(255)"
+        },
+        "payable-id": {
+          "type": "integer",
+          "description": "payable_id",
+          "format": "integer"
+        },
+        "payable-type": {
+          "type": "string",
+          "description": "payable_type",
+          "format": "string(255)"
+        },
+        "payment-date": {
+          "type": "string",
+          "description": "payment_date",
+          "format": "datetime"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "Pcard": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "cvv": {
+          "type": "string",
+          "description": "cvv",
+          "readOnly": true
+        },
+        "expiry": {
+          "type": "string",
+          "description": "expiry",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "nickname": {
+          "type": "string",
+          "description": "nickname",
+          "format": "string(255)"
+        },
+        "number": {
+          "type": "string",
+          "description": "number",
+          "format": "string"
+        },
+        "shared": {
+          "type": "boolean",
+          "description": "shared",
+          "format": "boolean"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "expiry",
+        "name",
+        "number"
+      ]
+    },
+    "Period": {
+      "type": "object",
+      "properties": {
+        "account-type": {
+          "$ref": "#/definitions/AccountType"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime"
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "end-date": {
+          "type": "string",
+          "description": "end_date",
+          "format": "datetime"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "is-open": {
+          "type": "boolean",
+          "description": "is_open",
+          "format": "boolean"
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(100)"
+        },
+        "segment-1": {
+          "type": "boolean",
+          "description": "segment_1",
+          "format": "boolean"
+        },
+        "segment-10": {
+          "type": "boolean",
+          "description": "segment_10",
+          "format": "boolean"
+        },
+        "segment-11": {
+          "type": "boolean",
+          "description": "segment_11",
+          "format": "boolean"
+        },
+        "segment-12": {
+          "type": "boolean",
+          "description": "segment_12",
+          "format": "boolean"
+        },
+        "segment-13": {
+          "type": "boolean",
+          "description": "segment_13",
+          "format": "boolean"
+        },
+        "segment-14": {
+          "type": "boolean",
+          "description": "segment_14",
+          "format": "boolean"
+        },
+        "segment-15": {
+          "type": "boolean",
+          "description": "segment_15",
+          "format": "boolean"
+        },
+        "segment-16": {
+          "type": "boolean",
+          "description": "segment_16",
+          "format": "boolean"
+        },
+        "segment-17": {
+          "type": "boolean",
+          "description": "segment_17",
+          "format": "boolean"
+        },
+        "segment-18": {
+          "type": "boolean",
+          "description": "segment_18",
+          "format": "boolean"
+        },
+        "segment-19": {
+          "type": "boolean",
+          "description": "segment_19",
+          "format": "boolean"
+        },
+        "segment-2": {
+          "type": "boolean",
+          "description": "segment_2",
+          "format": "boolean"
+        },
+        "segment-20": {
+          "type": "boolean",
+          "description": "segment_20",
+          "format": "boolean"
+        },
+        "segment-3": {
+          "type": "boolean",
+          "description": "segment_3",
+          "format": "boolean"
+        },
+        "segment-4": {
+          "type": "boolean",
+          "description": "segment_4",
+          "format": "boolean"
+        },
+        "segment-5": {
+          "type": "boolean",
+          "description": "segment_5",
+          "format": "boolean"
+        },
+        "segment-6": {
+          "type": "boolean",
+          "description": "segment_6",
+          "format": "boolean"
+        },
+        "segment-7": {
+          "type": "boolean",
+          "description": "segment_7",
+          "format": "boolean"
+        },
+        "segment-8": {
+          "type": "boolean",
+          "description": "segment_8",
+          "format": "boolean"
+        },
+        "segment-9": {
+          "type": "boolean",
+          "description": "segment_9",
+          "format": "boolean"
+        },
+        "start-date": {
+          "type": "string",
+          "description": "start_date",
+          "format": "datetime"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime"
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "end-date",
+        "name",
+        "start-date"
+      ]
+    },
+    "PhoneNumber": {
+      "type": "object",
+      "properties": {
+        "area-code": {
+          "type": "string",
+          "description": "area_code",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "country-code": {
+          "type": "string",
+          "description": "country_code",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "extension": {
+          "type": "string",
+          "description": "extension",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "number": {
+          "type": "string",
+          "description": "number",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "Purpose": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "kind": {
+          "type": "string",
+          "description": "Kind",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "kind",
+        "name"
+      ]
+    },
+    "Role": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "omnipotent": {
+          "type": "boolean",
+          "description": "omnipotent",
+          "format": "boolean"
+        },
+        "system-role": {
+          "type": "boolean",
+          "description": "system_role",
+          "format": "boolean"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "Travel-Trip": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "end-date": {
+          "type": "string",
+          "description": "End date of Booking",
+          "format": "datetime"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "image-ref": {
+          "type": "string",
+          "description": "Image Reference of Trip",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Trip Name",
+          "format": "string(255)"
+        },
+        "start-date": {
+          "type": "string",
+          "description": "Start date of Booking",
+          "format": "datetime"
+        },
+        "trip-reference": {
+          "type": "integer",
+          "description": "Trip Reference Id of Provider",
+          "format": "integer"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "viewable": {
+          "type": "string",
+          "description": "Viewable",
+          "format": "true",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "end-date",
+        "name",
+        "start-date",
+        "trip-reference"
+      ]
+    },
+    "Travel-TripBooking": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Booking amount",
+          "format": "decimal(32,4)"
+        },
+        "booking-date": {
+          "type": "string",
+          "description": "Booking Date",
+          "format": "datetime"
+        },
+        "booking-tool-reference": {
+          "type": "integer",
+          "description": "Booking Reference Id of Provider Booking",
+          "format": "integer"
+        },
+        "budget-amount": {
+          "type": "number",
+          "description": "Budget amount",
+          "format": "decimal(32,4)"
+        },
+        "budget-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "coupa-advantage-offset": {
+          "type": "boolean",
+          "description": "Coupa advantage offset",
+          "format": "boolean"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "end-date": {
+          "type": "string",
+          "description": "End date of Booking",
+          "format": "datetime"
+        },
+        "expense-carbon-emission": {
+          "$ref": "#/definitions/ExpenseCarbonEmission"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "is-exchanged": {
+          "type": "string",
+          "description": "Is exchanged",
+          "readOnly": true
+        },
+        "payment-channel": {
+          "type": "string",
+          "description": "Payment Channel of Booking",
+          "format": "string(255)",
+          "enum": [
+            "coupa_pay",
+            "credit_card",
+            "personal_card",
+            "central_card",
+            "corporate_card"
+          ]
+        },
+        "prepaid": {
+          "type": "boolean",
+          "description": "Prepaid",
+          "format": "boolean"
+        },
+        "prev-booking-reference": {
+          "type": "integer",
+          "description": "Previous Booking Reference Id",
+          "format": "integer"
+        },
+        "refundable": {
+          "type": "boolean",
+          "description": "Refundable",
+          "format": "boolean"
+        },
+        "reporting-total": {
+          "type": "number",
+          "description": "Reporting total",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "requested-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "requested-by-id": {
+          "type": "integer",
+          "description": "Requested by",
+          "format": "integer"
+        },
+        "segment-type": {
+          "type": "string",
+          "description": "Segment Type of Booking",
+          "format": "string(255)",
+          "enum": [
+            "flight",
+            "hotel",
+            "rental_car"
+          ]
+        },
+        "start-date": {
+          "type": "string",
+          "description": "Start date of Booking",
+          "format": "datetime"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of Booking",
+          "format": "string(255)",
+          "enum": [
+            "draft",
+            "confirmed",
+            "failed",
+            "voided",
+            "cancelled",
+            "failedCardIssuance",
+            "exchangePending",
+            "exchanged",
+            "rebooked",
+            "rebookError",
+            "rebookPending",
+            "exchangeError"
+          ]
+        },
+        "travel-trip": {
+          "$ref": "#/definitions/Travel-Trip"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "virtual-card": {
+          "$ref": "#/definitions/CoupaPay-VirtualCard"
+        }
+      },
+      "required": [
+        "amount",
+        "booking-date",
+        "booking-tool-reference",
+        "end-date",
+        "payment-channel",
+        "requested-by-id",
+        "segment-type",
+        "start-date",
+        "status",
+        "travel-trip"
+      ]
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "account-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AccountGroup"
+          }
+        },
+        "account-security-type": {
+          "type": "integer",
+          "description": "account_security_type",
+          "format": "integer"
+        },
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "active?": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "aic-user": {
+          "type": "boolean",
+          "description": "Does the user have an AI Classification License?",
+          "format": "boolean"
+        },
+        "aic-user?": {
+          "type": "boolean",
+          "description": "Does the user have an AI Classification License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "allow-employee-payment-account-creation": {
+          "type": "boolean",
+          "description": "Allow the user to create an Employee Payment Account, regardless of the Employee Payment Channel.",
+          "format": "boolean"
+        },
+        "allow-user-to-upload-invoice-from-mobile": {
+          "type": "boolean",
+          "description": "Allow user to upload Invoice images from Coupa Mobile to Invoice Inbox",
+          "format": "boolean"
+        },
+        "allowed-invoice-inboxes": {
+          "type": "string",
+          "description": "Invoice inboxes that mobile user allowed to send invoice to",
+          "format": "text",
+          "readOnly": true
+        },
+        "analytics-user": {
+          "type": "boolean",
+          "description": "Does the user have an Analytics License?",
+          "format": "boolean"
+        },
+        "analytics-user?": {
+          "type": "boolean",
+          "description": "Does the user have an Analytics License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "api-user": {
+          "type": "boolean",
+          "description": "Is an API User?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "api-user?": {
+          "type": "boolean",
+          "description": "Is an API User?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "approval-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserGroup"
+          }
+        },
+        "approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "authentication-method": {
+          "type": "string",
+          "description": "What Authentication Method will be used (Coupa_Credentials, LDAP, SAML)?",
+          "format": "string(255)"
+        },
+        "avatar-thumb-url": {
+          "type": "string",
+          "description": "Avatar url",
+          "format": "string",
+          "readOnly": true
+        },
+        "business-function": {
+          "type": "string",
+          "description": "The employee's main job role in your company, e.g. Sales, Executive, Administrative, Managerial, etc.",
+          "format": "string(255)"
+        },
+        "business-group-security-type": {
+          "type": "integer",
+          "description": "business_group_security_type",
+          "format": "integer",
+          "enum": [
+            "0",
+            "1"
+          ]
+        },
+        "can-expense-for": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "category-planner-user": {
+          "type": "boolean",
+          "description": "Category Planner User",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "category-planner-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Category Planner License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "ccw-user": {
+          "type": "boolean",
+          "description": "Does the user have a Contingent Workforce License?",
+          "format": "boolean"
+        },
+        "ccw-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Contingent Workforce License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "clm-advanced-user": {
+          "type": "boolean",
+          "description": "Does the user have a Contract Lifecycle Management Advanced License?",
+          "format": "boolean"
+        },
+        "clm-advanced-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Contract Lifecycle Management Advanced License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "contract-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "contract-self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "contracts-user": {
+          "type": "boolean",
+          "description": "Does the user have a Contracts License?",
+          "format": "boolean"
+        },
+        "contracts-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Contracts License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "country-of-residence": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "default-account": {
+          "$ref": "#/definitions/Account"
+        },
+        "default-account-type": {
+          "$ref": "#/definitions/AccountType"
+        },
+        "default-address": {
+          "$ref": "#/definitions/Address"
+        },
+        "default-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "default-locale": {
+          "type": "string",
+          "description": "Default locale",
+          "format": "string(10)"
+        },
+        "department": {
+          "$ref": "#/definitions/Department"
+        },
+        "eligible-for-virtual-cards": {
+          "type": "boolean",
+          "description": "Is the user eligible to manage their virtual cards?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "email": {
+          "type": "string",
+          "description": "email",
+          "format": "string(255)"
+        },
+        "employee-number": {
+          "type": "string",
+          "description": "employee number",
+          "format": "string(255)"
+        },
+        "employee-payment-channel": {
+          "type": "string",
+          "description": "Determine how expenses will be paid to the employee. 'ERP' per default and can be switched to 'CoupaPay' if instance allows it.",
+          "format": "string(255)"
+        },
+        "escalation-threshold": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "expense-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "expense-self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "expense-user": {
+          "type": "boolean",
+          "description": "Does the user have a Expense License?",
+          "format": "boolean"
+        },
+        "expense-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Expense License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "expenses-delegated-to": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "firstname": {
+          "type": "string",
+          "description": "first name",
+          "format": "string(40)"
+        },
+        "fullname": {
+          "type": "string",
+          "description": "full name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "generate-password-and-notify": {
+          "type": "string",
+          "description": "Set to Yes if you want the system to invite the user to the system and have them set up their password",
+          "format": "string",
+          "enum": [
+            "Yes",
+            "No"
+          ]
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "inventory-organizations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InventoryOrganization"
+          }
+        },
+        "inventory-user": {
+          "type": "boolean",
+          "description": "Does the user have a Inventory License?",
+          "format": "boolean"
+        },
+        "inventory-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Inventory License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "invoice-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "invoice-self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "invoicing-user": {
+          "type": "boolean",
+          "description": "Does the user have a Invoicing License?",
+          "format": "boolean"
+        },
+        "invoicing-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Invoicing License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "lastname": {
+          "type": "string",
+          "description": "last name",
+          "format": "string(40)"
+        },
+        "legal-entity": {
+          "$ref": "#/definitions/LegalEntity"
+        },
+        "login": {
+          "type": "string",
+          "description": "login",
+          "format": "string(255)"
+        },
+        "manager": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "mention-name": {
+          "type": "string",
+          "description": "Mention Name",
+          "format": "string(255)"
+        },
+        "middlename": {
+          "type": "string",
+          "description": "middle name",
+          "format": "string(255)"
+        },
+        "msp-user": {
+          "type": "boolean",
+          "description": "Boolean flag to tell if the user is of MSP type",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "password": {
+          "type": "string",
+          "description": "Changed password",
+          "format": "string"
+        },
+        "pcard": {
+          "$ref": "#/definitions/Pcard"
+        },
+        "phone-mobile": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "phone-work": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "purchasing-user": {
+          "type": "boolean",
+          "description": "Does the user have a Purchasing License?",
+          "format": "boolean"
+        },
+        "purchasing-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Purchasing License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "requisition-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "requisition-self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "risk-assess-user": {
+          "type": "boolean",
+          "description": "Does the user have a Risk Assess License?",
+          "format": "boolean"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Role"
+          }
+        },
+        "salesforce-enabled": {
+          "type": "boolean",
+          "description": "salesforce_enabled",
+          "format": "boolean"
+        },
+        "salesforce-id": {
+          "type": "string",
+          "description": "salesforce_id",
+          "format": "string(255)"
+        },
+        "self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "seniority-level": {
+          "type": "string",
+          "description": "The employee's job grade or band in your company's hierarchy.",
+          "format": "string(255)"
+        },
+        "sourcing-user": {
+          "type": "boolean",
+          "description": "Does the user have a Sourcing License?",
+          "format": "boolean"
+        },
+        "sourcing-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Sourcing License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "spend-guard-user": {
+          "type": "boolean",
+          "description": "Does the user have a Spend Guard License?",
+          "format": "boolean"
+        },
+        "spend-guard-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Spend Guard License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "sso-identifier": {
+          "type": "string",
+          "description": "User's Single Sign-on ID (SSO ID)",
+          "format": "string(255)"
+        },
+        "supplier-id": {
+          "type": "integer",
+          "description": "Supplier Id",
+          "format": "integer",
+          "readOnly": true
+        },
+        "supplier-user": {
+          "type": "boolean",
+          "description": "Supplier User",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "supply-chain-user": {
+          "type": "boolean",
+          "description": "Does the user have a Supply Chain License?",
+          "format": "boolean"
+        },
+        "supply-chain-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Supply Chain License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "support-user": {
+          "type": "boolean",
+          "description": "Support User",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "travel-user": {
+          "type": "boolean",
+          "description": "Does the user have a Travel License?",
+          "format": "boolean"
+        },
+        "travel-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Travel License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "treasury-user": {
+          "type": "boolean",
+          "description": "Does the user have a Treasury License?",
+          "format": "boolean"
+        },
+        "treasury-user?": {
+          "type": "boolean",
+          "description": "Does the user have a Treasury License?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "user-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserGroup"
+          }
+        },
+        "work-confirmation-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "working-warehouses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Warehouse"
+          }
+        }
+      },
+      "required": [
+        "email",
+        "firstname",
+        "lastname",
+        "login",
+        "salesforce-id"
+      ]
+    },
+    "UserGroup": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean"
+        },
+        "avatar-thumb-url": {
+          "type": "string",
+          "description": "URL for avatar thumbnail",
+          "format": "string",
+          "readOnly": true
+        },
+        "can-approve": {
+          "type": "boolean",
+          "description": "User group has the ability to be an approver",
+          "format": "boolean"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description",
+          "format": "text"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "mention-name": {
+          "type": "string",
+          "description": "Mention name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "open": {
+          "type": "boolean",
+          "description": "User group is open for everyone to join or owner must invite others",
+          "format": "boolean"
+        },
+        "owner": {
+          "$ref": "#/definitions/UserGroup"
+        },
+        "type": {
+          "type": "string",
+          "description": "Blank for Groups, Project for Projects",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserSimple"
+          }
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "UserSimple": {
+      "type": "object",
+      "properties": {
+        "avatar-thumb-url": {
+          "type": "string",
+          "description": "Avatar url",
+          "format": "string",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "email": {
+          "type": "string",
+          "description": "email",
+          "format": "string(255)"
+        },
+        "employee-number": {
+          "type": "string",
+          "description": "employee number",
+          "format": "string(255)"
+        },
+        "firstname": {
+          "type": "string",
+          "description": "first name",
+          "format": "string(40)"
+        },
+        "fullname": {
+          "type": "string",
+          "description": "full name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "lastname": {
+          "type": "string",
+          "description": "last name",
+          "format": "string(40)"
+        },
+        "login": {
+          "type": "string",
+          "description": "login",
+          "format": "string(255)"
+        },
+        "salesforce-id": {
+          "type": "string",
+          "description": "salesforce_id",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "email",
+        "firstname",
+        "lastname",
+        "login",
+        "salesforce-id"
+      ]
+    },
+    "Warehouse": {
+      "type": "object",
+      "properties": {
+        "active-flag": {
+          "type": "boolean",
+          "description": "active_flag",
+          "format": "boolean"
+        },
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "warehouse-locations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WarehouseLocation"
+          }
+        },
+        "warehouse-type": {
+          "$ref": "#/definitions/WarehouseType"
+        }
+      },
+      "required": [
+        "address",
+        "currency",
+        "description",
+        "name",
+        "warehouse-type"
+      ]
+    },
+    "WarehouseLocation": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean"
+        },
+        "aisle": {
+          "type": "string",
+          "description": "aisle",
+          "format": "string(255)"
+        },
+        "bin": {
+          "type": "string",
+          "description": "bin",
+          "format": "string(255)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "label": {
+          "type": "string",
+          "description": "Display label",
+          "format": "string",
+          "readOnly": true
+        },
+        "level": {
+          "type": "string",
+          "description": "level",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "warehouse-id": {
+          "type": "integer",
+          "description": "Warehouse Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "warehouse-name": {
+          "type": "string",
+          "description": "Warehouse name",
+          "format": "string",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "aisle"
+      ]
+    },
+    "WarehouseType": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "description",
+        "name"
+      ]
+    }
+  }
+}
+```

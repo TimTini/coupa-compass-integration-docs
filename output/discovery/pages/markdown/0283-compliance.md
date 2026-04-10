@@ -1,0 +1,18 @@
+---
+title: "compliance"
+url: "https://compass.coupa.com/en-us/trust/compliance"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9owFP4rkd9zrSFgARItm4bUbVGhe9hLdZocVquO7fk4Hfv3dcxWsUn0MV%2FOdzvHC4JeWbEe%2FJO%2Bw58Dkk%2B2myV7mE1gNuXzWdrxukx5VcxT4FOecjgc8Oqq5pPZI0u%2BoSNp9JJVWcGSLdGAW00etA9QUU3TgqdlsS9KMakFn2d1WX9nySa4SA0%2BMp%2B8tyTyvDWDhRSPHp0GlZlnD1lr%2Bhys%2Fe%2FfQ4AtEFnjfPgqczw%2Bm6oYCuDV5rr%2F0ELp65zI5GM5lnw0rsXYcMkOoAjHpE0QkC%2F4hjTOeNMadS11J%2FWPJRucFgZIktDQIwnfit36860ITcXjaYjEp%2F2%2BSZuvuz1L1kToxko3RtPQo9uhe5Et3t%2FdnpeMybNYKNYbNfNLXJYce6VJxCO9H8n%2Byc9Wi3FaxFu4M%2F77dPibgK0uZl3kZ8onGyu%2BBKntpjFKtr%2FHTffgLzuVWRkR2aWHOCqwB6nWXeeQKOxQKfPrxiH4cBjvhrCAfHWy%2FfeNrl4B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Ftrust%2Fcompliance"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:57:50+00:00"
+---
+
+# compliance
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/trust/compliance](https://compass.coupa.com/en-us/trust/compliance)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9owFP4rkd9zrSFgARItm4bUbVGhe9hLdZocVquO7fk4Hfv3dcxWsUn0MV%2FOdzvHC4JeWbEe%2FJO%2Bw58Dkk%2B2myV7mE1gNuXzWdrxukx5VcxT4FOecjgc8Oqq5pPZI0u%2BoSNp9JJVWcGSLdGAW00etA9QUU3TgqdlsS9KMakFn2d1WX9nySa4SA0%2BMp%2B8tyTyvDWDhRSPHp0GlZlnD1lr%2Bhys%2Fe%2FfQ4AtEFnjfPgqczw%2Bm6oYCuDV5rr%2F0ELp65zI5GM5lnw0rsXYcMkOoAjHpE0QkC%2F4hjTOeNMadS11J%2FWPJRucFgZIktDQIwnfit36860ITcXjaYjEp%2F2%2BSZuvuz1L1kToxko3RtPQo9uhe5Et3t%2FdnpeMybNYKNYbNfNLXJYce6VJxCO9H8n%2Byc9Wi3FaxFu4M%2F77dPibgK0uZl3kZ8onGyu%2BBKntpjFKtr%2FHTffgLzuVWRkR2aWHOCqwB6nWXeeQKOxQKfPrxiH4cBjvhrCAfHWy%2FfeNrl4B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Ftrust%2Fcompliance](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9owFP4rkd9zrSFgARItm4bUbVGhe9hLdZocVquO7fk4Hfv3dcxWsUn0MV%2FOdzvHC4JeWbEe%2FJO%2Bw58Dkk%2B2myV7mE1gNuXzWdrxukx5VcxT4FOecjgc8Oqq5pPZI0u%2BoSNp9JJVWcGSLdGAW00etA9QUU3TgqdlsS9KMakFn2d1WX9nySa4SA0%2BMp%2B8tyTyvDWDhRSPHp0GlZlnD1lr%2Bhys%2Fe%2FfQ4AtEFnjfPgqczw%2Bm6oYCuDV5rr%2F0ELp65zI5GM5lnw0rsXYcMkOoAjHpE0QkC%2F4hjTOeNMadS11J%2FWPJRucFgZIktDQIwnfit36860ITcXjaYjEp%2F2%2BSZuvuz1L1kToxko3RtPQo9uhe5Et3t%2FdnpeMybNYKNYbNfNLXJYce6VJxCO9H8n%2Byc9Wi3FaxFu4M%2F77dPibgK0uZl3kZ8onGyu%2BBKntpjFKtr%2FHTffgLzuVWRkR2aWHOCqwB6nWXeeQKOxQKfPrxiH4cBjvhrCAfHWy%2FfeNrl4B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Ftrust%2Fcompliance)
+
+Observed redirect page title: Coupa Portals - Sign In

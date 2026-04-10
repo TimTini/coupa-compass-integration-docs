@@ -1,0 +1,137 @@
+Invoice Line API
+
+Associations
+
+This resource is a data type and doesn't have its own endpoint. See Invoice Header API to see what actions are available.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+account 	account 	yes 	 	 	yes 	yes 	 Account
+account-allocations 	account-allocations 	 	 	 	yes 	yes 	Invoice Line Allocation
+accounting-total 	accounting-total 	 	 	 	 	yes 	decimal(30,3)
+accounting-total-currency 	accounting-total-currency 	 	 	 	 	yes 	 Currency
+adjustment-type 	Adjustment Type 	 	 	price, quantity, other 	 	yes 	string(255)
+billing-note 	Billing note 	 	 	 	yes 	yes 	text
+bulk-price 	Bulk Price 	 	 	 	yes 	yes 	 Bulk Price
+category 	Category 	 	 	 	yes 	yes 	string(255)
+classification-of-goods 	Classification of Goods 	 	 	 	yes 	yes 	string(8)
+commodity 	Commodity 	 	 	 	yes 	yes 	 Commodity
+company-uom 	Company UOM 	 	 	 	 	yes 	string(255)
+contract 	contract 	 	 	 	yes 	yes 	 Contracts
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+currency 	Currency of transaction 	 	 	 	yes 	yes 	 Currency
+customs-declaration-number 	Customs Declaration Number 	 	 	 	 	yes 	string(255)
+deductibility 	Deductibility 	 	 	 	yes 	yes 	string(255)
+delivery-note-number 	Delivery Note Number 	 	 	 	yes 	yes 	string(255)
+description 	description 	yes 	 	 	yes 	yes 	string(1550)
+discount-amount 	Discount Amount 	 	 	 	 	yes 	decimal(30,3)
+failed-tolerances 	Failed tolerances 	 	 	 	yes 	yes 	 Failed Tolerance
+fiscal-code 	Fiscal Code 	 	 	 	yes 	yes 	string(4)
+handling-distribution-total 	Handling distribution total 	 	 	 	 	yes 	decimal(32,4)
+hsn-sac-code 	HSN/SAC 	 	 	 	yes 	yes 	string(255)
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+item 	item 	 	 	 	yes 	yes 	 Item
+item-barcode 	Item Barcode 	 	 	 	yes 	yes 	string(14)
+line-num 	line-num 	 	 	 	yes 	yes 	integer
+line-type 	line type 	 	 	 	yes
+match-reference 	Three-way match attribute to connect with Receipt and ASN Line 	 	yes 	yes 	string(255)
+misc-distribution-total 	Misc distribution total 	 	 	 	 	yes 	decimal(32,4)
+municipality-taxation-code 	Municipality Taxation Code 	 	 	 	yes 	yes 	string(255)
+net-weight 	net-weight 	 	 	 	yes 	yes 	decimal(30,6)
+order-header-num 	order-header-num 	 	 	 	 	yes
+order-line-commodity 	order-line-commodity 	 	 	 	 	yes
+order-line-custom-fields 	order-line-custom-fields 	 	 	 	 	yes
+order-line-id 	order-line-id 	 	 	 	yes 	yes 	integer
+order-line-num 	order-line-num 	 	 	 	 	yes
+order-line-source-part-num 	Supplier part number on the respective order line 	 	 	 	 	yes
+original-date-of-supply 	Original Date of Supply 	 	 	 	yes 	yes 	datetime
+period 	period 	 	 	 	yes 	yes 	 Period
+po-number 	Po number 	 	 	 	 	yes
+price 	price 	yes 	 	 	yes 	yes 	decimal(46,20)
+price-per-uom 	price-per-uom 	 	 	 	yes 	yes 	decimal(30,6)
+property-tax-account 	Property Tax Account 	 	 	 	 	yes 	string(255)
+quantity 	quantity 	 	 	 	yes 	yes 	decimal(30,6)
+shipping-distribution-total 	Shipping distribution total 	 	 	 	 	yes 	decimal(32,4)
+source-part-num 	Source part num 	 	 	 	yes 	yes 	string(255)
+status 	transaction status 	 	 	 	 	yes 	string(255)
+subcategory 	Subcategory 	 	 	 	yes 	yes 	string(255)
+supp-aux-part-num 	 	 	 	 	 	yes 	text
+taggings 	Taggings 	 	 	 	yes 	yes 	 Tagging API
+tags 	Tags 	 	 	 	yes 	yes 	 Tag
+tax-amount 	tax-amount 	 	 	 	yes 	yes 	decimal
+tax-amount-engine 	Tax amount calculated by either Coupa Native or External Tax Engine based on configuration 	 	 	 	 	yes
+tax-code 	tax-code 	 	 	 	yes 	yes 	Tax Code
+tax-code-engine 	Tax code returned by External Tax Engine based on configuration 	 	 	 	 	yes
+tax-description 	tax-description 	 	 	 	 	yes
+tax-distribution-total 	Tax distribution total 	 	 	 	 	yes 	decimal(32,4)
+tax-lines 	tax-lines 	 	 	 	yes 	yes 	 Tax Line
+tax-location 	tax-location 	 	 	 	 	yes
+tax-rate 	tax-rate 	 	 	 	yes 	yes
+tax-rate-engine 	Tax rate returned by External Tax Engine based on configuration 	 	 	 	 	yes
+tax-supply-date 	tax-supply-date 	 	 	 	 	yes
+total 	total 	 	 	 	 	yes 	decimal(46,20)
+type 	type
+
+InvoiceQuantityLine,
+
+InvoiceAmountLine
+yes 	yes 	string(100)
+unspsc 	UNSPSC 	 	 	 	 	yes 	string(255)
+uom 	unit of measure 	 	 	 	yes 	yes 	 Uom
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User
+weight-uom 	weight-uom 	 	 	 	yes 	yes 	 Uom
+withholding-tax-lines 	Withholding tax lines 	 	 	 	yes 	yes 	 Withholding Tax Line
+adjustment-type 	Adjustment Type 	 	 	price, quantity, other 	yes 	yes 	string(255)
+supp-aux-part-num 	 	 	 	 	yes 	yes 	text
+unspsc 	UNSPSC 	 	 	 	yes 	 	string(255)
+
+Country Specific Elements
+
+This table defining which invoice elements are supported for each country's invoicing requirements. Each row indicates an element that is valid/supported for invoices in the specified country.
+
+Element
+
+Country Code
+
+classification-of-goods
+
+BR
+
+fiscal-code
+
+BR
+
+item-barcode
+
+BR
+
+municipality-taxation-code
+
+BR
+
+hsn-sac-code
+
+IN
+
+company-uom
+
+MX
+
+customs-declaration-number
+
+MX
+
+discount-amount
+
+MX
+
+property-tax-account
+
+MX
+
+unspsc
+
+MX

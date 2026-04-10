@@ -1,0 +1,9 @@
+x295747.xml
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/x295747.xml
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8TJ2m6gtVWKnTTKsEW0bKHvaAb53ZYJLbxdVj37%2Be4A3VI5TEn556Pez0n6DsrVoN%2F1Hf4PCD5ZLNesIemacpGXs7SCvZFWjUyTy8m5ad0OrtELCaylVCx5Ac6UkYvWJnlLNkQDbjR5EH7AOWBnldpke%2FyQkxnYnqRleXkJ0vWwUVp8HHy0XtLgnNpBgspHjw6DV1mnjxk0vQcrH337yHAFoiscT58FRwPT6bMhxyqcn3Vf5ZQ%2BBknMnwsx5IvxkmMDRdsDx3hmLQOAuoF35DaGW%2Bk6a6UbpX%2BtWCD08IAKRIaeiThpdiubm9EaCqaI4nE192uTuvv2x1LVkToxkrXRtPQo9uie1ES7%2B9uTkvG5FksFOuNmvzcLEsOfadJxCN9HMn%2By8%2BW85Et4i3cyfzH4%2FCagC3PZp3zE%2BWjjRXfgtRmXZtOyT%2Fjpnvw552KrIiIatN9pArsQXWrtnVIFHbYdeb3tUPw4TDeDWEBfHm0%2Ff%2BNLv8C&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fprocurement%2Fexternal-purchase-orders-faq
+
+Observed redirect page title: Coupa Portals - Sign In

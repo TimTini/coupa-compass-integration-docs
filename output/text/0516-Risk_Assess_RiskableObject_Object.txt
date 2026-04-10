@@ -1,0 +1,48 @@
+Risk Assess RiskableObject Object
+
+Provides details about the evaluable or riskable entity that underwent evaluation. The RiskableObject object can represent various types of entities, including Supplier, Relationship, Engagement, and others.
+
+Associations
+
+Access the RiskableObject object through the Evaluations API. For more information, see Risk Assess Evaluations API.
+
+Elements
+
+The following elements are available for the RiskableObject object:
+
+Element
+
+Data Type
+
+Description
+
+entityId
+
+string
+
+Unique identifier for the evaluated object in CRA.
+
+name
+
+string
+
+Name of the riskable object.
+
+status
+
+string
+
+Current status of the riskable object in CRA.
+
+objectName
+
+string
+
+Fully qualified type of the object. For example: Hiperos.Models.Supplier
+
+links 	Array of objects. See example in following section. 	Contains HATEOAS-style links, which facilitate navigation to specific APIs. Only currently populated for supplier-related objects, for example, a riskableObject that pertains to a supplier. For other APIs, the value is null.
+
+Links element
+
+Example of a populated links object for a riskableObject of type supplier:
+{ "riskableObject": { "entityId": "32f9fea2-f321-4203-aead-3cc168058ce6", "name": "Reebok", "objectName": "Hiperos.Models.Supplier", "status": "General_Active", "links": [ { "href": "api/suppliers", "rel": "retrieve-suppliers", "method": "GET" }, { "href": "api/suppliers?entityId[eq]=32f9fea2-f321-4203-aead-3cc168058ce6", "rel": "_self", "method": "GET" } ] } }

@@ -1,0 +1,200 @@
+<article class="" id="sourcing_api_quote_requests">
+<h1 class="title">Sourcing API (/quote_requests)</h1>
+<div class="body">
+<div class="" id="overview-d957e261226">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Use the sourcing API to:</p>
+<ol class="ol">
+<li class="li">Create RFP, RFI, or RFQ type events.</li>
+<li class="li">Extract supplier responses to the event.</li>
+<li class="li">Award events to suppliers at the line level.</li>
+</ol>
+<p class="">For the Coupa back end, a sourcing event is known as a quote
+request.</p>
+</div>
+<div class="" id="endpoints">
+<h2 class="title sectiontitle">Endpoints</h2>
+<p class="">The following endpoints are available for sourcing API.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Resource</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Sourcing events</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests</code>
+</td>
+<td class="entry" align="">Endpoint for creating new sourcing events and managing existing
+events</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier responses</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_responses</code>
+</td>
+<td class="entry" align="">Endpoint for working with supplier responses</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sourcing suppliers</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_suppliers</code>
+</td>
+<td class="entry" align="">Endpoint for getting info about suppliers on a sourcing
+event</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="example_calls-d957e261322">
+<h2 class="title sectiontitle">Example calls</h2>
+</div>
+<div class="" id="create_a_new_sourcing_event">
+<h2 class="title sectiontitle">Create a new sourcing event</h2>
+<p class="">
+<code class="ph codeph">POST /api/quote_requests/</code>
+</p>
+<p class="">To create a new event, you can send a basic POST. Include the
+<code class="ph codeph">&lt;event-type&gt;</code> element or else Coupa will default
+to an RFI.</p>
+</div>
+<div class="" id="payload-d957e261335">
+<h2 class="title sectiontitle">Payload</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;quote-request&gt;
+	&lt;event-type type="symbol"&gt;RFQ&lt;/event-type&gt;
+&lt;/quote-request&gt;</code>
+</pre>
+</div>
+<div class="" id="_201_success_response-d957e261349">
+<h2 class="title sectiontitle">201 Success response</h2>
+<p class="">Coupa returns the newly-created sourcing event, with a unique
+<code class="ph codeph">&lt;id&gt;</code> .</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;quote-request&gt;
+	&lt;id type="integer"&gt;1434&lt;/id&gt;
+	&lt;created-at type="dateTime"&gt;2018-04-11T10:37:25-07:00&lt;/created-at&gt;
+	&lt;updated-at type="dateTime"&gt;2018-04-11T10:46:58-07:00&lt;/updated-at&gt;
+	&lt;description nil="true" /&gt;
+	&lt;start-time type="dateTime"&gt;2018-04-11T17:00:00-07:00&lt;/start-time&gt;
+	&lt;start-on-submit type="boolean"&gt;true&lt;/start-on-submit&gt;
+	&lt;event-type type="symbol"&gt;rfi&lt;/event-type&gt;
+	&lt;end-time type="dateTime"&gt;2018-04-25T17:00:00-07:00&lt;/end-time&gt;
+	&lt;state&gt;draft&lt;/state&gt;
+	&lt;comments nil="true" /&gt;
+	&lt;allow-multiple-response type="boolean"&gt;true&lt;/allow-multiple-response&gt;
+	&lt;sealed-bids type="boolean"&gt;true&lt;/sealed-bids&gt;
+	&lt;allow-award-individual-line-items type="boolean"&gt;false&lt;/allow-award-individual-line-items&gt;
+	&lt;automatic-bid-unsealing type="boolean"&gt;true&lt;/automatic-bid-unsealing&gt;
+	&lt;timezone&gt;US/Pacific&lt;/timezone&gt;
+	&lt;currency&gt;...&lt;/currency&gt;
+	&lt;lots type="array" /&gt;
+	&lt;lines type="array" /&gt;
+	&lt;quote-suppliers type="array" /&gt;
+	&lt;attachments type="array" /&gt;
+	&lt;forms type="array" /&gt;
+	&lt;quote-request-attachments type="array" /&gt;
+	&lt;tags type="array" /&gt;
+	&lt;business-partners type="array" /&gt;
+	&lt;/business-partners&gt;
+	&lt;created-by&gt;...&lt;/created-by&gt;
+	&lt;updated-by&gt;...&lt;/updated-by&gt;
+	&lt;custom-fields /&gt;
+&lt;/quote-request&gt;</code>
+</pre>
+</div>
+<div class="" id="see_all_the_supplier_responses_for_a_specific_event">
+<h2 class="title sectiontitle">See all the supplier responses for a
+specific event</h2>
+<p class="">
+<pre>
+<code class="codeblock">GET /api/quote_requests/{event_id}/quote_responses</code>
+</pre>
+</p>
+</div>
+<div class="" id="_200_ok_response">
+<h2 class="title sectiontitle">200 OK response</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;quote-responses type="array"&gt;
+	&lt;quote-response&gt;
+		&lt;id type="integer"&gt;1080&lt;/id&gt;
+		&lt;created-at type="dateTime"&gt;2018-04-10T05:51:28-07:00&lt;/created-at&gt;
+		&lt;updated-at type="dateTime"&gt;2018-04-10T05:51:34-07:00&lt;/updated-at&gt;
+		&lt;quote-request-id type="integer"&gt;1429&lt;/quote-request-id&gt;
+		&lt;submitted-at type="dateTime"&gt;2018-04-10T05:51:34-07:00&lt;/submitted-at&gt;
+		&lt;state&gt;submitted&lt;/state&gt;
+		&lt;position type="integer"&gt;2&lt;/position&gt;
+		&lt;comments nil="true" /&gt;
+		&lt;lines type="array"&gt;
+			&lt;line&gt;
+				&lt;id type="integer"&gt;7447&lt;/id&gt;
+				&lt;created-at type="dateTime"&gt;2018-04-10T05:51:28-07:00&lt;/created-at&gt;
+				&lt;updated-at type="dateTime"&gt;2018-04-10T05:51:33-07:00&lt;/updated-at&gt;
+				&lt;price-amount type="decimal"&gt;200.0&lt;/price-amount&gt;
+				&lt;quantity type="decimal"&gt;1.0&lt;/quantity&gt;
+				&lt;reporting-price-amount type="decimal"&gt;200.0&lt;/reporting-price-amount&gt;
+				&lt;price-currency&gt;...&lt;/price-currency&gt;
+				&lt;quote-request-line-id type="integer"&gt;5834&lt;/quote-request-line-id&gt;
+				&lt;lot-id type="integer"&gt;0&lt;/lot-id&gt;
+			&lt;/line&gt;
+		&lt;/lines&gt;
+		&lt;quote-supplier&gt;
+			&lt;id type="integer"&gt;1714&lt;/id&gt;
+			&lt;created-at type="dateTime"&gt;2018-04-10T05:50:21-07:00&lt;/created-at&gt;
+			&lt;updated-at type="dateTime"&gt;2018-04-10T05:51:34-07:00&lt;/updated-at&gt;
+			&lt;name&gt;bnew&lt;/name&gt;
+			&lt;display-name&gt;bnew&lt;/display-name&gt;
+			&lt;email&gt;irairaira666555@gmail.com&lt;/email&gt;
+			&lt;contact-name /&gt;
+			&lt;supplier nil="true" /&gt;
+			&lt;created-by&gt;...&lt;/created-by&gt;
+			&lt;updated-by&gt;...&lt;/updated-by&gt;
+		&lt;/quote-supplier&gt;
+	&lt;/quote-response&gt;
+&lt;/quote-responses&gt;</code>
+</pre>
+</div>
+<div class="" id="award_an_event_to_a_supplier">
+<h2 class="title sectiontitle">Award an event to a supplier</h2>
+<p class="">
+<code class="ph codeph">POST /api/quote_responses/{response_id}/award</code>
+</p>
+<p class="">Once you've got the response <code class="ph codeph">&lt;id&gt;</code> , you can
+use it to award the response.</p>
+</div>
+<div class="" id="payload_to_award">
+<h2 class="title sectiontitle">Payload to award</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;root&gt;
+	&lt;quote_response_line_ids&gt;7447&lt;/quote_response_line_ids&gt;
+&lt;/root&gt;</code>
+</pre>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">If you don't specify any quote response line IDs (7447 as per example above) you can
+          award all lines at once.</p>
+</div>
+</div>
+<div class="">
+<h2 class="title sectiontitle">200 OK Response</h2>
+</div>
+<p class="">Coupa returns a 200 OK with no body.</p>
+</div>
+</article>

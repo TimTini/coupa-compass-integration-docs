@@ -1,0 +1,576 @@
+<article class="" id="concept1">
+<h1 class="title">Treasury CSV Exports</h1>
+<p class="font-size-lg">View available Standard export integrations and download example files, and configure custom CSV export integrations.</p>
+<div class="body conbody">
+<div class="">
+<p class="">Use these guidelines when setting up Standard or custom Treasury CSV exports:</p>
+<ul class="ul">
+<li class="li">Columns are not configurable. All Treasury exports contain the full set of available fields.</li>
+<li class="li">Always build your integrations using file headers instead of column positions, as positions are subject to change.</li>
+<li class="li">Exported data cannot exceed the supported limit of 150,000 rows.</li>
+<li class="li">For more information on the elements for the CSV exports, refer to the API documentation in the Treasury application. See <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-apis/view-treasury-api-documentation" title="">View Treasury API Documentation</a>.</li>
+</ul>
+<p class="">For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/using-the-flat-file-format" title="">Using the Flat File Format</a>.</p>
+</div>
+<div class="" id="AvailStandExports">
+<h2 class="title sectiontitle">Available Standard exports</h2>
+<p class="">File names contain the object name, date, timestamp, and an integer to prevent overwriting existing files. For example: <span class="filepath">AccountBalance_20250402_104107+0</span>.</p>
+<p class="">sFTP folders are located under <span class="filepath">/Outgoing</span> followed by a dedicated folder per object. For example: <span class="filepath">/Outgoing/AccountBalances</span>. The folders are automatically created once the export triggers.</p>
+<p class="">For examples of exports, download the <a data-scope="" data-name="" target="" href="/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/ExportFileTemplates2026-02-02.zip" title="">example export files ZIP</a>.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">Export name</th>
+<th class="entry " align="">Description</th>
+<th class="entry " align="">Folder without subfolder specified</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Account Balance</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports the value date balances of all valid accounts for d-2, d-1,d,d+1,d+2, whereas d is today</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/AccountBalances</p>
+<p class="">
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Account Interest Details</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records that are valid at the time of the export</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/AccountInterestDetailsClassics</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Account Statement</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all not yet exported account statements created within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/AccountStatements</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Bulk Direct Debit</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/BulkDirectDebits</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Bulk Direct Debit Details</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/BulkDirectDebitDetails</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Bulk Payment</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/BulkPayments</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Bulk Payment Details</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/BulkPaymentDetails</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Cash Flow</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all cash flows created since prior day (yesterday)</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/CashFlows</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Commodity Classic Deal</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/CommodityClassicDeals</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Commodity Classic Payment Plan</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all commodity payments that are due today or in the future</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/CommodityClassicPayments</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Credit Line</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/CreditLines</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Credit Line Utilization</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports today's utilization for all outstanding credit lines</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/CreditLIneUtilizations</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Foreign Exchange Deal</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/ForeignExchangeDeals</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Foreign Exchange Option Deal</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/ForeignExchangeOptionClassicDeals</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GL Entry</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports GL entries that have not been exported</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/GlEntries</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Guarantee</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding guarantees (return date today or in the future)</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/GuaranteeClassicDeals</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Intercompany Payment</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all not yet exported records created or updated within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/IntercompanyPayments</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Interest Rate Options</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/InterestRateOptionsClassics</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Interest Rate Swap</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/InterestRateSwapClassicDeals</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Interest Rate Swap Lifecycle Event (Options)</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all lifecycle events on outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/InterestRateSwapClassicOptions</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Interest Rate Swap Payment Plan</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all payment plans where at least one payment of that plan is in the future or today</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/InterestRateSwapClassicPaymentPlans</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Leases Export</td>
+<td class="entry" align="">Exports all outstanding deals</td>
+<td class="entry" align="">/Outgoing/LeasesClassics</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Leases Lifecycle Event (Options)</td>
+<td class="entry" align="">Exports all lifecycle events on outstanding deals</td>
+<td class="entry" align="">/Outgoing/LeasesClassicOptions</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Leases Payment Plan</td>
+<td class="entry" align="">Exports payment plans of all outstanding deals</td>
+<td class="entry" align="">/Outgoing/LeasesClassicPaymentPlans</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Letter of Credits</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding letters of credit (settlement date of today or in the future)</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/LetterOfCreditClassicDeals</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Liquidity Planning Data</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated since the last business day (ultimo) of 2 months ago</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/LiquidityPlanningData</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Long Term Loan</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/LongTermLoans</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Long Term Loan Lifecyle Event</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all lifecycle events on outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/LongTermLoanClassicOptions</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Long Term Loan Payment Plan</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all payment plans where at least one payment of that plan is in the future or today</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/LongTermLoanClassicPaymentPlans</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Money Market</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/MoneyMarketDeals</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Netting Items</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 31 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/NettingItemsClassics</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Netting Statements</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all statements created within the last 31 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/NettingStatementsClassics</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">(Planning) Category</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all categories</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/PlanningCategories</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Portfolio</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all active portfolios</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/TreasuryPortfolios</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Project</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all active projects</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/TreasuryProjects</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Reconciliation Results</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/ReconciliationResults</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Recon Invoice Archive</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 31 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/ReconInvoiceArchiveClassics</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Recon Invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 31 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/ReconInvoiceClassics</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Securities</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/SecurityClassicDeals</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Security Interest Rates and Fixings</td>
+<td class="entry" align="">Exports all interest rate changes resp. fixings with date greater or equal today</td>
+<td class="entry" align="">/Outgoing/SecurityClassicPaymentPlans</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Security Payment Plan</td>
+<td class="entry" align="">Exports all payments with payment date greater or equal today</td>
+<td class="entry" align="">/Outgoing/SecurityClassicInterestRatesAndFixings</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Security Transactions</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all transactions of all outstanding deals</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/SecurityClassicTransactions</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Settlement</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/SettlementTransactions</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Settlement Flow</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created within the last 7 days.</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/SettlementFlows</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">(Payment) Signing Authority</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all valid records</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/SigningAuthorities</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Single Direct Debit</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/SingleDirectDebits</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">(Single) Payment</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all records created or updated within the last 7 days</p>
+</td>
+<td class="entry" align="">
+<p class="">/Outgoing/SinglePayments</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="AutoViewCustomInteg">
+<h2 class="title sectiontitle" id="CustomTreasCSCExp">Custom Treasury export integrations</h2>
+<p class="">Custom Treasury export integrations are based on automation views that you configure on the respective menu items in Treasury Management.</p>
+<p class="">This is supported for all objects in the new Treasury Management interface. For example, <b>Cash Flows</b> is supported, while <b>Netting Items Classic</b> is not. The <b>Automation View</b> field is only visible if this feature is supported for the selected object.</p>
+<p class="">For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/treasury-management-product-documentation/getting-started-with-treasury-management/automated-processes-and-integrations/automation-views-in-treasury-management" title="Use automation views to configure and schedule Treasury processes and integrations from Coupa Core.">Automation Views in Treasury Management</a>.</p>
+<figure class="fig">
+<img class="inline" src="/_dita_/en-us/documentation/treasury/images/cutom_export_integration_account_statements_R44.png" alt="Create Integration window for custom Treasury integration for Account Statements" title="Create Integration window for custom Treasury integration for Account Statements" width="">
+</figure>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/tip.png" style="width:24px;">
+<span style="font-weight: 700;">Tip: </span>When you create a new integration, it's a good idea to use the name of the Treasury menu item for the integration. You can also add that it is a custom view, for example. This makes it easier to search for custom integrations after you create them. From the <b>Integrations</b> table, you can then set the <b>View</b> filter to <b>All</b> and search for the name of the custom integration you want to edit, for example <b>Settlements</b>, <b>Cash Flows,</b> or just <b>Custom</b>.</div>
+</p>
+<p class="">To use the self-service to create or edit outbound Treasury integrations, use the following steps:</p>
+<ol class="ol">
+<li class="li">Go to <b>Setup</b> &gt; <b>Integrations</b> &gt; <b>Integrations</b> to configure your Treasury process.</li>
+<li class="li">Select <b>Create</b> or use the pencil icon to open an existing custom integration.</li>
+<li class="li">For <b>Integration</b>, select <b>Flat file</b> or <b>Original format</b> (see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-sftp-integrations/treasury-original-file-export-types" title="You can select which original files should be exported to sFTP with various Standard integrations. You can also configure custom Original File export integrations. Original file exports include two types.">Treasury Original File Export Types</a>).</li>
+<li class="li">For <b>Direction</b>, select <b>From Coupa</b>.</li>
+<li class="li">For <b>Business Object</b>, select the name of the Treasury object. The <b>Automation View</b> field appears when the object supports an integration that you can customize using self-service. <div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>If the <b>Automation View</b> field does not appear for an object, then you must request a Statement of Work (SOW) from Coupa to customize the integration.</div>
+</li>
+<li class="li">Select a defined view from the <b>Automation View</b> field. This defines the filter parameters for your custom integration.</li>
+<li class="li">You must also select your <b>End System Type</b> and <b>End System</b>.<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Important: </span>Don't enter <b>Internal</b> for <b>End System</b>, since this setting prevents you from editing an integration.</div>
+</li>
+<li class="li">You can use the optional <b>Subfolder</b> field to specify a string that is valid to be a subfolder. If you don't enter a string for the subfolder, nothing is specified and the sFTP folder for the business object is used without a subfolder. <div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>If you do not enter a value for <b>Subfolder</b> when you save the integration, you cannot add it later. This means you have to create a new integration to specify a string for the subfolder. Also note that when you specify a subfolder name, the system automatically pluralizes the last segment of the folder name using a standard pluralization library. For example, if you enter a path like <b>bankfile/PDF</b>, the last segment is pluralized, resulting in <b>bankfile/PDFS</b>.</div>
+</li>
+<li class="li">You can select <b>Enable Encryption</b> if you use a PGP key on the sFTP account level and need the export of this integration to be encrypted.</li>
+<li class="li">It's best practice to activate the <b>Mark as Exported</b> option where available, for example for bank files, account statements, and general ledger (GL) entries. Then you can exclude the exported data from the menu items in Treasury Management when you save new automation views. This helps ensure your automation views only capture items not yet exported and reduces the risk of duplicate exports. For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/treasury-management-product-documentation/getting-started-with-treasury-management/automated-processes-and-integrations/automation-views-in-treasury-management#AutoViewCustomInteg" title="">Use automation views for custom Treasury outbound integrations</a>.</li>
+<li class="li">
+<b>Save</b> the integration.</li>
+<li class="li">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>For export integrations that do not support the option <b>Mark as Exported</b>, it's best practice to set the option <b>Delta filter</b> to <b>Recent changes</b>. You can do this after you save an integration by using the <b>Edit</b> action from the table. This ensures that only data is exported that was created or updated since the last integration run.</div>
+</li>
+</ol>
+<p class="">For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/standard-flat-file-export-configurations-da-3412-da-3412" title="">Standard Flat File Export Configurations</a>.</p>
+<p class="">After you save an integration, you schedule integration runs from the <b>Integrations</b> data table. To schedule integration runs, use the following steps:</p>
+<ol class="ol">
+<li class="li">Use the pencil icon to open and edit the integration from the data table.</li>
+<li class="li">In the <b>Edit</b> dialog, activate <b>Enable Scheduler</b>.</li>
+<li class="li">For <b>Schedule</b>, configure an available setting, for example <b>Every 30 minutes</b>.</li>
+<li class="li">
+<b>Save</b> your configuration.</li>
+</ol>
+<p class="">For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-sftp-integrations#ManageTreasExpInteg" title="">Manage Treasury integrations</a>.</p>
+</div>
+</div>
+</article>

@@ -1,0 +1,215 @@
+<article class="" id="custom_object_api_custom_objects_id">
+<h1 class="title">Custom Object API (/custom_objects/id)</h1>
+<div class="body">
+<div class="" id="introduction-d957e147738">
+<h2 class="title sectiontitle">Introduction</h2>
+<p class="">Use the Custom Objects API to create, update, or query the data records for your Custom
+        Objects. If you need to define a new <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x294250.xml" title="">Custom Object</a>, use
+        the UI.</p>
+<p class="">The URL to access the Custom Objects API is:
+          <code class="ph codeph">https://&lt;instance&gt;/api/custom_objects/{object_id}</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+</div>
+<div class="" id="actions-d957e147757">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/custom_objects/{object_id}/object_instances/</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create a new data record for the Custom Object</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/custom_objects/{object_id}/object_instances/{instance_id}</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Modify an existing data record</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/custom_objects/{object_id}/object_instances/</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Lists all of the data records for the Custom Object</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/custom_objects/{object_id}/object_instances/{instance_id}</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Lists an individual data record</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements_object_instance">
+<h2 class="title sectiontitle">Elements (Object Instance)</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-object-code</td>
+<td class="entry" align="">Custom object code</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-object-name</td>
+<td class="entry" align="">Custom object name</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">form-response-id</td>
+<td class="entry" align="">ID of form response that created the instance</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa Internal ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Elements are only used for GET calls. POST or PUT calls will only include the custom
+          fields used in your custom object definition. See the below sample for details.</p>
+</div>
+</div>
+<div class="" id="sample_payloads">
+<h2 class="title sectiontitle">Sample Payloads</h2>
+<p class="">Since a Custom Object is made entirely of custom fields, you need to contain your custom
+        fields in the <code class="ph codeph">custom-field</code> namespace. A basic POST or PUT should take this
+        form:</p>
+<pre>
+<code class="codeblock">&lt;object-instance&gt;
+		&lt;custom-fields&gt;
+				&lt;custom-field-1&gt;custom-field-1-value&lt;/custom-field-1&gt;
+				&lt;custom-field-2&gt;custom-field-2-value&lt;/custom-field-2&gt;
+				...
+				&lt;custom-field-10&gt;custom-field-10-value&lt;/custom-field-10&gt;
+		&lt;custom-fields&gt;
+&lt;/object-instance&gt;</code>
+</pre>
+</div>
+</div>
+</article>

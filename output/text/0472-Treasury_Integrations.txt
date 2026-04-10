@@ -1,0 +1,15 @@
+Treasury Integrations
+
+This section contains documentation for integrations used with the Treasury Management application.
+
+Treasury integrations include
+
+- Treasury APIs that you use directly from the Treasury Management application.
+- sFTP integrations for CSV imports and exports that you access from the Coupa Core platform.
+- Treasury CSV Format Descriptions (classic) for the classic Treasury Management interface.
+
+- Treasury APIs
+Retrieve and update Treasury Management data such as cash flows and account balances.
+- Treasury sFTP Integrations
+Use sFTP for Treasury CSV import and export integrations. Set up and manage your integrations using Coupa Core.
+- Treasury CSV Format Descriptions (classic)

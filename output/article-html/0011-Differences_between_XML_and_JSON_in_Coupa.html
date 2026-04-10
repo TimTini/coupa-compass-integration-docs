@@ -1,0 +1,136 @@
+<article class="" id="differences_between_xml_and_json_in_coupa">
+<h1 class="title">Differences between XML and JSON in Coupa</h1>
+<div class="body">
+<div class="" id="datatypes_in_json">
+<h2 class="title sectiontitle">Datatypes in JSON</h2>
+<p class="">For JSON, Coupa supports the following: null, boolean, number, and strings. Precision, version, and similar values use the number datatype, where decimal precision, for example, is a string. All values not explicitly called out use the string datatype.</p>
+<p class="">There are four differences to be aware of between how Coupa’s REST APIs work when using JSON vs. using XML.</p>
+</div>
+<div class="" id="_1._json_doesn_t_use_a_parent_node">
+<h2 class="title sectiontitle">JSON Doesn't Use a Parent Node</h2>
+<p class="">In XML we get parent node at the start and end of response. In JSON no parent node available in response.</p>
+</div>
+<div class="" id="xml_response">
+<h2 class="title sectiontitle">XML Response</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        &lt;account&gt;
+                &lt;id type="integer"&gt;41&lt;/id&gt;
+         &lt;created-at type="dateTime"&gt;2016-10-07T06:56:43-07:00&lt;/created-at&gt;
+         &lt;updated-at type="dateTime"&gt;2016-10-07T06:56:43-07:00&lt;/updated-at&gt;
+         &lt;name&gt;account_1475848602.731066227&lt;/name&gt;
+          &lt;code&gt;segment11475848602928&lt;/code&gt;
+         &lt;active type="boolean"&gt;true&lt;/active&gt;
+               &lt;segment-1&gt;segment11475848602928&lt;/segment-1&gt;
+               &lt;segment-2 nil="true" /&gt;
+         ---------------------------------------------
+        &lt;/account&gt;</code>
+      </pre>
+</div>
+<div class="" id="json_response">
+<h2 class="title sectiontitle">JSON Response</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">{
+           "id": 43,
+              "created-at": "2016-10-07T06:59:46-07:00",
+             "updated-at": "2016-10-07T06:59:46-07:00",
+             "name": "account_1475848721.456090234",
+                "code": "segment11475848721222",
+               "active": true,
+                "segment-1": "segment11475848721222"
+        }</code>
+      </pre>
+</div>
+<div class="" id="_2._different_response_for_no_results">
+<h2 class="title sectiontitle">Different Response for No Results</h2>
+<p class="">When there are no results matching the GET query, our XML response throws a 404 error, where the JSON response provides a blank array.</p>
+<p class="">
+<b>GET:</b> https://dashmaster17-0.coupadev.com/api/accounts?id=NON_EXISTING</p>
+</div>
+<div class="" id="xml_response-d957e1033">
+<h2 class="title sectiontitle">XML Response</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        &lt;errors&gt;
+            &lt;error&gt;No results match your search criteria.&lt;/error&gt;
+        &lt;/errors&gt;</code>
+      </pre>
+</div>
+<div class="" id="json_get_api">
+<h2 class="title sectiontitle">JSON GET API</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">[ ]</code>
+      </pre>
+</div>
+<div class="" id="_3._different_nodes_for_error_message">
+<h2 class="title sectiontitle">Different Nodes for Error Message</h2>
+</div>
+<div class="" id="xml_response-d957e1056">
+<h2 class="title sectiontitle">XML Response</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        &lt;errors&gt;
+                &lt;error&gt;Segment 1 - Cost Center can't be blank.&lt;/error&gt;
+        &lt;/errors&gt;</code>
+      </pre>
+</div>
+<div class="" id="json_response-d957e1070">
+<h2 class="title sectiontitle">JSON Response</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">{
+               "errors": {
+                           "account": [
+                                    "Segment 1 - Cost Center can't be blank"
+                              ]
+               }
+        }</code>
+      </pre>
+</div>
+<div class="" id="_4._different_response_for_country_in_address_api_call">
+<h2 class="title sectiontitle">Different response for Country in Address API call</h2>
+<p class="">Below are the two sets of responses for a POST API call: <a data-scope="external" data-name="" target="_blank" href="http://localhost:3000/api/addresses" title="">
+<u>http://localhost:3000/api/addresses</u>
+</a>
+</p>
+</div>
+<div class="" id="xml_response-d957e1102">
+<h2 class="title sectiontitle">XML Response</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        &lt;address&gt;
+           &lt;id type="integer"&gt;97&lt;/id&gt;
+         &lt;created-at type="dateTime"&gt;2016-10-07T07:19:07-07:00&lt;/created-at&gt;
+         &lt;updated-at type="dateTime"&gt;2016-10-07T07:19:07-07:00&lt;/updated-at&gt;
+         &lt;name&gt;address_1475849947.739228964&lt;/name&gt;
+          &lt;location-code nil="true" /&gt;
+             &lt;street1&gt;2 W 5th Ave&lt;/street1&gt;
+             --------------------------------
+               &lt;country&gt;
+                               &lt;id type="integer"&gt;223&lt;/id&gt;
+                               &lt;code&gt;US&lt;/code&gt;
+                               &lt;name&gt;United States&lt;/name&gt;
+          &lt;/country&gt;
+               --------------------------------
+        &lt;/address&gt;</code>
+      </pre>
+</div>
+<div class="" id="json_response-d957e1164">
+<h2 class="title sectiontitle">JSON Response</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">{
+                "id": 99,
+              "name": "address_1475850128.91",
+               "street1": "2 W 5th Ave",
+              "street2": "Suite 300",
+                "city": "San Mateo",
+           "state": "CA",
+         "postal_code": "94404",
+                "country_id": 223,
+             "address_owner_type": "BusinessGroup",
+         "parent_address_id": null,
+             "country": "United States"
+        }</code>
+      </pre>
+</div>
+</div>
+</article>

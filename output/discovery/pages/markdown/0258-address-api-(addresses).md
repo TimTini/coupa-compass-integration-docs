@@ -1,0 +1,53 @@
+---
+title: "Address API (/addresses) | Coupa"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)"
+content_type: "text/html"
+classification: "placeholder"
+fetched_at: "2026-04-10T01:57:10+00:00"
+---
+
+# Address API (/addresses) | Coupa
+
+The discovered page did not expose a standard <article> block, so a placeholder was generated.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses))
+
+Page text preview: Address API (/addresses) | Coupa
+
+Skip to Content
+
+EN
+- EN - English
+- DE - Deutsch
+- JA - 日本語
+- FR - Français
+
+We’ve upgraded our documentation! This page is part of our legacy documentation and is no longer being maintained. Visit the new site for the most up-to-date content, improved search, and all release notes. Take me to the new site
+
+On This Page
+
+- Address API (/addresses)
+- - Last edited on: 24 April 2023
+
+What can we help you find? Products Coupa Product Documentation Address API (/addresses)
+
+Address API (/addresses)
+
+Use the address API to query, create, or update personal or supplier remit-to address information.
+
+Use the address API to query, create, or update personal or supplier remit-to address information.
+
+The URL to access addresses is: https://<instance>/api/addresses
+
+- Use this URL to query personal address information: https://<instance url>/api/users/<user ID>/addresses
+- Use this URL to query supplier remit-to address information: https://<instance url>/api/suppliers/<user ID>/addresses
+
+See Integration Best Practices for more info.
+Actions
+
+The Addresses API allows you to:
+
+Verb 	Path 	Action 	Description
+POST 	/api/addresses 	create 	Create address
+GET

@@ -1,0 +1,112 @@
+---
+title: "Tax Code Rule Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/tax-code-rule-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/tax-code-rule-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:47+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Tax Code Rule Import"
+---
+
+# Tax Code Rule Import
+
+## Overview
+
+Tax lines on invoices are evaluated against every tax
+code rule to find which tax lines should be linked to a tax
+code from your ERP. When your tax lines are properly encoded your
+enterprise can more easily use your ERP to reclaim VAT
+withholding.
+
+Every compliant invoice received will be evaluated against
+every tax code rule row. If any tax lines
+match all of the tax code rule field entries for a row
+then that tax code link is applied.
+
+## How It Works
+
+Tax code rules defined in this record are used to set
+the appropriate tax code on invoice lines and the invoice header
+when all row field entries match a tax line.
+
+You can create and revise tax code rules by CSV flat file
+upload using the Coupa UI
+at `/tax_code_rules`. Tax code rules
+can't be loaded using SFTP.
+
+Tax code rules will run once an invoice is submitted for the
+first time. After that, if any details or rules have been updated
+or changed, users with appropriate permission can click
+the **Apply Tax Code Rules** button to
+re-run the invoice through the tax code rules. Coupa doesn't
+run invoices through the rules at each step of the invoice
+workflow. For more information on each field, see [Tax Code Rules](https://compass.coupa.com/x295150.xml).
+
+## Notes
+
+- Order of the columns below does not reflect the order presented
+in the CSV template download. Order of columns in a CSV file
+upload does not matter.
+
+- The fields displayed at the top of the table: ID,
+Name, Effective Date, End Date, Active, Priority, Tax Code and Tax
+Country Code are metadata about the tax code rule where value of
+Tax Code is the tag or link applied to the invoice tax line that
+matches the tax code rule values set in any of the other
+fields.
+
+- Values set in the remaining fields are evaluated as a set where
+all values defined must match an invoice tax line for the tax code
+rule to be applied.
+
+## Keys
+
+- Name
+
+## Validations
+
+Coupa use the field Name to lookup an existing
+record.
+
+## Tax Code Rule
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Tax Code | No | No | | Required. Tax code to be applied. Usually the values defined based on the buyer's ERP tax codes. | |
+| Tax Code Country Code | No | No | | Country of tax code. If not country-specific, leave blank | |
+| Chart of Accounts | No | No | string(255) | Name of the Chart of Accounts that this rule applies to | |
+| Buyer Tax Registration Number | No | No | | Buyer Tax registration number that this rule applies to. Only applicable to Buyer Created/Non Compliant invoices if Bill to Address is enabled on the default presentation. | |
+| Tax Rate Type Country Code | No | No | | Country code of tax type | |
+| Tax Rate Type Description | No | No | | Type of tax - VAT, TAX, GST, PST, etc for CSP and compliant invoices only. Required if Tax Rate Type Country Code is used. | |
+| Commodity Name | No | No | string(255) | Commodity Name | |
+| Supplier Name | No | No | string(255) | Supplier Name | |
+| Cash Accounting Scheme Reference | No | No | | Cash Accounting Scheme Reference that this rule applies to | |
+| Tax Reference | No | No | string(255) | Tax Reference that this rule applies to | |
+| Supplier Fiscal Rep. Country Code | No | No | | Supplier Fiscal Rep. Country Code - ISO alpha-2, alpha-3 or numeric code for CSP and compliant invoices. | |
+| Buyer Fiscal Rep. Country Code | No | No | | Buyer Fiscal Rep. Country Code - ISO alpha-2, alpha-3 or numeric code | |
+| Expense Category Key | No | No | | Expense Category Key | |
+| Jurisdiction Origin Country Code | No | No | | Jurisdiction Origin Country Code | |
+| Jurisdiction Destination Country Code | No | No | | Jurisdiction Destination Country Code | |
+| Effective Date* | Yes | No | datetime | Date when the rule will be activated | |
+| Priority* | Yes | No | integer | Numeric priority from 1 to 100. Priority 1 takes precedence. 50 is default. | |
+| Jurisdiction | No | No | string(255) | Domestic, Intra-EU, Cross-Border. Does not have to be compliant. | intra_eu, domestic, cross_border, interstate, intrastate |
+| Category | No | No | string(255) | Goods, Services | goods, services |
+| Subcategory | No | No | string(255) | Raw materials, Investment Goods, Services Exceptions | raw_materials, investment_goods, services_exceptions |
+| Deductibility | No | No | string(255) | Fully, Partially, Not | fully_deductible, partially_deductible, not_deductible |
+| Tax Rate | No | No | string(255) | Tax rate as a number, exempt, or reverse charge. Field is only required to be populated on compliant invoices but is available for all. | |
+| Document Type | No | No | string(255) | Type of document - invoices, expenses | |
+| Jurisdiction Origin Country State | No | No | string(255) | Jurisdiction Origin Country State | |
+| Jurisdiction Destination Country State | No | No | string(255) | Jurisdiction Destination Country State | |
+| Customer Accounting | No | No | boolean | Whether or not the tax rate is customer accounting | |
+| ID | No | No | integer | Coupa unique identifier | |
+| Name | No | No | string(255) | Unique rule name | |
+| Account Segment 1 | No | No | string(255) | Chart of accounts segment 1 value | |
+| Account Segment 2 | No | No | string(255) | Chart of accounts segment 2 value | |
+| Account Segment 3 | No | No | string(255) | Chart of accounts segment 3 value | |
+| Account Segment 4 | No | No | string(255) | Chart of accounts segment 4 value | |
+| Account Segment 5 | No | No | string(255) | Chart of accounts segment 5 value | |
+| End Date | No | No | datetime | Date with the rule will be deactivated | |
+| Active | No | No | boolean | Whether or not the rule should be evaluated | |

@@ -1,0 +1,417 @@
+IC Recon Server Import CSV Formats
+
+Format Descriptions
+
+PDF Version
+
+The server import supports the use of ICREC 12, ICREC 14, and ICREC 15 for both payables and receivables.
+
+ICREC 12
+
+#
+
+Name
+
+Type
+
+Mandatory
+
+Comment
+
+1
+
+Invoice No.
+
+char - 50
+
+Yes
+
+Invoice number according to the local accounting system.
+
+2
+
+Creditor/Debtor Account
+
+char - 20
+
+Yes
+
+Account number according to the local accounting system. If this is a payables file, it is the creditor’s account. If this is a receivables file, it is the debtor’s account.
+
+3
+
+Invoice Date
+
+date
+
+Yes
+
+4
+
+Due Date
+
+date
+
+Yes
+
+5
+
+Amount
+
+decimal
+
+Yes
+
+6
+
+Currency
+
+char - 3
+
+Yes
+
+Currency as ISO code.
+
+7
+
+Invoice Flag
+
+char - 50
+
+No
+
+8
+
+Comment
+
+char - 255
+
+No
+
+9
+
+Delivery Slip No.
+
+char - 50
+
+No
+
+10
+
+XDoc No.
+
+char - 50
+
+No
+
+External invoice number as used for communication with creditor.
+
+11
+
+Booking Date
+
+date
+
+No
+
+12
+
+Remark
+
+char - 255
+
+No
+
+See functional description.
+
+ICREC 14
+
+ICREC14 is the same as ICREC12 with these additional fields.
+
+#
+
+Name
+
+Type
+
+Mandatory
+
+Comment
+
+13
+
+Project
+
+char - 50
+
+No
+
+Internal project reference as used in Coupa Treasury.
+
+14
+
+Portfolio
+
+char - 50
+
+No
+
+Internal portfolio reference as used in Coupa Treasury.
+
+ICREC 15
+
+#
+
+Name
+
+Type
+
+Mandatory
+
+Comment
+
+15
+
+URL (Attachment)
+
+char - 255
+
+No
+
+Possible link types:
+
+file://
+
+ftp://
+
+http://
+
+https://
+
+mailto:
+
+In case no link type is provided (e.g., when linking to a local drive) “http://“ is used as default. The URL is added as a “Document“ to the invoice.
+
+File Directory
+
+File Type
+
+Location
+
+Receivables
+
+LocalData_bak\ICRec\Import\Forderungen
+
+Payables
+
+LocalData_bak\ICRec\Import\Verbindlichkeiten
+
+Payables and Receivables Process
+
+Step 1: Upload Receivables
+
+-
+
+The billing company uploads the receivables.
+
+-
+
+The fields are imported into Coupa Treasury as defined in the file.
+
+-
+
+Receivables enter the system as new datasets.
+
+Step 2: Upload Payables
+
+-
+
+The billed company uploads the payables.
+
+-
+
+Coupa Treasury matches content from the payables file with existing receivables data.
+
+-
+
+Payables set the confirmation status of existing receivables data they match. They do not create new datasets.
+
+Functional Description
+
+When importing payables, Coupa Treasury checks whether fields 3, 4, 5, and 10 match any open invoices. If field 10 is empty, Coupa Treasury compares field 1 with the XDocNo of the receivable.
+
+If all fields match, Coupa Treasury adds data from field 2 to the existing invoice and marks it as confirmed.
+
+Otherwise, Coupa Treasury ignores the dataset.
+
+In a payables file, the purpose of field 12 is to challenge an invoice. If the data sets match and there is a remark in field 12, Coupa Treasury does not mark the invoice as confirmed. Instead, the system marks the invoice as “Invoice confirmation has been deleted.” The invoice is disputed and Coupa Treasury creates a chat using field 12 as the first entry.
+
+File Name
+
+Convention: <ClientIdentifierType>_<ClientIdentifier>_<FileType><Timestamp>.txt
+
+For server import, the file name allows Coupa Treasury to locate the client. For manual upload, the user chooses the client, so this naming convention is not necessary.
+
+The file name may contain special characters, including commas (,).
+
+The file name may not contain more than two (2) underscores.
+
+Coupa Treasury ignores the portion of the file name after the second underscore. This portion of the file name may vary from the convention.
+
+Token
+
+Description
+
+<ClientIdentifierType>
+
+One of the following values:
+
+Client Abbreviation: CA
+
+Company Code: CC
+
+Receiver Number: RN
+
+Legal Entity Identifier: LEI
+
+<ClientIdentifier>
+
+The client identifier value as defined on the Participants page in Coupa Treasury.
+
+<FileType>
+
+One of the following values:
+
+P: the file contains Payables data
+
+R: the file contains Receivables data
+
+<Timestamp>
+
+The effective date and time for the import file, to be displayed as indicated by the following format string: yyyyMMddHHmmss
+
+Format Rules
+
+One file contains all open invoices for one or more clients within a defined time range.
+
+For server import, format information may exist at the beginning of the import file.
+
+Client Abbreviation, Client Company code, or Receiver No. as it appears in Coupa Treasury.
+
+-
+
+<ClientKBez>Abbreviation</ClientKBez>
+
+-
+
+<ClientBuKrs>Company Code</ClientBuKrs>
+
+-
+
+<ClientEmpfaengerNr>Receiver No.</ClientEmpfaengerNr>
+
+Format may be any of ICREC12, ICREC14, or ICREC15. The letters “ic” must be lower case.
+
+-
+
+<Format>icREC15</Format>
+
+Field separator may be comma (,) or semicolon (;)..
+
+-
+
+<FeldTZ>;</FeldTZ>
+
+Date separator may be slash (/), comma (,), dash (-), or none.
+
+-
+
+<DatTZ>.</DatTZ>
+
+Date sequence may be dmy (day-month-year), mdy (month-day-year), or ymd (year-month-day).
+
+-
+
+<DatFolge>dmy</DatFolge>
+
+Decimal separator may be comma (,) or period (.).
+
+-
+
+<DezTZ>,</DezTZ>
+
+Client information may appear at the beginning of each block of data for that client. All other format information may only appear at the beginning of the document.
+
+Any piece of format or client information within the document must appear on its own line, separated by a carriage return between lines.
+
+If the format settings are not defined within the import file, Coupa Treasury applies the user defined settings:
+
+The file may not contain any other headers or format descriptions. Do not enclose text in quotation marks.
+
+Each row in the file contains exactly one data set:
+
+-
+
+ASCII Code 13: carriage return denotes the end of a data set.
+
+-
+
+ASCII Code 10: new-line denotes the end of a data set.
+
+-
+
+The last data set concludes by an end-of-file (EOF).
+
+In the tables ICREC12, ICREC14, and ICREC15, the value for “char” denotes how many characters is the maximum length for that field in the imported file.
+
+Days and months are always 2-digit values, whereas years are 4 digits.
+
+Examples
+
+Data Sets
+
+Optional fields may remain empty. Empty fields are denoted by field separators only. The sample datasets below contain empty fields.
+
+-
+
+Field Separator = semicolon (;)
+
+-
+
+Date Separator = slash (/)
+
+-
+
+Date Sequence = mdy
+
+-
+
+Decimal Separator = period (.)
+
+ICRECON12
+
+BLG030425;800466;03/28/2009;03/25/2006;4526.50;EUR;;;LS258;;;
+
+ICRECON14
+
+BLG030427;800466;04/21/2009;05/20/2006;56110.50;EUR;;;IEJJF;;;;PR201;PF013
+
+ICRECON15
+
+File Name
+
+CC_101_R20190516102955.txt
+
+Header
+
+<ClientBuKrs>TWAG</ClientBuKrs>
+
+<Format>icREC12</Format>
+
+<FeldTZ>;</FeldTZ>
+
+<DatTZ>.</DatTZ>
+
+<DatFolge>dmy</DatFolge>
+
+<DezTZ>,</DezTZ>

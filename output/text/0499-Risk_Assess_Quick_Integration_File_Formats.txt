@@ -1,0 +1,18 @@
+Risk Assess Quick Integration File Formats
+
+Overview
+
+The section documents the Risk Assess quick integration file formats. For more information, see Get Started with the Risk Assess Quick Integration.
+
+- Setup Data
+- Users
+- User UDF Imports
+- Suppliers
+- Extended Suppliers
+- Supplier Locations
+- Relationships
+- Relationship UDF Imports
+- UserGroups
+- Engagements
+- Candidate Suppliers
+- Component Types

@@ -1,0 +1,5 @@
+Supplier Items Example Calls
+
+Create Supplier Item
+
+Here's an example where catalog item 'Turkey' with id=1 already exists in Coupa. We are posting to api/supplier_items to associate catalog item turkey to supplier Saladino's OG and marking it as preferred. <?xml version="1.0" encoding="UTF-8"?> <supplier-item> <price type="decimal">2.00</price> <supplier-part-num>99847490</supplier-part-num> <preferred>true</preferred> <currency> <id type="integer">1</id> <code>USD</code> </currency> <supplier> <number>DC05</number> </supplier> <item> <id type="integer">1</id> <name>Turkey</name> </item> <contract> <name>Saladino's OG 15</name> </contract> </supplier-item>

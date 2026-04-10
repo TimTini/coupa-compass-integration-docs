@@ -1,0 +1,242 @@
+---
+title: "Purchase Order Revisions API Example Calls"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-revisions-api-example-calls"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-revisions-api-example-calls"
+status_code: 200
+fetched_at: "2026-04-09T11:59:56+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Purchase Orders API (/purchase_orders)"
+  - "Purchase Order Revisions API Example Calls"
+---
+
+# Purchase Order Revisions API Example Calls
+
+## Overview
+
+The Purchase Order Revisions API allows you to read access to PO Change History. This API
+contains a record for each change to a PO, whether the change results in the PO being resent
+to the supplier (like a new line or modified quantity on a line) or if the change is
+internal (like changing an Account Code).
+
+The API is similar in structure to the Purchase Order API with three main differences:
+
+- The record contains a 'revision-record' element. This contains information about the
+specific 'internal revision' or change to the PO captured in this record.
+
+- With few exceptions, only fields which have changed fields are visible. The only fields
+which will be visible regardless of the change are the PO ID, the PO Line ID, or the
+<created/> and <deleted/> fields which appear as 'true' if that has been added
+or removed.
+
+- Each non PO ID or PO Line ID field element contains two new elements <from/> and
+<to/>. The <to/> field will contain the new values which were created or
+updated in this revision while the <from/> field contains the values from the
+previous revision. This is explained in more detail below in the Field Definitions
+section.
+
+The URL to access purchase orders is:
+`https:///api/purchase_order_revisions`
+
+## Search Criteria
+
+The 'base' path for any query parameters is within the
+revision-record element. Passing in id=123 would pull the
+revision-record with the ID 123, not the revision records for PO
+123. In order to search for specific POs you would need to use the
+special parameter of"purchase_order_id" and set the value to the
+desired Purchase Order Number.
+
+| **Reference Object** | **Search Criteria Options** |
+| --- | --- |
+| Purchase Order ID | purchase_order_id |
+| Internal Revision Number | revision |
+| Date the Change was made | created-at |
+
+## Field Definitions
+
+<to/> and <from/> fields which are associative
+objects will contain the full associative object.
+
+**Simple Field Update**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<status>
+<from type="string">draft</from>
+<to type="string">created</to>
+</status>
+```
+
+**Associative Field Update**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<updated-by>
+<from>
+<id type="integer">37</id>
+<login>test_user@coupa.com</login>
+<email>test_user@coupa.com</email>
+<employee-number />
+<firstname>Test</firstname>
+<lastname>User</lastname>
+<salesforce-id nil="true" />
+<custom_field_on_the_user>ABC</custom_field_on_the_user>
+</from>
+<to>
+<id type="integer">24</id>
+<login>update_user@coupa.com</login>
+<email>update_user@coupa.com</email>
+<employee-number />
+<firstname>Update</firstname>
+<lastname>User</lastname>
+<salesforce-id nil="true" />
+<custom_field_on_the_user>DEF</custom_field_on_the_user>
+</to>
+</updated-by>
+```
+
+## Sample API GET Response
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<order-header-revision>
+<revision-record>
+<revision type="integer">1</revision>
+<id type="integer">30</id>
+<created-at type="datetime">2010-12-11T14:27:15-08:00</created-at>
+<created-by type="integer">1</created-by>
+</revision-record>
+<comments />
+<test-text-field>
+<from type="string">test_receipts</from>
+<to type="string" />
+</test-text-field>
+<id type="integer">2143</id>
+<order-lines>
+<order-line>
+<testfield>
+<from type="string" />
+<to type="string" />
+</testfield>
+<id type="integer">3060</id>
+<line-num type="integer">1</line-num>
+<need-by-date>
+<from type="datetime">2010-07-23T07:00:00-07:00</from>
+<to type="datetime">2010-07-23T00:00:00-07:00</to>
+</need-by-date>
+<source-part-num>
+<from type="string" />
+<to type="string" />
+</source-part-num>
+<updated-at>
+<from type="datetime">2010-12-10T20:40:45-08:00</from>
+<to type="datetime">2010-12-11T14:27:13-08:00</to>
+</updated-at>
+<updated-by>
+<from>
+<email>matt.support+supportAPI@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Matt</firstname>
+<id type="integer">44</id>
+<lastname>Support</lastname>
+<login>matt.support+supportAPI@coupa.com</login>
+</from>
+<to>
+<email>upgrade@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</to>
+</updated-by>
+</order-line>
+<order-line>
+<testfield>
+<from type="string" />
+<to type="string" />
+</testfield>
+<id type="integer">3061</id>
+<line-num type="integer">2</line-num>
+<need-by-date>
+<from type="datetime">2010-12-11T04:40:42-08:00</from>
+<to type="datetime">2010-12-11T00:00:00-08:00</to>
+</need-by-date>
+<source-part-num>
+<from type="string" />
+<to type="string" />
+</source-part-num>
+<updated-at>
+<from type="datetime">2010-12-10T20:40:45-08:00</from>
+<to type="datetime">2010-12-11T14:27:13-08:00</to>
+</updated-at>
+<updated-by>
+<from>
+<email>matt.support+supportAPI@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Matt</firstname>
+<id type="integer">44</id>
+<lastname>Support</lastname>
+<login>matt.support+supportAPI@coupa.com</login>
+</from>
+<to>
+<email>upgrade@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</to>
+</updated-by>
+</order-line>
+</order-lines>
+<ship-to-user>
+<from>
+<email>coupauser+2010-12-10T20:40:37-0800@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Test</firstname>
+<id type="integer">144</id>
+<lastname>Account</lastname>
+<login>query_user_2010-12-10T20:40:37-0800</login>
+</from>
+<to>
+<email>coupauser+2010-12-10T17:48:07-0800@coupa.com</email>
+<employee-number />
+<firstname>Test</firstname>
+<id type="integer">45</id>
+<lastname>Account</lastname>
+<login>flow_user_2010-12-10T17:48:07-0800</login>
+</to>
+</ship-to-user>
+<updated-at>
+<from type="datetime">2010-12-10T20:40:46-08:00</from>
+<to type="datetime">2010-12-11T14:27:14-08:00</to>
+</updated-at>
+<updated-by>
+<from>
+<email>matt.support+supportAPI@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Matt</firstname>
+<id type="integer">44</id>
+<lastname>Support</lastname>
+<login>matt.Support+supportAPI@coupa.com</login>
+</from>
+<to>
+<email>upgrade@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</to>
+</updated-by>
+<version>
+<from type="integer">1</from>
+<to type="integer">2</to>
+</version>
+</order-header-revision>
+```

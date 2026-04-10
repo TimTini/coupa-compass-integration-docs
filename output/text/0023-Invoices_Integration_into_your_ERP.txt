@@ -1,0 +1,801 @@
+Invoices Integration into your ERP
+
+Step-by-step instructions to integrate your Coupa Invoices with your ERP.
+
+Tip:
+
+You can also download this document as a Microsoft Word document: Coupa Invoices to ERP.docx
+
+General API setup considerations
+-
+
+Get Started with the Coupa API
+
+-
+
+Open Connect API Access (R29 onward)
+
+-
+
+JSON/XML
+
+-
+
+GraphQL (R30 onward)
+
+Limited payload: fields & API filters
+
+Coupa's API returns a lot of data by default (for example: full objects for associated objects). The API return payloads can be very large and therefore slow. This can be a problem for customers that do not need the extraneous data not to mention the unnecessary consumption of resources.
+
+To make things easier, Coupa has the concept of the “fields” parameter & API Filters that return a limited JSON or XML response instead of the entire schema, and all associations, for an object.
+
+-
+
+API Response Filters
+
+-
+
+API: Using the new API query parameter "fields", Alternative to "return object"
+
+Use cases described in this article
+
+The Invoices usually have an internal number in the ERP. In this document we take the assumption that this ERP Document number is a Custom field in the Coupa Invoice Header. In our example the custom field cf_erp_invoice_number was created with name ERP Invoice Number. This Article describes the 3 different options to Integrate Coupa Invoices into your ERP(for both creation and updates).
+
+These options will change the way you can monitor your integrations from Coupa:
+
+-
+
+Option 1: Simple monitoring based on custom field(s) you define on the Invoice Header
+
+-
+
+Option 2: Advanced monitoring using Integration History records
+
+-
+
+Option 3: Leverage full Coupa Integrations monitoring
+
+For the 3 options, the Coupa Invoices are pushed to the ERP based on the Export Flag. In case of an error, in the Integration of a Invoice, a manual change will be required on the Invoice in the Coupa UI: this change will reset the Export Flag, and the Invoice will therefore be considered in the next run.
+
+Tip:
+
+Coupa suggests that you contact Coupa Support to have them enable this option: Reset Invoice last exported at for every change. This setting only applies to the UI. Changes made with API won’t change the Exported status.
+
+Create dedicated Integration and Contact for API
+
+For option 2 & 3, you will need to create:
+
+-
+
+A dedicated Integration for each API Orchestration you implement
+
+-
+
+One or several Integration contact(s) for each integration, that will be alerted for any failed integration.
+
+Tip:
+
+Coupa suggests that you contact Coupa Support to have them enable this option: Enable link to Integration History by Document Type. This setting adds a link in the setup page to view full Integration History per document type.
+
+Option 1: Simple monitoring based on custom field(s)
+
+Description
+
+In this scenario, for each Invoice we add the current Integration status in one or several Invoice header custom field(s). We added the custom field cf-integration-status was created with the name of Integration Status. Use the Standard Invoice Data Table to follow up the Integration status of your documents at this url:
+https://<your instance hostname>/invoices
+
+Orchestration diagram
+
+Steps / API calls details
+
+Step 1
+
+Get the list and details of the Coupa Invoices to create/update in the ERP.
+
+Selection criteria includes the Export Flag and Invoice Status.
+
+Method
+
+GET
+
+API
+
+https://<your instance hostname>/api/invoices/
+
+Query Params
+
+fields=<your API filter name>
+
+offset=10
+
+exported=false
+
+status[in]=approved,voided
+
+Sample URL
+
+https://<your instance hostname>/api/invoices?filter=<your API filter name>&offset=10&exported=false&status[in]=approved,voided
+
+Query Body sample
+
+N/A
+
+Response Body sample
+
+Step 2
+
+Mark individual Invoice as exported
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/invoices/<Invoice id>
+
+Query Params
+
+exported=true
+
+fields=["id","exported"]
+
+Sample URL
+
+https://<your instance hostname>/api/invoices/<Invoice id>?exported=true&fields=["id","exported"]
+
+Query Body sample
+
+N/A
+
+Response Body sample
+{ "id": <Invoice id>, "exported": true }
+
+Step 3
+
+Update a Custom Fields for Reporting and ERP document number
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/invoices/<Invoice id>
+
+Query Params
+fields=["id","exported",{ "custom_fields": {} }]
+
+Sample URL
+https://<your instance hostname>/api/invoices/<Invoice id>?fields=["id","exported",{ "custom_fields": {} }]
+
+Query Body sample
+{ "id": <Invoice_id>, "exported": true, "custom-fields": { "cf-erp-invoice-number": "<Invoice number in the ERP>", "cf-integration-status": "Success: The Invoice was replicated in your ERP" } }
+
+or
+{ "custom-fields": { "cf-integration-status": "Failure: The Invoice could not be replicated in your ERP" } }
+
+Response Body sample
+{ "id": <Invoice_id>, "exported": true, "custom-fields": { "cf-erp-invoice-number": "<Invoice number in the ERP>", "cf-integration-status": "Success: The Invoice was replicated in your ERP" } }
+
+or
+{ "id": <Invoice id>, "exported": true, "custom-fields": { "cf-erp-invoice-number": null, "cf-integration-status": "Error[2] : The Invoice was properly replicated in your ERP" } }
+
+Option 2: Advanced monitoring using Integration History
+
+Description
+
+In this scenario, for each Invoice we:
+
+-
+
+Resolve the previous Integration History Record for the document
+
+-
+
+Create an Integration History Record
+
+-
+
+Create an Alert to the Integration Contact in case of an error
+
+Each document includes the Integration History details.
+
+Use the Standard Invoice Integration History Data Table to follow up the Integration status of your documents. You can find it at:
+https://<your instance hostname>/integration_history_records/invoices
+
+You can use a filter on Response Code to differentiate between documents successfully replicated and documents that failed.
+
+Orchestration diagram
+
+Steps / API calls details
+
+Step 1
+
+Get the list and details of the Coupa Invoices to create/update in the ERP. Selection criteria includes the Export Flag and Invoice Status.
+
+Method
+
+GET
+
+API
+
+https://<your instance hostname>/api/invoices/
+
+Query Params
+
+filter=<your API filter name>
+
+offset=10
+
+exported=false
+
+status[in]=approved,voided
+
+Sample URL
+
+https://<your instance hostname>/api/invoices?filter=<your API filter name>&offset=10&exported=false&status[in]=approved,voided
+
+Query Body sample
+
+N/A
+
+Response Body sample
+
+Step 2
+
+Mark individual Invoice as exported
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/invoices/<Invoice id>
+
+Query Params
+
+exported=true
+
+fields=["id","exported"]
+
+Sample URL
+
+https://<your instance hostname>/api/invoices/<Invoice id>?exported=true&fields=["id","exported"]
+
+Query Body sample
+
+N/A
+
+Response Body sample
+{ "id": <Invoice id>, "exported": true }
+
+This is where the creation/update of the Invoice in the ERP happens.
+
+Step 3a
+
+Get unresolved Integration History Record
+
+Method
+
+GET
+
+API
+
+https://<your instance hostname>/api/integration_history_records
+
+Query Params
+
+resolved=false
+
+document-type=InvoiceHeader
+
+document-id=<Invoice id>
+
+fields=["id","document-id","status","resolved"]
+
+Sample URL
+
+https://<your instance hostname>/api/integration_history_records?resolved=false&document-type=InvoiceHeader&document-id=<Invoice id>&fields=["id","document-id","status","resolved"]
+
+Query Body sample
+
+N/A
+
+Response Body sample
+[ { "id": <Old Integration History Record id>, "document-id": <Invoice id>, "status": "Error", "resolved": false } ]
+
+Step 3b
+
+Resolve previous Integration History Record
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_history_records/<Old Integration History Record id>/resolve
+
+Query Params
+
+fields=["id","document-id","status","resolved"]
+
+Sample URL
+
+https://<your instance hostname>/api/integration_history_records/<Old Integration History Record id>/resolve?fields=["id","document-id","status","resolved"]
+
+Query Body sample
+
+N/A
+
+Response Body sample
+[ { "id": <Old Integration History Record id>, "document-id": <Invoice id>, "status": "Error", "resolved": true } ]
+
+Step 4a
+
+Update a Custom Fields for ERP document number (Success)
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/invoices/<Invoice id>
+
+Query Params
+fields=["id","exported",{ "custom_fields": {} }]
+
+Sample URL
+https://<your instance hostname>/api/invoices/<Invoice id>&fields=["id","exported",{ "custom_fields": {} }]
+
+Query Body sample
+{ "custom-fields": { "cf-erp-invoice-number": "<Invoice number in the ERP>" } }
+
+Response Body sample
+{ "id": <Invoice id>, "exported": true, "custom-fields": { "cf-erp-invoice-number": "<Invoice number in the ERP>" } }
+
+Step 4b
+
+Create Integration History (Success)
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_history_records
+
+Query Params
+
+fields=["id","document-id","status"]
+
+Sample URL
+
+https://<your instance hostname>/api/integration_history_records?fields=["id","document-id","status"]
+
+Query Body sample
+{ "document-type": "InvoiceHeader", "document-id": <Invoice id>, "document-status":"<Invoice status>", "contact-alert-type": "Functional", "status": "Success", "integration": {"code":"<Customer Integration id>"}, "responses": [ { "response-code": "Success-1234", "response-message": "The integration in the ERP went well" } ] }
+
+Response Body sample
+{ "id": <New Integration History Record id>, "document-id": <Invoice id>, "status": "Success" }
+
+Step 4c
+
+Create Integration History (Error) and alert to Integration Contact
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_history_records/create_alert
+
+Query Params
+
+fields=["id","document-id","status"]
+
+Sample URL
+
+https://<your instance hostname>/api/integration_history_records/create_alert?fields=["id","document-id","status"]
+
+Query Body sample
+{ "document-type": "InvoiceHeader", "document-id": <Invoice id>, "document-status":"<Invoice status>", "contact-alert-type": "Functional", "status": "Error", "integration": {"code":"<Customer Integration id>"}, "responses": [ { "response-code": "Failure-CC", "response-message": "Header: Period is currently closed for Booking" }, { "response-code": "Failure-CC", "response-message": "Line 1: Cost center CA234 is closed for invoicing" } ] }
+
+Response Body sample
+{ "id": <New Integration History Record id>, "document-id": <Invoice id>, "status": "Error" }
+
+Option 3: Leverage full Coupa Integrations monitoring
+
+Description
+
+In this scenario, we create an Integration run that tracks
+
+-
+
+The status of the Integration (pending/started/errored/successful/failed)
+
+-
+
+The total number of Invoice processed
+
+-
+
+The number of Success and Errors
+
+-
+
+The list of Integration Errors and their statuses (resolved or not)
+
+For each Invoice we:
+
+-
+
+Resolve the previous Integration History Record for the document
+
+-
+
+Create an Integration History Record
+
+-
+
+In case of an error, create an Integration Error and an Alert to the Integration Contact
+
+You will be able to monitor all Integration Runs for your Integration with this URL:
+https://<your instance hostname>/integrations/<your integration id>/integration_runs
+
+.
+
+You will use the Standard Invoice Integration Error Data Table to list all Invoices with Integration Error pending resolution. You can find it at:
+https://<your instance hostname>/integration_errors
+
+.
+
+Orchestration diagram
+
+Steps / API calls details
+
+Step 1
+
+Create Integration Run
+
+Method
+
+POST
+
+API
+
+https://<your instance hostname>/api/integration_runs
+
+Query Params
+
+N/A
+
+Query Body sample
+{ "integration": { "code": "{{integration_code}}" } }
+
+Response Body sample
+{ "id": <Integration Run ID>, ... }
+
+Step 2
+
+Get the list and details of the Coupa Invoices to create/update in the ERP. Selection criteria includes the Export Flag and Invoice Status.
+
+Method
+
+GET
+
+API
+
+https://<your instance hostname>/api/invoices/
+
+Query Params
+
+filter=<your API filter name>
+
+offset=10
+
+exported=false
+
+status[in]=approved,voided
+
+Sample URL
+
+https://<your instance hostname>/api/invoices?filter=<your API filter name>&offset=10&exported=false&status[in]=approved,voided
+
+Query Body sample
+
+N/A
+
+Response Body sample
+
+Step 3
+
+Start Integration Run
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_runs/<Integration Run ID>/run
+
+Query Params
+
+N/A
+
+Query Body sample
+{ "total_records": <Total Number of Invoices from Step 2> }
+
+Response Body sample
+{ "id": <Integration Run ID>, ... }
+
+Step 4
+
+Mark individual Invoice as exported
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/invoices/<Invoice id>
+
+Query Params
+
+exported=true
+
+fields=["id","exported"]
+
+Sample URL
+
+https://<your instance hostname>/api/invoices/<Invoice id>?exported=true&fields=["id","exported"]
+
+Query Body sample
+
+N/A
+
+Response Body sample
+{ "id": <Invoice id>, "exported": true }
+
+This is where the creation/update of the Invoice in the ERP happens.
+
+Step 5a
+
+Get unresolved Integration History Record
+
+Method
+
+GET
+
+API
+
+https://<your instance hostname>/api/integration_history_records
+
+Query Params
+
+resolved=false
+
+document-type=InvoiceHeader
+
+document-id=<Invoice id>
+
+fields=["id","document-id","status","resolved"]
+
+Sample URL
+
+https://<your instance hostname>/api/integration_history_records?resolved=false&document-type=InvoiceHeader&document-id=<Invoice id>&fields=["id","document-id","status","resolved"]
+
+Query Body sample
+
+N/A
+
+Response Body sample
+[ { "id": <Old Integration History Record id>, "document-id": <Invoice id>, "status": "Error", "resolved": false } ]
+
+Step 5b
+
+Resolve previous Integration History Record
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_history_records/<Old Integration History Record id>/resolve
+
+Query Params
+
+fields=["id","document-id","status","resolved"]
+
+Sample URL
+
+https://<your instance hostname>/api/integration_history_records/<Old Integration History Record id>/resolve?fields=["id","document-id","status","resolved"]
+
+Query Body sample
+
+N/A
+
+Response Body sample
+[ { "id": <Old Integration History Record id>, "document-id": <Invoice id>, "status": "Error", "resolved": true } ]
+
+Step 6a
+
+Get unresolved Integration Error Record
+
+Method
+
+GET
+
+API
+
+https://<your instance hostname>/api/integration_errors
+
+Query Params
+
+resolved=false
+
+document-type=InvoiceHeader
+
+document-id=<Invoice id>
+
+Sample URL
+
+https://<your instance hostname>/api/integration_errors?resolved=false&document-type=InvoiceHeader&document-id=<Invoice id>
+
+Query Body sample
+
+N/A
+
+Response Body sample
+[ { "id": <Old Integration Error Record id>, "document-type": ”InvoiceHeader”, "document-id": <Invoice id>, "status": "Error", "resolved": false ... } ]
+
+Step 6b
+
+Resolve previous Integration History Record
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_errors/<Old Integration Error Record id>/resolve
+
+Query Params
+
+N/A
+
+Query Body sample
+
+N/A
+
+Response Body sample
+[ { "id": <Old Integration Error Record id>, "document-id": <Invoice id>, "status": "Error", "resolved": true ... } ]
+
+Step 7a
+
+Update a Custom Fields for ERP document number (Success)
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/invoices/<Invoice id>
+
+Query Params
+fields=["id","exported",{ "custom_fields": {} }]
+
+Sample URL
+https://<your instance hostname>/api/invoices/<Invoice id>?fields=["id","exported",{ "custom_fields": {} }]
+
+Query Body sample
+{ "custom-fields": { "cf-erp-invoice-number": "<Invoice number in the ERP>" } }
+
+Response Body sample
+{ "id": <Invoice id>, "exported": true, "custom-fields": { "cf-erp-invoice-number": "<Invoice number in the ERP>" } }
+
+Step 7b
+
+Create Integration History (Success) It must reference the Integration Run
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_history_records
+
+Query Params
+
+fields=["id","document-id","status"]
+
+Sample URL
+
+https://<your instance hostname>/api/integration_history_records?fields=["id","document-id","status"]
+
+Query Body sample
+{ "document-type": "InvoiceHeader", "document-id": <Invoice id>, "document-status":"<Invoice status>", "contact-alert-type": "Functional", "status": "Success", "integration": {"code":"<Customer Integration id>"}, "integration-run": {"id":<Integration Run ID>}, "responses": [ { "response-code": "Success-1234", "response-message": "The integration in the ERP went well" } ] }
+
+Response Body sample
+{ "id": <New Integration History Record id>, "document-id": <Invoice id>, "status": "Success" }
+
+Step 7c
+
+Create Integration Error and alert to Integration Contact It must reference the Integration Run
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_errors/create_alert
+
+Query Params
+
+N/A
+
+Query Body sample
+{ "document-type": "InvoiceHeader", "document-id": <Invoice id>, "document-status":"<Invoice status>", "contact-alert-type": "Functional", "status": "Error", "integration-run-id": "<Integration Run ID>", "responses": [ { "response-code": "Failure-CC", "response-message": "Header: Period is currently closed for Booking" }, { "response-code": "Failure-CC", "response-message": "Line 1: Cost center CA234 is closed for invoicing" } ] }
+
+Response Body sample
+{ "id": <New Integration Error Record id>, "document-id": <Invoice id>, "status": "Error" ... }
+
+Step 8
+
+Successfully End Integration Run
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_runs/<Integration Run ID>/success
+
+Query Params
+
+N/A
+
+Query Body sample
+
+N/A
+
+Response Body sample
+{ "id": <Integration Run ID>, "status": "successful" ... }
+
+If there is a general failure during the Integration run.
+
+Step x
+
+Raise Failure for the Integration Run
+
+Method
+
+PUT
+
+API
+
+https://<your instance hostname>/api/integration_runs/<Integration Run ID>/fail
+
+Query Params
+
+N/A
+
+Query Body sample
+
+N/A
+
+Response Body sample
+{ "id": <Integration Run ID>, "status": "failed" ... }

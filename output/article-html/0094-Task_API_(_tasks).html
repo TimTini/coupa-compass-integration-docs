@@ -1,0 +1,597 @@
+<article class="" id="task_api_tasks">
+<h1 class="title">Task API (/tasks)</h1>
+<div class="body">
+<div class="" id="overview-d957e90210">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Task API lets you perform standard GET, PUT, POST, and DELETE actions. You can also access Tasks associated with Projects or Groups through their own endpoints: <code class="ph codeph">/projects/{project_id}/tasks</code> and <code class="ph codeph">/user_groups/{user_group_id}/tasks</code>
+<b>.</b>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+</div>
+<div class="" id="actions-d957e90227">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Task API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/user_groups/:user_group_id/tasks</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create group task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/projects/:project_id/tasks</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create project task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/tasks</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/projects/:project_id/tasks/:id</code>
+</td>
+<td class="entry" align="">destroy</td>
+<td class="entry" align="">Delete project task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/tasks/:id</code>
+</td>
+<td class="entry" align="">destroy</td>
+<td class="entry" align="">Delete task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/user_groups/:user_group_id/tasks</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query group task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/projects/:project_id/tasks</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query project task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/tasks</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/user_groups/:user_group_id/tasks/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show a group task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/projects/:project_id/tasks/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show project task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/tasks/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/user_groups/:user_group_id/tasks/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update group task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/user_groups/:user_group_id/tasks/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update group task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/projects/:project_id/tasks/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update project task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/projects/:project_id/tasks/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update project task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/tasks/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/tasks/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:quote_request_id/tasks</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Add a task to a Sourcing event.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:quote_request_id/tasks/:id</code>
+</td>
+<td class="entry" align="">destroy</td>
+<td class="entry" align="">Deletes a task from a Sourcing event.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:quote_request_id/tasks</code>
+</td>
+<td class="entry" align="">Index</td>
+<td class="entry" align="">Gets tasks associated with a Sourcing event.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:quote_request_id/tasks/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Gets details for a task associated with a Sourcing event.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:quote_request_id/tasks/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Updates a task associated with a Sourcing event.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:quote_request_id/tasks/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Updates a task associated with a Sourcing event.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e90637">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Task API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">description</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">due-date</td>
+<td class="entry" align="">due date</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">duration</td>
+<td class="entry" align="">duration</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">float</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">linkable</td>
+<td class="entry" align="">Association to which the task is linked to. Possible values are UserGroup/Project</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Task</td>
+</tr>
+<tr class="">
+<td class="entry" align="">linkable-id</td>
+<td class="entry" align="">Id of the User group or Project that the task is linked to</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">linkable-type</td>
+<td class="entry" align="">linked object type.Task cn be linked to User group or a Project</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">owner</td>
+<td class="entry" align="">Owner</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">owner-id</td>
+<td class="entry" align="">User id to whom the task is assigned</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">percentage</td>
+<td class="entry" align="">percentage</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">0 to 100</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-task-attributes</td>
+<td class="entry" align="">Extra attributes for the sourcing event task</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-task-attributes-api" title="Access attributes related to Sourcing quotes.">QuoteTaskAttributes</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">resolved-at</td>
+<td class="entry" align="">Timestamp the task was resolved in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">resolved-by</td>
+<td class="entry" align="">User who resolved the task</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">start-date</td>
+<td class="entry" align="">start date</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">status of task</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">task-id</td>
+<td class="entry" align="">Unique identifier for a task which is non editable. This is auto generated. This will be used as an unique identifier to update tasks in loaders</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">title</td>
+<td class="entry" align="">title</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<example>
+<h2 class="title">Get tasks associated with a Sourcing event</h2>
+<dl class="dl">
+<dt class="dt dlterm">Method</dt>
+<dd class="dd">
+<p class="">GET <code class="ph codeph">/api/quote_requests/10163/tasks</code>
+</p>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;.com/api/quote_requests/10163/tasks' \
+--header 'Accept: application/xml' \
+--header 'Accept: application/json' \
+--header 'Accept: application/octet-stream'</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example response</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;tasks type="array"&gt;
+    &lt;task&gt;
+        &lt;id type="integer"&gt;179&lt;/id&gt;
+        &lt;created-at type="dateTime"&gt;2025-04-25T13:55:52-04:00&lt;/created-at&gt;
+        &lt;updated-at type="dateTime"&gt;2025-04-25T13:55:52-04:00&lt;/updated-at&gt;
+        &lt;title&gt;Send request for quotes &lt;/title&gt;
+        &lt;description nil="true"/&gt;
+        &lt;status&gt;pending&lt;/status&gt;
+        &lt;owner-id nil="true"/&gt;
+        &lt;due-date nil="true"/&gt;
+        &lt;duration nil="true"/&gt;
+        &lt;percentage type="integer"&gt;0&lt;/percentage&gt;
+        &lt;linkable-id type="integer"&gt;10163&lt;/linkable-id&gt;
+        &lt;linkable-type&gt;QuoteRequest&lt;/linkable-type&gt;
+        &lt;resolved-at nil="true"/&gt;
+        &lt;owner nil="true"/&gt;
+        &lt;resolved-by nil="true"/&gt;
+        &lt;created-by&gt;
+            &lt;id type="integer"&gt;207&lt;/id&gt;
+            &lt;login&gt;email@company.com&lt;/login&gt;
+            &lt;employee-number nil="true"/&gt;
+        &lt;/created-by&gt;
+        &lt;updated-by&gt;
+            &lt;id type="integer"&gt;207&lt;/id&gt;
+            &lt;login&gt;email@company.com&lt;/login&gt;
+            &lt;employee-number nil="true"/&gt;
+        &lt;/updated-by&gt;
+    &lt;/task&gt;
+    &lt;task&gt;
+        &lt;id type="integer"&gt;180&lt;/id&gt;
+        &lt;created-at type="dateTime"&gt;2025-04-25T13:55:59-04:00&lt;/created-at&gt;
+        &lt;updated-at type="dateTime"&gt;2025-04-25T13:55:59-04:00&lt;/updated-at&gt;
+        &lt;title&gt;Choose supplier&lt;/title&gt;
+        &lt;description nil="true"/&gt;
+        &lt;status&gt;pending&lt;/status&gt;
+        &lt;owner-id nil="true"/&gt;
+        &lt;due-date nil="true"/&gt;
+        &lt;duration nil="true"/&gt;
+        &lt;percentage type="integer"&gt;0&lt;/percentage&gt;
+        &lt;linkable-id type="integer"&gt;10163&lt;/linkable-id&gt;
+        &lt;linkable-type&gt;QuoteRequest&lt;/linkable-type&gt;
+        &lt;resolved-at nil="true"/&gt;
+        &lt;owner nil="true"/&gt;
+        &lt;resolved-by nil="true"/&gt;
+        &lt;created-by&gt;
+            &lt;id type="integer"&gt;207&lt;/id&gt;
+            &lt;login&gt;email@company.com&lt;/login&gt;
+            &lt;employee-number nil="true"/&gt;
+        &lt;/created-by&gt;
+        &lt;updated-by&gt;
+            &lt;id type="integer"&gt;207&lt;/id&gt;
+            &lt;login&gt;email@company.com&lt;/login&gt;
+            &lt;employee-number nil="true"/&gt;
+        &lt;/updated-by&gt;
+    &lt;/task&gt;
+&lt;/tasks&gt;</code>
+</pre>
+</dd>
+</dl>
+</example>
+<example>
+<h2 class="title">Add a task to a Sourcing event</h2>
+<dl class="dl">
+<dt class="dt dlterm">Method</dt>
+<dd class="dd">
+<p class="">POST <code class="ph codeph">/api/quote_requests/10163/tasks</code>
+</p>
+</dd>
+<dt class="dt dlterm">Request body</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">{
+    "title": "New Task for 10163",
+    "quote_task_attributes":{"phase": "setup"},
+    "percentage": 0
+}</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;.com/api/quote_requests/10163/tasks' \
+--header 'Accept: application/xml' \
+--header 'Accept: application/json' \
+--header 'Accept: application/octet-stream' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+    "title": "New Task for 10163",
+    "quote_task_attributes":{"phase": "setup"},
+    "percentage": 0
+}'</code>
+</pre>
+</dd>
+</dl>
+</example>
+</div>
+</article>

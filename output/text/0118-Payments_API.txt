@@ -1,0 +1,22 @@
+Payments API
+
+Payments record the actual payments made on expense reports and invoices.
+
+Associations
+
+This resource is available through the Expense Reports API and Invoices API.
+
+Elements
+
+Name 	 Description 	 Req'd 	 Unique 	 Allowable Values 	 In 	 Out 	 Data Type
+amount-paid 	amount_paid (available on Invoices only) 	 	yes 	yes 	decimal(32,4)
+check-number 	check_number (available on Invoices only) 	 	yes
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+notes 	notes 	 	 	 	yes 	yes 	string(255)
+payable-id 	payable_id 	 	 	 	yes 	yes 	integer
+payable-type 	payable_type 	 	 	 	yes 	yes 	string(255)
+payment-date 	payment_date 	 	 	 	yes 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

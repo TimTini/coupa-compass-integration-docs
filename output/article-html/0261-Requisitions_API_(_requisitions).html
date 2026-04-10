@@ -1,0 +1,786 @@
+<article class="" id="requisitions_api_requisitions">
+<h1 class="title">Requisitions API (/requisitions)</h1>
+<div class="body">
+<p class="">The URL to access requisitions is: <code class="ph codeph">https://{your_instance_name}/api/requisitions</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div class="" id="requisitions_api_objects">
+<h2 class="title sectiontitle">Requisitions API Objects</h2>
+<p class="">This is the full list of expense objects available via the UI. However, not all objects listed here have endpoints–some are only referenced by objects, and can't be updated directly.<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">If submitting this API using a static Chart of Accounts, any segment values included must be from an existing account.</li>
+<li class="li">If submitting this API using a dynamic Chart of Accounts, any segment values included must match existing account segments or lookup values. If an account doesn't exist for a given segment value, the API automatically creates it.</li>
+</ul>
+</div>
+</p>
+</div>
+<div class="" id="actions-d957e243017">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">Requisitions API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/:id/add_approver</code>
+</td>
+<td class="entry" align="">add_approver</td>
+<td class="entry" align="">Manually add an approver for a requisition</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/add_to_cart</code>
+</td>
+<td class="entry" align="">add_to_cart</td>
+<td class="entry" align="">Add To Cart</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create a requisition in draft status, which will then need to be submitted manually</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/current_cart</code>
+</td>
+<td class="entry" align="">current_cart</td>
+<td class="entry" align="">Send current cart for user, if there is no current cart then create and send</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query requisitions</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/mine</code>
+</td>
+<td class="entry" align="">mine</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/mine</code>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/:id/remove_approval</code>
+</td>
+<td class="entry" align="">remove_approval</td>
+<td class="entry" align="">Remove an approver who was manually added</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/:id/save_for_later</code>
+</td>
+<td class="entry" align="">save_for_later</td>
+<td class="entry" align="">Save For Later for API requisitions</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show requisition</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/submit_for_approval</code>
+</td>
+<td class="entry" align="">submit_for_approval</td>
+<td class="entry" align="">Create a requisition and attempt to submit it for approval / buyer action</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update requisition</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/:id/update_and_submit_for_approval</code>
+</td>
+<td class="entry" align="">update_and_submit_for_approval</td>
+<td class="entry" align="">Update requisition and submit for approval</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/:id</code>
+</td>
+<td class="entry" align="">destroy</td>
+<td class="entry" align="">Delete requisition</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/schedule_issuance</code>
+</td>
+<td class="entry" align="">schedule_issuance</td>
+<td class="entry" align="">Set an issuance date for requisition lines and optionally retry issuance after a set number of days if the requisition is not approved by the scheduled date.<p class="">Example payload:</p>
+<pre>
+<code class="codeblock">{
+"requisition_line_ids": [54214,54220,54224],
+"schedule_issuance_date": "MM/DD/YYYY",
+"schedule_retry_interval": 10
+}</code>
+</pre>
+<p class="">For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)/scheduled-po-issuance-api" title="Information about scheduling and unscheduling Purchase Order issuance.">Schedule PO Issuance API</a>.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/requisitions/unschedule_issuance</code>
+</td>
+<td class="entry" align="">unschedule_issuance</td>
+<td class="entry" align="">Remove the scheduled issuance date and any retry interval from requisition lines.<p class="">Example payload:</p>
+<pre>
+<code class="codeblock">{
+"requisition_line_ids": [54215, 54216, 54217]
+}</code>
+</pre>
+<p class="">For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)/scheduled-po-issuance-api" title="Information about scheduling and unscheduling Purchase Order issuance.">Schedule PO Issuance API</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e243318">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">approvals</td>
+<td class="entry" align="">approvals</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/approvals-api-(approvals)" title="">Approval</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">current-parallel-approvals</td>
+<td class="entry" align="">Current parallel approvals</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/approvals-api-(approvals)" title="">Approval</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">approver</td>
+<td class="entry" align="">approver</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">attachments</td>
+<td class="entry" align="">attachments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachment</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">buyer-note</td>
+<td class="entry" align="">Any comments or notes from the Buyer</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">Currency Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">USD</td>
+</tr>
+<tr class="">
+<td class="entry" align="">current-approval</td>
+<td class="entry" align="">Current/Pending Approval</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/approvals-api-(approvals)" title="">Approval</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">department</td>
+<td class="entry" align="">Requisition Department</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/departments-api-(departments)" title="">Department</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">exported</td>
+<td class="entry" align="">Indicates if transaction has been exported</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">external-po-reference</td>
+<td class="entry" align="">External PO reference that allows customers to supply PO numbers that would override auto generated PO numbers</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">hide-price</td>
+<td class="entry" align="">Hide Price from supplier. True or False</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">RequisitionHeader</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">justification</td>
+<td class="entry" align="">Requisition Justification Comments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">last-exported-at</td>
+<td class="entry" align="">Last Exported Time</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">line-count</td>
+<td class="entry" align="">Requisition Header Line Count</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">milestones</td>
+<td class="entry" align="">Milestones</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Procurement::Milestone </td>
+</tr>
+<tr class="">
+<td class="entry" align="">mobile-currency</td>
+<td class="entry" align="">Default currency used</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">USD</td>
+</tr>
+<tr class="">
+<td class="entry" align="">mobile-total</td>
+<td class="entry" align="">total</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">need-by-date</td>
+<td class="entry" align="">Item Need By Date</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">pcard</td>
+<td class="entry" align="">Name of PCard</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Pcard </td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-hidden</td>
+<td class="entry" align="">Hide price from supplier. True or False</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">receiving-warehouse-id</td>
+<td class="entry" align="">Receiving Warehouse ID</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">recurring-rules</td>
+<td class="entry" align="">Recurring Rules</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">reject-reason-comment</td>
+<td class="entry" align="">last reject reason comment</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">req_title</td>
+<td class="entry" align="">Optional title of the Requisition</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(50)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">requested-by</td>
+<td class="entry" align="">requested_by</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">requester</td>
+<td class="entry" align="">requested_by</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">requisition-lines</td>
+<td class="entry" align="">requisition_lines</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">RequisitionLine</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address</td>
+<td class="entry" align="">Name of Address</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)-da-5757-da-5757" title="">Address</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-attention</td>
+<td class="entry" align="">Ship to Address Attention</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">Transaction status. To learn more about Requisition statuses, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x295859.xml" title="">Requisition Status Definitions</a>. </td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">draft, cart, pending_buyer_action, pending_approval,</p>
+<p class="">approved ordered partially_received, received,</p>
+<p class="">abandoned, backgrounded, withdrawn</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(50)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">submitted-at</td>
+<td class="entry" align="">submitted_at</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tags</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">[]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">taggings</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">[]</td>
+</tr>
+<tr class="">
+<td class="entry" align="">total</td>
+<td class="entry" align="">Total in own currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">user_members</td>
+<td class="entry" align="">User members</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">user_group_members</td>
+<td class="entry" align="">User group members</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">The created_by element defaults from the API User key, but it can be overridden by the Requisition API. Contact Coupa Support to allow the Requisition API to override the API User key value.</p>
+</div>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">In a requisition-line, you can use either a description (free-form) or an item (catalog item). If an item id is used, the item must exist. The &lt;source-type&gt;&lt;/source-type&gt; is not used and ignored.</li>
+<li class="li">Currencies, users in the requested-by and suppliers must be in the system with a status of active. </li>
+<li class="li">Item: If a preferred supplier and price is available for an item it will be used unless the unit-price is specified. If a unit-price is specified, it will override the default pricing available for the item. While it is not an error to specify a description and an item, using an item will set the description to the item description, ignoring the passed in the description field.</li>
+<li class="li">Defaulting: Unless otherwise specified in the XML, the system will respect the relevant defaulting within the system. Such as defaulting payment and shipping terms from the supplier record.</li>
+<li class="li">Line Numbering: The API expects the line-num to increment by one for each new line number. If you use the same line-num, the system will ignore all other lines with the same number.</li>
+<li class="li">As part of the Version 30.2.2 release update, we've resolved an issue that prevented you from creating a requisition for users outside of the requester's Content Group. Now, the requisition API reflects the functionality of the UI. </li>
+<li class="li">
+<p class="">As part of the Version 34.4.0 release update, requisition API can be used to create a new requisition by inserting a line from another requisition - only if the status of source requisition is Draft. If the status of the requisition is not Draft, then no line from the requisition can be referenced to create another new requisition.</p>
+<p class="">When the “created by” user is being set via API, that user’s content group access is validated for the creation of the requisition. See the table below for reference:</p>
+</li>
+</ul>
+</div>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>allow_created_by_override_via_api</b>
+</th>
+<th class="entry " align="">
+<b>Creator has access via Content Group</b>
+</th>
+<th class="entry " align="">
+<b>Requester has access via Content Group</b>
+</th>
+<th class="entry " align="">
+<b>Allow creation via API</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">TRUE</td>
+<td class="entry" align="">Y</td>
+<td class="entry" align="">N/A</td>
+<td class="entry" align="">Y</td>
+</tr>
+<tr class="">
+<td class="entry" align="">TRUE</td>
+<td class="entry" align="">N</td>
+<td class="entry" align="">N/A</td>
+<td class="entry" align="">N</td>
+</tr>
+<tr class="">
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">N/A</td>
+<td class="entry" align="">N/A</td>
+<td class="entry" align="">Y</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="default_supplier_item_behavior">
+<h2 class="title sectiontitle">Default supplier item behavior</h2>
+<p class="">When a req with quantity based lines is created via API,the supplier item defaults on the req line using the following rules:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>API payload</b>
+</th>
+<th class="entry " align="">
+<b>Expected result</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Item ID</td>
+<td class="entry" align="">Preferred or lowest priced supplier item</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Item ID, supplier</td>
+<td class="entry" align="">Preferred or lowest priced supplier item matching the provided supplier id</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Item ID, supplier, source part number</td>
+<td class="entry" align="">Preferred or lowest priced supplier item matching the provided supplier id and source part number</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Item ID, supplier, source part number, supplier aux part number</td>
+<td class="entry" align="">Preferred or lowest priced supplier item matching the provided supplier id and source part num and supplier aux part number</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Item ID, supplier, contract</td>
+<td class="entry" align="">Preferred or lowest priced supplier item matching the provided supplier id and contract id</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Item ID, supplier, contract, price</td>
+<td class="entry" align="">Preferred or lowest priced supplier item matching the provided supplier id and contract id (price is not used in match)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Item ID, supplier, contract, source part number</td>
+<td class="entry" align="">Preferred or lowest priced supplier item matching the provided supplier id and contract id and source part number</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Item ID, supplier, contract, source part number, supplier aux part number</td>
+<td class="entry" align="">Preferred or lowest priced supplier item matching the provided supplier id and contract id and source part num and supplier aux part number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">If the supplier item is associated to a catalog, the catalog must be in "accepted" status and the current date is within the catalog start and end dates.</li>
+<li class="li">If the supplier item is associated to a contract, the contract must be in "published" status and the current date is within the catalog start and end dates.</li>
+</ul>
+</div>
+</p>
+</div>
+</div>
+</article>

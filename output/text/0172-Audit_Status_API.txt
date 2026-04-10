@@ -1,0 +1,15 @@
+Audit Status API
+
+Association
+
+This resource is associated with Expense Lines API.
+
+Elements
+
+No elements to show. Possible statuses include:
+
+- Verified Receipt Online
+- Verified Unattached Receipt
+- Waiting for Receipt
+- No Receipt Required
+- Approved Without Receipt

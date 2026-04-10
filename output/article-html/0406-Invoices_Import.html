@@ -1,0 +1,3588 @@
+<article class="" id="invoices_import">
+<h1 class="title">Invoices Import</h1>
+<div class="body">
+<div class="" id="overview-d117e140825">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Invoice Import process read files from the <code class="ph codeph">./Incoming/Invoices/</code> SFTP folder. The files are moved to the archive folder located at <code class="ph codeph">./Incoming/Archive/Invoices/</code> before being processed in alphanumeric order.</p>
+<p class="">When including image scan attachments or file attachments, the invoice CSV and any relevant attachment files must be compressed together into a ZIP file. That ZIP file is what should be deposited on the SFTP folder. For more information, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/other-integration-playbooks/coupa-scan-one-integration" title="">Coupa Scan One Integration</a>.</p>
+<p class="">You can load invoice files of any size as long as each ZIP file is less than 8MB. For Fast Invoice Entry, the limit is 2MB.</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>If you need to load multiple invoices, combine the invoices into a single file. As every instance has a limited number of resources, loading multiple files can cause performance degradation.<p class="">For example, your Supplier needs to load invoices 1A, 1B, and 1C. Instead of loading each invoice as an individual file, combine the invoices into a single file in order to ensure optimal speed and results while processing.</p>
+</div>
+</p>
+</div>
+<div class="" id="unique_keys-d117e140849">
+<h2 class="title sectiontitle">Unique Keys</h2>
+<p class="">Uniquely identifying an invoice requires the <code class="ph codeph">Invoice Number</code> and one of <code class="ph codeph">Supplier Name</code> or <code class="ph codeph">Supplier Number</code>.</p>
+</div>
+<div class="" id="validations-d117e140861">
+<h2 class="title sectiontitle">Validations</h2>
+<p class="">The loader looks up supplier based first on number, then based on name. It then uses supplier and invoice number to look up the invoice.</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>Depending on which invoicing configuration you have, some fields on this loader won't be applicable to you. For more information about what is applicable for your particular instance, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/total-spend-management-platform/instance-specific-integration-documentation" title="">Instance Specific Integration Documentation</a>.</div>
+</p>
+</div>
+<div class="" id="attachment_notes">
+<h2 class="title sectiontitle">Attachment Notes</h2>
+<p class="">When including file attachments, you need to compress the invoice CSV and the associated attachment files together in a ZIP file. The invoice CSV needs to be at the top level of the ZIP. You load that ZIP file through the integration.</p>
+<ul class="ul">
+<li class="li">The attachment files are specified in the CSV. Each <code class="ph codeph">Attachment</code>field can specify one file for your invoice file attachments. Use the syntax: <code class="ph codeph">file://&lt;filename.ext&gt;</code> (for example, <code class="ph codeph">file://sample.pdf</code>). Do not enclose the file name in quotation marks. If your ZIP file structure uses sub-directories for your files, then specify the path to the file using syntax like: <code class="ph codeph">file://FolderA/FolderB/sample.pdf</code>.</li>
+<li class="li">For URL attachments, use <code class="ph codeph">http://</code> or <code class="ph codeph">https://&lt;www.example.com&gt;</code> (for example, <code class="ph codeph">http://www.coupa.com/resource/x12345.pdf</code>).</li>
+<li class="li">Any other format is loaded as a TEXT attachment.</li>
+</ul>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>For invoice_date and original_invoice_date, please provide the date only. Avoid adding the timestamp to avoid issues related to credit note linking.</div>
+</div>
+<div class="" id="section_s31_gtw_21c">
+<h2 class="title sectiontitle">Invoice</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Type of header row.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Number*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">Invoice Number this allocation belongs to</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Status</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align="">Status</td>
+<td class="entry" align="">new, ap_hold, draft, on_hold, pending_receipt, rejected, abandoned, disputed, pending_approval, booking_hold, pending_action, approved, voided, processing, invalid, pending_action, payable_adjustment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Date*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Invoice Date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Submit For Approval?</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Submit For Approval?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Handling Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Handling Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Misc Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Misc Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Shipping Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Shipping Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Level Taxation*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Line Level Taxation</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">Tax Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">float</td>
+<td class="entry" align="">Tax Rate</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Tax Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Tax Rate Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Note</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">Supplier Note</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Payment Terms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Shipping Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Shipping Terms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requester Email</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Requester Email</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requester Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Requester Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requester Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Requester Lookup Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Chart of Accounts*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Chart of Accounts</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Currency. Required when submit_for_approval is true.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Contract Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Image Scan Filename</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Image Scan Filename</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Image Scan URL</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Image Scan URL</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Local Currency Net</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Net Amount in local currency</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Taxes In Origin Country Currency</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Tax Amount in local currency</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Local Currency Gross</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Gross Amount in local currency</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Delivery Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Delivery Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Delivery Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Delivery Date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Margin Scheme</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Margin Scheme Description</td>
+<td class="entry" align="">margin_scheme_catalog_codes</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Issuance Time</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Invoice Issuance Time</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Cash Register Operator</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Cash Register Operator</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Means Of Payment</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Means Of Payment</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Unique Identification Code Of Cash Receipt</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Identification Code Of Cash Receipt</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Security Code Of Issuer</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Security Code Of Issuer</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Cash Accounting Scheme Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Non-blank Value Indicates Cash Accounting Scheme</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exchange Rate</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,9)</td>
+<td class="entry" align="">Exchange Rate</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Gross Total</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">Gross Total. This field is for future use. Any value included in the field is not used, as this field is currently automatically calculated.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Control Total</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">'Invoice Control Total' should be equal to 'Invoicing Total With Taxes' (i.e Total + [Invoice Taxes + Linex Taxes + Charge Taxes])</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Late Payment Penalties</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Late Payment Penalties</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Credit Reason</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">The reason of creating the credit</td>
+<td class="entry" align="">credit_reason_catalog_codes</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Early Payment Provisions</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Early Payment Provisions</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pre-Payment Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Pre-Payment Date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Self Billing Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(191)</td>
+<td class="entry" align="">Self Billing Reference - Used as billing reference in compliant countries like The Netherlands</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Discount Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Discount Amount that supplier can provide - Used in compliant countries like The Netherlands</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reverse Charge Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Reverse Charge Reference</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Discount %</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">float</td>
+<td class="entry" align="">Discount %</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Credit Note differences with Original Invoice</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">The difference between invoice total &amp; VAT total with credit note while creating a credit note for compliant countries</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Original Value of Supply</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(46,20)</td>
+<td class="entry" align="">Original Value of Supply</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Correct Value of Supply</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(46,20)</td>
+<td class="entry" align="">Correct Value of Supply</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Customs Declaration Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(60)</td>
+<td class="entry" align="">Customs Declaration Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Customs Office</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">Customs Office</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Customs Declaration Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Customs Declaration Date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Order Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">A code given by banks to use it instead of a bank account transfer.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Order Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Payment Order Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Resolution Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Resolution Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount of advance payment received</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">Amount of advance payment received</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type of Relationship</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(10)</td>
+<td class="entry" align="">MX only - Relationship (Credit Memo, Debit Note, etc) of this document to the associated invoice. Selected from CFDI catalog c_TipoRelacion</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Reference Number (IRN)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">The IRN is a unique ID generated using SHA256 algorithm and based on the parameters GST reg number, document number, financial year, and document type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Series</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(30)</td>
+<td class="entry" align="">Series</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Folio Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Folio Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Representative Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Buyer Representative Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Representative Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Supplier Representative Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Schedule Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Payment Schedule Terms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transaction UUID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align="">Unique identifier created by the tax authority's system for a specific document</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transaction Notification Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Date on which the invoice is received from the tax authority's system</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">VAT Chargeability System</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">VAT Chargeability System</td>
+<td class="entry" align="">vat_chargeability_system_codes</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Customer Account Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Customer Account Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Id</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Id</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Attention</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Attention</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Street1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Street1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Street2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Street2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To City</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To State</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Postal Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship to Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship to Country Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to Country Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship to Location Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to Location Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship to VAT ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to VAT ID</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship to Local Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to Local Tax Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bill To Address Id</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Bill To Address Id</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bill To Address Legal Entity Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Bill To Address Legal Entity Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bill To Address Street</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Bill To Address Street</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bill To Address City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Bill To Address City</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bill To Address Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Bill To Address Postal Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bill To Address Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Bill To Address Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bill To Address Location Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Bill To Address Location Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bill To Address VAT ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Bill To Address VAT ID</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bill To Address Local Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Bill To Address Local Tax Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Override Tax Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Override Tax Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Address Street1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Address Street1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Address Street2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Address Street2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Address City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Address City</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Address State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Address State</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Address Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Address Postal Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Address Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Address Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Tax Prefix</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Tax Prefix</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Tax Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Tax Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Tax Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To VAT ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To VAT ID</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Local Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Local Tax Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice From Address Street1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice From Address Street1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice From Address Street2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice From Address Street2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice From Address City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice From Address City</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice From Address State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice From Address State</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice From Address Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice From Address Postal Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice From Address Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice From Address Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice From Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice From Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship From Address Street1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship From Address Street1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship From Address Street2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship From Address Street2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship From Address City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship From Address City</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship From Address State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship From Address State</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship From Address Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship From Address Postal Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship From Address Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship From Address Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship From Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship From Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Original invoice number</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">Original invoice number. Available for credit notes only. This field is required when the presentation requires it.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Original invoice date</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Original invoice date. Available for credit notes only. This field is required when the presentation requires it.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Is Credit Note</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">If any value is put in this column, Coupa will make the document a Credit Note.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Disputed Invoice Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Disputed Invoice Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Dispute Resolution Credit Note Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">This is the reference to a full adjustment credit note which has been processed to balance disputed invoice identified by Disputed Invoice Number field.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Tax Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Buyer Tax Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Date of Discovery of Facts Decisive for Correction</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Date of Discovery of Facts Decisive for Correction</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Place Of Supply</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Place Of Supply</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Split Payment Mechanism</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Split Payment Mechanism</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Endorsement On Invoices</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Endorsement On Invoices</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">New Means Of Transport</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">New Means Of Transport</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Place Of Issuance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Place Of Issuance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount Of Advance Payment</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(46,20)</td>
+<td class="entry" align="">Amount Of Advance Payment</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Invoice Issuer Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Supplier Invoice Issuer Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Invoice Reviewer Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Supplier Invoice Reviewer Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Payment Collector Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Supplier Payment Collector Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Signed QR Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">Signed QR Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">State Tax ID Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">State Tax ID Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">State Tax ID Number for Substitute Taxpayer</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">State Tax ID Number for Substitute Taxpayer</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Municipality Tax ID Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Municipality Tax ID Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Serial Code of Fiscal Invoice</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Serial Code of Fiscal Invoice</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Verification Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Verification Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type of Document</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Type of Document</td>
+<td class="entry" align="">type_of_document_catalog_codes</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Protocol Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Protocol Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Nature of Operation</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Nature of Operation</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type of Operation</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Type of Operation</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Freight Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Freight Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Vehicle License Plate</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Vehicle's License Plate</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">National Enrollment of Conveyor</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">National Enrollment of Conveyor</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Volume Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Volume Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Volume Gross Weight</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Volume Gross Weight</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Volume Liquid Weight</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Volume Liquid Weight</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Volume Brand</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Volume Brand</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Volume Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Volume Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Volume Numbering</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Volume Numbering</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Agreement Notes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">ReasonInsight</td>
+<td class="entry" align="">Payment Agreement Notes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 5</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 6</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 6</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 7</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 7</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 8</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 8</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 9</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 9</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Attachment 10</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attachment 10</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Street3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Street3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Street4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Street4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Address Street3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Address Street3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit To Address Street4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Remit To Address Street4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice From Address Street3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice From Address Street3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice From Address Street4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice From Address Street4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship From Address Street3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship From Address Street3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship From Address Street4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship From Address Street4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Charge</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Charge</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The child object's Line Number, used to add a tagging on a line</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The Tagging's description</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Charge Total</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Percent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Percent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Name of Account for this Allocation</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Code for this Allocation</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Billing Notes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Billing Notes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Period Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Name of the existing budget period this falls under</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Tax Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Rate</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Tax Rate</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Tax Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Rate Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Tax Rate Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exempt from Tax?</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Used for compliant invoicing to specify line is exempt from taxes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reverse Charge?</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Used for compliant invoicing to specify tax is a reverse charge</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Out of Scope?</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Used for compliant invoicing to specify tax is an out of scope</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Location</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Tax Location</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Tax Description</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Supply Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Tax Supply Date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Nature of Tax</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Nature of Tax</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Product Tax Classification</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Product Tax Classification</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Line</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Line</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Part Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Part Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Auxiliary Part Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Auxiliary Part Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Price</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Price of the bulk material</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price Qty</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity of the bulk material</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price UOM</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">UOM of the bulk material</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price Conversion Numerator</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Conversion Numerator of the Bulk Price UOM</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price Conversion Denominator</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Conversion Denominator of the Bulk Price UOM</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Unit of Measure*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Unit of Measure</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Category</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Category</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Subcategory</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Subcategory</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Deductibility</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Deductibility</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">PO Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">PO Line Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Net Weight</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Net Weight</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Weight UOM</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Weight UOM</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price per Weight</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Price per Weight</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Match Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Three-way match attribute to connect with Receipt and Invoice Header</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Delivery Note Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Delivery Note Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Original Date Of Supply</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Original Date Of Supply</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Commodity Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Name of the commodity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">HSN/SAC</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">HSN/SAC</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">UNSPSC</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">UNSPSC</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Adjustment Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Adjustment Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Fiscal Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Classification of Goods</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Classification of Goods</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Municipality Taxation Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Municipality Taxation Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Item Barcode</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Item Barcode</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Customer Accounting?</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Used to specify if tax is customer accounting</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Contract Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Allocation</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Indication its an Invoice Line Allocation Record</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Numerical Amount of the allocation in Invoice Line's currency</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Percent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Allocation's Percentage of Invoice Line</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tag</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Tag</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Object Number*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The parent object's number, used to add a tagging to a header level object</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The Tag's name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">System Tag</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">System Tag, defaults to false if not specified</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="invoice_charge_columns-d117e146132">
+<h2 class="title sectiontitle">Invoice Charge Columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Invoice Charge</td>
+<td class="entry" align="">Indicates the type of header row</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">-</td>
+<td class="entry" align="">Invoice Charge</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Number*</td>
+<td class="entry" align="">Invoice Number</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Must exist in Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Must exist in Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">Invoice Line Number this allocation belongs to</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer(11)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type*</td>
+<td class="entry" align="">Type</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">InvoiceShippingCharge, InvoiceHandlingCharge, InvoiceMiscCharge</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(1550)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total*</td>
+<td class="entry" align="">Invoice Charge Total</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Percent</td>
+<td class="entry" align="">Percent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(16,10)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Amount</td>
+<td class="entry" align="">Line Tax Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate</td>
+<td class="entry" align="">Tax Rate</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(16,10)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Code</td>
+<td class="entry" align="">Tax Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Must exist in Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate Type</td>
+<td class="entry" align="">Tax Rate Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Must exist in Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Location</td>
+<td class="entry" align="">Line Tax Location</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Description</td>
+<td class="entry" align="">Line Tax Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Supply Date</td>
+<td class="entry" align="">Line Tax Supply Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Name</td>
+<td class="entry" align="">Name of Account for this Allocation</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(1024)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">Account Code for this Allocation</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(1024)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Billing Notes</td>
+<td class="entry" align="">Account Billing Notes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Period Name</td>
+<td class="entry" align="">Name of the existing budget period this falls under</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="invoice_line_columns-d117e147459">
+<h2 class="title sectiontitle">Invoice Line Columns</h2>
+<p class="">For invoice lines where the <code class="ph codeph">PO Number</code> is specified, you must also provide <code class="ph codeph">PO Line Number</code> or <code class="ph codeph">Supplier Part Number</code> .</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Invoice Line</td>
+<td class="entry" align="">Indicates the type of header row</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">-</td>
+<td class="entry" align="">Invoice Line</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Number*</td>
+<td class="entry" align="">Invoice Number*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Must exist in Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Must exist in Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">integer(11)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">The invoice line description, usually taken from the description of the item.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(1550)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Part Number</td>
+<td class="entry" align="">Supplier Part Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Auxiliary Part Number</td>
+<td class="entry" align="">Auxiliary Part Number</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price*</td>
+<td class="entry" align="">The price of the order line item.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(46,20)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity</td>
+<td class="entry" align="">The quantity of the order line item.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price</td>
+<td class="entry" align="">Bulk Price</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price Qty</td>
+<td class="entry" align="">Bulk Price Qty</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price UOM</td>
+<td class="entry" align="">Bulk Price UOM</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">int(11)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price Conversion Numerator</td>
+<td class="entry" align="">Conversion Numerator of the Bulk Price UOM</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Bulk Price Conversion Denominator</td>
+<td class="entry" align="">Conversion Denominator of the Bulk Price UOM</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Amount</td>
+<td class="entry" align="">Only has a value if the header item line level taxation is set to True.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32, 4)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Rate</td>
+<td class="entry" align="">The tax rate indicated on the invoice line. Only has a value if the header item line level taxation is set to True.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(16,10)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Code</td>
+<td class="entry" align="">The tax rate code for the line tax rate. Must match an existing tax rate code within Coupa. Only has a value if the header item line level taxation is set to True.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Must exist in Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Rate Type</td>
+<td class="entry" align="">Line Tax Rate Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Must exist in Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exempt from Tax?</td>
+<td class="entry" align="">Used for compliant invoicing to specify line is exempt from taxes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reverse Charge?</td>
+<td class="entry" align="">Used for compliant invoicing to specify tax is a reverse charge</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Location</td>
+<td class="entry" align="">Only has a value if the header item line level taxation is set to True.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Description</td>
+<td class="entry" align="">The line level tax description.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax Supply Date</td>
+<td class="entry" align="">The line level tax supply date in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Nature of Tax</td>
+<td class="entry" align="">Line Nature of Tax</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Unit of Measure*</td>
+<td class="entry" align="">The unit of measure code. it must already exist in Coupa.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(6)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Category</td>
+<td class="entry" align="">Categroy</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Subcategory</td>
+<td class="entry" align="">Subcategory</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Deductibility</td>
+<td class="entry" align="">Deductibility</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Number</td>
+<td class="entry" align="">The number given to the corresponding purchase order within Coupa (if any).</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(20)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Line Number</td>
+<td class="entry" align="">The line number of the corresponding purchase order line (if any).</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Name</td>
+<td class="entry" align="">The account name from Coupa.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(1024)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">The account code from Coupa. All segments are concatenated with a hyphen ( - ).</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(1024)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Billing Notes</td>
+<td class="entry" align="">A text field for adding notes to a billing line.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text(65,535)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Period Name</td>
+<td class="entry" align="">Name of the existing budget period this falls under</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Net Weight</td>
+<td class="entry" align="">The net weight of the order line item.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Weight UOM</td>
+<td class="entry" align="">The unit of measure code of weight. It must already exist in Coupa.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(6)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price per Weight</td>
+<td class="entry" align="">The price per weight of the order line item.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Match Reference</td>
+<td class="entry" align="">Three-way match attribute to connect with Receipt and Invoice Header</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Delivery Note Number</td>
+<td class="entry" align="">Delivery Note Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Commodity Name</td>
+<td class="entry" align="">Name of the commodity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">HSN/SAC</td>
+<td class="entry" align="">HSN/SAC</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">UNSPSC</td>
+<td class="entry" align="">UNSPSC</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Adjustment Type</td>
+<td class="entry" align="">Adjustment Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Customer Accounting?</td>
+<td class="entry" align="">Used to specify if tax is customer accounting</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Original Date Of Supply</td>
+<td class="entry" align="">Original Date Of Supply</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="invoice_account_allocation_columns">
+<h2 class="title sectiontitle">Invoice Account Allocation Columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Account Allocation</td>
+<td class="entry" align="">Indication its an Invoice Line Allocation Record</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">-</td>
+<td class="entry" align="">Account Allocation</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Number*</td>
+<td class="entry" align="">Invoice Number*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Line Number*</td>
+<td class="entry" align="">Invoice Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer(11)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount</td>
+<td class="entry" align="">Numerical Amount of the allocation in Invoice Line's currency</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Percent</td>
+<td class="entry" align="">Allocation's Percentage of Invoice Line</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(16,10)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Period Name</td>
+<td class="entry" align="">Name of the existing budget period this falls under</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Name</td>
+<td class="entry" align="">Account Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(1024)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(1024)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="tag_columns">
+<h2 class="title sectiontitle">Tag Columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Tag</td>
+<td class="entry" align="">Indicates the type of header row</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">-</td>
+<td class="entry" align="">Tag</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Object Number*</td>
+<td class="entry" align="">The parent object's number, used to add a tagging to a header level object</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(30)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">The invoice line</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">int(11)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name*</td>
+<td class="entry" align="">The Tag's name</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(30)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Description of the tag</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">System Tag</td>
+<td class="entry" align="">System Tag, defaults to false if not specified</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Yes/No</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="invoice_tax_columns">
+<h2 class="title sectiontitle">Invoice Tax Columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Invoice Tax Line</td>
+<td class="entry" align="">Indicates the type of header row</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">-</td>
+<td class="entry" align="">Invoice Tax Line</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Number*</td>
+<td class="entry" align="">Invoice Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Line Number</td>
+<td class="entry" align="">Include if line level tax</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">int(11)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Charge Number</td>
+<td class="entry" align="">
+<p class="">Invoice Charge Number tracks the order of the charges. Typically, shipping charge is 1, handling charge is 2, and misc charge is 3. Numbering is not strictly enforced the line numbers to a specific type of charge.</p>
+<p class="">The invoice charge number does not map to an invoice line number. All charges belong to the invoice itself.</p>
+<p class="">An invoice can have shipping, handling, and/or misc charges. Each charge is a separate object in the database. Tax lines can be added against each charge.</p>
+</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer(11)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">Line order for multiple tax lines, 1 if a single tax line</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">int(11)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Amount</td>
+<td class="entry" align="">The amount of the tax</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate</td>
+<td class="entry" align="">Tax Rate</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(16,10)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Code</td>
+<td class="entry" align="">Tax Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Must exist in Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate Type</td>
+<td class="entry" align="">Tax Rate Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Location</td>
+<td class="entry" align="">Tax Location</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Description</td>
+<td class="entry" align="">Tax Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Supply Date</td>
+<td class="entry" align="">Tax Supply Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Taxable Amount</td>
+<td class="entry" align="">Compliance specific field for information only</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">Determines the type of tax. No value specified = TaxLine</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">TaxLine, WithholdingTaxLine</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Base Amount</td>
+<td class="entry" align="">Value of the taxable amount if different than the line total</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">Any</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_wft_bc2_f1c">
+<h2 class="title sectiontitle">Invoice Header Assignment</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Document*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">InvoiceHeader Id</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Assignee Type*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Assignee Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Assignee*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Assignee</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Comment</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Comment</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Action</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Action, possible values are Assign and Unassign. Default to Assign</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

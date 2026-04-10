@@ -1,0 +1,999 @@
+<article class="" id="suppliers_import">
+<h1 class="title">Suppliers Import</h1>
+<div class="body">
+<div class="" id="overview-d117e169928">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Supplier Import process reads files from <code class="ph codeph">./Incoming/Suppliers/</code> in the standard SFTP setup. These files are moved to the archive folder located at <code class="ph codeph">./Incoming/Archive/Suppliers/</code> before being processed in alphanumeric order.</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Not all fields on the supplier object are available through the UI. Use the UI's bulk-loader template to see what fields are available through the UI. If you're unsure about which fields to use for your supplier integration, talk to your Coupa Implementation Manager.</p>
+</div>
+</p>
+</div>
+<div class="" id="key_priority">
+<h2 class="title sectiontitle">Key Priority</h2>
+<p class="">The following are the fields used to look up the supplier record:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ID</p>
+</li>
+<li class="li">
+<p class="">Supplier Number</p>
+</li>
+<li class="li">
+<p class="">Name</p>
+</li>
+</ul>
+<p class="">If more than one field is specified, the highest priority field is used.</p>
+</div>
+<div class="" id="validations-d117e169957">
+<h2 class="title sectiontitle">Validations</h2>
+<p class="">
+<code class="ph codeph">ID</code> is Coupa's unique value for the supplier, so it can't be modified. Use it to update any field. You can also update any field (except <code class="ph codeph">ID</code>) if you use either <code class="ph codeph">Supplier Number</code> or <code class="ph codeph">Suppler Name</code>.</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">
+<code class="ph codeph">Supplier Name</code> and <code class="ph codeph">Supplier Number</code> must be unique.</p>
+</div>
+</p>
+<p class="">Additionally, if the CSV file contains the same supplier record more than once, and if the supplier numbers differ for both records, Coupa will update the supplier number with the value from the row closest to the end of the file.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">US numbers should be in the format xxx yyy zzzz eeee, where 'eeee' represents an optional extension. Non-US numbers must be prefaced by a + sign and the country code. +aa xxx yyy zzzz eeee</p>
+</div>
+<p class="">For FedRAMP instances, website URLs must be in <code class="ph codeph">https:</code> format.</p>
+</div>
+<div class="" id="section_n3z_4xn_g1c">
+<h2 class="title sectiontitle">Supplier</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Must be unique supplier name or else the system will attempt to updated the existing supplier record</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Display Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Supplier display name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Id</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Coupa Unique Supplier Id</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Content Groups</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Enter in content groups (for security)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Status</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Possible values are active, inactive or draft.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Commodity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Must match the commodity name exactly.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Enterprise Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Must match the enterprise code exactly.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Often used to cross-reference your supplier number from the financial system</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Parent Company</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Parent Company</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Your account number with the supplier to be printed on the purchase order</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Your suppliers Tax Identification Number (TIN)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If filled in, must match one of your Tax Codes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">DUNS</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Your supplier's DUNS number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Online Store URL</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Online Store URL</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Online Store Login</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Online Store Login</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Email</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier contact's email. A primary contact can only have one email address. Note: If you include multiple email addresses, you will need to delete one from the primary contact in Coupa before you can edit and save the Supplier record.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Reference Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier contact's Reference Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Phone Work</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier contact's work phone number in the format xxx-yyy-zzzz. Intl numbers must be prefaced by a + sign and the country code. +aa xxx-yyy-zzzz</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Phone Mobile</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier contact's Phone Mobile</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Phone Fax</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier contact's Phone Fax</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Name Given</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier contact's Name Given</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Name Family</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier contact's Name Family</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Street1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address Street Line 1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Street2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address Street Line 2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Street3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address Street Line 3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Street4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address Street Line 4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address City</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address State</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address Postal Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Vat Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address Vat registration number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Vat Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's 2-digit country code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Tax Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's country specific tax type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Local Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Your supplier's Address local tax number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Matching Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Possible values are none, 2-way or 3-way. Only used for invoicing. Required when creating a supplier. Not required when updating a supplier.</td>
+<td class="entry" align="">2-way, 3-way, 3-way-direct, none</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Method</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Possible values are email, cxml, xml, buy_online or prompt. If email, the system will send the PO via email (must fill in the PO email address). If cxml, system will send the PO via XML (must fill in the cXML values). If prompt, the system will hold the PO and wait for you to manually release the order.</td>
+<td class="entry" align="">cxml, xml, email, prompt, mark_as_sent, buy_online</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Change Method</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Possible values are email, cxml, xml, buy_online or prompt. If email, the system will send the PO via email (must fill in the PO email address). If cxml, system will send the PO via XML (must fill in the cXML values). If prompt, the system will hold the PO and wait for you to manually release the order.</td>
+<td class="entry" align="">cxml, xml, email, prompt, mark_as_sent, buy_online</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Hold</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Possible values are Yes or No. If yes, then the buyer will need to review the PO before issuing. If no, the system will automatically send the PO via the preferred PO method</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Locale</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Will accept any valid locale short code i.e. en, en-GB, fr, fr-CA, etc.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Email</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Required if PO method is email. Can contain more than one email address. Place all the addresses within quotes, separated by commas.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Method</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Must be "Invoice", "P-Card", "Invoice Only", or "P-Card Only"</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remit-To Requirements</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Must be either "Address Only" or "Must include payment information"</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If filled in, must match one of your Payment Terms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Shipping Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If filled in, must match one of your Shipping Terms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO cXML URL</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if PO method is cXML</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO cXML Domain</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if PO method is cXML</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO cXML Identity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if PO method is cXML</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO cXML Supplier Domain</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if PO method is cXML</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO cXML Supplier Identity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if PO method is cXML</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO cXML Protocol</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if PO method is cXML</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">cXML SSL Version</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Blank to use latest version available (recommended). Set to TLSv1 or SSLv3 to override</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Disable Cert Verify</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Disable SSL Cert Checking</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO cXML HTTP Basic Auth Username</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">If sending PO cXML has HTTP Basic Auth</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow cXML Invoicing</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Possible values are Yes or No. If yes, then supplier will be able to send cXML invoices.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">cXML Invoicing - Supplier Domain</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if Allow cXML Invoicing is Yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">cXML Invoicing - Supplier Identity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Required if Allow cXML Invoicing is Yes. This field is unique across multiple suppliers.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">cXML Invoicing - Buyer Domain</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if Allow cXML Invoicing is Yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">cXML Invoicing - Buyer Identity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if Allow cXML Invoicing is Yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">cXML Invoicing Shared Key</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Must be filled in if Allow cXML Invoicing is Yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Savings (%)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(8,2)</td>
+<td class="entry" align="">Can be any number. It is used to generate the savings from using this preferred supplier on your purchases</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">On Hold</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Possible values are &lt;em&gt;Yes&lt;/em&gt; or &lt;em&gt;No&lt;/em&gt;. If yes, then the supplier on hold and POs can not be created against supplier.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Emails</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">InvoiceEmail</td>
+<td class="entry" align="">Registered email addresses allowed to send invoices via email to invoices@yourhost.coupahost.com.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Types</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">AccountType</td>
+<td class="entry" align="">Chart of Accounts for supplier</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Always Route Invoices From This Supplier For Approval</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Possible values are Yes or No. If yes, then invoices will all be sent thru approvals, regardless of total amount.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow Invoicing From CSN</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Possible values are Yes or No. If yes, then the supplier can create invoices against their POs or Contracts in CSN.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Create Invoices with No Backing Document</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Possible values are Yes or No. If yes, then the supplier can create invoices without a backing PO or Contract in CSN.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow Invoicing Choose Billing Account From CSN</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Possible values are &lt;em&gt;Yes&lt;/em&gt; or &lt;em&gt;No&lt;/em&gt;. If yes, then the supplier can choose the billing account for invoices in CSN.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Restricted account types</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Chart of Accounts that supplier is restricted to select billing for. This column is only applicable if the supplier is on CSN. It can't be used for restricting suppliers to a CoA.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Preferred Language</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default supplier language - default is US-English</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Preferred Currency</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default supplier currency - default is USD</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Country of Operation Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Country Code for Country of Operations</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow Non-Backed Lines on PO Invoices</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">'Possible values are Yes or No. If yes, then the supplier can create invoices lines without a backing PO or Contract in CSN.'</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Website</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Supplier Website</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Email domain</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default contact email</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default contact email</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Email Doman (ex. ibmlabs.com)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Hold invoices for AP review</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Prevent invoices from this supplier from being approved before AP reviews them.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow CSP Access without Two Factor</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Allows supplier to access Customer's data from CSP without Two Factor</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Request change orders</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Allow supplier to initiate an Order change requests</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Send Email Added Notification</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No Description Found</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Enable for Early Payments</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No Description Found</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Early Payment Programs</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No Description Found</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supply Chain Finance Configurations</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Supply Chain Finance Configurations to be whitelisted for the supplier</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Only pay financed invoices via Coupa Pay</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Only financed invoice will be paid via Coupa Pay, others via ERP</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Parent Business Entity Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Business Entity Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tags</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Tags</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Preferred Commodities</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Commodity</td>
+<td class="entry" align="">Preferred Commodities</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">One Time Supplier</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Is this a One Time Supplier?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Scope Three Emissions</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Do you track Scope Three Emissions?</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Last Invited Email</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No Description Found</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Last Invited At</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No Description Found</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Last Reminded At</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No Description Found</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Proxy ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No Description Found</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier website</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No Description Found</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Do Not Offer Static Discounting</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No Description Found</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Create Credit Notes without Backing Invoice</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Create Credit Notes without Backing Invoice</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Types</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">PaymentType</td>
+<td class="entry" align="">Valid options for Payment Types are - "Virtual Card" or "Bank Transfer" or "Check"</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exempt from Risk Aware</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Exempt from Risk Aware</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Sheet Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Service Sheet Required</td>
+<td class="entry" align="">yes, no, yes_customer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Strategic Supplier</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Strategic Supplier</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_fnt_pxn_g1c">
+<h2 class="title sectiontitle">Supplier Diversity Report Direct Spend</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Company Name*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Company Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Diversity Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Diversity Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total Purchases*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Total Purchases</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Currency</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Certificate Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Certificate Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Certificate Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Certificate Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expiration Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Expiration Date</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Supplier Diversity Report Indirect Spend</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Diversity Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Diversity Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ethnicity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ethnicity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total Purchases</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Total Purchases</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Currency</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total sales in Reporting Period</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Total sales in Reporting Period</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total sales with Requesting Customer in Reporting Period</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Total sales with Requesting Customer in Reporting Period</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

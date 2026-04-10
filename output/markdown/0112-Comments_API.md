@@ -1,0 +1,116 @@
+---
+title: "Comments API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/comments-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/comments-api"
+status_code: 200
+fetched_at: "2026-04-09T11:59:27+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Shared Resources"
+  - "Comments API"
+---
+
+# Comments API
+
+Use the Comments API to create, display, and update comments on Coupa documents.
+
+## Introduction
+
+The URL to access contract terms
+is: `https:///api/comments`. You
+can also include attachments with your comment by adding
+`/attachments` to the end of the URL. See the warning
+below for limitations.
+
+## Actions
+
+To GET or POST comments, use the API for the object you’d
+like to pull data for, and add `/comments` to the end of
+the url; it should look like this:
+
+`/api/{transactional_object}/{object_id}/comments`.
+
+Using the GET call gets all comments for the document, where the
+POST call adds a new comment.
+
+Comments can also be added by using `/api/comments`,
+where a payload is required to GET or POST properly.
+
+The Comments API allows you to perform the following
+actions:
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| POST | /api/invoices/:invoice_id/comments | create | Create comment |
+| POST | /api/expense_reports/:expense_report_id/comments | create | Create comment |
+| POST | /api/purchase_orders/:purchase_order_id/comments | create | Create comment |
+| POST | /api/users/:user_id/comments | create | Create comment |
+| POST | /api/requisitions/:requisition_id/comments | create | Create comment |
+| GET | /api/invoices/:invoice_id/comments | index | Query comments |
+| GET | /api/expense_reports/:expense_report_id/comments | index | Query comments |
+| GET | /api/purchase_orders/:purchase_order_id/comments | index | Query comments |
+| GET | /api/users/:user_id/comments | index | Query comments |
+| GET | /api/requisitions/:requisition_id/comments | index | Query comments |
+| GET | /api/invoices/:invoice_id/comments/:id | show | Show comment |
+| GET | /api/expense_reports/:expense_report_id/comments/:id | show | Show comment |
+| GET | /api/purchase_orders/:purchase_order_id/comments/:id | show | Show comment |
+| GET | /api/users/:user_id/comments/:id | show | Show comment |
+| GET | /api/requisitions/:requisition_id/comments/:id | show | Show comment |
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Warning:
+
+- Passing an invalid id to the endpoint which has the nested loop as
+/api/comments/{invalid comment id}/attachments results in an airbrake and it's same for
+other objects
+
+- While passing the URL type attachment id to the endpoint /api/comments/{comment
+id}/attachments/{URL type attachment id} to view the particular attachment shows the
+following error: *Attachment does not have a file attached*
+
+## Elements
+
+The following elements are available for the
+Comments API:
+
+| **Element** | **Description** | **Required Field?** | **Unique?** | **Allowable Value** | **Api-In Field?** | **Api-Out Field?** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| attachments | attachments | | | | | yes | N/A |
+| commentable-id | commentable-id | | | | yes | yes | integer |
+| commentable-type | commentable-type | | | | yes | yes | string(255) |
+| comment-type | Denotes the type of the comment and is for internal use only | | | | | | string(255) |
+| comments | The comment you want to post. You can mention a user by including `@[User:{id}]` as part of the comment field. | | | | yes | yes | text |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| created-by | User who created the comment. | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| id | Coupa's unique identifier for the comment. | | | | | yes | integer |
+| reason-code | Comment reason code | | | | | yes | string(255) |
+| to-supplier | to be shown to supplier? | | | | | yes | boolean |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| updated-by | User who updated | | | | | yes | user |
+
+## Example: POST Call
+
+```text
+<comment>
+<commentable-id type="integer">123456</commentable-id>
+<commentable-type>InvoiceHeader</commentable-type>
+<comments>COMMENT TEXT</comments>
+</comment>
+```
+
+It is also possible to mention a specific user in a comment posted via the API, this will
+notify the user that they have been mentioned in the comment, provided that they have
+document mentions notifications turned on. When mentioning a user in a comment via the API
+refer to them via their user's technical ID, for example, to mention the user with technical
+ID 2 - include "@[User:2] " in the comment text, like
+this:
+
+```text
+<comment>
+<commentable-id type="integer">123456</commentable-id>
+<commentable-type>InvoiceHeader</commentable-type>
+<comments>@[User:2] please see this comment</comments>
+</comment>
+```

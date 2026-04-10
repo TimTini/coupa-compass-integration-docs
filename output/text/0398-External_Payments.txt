@@ -1,0 +1,677 @@
+External Payments
+
+Column Name
+
+Description
+
+Req'd
+
+Unique
+
+Applies to (Type)
+
+Allowable Values and Notes
+
+Payment Source Name
+
+( source-name )
+
+Name of the source system providing the payment. Combination of Payment Source Name and Payment Source Reference must be unique.
+
+Yes
+
+Yes when paired with source-reference
+
+All payment types
+
+source-name and source-reference together form a uniqueness key to disallow double payments
+
+Payment Source Reference
+
+( source-reference )
+
+Reference identifier from the ERP or other source system providing the payment details.
+
+There is a new "Source Reference" field we added to the Company Payment Account edit screen so the idea is that end users will populate this value in Coupa manually and then they can use that in the Pay From Source Reference field instead of providing all of the pay from bank account details.
+
+Yes
+
+Yes when paired with source-name
+
+All payment types
+
+Payment Type
+
+The type of payment.
+
+Yes
+
+No
+
+All payment types
+
+Vendor Payment, Employee Reimbursement,
+
+Loan, Intercompany Transfer, Payroll, Tax Payment, Other
+
+Payment Rail
+
+The intended payment rails of the payment.
+
+Yes
+
+No
+
+All payment types
+
+Bank Transfer, Digital Check, Virtual Card, Digital Wallet
+
+Payment Delivery Method
+
+The delivery method based on the specified payment rail.
+
+Yes
+
+No
+
+All payment types
+
+Email, Direct Bank, Transfermate, Buyer, PayPal, Venmo
+
+Payment Transfer Type
+
+The payment transfer type to be used (Direct Bank only).
+
+Yes
+
+No
+
+All payment types
+
+standard_transfer, standard_bacs, standard_chaps, faster_payments, sepa, urgent_sepa, wire
+
+Pay From Source Reference
+
+Source Reference identifier in the Company Financial Account to specify the Pay From Account
+
+Yes
+
+No
+
+All payment types
+
+Pay To Amount
+
+The amount of the payment.
+
+Yes
+
+No
+
+All payment types
+
+Pay To Currency Code
+
+The three letter currency code of the payment.
+
+Yes
+
+No
+
+All payment types
+
+Payment Date
+
+ERP proposed payment date. This date is for information only as the actual payment date is dependent on approval and release of the payment batch.
+
+No
+
+No
+
+All payment types
+
+Remittance Email Addresses
+
+For payments where the beneficiary does not exist in Coupa. This list of email addresses can be provided and a remittance notification will be sent when the payment is released.
+
+No
+
+No
+
+All payment types
+
+Remittance Email Message
+
+A note that can be included on the standard remittance notification (optional).
+
+No
+
+No
+
+All payment types
+
+string(512)
+
+Beneficiary Name
+
+The name of the beneficiary.
+
+Yes
+
+Yes
+
+All payment types
+
+Beneficiary Number
+
+A reference number for the beneficiary. An identifier used in the ERP or payment source. This number is appended to the Beneficiary Name and used to uniquely identify a Beneficiary Payment Account (BPA).
+
+No
+
+No
+
+All payment types
+
+Beneficiary Type
+
+The type of beneficiary.
+
+No
+
+No
+
+All payment types
+
+Supplier, Employee, Tax Agency, any string
+
+Pay To Bank Name
+
+The name of the pay to bank.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay To Bank Street1
+
+The address of the pay to bank.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay To Bank Street2
+
+The address of the pay to bank.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay To Bank City
+
+The address of the pay to bank.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay To Bank Subdivision
+
+The address of the pay to bank.
+
+No
+
+No
+
+Pay To Bank Postal Code
+
+The address of the pay to bank.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay To Bank Country Code
+
+The address of the pay to bank.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay to Bank Account Number
+
+The pay to bank account number.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay To Bank IBAN
+
+The pay to bank IBAN.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay To Bank Transit Code
+
+The pay to bank transit code.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay To Bank Transit Code Type
+
+The pay to bank transit code type.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+ach_routing_number
+
+Pay To Bank Swift Code
+
+The pay to bank swift code.
+
+No
+
+No
+
+Bank Transfer payments only.
+
+Pay To Email Address
+
+The pay to email address.
+
+No
+
+No
+
+Virtual Card payments and may be required for bank transfer payments in some countries.
+
+Pay To Phone Country Code
+
+The pay to phone number.
+
+No
+
+No
+
+Digital Wallet payments and may be required for bank transfer payments in some countries.
+
+Pay To Phone Dialing Code
+
+The pay to phone number.
+
+No
+
+No
+
+Digital Wallet payments and may be required for bank transfer payments in some countries.
+
+Pay To Phone Number
+
+The pay to phone number.
+
+No
+
+No
+
+Digital Wallet payments and may be required for bank transfer payments in some countries.
+
+Remit-To Code
+
+The remit-to code. If specified will be used to lookup an existing remit-to address.
+
+No
+
+No
+
+All payment types
+
+Remit-To Codes can be found in the Remit-To Addresses record: Setup > Suppliers > Remit-To
+
+Remit-To Name
+
+The remit-to name. If specified will be used to lookup an existing remit-to address.
+
+No
+
+No
+
+All payment types
+
+Remit-To Street1
+
+The remit-to address.
+
+No
+
+No
+
+All payment types
+
+Remit-To Street2
+
+The remit-to address.
+
+No
+
+No
+
+All payment types
+
+Remit-To City
+
+The remit-to address.
+
+No
+
+No
+
+All payment types
+
+Remit-To Subdivision
+
+The remit-to address.
+
+No
+
+No
+
+All payment types
+
+Remit-To Postal Code
+
+The remit-to address.
+
+No
+
+No
+
+All payment types
+
+Remit-To Country Code
+
+The remit-to address.
+
+No
+
+No
+
+All payment types
+
+Payment Instruction 1
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Payment Instruction 2
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Payment Instruction 3
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Payment Instruction 4
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Payment Instruction 5
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Payment Instruction 6
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Payment Instruction 7
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Payment Instruction 8
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Payment Instruction 9
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Payment Instruction 10
+
+Extra payment instructions required for payments in certain countries.
+
+No
+
+No
+
+Bank Transfer payments via Direct Bank delivery only.
+
+Format: {field name}~{instruction key}~{instruction value}
+
+Example: invoice_number~/RFRDDOCNB/~INV12345
+
+Custom Field 1
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+Custom Field 2
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+Custom Field 3
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+Custom Field 4
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+Custom Field 5
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+Custom Field 6
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+Custom Field 7
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+Custom Field 8
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+Custom Field 9
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+Custom Field 10
+
+Custom field value.
+
+No
+
+No
+
+All payment types
+
+​
+
+Some External Payment CSV examples
+
+A Direct Bank Transfer payment Payment Source Name,Payment Source Reference,Payment Type,Payment Rail,Payment Delivery Method,Payment Transfer Type,Pay From Source Reference,Pay To Amount,Pay To Currency Code,Payment Date,Remittance Email Addresses,Remittance Email Message,Beneficiary Name,Beneficiary Number,Beneficiary Type,Pay To Bank Name,Pay To Bank Street1,Pay To Bank Street2,Pay To Bank City,Pay To Bank Subdivision,Pay To Bank Postal Code,Pay To Bank Country Code,Pay To Bank Account Number,Pay To Bank IBAN,Pay To Bank Transit Code,Pay To Bank Transit Code Type,Pay To Bank Swift Code,Pay To Email Address,Pay To Phone Number,Remit-To Code,Remit-To Name,Remit-To Street1,Remit-To Street2,Remit-To City,Remit-To Subdivision,Remit-To Postal Code,Remit-To Country Code,Payment Instruction 1,Payment Instruction 2,Custom Field 1,Custom Field 2 ERP,TBK0015,Vendor Payment,Bank Transfer,Direct Bank,standard_transfer,TBKDBI1002,100,USD,2/24/2022,,,TBK DBI,,Supplier,JPMC,,,,IL,,US,10002004,,71000013,ach_routing_number,,,,,,123 Main St.,,Chicago,IL,60610,US,/RFRDDOCNB/~TBK20220211_01,,Test Value,
+
+A Virtual Card payment Payment Source Name,Payment Source Reference,Payment Type,Payment Rail,Payment Delivery Method,Pay From Source Reference,Pay To Amount,Pay To Currency Code,Payment Date,Remittance Email Addresses,Remittance Email Message,Beneficiary Name,Beneficiary Number,Beneficiary Type,Pay To Email Address,Remit-To Code,Remit-To Name,Remit-To Street1,Remit-To Street2,Remit-To City,Remit-To Subdivision,Remit-To Postal Code,Remit-To Country Code ERP,TBK0012,Vendor Payment,Virtual Card,Email,TBKBofA,100,USD,2/23/22,,,KZ Designs,,Supplier,some.guyt+kz2@coupa.com,,,123 Main St.,,Chicago,IL,60610,US
+
+​

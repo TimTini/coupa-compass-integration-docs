@@ -1,0 +1,499 @@
+<article class="" id="accounts_api_accounts">
+<h1 class="title">Accounts API (/accounts)</h1>
+<div class="body">
+<p class="">Use the accounts API to create and manage accounts to mimic your
+business' financial structure. For example, if marketing, IT, and
+sales have their own budgets, you may want to create a separate
+account for each in Coupa.</p>
+<p class="">The URL to access accounts
+is: <code class="ph codeph">https://&lt;instance&gt;/api/accounts</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration
+Best Practices</a> for more info.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Dynamic accounts are created or updated at time of use based on the backing lookup values.
+        You would manage dynamic accounts by managing the lookup values. There is no need to create
+        an account using the API for dynamic accounts. If you do, you may encounter an error
+        message.</p>
+</div>
+<div class="" id="actions">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Accounts API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/accounts</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create account</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/accounts/favorites</code>
+</td>
+<td class="entry" align="">favorites</td>
+<td class="entry" align="">Favorites</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/accounts</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query accounts</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/accounts/recent</code>
+</td>
+<td class="entry" align="">recent</td>
+<td class="entry" align="">Recent</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/accounts/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show account</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/accounts/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update account</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Accounts API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">account-type</td>
+<td class="entry" align="">account_type</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-types-api-(account_types)" title="">AccountType</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-type-id</td>
+<td class="entry" align="">The ID of the account type. This field may or may not appear, depending on your
+                account configuration.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">active</td>
+<td class="entry" align="">A false value inactivates the account making it no longer available to users. A
+                true value makes it active and available to users.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">code</td>
+<td class="entry" align="">
+<p class="">All segments concatenated with a hyphen ( - )</p>
+<p class="">It's recommended not to use hyphens as part of the external ref. code of the
+                  lookup otherwise the system will interprete it as a separate segment</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">name</td>
+<td class="entry" align="">This is the nickname for the account. Users can view and search against this
+                field only through the user interface.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-1</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-10</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-11</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-12</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-13</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-14</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-15</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-16</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-17</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-18</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-19</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-2</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-20</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-3</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-4</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-5</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-6</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-7</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-8</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-9</td>
+<td class="entry" align="">Each segment represents the segment of the account code (e.g. code:
+                99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is
+                100132)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(100)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">When dealing with large data sets of accounts, always limit your GET with some
+          criteria.</li>
+<li class="li">The account type (chart of accounts) must already exist in the system; you cannot create
+          an account type using the API.</li>
+<li class="li">The account type (chart of accounts) must already exist in the system; you cannot create
+          an account type using the API.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,8 @@
+Order Line Change Export
+
+Export of these records is included as a Standard CSV Export.
+
+Order Line Change
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+type 	Indicates record type 	 	No/No

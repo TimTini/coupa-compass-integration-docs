@@ -1,0 +1,42 @@
+Supplier Site Import
+
+Overview
+
+The Supplier Site Import process reads files from ./Incoming/SupplierSites/ in the standard SFTP setup. These files are moved to the archive folder located at ./Incoming/Archive/SupplierSites/ before being processed in alphanumeric order.
+
+Supplier Site
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Code 	Yes 	Yes 	string(20) 	Must be unique supplier site code or else the system will attempt to updated the existing supplier site record
+Name 	Yes 	No 	string(255) 	Supplier Site name
+Id 	No 	No 	integer 	Coupa Unique Supplier Id
+PO Method 	No 	No 	string(255) 	Possible values are email, cxml, xml, buy_online or prompt. If email, the system will send the PO via email (must fill in the PO email address). If cxml, system will send the PO via XML (must fill in the cXML values). If prompt, the system will hold the PO and wait for you to manually release the order. 	cxml, xml, email, prompt, mark_as_sent, buy_online
+PO Change Method 	No 	No 	string(255) 	Possible values are email, cxml, xml, buy_online or prompt. If email, the system will send the PO via email (must fill in the PO email address). If cxml, system will send the PO via XML (must fill in the cXML values). If prompt, the system will hold the PO and wait for you to manually release the order. 	cxml, xml, email, prompt, mark_as_sent, buy_online
+Default Locale 	No 	No 	string(255) 	Will accept any valid locale short code i.e. en, en-GB, fr, fr-CA, etc.
+PO cXML URL 	Yes 	No 	string(255) 	Must be filled in if PO method is cXML
+PO cXML Domain 	Yes 	No 	string(255) 	Must be filled in if PO method is cXML
+PO cXML Identity 	Yes 	No 	string(255) 	Must be filled in if PO method is cXML
+PO cXML Supplier Domain 	Yes 	No 	string(255) 	Must be filled in if PO method is cXML
+PO cXML Supplier Identity 	Yes 	No 	string(255) 	Must be filled in if PO method is cXML
+PO cXML Secret 	Yes 	No 	string(255) 	Must be filled in if PO method is cXML
+PO cXML Protocol 	Yes 	No 	string(255) 	Must be filled in if PO method is cXML
+PO cXML HTTP Basic Auth Username 	No 	No 	string(255) 	If sending PO cXML has HTTP Basic Auth
+cXML SSL Version 	No 	No 	string(255) 	Blank to use latest version available (recommended). Set to TLSv1 or SSLv3 to override
+Buyer Hold 	No 	No 	boolean 	Possible values are Yes or No. If yes, then the buyer will need to review the PO before issuing. If no, the system will automatically send the PO via the preferred PO method
+Disable Cert Verify 	No 	No 	boolean 	Disable SSL Cert Checking
+PO Email 	Yes 	No 	string(255) 	Must be filled in if PO method is email
+Active 	No 	No 	boolean 	Possible values are true, false.
+Request change orders 	No 	No 	integer 	Allow supplier to initiate an Order change requests
+Allow Evaluated Receipt Settlement (ERS) Invoicing 	No 	No 	boolean 	If supplier site is eligible for Evaluated Receipt Settlement (ERS) Invoicing flow. Supplier must have ERS Invoicing flag set to true.
+Supplier Name 	Yes 	No 	string(255) 	Parent Supplier name
+Supplier Number 	No 	No 	 	Parent Supplier number
+Payment Terms 	Yes 	Yes 	string(20) 	If filled in, must match one of your Payment Terms
+Shipping Terms 	Yes 	Yes 	string(20) 	If filled in, must match one of your Shipping Terms
+Content Groups 	No 	No 	 	Enter in content groups (for security)
+Addresses 	No 	No 	Address 	List of associated Supplier address IDs. Must belong to a parent supplier
+Address Location Codes 	No 	No 	 	List of associated Supplier address location codes. Must belong to a parent supplier
+Address Remit To Codes 	No 	No 	 	List of associated Supplier address remit to codes. Must belong to a parent supplier
+Contacts 	No 	No 	Contact 	List of associated Supplier contact IDs. Must belong to a parent supplier
+Contact Reference Code 	No 	No 	 	Reference code of associated contact
+Account Types 	No 	No 	AccountType 	Chart of Accounts for supplier site
+Payment Method 	No 	No 	string(255) 	Must be "Invoice", "P-Card", "Invoice Only", or "P-Card Only"

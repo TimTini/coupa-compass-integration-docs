@@ -1,0 +1,50 @@
+Business Entities API (/business_entities)
+
+Use the budget line API to create and update budget lines that you have associated with your accounts.
+
+The URL to access business entities is: https://<instance>/api/business_entities
+
+See Integration Best Practices for more info.
+
+Actions
+
+The Business Entities API allows you to:
+
+Verb 	 Path 	 Action 	 Description
+GET 	 /api/business_entities 	query 	Query business entities
+POST 	 /api/business_entities 	create 	Create business entity
+GET 	 /api/business_entities/:id 	show 	Show business entity
+PATCH 	 /api/business_entities/:id 	update 	Update business entity
+PUT 	 /api/business_entities/:id 	update 	Update business entity
+
+Elements
+
+The following elements are available for the Business Entities API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+name 	Name 	yes 	yes 	any 	yes 	yes 	string(100)
+display-name 	Display Name 	no 	no 	any 	yes 	yes 	string(100)
+type 	Type 	no 	no 	LegalBusinessEntity, OrganizationalBusinessEntity 	yes 	yes 	string(255)
+formation-type 	Formation Type 	no 	no 	Organization, Person 	yes 	yes 	string(255)
+status 	Status 	no 	no 	any 	yes 	yes 	string(255)
+primary-address 	Primary Address 	no 	no 	any 	yes 	yes
+primary-contact 	Primary Contact 	no 	no 	any 	yes 	yes
+addresses 	Addresses 	no 	no 	any 	yes 	yes 	[]
+business-entity-account-owners 	Business Entity Account Owners 	no 	no 	any 	yes 	yes 	[]
+business-entity-relationships 	Business Entity Relationships 	no 	no 	any 	yes 	yes 	[]
+business-entity-alternate- names 	Business Entity Alternate Names 	no 	no 	any 	yes 	yes 	[]
+business-entity-external-references 	Business Entity External Reference 	no 	no 	any 	yes 	yes 	[]
+country-of-origin 	Country of Origin 	no 	no 	any 	yes 	yes
+id 	Coupa Internal ID 	no 	no 	any 	yes 	yes 	integer
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	yes 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	yes 	yes 	datetime
+created-by 	User who created 	no 	no 	any 	yes 	yes
+updated-by 	User who updated 	no 	no 	any 	yes 	yes
+external-src-ref 	External Source Reference 	 	 	 	yes 	 	string(255)
+external-src-name 	External Source Name 	 	 	 	yes 	 	string(255)
+
+- Business Entity Account Owner API
+- Business Entity Address API
+- Business Entity Alternate Name API
+- Business Entity External Reference API
+- Business Entity Relationship API

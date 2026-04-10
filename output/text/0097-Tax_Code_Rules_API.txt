@@ -1,0 +1,38 @@
+Tax Code Rules API
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+account-segment-1 	Account segment 1 	 	 	 	yes 	yes 	string(255)
+account-segment-2 	Account segment 2 	 	 	 	yes 	yes 	string(255)
+account-segment-3 	Account segment 3 	 	 	 	yes 	yes 	string(255)
+account-segment-4 	Account segment 4 	 	 	 	yes 	yes 	string(255)
+account-segment-5 	Account segment 5 	 	 	 	yes 	yes 	string(255)
+account-type 	chart of accounts 	yes 	 	 	yes 	yes 	 Account Type
+active 	Active 	 	 	 	yes 	yes 	boolean
+buyer-fiscal-rep-country 	Buyer fiscal rep country 	 	 	 	yes 	yes 	Country
+buyer-tax-registration 	Buyer tax registration 	 	 	 	yes 	yes 	 Tax Registration
+cash-accounting-scheme-reference 	Cash accounting scheme reference 	 	 	 	yes 	yes 	Cash Accounting Scheme Reference
+category 	Category 	 	 	goods, services, monetary, others 	yes 	yes 	string(255)
+commodity 	Commodity 	 	 	 	yes 	yes 	 Commodity
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+deductibility 	Deductibility 	 	 	fully_deductible, partially_deductible, not_deductible 	yes 	yes 	string(255)
+document-type 	Document type 	 	 	 	yes 	yes 	string(255)
+effective-date 	Effective date 	yes 	 	 	yes 	yes 	datetime
+end-date 	End date 	 	 	 	yes 	yes 	datetime
+expense-category 	expense category 	 	 	 	yes 	yes 	 ExpenseCategory
+id 	Coupa unique identifier 	 	 	 	yes 	yes 	integer
+jurisdiction 	Jurisdiction 	 	 	intra_eu, domestic, cross_border 	yes 	yes 	string(255)
+name 	Name 	 	 	 	yes 	yes 	string(255)
+priority 	Priority 	yes 	 	 	yes 	yes 	integer
+subcategory 	Subcategory 	 	 	raw_materials, investment_goods, services_exceptions 	yes 	yes 	string(255)
+supplier 	supplier 	 	 	 	yes 	yes 	 Supplier
+supplier-fiscal-rep-country 	Supplier fiscal rep country 	 	 	 	yes 	yes 	Country
+tax-code 	tax code 	yes 	 	 	yes 	yes 	 Tax Code
+tax-rate 	Tax rate 	 	 	 	yes 	yes 	string(255)
+tax-rate-customer-accounting 	Tax rate customer accounting 	 	 	 	yes 	yes 	boolean
+tax-rate-type 	Tax rate type 	 	 	 	yes 	yes 	 Tax Rate Type
+tax-reference 	Tax reference 	 	 	 	yes 	yes 	Tax Reference
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

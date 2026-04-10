@@ -1,0 +1,580 @@
+<article class="" id="fact_sheets_api">
+<h1 class="title">Fact Sheets API</h1>
+<div class="body">
+<p class="">Fact sheets are used to store, adapt, arrange, and process data from various sources prior
+      to, during, and after a sourcing event in CSO.</p>
+<p class="">Fact fields define the data to be held, just like item fields or columns in an Excel work
+      sheet. Each fact row should contain only one value for each fact field in order to be able to
+      use the data efficiently. Fact sheets are used to enter data into the event, for instance
+      historical volumes or other item specifications, supplier performance scores, lists of
+      addresses and codes for plants, articles or services, postal codes, latitudes, etc.</p>
+<p class="">Use the Fact Sheets API's to create, update, or query the Fact Sheets Data. This includes
+      specific endpoints to take action (create/update/delete) as well as data associated related to
+      rows, fields.</p>
+<p class="">The URL to access the API's is :
+        <span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/events/{event-id}/fact-sheets</span>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div class="" id="actions-d26e2310">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Performs Get action to retrieve all Fact sheets</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Creates one or more Fact Sheets objects.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Updates one or more Fact Sheets . Can perform mass updates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">delete</p>
+</td>
+<td class="entry" align="">
+<p class="">Deletes one more more Fact Sheets. Can perform mass deletes.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show fact sheet data for one Fact Sheet id.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update one fact sheet at a time using the fact sheet ID</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets/{fact-sheet-id}</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">delete</p>
+</td>
+<td class="entry" align="">
+<p class="">Delete one fact sheet at a time.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d26e2498">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">These are the elements available for
+        the Fact Sheets API</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Field Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Field Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out *</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">ID of the fact sheet</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ordinal</p>
+</td>
+<td class="entry" align="">
+<p class="">The ordinal value for the fact sheet</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type</p>
+</td>
+<td class="entry" align="">
+<p class="">The type of the fact sheet. Once set, it cannot be modified</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Ordinary, Reporting</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the Fact Sheet</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">formula-name</p>
+</td>
+<td class="entry" align="">
+<p class="">The formula name of the fact sheet</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">event-id</p>
+</td>
+<td class="entry" align="">
+<p class="">The event id for the fact sheet. Once set it cannot be modified</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">description</p>
+</td>
+<td class="entry" align="">
+<p class="">A short description</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-time</p>
+</td>
+<td class="entry" align="">
+<p class="">The time the fact sheet was created . ISO8601 Format</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Response payload does not show null values.</p>
+</div>
+</div>
+<div class="" id="examples-d26e2892">
+<h2 class="title sectiontitle">Examples</h2>
+<p class="">In this example, we queried for a Fact
+        Sheets
+          API.</p>
+<p class="">
+<span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/events/{event-id}/fact-sheets</span>
+</p>
+<p class="">We
+        did a GET to the URL below for a sample Event-id = <code class="ph codeph">9219593444837772101</code>
+        :</p>
+<p class="">
+<span class="filepath">htpss://&lt;instance&gt;.cso.coupacloud.com/api/events/9219593444837772101/fact-sheets</span>
+</p>
+</div>
+<div class="" id="fact_sheets_get_response">
+<h2 class="title sectiontitle">Fact Sheets GET
+      Response</h2>
+<pre>
+<code class="codeblock">
+        {
+		"total": 4,
+		"fact-sheets": [
+				{
+						"id": "9219593444824438589",
+						"ordinal": 0,
+						"type": "Ordinary",
+						"name": "B_Supernova 2014 - Rd2 Analysis",
+						"formula-name": "b_supernova_2014_rd2_analysis",
+						"event-id": "9219593444837772101",
+						"created-time": "2015-02-27T16:56:09.875+0000"
+				},
+				{
+						"id": "9219593444824438592",
+						"ordinal": 1,
+						"type": "Ordinary",
+						"name": "PD_Project details",
+						"formula-name": "pd_project_details",
+						"event-id": "9219593444837772101",
+						"created-time": "2015-02-27T16:56:09.875+0000"
+				},
+				{
+						"id": "9219601795978222763",
+						"ordinal": 1,
+						"type": "Reporting",
+						"name": "Management Reporting",
+						"formula-name": "management_reporting",
+						"event-id": "9219593444837772101",
+						"created-time": "2020-02-10T03:17:03.96+0000"
+				},
+				{
+						"id": "9219601942217814052",
+						"ordinal": 1,
+						"type": "Reporting",
+						"name": "Test All Event Status",
+						"formula-name": "test_all_event_status",
+						"event-id": "9219593444837772101",
+						"description": "Test All Event Status",
+						"created-time": "2020-09-09T10:30:07.376+0000"
+				} 
+	 ]
+}</code>
+</pre>
+</div>
+<div class="" id="create_update_delete-d26e3045">
+<h2 class="title sectiontitle">Create/Update/Delete</h2>
+<p class="">The following
+        describes how you can use the Coupa API to perform actions on Fact Sheets.</p>
+</div>
+<div class="" id="create-d26e3050">
+<h2 class="title sectiontitle">Create</h2>
+<p class="">
+<code class="ph codeph">/api/events/:id/fact-sheets</code>
+</p>
+<p class="">The below
+        payload creates new fact sheet on an
+          event<code class="ph codeph">(</code>
+<i>
+<b>9220538753252871154</b>
+</i>
+<code class="ph codeph">)</code>
+</p>
+<pre>
+<code class="codeblock">
+        Payload: 
+{
+		"fact-sheets": [
+				{
+						"id": "9220538753431210838",
+						"name": "demo-factsheet-new",
+						"event-id": "9220538753252871154",
+						"description": "testing demo fact sheet using API"
+				}
+		]
+}
+
+Response: 201
+{
+		"result": [
+				{
+						"type": "api.post.added",
+						"description": "1 objects created."
+				}
+		],
+		"added": 1,
+		"fact-sheets": [
+				{
+						"id": "9220538753455571178"
+				}
+		]
+}		</code>
+</pre>
+</div>
+<div class="" id="update-d26e3145">
+<h2 class="title sectiontitle">Update</h2>
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets</code>
+</p>
+<p class="">The below payload updates a fact sheet(s).</p>
+<pre>
+<code class="codeblock">
+        To update one or more Event at a time: 
+Payload:
+{
+		"fact-sheets": [
+				{
+						"id": "9220538753461853110",
+						"name": "demo-factsheet-newest",
+						"formula-name": "demo_factsheet_newest",
+						"description": "testing demo fact sheet using API with ordinal"
+				}
+		]
+}
+
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "api.put.updated",
+						"description": "1 objects updated."
+				}
+		],
+		"updated": 1
+}
+
+You can update only name/formula-name/description fields on a fact sheet.</code>
+</pre>
+</div>
+<div class="" id="delete-d26e3225">
+<h2 class="title sectiontitle">Delete</h2>
+<p class="">
+<code class="ph codeph">/api/events/{event-id}/fact-sheets</code>
+</p>
+<p class="">The
+        above API can be used to delete more than one fact sheet at a
+          time.</p>
+<pre>
+<code class="codeblock">
+        Payload:
+{
+		"fact-sheets": [
+				{
+						"id": "9220538753461853110"
+				}
+		]
+}
+
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "removedFactSheets",
+						"description": "Removed the following fact sheets: demo-factsheet-newest"
+				}
+		],
+		"deleted": 1
+}</code>
+</pre>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Updates
+          are done in a lenient manner, i.e. if updating one resource fails, the other ones might be
+          successful. The payload deleted one event. For deletion or updates, event ID is
+          required.</p>
+</div>
+<p class="">Successful requests will return <code class="ph codeph">HTTP 200 Response</code>.
+        The body of the response will include the created requisition. Unsuccessful requests will
+        return</p>
+<pre>
+<code class="codeblock">HTTP 400 Bad
+Request</code>
+</pre>
+<p class="">. The body of the response will include validation errors formatted as
+        XML.</p>
+</div>
+</div>
+</article>

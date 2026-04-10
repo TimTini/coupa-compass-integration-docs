@@ -1,0 +1,8 @@
+CCW Flat Files (CSV)
+
+Coupa primarily exchanges files with customers via the SFTP protocol. We support both username/password or SSH key authentication. SFTP is preferable to FTP as both the control and data channels are encrypted. Customer systems must connect to Coupa enterprise’s (Coupa P2P) FTP server to exchange data between Coupa Enterprise (CE) and Coupa Contingent Workforce (CCW).
+
+- AGS-APAY Integration (For Internal Use Only)
+- Integration Overview
+- Master Data File Formats
+- Transactional Data File Formats

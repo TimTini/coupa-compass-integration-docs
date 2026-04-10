@@ -1,0 +1,256 @@
+---
+title: "Fact Sheets API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-cso-api/fact-sheets-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-cso-api/fact-sheets-api"
+status_code: 200
+fetched_at: "2026-04-09T12:00:54+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The CSO API"
+  - "Fact Sheets API"
+---
+
+# Fact Sheets API
+
+Fact sheets are used to store, adapt, arrange, and process data from various sources prior
+to, during, and after a sourcing event in CSO.
+
+Fact fields define the data to be held, just like item fields or columns in an Excel work
+sheet. Each fact row should contain only one value for each fact field in order to be able to
+use the data efficiently. Fact sheets are used to enter data into the event, for instance
+historical volumes or other item specifications, supplier performance scores, lists of
+addresses and codes for plants, articles or services, postal codes, latitudes, etc.
+
+Use the Fact Sheets API's to create, update, or query the Fact Sheets Data. This includes
+specific endpoints to take action (create/update/delete) as well as data associated related to
+rows, fields.
+
+The URL to access the API's is :
+https://<instance>.cso.coupahost.com/api/events/{event-id}/fact-sheets
+
+See [Integration Best Practices](https://compass.coupa.com/x285417.xml) for more info.
+
+## Actions
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| GET | `/api/events/{event-id}/fact-sheets` | index | Performs Get action to retrieve all Fact sheets |
+| POST | `/api/events/{event-id}/fact-sheets` | create | Creates one or more Fact Sheets objects. |
+| PUT | `/api/events/{event-id}/fact-sheets` | update | Updates one or more Fact Sheets . Can perform mass updates. |
+| DELETE | `/api/events/{event-id}/fact-sheets` | delete | Deletes one more more Fact Sheets. Can perform mass deletes. |
+| GET | `/api/events/{event-id}/fact-sheets/{fact-sheet-id}` | show | Show fact sheet data for one Fact Sheet id. |
+| PUT | `/api/events/{event-id}/fact-sheets/{fact-sheet-id}` | update | Update one fact sheet at a time using the fact sheet ID |
+| DELETE | `/api/events/{event-id}/fact-sheets/{fact-sheet-id}` | delete | Delete one fact sheet at a time. |
+
+## Elements
+
+These are the elements available for
+the Fact Sheets API
+
+| **Field Name** | **Field Description** | **Req'd** | **Unique?** | **Allowable Values** | **In** | **Out *** | **Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | ID of the fact sheet | | Yes | | | yes | integer |
+| ordinal | The ordinal value for the fact sheet | | | | | yes | integer |
+| type | The type of the fact sheet. Once set, it cannot be modified | yes | | Ordinary, Reporting | | yes | string |
+| name | Name of the Fact Sheet | yes | | | yes | yes | string |
+| formula-name | The formula name of the fact sheet | | | | yes | yes | string |
+| event-id | The event id for the fact sheet. Once set it cannot be modified | | | | yes | yes | integer |
+| description | A short description | | | | yes | yes | string |
+| created-time | The time the fact sheet was created . ISO8601 Format | | | | | yes | datetime |
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+Response payload does not show null values.
+
+## Examples
+
+In this example, we queried for a Fact
+Sheets
+API.
+
+https://<instance>.cso.coupahost.com/api/events/{event-id}/fact-sheets
+
+We
+did a GET to the URL below for a sample Event-id = `9219593444837772101`
+:
+
+htpss://<instance>.cso.coupacloud.com/api/events/9219593444837772101/fact-sheets
+
+## Fact Sheets GET Response
+
+```text
+{
+"total": 4,
+"fact-sheets": [
+{
+"id": "9219593444824438589",
+"ordinal": 0,
+"type": "Ordinary",
+"name": "B_Supernova 2014 - Rd2 Analysis",
+"formula-name": "b_supernova_2014_rd2_analysis",
+"event-id": "9219593444837772101",
+"created-time": "2015-02-27T16:56:09.875+0000"
+},
+{
+"id": "9219593444824438592",
+"ordinal": 1,
+"type": "Ordinary",
+"name": "PD_Project details",
+"formula-name": "pd_project_details",
+"event-id": "9219593444837772101",
+"created-time": "2015-02-27T16:56:09.875+0000"
+},
+{
+"id": "9219601795978222763",
+"ordinal": 1,
+"type": "Reporting",
+"name": "Management Reporting",
+"formula-name": "management_reporting",
+"event-id": "9219593444837772101",
+"created-time": "2020-02-10T03:17:03.96+0000"
+},
+{
+"id": "9219601942217814052",
+"ordinal": 1,
+"type": "Reporting",
+"name": "Test All Event Status",
+"formula-name": "test_all_event_status",
+"event-id": "9219593444837772101",
+"description": "Test All Event Status",
+"created-time": "2020-09-09T10:30:07.376+0000"
+}
+]
+}
+```
+
+## Create/Update/Delete
+
+The following
+describes how you can use the Coupa API to perform actions on Fact Sheets.
+
+## Create
+
+`/api/events/:id/fact-sheets`
+
+The below
+payload creates new fact sheet on an
+event`(`
+*
+**9220538753252871154**
+*
+`)`
+
+```text
+Payload:
+{
+"fact-sheets": [
+{
+"id": "9220538753431210838",
+"name": "demo-factsheet-new",
+"event-id": "9220538753252871154",
+"description": "testing demo fact sheet using API"
+}
+]
+}
+
+Response: 201
+{
+"result": [
+{
+"type": "api.post.added",
+"description": "1 objects created."
+}
+],
+"added": 1,
+"fact-sheets": [
+{
+"id": "9220538753455571178"
+}
+]
+}
+```
+
+## Update
+
+`/api/events/{event-id}/fact-sheets`
+
+The below payload updates a fact sheet(s).
+
+```text
+To update one or more Event at a time:
+Payload:
+{
+"fact-sheets": [
+{
+"id": "9220538753461853110",
+"name": "demo-factsheet-newest",
+"formula-name": "demo_factsheet_newest",
+"description": "testing demo fact sheet using API with ordinal"
+}
+]
+}
+
+Response: 200 OK
+{
+"result": [
+{
+"type": "api.put.updated",
+"description": "1 objects updated."
+}
+],
+"updated": 1
+}
+
+You can update only name/formula-name/description fields on a fact sheet.
+```
+
+## Delete
+
+`/api/events/{event-id}/fact-sheets`
+
+The
+above API can be used to delete more than one fact sheet at a
+time.
+
+```text
+Payload:
+{
+"fact-sheets": [
+{
+"id": "9220538753461853110"
+}
+]
+}
+
+Response: 200 OK
+{
+"result": [
+{
+"type": "removedFactSheets",
+"description": "Removed the following fact sheets: demo-factsheet-newest"
+}
+],
+"deleted": 1
+}
+```
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+Updates
+are done in a lenient manner, i.e. if updating one resource fails, the other ones might be
+successful. The payload deleted one event. For deletion or updates, event ID is
+required.
+
+Successful requests will return `HTTP 200 Response`.
+The body of the response will include the created requisition. Unsuccessful requests will
+return
+
+```text
+HTTP 400 Bad
+Request
+```
+
+. The body of the response will include validation errors formatted as
+XML.

@@ -1,0 +1,901 @@
+Candidate Lookup API
+
+CCW's Candidate Lookup API is used to query for data about candidates who've been submitted to one or more CCW requisitions. Lookup criteria such as candidate first/last names, status, eligibility to be confirmed (as a contingent worker) and more, can be requested via the CCW Candidate Lookup API. Any candidate data matching the specific lookup criteria is returned.
+
+The base URL to access the CCW Candidate Lookup API is: https://<instance>/api/candidates/search
+
+Refer to the CCW API Overview to learn how to authenticate and submit POST requests to CCW APIs. Requests should include the following elements:
+
+Request Headers
+
+Request headers are required for authentication purposes. See Request Headers section of CCW's API Overview documentation for details.
+
+Request Body
+
+Meta and Data objects both must be passed in the API request body:
+
+The Metadata section defines the number of results returned, to ensure faster performance. Includes:
+
+-
+
+Limit : Defines the maximum number of results, between 1 and 50, to be returned in a single API request (i.e., the number of results on a page)
+
+-
+
+Defaults to 50 results if the value for Limit is empty or greater than 50
+
+-
+
+Returns an error if the value for Limit is less than 1
+
+-
+
+Offset : Defines the record at which the request should start; e.g., limit=30, offset=51 returns the next 30 records starting with record 51.
+
+-
+
+Defaults to 0 if the value for Offset is empty
+
+-
+
+Returns an error if the value for Offset is less than 0.
+
+The Data section includes one or more specific lookup parameters to be requested (at least one non-empty parameter must be sent).
+
+The following table defines all Data parameters that can be passed within the Candidate Lookup API request body:
+
+Attribute
+
+Data type
+
+Required?
+
+Unique?
+
+Values
+
+Description
+
+limit
+
+number
+
+No
+
+No
+
+1-50
+
+Number of records to be returned per API call
+
+offset
+
+number
+
+No
+
+No
+
+any
+
+Specific record number at which results should start
+
+id
+
+number
+
+No
+
+Yes
+
+any
+
+Unique id of candidate in CCW. Generated when the candidate is submitted to a requisition. (Used for Confirmation API).
+
+number
+
+string(100)
+
+No
+
+Yes
+
+any
+
+Unique number assigned in CCW for candidate. Format: <Client prefix>-CS-<sequence-number>
+
+first_name
+
+string(100)
+
+No
+
+No
+
+any
+
+Candidate first name
+
+last_name
+
+string(100)
+
+No
+
+No
+
+any
+
+Candidate last name
+
+email
+
+string(400)
+
+No
+
+Yes
+
+any
+
+Candidate email address
+
+status
+
+string(50)
+
+No
+
+No
+
+One of CCW's valid statuses
+
+See Valid Candidate Statuses table below.
+
+ccw_id
+
+string(8)
+
+No
+
+Yes
+
+any
+
+CCW ID
+
+external_reference_number
+
+string(200)
+
+No
+
+No
+
+any
+
+Unique ID associated with the candidate
+
+requisition_number
+
+string(100)
+
+No
+
+No
+
+any
+
+Requisition number associated with the candidate
+
+hiring_manager_first_name
+
+string(100)
+
+No
+
+No
+
+any
+
+Hiring manager first name
+
+hiring_manager_last_name
+
+string(100)
+
+No
+
+No
+
+any
+
+Hiring manager last name
+
+onboarding_eligibility_met
+
+number
+
+No
+
+No
+
+0,1
+
+0=eligible, 1=not eligible
+
+confirmation_eligibility_met
+
+boolean
+
+No
+
+No
+
+true/false or yes/no or 1/0 or Y/N or T/F
+
+Indicates if the candidate has an accepted work order and onboarding eligibility criteria is met
+
+supplier_name
+
+string(200)
+
+No
+
+No
+
+any
+
+Supplier name
+
+start_date
+
+date
+
+No
+
+No
+
+any
+
+Active Work Order start date, formatted as YYYY-MM-DD (ISO 8601 standard formatting)
+
+end_date
+
+date
+
+No
+
+No
+
+any
+
+Active Work Order end date, formatted as YYYY-MM-DD
+
+Example Request POST /api/candidates/search HOST: <CCW FQDN> Authorization: Bearer <token> Accept: "application/json" Correlation-Id: Z098Jth56Nkio343YY1vXt { "meta":{ "limit":"number", "offset":"number" } "data":{ "id":"number", "number":"string", "first_name":"string", "last_name":"string", "email":"string", "ccw_id":"number", "status":"string", "external_reference_number":"string", "requisition_number":"string", "hiring_manager_first_name":"string", "hiring_manager_last_name":"string", "onboarding_eligibility_met":"string", "confirmation_eligibility_met":"string", "supplier_name":"string" } }
+
+API Response
+
+Candidate(s) matching all lookup parameters sent in the API request body are returned. The following table defines all parameters that may be included with candidates in the response from CCW to a successful API request:
+
+Attribute
+
+Request body object
+
+Data type
+
+Description
+
+total_count
+
+meta
+
+number
+
+Number of records that matched the lookup criteria
+
+has_more
+
+meta
+
+boolean
+
+True or False - to indicate if there are more candidates that meet the lookup criteria
+
+id
+
+data
+
+number
+
+Unique id of candidate in CCW. Generated when the candidate is submitted to a requisition. (Used for Confirmation API).
+
+number
+
+data
+
+string(100)
+
+Unique number assigned in CCW for candidate. Format: <Client prefix>-CS-<sequence-number>
+
+first_name
+
+data
+
+string(100)
+
+Candidate first name
+
+last_name
+
+data
+
+string(100)
+
+Candidate last name
+
+email
+
+data
+
+string(400)
+
+Candidate email address
+
+status
+
+data
+
+string(50)
+
+See Valid Candidate Statuses table below.
+
+ccw_id
+
+data
+
+string(8)
+
+CCW ID
+
+cw_number
+
+data
+
+string(100)
+
+CW number assigned to the candidate
+
+external_reference_number
+
+data
+
+string(200)
+
+Unique ID associated with the candidate
+
+hiring_manager_first_name
+
+data
+
+string(100)
+
+Hiring manager first name
+
+hiring_manager_last_name
+
+data
+
+string(100)
+
+Hiring manager last name
+
+hiring_manager_user_name
+
+data
+
+string(512)
+
+Hiring manager's user name
+
+hiring_manager_email
+
+data
+
+string(100)
+
+Hiring manager's email address
+
+engagement_type
+
+data
+
+string(400)
+
+Temp / Vendor
+
+employment_type
+
+data
+
+string(200)
+
+Type of employment (W2, 1099, etc.)
+
+submitted_date
+
+data
+
+date
+
+Date candidate was submitted to the requisition, formatted as YYYY-MM-DDT24HHMMSSZ.
+
+shortlisted
+
+data
+
+boolean
+
+Indicates if the candidate was added to a shortlist
+
+work_email
+
+data
+
+string(400)
+
+Work email assigned to the candidate
+
+date_available
+
+data
+
+date
+
+The date when candidate is available to work, formatted as YYYY-MM-DDT24HHMMSSZ.
+
+submitted_to_other_requisitions
+
+data
+
+boolean
+
+Indicates if the candidate was submitted to other requisitions
+
+onboarding_status
+
+data
+
+string(set values)
+
+"presubmission-completed", "onboarding-Resumed", "onboarding-paused", "onboarding-completed", "onboarding-cancelled", "initiated", "in-progress"
+
+onboarding_eligibility_met
+
+data
+
+boolean
+
+0=eligible, 1=not eligible
+
+confirmation_eligibility_met
+
+data
+
+boolean
+
+Indicates if the candidate has an accepted work order and onboarding eligibility criteria is met
+
+id
+
+data.supplier
+
+number
+
+Unique ID assigned to supplier in CCW
+
+name
+
+data.supplier
+
+string(400)
+
+Supplier name
+
+number
+
+data.supplier
+
+string(400)
+
+Unique number assigned to supplier in CCW
+
+first_name
+
+data.supplier.contact
+
+string(100)
+
+Supplier contact first name
+
+last_name
+
+data.supplier.contact
+
+string(100)
+
+Supplier contact last name
+
+email
+
+data.supplier.contact
+
+string(400)
+
+Supplier contact email
+
+id
+
+data.requisition
+
+number
+
+Unique ID assigned to the requisition in CCW
+
+number
+
+data.requisition
+
+string(100)
+
+Unique number assigned to the requisition in CCW
+
+type
+
+data.requisition
+
+string(200)
+
+Requisition type (for example: identified candidate, regular)
+
+job_code
+
+data.requisition
+
+string(500)
+
+Requisition job code
+
+job_title
+
+data.requisition
+
+string(400)
+
+Requisition job title
+
+work_location_code
+
+data.requisition
+
+string(1000)
+
+Requisition work location code
+
+work_location_name
+
+data.requisition
+
+string(40)
+
+Requisition work location name
+
+type_of_service
+
+data.requisition
+
+string(200)
+
+Type of work
+
+rate_type
+
+data.requisition
+
+string(100)
+
+Rate type
+
+id
+
+data.work_orders
+
+number
+
+Unique ID assigned to the Work Order in CCW
+
+number
+
+data.work_orders
+
+string(200)
+
+Unique number assigned to the Work Order in CCW
+
+active
+
+data.work_orders
+
+boolean
+
+Indicates if the Work Order is Active
+
+contract_start_date
+
+data.work_orders
+
+date
+
+Work Order start date, formatted as YYYY-MM-DDT24HHMMSSZ
+
+contract_end_date
+
+data.work_orders
+
+date
+
+Work Order end date, formatted as YYYY-MM-DDT24HHMMSSZ
+
+id
+
+data.statement_of_works
+
+number
+
+Unique ID assigned to the SOW in CCW
+
+number
+
+data.statement_of_works
+
+string(100)
+
+Unique number assigned to the SOW in CCW
+
+id
+
+data.sows.task_order
+
+number
+
+Unique ID assigned to the Task Order in CCW
+
+number
+
+data.sows.task_order
+
+string(100)
+
+Unique ID assigned to the Task Order in CCW
+
+Example Responses
+
+Following is an example of a successful response, where at least one candidate matched the lookup criteria.
+
+Note:
+-
+
+total_count: overall number of candidates that matched the lookup criteria in the API request
+
+-
+
+has_more: true or false, indicating if there are more candidates that match the lookup criteria, in addition to those included in the response
+
+{ "meta": { "total_count": 1, "has_more": false }, "data": [{ "candidate":{ "id":622757, "number":"CCW_CS_13897", "first_name":"Cedric", "last_name":"Daniels", "email":"cedric.daniels@coupa.com", "ccw_id":"23230203", "supplier":{ "id":526, "name":"Test Supplier.Inc", "number":"483735", "contact": { "first_name":"Lester", "last_name":"Freeman", "email":"lester.freeman@supplierssample.com" } }, "requisition":{ "id":"174011", "number":"RS-REQ-27130", "type":"Create Requisition", "job_code":"", "job_title":"Clerical", "work_location_code":"04872", "work_location_name":"04872-Craftsman CA", "type_of_service":"Clerical/Professional", "rate_type":"Per Hour" }, "hiring_manager_user_name": "100DuChloe1.DuCollins1.1@coupadev.com", "hiring_manager_first_name": "DuCollins1.1", "hiring_manager_last_name": "100DuChloe1", "hiring_manager_email": "100DuChloe1.DuCollins1.1@coupadev.com", "engagement_type": "Regular", "employment_type": "1099", "status": "wo-accepted", "submitted_date": "2020-07-28T14:36:22Z", "cw_number": "RS-CW-059713", "number": "RS-CS-0060176", "short_listed": false, "work_email": "", "date_available": null, "submitted_to_other_requirements": false, "onboarding_status": "initiated", "onboarding_eligibility_met": 1, "confirmation_eligibility_met": false, "statement_of_works": [], "work_orders":[ { "id":224583, "number":"RS-WO-059860", "active":"true", "contract_start_date":"2020-07-01T04:00:00Z", "contract_end_date":"2020-12-31T05:00:00Z" "external_reference_number": "" } ] } ], "meta": { "total_count": 1, "has_more": false } }
+
+Following is an example of a response where no candidates met the lookup criteria:
+{ "meta": { "total_count": 0, "has_more": false }, "data":[] }
+
+Valid Candidate Statuses
+
+Following are the valid candidate status values that may be passed in a request to CCW's Candidate API:
+
+Status name
+
+Status code
+
+Candidate Approved
+
+candidate-approved
+
+Candidate Interviewing
+
+candidate-interviewing
+
+Candidate No-Show
+
+candidate-no-show
+
+Candidate Rejected
+
+candidate-rejected
+
+Candidate Re-Queued for approval
+
+candidate-requeue-approval
+
+Candidate Withdrawn
+
+candidate-withdrawn
+
+Do Not Submit
+
+candidate-do-not-submit
+
+Onboarding Started
+
+candidate-onboarding-started
+
+OTH Accepted
+
+oth-accepted
+
+OTH Extended
+
+oth-extended
+
+OTH Issued
+
+oth-issued
+
+OTH Reject Locked
+
+oth-rejected-locked
+
+OTH Rejected
+
+oth-rejected
+
+OTH Withdrawn
+
+oth-withdrawn
+
+Re-Submit Requested
+
+re-submit-requested
+
+Submitted for Approvals
+
+submitted-for-approvals
+
+Submitted to Manager
+
+submitted-to-manager
+
+Submitted to Program Admin
+
+submitted-to-program-admin
+
+WO Accepted
+
+wo-accepted
+
+WO Cancelled
+
+wo-cancelled
+
+WO Issued
+
+wo-issued
+
+WO Rejected
+
+wo-rejected
+
+Error Codes
+
+When an API request fails, the response will include one of the following error codes:
+
+HTTP Status Code
+
+Error Code
+
+Error Sub Code
+
+Error Message
+
+400
+
+E4000000
+
+E4000001
+
+Bad request. Missing one or more of the mandatory HTTP headers
+
+400
+
+E4000000
+
+E4000003
+
+Input body is not as per expected schema
+
+400
+
+E4000000
+
+E4000004
+
+Invalid {field name} value
+
+400
+
+E4000000
+
+E4000005
+
+{field name} cannot be more than {max} characters
+
+401
+
+E4010000
+
+E4010001
+
+Authentication failed. Check the credentials associated with your consumer app
+
+401
+
+E4010000
+
+E4010002
+
+Authentication failed. Access token is invalid or expired
+
+403
+
+E4030000
+
+E4030001
+
+Not Authorized. The user does not have the rights to perform the action
+
+403
+
+E4030000
+
+E4030002
+
+Not Authorized. Invalid scope
+
+403
+
+E4030000
+
+E4030003
+
+Not Authorized. The API user is invalid. Ensure user is active and set as an API user
+
+404
+
+E4040000
+
+E4040001
+
+Not found
+
+405
+
+E4050000
+
+E4050001
+
+Method Not Supported. Service does not support the requested HTTP method
+
+500
+
+E5000000
+
+E5000001
+
+A system or application error occurred, Please contact Coupa CW Admin

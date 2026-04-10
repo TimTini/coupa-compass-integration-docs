@@ -1,0 +1,62 @@
+<article class="" id="open_esign_framework_overview">
+<h1 class="title">Open eSign Framework Overview</h1>
+<div class="body">
+<p class="">The purpose of this framework is to build an Open API definition
+to allow e-signature providers to self-configure (build &amp;
+maintain) integration with Coupa CLM. In order to make this happen,
+Coupa will Publish an Open API SDK, including a test harness to
+ease the implementation of new eSign providers.</p>
+<p class="">The Open eSign Framework provides an integration for the
+e-signature provider to Coupa Platform. The Open API definition of
+the eSign Framework contains all the details of the API
+specifications that the e-signature provider would need to
+implement for the integration.</p>
+<div class="" id="coupa_e-signing_integration_flow">
+<h2 class="title sectiontitle">Coupa e-signing integration flow</h2>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/clm_open_esign_famework/images/image1.png" alt="" title="" width="">
+</p>
+<ul class="ul">
+<li class="li">
+<b>Provider Services:</b> This is the provider's
+e-signature service.</li>
+<li class="li">
+<b>Provider Hosted Service:</b> This is the new connector that the provider needs to build
+          and host as per the Coupa API Specification. For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/clm-open-esign-framework/open-esign-connector-specifications#open_api_specifications" title="">Open eSign Connector Specifications</a>.</li>
+</ul>
+</div>
+<div class="" id="dita">
+<h2 class="title sectiontitle">Sequence diagram detailing flows</h2>
+<p class="">
+<b>Create e-signature account:</b> Create the e-signature account on the Coupa Platform that
+        will authenticate against the signing provider via the connector and subsequently initiate
+        all the API calls.</p>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/clm_open_esign_famework/images/image2.png" alt="" title="" width="">
+</p>
+<p class="">
+<b>Provider configuration details</b>: the e-signature provider configuration parameters
+        that the user will need to populate when creating the esignature account. These parameters
+        are then passed through to the e-signature provider as part of the authentication.</p>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/clm_open_esign_famework/images/image3.png" alt="" title="" width="">
+</p>
+<p class="">
+<b>Contract e-signature integration flow:</b> Sender view</p>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/clm_open_esign_famework/images/image4.png" alt="" title="" width="">
+</p>
+<p class="">
+<b>Contract signature status flow:</b> Callbacks</p>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/clm_open_esign_famework/images/image5.png" alt="" title="" width="">
+</p>
+<p class="">
+<b>Contract withdraw signature</b>
+</p>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/clm_open_esign_famework/images/image6.png" alt="" title="" width="">
+</p>
+</div>
+</div>
+</article>

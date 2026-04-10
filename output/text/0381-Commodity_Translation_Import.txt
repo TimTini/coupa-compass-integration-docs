@@ -1,0 +1,14 @@
+Commodity Translation Import
+
+Overview
+
+The commodity import process reads files from the ./Incoming/Commodity/ in the SFTP. These files will be moved to the archive folder located at ./Incoming/Archive/Commodity/ before being processed in alpha-numeric order.
+
+Note: Name is the key.
+
+Commodity Translation
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Original Name 	No 	No 	 	Original Name of the master record
+Locale 	Yes 	No 	string(255) 	Coupa Locale Code
+Name 	Yes 	No 	string(255) 	Translated Name

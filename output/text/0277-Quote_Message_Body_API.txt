@@ -1,0 +1,14 @@
+Quote Message Body API
+
+Use the Quote Message Body API to view message details and attachments sent or recieved by the buyer in relation to your sourcing event.
+
+Associations
+
+This resource is associated with the Quote Request API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+body 	Message body. 	No 	No 	Any 	No 	Yes 	string
+status 	Messge status. 	No 	No 	Any 	No 	Yes 	string
+attachments 	Message attachments. 	No 	No 	Any 	No 	Yes 	array

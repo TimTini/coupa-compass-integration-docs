@@ -1,0 +1,124 @@
+Payments API (/coupa_pay/payments )
+
+Overview
+
+Coupa Pay Invoice Payments may be retrieved from Coupa by another system like your ERP using a GET request sent to the Payments API endpoint: https://<your_instance_name>/api/coupa_pay/payments
+
+Once an invoice payment is exported for accounting to an ERP, that payment should be marked as "exported":true, using the PUT call, so it is not retrieved a second time.
+
+API operations supported:
+
+- GET
+- PUT (only to mark exported)
+
+The API key used to fetch/update data must have permission to index, show, and update ../api/coupa_pay/payments data.
+
+Payment data can be queried by all fields within the payload. Typical query parameters are:
+
+- ?exported=false
+- ?payment-partner[issuing-bank]=<Bank_Name>
+- ?status=approved
+- ?status[in]=payment_initiated,completed_with_errors
+- ?pay_to_account[type]=CoupaPay::SupplierPaymentAccount (to pull only Invoice Payments, not Expense Payments)
+- ?updated-at[gt]<date-time> (NOTE: use update-at to make sure all payment status change captured)
+
+Query parameters can be combined into a call statement like the following:
+
+- API GET
+- https://< your_instance_name> /api/coupa_pay/payments?status[in]=completed_successfully,completed_with_errors&exported=false&payment-partner[issuing-bank]= XYZBank &pay_to_account[type]=CoupaPay::SupplierPaymentAccount
+- This will return Invoice payments with status of "completed_successfully" & "completed_with_errors" for XYZBank Issuer Payment Partner that are approved but not yet exported.
+
+An exported payment should be marked as exported once it is fetched successfully. You can do that with a call like the following:
+
+- API PUT https://< your_instance_name> /api/coupa_pay/payments/< ID >?exported=true OR
+- API PUT https://< your_instance_name> /api/coupa_pay/payments/< ID > with a payload like:
+- <coupa-pay-payment><exported> true </exported></coupa-pay-payment>
+
+Elements
+
+Name 	 Description 	 Required 	 Unique 	 Allowable Values 	 In 	 Out 	 Data Type
+id 	Coupa unique payment identifier 	Yes 	 	 	yes 	integer
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+line-num
+
+Line number
+
+yes 	integer
+external-ref-id 	Reference id set by payment provider 	 	 	yes 	integer
+status 	Payment Status (payment_initiated; payment_in_progress, completed_successfully;completed_with_errors) 	draft, approved, payment initiated, payment_in_progress, completed_successfully, completed_with_errors 	 	yes 	string
+exported 	Was the line exported previously to a third party system? Used by integration to find new values. 	true, false 	 	yes 	boolean
+last-exported-at 	Timestamp in the format: YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	datetime
+payment-batch-id
+
+Payment Batch Identifier
+
+Invoice Coupa ID
+
+Invoice Number
+
+Total Amount
+
+Currency
+
+Pay from account details
+
+Pay to account details
+integer
+pay-from-total 	 	 	 	 	decimal
+pay-to-total 	 	 	 	 	decimal
+reporting-pay-from-total 	 	 	 	 	decimal
+reporting-pay-to-total
+exchange-rate
+error-text 	 	 	 	 	string
+payment-details
+
+Key Data Elements
+
+payment-details/payment-detail/created-at 	Payment creation date
+payment-details/payment-detail/updated-at 	Payment update date
+payment-details/payment-detail/source-transaction-id 	Invoice Coupa ID
+
+payment-details/payment-detail/source-transaction-refe
+
+rence
+Invoice Number 	Invoice Number to post payments against in ERP
+payment-details/payment-detail/payment-total 	Total Amount 	Payment Amount
+payment-details/payment-detail/currency/code 	Currency 	Payment Currency
+
+An example payment-details array in JSON:
+
+"payment-details": [ { "id": 848, "created-at": "2020-06-01T09:42:43-07:00", "updated-at": "2020-06-01T09:42:43-07:00", "payment-id": "776", "payable-id": 940, "payable-type": "CoupaPay::Invoice", "source-transaction-id": 940, "source-transaction-type": "InvoiceHeader", "source-transaction-reference": "100223", "transaction-total": "20000.00", "discount-total": "0.00", "adjustment-total": "0.00", "payment-total": "20000.00", "currency": { "id": 1, "code": "USD", "decimals": 2 }, "payable-allocations": [], "created-by": { "id": 115, "login": "Aninvoiceadmin", "employee-number": "", "firstname": "Ahmad", "lastname": "Sadeddin", "fullname": "Ahmad Sadeddin", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 115, "login": "Aninvoiceadmin", "employee-number": "", "firstname": "Ahmad", "lastname": "Sadeddin", "fullname": "Ahmad Sadeddin", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } } ],
+array
+pay-from-account
+
+An example pay-from-account array in JSON:
+
+"pay-from-account": { "id": 654, "created-at": "2020-08-04T12:23:10-07:00", "updated-at": "2020-08-04T12:23:10-07:00", "coupa-pay-id": 665, "account-name": "Conferma - WEX Virtual Card", "source-name": null, "account-kind": "virtual_card", "payment-option": null, "status": "active", "document-types": [ "invoice" ], "currency": { "id": 1, "code": "USD", "decimals": 2 }, "payment-partner": { "id": 14, "created-at": "2020-08-04T12:14:45-07:00", "updated-at": "2021-01-21T09:25:52-08:00", "name": "Conferma - WEX", "issuing-bank": "WEX", "type": "CoupaPay::VirtualCardPartner", "payment-partner-type": "conferma", "notes": null, "configuration": { "expiry-days": "30", "tolerance-pct": "0.0", "fx-tolerance-pct": "5.0", "invoice-tolerance-pct": "0.0" }, "support-contact": { "id": 52, "login": "support@coupa.com", "employee-number": null, "firstname": "Himica", "lastname": "Kumar", "fullname": "Himica Kumar", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "currency": { "id": 1, "code": "USD", "decimals": 2 }, "account-types": [ { "id": 4, "created-at": "2020-04-25T02:45:03-07:00", "updated-at": "2020-08-04T12:17:37-07:00", "name": "Ace Corporate", "active": true, "legal-entity-name": "", "dynamic-flag": false, "currency": { "id": 1, "code": "USD", "decimals": 2 }, "primary-contact": { "id": 182, "created-at": "2020-04-25T02:45:03-07:00", "updated-at": "2020-08-04T12:17:37-07:00", "email": "support@coupa.com", "name-prefix": null, "name-suffix": null, "name-additional": null, "name-given": "qweq", "name-family": "qweqwe", "name-fullname": null, "notes": null, "active": true, "phone-work": null, "phone-mobile": null, "phone-fax": null, "purposes": [], "created-by": { "id": 49, "login": "az-releaser", "employee-number": "", "firstname": "az-releaser", "lastname": "az-releaser", "fullname": "az-releaser azz-releaser", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 79, "login": "himicakumar", "employee-number": "", "firstname": "Himica", "lastname": "Kumar", "fullname": "Himica Kumar", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } }, "primary-address": { "id": 335, "created-at": "2020-04-25T02:45:03-07:00", "updated-at": "2020-08-04T12:17:37-07:00", "name": "", "location-code": null, "street1": "aasda", "street2": "", "city": "asdas", "state": "", "postal-code": "asd", "attention": null, "active": true, "business-group-name": null, "vat-number": null, "local-tax-number": null, "country": { "id": 223, "code": "US", "name": "United States" }, "vat-country": null, "content-groups": [], "purposes": [], "tax-registrations": [], "created-by": { "id": 49, "login": "az-releaser", "employee-number": "", "firstname": "az-releaser", "lastname": "az-releaser", "fullname": "az-releaser az-releaser", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 79, "login": "himicakumar", "employee-number": "", "firstname": "Himica", "lastname": "Kumar", "fullname": "Himica Kumar", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } }, "created-by": { "id": 49, "login": "az-releaser", "employee-number": "", "firstname": "az-releaser", "lastname": "az-releaser", "fullname": "az-releaser az-releaser", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 79, "login": "himicakumar", "employee-number": "", "firstname": "Himica", "lastname": "Kumar", "fullname": "Himica Kumar", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } } ], "created-by": { "id": 52, "login": "Himica.Kumar@coupa.com", "employee-number": null, "firstname": "Himica", "lastname": "Kumar", "fullname": "Himica Kumar", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 88, "login": "himicareleaser", "employee-number": "", "firstname": "Himica", "lastname": "Kumar", "fullname": "Himica Kumar", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } }, "account-types": [], "created-by": { "id": 79, "login": "himicakumar", "employee-number": "", "firstname": "Himica", "lastname": "Kumar", "fullname": "Himica Kumar", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 79, "login": "himicakumar", "employee-number": "", "firstname": "Himica", "lastname": "Kumar", "fullname": "Himica Kumar", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } },
+array
+pay-to-account
+
+An example pay-to-account array in JSON:
+
+"pay-to-account": { "id": 1446, "created-at": "2020-10-14T14:59:21-07:00", "updated-at": "2020-10-15T13:24:49-07:00", "coupa-pay-id": 1458, "account-name": "Virtual Card lou*******************@cou******", "source-name": "cpaui", "account-kind": "virtual_card", "payment-option": "email", "status": "inactive", "document-types": [ "invoice" ], "virtual-card-days-valid": null, "include-cvv-in-cxml": null, "connect-remit-to-address-id": null, "currency": null, "supplier": { "id": 1538, "name": "Supplier Inc.", "display-name": "", "number": null, "status": "active", "primary-contact": { "id": 1551, "created-at": "2020-10-14T14:45:30-07:00", "updated-at": "2020-10-14T14:45:30-07:00", "email": "", "name-prefix": null, "name-suffix": null, "name-additional": null, "name-given": "", "name-family": "", "name-fullname": null, "notes": null, "active": true, "phone-work": null, "phone-mobile": null, "phone-fax": null, "purposes": [], "created-by": { "id": 171, "login": "LT_Batch", "employee-number": "", "firstname": "Louis", "lastname": "Tayson", "fullname": "Louis Tayson", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 171, "login": "LT_Batch", "employee-number": "", "firstname": "Louis", "lastname": "Tayson", "fullname": "Louis Tayson", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } }, "primary-address": { "id": 3030, "created-at": "2020-10-14T14:45:30-07:00", "updated-at": "2020-10-14T14:45:30-07:00", "name": null, "location-code": null, "street1": null, "street2": null, "city": null, "state": null, "postal-code": null, "attention": null, "active": true, "business-group-name": null, "vat-number": null, "local-tax-number": null, "country": null, "vat-country": null, "content-groups": [], "purposes": [], "tax-registrations": [], "created-by": { "id": 171, "login": "LT_Batch", "employee-number": "", "firstname": "Louis", "lastname": "Tayson", "fullname": "Louis Tayson", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 171, "login": "LT_Batch", "employee-number": "", "firstname": "Louis", "lastname": "Tayson", "fullname": "Louis Tayson", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } } }, "remit-to-address": { "id": 3031, "created-at": "2020-10-14T14:47:17-07:00", "updated-at": "2020-10-14T15:03:41-07:00", "remit-to-code": "cpay-brta-2818", "name": null, "street1": "Test", "street2": null, "city": "Test City", "state": "Colorado", "postal-code": "80303", "active": false, "vat-number": null, "local-tax-number": null, "external-src-ref": "2818", "external-src-name": "Coupa Pay", "country": { "id": 223, "code": "US", "name": "United States" }, "vat-country": null, "tax-registrations": [], "created-by": { "id": 171, "login": "LT_Batch", "employee-number": "", "firstname": "Louis", "lastname": "Tayson", "fullname": "Louis Tayson", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 171, "login": "LT_Batch", "employee-number": "", "firstname": "Louis", "lastname": "Tayson", "fullname": "Louis Tayson", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } }, "created-by": { "id": 171, "login": "LT_Batch", "employee-number": "", "firstname": "Louis", "lastname": "Tayson", "fullname": "Louis Tayson", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 171, "login": "LT_Batch", "employee-number": "", "firstname": "Louis", "lastname": "Tayson", "fullname": "Louis Tayson", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } },
+array
+pay-from-currency
+pay-to-currency
+reporting-currency
+payee
+
+An example payee array in JSON:
+
+"payee": {
+
+"payee": { "id": 1638, "name": "Supplier Name Inc.", "display-name": "Supplier Name", "number": null, "status": "active", "primary-contact": { "id": 1551, "created-at": "2020-10-14T14:45:30-07:00", "updated-at": "2020-10-14T14:45:30-07:00", "email": "", "name-prefix": null, "name-suffix": null, "name-additional": null, "name-given": "", "name-family": "", "name-fullname": null, "notes": null, "active": true, "phone-work": null, "phone-mobile": null, "phone-fax": null, "purposes": [], "created-by": { "id": 171, "login": "LT+batch", "employee-number": "", "firstname": "Lesley", "lastname": "Taylor", "fullname": "Lesley Taylor", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 171, "login": "LT+batch", "employee-number": "", "firstname": "Lesley", "lastname": "Taylor", "fullname": "Lesley Taylor", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } }, "primary-address": { "id": 3030, "created-at": "2020-10-14T14:45:30-07:00", "updated-at": "2020-10-14T14:45:30-07:00", "name": null, "location-code": null, "street1": null, "street2": null, "city": null, "state": null, "postal-code": null, "attention": null, "active": true, "business-group-name": null, "vat-number": null, "local-tax-number": null, "country": null, "vat-country": null, "content-groups": [], "purposes": [], "tax-registrations": [], "created-by": { "id": 171, "login": "LT+batch", "employee-number": "", "firstname": "Lesley", "lastname": "taylor", "fullname": "Lesley taylor", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 171, "login": "LT+batch", "employee-number": "", "firstname": "Lesley", "lastname": "taylor", "fullname": "Lesley taylor", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } } },
+supplier array
+payment-batch
+
+An example payment-batch array in JSON:
+
+"payment-batch": { "id": 232, "created-at": "2020-10-14T15:42:15-07:00", "updated-at": "2020-10-14T15:42:48-07:00", "status": "approved", "description": null, "created-by": { "id": 171, "login": "LT+batch", "employee-number": "", "firstname": "Lesley", "lastname": "Taylor", "fullname": "Lesley Taylor", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null }, "updated-by": { "id": 170, "login": "LT+releaser", "employee-number": "", "firstname": "Lesley", "lastname": "Taylor", "fullname": "Lesley Taylor", "email": "support@coupa.com", "salesforce-id": null, "avatar-thumb-url": null } },
+payment-batch array
+digital-check
+created-by 	User who created 	 	 	 	 	yes 	 User
+updated-by 	User who updated 	 	 	 	 	yes 	 User

@@ -1,0 +1,30 @@
+---
+title: "Coupa Treasury Application IP Addresses"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-treasury-application-ip-addresses"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-treasury-application-ip-addresses"
+status_code: 200
+fetched_at: "2026-04-09T12:01:12+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Treasury Application IP Addresses"
+---
+
+# Coupa Treasury Application IP Addresses
+
+IP addresses that Coupa Treasury customers and their connected third parties (such as banks) may be required to whitelist to connect to Coupa Treasury.
+
+## Coupa Treasury's Commitment to Security
+
+Security of customer data is Coupa's number one priority. Coupa Treasury is committed to delivering highly secure solutions that allow you to manage your financial data and business spend safely and effectively, from anywhere and at any time. You put your trust in Coupa Treasury to manage your important data, and we want to make sure you are comfortable with our policies and controls.
+
+**IP whitelisting** is an industry standard and an effective method to ensure secure communication between Coupa Treasury and customer networks. Coupa Treasury provides you the lists of IP addresses and recommends that you and your connected third parties whitelist them to ensure secure connection between networks.
+
+## Security and IP Whitelisting
+
+You need to be confident that you are communicating with Coupa Treasury in a secure environment. One of the most effective methods to ensure security and prevent hijacked or rerouting to rogue websites is to use IP whitelisting.
+
+To ensure a secure connection, Coupa Treasury provides you with a complete list of our public IP addresses. Coupa has registered these IP address ranges with Amazon Web Services (AWS).
+
+## Access
+
+While it is highly recommended to whitelist our entire IP ranges, you can choose to only whitelist a subset of our IP ranges. If you are required to do this, review the following IP information to avoid any unintended service disruptions.

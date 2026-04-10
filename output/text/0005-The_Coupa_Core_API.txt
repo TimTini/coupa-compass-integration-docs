@@ -1,0 +1,5 @@
+The Coupa Core API
+
+Our RESTful API provides robust access to read, edit, or integrate your data with the Coupa platform.
+
+Coupa provides rich, robust access to read, edit, or integrate your data via a REST API. This UTF-8 XML based interface allows you to create, update, and take action on individual records within Coupa by making an HTTP request call. Learn about authentication, API methods, data inputs, outputs, formats, and best practices.

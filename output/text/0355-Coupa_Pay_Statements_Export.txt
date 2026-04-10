@@ -1,0 +1,29 @@
+Coupa Pay Statements Export
+
+Export of CoupaPay Statements records is included as a Standard CSV Export.
+
+CoupaPay Statements includes rows of types: Statement, Charge, ChargeAllocation, and ChargeTaxLine. The value of type in the first position determines what table of fields applies for that row.
+
+Before publishing an integration format table you can rename most any field and reorder the fields, but it is probably best if you leave the type field in the first position because the value of type determines the structure for the row data that follows.
+
+Exportable type is CoupaPay::Statement .
+
+Statement
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+type 	Describes the type of row. Possible values are Statement, Charge, or ChargeAllocation. 	 	No/No
+id 	Coupa internal ID for the statement 	integer 	No/No
+status 	The status of the 	string(255) 	No/No
+payment-partner-name 	The name of the payment partner 	 	No/No
+payment-partner-issuing-bank 	The issuing bank of the payment partner 	 	No/No
+payment-partner-supplier-name 	The name of the supplier associated to the payment partner 	 	No/No
+payment-partner-supplier-number 	The number of the supplier associated to the payment partner 	 	No/No
+external-ref-id 	Third party or partner document reference 	string(255) 	Yes/No
+coupa-pay-id 	Coupa Pay Internal ID of statement 	integer 	No/No
+name 	The name of the statement 	string(255) 	No/Yes
+statement-date 	Date of statement 	datetime 	Yes/No
+number-of-lines 	Number of charges in statement 	integer 	No/No
+amount 	Total amount of statement 	decimal(30,6) 	No/No
+currency 	Currency of statement 	 	No/No
+unbacked-amount 	Sum of charges on statement that are not associated to a PO 	decimal(30,6) 	No/No
+number-of-unbacked-lines 	Number of charges that do not have an associated PO 	integer 	No/No

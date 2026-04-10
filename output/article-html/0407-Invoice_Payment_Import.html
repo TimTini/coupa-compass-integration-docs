@@ -1,0 +1,177 @@
+<article class="" id="invoice_payment_import">
+<h1 class="title">Invoice Payment Import</h1>
+<div class="body">
+<div class="" id="overview-d117e151261">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Invoice Payments Import process read files from the
+          <code class="ph codeph">./Incoming/InvoicePayments</code> folder in the SFTP. These files will be moved
+        to the archive folder located at <code class="ph codeph">./Archive/Incoming/InvoicePayments/</code> before
+        being processed in Alphanumeric order. Flat Files are then transformed to Coupa's XML
+        format.</p>
+<p class="">In the standard integration, a validation routine determines whether a payment has already
+        been applied to an invoice by comparing the payment date, check number, and amount fields to
+        the payment record.</p>
+</div>
+<div class="" id="section_gwg_cxj_h1c">
+<h2 class="title sectiontitle">Void/Check Cancelations</h2>
+<p class="">The Coupa Integration does not support deleting or voiding a check directly. The best
+        practice in this scenario is to create a new 'payment' for negative the amount of the check
+        to cancel. The check # can be the same or have a string such as 'Void' appended.</p>
+</div>
+<div class="" id="keys_validations-d117e151277">
+<h2 class="title sectiontitle">Keys/Validations</h2>
+<p class="">Coupa finds invoices in approved status and scope based on the following criteria:</p>
+<ul class="ul">
+<li class="li">If the <code class="ph codeph">Invoice ID</code> / <code class="ph codeph">Number</code> is provided, <i>only</i>
+          the Invoice ID / Number is matched.</li>
+<li class="li">If the <code class="ph codeph">Supplier Name</code> and/or <code class="ph codeph">Supplier Number</code> is
+          provided, Coupa searches for the supplier. <ul class="ul">
+<li class="li">If a matching supplier is found, Coupa uses the supplier as a filtering criterion. </li>
+<li class="li">If a matching supplier is not found, Coupa does not include the supplier as part of
+              the scope.</li>
+</ul>
+</li>
+<li class="li">If the <code class="ph codeph">Invoice Date</code> is provided, Coupa scopes approved invoices to that
+          invoice date. <ul class="ul">
+<li class="li">The <code class="ph codeph">Invoice Date</code> is needed if a customer reuses the same invoice
+              number for different calendar years.</li>
+</ul>
+</li>
+<li class="li">Coupa will create a payment only if exactly one invoice is found from the above
+          queries.</li>
+</ul>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>Invoice payments can't be updated via Integration.</div>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">Supplier Name. Include at least the suppler name or number.</td>
+<td class="entry" align="">TRUE*</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">Supplier Number. Include at least the supplier name or number.</td>
+<td class="entry" align="">TRUE*</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Number</td>
+<td class="entry" align="">Invoice Number</td>
+<td class="entry" align="">TRUE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Date</td>
+<td class="entry" align="">Invoice Date of invoice related to current payment</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice ID</td>
+<td class="entry" align="">Database ID of the invoice</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expense Report Id</td>
+<td class="entry" align="">Expense Report Id</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Paid</td>
+<td class="entry" align="">This is the paid field on the invoice header. It's set to a true or false
+                value.</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">true,false/Yes,No/Y,N/T,F</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Paid-in-Full Date</td>
+<td class="entry" align="">Paid-in-Full Date</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Paid-in-Full Note</td>
+<td class="entry" align="">Paid-in-Full Note</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Check Amount Paid</td>
+<td class="entry" align="">Check Amount Paid</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Check # / Note</td>
+<td class="entry" align="">Check # / Note</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Check Payment Date</td>
+<td class="entry" align="">Check Payment Date</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">FALSE</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">* One of <code class="ph codeph">Supplier Name</code> or <code class="ph codeph">Supplier Number</code> is
+        required.</p>
+</div>
+</div>
+</article>

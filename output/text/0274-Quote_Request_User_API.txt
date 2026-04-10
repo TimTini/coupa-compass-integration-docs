@@ -1,0 +1,16 @@
+Quote Request User API
+
+The Quote Request User resource is associated with the Quote Request API.
+
+Associations
+
+This resource is associated with the Quote Request API and the Quote Request Line API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+attitude 	Attitude 	 	yes 	creator, owner, watcher, evaluator 	yes 	yes 	string(255)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+user-id 	User 	 	yes 	 	yes 	yes 	integer

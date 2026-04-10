@@ -1,0 +1,28 @@
+Supplier Information Contact API
+
+Associations
+
+This API resource is associated with the Supplier Information API.
+
+Elements
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+created-at 	Created Date and Time 	 	 	 	 	yes 	datetime
+created-by 	Created by User 	 	 	 	 	yes 	 User
+email 	Email Address 	 	 	 	yes 	yes 	string(255)
+id 	Contact ID 	 	 	 	 	yes 	integer
+kind 	Contract Kind/Type 	yes 	 	Primary, Standard 	yes 	yes 	string(255)
+name-additional 	Name Additional 	 	 	 	yes 	yes 	string(255)
+name-family 	Last Name/Family Name 	 	 	 	yes 	yes 	string(255)
+name-fullname 	Full Name 	 	 	 	yes 	yes 	string(255)
+name-given 	Given/First Name 	 	 	 	yes 	yes 	string(255)
+name-prefix 	Name Prefix 	 	 	 	yes 	yes 	string(255)
+name-suffix 	Name Suffix 	 	 	 	yes 	yes 	string(255)
+notes 	Contact Notes 	 	 	 	yes 	yes 	string(255)
+phone-fax 	Fax 	 	 	 	yes 	yes 	Phone Number
+phone-mobile 	Mobile Phone Number 	 	 	 	yes 	yes 	Phone Number
+phone-work 	Work Phone Number 	 	 	 	yes 	yes 	Phone Number
+purposes 	 	no 	yes 	any 	 	 	array
+supplier-information-id 	Supplier information 	 	 	 	 	yes 	integer
+updated-at 	Last Updated Date and Time 	 	 	 	 	yes 	datetime
+updated-by 	Last Updated by User 	 	 	 	 	yes 	 User

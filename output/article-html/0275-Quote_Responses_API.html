@@ -1,0 +1,380 @@
+<article class="" id="quote_responses_api">
+<h1 class="title">Quote Responses API</h1>
+<p class="">
+<p class="">Use the quote responses API endpoint to view the supplier responses to your sourcing event
+      and award lines and lots.</p>
+</p>
+<div class="body">
+<div class="" id="actions-d957e265666">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_responses/:id/award</code>
+</td>
+<td class="entry" align="">award</td>
+<td class="entry" align="">Award the quote response.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:quote_request_id/quote_responses</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Get the latest submitted response per supplier. To see all responses, use the
+                  <code class="ph codeph">/api/quote_requests/:quote_request_id/quote_responses/all</code>
+                endpoint.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:quote_request_id/quote_responses/all</code>
+</td>
+<td class="entry" align="">all</td>
+<td class="entry" align="">Get all responses for a Sourcing event, including all submitted and draft
+                responses.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_responses</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Get all responses of specific Sourcing event.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DELETE</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_responses/:id/award</code>
+</td>
+<td class="entry" align="">remove_award</td>
+<td class="entry" align="">Remove award from the quote response.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_responses/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Get information about the particular response.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_responses/all</code>
+</td>
+<td class="entry" align="">all</td>
+<td class="entry" align="">Get all responses, including all submitted and draft responses.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e265856">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">awarded</td>
+<td class="entry" align="">Awarded</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">comments</td>
+<td class="entry" align="">Comments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lines</td>
+<td class="entry" align="">Lines</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-response-lines-api" title="">QuoteResponseLine</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">position</td>
+<td class="entry" align="">position</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">promoted</td>
+<td class="entry" align="">promoted</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-request-id</td>
+<td class="entry" align="">quote_request_id</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-request-original-id</td>
+<td class="entry" align="">Coupa unique identifier for original Sourcing Event</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-request-revision</td>
+<td class="entry" align="">Sourcing Event Revision</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-supplier</td>
+<td class="entry" align="">quote_supplier</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-suppliers-api" title="">QuoteSupplier</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">state</td>
+<td class="entry" align="">state</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">submitted-at</td>
+<td class="entry" align="">submitted_at</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-request-attachment-response</td>
+<td class="entry" align="">Details about supplier attachments at the event level. </td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-request-attachment-response-api" title="">Quote Request Attachment
+                  Response</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="quote_response_attachments">
+<h2 class="title sectiontitle">Quote Response attachments</h2>
+<p class="">To access a Quote Response attachment, you can use the
+          <code class="ph codeph">/api/quote_requests/:quote_request_id/quote_responses</code> endpoint to get the
+        latest submitted response per supplier, or use the
+          <code class="ph codeph">/api/quote_requests/:quote_request_id/quote_responses/all</code> endpoint to get
+        all responses, including historical and draft responses. Under the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-response-lines-api" title="">Lines</a> object in the response body, locate the
+          <code class="ph codeph">id</code> field in the attachments array. Once you have the attachment ID, you
+        can use the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachments API</a> to access the
+        attachment. </p>
+<p class="">For example, this sample response from a GET request to the
+          <code class="ph codeph">/api/quote_requests/:quote_request_id/quote_responses/all</code> endpoint
+        includes a sample attachment ID: </p>
+<pre>
+<code class="codeblock">[
+    {
+        "id": 1,
+        "created-at": "2023-05-03T08:14:37-07:00",
+        "updated-at": "2023-05-03T08:14:48-07:00",
+        "quote-request-id": 1,
+        "submitted-at": "2023-05-03T08:14:48-07:00",
+        "state": "submitted",
+        "promoted": false,
+        "position": null,
+        "comments": null,
+        "exported": false,
+        "quote-request-original-id": null,
+        "quote-request-revision": null,
+        "awarded": false,
+        "lines": [
+            {
+                "id": 1,
+                "created-at": "2023-05-03T08:14:37-07:00",
+                "updated-at": "2023-05-24T04:26:55-07:00",
+                "price-amount": "1.0",
+                "quantity": "1.0",
+                "reporting-price-amount": "1.0",
+                "price-currency": {
+                    "id": 1,
+                    "code": "USD",
+                    "decimals": 2
+                },
+                "quote-request-line-id": 1,
+                "lot-id": 1,
+                "lead-time": null,
+                "cost-element-values": {},
+                "supplier-item-name": null,
+                "item-description": null,
+                "item-part-number": null,
+                "awarded": false,
+                "easy-form-response": null,
+                "shipping-term": null,
+                "attachments": [
+                {
+                    "file": "path_to_attachment.xlsx",
+                    "file-content-type": "application/octet-stream",
+                    "file-file-name": "attachment_name.xlsx",
+                    "file-file-size": "11565",
+                    "file-url": "http://my-website.com/attachment/attachment_file/file/246/attachment_name.xlsx",
+                    "id": 246, # &lt;--- Attachment ID is here
+                    "intent": "Internal",
+                    "linked-to": "quote_request_attachment",
+                    "text": null,
+                    "type": "AttachmentFile",
+                    "url": "http://my-website.com/attachments/246/view/attachment_name.xlsx"
+                }
+            ],</code>
+</pre>
+</div>
+</div>
+</article>

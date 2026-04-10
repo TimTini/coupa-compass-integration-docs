@@ -1,0 +1,558 @@
+---
+title: "Invoices API Example Calls"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/invoices-api-example-calls"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/invoices-api-example-calls"
+status_code: 200
+fetched_at: "2026-04-09T11:59:49+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Invoices API (/invoices)"
+  - "Invoices API Example Calls"
+---
+
+# Invoices API Example Calls
+
+## Different query options for Invoices
+
+Here are more examples of how to use the invoice API to query and get the result set you want.
+
+This query will return all invoices with CDW as supplier:
+
+`https://.coupahost.com/api/invoices?supplier[name]=CDW`
+
+This query will return all invoices with Euro as currency:
+
+`https://.coupahost.com/api/invoices?currency[code]=EUR`
+
+This query will return all invoices that was created after January 1, 2010 12:00:00:
+
+`https://.coupahost.com/api/invoices?invoice-date[gt]=2010-01-01T12:00:00`
+
+## Flexible Fields
+
+Flexible fields are custom, user-defined fields that hold additional, non-standard information for an object. They function exactly like standard fields in API requests but are often used to integrate external or proprietary data points.
+
+**Using Flexible Fields in query parameters (GET API)**
+
+You query flexible fields using standard query parameter syntax, the same way you query regular fields. The API structure treats them identically for retrieval.
+
+Examples using the **/api/invoices/** endpoint:
+
+The following example shows how to query multiple flexible fields **means_of_payment**, **comments**, and **payment_order_number** using exact-match filters.
+
+- **/api/invoices/?comments=important invoice&means_of_payment=upi&payment_order_number=P0 002**
+
+The following example uses a query operator (**starts_with**) on the standard **comments** field. The syntax remains the same regardless of whether the field is standard or flexible.
+
+- **/api/invoices/?comments[starts_with]=im&supplier_id=4&invoice_number=IS 3350**
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+- Flexible fields are non-indexed fields. This means the system must scan many more records to match your query criteria, unlike indexed fields which allow for fast lookups.
+
+- Expect a delay in the response time when querying on flexible fields. Use these fields for retrieval sparingly or when the response time is not critical.
+
+## GET Single Invoice
+
+In this example, we queried for a single invoice record with an ID of 1.
+
+We did a GET to the URL:
+
+`https://.coupahost.com/api/invoices/1`
+
+or
+
+`https://.coupahost.com/api/invoices?id=1`
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice-header>
+<comments />
+<created-at type="datetime">2008-10-28T11:19:49-07:00</created-at>
+<handling-amount type="decimal">0.0</handling-amount>
+<id type="integer">1</id>
+<internal-note />
+<invoice-date type="datetime">2008-10-28T00:00:00-07:00</invoice-date>
+<invoice-number type="integer">500</invoice-number>
+<line-level-taxation type="boolean">false</line-level-taxation>
+<misc-amount type="decimal">0.0</misc-amount>
+<shipping-amount type="decimal">0.0</shipping-amount>
+<status>approved</status>
+<supplier-note />
+<tax-amount type="decimal">35.14</tax-amount>
+<tax-rate type="float">8.25</tax-rate>
+<updated-at type="datetime">2008-10-28T11:24:44-07:00</updated-at>
+<paid type="boolean">false</paid>
+<payment-date type="datetime" />
+<payment-notes />
+<exported type="boolean">false</exported>
+<invoice-description type="string" />
+<account-type>
+<id type="integer">1</id>
+<name>Ace Corporate</name>
+</account-type>
+<created-by>
+<email>upgrade+am@coupa.com</email>
+<employee-number />
+<firstname>Anna (AP Director)</firstname>
+<id type="integer">10</id>
+<lastname>Manning</lastname>
+<login>amanning</login>
+</created-by>
+<currency>
+<code>USD</code>
+<id type="integer">1</id>
+</currency>
+<supplier>
+<id type="integer">17</id>
+<name>Insight</name>
+<number nil="true" />
+<primary-contact>
+<email>upgrade@coupa.com</email>
+<id type="integer">18</id>
+<name-additional nil="true" />
+<name-family>Henderson</name-family>
+<name-fullname nil="true" />
+<name-given>Steve</name-given>
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<notes nil="true" />
+<phone-work>
+<area-code>650</area-code>
+<country-code>1</country-code>
+<extension nil="true" />
+<number>5856306</number>
+</phone-work>
+<phone-mobile>
+<area-code>650</area-code>
+<country-code>1</country-code>
+<extension nil="true" />
+<number>5856306</number>
+</phone-mobile>
+<phone-fax>
+<area-code>650</area-code>
+<country-code>1</country-code>
+<extension nil="true" />
+<number>5856306</number>
+</phone-fax>
+</primary-contact>
+<primary-address>
+<attention nil="true" />
+<city>Tempe</city>
+<id type="integer">24</id>
+<name>Insight</name>
+<postal-code>85283</postal-code>
+<state>AZ</state>
+<street1>6820 South Harl Avenue</street1>
+<street2 />
+<country>
+<code>US</code>
+<id type="integer">223</id>
+<name>United States</name>
+</country>
+</primary-address>
+</supplier>
+<tax-code>
+<code>CA</code>
+<id type="integer">1</id>
+</tax-code>
+<updated-by>
+<email>upgrade+cj@coupa.com</email>
+<employee-number />
+<firstname>Carl (Central Receiving)</firstname>
+<id type="integer">11</id>
+<lastname>Johnson</lastname>
+<login>cjohnson</login>
+</updated-by>
+<attachments />
+<invoice-lines>
+<invoice-line>
+<accounting-total type="decimal">425.99</accounting-total>
+<created-at type="datetime">2008-10-28T11:19:49-07:00</created-at>
+<description>Adobe Acrobat Professional -( v. 9 ) -complete package</description>
+<id type="integer">1</id>
+<line-num type="integer">1</line-num>
+<order-header-num type="integer">7</order-header-num>
+<order-line-id type="integer">10</order-line-id>
+<order-line-num type="integer">1</order-line-num>
+<price type="decimal">425.99</price>
+<quantity type="float">1.0</quantity>
+<status>matched</status>
+<tax-rate type="float" />
+<tax-location />
+<tax-amount type="decimal">0.00</tax-amount>
+<tax-description />
+<tax-supply-date type="datetime" />
+<total type="decimal">425.99</total>
+<type>InvoiceQuantityLine</type>
+<updated-at type="datetime">2008-10-28T11:24:44-07:00</updated-at>
+<treasury-codes type="string" />
+<account>
+<active type="boolean">true</active>
+<code>SF-IT-Assets</code>
+<id type="integer">18</id>
+<name>San Francisco -IT, Assets</name>
+<segment-1>SF</segment-1>
+<segment-10 />
+<segment-11 />
+<segment-12 />
+<segment-13 />
+<segment-14 />
+<segment-15 />
+<segment-16 />
+<segment-17 />
+<segment-18 />
+<segment-19 />
+<segment-2>IT</segment-2>
+<segment-20 />
+<segment-3>Assets</segment-3>
+<segment-4 />
+<segment-5 />
+<segment-6 />
+<segment-7 />
+<segment-8 />
+<segment-9 />
+<account-type>
+<id type="integer">1</id>
+<name>Ace Corporate</name>
+</account-type>
+</account>
+<accounting-total-currency>
+<code>USD</code>
+<id type="integer">1</id>
+</accounting-total-currency>
+<created-by>
+<email>upgrade+am@coupa.com</email>
+<employee-number />
+<firstname>Anna (AP Director)</firstname>
+<id type="integer">10</id>
+<lastname>Manning</lastname>
+<login>amanning</login>
+</created-by>
+<currency>
+<code>USD</code>
+<id type="integer">1</id>
+</currency>
+<item>
+<id type="integer">23</id>
+<created-at type="datetime">2008-10-28T10:12:02-07:00</created-at>
+<description>Adobe Acrobat 9 Professional software enables business professionals	to reliably create, combine, and control Adobe PDF documents for easy, more secure distribution, collaboration, and data collection.</description>
+<item-number>3235</item-number>
+<name>Adobe Acrobat Professional -( v. 9 ) -complete package</name>
+<updated-at type="datetime">2009-05-04T17:19:51-07:00</updated-at>
+<commodity>
+<active type="boolean">true</active>
+<created-at type="datetime">2008-10-28T17:13:45Z</created-at>
+<id type="integer">8</id>
+<name>Software</name>
+<updated-at type="datetime">2009-08-14T16:34:54Z</updated-at>
+<created-by>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</created-by>
+<updated-by>
+<email>upgrade+ke@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<id type="integer">16</id>
+<lastname>Eisner</lastname>
+<login>administrator</login>
+</updated-by>
+</commodity>
+<support-user>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</support-user>
+<uom>
+<code>EA</code>
+<id type="integer">1</id>
+</uom>
+<support-user>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</support-user>
+<reorder-alerts />
+</item>
+<uom>
+<code>EA</code>
+<id type="integer">1</id>
+</uom>
+<updated-by>
+<email>upgrade+cj@coupa.com</email>
+<employee-number />
+<firstname>Carl (Central Receiving)</firstname>
+<id type="integer">11</id>
+<lastname>Johnson</lastname>
+<login>cjohnson</login>
+</updated-by>
+</invoice-line>
+</invoice-lines>
+</invoice-header>
+```
+
+## Invoice Post Example
+
+In this example, we are creating a Poland Country invoice record:
+
+We did a POST to the URL: `https://.coupahost.com/api/invoices`
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice-header>
+<invoice-date>2025-11-06T00:00:00-08:00</invoice-date>
+<delivery-number>Delivery Number</delivery-number>
+<delivery-date>2025-11-06T00:00:00-08:00</delivery-date>
+<invoice-number>DEMO-PL-01</invoice-number>
+<line-level-taxation>true</line-level-taxation>
+<total-with-taxes>10.80</total-with-taxes>
+<gross-total>10.80</gross-total>
+<supplier-total>10.80</supplier-total>
+<supplier-note>Supplier Note</supplier-note>
+<net-due-date>2026-03-06T23:59:59-08:00</net-due-date>
+<discount-amount>0.27</discount-amount>
+<override-tax-country><code>PL</code></override-tax-country>
+<tax-amount>0.80</tax-amount>
+<margin-scheme>P_PMarzy_2</margin-scheme>
+<cash-accounting-scheme-reference>Cash Accounting Scheme</cash-accounting-scheme-reference>
+<exchange-rate>1.0</exchange-rate>
+<pre-payment-date>2025-11-06T00:00:00-08:00</pre-payment-date>
+<customs-declaration-number>Custom Declaration Number</customs-declaration-number>
+<customs-office>Custom Office</customs-office>
+<customs-declaration-date>2025-11-06T00:00:00-08:00</customs-declaration-date>
+<payment-order-reference>Payment Order Reference</payment-order-reference>
+<payment-order-number>Payment Order Number</payment-order-number>
+<advance-payment-received-amount>10.0</advance-payment-received-amount>
+<amount-due>10.80</amount-due>
+<tax-due-to-supplier>0.80</tax-due-to-supplier>
+<customer-accounting-tax>0.00</customer-accounting-tax>
+<show-tax-information>true</show-tax-information>
+<split-payment-mechanism>true</split-payment-mechanism>
+<gross-total-less-discount>10.53</gross-total-less-discount>
+<net-total-less-discount>9.75</net-total-less-discount>
+<total-taxes-less-discount>0.78</total-taxes-less-discount>
+<transaction-uuid>0e206b91-0412-46a9-8b60-c451b086d01f</transaction-uuid>
+<transaction-notification-date>2025-11-06T00:00:00-08:00</transaction-notification-date>
+<currency><code>PLN</code></currency>
+<requested-by>
+<email>req@test.com</email>
+</requested-by>
+<custom-fields>
+<supplier-invoice-date>2025-11-06T00:00:00-08:00</supplier-invoice-date>
+<sap-error>false</sap-error>
+<is-this-blanket-order>false</is-this-blanket-order>
+</custom-fields>
+<account-type>
+<name>COA Poland</name>
+</account-type>
+<payment-term>
+<code>NET 120</code>
+</payment-term>
+<bill-to-address>
+<id>459</id>
+<name>COA Poland</name>
+</bill-to-address>
+<supplier>
+<name>Hg-Demo</name>
+</supplier>
+<invoice-charges>
+<invoice-charge>
+<type>InvoiceShippingCharge</type>
+<line-num>1</line-num>
+<total>0.00</total>
+<currency>
+<code>PLN</code>
+</currency>
+</invoice-charge>
+<invoice-charge>
+<type>InvoiceHandlingCharge</type>
+<line-num>2</line-num>
+<total>0.00</total>
+<currency>
+<code>PLN</code>
+</currency>
+</invoice-charge>
+<invoice-charge>
+<type>InvoiceMiscCharge</type>
+<line-num>3</line-num>
+<total>0.00</total>
+<currency>
+<code>PLN</code>
+</currency>
+</invoice-charge>
+</invoice-charges>
+<invoice-lines>
+<invoice-line>
+<description>Demo Line 1</description>
+<line-num>1</line-num>
+<price>10.00</price>
+<quantity>1.0</quantity>
+<tax-rate>8.0</tax-rate>
+<tax-amount>0.80</tax-amount>
+<tax-description>Tax Reference Details</tax-description>
+<tax-supply-date>2025-11-06T00:00:00-08:00</tax-supply-date>
+<total>10.00</total>
+<type>InvoiceQuantityLine</type>
+<tax-distribution-total>0.8</tax-distribution-total>
+<shipping-distribution-total>0.0</shipping-distribution-total>
+<handling-distribution-total>0.0</handling-distribution-total>
+<misc-distribution-total>0.0</misc-distribution-total>
+<account>
+<name>100</name>
+<code>100</code>
+</account>
+<currency>
+<code>PLN</code>
+</currency>
+<tax-code>
+<code>Reduced 1</code>
+<country>
+<code>PL</code>
+</country>
+</tax-code>
+<uom>
+<code>EA</code>
+<name>Each</name>
+</uom>
+<tax-lines>
+<tax-line>
+<amount>0.80</amount>
+<rate>8.0</rate>
+<code>Reduced 1</code>
+<description>Tax Reference Details</description>
+<tax-code>
+<code>Reduced 1</code>
+<percentage>8.0</percentage>
+<country>
+<code>PL</code>
+</country>
+</tax-code>
+<tax-rate>
+<country>
+<code>PL</code>
+</country>
+<percentage>8.0</percentage>
+</tax-rate>
+</tax-line>
+</tax-lines>
+</invoice-line>
+</invoice-lines>
+</invoice-header>
+```
+
+## Invoice Put Example
+
+In this example, we are updating a single attribute on the invoice record:
+
+This field must be a custom field of the invoice.
+
+We did a PUT to the URL: `https://.coupahost.com/api/invoices/`
+
+URL: `https://.coupahost.com/api/invoices/33`
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice-header>
+<invoice_description>Invoice Test Description</invoice_description>
+</invoice-header>
+```
+
+The following example illustrates the put call for adding an invoice line:
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice-header>
+<invoice-number>320</invoice-number>
+<status>draft</status>
+<invoice-lines type="array">
+<invoice-line>
+<accounting-total type="decimal">499.00</accounting-total>
+<description>iPad with Wi-Fi is ideal if you have a wireless high- speed Internet router in your home</description>
+<price type="decimal">499.00</price>
+<price-per-uom type="decimal">0.00</price-per-uom>
+<quantity type="decimal">1.0</quantity>
+<status>new</status>
+<tax-amount type="decimal">0.00</tax-amount>
+<total type="decimal">499.00</total>
+<type>InvoiceQuantityLine</type>
+<account>
+<name>HQ - IT, Assets</name>
+<code>HQ-IT-Assets</code>
+<active type="boolean">true</active>
+<segment-1>HQ</segment-1>
+<segment-2>IT</segment-2>
+<segment-3>Assets</segment-3>
+<account-type>
+<name>Ace Corporate</name>
+</account-type>
+</account>
+<account-allocations type="array" />
+<accounting-total-currency>
+<id type="integer">1</id>
+<code>USD</code>
+</accounting-total-currency>
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<tax-lines type="array" />
+</invoice-line>
+</invoice-lines>
+</invoice-header>
+```
+
+## Country Specific Field Examples
+
+Country specific fields used in India Invoice
+
+```text
+XML
+"<?xml version=""1.0"" encoding=""UTF-8""?>
+<invoice-header>
+<invoice-reference-number>TOTAL-64-CHARS</invoice-reference-number>
+<signed-qr-code>MUST-BE-OBTAINED-FROM-INDIA-EINVOICE</signed-qr-code>
+<place-of-supply>INDIA</place-of-supply>
+<invoice-lines>
+<invoice-line>
+<hsn-sac-code>HSN-SAC-CODE</hsn-sac-code>
+</invoice-line>
+</invoice-lines>
+</invoice-header>"
+```
+
+Country specific fields used in Poland Invoice
+
+```text
+XML
+"<?xml version=""1.0"" encoding=""UTF-8""?>
+<invoice-header>
+<advance-payment-received-amount>1000</advance-payment-received-amount>
+<cash-accounting-scheme-reference>CASR</cash-accounting-scheme-reference>
+<credit-reason>CREDIT-REASON</credit-reason>
+<customs-declaration-date>2021-01-01</customs-declaration-date>
+<customs-declaration-number>CUSTOMS-DECLARATION-NUMBER</customs-declaration-number>
+<customs-office>CUSTOMS-OFFICE</customs-office>
+<early-payment-provisions>EARLY-PAYMENT-PROVISIONS</early-payment-provisions>
+<exchange-rate>1.0</exchange-rate>
+<margin-scheme>P_PMarzy_3_2</margin-scheme>
+<pre-payment-date>2025-10-01</pre-payment-date>
+<split-payment-mechanism>SPLIT-PAYMENT-MECHANISM</split-payment-mechanism>
+<transaction-uuid>transaction-uuid</transaction-uuid>
+<transaction-notification-date>2025-10-15</transaction-notification-date>
+</invoice-header>"
+```

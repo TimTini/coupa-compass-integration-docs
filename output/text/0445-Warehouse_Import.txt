@@ -1,0 +1,25 @@
+Warehouse Import
+
+Warehouse
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Name* 	Yes 	Yes 	string(255) 	Warehouse Name
+Currency 	Yes 	No 	 	Warehouse Currency
+Description* 	Yes 	No 	string(255) 	Warehouse Description
+Active* 	Yes 	No 	 	Possible values Yes or No
+Warehouse Type 	Yes 	No 	 	Warehouse Type
+Address Name 	No 	No 	 	Warehouse Address Name
+Address Line 1* 	Yes 	No 	 	Warehouse Street Address Line 1
+Address Line 2 	No 	No 	 	Warehouse Street Address Line 2
+Address Line 3 	No 	No 	 	Warehouse Street Address Line 3
+Address Line 4 	No 	No 	 	Warehouse Street Address Line 4
+City* 	Yes 	No 	 	Warehouse Address City
+State 	No 	No 	 	Warehouse Address State
+State ISO Code 	No 	No 	 	Warehouse Address State ISO Code
+Postal Code* 	Yes 	No 	 	Warehouse Address Postal Code
+Country Code* 	Yes 	No 	 	Warehouse Address Country Code
+Country* 	Yes 	No 	 	Warehouse Address Country
+Attention 	No 	No 	 	Warehouse Address Attention
+Aisle 	No 	No 	 	Aisle
+Bin 	No 	No 	 	Bin
+Level 	No 	No 	 	Level

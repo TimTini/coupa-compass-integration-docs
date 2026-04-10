@@ -1,0 +1,17 @@
+Expense Category Translation API
+
+Association
+
+This resource is associated with Expense Category Translations.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Values 	 In 	 Out 	 Type
+locale 	Locale of this translation 	true 	false 	any 	yes 	yes 	string(255)
+name 	Translation of the expense category name 	true 	true 	any 	yes 	yes 	string(255)
+expense_category_id 	Coupa unique identifier of expense category which is associated with the translation 	true 	true 	any 	yes 	yes 	integer
+id 	Coupa unique identifier 	false 	false 	any 	yes 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	false 	false 	any 	yes 	yes 	datetime
+created_by 	User who created 	false 	false 	any 	yes 	yes
+updated_by 	User who updated 	false 	false 	any 	yes 	yes

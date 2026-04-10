@@ -1,0 +1,9 @@
+x298147.xml
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/x298147.xml
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8d222gYLWVCt20SmyLaNkDL8h1bsEisT1fh3X%2FHscF1E0qjzm55%2BteT1F1rZeLPj7ZW%2FjdA8ZitZyRB7GbNGI81lQ0DdAK9BndbreX9FxUk52%2BrEQzGZPiFwQ0zs7IqOSkWCH2sLIYlY0J4qNzyisq%2BIYLeXYhuSj5xfieFMvkYqyKmfkUo0fJmHa9VxT2EYJVbemeoyq165jy%2Fr9%2FDwn2CtG7ENOXYLB%2FdiPec1WNllfdF61EnDBEx4ZypPjqgobccEZ2qkUYktZJwLzAB1IHF5127ZWxjbGPM9IHK51Cg9KqDlBGLdeL7zcyNZXbwxDKb5tNTeuf6w0pFogQhkrXzmLfQVhDeDEa7m5vjkvm5GUulOsNmuwUlxT7rrUo85E%2Bj%2BTf8pP5dJiW%2BRbhiP85Xb0nIPOTWafsSPlg4%2BWPJLVa1q41%2Bu%2Bw6U7F006iFBkxDd3lUQmdMu2iaQIgph22rftzHUDFdJgY%2BrQANj%2FY%2FvtG568%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcontingent-workforce%2Fcandidate-confirmation-api
+
+Observed redirect page title: Coupa Portals - Sign In

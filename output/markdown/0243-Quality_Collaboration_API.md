@@ -1,0 +1,536 @@
+---
+title: "Quality Collaboration API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api"
+status_code: 200
+fetched_at: "2026-04-09T11:59:56+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Quality Collaboration API"
+---
+
+# Quality Collaboration API
+
+Integrate your external quality management systems to collaborate on quality inspections.
+
+Quality Collaboration allows you to use Coupa as the central collaboration point for quality inspections, particularly supplier-performed inspections.
+
+This API enables you to:
+
+- Import or trigger new quality inspection requests.
+
+- Receive the final inspection results and status after the buyer and supplier collaboration process is complete.
+
+- Manage attachments related to the inspection and its characteristics.
+
+The quality inspection process uses APIs for both inbound and outbound data flow:
+
+- Send a POST request to create a new, open Quality Inspection in Coupa.
+
+- Buyers and and suppliers collaborate using the Coupa UI and CSP, exchanging comments, filling results, and uploading attachments.
+
+- Once the buyer accepts or rejects the inspection, use a GET request to read the final status and resolution.
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+This API is available only for customers that participate in the [Early Access Program (EAP)](https://compass.coupa.com/x296407.xml). If you want to be an EAP customer, contact your Coupa representative.
+
+## Actions
+
+| **Verb** | **Path** | **Description** |
+| --- | --- | --- |
+| GET | `/qualitycollaboration/api/v1/quality-inspections` | Get all quality inspections |
+| GET | `/qualitycollaboration/api/v1/quality-inspections/{id}` | Get details of a quality inspection |
+| POST | `/qualitycollaboration/api/v1/quality-inspections` | Create a new quality inspection |
+| POST | `/qualitycollaboration/api/v1/quality-inspections/{id}/exported` | Mark a quality inspection as exported |
+| POST | `/qualitycollaboration/api/v1/quality-inspections/{id}/reset-exported` | Reset exported flag of a quality inspection |
+| GET | `/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/attachments` | Get all attachments for an inspection (Header) |
+| POST | `/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/attachments` | Add a new attachment at the inspection level (Header) |
+| GET | `/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/characteristics/{characteristic_id}/attachments/{attachment_id}` | Get a specific attachment for a characteristic |
+| GET | `/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/attachments/{attachment_id}` | Get a specific attachment of a quality inspection |
+| DELETE | `/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/attachments/{attachment_id}` | Delete an attachment at the inspection level (Header) |
+| GET | `/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/characteristics/{characteristic_id}/attachments` | Get all attachments for a characteristic (Line) |
+| POST | `/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/characteristics/{characteristic_id}/attachments` | Add a new attachment at the characteristic level (Line) |
+| DELETE | `/qualitycollaboration/api/v1/quality-inspections/{inspection_id}/characteristics/{characteristic_id}/attachments/{attachment_id}` | Delete an attachment at the characteristic level (Line) |
+
+## Scopes
+
+This API requires the following scopes:
+
+- `quality_collaboration.quality_inspection.read`
+
+- `quality_collaboration.quality_inspection.write`
+
+## Elements
+
+| **Element** | **Description** | **Req'd** | **Unique** | **Allowable Value** | **In** | **Out** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | Inspection ID. | no | no | | no | yes | integer |
+| type | Type of inspection. | no | | Inspection | yes | yes | string |
+| status | Status of the inspection. | no | | -<br>Open<br>-<br>In Buyer Review<br>-<br>In Progress<br>-<br>Closed | no | yes | string |
+| reviewDecision | Decision made in the review. | no | | -<br>Accepted<br>-<br>Rejected | no | yes | string |
+| resolutionReasonText | Resolution reason text. | no | | | no | yes | string |
+| resolutionReasonType | Resolution reason type. | no | | | no | yes | string |
+| resolutionReasonCode | Resolution reason code. | no | | | no | yes | string |
+| requestDate | Date of the request. | no | | | yes | yes | datetime |
+| dueDate | Due date. | yes | | | yes | yes | datetime |
+| supplierId | ID of the supplier. | yes | | | yes | yes | integer |
+| itemId | ID of the item. | no | | | yes | yes | integer |
+| itemName | Name of the item. | no | | | yes | yes | string |
+| itemDescription | Item description. | no | | | yes | yes | string |
+| warehouseId | Warehouse ID. | no | | | no | yes | integer |
+| buyerBatchNumber | Buyer batch number. | no | | | yes | yes | string |
+| supplierPartNumber | Supplier part number. | no | | | yes | yes | string |
+| buyerPartNumber | Buyer part number. | no | | | yes | yes | string |
+| itemQuantity | Item quantity. | yes | | | yes | yes | integer |
+| sampleSize | Sample size. | no | | | yes | yes | integer |
+| uom | Unit of measure. | yes | | | yes | yes | integer |
+| requestedBy | User who requested the inspection. | yes | | | yes | yes | integer |
+| refDocumentType | Document type. | no | | Purchase Order | yes | yes | string |
+| refDocumentId | Document ID. | no | | | yes | yes | string |
+| refDocumentItem | Document item. | no | | | yes | yes | string |
+| reviewedDate | Date of the review | no | | | no | yes | datetime |
+| reviewedBy | User who reviewed. | no | | | no | yes | string |
+| submittedDate | Date submitted. | no | | | no | yes | datetime |
+| submittedBy | User who submitted. | no | | | no | yes | string |
+| externalInspectionId | ID of the external inspection. | no | | | yes | yes | string |
+| createdAt | When the inspection was created. | no | | | no | yes | datetime |
+| createdBy | User who created the inspection. | no | | | no | yes | integer |
+| modifiedAt | Date modified. | no | | | no | yes | datetime |
+| modifiedBy | User who modified. | no | | | no | yes | integer |
+| exported | Whether the record is exported. | no | | | no | yes | boolean |
+| characteristics | Characteristic records associated with the inspection. | no | | | yes | yes | [Characteristic](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/characteristic-api) |
+
+## Get a quality inspection
+
+Method
+
+GET `/qualitycollaboration/api/v1/quality-inspections/{id}`
+
+Example cURL request
+
+```text
+curl --location 'https://<your-instance>.com/qualitycollaboration/api/v1/quality-inspections/1' \
+--header 'Accept: application/json' \
+--header 'Accept: application/xml' \
+--header 'Authorization: ••••••'
+```
+
+Example response
+
+```text
+{
+"id": 1,
+"type": "Inspection",
+"status": "Closed",
+"resolutionReasonText": "accepted",
+"dueDate": "2025-11-20T10:00:00Z",
+"supplierId": 1,
+"itemId": 1,
+"itemName": "Inspection Material",
+"itemDescription": "Inspection material",
+"supplierPartNumber": "SLNG-123",
+"buyerPartNumber": "BLNG-123",
+"itemQuantity": 50.000000,
+"uom": 1,
+"requestedBy": 10,
+"refDocumentType": "Purchase Order",
+"refDocumentId": "EXTPO_003",
+"refDocumentItem": "0010",
+"createdAt": "2025-11-04T16:07:02Z",
+"modifiedAt": "2025-11-04T16:17:49Z",
+"exported": false,
+"characteristics": [
+{
+"id": 1,
+"lineNum": 1,
+"inspectionId": 1,
+"name": "Color",
+"type": "required",
+"isQuantitative": false,
+"specification": "Clear colourless ",
+"valueType": "choice",
+"characteristicValues": [
+{
+"id": 1,
+"characteristicId": 1,
+"code": "1",
+"domain": "COLOR",
+"value": "Yellow"
+},
+{
+"id": 2,
+"characteristicId": 1,
+"code": "2",
+"domain": "COLOR",
+"value": "light yellow"
+},
+{
+"id": 3,
+"characteristicId": 1,
+"code": "3",
+"domain": "COLOR",
+"value": "No colour"
+}
+],
+"expectedResults": {
+"id": 1,
+"characteristicId": 1,
+"numericValue": 3.000000000
+},
+"expectedLimits": [],
+"recordedCharacteristic": {
+"id": 1,
+"characteristicId": 1,
+"code": "1"
+}
+},
+{
+"id": 2,
+"lineNum": 2,
+"inspectionId": 1,
+"name": "Non-volatile residue",
+"type": "required",
+"isQuantitative": true,
+"specification": "Not more than 0.1%",
+"valueType": "numeric",
+"characteristicValues": [],
+"expectedResults": {
+"id": 2,
+"characteristicId": 2,
+"numericValue": 0.320000000,
+"valuePrecision": 2
+},
+"expectedLimits": [
+{
+"id": 1,
+"characteristicId": 2,
+"limitType": "min",
+"comparisonOperator": "gt",
+"comparisonValue": 0.000000
+},
+{
+"id": 2,
+"characteristicId": 2,
+"limitType": "max",
+"comparisonOperator": "lt",
+"comparisonValue": 0.100000
+}
+],
+"recordedCharacteristic": {
+"id": 2,
+"characteristicId": 2,
+"numericValue": 0.050000000
+}
+},
+{
+"id": 3,
+"lineNum": 3,
+"inspectionId": 1,
+"name": "Reducing substances",
+"type": "required",
+"isQuantitative": true,
+"specification": "Not more than 70 mg/kg as sulfur dioxide",
+"valueType": "numeric",
+"characteristicValues": [],
+"expectedResults": {
+"id": 3,
+"characteristicId": 3,
+"numericValue": 55.000000000,
+"valuePrecision": 2
+},
+"expectedLimits": [
+{
+"id": 3,
+"characteristicId": 3,
+"limitType": "min",
+"comparisonOperator": "gt",
+"comparisonValue": 0.000000
+},
+{
+"id": 4,
+"characteristicId": 3,
+"limitType": "max",
+"comparisonOperator": "lt",
+"comparisonValue": 70.000000
+}
+],
+"recordedCharacteristic": {
+"id": 3,
+"characteristicId": 3,
+"numericValue": 69.000000000
+}
+}
+]
+}
+```
+
+## Create a quality inspection
+
+Method
+
+POST `/qualitycollaboration/api/v1/quality-inspections`
+
+Example cURL request
+
+```text
+curl --location 'https://<your-instance>/qualitycollaboration/api/v1/quality-inspections' \
+--header 'Accept: application/json' \
+--header 'Accept: application/xml' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+"type": "inspection",
+"dueDate": "2025-12-20T10:00:00Z",
+"supplierId": 1,
+"itemId": 1,
+"supplierPartNumber": "SLNG-123",
+"buyerPartNumber": "BLNG-123",
+"buyerBatchNumber": "MPNBATCHNO-LNG456",
+"itemQuantity": 50.0,
+"sampleSize": 1,
+"uom": 1,
+"requestedBy": 10,
+"refDocumentType": "Purchase Order",
+"refDocumentId": "EXTPO_004",
+"refDocumentItem": "0010",
+"externalInspectionId": "EXT_QI_004",
+"characteristics": [
+{
+"name": "Color",
+"type": "REQUIRED",
+"isQuantitative": false,
+"requirement": "Clear colourless ",
+"valueType": "CHOICE",
+"characteristicValues": [
+{
+"code": "1",
+"domain": "COLOR",
+"value": "Yellow"
+},
+{
+"code": "2",
+"domain": "COLOR",
+"value": "light yellow"
+},
+{
+"code": "3",
+"domain": "COLOR",
+"value": "No colour"
+}
+],
+"expectedResults": {
+"targetValue": "3"
+},
+"expectedLimits": []
+},
+{
+"name": "Non-volatile residue",
+"type": "REQUIRED",
+"isQuantitative": true,
+"requirement": "Not more than 0.1%",
+"valueType": "NUMERIC",
+"characteristicValues": [],
+"expectedResults": {
+"targetValue": ".32",
+"valuePrecision": "2"
+},
+"expectedLimits": [
+{
+"limitType": "MIN",
+"comparisonOperator": "GT",
+"comparisonValue": "0"
+},
+{
+"limitType": "MAX",
+"comparisonOperator": "LT",
+"comparisonValue": "0.1"
+}
+]
+},
+{
+"name": "Reducing substances",
+"type": "REQUIRED",
+"isQuantitative": true,
+"requirement": "Not more than 70 mg/kg as sulfur dioxide",
+"valueType": "NUMERIC",
+"characteristicValues": [],
+"expectedResults": {
+"targetValue": "55",
+"valuePrecision": "2"
+},
+"expectedLimits": [
+{
+"limitType": "MIN",
+"comparisonOperator": "GT",
+"comparisonValue": "0"
+},
+{
+"limitType": "MAX",
+"comparisonOperator": "LT",
+"comparisonValue": "70"
+}
+]
+}
+]
+}'
+```
+
+Example response
+
+```text
+{
+"id": 606,
+"type": "Inspection",
+"status": "Open",
+"dueDate": "2025-12-20T10:00:00Z",
+"supplierId": 1,
+"itemId": 1,
+"itemName": "Inspection Material",
+"itemDescription": "Inspection material",
+"supplierPartNumber": "SLNG-123",
+"buyerPartNumber": "BLNG-123",
+"itemQuantity": 50.0,
+"uom": 1,
+"requestedBy": 10,
+"refDocumentType": "Purchase Order",
+"refDocumentId": "EXTPO_004",
+"refDocumentItem": "0010",
+"createdAt": "2025-12-02T16:55:45.416467Z",
+"modifiedAt": "2025-12-02T16:55:51.185949Z",
+"exported": false,
+"characteristics": [
+{
+"id": 2976,
+"lineNum": 1,
+"inspectionId": 606,
+"name": "Color",
+"type": "required",
+"isQuantitative": false,
+"specification": "Clear colourless ",
+"valueType": "choice",
+"characteristicValues": [
+{
+"id": 3193,
+"code": "1",
+"domain": "COLOR",
+"value": "Yellow"
+},
+{
+"id": 3194,
+"code": "2",
+"domain": "COLOR",
+"value": "light yellow"
+},
+{
+"id": 3195,
+"code": "3",
+"domain": "COLOR",
+"value": "No colour"
+}
+],
+"expectedResults": {
+"id": 2976,
+"characteristicId": 2976,
+"numericValue": 3
+},
+"recordedCharacteristic": {
+"id": 2976,
+"characteristicId": 2976
+}
+},
+{
+"id": 2977,
+"lineNum": 2,
+"inspectionId": 606,
+"name": "Non-volatile residue",
+"type": "required",
+"isQuantitative": true,
+"specification": "Not more than 0.1%",
+"valueType": "numeric",
+"expectedResults": {
+"id": 2977,
+"characteristicId": 2977,
+"numericValue": 0.32,
+"valuePrecision": 2
+},
+"expectedLimits": [
+{
+"id": 3339,
+"limitType": "min",
+"comparisonOperator": "gt",
+"comparisonValue": 0
+},
+{
+"id": 3340,
+"limitType": "max",
+"comparisonOperator": "lt",
+"comparisonValue": 0.1
+}
+],
+"recordedCharacteristic": {
+"id": 2977,
+"characteristicId": 2977
+}
+},
+{
+"id": 2978,
+"lineNum": 3,
+"inspectionId": 606,
+"name": "Reducing substances",
+"type": "required",
+"isQuantitative": true,
+"specification": "Not more than 70 mg/kg as sulfur dioxide",
+"valueType": "numeric",
+"expectedResults": {
+"id": 2978,
+"characteristicId": 2978,
+"numericValue": 55,
+"valuePrecision": 2
+},
+"expectedLimits": [
+{
+"id": 3341,
+"limitType": "min",
+"comparisonOperator": "gt",
+"comparisonValue": 0
+},
+{
+"id": 3342,
+"limitType": "max",
+"comparisonOperator": "lt",
+"comparisonValue": 70
+}
+],
+"recordedCharacteristic": {
+"id": 2978,
+"characteristicId": 2978
+}
+}
+]
+}
+```
+
+- [Characteristic API](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/characteristic-api)
+
+Access characteristic data when working with the Quality Collaboration API.
+
+- [Characteristic Value API](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/characteristic-value-api)
+
+Access characteristic value data when working with the Quality Collaboration API.
+
+- [Expected Limit API](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/expected-limit-api)
+
+Access expected limit data when working with the Quality Collaboration API.
+
+- [Expected Result API](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/expected-result-api)
+
+Access expected result data when working with the Quality Collaboration API.
+
+- [Recorded Characteristic API](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/quality-collaboration-api/recorded-characteristic-api)
+
+Access recorded characteristic data when working with the Quality Collaboration API.

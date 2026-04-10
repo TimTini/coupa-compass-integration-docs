@@ -1,0 +1,538 @@
+---
+title: "Purchase Orders API Example Calls"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-orders-api-example-calls"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-orders-api-example-calls"
+status_code: 200
+fetched_at: "2026-04-09T11:59:54+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Purchase Orders API (/purchase_orders)"
+  - "Purchase Orders API Example Calls"
+---
+
+# Purchase Orders API Example Calls
+
+## Purchase Order GET Query Options
+
+Here are more examples of how to use the purchase order API to query and get the result set
+you want.
+
+This query will return all POS with PO that have not been exported out before:
+
+```text
+https://<instance url>/api/purchase_orders?exported=false
+```
+
+This query will return all orders created after January 1, 2011, 12:00:00
+
+```text
+https://<instance url>/api/purchase_orders?created-at[gt]=2011-01-01T12:00:00
+```
+
+This query will return all non-exported POs that were created after January 1, 2011
+
+```text
+https://<instance url>/api/purchase_orders?exported=false&created_at[gt]=2011-01-1
+```
+
+This query will return all non-exported POs for supplier ABS Services 1:
+
+```text
+https://<instance url>/api/purchase_orders?exported=false&supplier[name]=ABS Services 1
+```
+
+This query will return all suppliers whose PO method is set to cXML and where the buyer
+domain value contains the word "domain":
+
+```text
+https://<instance url>/api/suppliers?po-method=cxml&cxml-domain[contains]=domain
+```
+
+This query will return all suppliers who are allowed cXML invoicing and where the cXML
+invoice setup of the supplier domain value contains the word "supplier":
+
+`https://.coupahost.com/api/suppliers?allow-cxml-invoicing=true&cxml-supplier-domain[contains]=supplier`
+
+This query will return all suppliers whose primary contact email contains the value
+"coupa.com" and the supplier address where the city is Charleston:
+
+```text
+https://<instance url>/api/suppliers?primary-contact[email][contains]=coupa.com&primary-address[city]=Charleston
+```
+
+This query will return all suppliers who has at least 5 user reviews in the system.
+
+```text
+https://<instance url>/api/suppliers?reviews-count[gt]=5
+```
+
+This query will return all PO's with payment method as 'pcard' and status not equals to
+closed
+
+```text
+https://<instance url>/api/purchase_orders?payment_method=pcard&status[not_eq]=closed
+```
+
+## GET Purchase Order
+
+In this example, we queried for a single purchase order record number 2400
+
+We did a GET to the URL:
+
+```text
+https://<instance url>/api/purchase_orders/2400
+```
+
+or
+
+```text
+https://<instance url>/api/purchase_orders?id=2400
+```
+
+Here is the response matching the search criteria:
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<order-headers type="array">
+<order-header>
+<acknowledged-flag type="boolean">false</acknowledged-flag>
+<created-at type="datetime">2010-12-21T12:08:43-08:00</created-at>
+<id type="integer">2400</id>
+<status>issued</status>
+<transmission-status>sent_via_email</transmission-status>
+<updated-at type="datetime">2010-12-21T14:16:03-08:00</updated-at>
+<version type="integer">1</version>
+<exported type="boolean">false</exported>
+<attachment type="integer" />
+<received type="boolean" />
+<custom-field-2 type="string" />
+<buyer type="string" />
+<custom-field-4 type="string" />
+<date type="datetime" />
+<project2 type="string">DBA1</project2>
+<created-by>
+<email>upgrade90@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</created-by>
+<requisition-header>
+<id type="integer">1902</id>
+<requester>
+<email>upgrade90@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</requester>
+</requisition-header>
+<ship-to-address>
+<attention />
+<city>Redwood City</city>
+<id type="integer">1</id>
+<name nil="true" />
+<postal-code>94029</postal-code>
+<state>CA</state>
+<street1>250 Sycamore Avenue</street1>
+<street2 />
+<country>
+<code>US</code>
+<id type="integer">223</id>
+<name>United States</name>
+</country>
+</ship-to-address>
+<ship-to-user>
+<email>upgrade90@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</ship-to-user>
+<supplier>
+<id type="integer">2</id>
+<name>ABS Services 1</name>
+<number>28</number>
+<primary-contact>
+<email>ben.mlynash@coupa.com</email>
+<id type="integer">327</id>
+<name-additional nil="true" />
+<name-family>Rodriguez</name-family>
+<name-fullname nil="true" />
+<name-given>Paul</name-given>
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<notes nil="true" />
+<phone-fax>
+<area-code>232</area-code>
+<country-code>1</country-code>
+<extension nil="true" />
+<number>2321192</number>
+</phone-fax>
+</primary-contact>
+<primary-address>
+<attention nil="true" />
+<city>Palo Alto</city>
+<id type="integer">385</id>
+<name>ABS Services 1</name>
+<postal-code>94301</postal-code>
+<state>CA</state>
+<street1>500 Main St</street1>
+<street2 />
+<country>
+<code>US</code>
+<id type="integer">223</id>
+<name>United States</name>
+</country>
+</primary-address>
+</supplier>
+<updated-by>
+<email>upgrade90@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</updated-by>
+<payment-term>
+<code>Net 45</code>
+<days-for-discount-payment type="integer" nil="true" />
+<days-for-net-payment type="integer" nil="true" />
+<discount-rate type="float" nil="true" />
+<id type="integer">2</id>
+</payment-term>
+<shipping-term>
+<code>UPS -Ground</code>
+<id type="integer">1</id>
+</shipping-term>
+<attachments />
+<order-lines>
+<order-line>
+<accounting-total type="decimal">500.00</accounting-total>
+<created-at type="datetime">2010-12-21T12:08:43-08:00</created-at>
+<description>legal services for Q4</description>
+<id type="integer">1325</id>
+<invoiced type="float">0.00</invoiced>
+<line-num type="integer">1</line-num>
+<need-by-date type="datetime">2010-12-24T00:00:00-08:00</need-by-date>
+<order-header-id type="integer">2400</order-header-id>
+<price type="decimal">500.00</price>
+<quantity type="float" />
+<received type="float">0.00</received>
+<source-part-num />
+<status>received</status>
+<sub-line-num type="integer" />
+<supp-aux-part-num />
+<total type="decimal">500.00</total>
+<type>OrderAmountLine</type>
+<updated-at type="datetime">2010-12-30T13:03:56-08:00</updated-at>
+<version type="integer" />
+<options type="string" />
+<family type="string" />
+<family1 type="string" />
+<test-date type="datetime" />
+<tax-id type="string" />
+<custom-field-2 type="boolean" />
+<custom-field-1 type="boolean" />
+<buyer type="string" />
+<dept type="string" />
+<account>
+<active type="boolean">true</active>
+<code>01-100-8000</code>
+<id type="integer">26</id>
+<name>USA -Marketing, Assets</name>
+<segment-1>01</segment-1>
+<segment-10 nil="true" />
+<segment-11 nil="true" />
+<segment-12 nil="true" />
+<segment-13 nil="true" />
+<segment-14 nil="true" />
+<segment-15 nil="true" />
+<segment-16 nil="true" />
+<segment-17 nil="true" />
+<segment-18 nil="true" />
+<segment-19 nil="true" />
+<segment-2>100</segment-2>
+<segment-20 nil="true" />
+<segment-3>8000</segment-3>
+<segment-4 nil="true" />
+<segment-5 nil="true" />
+<segment-6 nil="true" />
+<segment-7 nil="true" />
+<segment-8 nil="true" />
+<segment-9 nil="true" />
+<account-type>
+<id type="integer">2</id>
+<name>Chart of Accounts</name>
+</account-type>
+</account>
+<accounting-total-currency>
+<code>USD</code>
+<id type="integer">1</id>
+</accounting-total-currency>
+<currency>
+<code>USD</code>
+<id type="integer">1</id>
+</currency>
+<commodity>
+<active type="boolean">true</active>
+<created-at type="datetime">2007-11-26T16:03:18Z</created-at>
+<id type="integer">2</id>
+<name>Office Supplies</name>
+<updated-at type="datetime">2009-10-08T23:45:03Z</updated-at>
+<created-by>
+<email>bmlynash@gmail.com</email>
+<employee-number>12</employee-number>
+<firstname>Bob</firstname>
+<id type="integer">33</id>
+<lastname>Admin</lastname>
+<login>admin</login>
+</created-by>
+<updated-by>
+<email>bmlynash@gmail.com</email>
+<employee-number>12</employee-number>
+<firstname>Bob</firstname>
+<id type="integer">33</id>
+<lastname>Admin</lastname>
+<login>admin</login>
+</updated-by>
+<category type="string" />
+</commodity>
+<created-by>
+<email>upgrade90@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</created-by>
+<supplier>
+<id type="integer">2</id>
+<name>ABS Services 1</name>
+<number>28</number>
+<primary-contact>
+<email>ben.mlynash@coupa.com</email>
+<id type="integer">327</id>
+<name-additional nil="true" />
+<name-family>Rodriguez</name-family>
+<name-fullname nil="true" />
+<name-given>Paul</name-given>
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<notes nil="true" />
+<phone-fax>
+<area-code>232</area-code>
+<country-code>1</country-code>
+<extension nil="true" />
+<number>2321192</number>
+</phone-fax>
+</primary-contact>
+<primary-address>
+<attention nil="true" />
+<city>Palo Alto</city>
+<id type="integer">385</id>
+<name>ABS Services 1</name>
+<postal-code>94301</postal-code>
+<state>CA</state>
+<street1>500 Main St</street1>
+<street2 />
+<country>
+<code>US</code>
+<id type="integer">223</id>
+<name>United States</name>
+</country>
+</primary-address>
+</supplier>
+<updated-by>
+<email>upgrade90@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<id type="integer">1</id>
+<lastname>Support</lastname>
+<login>coupasupport</login>
+</updated-by>
+<asset-tags />
+<attachments />
+</order-line>
+</order-lines>
+</order-header>
+</order-headers>
+```
+
+## Purchase Order PUT (Update)
+
+## Overview
+
+Our Purchase Order API allows you to update **header customer fields **or **close or
+cancel PO **of an existing Purchase Order in Coupa. It also supports **adding,
+deleting, and updating Line records.**
+
+This is the URL you can PUT this information to: `https:///api/purchase_orders/`
+
+`​​​​​​`Successful requests will return HTTP 200 OK. The body of the response
+will include the invoice that was just updated.
+
+Unsuccessful requests will return HTTP 400 Bad Request. The body of the response will
+include validation errors formatted as XML.
+
+## Notes
+
+This API Allows you to take the following Actions:
+
+## Close or Cancel PO
+
+A PO can attempt to be changed to cancelled by making a PUT request to the PO with the
+following request.
+
+**Cancel PO**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<order-header>
+<_cancel>true</_cancel>
+</order-header>
+```
+
+Similarly, a PO can attempt to be changed to closed by making a PUT request to the PO with
+the following request.
+
+**Close PO**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<order-header>
+<_close>true</_close>
+</order-header>
+```
+
+Both actions will follow all validations, as if the request was made through by a user
+through the website. Any errors will be returned in the Response Body.
+
+## Add a PO Line
+
+A PO Line can be added to an existing PO by a request similar to the following:
+
+**Add PO Line**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<order-header>
+<order-lines>
+<order-line>
+<type>OrderQuantityLine</type>
+<description>Line description of the new item</description>
+<quantity>2</quantity>
+<price>30.33</price>
+<currency>
+<code>USD</code>
+</currency>
+<account>
+<code>USA-Development-Consulting</code>
+<account-type>
+<name>US Chart Of Accounts</name>
+</account-type>
+</account>
+</order-line>
+</order-lines>
+</order-header>
+```
+
+If the line passes all validations, the PO version will be incremented and, if configured,
+the supplier will automatically receive the new version of the PO.
+
+## Edit a PO Line
+
+You can edit an existing PO Line by including the line ID number in the order-line
+element.
+
+**Edit Existing PO Line**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<order-header>
+<order-lines>
+<order-line>
+<id>213</id>
+<description>Update Description of Item</description>
+<quantity>5</quantity>
+<price>35.33</price>
+<account>
+<code>USA-Sales-Consulting</code>
+<account-type>
+<name>US Chart Of Accounts</name>
+</account-type>
+</account>
+<some-custom-field>Update Custom field value</some-custom-field>
+</order-line>
+</order-lines>
+</order-header>
+```
+
+Depending on the changes made, a new version of the PO may be created and sent to the
+supplier. Some of these changes include changing the quantity ordered, unit price, or item.
+Other changes may not trigger a resend to the supplier, such as changes to the account.
+
+## Delete a PO Line
+
+You can delete an existing PO line by passing in both the line ID to delete and the delete
+request to the order-line element.
+
+**Delete PO Line**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<order-header>
+<order-lines>
+<order-line>
+<id>3214</id>
+<_delete>true</_delete>
+</order-line>
+</order-lines>
+</order-header>
+```
+
+This change would trigger a new PO version to be created and the PO to be resent.
+
+**Adding a new Line to an existing PO**
+
+Adding a new PO line with accounting. When adding a new line with Account info, it is
+recommended to send the account code value and the individual segments especially when the
+segments have special chars in the values.
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<order-header>
+<id>4552</id>
+<order-lines>
+<order-line>
+<type>OrderQuantityLine</type>
+<description>test</description>
+<need-by-date>2015-02-05T00:00:00</need-by-date>
+<price>20.00</price>
+<quantity>2.000000</quantity>
+<account>
+<code>51110000-N/A--61W2/07001O001-1-002</code>
+<segment-1>51110000</segment-1>
+<segment-2>N/A</segment-2>
+<segment-3 />
+<segment-4>61W2/07001O001-1-002</segment-4>
+</account>
+<currency>
+<code>USD</code>
+</currency>
+<commodity>
+<name>01080001 51236000 BUILDING &amp; C</name>
+</commodity>
+<uom>
+<code>EA</code>
+</uom>
+</order-line>
+</order-lines>
+</order-header>
+```

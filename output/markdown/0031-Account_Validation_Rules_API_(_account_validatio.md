@@ -1,0 +1,125 @@
+---
+title: "Account Validation Rules API (/account_validation_rules)"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-validation-rules-api-(account_validation_rules)"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-validation-rules-api-(account_validation_rules)"
+status_code: 200
+fetched_at: "2026-04-09T11:59:07+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Account Validation Rules API (/account_validation_rules)"
+---
+
+# Account Validation Rules API (/account_validation_rules)
+
+Use the account validation API to set rules to manage the
+different chart of accounts.
+
+The URL to access account validation rules
+is: `https:///api/account_validation_rules`
+
+See [Integration Best Practices](https://compass.coupa.com/x285417.xml) for more info.
+
+## Actions
+
+The Account Validation Rules API allows you to:
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| POST | `/api/account_validation_rules` | create | Create account validation |
+| GET | `/api/account_validation_rules` | index | Query account validations |
+| GET | `/api/account_validation_rules/:id` | show | Show account validation |
+| PUT | `/api/account_validation_rules/:id` | update | Update account validation |
+
+## Elements
+
+The following elements are available for the Account Validation
+Rules API:
+
+| **Element** | **Description** | **Required Field?** | **Unique?** | **Allowable Value** | **Api_In Field?** | **Api_Out Field?** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| account-type | account-type | | | | yes | yes | [AccountType](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-types-api-(account_types)) |
+| active | Is the item given for this supplier & contract active? and if NOT then DELETE | | | | yes | yes | boolean |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| created-by | User who created | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| description | Item desciption | yes | | | yes | yes | string(255) |
+| error-message | Error message to be displayed | yes | | | yes | yes | string(255) |
+| id | Coupa unique identifier | | | | | yes | integer |
+| name | Item name | yes | yes | | yes | yes | string(100) |
+| segment-10-condition | segment_10_condition custom condition for the segment | | | | yes | yes | string |
+| segment-10-max | segment_10_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-10-min | segment_10_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-11-condition | segment_11_condition custom condition for the segment | | | | yes | yes | string |
+| segment-11-max | segment_11_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-11-min | segment_11_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-12-condition | segment_12_condition custom condition for the segment | | | | yes | yes | string |
+| segment-12-max | segment_12_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-12-min | segment_12_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-13-condition | segment_13_condition custom condition for the segment | | | | yes | yes | string |
+| segment-13-max | segment_13_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-13-min | segment_13_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-14-condition | segment_14_condition custom condition for the segment | | | | yes | yes | string |
+| segment-14-max | segment_14_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-14-min | segment_14_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-15-condition | segment_15_condition custom condition for the segment | | | | yes | yes | string |
+| segment-15-max | segment_15_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-15-min | segment_15_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-16-condition | segment_16_condition custom condition for the segment | | | | yes | yes | string |
+| segment-16-max | segment_16_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-16-min | segment_16_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-17-condition | segment_17_condition custom condition for the segment | | | | yes | yes | string |
+| segment-17-max | segment_17_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-17-min | segment_17_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-18-condition | segment_18_condition custom condition for the segment | | | | yes | yes | string |
+| segment-18-max | segment_18_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-18-min | segment_18_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-19-condition | segment_19_condition custom condition for the segment | | | | yes | yes | string |
+| segment-19-max | segment_19_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-19-min | segment_19_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-1-condition | segment_1_condition custom condition for the segment | | | | yes | yes | string |
+| segment-1-max | segment_1_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-1-min | segment_1_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-20-condition | segment_20_condition custom condition for the segment | | | | yes | yes | string |
+| segment-20-max | segment_20_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-20-min | segment_20_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-2-condition | segment_2_condtion custom condition for the segment | | | | yes | yes | string |
+| segment-2-max | segment_2_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-2-min | segment_2_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-3-condition | segment_3_condtion custom condition for the segment | | | | yes | yes | string |
+| segment-3-max | segment_3_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-3-min | segment_3_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-4-condition | segment_4_condition custom condition for the segment | | | | yes | yes | string |
+| segment-4-max | segment_4_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-4-min | segment_4_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-5-condition | segment_5_condition custom condition for the segment | | | | yes | yes | string |
+| segment-5-max | segment_5_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-5-min | segment_5_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-6-condition | segment_6_condition custom condition for the segment | | | | yes | yes | string |
+| segment-6-max | segment_6_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-6-min | segment_6_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-7-condition | segment_7_condition custom condition for the segment | | | | yes | yes | string |
+| segment-7-max | segment_7_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-7-min | segment_7_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-8-condition | segment_8_condition custom condition for the segment | | | | yes | yes | string |
+| segment-8-max | segment_8_max custom rule for the segment | | | | yes | yes | string(255) |
+| segment-8-min | segment_8_min custom rule for the segment | | | | yes | yes | string(255) |
+| segment-9-condition | segment_9_condition custom condition for the segment | | | | yes | yes | string |
+| segment-9-max | segment_9_max is custom rule for the segment | | | | yes | yes | string(255) |
+| segment-9-min | segment_9_min is custom rule for the segment | | | | yes | yes | string(255) |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| updated-by | User who updated | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+- When dealing with large data sets of contracts, always limit your GET with some
+criteria.
+
+- ** precision, scale
+
+- The accounts should already exist in the system.
+
+- Create a chart of accounts where the segments are defined dynamically before
+creating any account validation rules.

@@ -1,0 +1,84 @@
+---
+title: "Addresses Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/addresses-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/addresses-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:33+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Addresses Import"
+---
+
+# Addresses Import
+
+## Overview
+
+The Address Import process reads files from the `./Incoming/Addresses/` in
+the SFTP. These files are moved to the archive folder located at
+`./Incoming/Archive/Addresses/` before being processed in alphanumeric
+order.
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+- You can perform an update only for an address record that is active in Coupa. An
+update on an inactive address results in a new record being created.
+
+- You cannot update Supplier addresses using this loader.
+
+## Keys
+
+ID, Location Code, [Name, Line1, Line2, City, State, Postal Code, Country Code,
+Attention
+
+## Validations
+
+You can update anything using `ID`. You can update every field (except for
+`ID`) using `Location Code`. If you don't have either
+`ID` or `Location Code`, we use the combination of [Name,
+Line1, Line2, City, State, Postal Code, Country Code', Attention] to look up for an existing
+address; if not found, we create a new record.
+
+## Address
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Name | No | No | string(255) | Your business entity's Address name | |
+| Id | No | No | integer | Coupa Unique Address Id for your Business Entity | |
+| Active | No | No | boolean | Possible values are yes or no | |
+| Line 1 | Yes | No | string(255) | Your business entity's Address Street Line 1 | |
+| Line 2 | No | No | string(255) | Your business entity's Address Street Line 2 | |
+| Line 3 | No | No | string(255) | Your business entity's Address Street Line 3 | |
+| Line 4 | No | No | string(255) | Your business entity's Address Street Line 4 | |
+| City | Yes | No | string(255) | Your business entity's Address City | |
+| State | No | No | string(255) | Your business entity's Address State | |
+| State ISO Code | No | No | string(255) | ISO Code for the State | |
+| Postal Code | Yes | No | string(255) | Your business entity's Address Postal Code | |
+| Country Code | No | No | | Your business entity's Address Country Code | |
+| Attention | No | No | string(255) | Fill in if you want a specific person or group to be in the attention field on the address | |
+| Content Groups | No | No | | Content Groups for security. If specifying more than one content group, use a comma to separate each content group name. Max 100 characters per content group name. | |
+| Location Code | No | Yes | string(255) | Location Code | |
+| VAT ID | No | No | string(255) | Field generally for supplier values which are synced from Coupa Supplier Portal into the tax registration table. Field not available in UI to reduce likelihood of manual change. | |
+| Local Tax Number | Yes | No | string(255) | Field generally for supplier values which are synced from Coupa Supplier Portal into the tax registration table. Field not available in UI to reduce likelihood of manual change. | |
+| Fiscal Representative Address | No | No | | Fiscal Representative Address | |
+
+| **Column Name** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| Name | Your business entity's address name | Yes | No | string(255) | |
+| Id | This is the unique identifier (database ID) Coupa assigns when a new Business Entity record is created. It can't be modified, but can be used to update the record. | No | Yes | integer(11) | None. Assigned by Coupa. |
+| Active | "No" will make the address inactive making it no longer available to users. "Yes" will make it active and available to users. | No | No | boolean | Yes,No/True,False/Y,N/T,F |
+| Line 1 | Your business entity's address line 1 | Yes | No | string(255) | |
+| Line 2 | Your business entity's address line 2 | No | No | string(255) | |
+| City | Your business entity's address city name | Yes | No | string(255) | |
+| State | Your business entity's address state abbreviation | No | No | string(255) | |
+| State ISO Code | ISO Code for the State | No | No | string(255) | |
+| Postal Code | Your business entity's address postal code | Yes | No | string(255) | |
+| Country Code | Your business entity's ISO Country Code. Must Already Exist in Coupa. | Yes | No | string(4) | Any ISO3166-1 two letter country code |
+| Attention | Address Default Attention Line | No | No | string(255) | |
+| Content Groups | If specifying more than one content group, use a comma to separate each content group name. Max 100 characters per content group name. | No | No | string(100) | |
+| Location Code | Optional Field for ERP Address Code | No | Yes | string(255) | |
+| VAT ID | Field generally for supplier values which are synced from Coupa Supplier Portal into the tax registration table. Field not available in UI to reduce likelihood of manual change. | No | No | string(255) | |
+| Local Tax Number | Field generally for supplier values which are synced from Coupa Supplier Portal into the tax registration table. Field not available in UI to reduce likelihood of manual change. | No | No | string(255) | |
+| Fiscal Representative Address | | No | No | | |

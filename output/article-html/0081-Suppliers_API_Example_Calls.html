@@ -1,0 +1,375 @@
+<article class="" id="suppliers_api_example_calls">
+<h1 class="title">Suppliers API Example Calls</h1>
+<div class="body">
+<div class="" id="get_supplier_query_options">
+<h2 class="title sectiontitle">GET Supplier Query Options</h2>
+<p class="">Here are more examples of how to use the supplier API to query
+and get the result set you want.</p>
+<p class="">This query will return all suppliers with PO method set to
+        cXML:<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers?po-method=cxml</code>
+</pre>
+</p>
+<p class="">
+This query will return all suppliers with payment term of Net
+30: </p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers?payment-term[code]=Net+30</code>
+</pre>
+</p>
+<p class="">This query will return all suppliers where payment discount is given if within 10 days of
+        invoicing and the supplier is currently active in the system:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers?payment-term[days-for-discount-payment]=10&amp;status=active</code>
+</pre>
+</p>
+<p class=""> This query will return all suppliers that was created after January 1, 2010 12:00:00:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers?created-at[gt]=2010-01-01T12:00:00</code>
+</pre>
+</p>
+<p class=""> This query will return all suppliers whose PO method is set to cXML and where the buyer
+        domain value contains the word "domain":
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers?po-method=cxml&amp;cxml-domain[contains]=domain</code>
+</pre>
+</p>
+<p class="">This query will return all suppliers who are allowed cXML invoicing and where the cXML
+        invoice setup of the supplier domain value contains the word "supplier":
+          <code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/suppliers?allow-cxml-invoicing=true&amp;cxml-supplier-domain[contains]=supplier</code>
+</p>
+<p class="">This query will return all suppliers whose primary contact email contains the value
+        "coupa.com" and the supplier address where the city is Charleston:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers?primary-contact[email][contains]=coupa.com&amp;primary-address[city]=Charleston</code>
+</pre>
+</p>
+<p class=""> This query will return all suppliers who has at least 5 user reviews in the system.
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers?reviews-count[gt]=5</code>
+</pre>
+</p>
+</div>
+<div class="" id="get_supplier">
+<h2 class="title sectiontitle">Get Supplier</h2>
+<p class="">In this example, we queried for a single supplier record with an
+ID of 6.</p>
+<p class="">We did a GET to the URL:</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance url&gt;/api/suppliers/6</code>
+</p>
+<p class="">
+or</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance url&gt;/api/suppliers?id=6</code>
+</p>
+<p class=""> Here is the response matching the search
+        criteria:<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;suppliers type="array"&gt;
+	&lt;supplier&gt;
+		&lt;id type="integer"&gt;6&lt;/id&gt;
+		&lt;created-at type="datetime"&gt;2008-10-27T12:56:39-07:00&lt;/created-at&gt;
+		&lt;updated-at type="datetime"&gt;2009-07-01T11:59:33-07:00&lt;/updated-at&gt;
+		&lt;name&gt;VWR&lt;/name&gt;
+		&lt;number&gt;&lt;/number&gt;
+		&lt;status&gt;active&lt;/status&gt;
+		&lt;website&gt;&lt;/website&gt;
+		&lt;po-method&gt;cxml&lt;/po-method&gt;
+		&lt;cxml-url&gt;http://www.dummy.com&lt;/cxml-url&gt;
+		&lt;cxml-domain&gt;http://demo.coupahost.com&lt;/cxml-domain&gt;
+		&lt;cxml-identity&gt;Coupa&lt;/cxml-identity&gt;
+		&lt;cxml-supplier-domain&gt;http://www.vwr.com&lt;/cxml-supplier-domain&gt;
+		&lt;cxml-supplier-identity&gt;VWR-Test&lt;/cxml-supplier-identity&gt;
+		&lt;cxml-secret&gt;test&lt;/cxml-secret&gt;
+		&lt;cxml-protocol&gt;cXML&lt;/cxml-protocol&gt;
+		&lt;po-email&gt;upgrade@coupa.com&lt;/po-email&gt;
+		&lt;account-number&gt;&lt;/account-number&gt;
+		&lt;duns&gt;&lt;/duns&gt;
+		&lt;tax-id&gt;&lt;/tax-id&gt;
+		&lt;coupa-connect-secret&gt;&lt;/coupa-connect-secret&gt;
+		&lt;invoice-matching-level&gt;2-ay&lt;/invoice-matching-level&gt;
+		&lt;primary-contact&gt;
+			&lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+			&lt;id type="integer"&gt;6&lt;/id&gt;
+			&lt;name-additional nil="true"&gt;&lt;/name-additional&gt;
+			&lt;name-family&gt;Frontage&lt;/name-family&gt;
+			&lt;name-fullname nil="true"&gt;&lt;/name-fullname&gt;
+			&lt;name-given&gt;Dawn&lt;/name-given&gt;
+			&lt;name-prefix nil="true"&gt;&lt;/name-prefix&gt;
+			&lt;name-suffix nil="true"&gt;&lt;/name-suffix&gt;
+			&lt;notes nil="true"&gt;&lt;/notes&gt;
+		&lt;/primary-contact&gt;
+		&lt;primary-address&gt;
+			&lt;attention nil="true"&gt;&lt;/attention&gt;
+			&lt;city&gt;Portland&lt;/city&gt;
+			&lt;id type="integer"&gt;6&lt;/id&gt;
+			&lt;name&gt;VWR&lt;/name&gt;
+			&lt;postal-code&gt;82323&lt;/postal-code&gt;
+			&lt;state&gt;OR&lt;/state&gt;
+			&lt;street1&gt;09 Addison Ave&lt;/street1&gt;
+			&lt;street2&gt;&lt;/street2&gt;
+			&lt;country&gt;
+				&lt;code&gt;US&lt;/code&gt;
+				&lt;id type="integer"&gt;223&lt;/id&gt;
+				&lt;name&gt;United States&lt;/name&gt;
+			&lt;/country&gt;
+		&lt;/primary-address&gt;
+		&lt;payment-term&gt;
+			&lt;code&gt;2/10 Net 30&lt;/code&gt;
+			&lt;days-for-discount-payment type="integer"&gt;10&lt;/days-for-discount-payment&gt;
+			&lt;days-for-net-payment type="integer"&gt;30&lt;/days-for-net-payment&gt;
+			&lt;discount-rate type="float"&gt;2.0&lt;/discount-rate&gt;
+			&lt;id type="integer"&gt;3&lt;/id&gt;
+		&lt;/payment-term&gt;
+	&lt;/supplier&gt;
+&lt;/suppliers&gt;</code>
+</pre>
+</p>
+</div>
+<div class="" id="supplier_create_-_active_and_detail">
+<h2 class="title sectiontitle">Supplier Create - Active and Detail</h2>
+<p class="">In this example we are creating an active supplier. We are not
+using any Coupa system ID's for any of the reference objects.</p>
+<p class="">We posted it to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers.</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier&gt;
+	 &lt;name&gt;CDW&lt;/name&gt;
+	 &lt;number&gt;cdw2323&lt;/number&gt;
+	 &lt;status&gt;active&lt;/status&gt;
+	 &lt;po-method&gt;prompt&lt;/po-method&gt;
+	 &lt;po-email /&gt;
+	 &lt;account-number&gt;2323&lt;/account-number&gt;
+	 &lt;duns /&gt;
+	 &lt;tax-id&gt;283923&lt;/tax-id&gt;
+	 &lt;invoice-matching-level&gt;3-way&lt;/invoice-matching-level&gt;
+	 &lt;payment-term&gt;
+			&lt;code&gt;Net 30&lt;/code&gt;
+	 &lt;/payment-term&gt;
+	 &lt;primary-contact&gt;
+			&lt;email&gt;joe.smith@cdw.com&lt;/email&gt;
+			&lt;name-family&gt;Smith&lt;/name-family&gt;
+			&lt;name-given&gt;Joe&lt;/name-given&gt;
+			&lt;name-prefix nil="true" /&gt;
+			&lt;name-suffix nil="true" /&gt;
+			&lt;notes nil="true" /&gt;
+			&lt;phone-work&gt;
+				 &lt;area-code&gt;650&lt;/area-code&gt;
+				 &lt;country-code&gt;1&lt;/country-code&gt;
+				 &lt;extension nil="true" /&gt;
+				 &lt;number&gt;4442932&lt;/number&gt;
+			&lt;/phone-work&gt;
+			&lt;phone-mobile&gt;
+				 &lt;area-code nil="true" /&gt;
+				 &lt;country-code&gt;1&lt;/country-code&gt;
+				 &lt;extension nil="true" /&gt;
+				 &lt;number /&gt;
+			&lt;/phone-mobile&gt;
+			&lt;phone-fax&gt;
+				 &lt;area-code nil="true" /&gt;
+				 &lt;country-code&gt;1&lt;/country-code&gt;
+				 &lt;extension nil="true" /&gt;
+				 &lt;number /&gt;
+			&lt;/phone-fax&gt;
+	 &lt;/primary-contact&gt;
+	 &lt;primary_address&gt;
+			&lt;street1&gt;1234 Concur Drive&lt;/street1&gt;
+			&lt;street2 /&gt;
+			&lt;city&gt;San Mateo&lt;/city&gt;
+			&lt;state&gt;CA&lt;/state&gt;
+			&lt;postal_code&gt;93325&lt;/postal_code&gt;
+			&lt;country&gt;
+				 &lt;code&gt;US&lt;/code&gt;
+			&lt;/country&gt;
+	 &lt;/primary_address&gt;
+&lt;/supplier&gt;</code>
+</pre>
+</div>
+<div class="" id="supplier_create-_draft_and_basic">
+<h2 class="title sectiontitle">Supplier Create- Draft and Basic</h2>
+<p class="">In this example we are creating a draft supplier. We are not
+using any Coupa system ID's for any of the reference objects.</p>
+<p class="">We posted it to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers.  This created the supplier in a draft status.</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier&gt;
+	 &lt;name&gt;CDW&lt;/name&gt;
+	 &lt;po-method&gt;prompt&lt;/po-method&gt;
+	 &lt;account-number&gt;2323&lt;/account-number&gt;
+	 &lt;duns /&gt;
+	 &lt;tax-id /&gt;
+	 &lt;invoice-matching-level&gt;3-way&lt;/invoice-matching-level&gt;
+	 &lt;payment-term&gt;
+			&lt;code&gt;Net 30&lt;/code&gt;
+	 &lt;/payment-term&gt;
+&lt;/supplier&gt; </code>
+</pre>
+</div>
+<div class="" id="update_supplier_-_full_update">
+<h2 class="title sectiontitle">Update Supplier - full update</h2>
+<p class="">In these examples, we are updating different information on the
+supplier record.</p>
+<p class="">We did a PUT to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/&lt;supplier id&gt; </code>
+</pre>
+</p>
+<p class="">For example, to update the supplier's PO method to cXML for
+supplier id 83:</p>
+<p class="">URL: <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/83</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier&gt;
+	 &lt;po-method&gt;cxml&lt;/po-method&gt;
+	 &lt;cxml-url&gt;https://testurl.com&lt;/cxml-url&gt;
+	 &lt;cxml-domain&gt;NetworkID&lt;/cxml-domain&gt;
+	 &lt;cxml-identity&gt;coupa&lt;/cxml-identity&gt;
+	 &lt;cxml-supplier-domain&gt;NetworkID&lt;/cxml-supplier-domain&gt;
+	 &lt;cxml-supplier-identity&gt;supplierID1&lt;/cxml-supplier-identity&gt;
+	 &lt;cxml-secret&gt;shhhhh&lt;/cxml-secret&gt;
+	 &lt;cxml-protocol&gt;cxml&lt;/cxml-protocol&gt;
+&lt;/supplier&gt;</code>
+</pre>
+<p class="">For example, to update the supplier's primary contact
+information and several other pieces of supplier profile
+information for supplier id 83: </p>
+<p class="">URL: <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/83</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier&gt;
+	 &lt;account-number&gt;123456&lt;/account-number&gt;
+	 &lt;duns&gt;DUNS-123&lt;/duns&gt;
+	 &lt;tax-id&gt;taxid-123&lt;/tax-id&gt;
+	 &lt;invoice-matching-level&gt;none&lt;/invoice-matching-level&gt;
+	 &lt;primary-contact&gt;
+			&lt;email&gt;supplier@test.com&lt;/email&gt;
+			&lt;name-family&gt;Donovan&lt;/name-family&gt;
+			&lt;name-given&gt;Fred&lt;/name-given&gt;
+			&lt;phone-work&gt;
+				 &lt;area-code&gt;415&lt;/area-code&gt;
+				 &lt;country-code&gt;1&lt;/country-code&gt;
+				 &lt;extension nil="true" /&gt;
+				 &lt;number&gt;4471010&lt;/number&gt;
+			&lt;/phone-work&gt;
+			&lt;phone-fax&gt;
+				 &lt;area-code&gt;415&lt;/area-code&gt;
+				 &lt;country-code&gt;1&lt;/country-code&gt;
+				 &lt;extension nil="true" /&gt;
+				 &lt;number&gt;4471012&lt;/number&gt;
+			&lt;/phone-fax&gt;
+	 &lt;/primary-contact&gt;
+&lt;/supplier&gt; </code>
+</pre>
+<p class="">For example, to update the supplier profile including address
+update for supplier id 83: </p>
+<p class="">URL: <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/83</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier&gt;
+	 &lt;name&gt;Petra (US)&lt;/name&gt;
+	 &lt;number&gt;1-112&lt;/number&gt;
+	 &lt;primary-address&gt;
+			&lt;street1&gt;425 Market Street # 2250&lt;/street1&gt;
+			&lt;street2 /&gt;
+			&lt;city&gt;San Francisco&lt;/city&gt;
+			&lt;state&gt;CA&lt;/state&gt;
+			&lt;postal_code&gt;94105&lt;/postal_code&gt;
+			&lt;country&gt;
+				 &lt;code&gt;US&lt;/code&gt;
+			&lt;/country&gt;
+	 &lt;/primary-address&gt;
+&lt;/supplier&gt;</code>
+</pre>
+<p class="">For example, to update the payment term and shipping term for
+supplier id 83:</p>
+<p class="">URL: <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/83</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;supplier&gt;
+ &lt;shipping-term&gt;
+	&lt;id&gt;1&lt;/id&gt;
+&lt;/shipping-term&gt;
+ &lt;payment-term&gt;
+	&lt;id&gt;5&lt;id&gt;
+ &lt;/payment-term&gt;
+&lt;/supplier&gt;</code>
+</pre>
+</div>
+<div class="" id="update_supplier_-_simple_update">
+<h2 class="title sectiontitle">Update Supplier - simple update</h2>
+<p class="">In these examples, we are updating a single attribute on the
+supplier record.</p>
+<p class="">We did a PUT to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/&lt;supplier id&gt; </code>
+</pre>
+</p>
+<p class="">For example, to update the supplier status to inactive for
+supplier with supplier id 83:</p>
+<p class="">
+<b>Update Supplier - Set to Inactive</b>
+</p>
+<p class="">URL: <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/83</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier&gt;
+	 &lt;status&gt;inactive&lt;/status&gt;
+&lt;/supplier&gt;</code>
+</pre>
+<p class="">For example, to update the supplier PO method to prompt with
+supplier id 83:</p>
+<p class="">
+<b>Update Supplier - Change PO Method</b>
+</p>
+<p class="">URL:  https://&lt;instance
+url&gt;/api/suppliers/83</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier&gt;
+	 &lt;po-method&gt;prompt&lt;/po-method&gt;
+&lt;/supplier&gt; </code>
+</pre>
+<p class="">For example, to update the primary supplier contact's email
+address with supplier id 83:</p>
+<p class="">
+<b>Update Supplier - Change Contact Email</b>
+</p>
+<p class="">URL: <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/suppliers/83</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;supplier&gt;
+	 &lt;primary-contact&gt;
+			&lt;email&gt;test@test.com&lt;/email&gt;
+	 &lt;/primary-contact&gt;
+&lt;/supplier&gt;</code>
+</pre>
+</div>
+</div>
+</article>

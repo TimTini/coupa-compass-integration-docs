@@ -1,0 +1,299 @@
+Fields API
+
+Fact fields are the columns in the fact sheet and, as any other field in the event, they have a name, a formula name, and a data type to specify the values to be held.
+
+Fact fields define the data to be held, just like item fields or columns in an Excel work sheet. Each fact row should contain only one value for each fact field in order to be able to use the data efficiently.
+
+Use the Fields API's to create, update, or query the Fields Data. This includes specific endpoints to take action (create/update/delete) as well as data associated related to rows.
+
+The URL to access the API's is : https://<instance>.cso.coupahost.com/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields
+
+See Integration Best Practices for more info.
+
+Actions
+
+Verb
+
+Path
+
+Action
+
+Description
+
+GET
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields
+
+index
+
+Performs Get action to retrieve all Fields that belong to a fact sheet.
+
+POST
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields
+
+create
+
+Creates one or more Fields for a fact sheet.
+
+PUT
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields
+
+update
+
+Updates one or more Fields on a fact sheet . Can perform mass updates.
+
+DELETE
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields
+
+delete
+
+Deletes one more Fields on a fact sheet. Can perform mass deletes.
+
+GET
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields/{field-id}
+
+show
+
+Show individual field data for the fact sheet id.
+
+PUT
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields/{field-id}
+
+update
+
+Update individual field for one fact sheet ID using field id.
+
+DELETE
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields/{field-id}
+
+delete
+
+Delete individual field for one fact sheet ID using field id.
+
+Elements
+
+These are the elements available for the Fields API
+
+Field Name
+
+Field Description
+
+Req'd
+
+Unique?
+
+Allowable Values
+
+In
+
+Out *
+
+Type
+
+id
+
+ID of the field
+
+Yes
+
+yes
+
+integer
+
+ordinal
+
+The ordinal value for the field.
+
+yes
+
+integer
+
+type
+
+The type of the field.
+
+yes
+
+yes
+
+string
+
+name
+
+Name of the Field.
+
+yes
+
+yes
+
+yes
+
+string
+
+formula-name
+
+The formula name of the field.
+
+yes
+
+yes
+
+string
+
+description
+
+A short description of the field.
+
+yes
+
+yes
+
+string
+
+required
+
+The required flag of the field.
+
+yes
+
+yes
+
+string
+
+decimals
+
+The number of decimals for numeric field
+
+yes
+
+yes
+
+string
+
+bidder-input
+
+This indicates whether or not this field shall be filled by a bidder.
+
+yes
+
+yes
+
+string
+
+options
+
+The options of field if its a multiple choice field.
+
+yes
+
+yes
+
+string
+
+distinguishing
+
+If this field should be included in distinguishing row.
+
+yes
+
+yes
+
+string
+
+formula
+
+the formula for the formula type field
+
+yes
+
+yes
+
+string
+
+min-value
+
+The minimum value of numeric fields
+
+yes
+
+yes
+
+number
+
+max-value
+
+The maximum value of numeric fields and the allowed length of text fields.
+
+yes
+
+yes
+
+number
+
+exclude-limits
+
+Whether or not max and min limits shall be included or excluded.
+
+yes
+
+yes
+
+string
+
+Note:
+
+Response payload does not show null values.
+
+Examples
+
+In this example, we queried for a Fields API.
+
+https://<instance>.cso.coupacloud.com/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields
+
+https://<instance>.cso.coupacloud.com/api/events/{event-id}/fact-sheets?name[contains]=factsheetname
+
+We did a GET to the URL below for a sample Event-id = 9219593444837772101 and Fact sheet id = 9220538753431210838:
+
+https://<instance>.cso.coupacloud.com/api/events/9220538753252871154/fact-sheets/9220538753431210838/fields
+
+Fields GET Response { "total": 6, "fields": [ { "id": "9220538753431213703", "ordinal": 1, "type": "Text", "name": "name-fld", "formula-name": "name_fld", "description": "name field for api", "distinguishing": true }, { "id": "9220538753431215951", "ordinal": 2, "type": "Numeric", "name": "num-fld", "formula-name": "num_fld", "description": "number field", "decimals": 2, "distinguishing": false, "exclude-limits": false }, { "id": "9220538753431226586", "ordinal": 3, "type": "Binary", "name": "checkbox-demo", "formula-name": "checkbox_demo", "description": "checkbox demo field", "distinguishing": true }, { "id": "9220538753431234950", "ordinal": 4, "type": "Option", "name": "demo-multi-fld", "formula-name": "demo_multi_fld", "description": "demo multi fields", "options": { "default": 0, "values": [ { "name": "first", "value": 1.0 }, { "name": "second", "value": 2.0 }, { "name": "other", "value": 0.0 } ] }, "distinguishing": true }, { "id": "9220538753431237952", "ordinal": 5, "type": "Formula", "name": "demo-formula", "formula-name": "demo_formula", "description": "demo formula", "required": false, "distinguishing": false, "formula": "demo_factsheet.num_fld" }, { "id": "9220538753431240094", "ordinal": 6, "type": "StringFormula", "name": "demo-txt-formula", "formula-name": "demo_txt_formula", "description": "demo text formula field", "distinguishing": false, "formula": "demo_factsheet.name_fld" } ] }
+
+Create/Update/Delete
+
+The following describes how you can use the Coupa API to perform actions on Fields
+
+Create
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields
+
+The below payload creates new field(s) on an event(9219593444837772101 and Fact sheet id = 9220538753431210838:
+Payload { "fields": [ { "type": "Text", "name": "name-fld-api", "formula-name": "name_fld-api", "description": "name field for api", "distinguishing": true } { "type": "StringFormula", "name": "demo-txt-formula-api", "formula-name": "demo_txt_formula_api", "description": "demo text formula field", "distinguishing": false, "formula": "demo_factsheet.name_fld_api" } ] } Response: 201 { "result": [ { "type": "api.post.added", "description": "2 objects created." } ], "added": 2, "fields": [ { "id": "9220538753532394472" } { "id": "9220538753530117686" } ] } Note: Formula field only takes "_".
+
+Update
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields
+
+The below payload updates a Field(s).
+To update one or more Fields at a time: Payload: { "fields": [ { "id": "9220538753530117686", "type": "Text", "name": "name-fld-api-upd", "formula-name": "name_fld_api-upd", "description": "name field for api", "distinguishing": false }, { "id": "9220538753532394472", "type": "StringFormula", "name": "demo-txt-formula-api-upd", "formula-name": "demo_txt_formula_api_upd", "description": "demo text formula field update", "distinguishing": true, "formula": "demo_factsheet.name_fld_api_upd" } ] } Response: 200 OK { "result": [ { "type": "api.put.updated", "description": "2 objects updated." } ], "updated": 2 }
+
+Delete
+
+/api/events/{event-id}/fact-sheets/{fact-sheet-id}/fields
+
+The above API can be used to delete more than one Field at a time.
+Payload: { "fields": [ { "id": "9220538753530117686" }, { "id": "9220538753532394472" } ] } Response: 200 OK { "result": [ { "type": "fieldDeletionCompleted", "description": "The following fields were deleted: demo-txt-formula-api-upd, name-fld-api-upd. In total, 0 values were removed for these fields." } ], "deleted": 2 }
+
+Note:
+
+Updates are done in a lenient manner, i.e. if updating one resource fails, the other ones might be successful. The payload deleted two fields. For deletion or updates, event ID is required.
+
+Successful requests will return HTTP 200 Response. The body of the response will include the created requisition. Unsuccessful requests will return
+HTTP 400 Bad Request
+
+. The body of the response will include validation errors formatted as XML.

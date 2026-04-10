@@ -1,0 +1,26 @@
+---
+title: "Quote Cost Formula API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-cost-formula-api"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZcdoYiEJkDYbFqDbjCbbw14KRmFWobKkiXKX%2Ff1kpRuyAembdOLx7kjNCXrtxGoIT%2BYBfwxIIdusF%2Bxxf5xMKt7McgA5yRuIp%2F0Umly2OJsh7o%2FtlLPsK3pS1ixYXcTbhmjAjaEAJkSI1zc5b3Le7qpacC74TcHb9hvL1lFFGQiJ%2BRSCI1GW0g4OcjwF9AZ0YZ8DFNL2JTj339tjhB0QOetDvFUlnp5tzQcOTb2%2B7d9JqMK0JLLlGI5l762XmBIu2BE04ei0iw3UC%2F5FOm%2BDlVbfKnNQ5vuCDd4IC6RIGOiRRJBiu%2Fp4L2JSsT8Xkfiw23V593m7Y9mKCP0Y6c4aGnr0W%2FQvSuKXh%2FvLkMl5kQKleGPP8hqXZadeGxJpSW9bcq%2F%2B2XI%2BVou0C3%2FBf5sOfxyw5VWv8%2FKi81nGiU%2Bx1WbdWa3kr3HSPYTrSlVRJUQd8mMqFdiD0qvDwSNRnKHW9uedRwhxMcEPcQDl8iz77x9d%2FgY%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-cost-formula-api"
+status_code: 200
+fetched_at: "2026-04-09T12:00:03+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Sourcing API (/quote_requests)"
+  - "Quote Cost Formula API"
+---
+
+# Quote Cost Formula API
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-cost-formula-api](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-cost-formula-api)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZcdoYiEJkDYbFqDbjCbbw14KRmFWobKkiXKX%2Ff1kpRuyAembdOLx7kjNCXrtxGoIT%2BYBfwxIIdusF%2Bxxf5xMKt7McgA5yRuIp%2F0Umly2OJsh7o%2FtlLPsK3pS1ixYXcTbhmjAjaEAJkSI1zc5b3Le7qpacC74TcHb9hvL1lFFGQiJ%2BRSCI1GW0g4OcjwF9AZ0YZ8DFNL2JTj339tjhB0QOetDvFUlnp5tzQcOTb2%2B7d9JqMK0JLLlGI5l762XmBIu2BE04ei0iw3UC%2F5FOm%2BDlVbfKnNQ5vuCDd4IC6RIGOiRRJBiu%2Fp4L2JSsT8Xkfiw23V593m7Y9mKCP0Y6c4aGnr0W%2FQvSuKXh%2FvLkMl5kQKleGPP8hqXZadeGxJpSW9bcq%2F%2B2XI%2BVou0C3%2FBf5sOfxyw5VWv8%2FKi81nGiU%2Bx1WbdWa3kr3HSPYTrSlVRJUQd8mMqFdiD0qvDwSNRnKHW9uedRwhxMcEPcQDl8iz77x9d%2FgY%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-cost-formula-api](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZcdoYiEJkDYbFqDbjCbbw14KRmFWobKkiXKX%2Ff1kpRuyAembdOLx7kjNCXrtxGoIT%2BYBfwxIIdusF%2Bxxf5xMKt7McgA5yRuIp%2F0Umly2OJsh7o%2FtlLPsK3pS1ixYXcTbhmjAjaEAJkSI1zc5b3Le7qpacC74TcHb9hvL1lFFGQiJ%2BRSCI1GW0g4OcjwF9AZ0YZ8DFNL2JTj339tjhB0QOetDvFUlnp5tzQcOTb2%2B7d9JqMK0JLLlGI5l762XmBIu2BE04ei0iw3UC%2F5FOm%2BDlVbfKnNQ5vuCDd4IC6RIGOiRRJBiu%2Fp4L2JSsT8Xkfiw23V593m7Y9mKCP0Y6c4aGnr0W%2FQvSuKXh%2FvLkMl5kQKleGPP8hqXZadeGxJpSW9bcq%2F%2B2XI%2BVou0C3%2FBf5sOfxyw5VWv8%2FKi81nGiU%2Bx1WbdWa3kr3HSPYTrSlVRJUQd8mMqFdiD0qvDwSNRnKHW9uedRwhxMcEPcQDl8iz77x9d%2FgY%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-cost-formula-api)
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

@@ -1,0 +1,23 @@
+Shipping Terms API (/shipping_terms)
+
+Actions
+
+Verb 	 Path 	 Action 	 Description
+GET|POST 	 /api/shipping_terms(/:action(/:id)) 	{:index=>"Query shipping terms", :create=>"Create shipping term", :show=>"Show shipping term", :update=>"Update shipping term", :destroy=>"Delete shipping term"}
+POST 	 /api/shipping_terms 	create 	Create shipping term
+GET 	 /api/shipping_terms 	index 	Query shipping terms
+GET 	 /api/shipping_terms/:id 	show 	Show shipping term
+PUT 	 /api/shipping_terms/:id 	update 	Update shipping term
+
+Elements
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+active 	A false value will inactivate the account making it no longer available to users. A true value will make it active and available to users. 	true 	yes 	yes 	boolean
+code 	code 	yes 	yes 	 	yes 	yes 	string(255)
+content-groups 	Content groups 	 	 	 	yes 	yes 	 BusinessGroup
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+description 	description 	 	 	 	yes 	yes 	text
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

@@ -1,0 +1,1169 @@
+<article class="" id="supplier_information_sites_api_supplier_information_sites">
+<h1 class="title">Supplier Information Sites API (/supplier_information_sites)</h1>
+<div class="body">
+<p class="">The URL to access supplier information is: <code class="ph codeph">https://&lt;instance&gt;/api/supplier_information_sites</code>
+</p>
+<p class="">SIM API permissions must be included with your API key to enable proper usage. Existing API keys without SIM API permissions won't be able to access the <code class="ph codeph">/api/supplier_information_sites</code> resource. See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x294382.xml" title="">API Key Security</a> and <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">SIM API GET calls include SIM Sites in response payloads. For more information, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285429.xml" title="">Postman Collection for Coupa APIs</a>.</p>
+</div>
+<div class="" id="actions-d957e87753">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Supplier Information Sites API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Create</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Index</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/supplier_information_sites</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Create supplier information site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information_sites</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Create supplier information site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/supplier_information_sites/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">destroy</p>
+</td>
+<td class="entry" align="">
+<p class="">Delete supplier information sites</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information_sites/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">destroy</p>
+</td>
+<td class="entry" align="">
+<p class="">Delete supplier information sites</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/supplier_information_sites</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query supplier information sites</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information_sites</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query supplier information sites</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/supplier_information_sites/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show supplier information site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information_sites/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show supplier information site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PATCH</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/supplier_information_sites/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update supplier information site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:supplier_information_id/supplier_information_sites/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update supplier information site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PATCH</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information_sites/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update supplier information site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information_sites/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update supplier information site</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information_sites/:id?exported=true</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Updates <code class="ph codeph">last-exported-at</code> with timestamp. (<code class="ph codeph">exported=false</code> sets value to null)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e88169">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Supplier Information Sites API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Required Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api_In Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api_Out Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">code</p>
+</td>
+<td class="entry" align="">
+<p class="">supplier_code</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(20)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Information name</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po_method</p>
+</td>
+<td class="entry" align="">
+<p class="">Purchase order transmission method</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po_change_method</p>
+</td>
+<td class="entry" align="">
+<p class="">Purchase order change transmission method</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default_locale</p>
+</td>
+<td class="entry" align="">
+<p class="">Default Locale for sending emails to this supplier site</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml_url</p>
+</td>
+<td class="entry" align="">
+<p class="">URL where POs are sent if PO transmission is "cxml"</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml_domain</p>
+</td>
+<td class="entry" align="">
+<p class="">"From" , our domain</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml_identity</p>
+</td>
+<td class="entry" align="">
+<p class="">"From", our identity</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml_supplier_domain</p>
+</td>
+<td class="entry" align="">
+<p class="">"To", supplier domain</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml_supplier_identity</p>
+</td>
+<td class="entry" align="">
+<p class="">"To", supplier identity</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml_secret</p>
+</td>
+<td class="entry" align="">
+<p class="">Shared secret</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml_protocol</p>
+</td>
+<td class="entry" align="">
+<p class="">Transmission protocol</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml_http_username</p>
+</td>
+<td class="entry" align="">
+<p class="">User name required to access the Supplier's online store</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml_ssl_version</p>
+</td>
+<td class="entry" align="">
+<p class="">Specify the SSL version used for cXML communication with the supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer_hold</p>
+</td>
+<td class="entry" align="">
+<p class="">Hold all POs for buyer review</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">disable_cert_verify</p>
+</td>
+<td class="entry" align="">
+<p class="">Specify whether to ignore SSL certificate mismatch errors</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po_email</p>
+</td>
+<td class="entry" align="">
+<p class="">Email where POs are sent if PO transmission is "email"</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">active</p>
+</td>
+<td class="entry" align="">
+<p class="">true if the site is active</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow_change_requests</p>
+</td>
+<td class="entry" align="">
+<p class="">Allows suppliers to create change requests from CSP</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_information_id</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Information id</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment_term</p>
+</td>
+<td class="entry" align="">
+<p class="">Default payment term, selectable from drop down</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shipping_term</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier shipping term, selectable from drop down</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">content_groups</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">addresses</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Information Site addresses</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">contacts</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Information Site contacts</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa Internal ID</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created_at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated_at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last_exported_at</p>
+</td>
+<td class="entry" align="">
+<p class="">Last exported flag</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created_by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who created</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated_by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who updated</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

@@ -1,0 +1,286 @@
+<article class="" id="legal_payment_receipt_loader">
+<h1 class="title">Legal Payment Receipt Import</h1>
+<div class="body">
+<div class="" id="overview-d117e155863">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">This Legal Payment Receipt loader is a CFDI XML file format specifically for suppliers
+        doing business in and from Mexico so that they can load legally compliant payment receipts,
+        Complementos de Pago, in a supported XML/CSV format. </p>
+<p class="">We support the parsing and mapping of this CFDI XML only on supplier originated invoices
+        via either CSP upload or SFTP. The XML file does not need to be converted into the Coupa CSV
+        format by the supplier. For the buyer side, we do not currently support direct parsing of
+        the XML.</p>
+<p class="">The Forms import process reads files from <code class="ph codeph">./Incoming/LegalPaymentReceipt/</code>
+        in the SFTP. These files will be moved to the archive folder located at
+          <code class="ph codeph">./Incoming/Archive/LegalPaymentReceipt/</code> before being processed in
+        alphanumeric order.</p>
+</div>
+<div class="" id="keys-d117e155880">
+<h2 class="title sectiontitle">Keys</h2>
+<ul class="ul">
+<li class="li">UUID</li>
+</ul>
+</div>
+<div class="" id="validations-d117e155887">
+<h2 class="title sectiontitle">Validations</h2>
+<p class="">Coupa uses the field UUID to lookup an existing record.</p>
+</div>
+<div class="" id="section_tht_lh2_f1c">
+<h2 class="title sectiontitle">Legal Payment Receipt</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Legal Payment Receipt</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Legal Payment Receipt</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">UUID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">CFDI UUID</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Document Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">CFDI Document Date</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Received Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Payment Received Date</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(32,6)</td>
+<td class="entry" align="">Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Currency Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Check Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Any kind of identification number which identifies the payment</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Bank Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Buyer Bank Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Bank Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Buyer Bank Reference</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Bank Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Supplier Bank Reference</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Form of Payment</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Form of Payment</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Account Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Buyer Account Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Account Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Account Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Supplier Tax Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Buyer Tax Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Payment Receipt</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Payment Receipt</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Document UUID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Document UUID</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exchange Rate</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Exchange Rate</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Method</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Payment Method</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="invoice_payment_receipt_columns">
+<h2 class="title sectiontitle">Invoice payment receipt columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Hidden</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Invoice Payment Receipt</td>
+<td class="entry" align="">Defines the type of row</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">-</td>
+<td class="entry" align="">Invoice Payment Receipt</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Document UUID</td>
+<td class="entry" align="">Document UUID</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount</td>
+<td class="entry" align="">Amount</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">decimal(32,6)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">Currency Code</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(6)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exchange Rate</td>
+<td class="entry" align="">Exchange Rate</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">decimal(32,6)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Method</td>
+<td class="entry" align="">Payment Method</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">any</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

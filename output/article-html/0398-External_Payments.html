@@ -1,0 +1,1182 @@
+<article class="" id="external_payments">
+<h1 class="title">External Payments</h1>
+<div class="body">
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Column Name</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Description</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Unique</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Applies to (Type)</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Allowable Values and Notes</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Source Name</p>
+<p class="">( <code class="ph codeph">source-name</code> )</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the source system providing the payment. Combination of Payment Source Name and Payment Source Reference must be unique.</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes when paired with <code class="ph codeph">source-reference</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">source-name</code> and <code class="ph codeph">source-reference</code> together form a uniqueness key to disallow double payments</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Source Reference</p>
+<p class="">( <code class="ph codeph">source-reference</code> )</p>
+</td>
+<td class="entry" align="">
+<p class="">Reference identifier from the ERP or other source system providing the payment details.</p>
+<p class="">There is a new "Source Reference" field we added to the Company Payment Account edit screen so the idea is that end users will populate this value in Coupa manually and then they can use that in the Pay From Source Reference field instead of providing all of the pay from bank account details.</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes when paired with <code class="ph codeph">source-name</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Type</p>
+</td>
+<td class="entry" align="">
+<p class="">The type of payment.</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align="">
+<p class="">Vendor Payment, Employee Reimbursement,</p>
+<p class="">Loan, Intercompany Transfer, Payroll, Tax Payment, Other</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Rail</p>
+</td>
+<td class="entry" align="">
+<p class="">The intended payment rails of the payment.</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer, Digital Check, Virtual Card, Digital Wallet</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Delivery Method</p>
+</td>
+<td class="entry" align="">
+<p class="">The delivery method based on the specified payment rail.</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align="">
+<p class="">Email, Direct Bank, Transfermate, Buyer, PayPal, Venmo</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Transfer Type</p>
+</td>
+<td class="entry" align="">
+<p class="">The payment transfer type to be used (Direct Bank only).</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align="">
+<p class="">standard_transfer, standard_bacs, standard_chaps, faster_payments, sepa, urgent_sepa, wire</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay From Source Reference</p>
+</td>
+<td class="entry" align="">
+<p class="">Source Reference identifier in the Company Financial Account to specify the Pay From Account</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">The amount of the payment.</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Currency Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The three letter currency code of the payment.</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Date</p>
+</td>
+<td class="entry" align="">
+<p class="">ERP proposed payment date. This date is for information only as the actual payment date is dependent on approval and release of the payment batch.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remittance Email Addresses</p>
+</td>
+<td class="entry" align="">
+<p class="">For payments where the beneficiary does not exist in Coupa. This list of email addresses can be provided and a remittance notification will be sent when the payment is released.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remittance Email Message</p>
+</td>
+<td class="entry" align="">
+<p class="">A note that can be included on the standard remittance notification (optional).</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align="">
+<p class="">string(512)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Beneficiary Name</p>
+</td>
+<td class="entry" align="">
+<p class="">The name of the beneficiary.</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Beneficiary Number</p>
+</td>
+<td class="entry" align="">
+<p class="">A reference number for the beneficiary. An identifier used in the ERP or payment source. This number is appended to the Beneficiary Name and used to uniquely identify a Beneficiary Payment Account (BPA).</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Beneficiary Type</p>
+</td>
+<td class="entry" align="">
+<p class="">The type of beneficiary.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier, Employee, Tax Agency, any string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank Name</p>
+</td>
+<td class="entry" align="">
+<p class="">The name of the pay to bank.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank Street1</p>
+</td>
+<td class="entry" align="">
+<p class="">The address of the pay to bank.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank Street2</p>
+</td>
+<td class="entry" align="">
+<p class="">The address of the pay to bank.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank City</p>
+</td>
+<td class="entry" align="">
+<p class="">The address of the pay to bank.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank Subdivision</p>
+</td>
+<td class="entry" align="">
+<p class="">The address of the pay to bank.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank Postal Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The address of the pay to bank.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank Country Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The address of the pay to bank.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay to Bank Account Number</p>
+</td>
+<td class="entry" align="">
+<p class="">The pay to bank account number.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank IBAN</p>
+</td>
+<td class="entry" align="">
+<p class="">The pay to bank IBAN.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank Transit Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The pay to bank transit code.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank Transit Code Type</p>
+</td>
+<td class="entry" align="">
+<p class="">The pay to bank transit code type.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align="">
+<p class="">ach_routing_number</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Bank Swift Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The pay to bank swift code.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments only.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Email Address</p>
+</td>
+<td class="entry" align="">
+<p class="">The pay to email address.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Virtual Card payments and may be required for bank transfer payments in some countries.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Phone Country Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The pay to phone number.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Digital Wallet payments and may be required for bank transfer payments in some countries.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Phone Dialing Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The pay to phone number.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Digital Wallet payments and may be required for bank transfer payments in some countries.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Pay To Phone Number</p>
+</td>
+<td class="entry" align="">
+<p class="">The pay to phone number.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Digital Wallet payments and may be required for bank transfer payments in some countries.</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remit-To Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The remit-to code. If specified will be used to lookup an existing remit-to address.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align="">
+<p class="">Remit-To Codes can be found in the Remit-To Addresses record: <b>Setup &gt; Suppliers &gt; Remit-To</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remit-To Name</p>
+</td>
+<td class="entry" align="">
+<p class="">The remit-to name. If specified will be used to lookup an existing remit-to address.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remit-To Street1</p>
+</td>
+<td class="entry" align="">
+<p class="">The remit-to address.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remit-To Street2</p>
+</td>
+<td class="entry" align="">
+<p class="">The remit-to address.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remit-To City</p>
+</td>
+<td class="entry" align="">
+<p class="">The remit-to address.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remit-To Subdivision</p>
+</td>
+<td class="entry" align="">
+<p class="">The remit-to address.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remit-To Postal Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The remit-to address.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Remit-To Country Code</p>
+</td>
+<td class="entry" align="">
+<p class="">The remit-to address.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 2</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 4</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 5</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 6</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 7</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 8</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 9</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Payment Instruction 10</p>
+</td>
+<td class="entry" align="">
+<p class="">Extra payment instructions required for payments in certain countries.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank Transfer payments via Direct Bank delivery only.</p>
+</td>
+<td class="entry" align="">
+<p class="">Format: {field name}~{instruction key}~{instruction value}</p>
+<p class="">Example: invoice_number~/RFRDDOCNB/~INV12345</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 2</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 4</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 5</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 6</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 7</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 8</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 9</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Custom Field 10</p>
+</td>
+<td class="entry" align="">
+<p class="">Custom field value.</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">All payment types</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">​</p>
+<div class="" id="some_external_payment_csv_examples">
+<h2 class="title sectiontitle">Some External Payment CSV examples</h2>
+</div>
+<div class="" id="a_direct_bank_transfer_payment">
+<h2 class="title sectiontitle">A Direct Bank Transfer payment</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">Payment Source Name,Payment Source Reference,Payment Type,Payment Rail,Payment Delivery Method,Payment Transfer Type,Pay From Source Reference,Pay To Amount,Pay To Currency Code,Payment Date,Remittance Email Addresses,Remittance Email Message,Beneficiary Name,Beneficiary Number,Beneficiary Type,Pay To Bank Name,Pay To Bank Street1,Pay To Bank Street2,Pay To Bank City,Pay To Bank Subdivision,Pay To Bank Postal Code,Pay To Bank Country Code,Pay To Bank Account Number,Pay To Bank IBAN,Pay To Bank Transit Code,Pay To Bank Transit Code Type,Pay To Bank Swift Code,Pay To Email Address,Pay To Phone Number,Remit-To Code,Remit-To Name,Remit-To Street1,Remit-To Street2,Remit-To City,Remit-To Subdivision,Remit-To Postal Code,Remit-To Country Code,Payment Instruction 1,Payment Instruction 2,Custom Field 1,Custom Field 2</code>
+      </pre>
+<pre xml:space="preserve">
+        <code class="ph codeph">ERP,TBK0015,Vendor Payment,Bank Transfer,Direct Bank,standard_transfer,TBKDBI1002,100,USD,2/24/2022,,,TBK DBI,,Supplier,JPMC,,,,IL,,US,10002004,,71000013,ach_routing_number,,,,,,123 Main St.,,Chicago,IL,60610,US,/RFRDDOCNB/~TBK20220211_01,,Test Value,</code>
+      </pre>
+</div>
+<div class="" id="a_virtual_card_payment">
+<h2 class="title sectiontitle">A Virtual Card payment</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">Payment Source Name,Payment Source Reference,Payment Type,Payment Rail,Payment Delivery Method,Pay From Source Reference,Pay To Amount,Pay To Currency Code,Payment Date,Remittance Email Addresses,Remittance Email Message,Beneficiary Name,Beneficiary Number,Beneficiary Type,Pay To Email Address,Remit-To Code,Remit-To Name,Remit-To Street1,Remit-To Street2,Remit-To City,Remit-To Subdivision,Remit-To Postal Code,Remit-To Country Code</code>
+      </pre>
+<pre xml:space="preserve">
+        <code class="ph codeph">ERP,TBK0012,Vendor Payment,Virtual Card,Email,TBKBofA,100,USD,2/23/22,,,KZ Designs,,Supplier,some.guyt+kz2@coupa.com,,,123 Main St.,,Chicago,IL,60610,US</code>
+      </pre>
+<p class="">​</p>
+</div>
+</div>
+</article>

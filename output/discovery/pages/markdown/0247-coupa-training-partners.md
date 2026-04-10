@@ -1,0 +1,37 @@
+---
+title: "Instructor-led Training | Coupa"
+url: "https://compass.coupa.com/en-us/learning/coupa-training-partners"
+final_url: "https://compass.coupa.com/en-us/learning/coupa-training-partners"
+content_type: "text/html"
+classification: "placeholder"
+fetched_at: "2026-04-10T01:57:06+00:00"
+---
+
+# Instructor-led Training | Coupa
+
+The discovered page did not expose a standard <article> block, so a placeholder was generated.
+
+**Requested URL:** [https://compass.coupa.com/en-us/learning/coupa-training-partners](https://compass.coupa.com/en-us/learning/coupa-training-partners)
+
+Page text preview: Instructor-led Training | Coupa
+
+Skip to Content
+
+EN
+- EN - English
+- DE - Deutsch
+- JA - 日本語
+- FR - Français
+
+Instructor-led Training
+
+For those who prefer the structure and live interaction that comes with instructor-led training, Coupa’s Authorized Training Partner network offers training and certification courses to fit the way you want to learn.
+
+Instructor-led Training from Coupa Authorized Training Partners
+. Coupa Authorized Training Partners offer Coupa training and certification courses in local languages, ensuring an effective learning experience. With specially certified instructors and Coupa-created content, these trusted partners are the ideal solution for live instructor-led training. See the calendar of all upcoming instructor-led training courses delivered by Certified Training Partners (click on the bolded, lightly shaded dates on the course calendar): Procure-to-Invoice System Administration Certification
+
+Click on the links below to explore upcoming courses from the Coupa Authorized Training Partners below:
+
+CrossCountry Consulting
+
+CrossCountry Consulting has been a Coupa Partner for the past decade, and is proud to add training and certification services to ou

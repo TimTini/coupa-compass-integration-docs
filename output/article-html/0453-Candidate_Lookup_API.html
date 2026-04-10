@@ -1,0 +1,1703 @@
+<article class="" id="candidate_lookup_api">
+<h1 class="title">Candidate Lookup API</h1>
+<div class="body">
+<p class="">CCW's Candidate Lookup API is used to query for data about candidates who've been submitted to one or more CCW requisitions. Lookup criteria such as candidate first/last names, status, eligibility to be confirmed (as a contingent worker) and more, can be requested via the CCW Candidate Lookup API. Any candidate data matching the specific lookup criteria is returned.</p>
+<p class="">The base URL to access the CCW Candidate Lookup API is: <code class="ph codeph">https://&lt;instance&gt;/api/candidates/search</code>
+</p>
+<p class="">Refer to the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/ccw-api-overview" title="">CCW API Overview</a> to learn how to authenticate and submit POST requests to CCW APIs. Requests should include the following elements:</p>
+<div class="" id="request_headers">
+<h2 class="title sectiontitle">Request Headers</h2>
+<p class="">Request headers are required for authentication purposes. See <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/ccw-api-overview#request_headers-d26e3746" title="">Request Headers</a> section of CCW's API Overview documentation for details.</p>
+</div>
+<div class="" id="request_body">
+<h2 class="title sectiontitle">Request Body</h2>
+<p class="">
+<i>Meta</i> and <i>Data</i> objects both must be passed in the API request body:</p>
+<p class="">The Metadata section defines the number of results returned, to ensure faster performance. Includes:</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Limit</b> : Defines the maximum number of results, between 1 and 50, to be returned in a single API request (i.e., the number of results on a page)</p>
+<ul class="ul">
+<li class="li">
+<p class="">Defaults to 50 results if the value for Limit is empty or greater than 50</p>
+</li>
+<li class="li">
+<p class="">Returns an error if the value for Limit is less than 1</p>
+</li>
+</ul>
+</li>
+<li class="li">
+<p class="">
+<b>Offset</b> : Defines the record at which the request should start; e.g., limit=30, offset=51 returns the next 30 records starting with record 51.</p>
+<ul class="ul">
+<li class="li">
+<p class="">Defaults to 0 if the value for <b>Offset</b> is empty</p>
+</li>
+<li class="li">
+<p class="">Returns an error if the value for <b>Offset</b> is less than 0.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="">The Data section includes one or more specific lookup parameters to be requested (at least one non-empty parameter must be sent).</p>
+<p class="">The following table defines all <b>Data</b> parameters that can be passed within the Candidate Lookup API request body:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Attribute</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Required?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">limit</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">1-50</p>
+</td>
+<td class="entry" align="">
+<p class="">Number of records to be returned per API call</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">offset</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Specific record number at which results should start</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique id of candidate in CCW. Generated when the candidate is submitted to a requisition. (Used for Confirmation API).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique number assigned in CCW for candidate. Format: <b>&lt;Client prefix&gt;-CS-&lt;sequence-number&gt;</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">first_name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Candidate first name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last_name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Candidate last name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">email</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Candidate email address</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">One of CCW's valid statuses</p>
+</td>
+<td class="entry" align="">
+<p class="">See <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/candidate-lookup-api#valid_candidate_statuses" title="">Valid Candidate Statuses</a> table below.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ccw_id</p>
+</td>
+<td class="entry" align="">
+<p class="">string(8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW ID</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external_reference_number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique ID associated with the candidate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requisition_number</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Requisition number associated with the candidate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hiring_manager_first_name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Hiring manager first name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hiring_manager_last_name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Hiring manager last name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">onboarding_eligibility_met</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">0,1</p>
+</td>
+<td class="entry" align="">
+<p class="">0=eligible, 1=not eligible</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">confirmation_eligibility_met</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">true/false or yes/no or 1/0 or Y/N or T/F</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates if the candidate has an accepted work order and onboarding eligibility criteria is met</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">start_date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Active Work Order start date, formatted as YYYY-MM-DD (ISO 8601 standard formatting)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">end_date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">Active Work Order end date, formatted as YYYY-MM-DD</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="example_request-d26e1691">
+<h2 class="title sectiontitle">Example Request</h2>
+<pre>
+<code class="codeblock">POST /api/candidates/search
+HOST: &lt;CCW FQDN&gt;
+Authorization: Bearer &lt;token&gt;
+Accept: "application/json"
+Correlation-Id: Z098Jth56Nkio343YY1vXt
+{
+    "meta":{
+        "limit":"number",
+        "offset":"number"
+    }
+    "data":{
+        "id":"number",
+        "number":"string",
+        "first_name":"string",
+        "last_name":"string",
+        "email":"string",
+        "ccw_id":"number",
+        "status":"string",
+        "external_reference_number":"string",
+        "requisition_number":"string",
+        "hiring_manager_first_name":"string",
+        "hiring_manager_last_name":"string",
+        "onboarding_eligibility_met":"string",
+        "confirmation_eligibility_met":"string",
+        "supplier_name":"string"
+    }
+}</code>
+</pre>
+</div>
+<div class="" id="api_response">
+<h2 class="title sectiontitle">API Response</h2>
+<p class="">Candidate(s) matching all lookup parameters sent in the API request body are returned. The following table defines all parameters that may be included with candidates in the response from CCW to a successful API request:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Attribute</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Request body object</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">total_count</p>
+</td>
+<td class="entry" align="">
+<p class="">meta</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">Number of records that matched the lookup criteria</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">has_more</p>
+</td>
+<td class="entry" align="">
+<p class="">meta</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+<td class="entry" align="">
+<p class="">True or False - to indicate if there are more candidates that meet the lookup criteria</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique id of candidate in CCW. Generated when the candidate is submitted to a requisition. (Used for Confirmation API).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique number assigned in CCW for candidate. Format: <b>&lt;Client prefix&gt;-CS-&lt;sequence-number&gt;</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">first_name</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Candidate first name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last_name</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Candidate last name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">email</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Candidate email address</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+<td class="entry" align="">
+<p class="">See <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/candidate-lookup-api#valid_candidate_statuses" title="">Valid Candidate Statuses</a> table below.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ccw_id</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(8)</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW ID</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cw_number</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">CW number assigned to the candidate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external_reference_number</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique ID associated with the candidate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hiring_manager_first_name</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Hiring manager first name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hiring_manager_last_name</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Hiring manager last name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hiring_manager_user_name</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(512)</p>
+</td>
+<td class="entry" align="">
+<p class="">Hiring manager's user name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hiring_manager_email</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Hiring manager's email address</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">engagement_type</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Temp / Vendor</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">employment_type</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">Type of employment (W2, 1099, etc.)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">submitted_date</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Date candidate was submitted to the requisition, formatted as YYYY-MM-DDT24HHMMSSZ.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shortlisted</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates if the candidate was added to a shortlist</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">work_email</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Work email assigned to the candidate</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">date_available</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">The date when candidate is available to work, formatted as YYYY-MM-DDT24HHMMSSZ.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">submitted_to_other_requisitions</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates if the candidate was submitted to other requisitions</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">onboarding_status</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">string(set values)</p>
+</td>
+<td class="entry" align="">
+<p class="">"presubmission-completed", "onboarding-Resumed", "onboarding-paused", "onboarding-completed", "onboarding-cancelled", "initiated", "in-progress"</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">onboarding_eligibility_met</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+<td class="entry" align="">
+<p class="">0=eligible, 1=not eligible</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">confirmation_eligibility_met</p>
+</td>
+<td class="entry" align="">
+<p class="">data</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates if the candidate has an accepted work order and onboarding eligibility criteria is met</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">data.supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique ID assigned to supplier in CCW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">data.supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">data.supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique number assigned to supplier in CCW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">first_name</p>
+</td>
+<td class="entry" align="">
+<p class="">data.supplier.contact</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier contact first name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last_name</p>
+</td>
+<td class="entry" align="">
+<p class="">data.supplier.contact</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier contact last name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">email</p>
+</td>
+<td class="entry" align="">
+<p class="">data.supplier.contact</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier contact email</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">data.requisition</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique ID assigned to the requisition in CCW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">data.requisition</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique number assigned to the requisition in CCW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type</p>
+</td>
+<td class="entry" align="">
+<p class="">data.requisition</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">Requisition type (for example: identified candidate, regular)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">job_code</p>
+</td>
+<td class="entry" align="">
+<p class="">data.requisition</p>
+</td>
+<td class="entry" align="">
+<p class="">string(500)</p>
+</td>
+<td class="entry" align="">
+<p class="">Requisition job code</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">job_title</p>
+</td>
+<td class="entry" align="">
+<p class="">data.requisition</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Requisition job title</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">work_location_code</p>
+</td>
+<td class="entry" align="">
+<p class="">data.requisition</p>
+</td>
+<td class="entry" align="">
+<p class="">string(1000)</p>
+</td>
+<td class="entry" align="">
+<p class="">Requisition work location code</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">work_location_name</p>
+</td>
+<td class="entry" align="">
+<p class="">data.requisition</p>
+</td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+<td class="entry" align="">
+<p class="">Requisition work location name</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type_of_service</p>
+</td>
+<td class="entry" align="">
+<p class="">data.requisition</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">Type of work</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">rate_type</p>
+</td>
+<td class="entry" align="">
+<p class="">data.requisition</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate type</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">data.work_orders</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique ID assigned to the Work Order in CCW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">data.work_orders</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique number assigned to the Work Order in CCW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">active</p>
+</td>
+<td class="entry" align="">
+<p class="">data.work_orders</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates if the Work Order is Active</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">contract_start_date</p>
+</td>
+<td class="entry" align="">
+<p class="">data.work_orders</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Work Order start date, formatted as YYYY-MM-DDT24HHMMSSZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">contract_end_date</p>
+</td>
+<td class="entry" align="">
+<p class="">data.work_orders</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Work Order end date, formatted as YYYY-MM-DDT24HHMMSSZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">data.statement_of_works</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique ID assigned to the SOW in CCW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">data.statement_of_works</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique number assigned to the SOW in CCW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">data.sows.task_order</p>
+</td>
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique ID assigned to the Task Order in CCW</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">data.sows.task_order</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique ID assigned to the Task Order in CCW</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="example_responses-d26e2830">
+<h2 class="title sectiontitle">Example Responses</h2>
+<p class="">Following is an example of a successful response, where at least one candidate matched the lookup criteria.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>total_count:</b> overall number of candidates that matched the lookup criteria in the API request</p>
+</li>
+<li class="li">
+<p class="">
+<b>has_more:</b> true or false, indicating if there are more candidates that match the lookup criteria, in addition to those included in the response</p>
+</li>
+</ul>
+</div>
+<pre>
+<code class="codeblock">{
+  "meta": {
+    "total_count": 1,
+    "has_more": false
+  },
+  "data": [{
+          "candidate":{
+             "id":622757,
+             "number":"CCW_CS_13897",
+             "first_name":"Cedric",
+             "last_name":"Daniels",
+             "email":"cedric.daniels@coupa.com",
+             "ccw_id":"23230203",
+             "supplier":{
+                "id":526,
+                "name":"Test Supplier.Inc",
+                "number":"483735",
+                "contact": {
+                    "first_name":"Lester",
+                    "last_name":"Freeman",
+                    "email":"lester.freeman@supplierssample.com"
+                }
+             },
+             "requisition":{
+                "id":"174011",
+                "number":"RS-REQ-27130",
+                "type":"Create Requisition",
+                "job_code":"",
+                "job_title":"Clerical",
+                "work_location_code":"04872",
+                "work_location_name":"04872-Craftsman CA",
+                "type_of_service":"Clerical/Professional",
+                "rate_type":"Per Hour"
+             },
+             "hiring_manager_user_name": "100DuChloe1.DuCollins1.1@coupadev.com",
+             "hiring_manager_first_name": "DuCollins1.1",
+             "hiring_manager_last_name": "100DuChloe1",
+             "hiring_manager_email": "100DuChloe1.DuCollins1.1@coupadev.com",
+             "engagement_type": "Regular",
+             "employment_type": "1099",
+             "status": "wo-accepted",
+             "submitted_date": "2020-07-28T14:36:22Z",
+             "cw_number": "RS-CW-059713",
+             "number": "RS-CS-0060176",
+             "short_listed": false,
+             "work_email": "",
+             "date_available": null,
+             "submitted_to_other_requirements": false,
+             "onboarding_status": "initiated",
+             "onboarding_eligibility_met": 1,
+             "confirmation_eligibility_met": false,
+             "statement_of_works": [],
+             "work_orders":[
+              {
+                "id":224583,
+                "number":"RS-WO-059860",
+                "active":"true",
+                "contract_start_date":"2020-07-01T04:00:00Z",
+                "contract_end_date":"2020-12-31T05:00:00Z"
+                "external_reference_number": ""
+              }
+            ]
+          }
+        ],
+        "meta": {
+        "total_count": 1,
+        "has_more": false
+    }
+}</code>
+</pre>
+<p class="">Following is an example of a response where no candidates met the lookup criteria:</p>
+<pre>
+<code class="codeblock" id="codeblock_p2g_ckn_n1c">{  
+  "meta": {    
+    "total_count": 0,    
+    "has_more": false  
+  },  
+  "data":[]
+}</code>
+</pre>
+</div>
+<div class="" id="valid_candidate_statuses">
+<h2 class="title sectiontitle">Valid Candidate Statuses</h2>
+<p class="">Following are the valid candidate status values that may be passed in a request to CCW's Candidate API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Status name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Status code</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Candidate Approved</p>
+</td>
+<td class="entry" align="">
+<p class="">candidate-approved</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Candidate Interviewing</p>
+</td>
+<td class="entry" align="">
+<p class="">candidate-interviewing</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Candidate No-Show</p>
+</td>
+<td class="entry" align="">
+<p class="">candidate-no-show</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Candidate Rejected</p>
+</td>
+<td class="entry" align="">
+<p class="">candidate-rejected</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Candidate Re-Queued for approval</p>
+</td>
+<td class="entry" align="">
+<p class="">candidate-requeue-approval</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Candidate Withdrawn</p>
+</td>
+<td class="entry" align="">
+<p class="">candidate-withdrawn</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Do Not Submit</p>
+</td>
+<td class="entry" align="">
+<p class="">candidate-do-not-submit</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Onboarding Started</p>
+</td>
+<td class="entry" align="">
+<p class="">candidate-onboarding-started</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">OTH Accepted</p>
+</td>
+<td class="entry" align="">
+<p class="">oth-accepted</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">OTH Extended</p>
+</td>
+<td class="entry" align="">
+<p class="">oth-extended</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">OTH Issued</p>
+</td>
+<td class="entry" align="">
+<p class="">oth-issued</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">OTH Reject Locked</p>
+</td>
+<td class="entry" align="">
+<p class="">oth-rejected-locked</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">OTH Rejected</p>
+</td>
+<td class="entry" align="">
+<p class="">oth-rejected</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">OTH Withdrawn</p>
+</td>
+<td class="entry" align="">
+<p class="">oth-withdrawn</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Re-Submit Requested</p>
+</td>
+<td class="entry" align="">
+<p class="">re-submit-requested</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Submitted for Approvals</p>
+</td>
+<td class="entry" align="">
+<p class="">submitted-for-approvals</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Submitted to Manager</p>
+</td>
+<td class="entry" align="">
+<p class="">submitted-to-manager</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Submitted to Program Admin</p>
+</td>
+<td class="entry" align="">
+<p class="">submitted-to-program-admin</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">WO Accepted</p>
+</td>
+<td class="entry" align="">
+<p class="">wo-accepted</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">WO Cancelled</p>
+</td>
+<td class="entry" align="">
+<p class="">wo-cancelled</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">WO Issued</p>
+</td>
+<td class="entry" align="">
+<p class="">wo-issued</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">WO Rejected</p>
+</td>
+<td class="entry" align="">
+<p class="">wo-rejected</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="error_codes-d26e3284">
+<h2 class="title sectiontitle">Error Codes</h2>
+<p class="">When an API request fails, the response will include one of the following error codes:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>HTTP Status Code</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Error Code</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Error Sub Code</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Error Message</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000001</p>
+</td>
+<td class="entry" align="">
+<p class="">Bad request. Missing one or more of the mandatory HTTP headers</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000003</p>
+</td>
+<td class="entry" align="">
+<p class="">Input body is not as per expected schema</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000004</p>
+</td>
+<td class="entry" align="">
+<p class="">Invalid {field name} value</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">400</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4000005</p>
+</td>
+<td class="entry" align="">
+<p class="">{field name} cannot be more than {max} characters</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">401</p>
+</td>
+<td class="entry" align="">
+<p class="">E4010000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4010001</p>
+</td>
+<td class="entry" align="">
+<p class="">Authentication failed. Check the credentials associated with your consumer app</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">401</p>
+</td>
+<td class="entry" align="">
+<p class="">E4010000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4010002</p>
+</td>
+<td class="entry" align="">
+<p class="">Authentication failed. Access token is invalid or expired</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">403</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030001</p>
+</td>
+<td class="entry" align="">
+<p class="">Not Authorized. The user does not have the rights to perform the action</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">403</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030002</p>
+</td>
+<td class="entry" align="">
+<p class="">Not Authorized. Invalid scope</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">403</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4030003</p>
+</td>
+<td class="entry" align="">
+<p class="">Not Authorized. The API user is invalid. Ensure user is active and set as an API user</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">404</p>
+</td>
+<td class="entry" align="">
+<p class="">E4040000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4040001</p>
+</td>
+<td class="entry" align="">
+<p class="">Not found</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">405</p>
+</td>
+<td class="entry" align="">
+<p class="">E4050000</p>
+</td>
+<td class="entry" align="">
+<p class="">E4050001</p>
+</td>
+<td class="entry" align="">
+<p class="">Method Not Supported. Service does not support the requested HTTP method</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">500</p>
+</td>
+<td class="entry" align="">
+<p class="">E5000000</p>
+</td>
+<td class="entry" align="">
+<p class="">E5000001</p>
+</td>
+<td class="entry" align="">
+<p class="">A system or application error occurred, Please contact Coupa CW Admin</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+</div>
+</div>
+</article>

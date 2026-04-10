@@ -1,0 +1,179 @@
+TTContract Interest and Repayment Plan Import
+
+Format Description
+
+PDF Version
+
+#
+
+Name
+
+Type
+
+Mandatory
+
+Comment
+
+1
+
+ID / Loan number
+
+integer / char - 20
+
+Yes
+
+Either the unique identifier, as defined by Coupa Treasury, or the alphanumerical value for the Loan Number field.
+
+2
+
+Date
+
+date
+
+Yes
+
+Due date of the amount(s).
+
+3
+
+Interest amount
+
+decimal
+
+No
+
+4
+
+Amortization amount
+
+decimal
+
+No
+
+5
+
+Fees
+
+decimal
+
+No
+
+6
+
+PL amount
+
+decimal
+
+No
+
+7
+
+Fix amount
+
+decimal
+
+No
+
+8
+
+Interest rate
+
+decimal
+
+*
+
+9
+
+Interest calculated from
+
+date
+
+*
+
+10
+
+Interest calculated to
+
+date
+
+*
+
+11
+
+Remaining amount
+
+decimal
+
+Yes
+
+* Mandatory with interest repayments
+
+Import Function
+
+The import function is under Special Functions on Treasury > Financial Instruments > Long-term Loans.
+
+The import function processes files in standard text formats:
+
+-
+
+ASCII
+
+-
+
+UTF8
+
+Use the Loan Identification dropdown to choose whether field 1 selects the deal ID or the Loan Number.
+
+For each loan, the file must contain the whole repayment plan. Each imported data set overwrites any existing data sets.
+
+If the file contains data about multiple loans, the data for each loan must be grouped into a single block.
+
+All cash flows for the same loan must be in chronological order.
+
+Format Rules
+
+The file cannot contain any headers or format descriptions. Do not enclose text in quotation marks.
+
+One file may contain multiple data sets. Each row contains exactly one data set.
+
+-
+
+ASCII Code 13: carriage return shows the end of a data set.
+
+-
+
+ASCII Code 10: new line shows the end of a data set.
+
+-
+
+The last data set concludes by an end of file (EOF).
+
+In the table above, the value for “char” shows how many characters is the maximum length for that field in the imported file.
+
+Days and months are always 2-digit values, whereas years are 4 digits. Date separator, date sequence, and file format must match your user settings.
+
+-
+
+Field Separator – semicolon (;), comma (,)
+
+-
+
+Decimal Separator – period (.), comma (,)
+
+-
+
+Integer – No thousands or decimal separators
+
+-
+
+Date Separator – slash (/), period (.), comma (,)
+
+-
+
+Date Sequence – mdy, dmy, ymd
+
+Example Data Sets
+
+GL23b;01/29/2009;;125000;0;0;0;;01/31/2009;;24897560.50
+
+GL23b;02/25/2009;;4000000;0;0;0;;;;20897560.50

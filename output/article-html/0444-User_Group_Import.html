@@ -1,0 +1,122 @@
+<article class="" id="user_group_import">
+<h1 class="title">User Group Import</h1>
+<div class="body">
+<div class="" id="overview-d117e183124">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">This import will allow you to maintain the User Groups. The
+Forms import process reads files from
+ <code class="ph codeph">./Incoming/UserGroups/</code> in the SFTP. These
+files will be moved to the archive folder located
+at <code class="ph codeph">./Incoming/Archive/UserGroups/</code> before
+being processed in alphanumeric order.</p>
+</div>
+<div class="" id="keys-d117e183134">
+<h2 class="title sectiontitle">Keys</h2>
+<ul class="ul">
+<li class="li">Name</li>
+</ul>
+</div>
+<div class="" id="validations-d117e183141">
+<h2 class="title sectiontitle">Validations</h2>
+<p class="">Coupa uses the field Name to lookup an existing
+record.</p>
+</div>
+<div class="" id="section_osk_255_g1c">
+<h2 class="title sectiontitle">Group</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Id</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Unique identifier Coupa assigns when a new record is created. It can’t be modified, but can be used to update the record.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Active</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Whether this Project or Group is currently Active.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Owner</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Owner group receives notifications on Approval Group errors. Field is called Parent Group in the UI.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Users By Login</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">A semi-colon seperated list of Logins for all users of this project or group.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Users By Employee Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">A semi-colon seperated list of Employee Numbers for all users of this project or group.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Can Approve</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Group has the ability to be an approver.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Open</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">When true, a Project or Group is open for everyone to join. When false, an owner must invite others.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Content Groups</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">A comma separated list of Content Groups for the Project or Group.</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

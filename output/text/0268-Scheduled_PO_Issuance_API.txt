@@ -1,0 +1,46 @@
+Scheduled PO Issuance API
+
+Information about scheduling and unscheduling Purchase Order issuance.
+
+Associations
+
+This resource is associated with the Requisition Line API. For more information, see Requisition Line API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+yes
+
+datetime
+
+id
+
+Coupa unique identifier
+yes 	integer
+
+schedule-retry-interval
+
+Schedule retry interval. Maximum value: 90.
+yes 	integer
+
+scheduled-by
+
+Scheduled by
+yes 	 User
+
+scheduled-issuance-date
+
+Scheduled issuance date. Must be a future date.
+yes 	 	 	 	yes
+
+datetime
+
+updated-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+yes
+
+datetime

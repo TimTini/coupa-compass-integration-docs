@@ -1,0 +1,7400 @@
+<article class="" id="invoices_api_invoices">
+<h1 class="title">Invoices API (/invoices)</h1>
+<div class="body">
+<div class="" id="overview-d957e181580">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The URL to access invoices is: <code class="ph codeph">https://{your_instance_name}/api/invoices</code>
+</p>
+<p class="">For more information about integrations and troubleshooting, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a>.</p>
+</div>
+<div class="" id="overview-d957e1815802">
+<h2 class="title sectiontitle">Enable strict API validations</h2>
+<p class="">You can enable strict Invoice API validations by performing the following:</p>
+<ol class="ol">
+<li class="li">Go to <b>Setup &gt; Company Setup &gt; Company Information</b>.</li>
+<li class="li">From <b>System Options &gt; Invoices</b> , select <b>Enforce all invoice validations on invoice update and submit APIs (recommended)</b>.</li>
+</ol>
+<p class="">The setting prevents invoices with non-editable custom fields or invoices with inactive billing accounts from being updated using the API. You may need to disable this setting.</p>
+</div>
+<div class="" id="actions-d957e181598">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Invoices API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/invoices</code>
+</td>
+<td class="entry" align="">Create</td>
+<td class="entry" align="">Creates an invoice in draft status.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/abandon</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">abandon</p>
+</td>
+<td class="entry" align="">
+<p class="">Abandon invoice</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/add_approver</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Add approver</p>
+</td>
+<td class="entry" align="">
+<p class="">Manually add an approver for an invoice</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/bypass_approvals</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Bypass approvals</p>
+</td>
+<td class="entry" align="">
+<p class="">Bypass approvals</p>
+<p class="">Allows a 3rd-party system on the customers side to get an invoice approved and paid as quickly as possible.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/bypass_current_approval</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Bypass current approval</p>
+</td>
+<td class="entry" align="">
+<p class="">Bypass current approval</p>
+<p class="">Allows a 3rd-party system on the customers side to get an invoice approved from the current approver to get an invoice paid as quickly as possible.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/dispute</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Dispute</p>
+</td>
+<td class="entry" align="">
+<p class="">Dispute invoice</p>
+<p class="">Allows moving an invoice to disputed status via a system call. Moving an invoice to disputed notifies the supplier that there is an issue with an invoice. The dispute request can include a dispute reason in the payload as follows:</p>
+<pre>
+<code class="codeblock">&lt;invoice-header&gt;
+  &lt;dispute-reason&gt;
+    &lt;code&gt;INCORRECT-QUANTITY&lt;/code&gt;
+  &lt;/dispute-reason&gt;
+  &lt;comment&gt;A supplier comment&lt;/comment&gt;
+&lt;/invoice-header&gt;</code>
+</pre>
+<p class="">This requires that INCORRECT_QUANTITY is a valid and active dispute reason.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/flip_to_advance_ship_notice</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Flip to advance ship notice</p>
+</td>
+<td class="entry" align="">
+<p class="">Flip invoice to Advance Ship Notice</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/retrieve_image_scan</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Retrieve image scan</p>
+</td>
+<td class="entry" align="">
+<p class="">Retrieve/Download image scan</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/image_scan</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Image scan</p>
+</td>
+<td class="entry" align="">
+<p class="">Update image scan attachment or image scan URL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query invoices</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/remove_approval</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Remove approval</p>
+</td>
+<td class="entry" align="">
+<p class="">Remove an approver who was manually added</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/restart_approvals</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Restart approvals</p>
+</td>
+<td class="entry" align="">
+<p class="">Restart approvals</p>
+<p class="">Allows a 3rd-party system on the customers side to clear the current approval chain and regenerate an new approval chain for an invoice that has had modifications.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/retrieve_clearance_document</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">retrieve_clearance_document</p>
+</td>
+<td class="entry" align="">
+<p class="">Retrieve/Download clearance document</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/retrieve_legal_invoice_pdf</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">retrieve_legal_invoice_pdf</p>
+</td>
+<td class="entry" align="">
+<p class="">Download/retrieve the legal invoice PDF. This action allows the PDF attachment to be exported by API call.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/revalidate_tolerances</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Revalidate tolerances</p>
+</td>
+<td class="entry" align="">
+<p class="">Revalidate tolerances</p>
+<p class="">Allows a 3rd-party system on the customers side to resubmit an invoice that had issues.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show invoice</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/submit</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Submit</p>
+</td>
+<td class="entry" align="">
+<p class="">Submit draft invoice for approval</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update invoice</p>
+<p class="">Used to updated information on the Invoice using the API</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/update_line_accounts</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Update line accounts</p>
+</td>
+<td class="entry" align="">
+<p class="">Update line accounts</p>
+<p class="">Used by mobile users to update Invoices</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/void</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Void</p>
+</td>
+<td class="entry" align="">
+<p class="">Void an approved invoice</p>
+<p class="">This can be used on Invoices only on approved and pending receipt Invoices.</p>
+<ul class="ul">
+<li class="li">
+<p class="">BUYER_VOIDABLE_STATUSES = [:pending_receipt, :approved, :draft]</p>
+</li>
+<li class="li">
+<p class="">SUPPLIER_VOIDABLE_STATUSES = [:pending_receipt, :approved]</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/invoices/:id/withdraw_dispute</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Withdraw dispute</p>
+</td>
+<td class="entry" align="">
+<p class="">Withdraw dispute</p>
+<p class="">Due to supplier inaction or a mistake on the buyer side a disputed Invoice can be returned to the approval process.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/invoices/:invoice_id/attachments</code>
+</td>
+<td class="entry" align="">List all attachments for an invoice</td>
+<td class="entry" align="">For complete details, refer to the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachment API Documentation.</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/invoices/:invoice_id/attachments/:attachment_id</code>
+</td>
+<td class="entry" align="">Get a single attachment</td>
+<td class="entry" align="">For complete details, refer to the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachment API Documentation.</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/invoices/:invoice_id/attachments</code>
+</td>
+<td class="entry" align="">Add attachments</td>
+<td class="entry" align="">For complete details, refer to the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachment API Documentation.</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e182138">
+<h2 class="title sectiontitle">Elements</h2>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>For <code class="ph codeph">invoice_date</code> and <code class="ph codeph">original_invoice_date</code>, provide the date only. Avoid adding the time stamp to prevent issues related to credit note linking.</div>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Element</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Description</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Unique</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>In</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Out</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">abandon-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">Abandon reason</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Reason Insight</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">account-type</p>
+</td>
+<td class="entry" align="">
+<p class="">Chart Of Account Reference</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-types-api-(account_types)" title="">Account Type</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">advance-payment-received-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount of advance payment received</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">customer_account_number</td>
+<td class="entry" align="">Customer Account Number</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(225)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">date-of-discovery-of-facts-decisive-for-correction</p>
+</td>
+<td class="entry" align="">
+<p class="">Date of Discovery of Facts Decisive for Correction</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">amount-due-less-discount</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount due after applying the discount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">approvals</p>
+</td>
+<td class="entry" align="">
+<p class="">Approvals</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/approvals-api-(approvals)" title="">Approval</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">attachments</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachment</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">archive-entity-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Archive Entity Id</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">bill-to-address</p>
+</td>
+<td class="entry" align="">
+<p class="">Bill to Address</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)" title="">Address</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer_representative_name</p>
+</td>
+<td class="entry" align="">
+<p class="">Buyer Representative Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer-tax-registration</p>
+</td>
+<td class="entry" align="">
+<p class="">Buyer tax registration</p>
+</td>
+<td class="entry" align="">
+<p class="">yes*</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/tax-registrations-api-(tax_registrations)" title="">Tax Registration</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">canceled</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates if transaction has been canceled</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">Note if using cash accounting scheme</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">clearance-document</p>
+</td>
+<td class="entry" align="">Clearance document attachment file name. Accessible via /retrieve_clearance_document</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">comments</p>
+</td>
+<td class="entry" align="">
+<p class="">comments</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">compliant</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice compliance indicator</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">confirmation</p>
+</td>
+<td class="entry" align="">
+<p class="">Confirmation</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">contract</p>
+</td>
+<td class="entry" align="">
+<p class="">Backing contract number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)" title="">
+<b>Contract</b>
+</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">coupa-accelerate-status</p>
+</td>
+<td class="entry" align="">Status indicating whether the invoice has discount payment terms via Static Discounting</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">accelerated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who created</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-note-differences-with-original-invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">Credit Note Differences With Original Invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">The reason of creating the credit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any OR see the <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)#section-6" title="">catalog fields section for more information</a>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">currency</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency code</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">current-integration-history-records</p>
+</td>
+<td class="entry" align="">
+<p class="">Current Integration History Records</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/integrations-api-(integrations)/integration-history-record-api" title="">Integration History Record</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customer-accounting-tax-less-discount</p>
+</td>
+<td class="entry" align="">
+<p class="">Customer accounting tax after applying the discount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Customs Declaration Date</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Customs Declaration Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(60)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-office</p>
+</td>
+<td class="entry" align="">
+<p class="">Customs Office</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">date-received</p>
+</td>
+<td class="entry" align="">
+<p class="">Date Received in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">delivery-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Date of Supply</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">destination-country</p>
+</td>
+<td class="entry" align="">
+<p class="">Country of destination used for compliance</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">discount-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">Discount Amount provided by supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(32,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">discount-due-date</p>
+</td>
+<td class="entry" align="">Discount Due Date calculated based on the discount payment terms</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">discount-percent</p>
+</td>
+<td class="entry" align="">
+<p class="">Discount %</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">float</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">dispute-method</p>
+</td>
+<td class="entry" align="">
+<p class="">Dispute Method</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">dispute-reasons</p>
+</td>
+<td class="entry" align="">
+<p class="">Dispute Reasons</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/dispute-reason-api" title="">Dispute Reason</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">document-type</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice or Credit Note</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Invoice, Credit Note</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">Early payment incentives</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">Exchange Rate</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,9)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exported</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates if transaction has been exported</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">failed-tolerances</p>
+</td>
+<td class="entry" align="">
+<p class="">Failed tolerances</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/failed-tolerances-api" title="">Invoice::FailedTolerance</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">folio-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Folio Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">form-of-payment</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Form</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">gross-total</p>
+</td>
+<td class="entry" align="">
+<p class="">Gross Total</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">gross-total-less-discount</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice total after applying the discount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">handling-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">Handling amount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(32,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa unique identifier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">image-scan</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Image Scan attachment filename</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(25)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">image-scan-content-type</p>
+</td>
+<td class="entry" align="">
+<p class="">Content type of image scan</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(191)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">image-scan-file-name</p>
+</td>
+<td class="entry" align="">
+<p class="">File name of the image scan</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">image-scan-file-size</p>
+</td>
+<td class="entry" align="">
+<p class="">Size of image scan file in MB</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(12)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">image-scan-url</p>
+</td>
+<td class="entry" align="">Invoice Image Scan URL. Must begin with 'http://' or 'https://'.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">inbound-invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">Inbound invoice reference</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/inbound-invoice-api" title="">Inbound Invoice</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">inbox-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Inbox Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">internal-note</p>
+</td>
+<td class="entry" align="">
+<p class="">Internal Note</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-charges</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice charges</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/invoice-charge-api" title="">Invoice Charge</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Date of Invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-from-address</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice from address</p>
+</td>
+<td class="entry" align="">
+<p class="">yes*</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)/supplier-remit-to-api" title="">Supplier Remit To</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-lines</p>
+</td>
+<td class="entry" align="">
+<p class="">Record identifier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/invoice-line-api" title="">Invoice Line</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice number</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-payment-receipts</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice related payment receipts information</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Payment Receipt</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-reference-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Reference Number (IRN)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(64)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">issuance-place</p>
+</td>
+<td class="entry" align="">
+<p class="">Issuance Place</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last-exported-at</p>
+</td>
+<td class="entry" align="">Date and time transaction was last exported in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">override-tax-country</p>
+</td>
+<td class="entry" align="">
+<p class="">Set Override Tax Country for Buyer Compliance Presentations</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">See the <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com//Integrate/Technical_Documentation/API/Resources/Transactional/invoices/invoices#Compliant_Country_List" title="">Country Code List</a>.</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">late-payment-penalties</p>
+</td>
+<td class="entry" align="">
+<p class="">Late Payment Penalties</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">legal-destination-country</p>
+</td>
+<td class="entry" align="">
+<p class="">Legal destination country used for compliance</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">See the <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com//Integrate/Technical_Documentation/API/Resources/Transactional/invoices/invoices#Compliant_Country_List" title="">Compliant Country List</a> .</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">line-level-taxation</p>
+</td>
+<td class="entry" align="">
+<p class="">Flag indicating whether taxes are provided at line level in this invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">lock-version-key</p>
+</td>
+<td class="entry" align="">
+<p class="">Lock Version</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">Reason for using margin scheme</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any OR see the <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)#section-6" title="">catalog fields section for more information</a>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">misc-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">Miscellaneous Amount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(32,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">net-due-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Net Due Date calculated based on the net payment terms</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">net-total-less-discount</p>
+</td>
+<td class="entry" align="">
+<p class="">Net total after applying the discount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">origin-country</p>
+</td>
+<td class="entry" align="">
+<p class="">Country of origin used for compliance</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">origin-currency-gross</p>
+</td>
+<td class="entry" align="">
+<p class="">Local Currency Gross</p>
+</td>
+<td class="entry" align="">
+<p class="">yes*</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(32,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">origin-currency-net</p>
+</td>
+<td class="entry" align="">
+<p class="">Local Currency Net</p>
+</td>
+<td class="entry" align="">
+<p class="">yes*</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(32,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">original-invoice-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Original invoice date required when is-credit-note=true</p>
+</td>
+<td class="entry" align="">
+<p class="">yes**</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">original-invoice-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Original invoice date required when is-credit-note=true</p>
+</td>
+<td class="entry" align="">
+<p class="">yes**</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">paid</p>
+</td>
+<td class="entry" align="">
+<p class="">Paid</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">pay-invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">Pay invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-channel</p>
+</td>
+<td class="entry" align="">
+<p class="">How the invoice payment will be handled - ERP (default), Coupa Pay Virtual Card, Coupa Pay Invoice Payment</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Date of payment for invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-method</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Method</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-notes</p>
+</td>
+<td class="entry" align="">
+<p class="">Notes included with payment for invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-order-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Order Reference</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment term code on invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/payment-terms-api-(payment_terms)" title="">Payment Term</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payments</p>
+</td>
+<td class="entry" align="">
+<p class="">Payments</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/payments-api" title="">Payment</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">pre-payment-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Pre-Payment Date</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">reconciliation-lines</p>
+</td>
+<td class="entry" align="">
+<p class="">Reconciliation lines</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Invoice/Reconciliation Line</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">remit-to-address</p>
+</td>
+<td class="entry" align="">
+<p class="">Remit to Address</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/remit-to-addresses-api-(suppliersaddresses)" title="">Remit To Address</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requested-by</p>
+</td>
+<td class="entry" align="">
+<p class="">Requester on the invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">resolution-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Resolution Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">reverse-charge-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">Reverse Charge Reference</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">self-billing-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">Self billing reference on the invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(191)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">sender-email</p>
+</td>
+<td class="entry" align="">
+<p class="">Sender Email</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">series</p>
+</td>
+<td class="entry" align="">
+<p class="">Series</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(30)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ship-from-address</p>
+</td>
+<td class="entry" align="">
+<p class="">Ship from address</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)/supplier-remit-to-api" title="">Supplier Remit To</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ship-to-address</p>
+</td>
+<td class="entry" align="">
+<p class="">Ship to Address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)" title="">Address</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shipping-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">Shipping Amount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(32,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shipping-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Shipping term code on invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/shipping-terms-api-(shipping_terms)" title="">Shipping Term</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">show-tax-information</p>
+</td>
+<td class="entry" align="">
+<p class="">Show tax information in the invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Status. For more information about invoice statuses, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x295096.xml" title="">Invoice Progression through Statuses</a>.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">new,</p>
+<p class="">ap_hold,</p>
+<p class="">draft, on_hold,</p>
+<p class="">pending_receipt,</p>
+<p class="">rejected,</p>
+<p class="">abandoned.</p>
+<p class="">disputed.</p>
+<p class="">pending_approval,</p>
+<p class="">booking_hold,</p>
+<p class="">pending_action,</p>
+<p class="">approved,</p>
+<p class="">voided,</p>
+<p class="">processing,</p>
+<p class="">invalid,</p>
+<p class="">pending_action, payable_adjustment</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Name or Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)-da-5797-da-5797" title="">Supplier</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-created</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier created indicator for invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-note</p>
+</td>
+<td class="entry" align="">
+<p class="">Note provided by supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-remit-to</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier provided remit to address</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)/supplier-remit-to-api" title="">Supplier Remit To</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-representative-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Representative Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-tax-registration</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier tax registration</p>
+</td>
+<td class="entry" align="">
+<p class="">yes*</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/tax-registrations-api-(tax_registrations)" title="">Tax Registration</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-total</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice control total</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">taggings</p>
+</td>
+<td class="entry" align="">
+<p class="">Taggings</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/tagging-api" title="">Tagging</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tags</p>
+</td>
+<td class="entry" align="">Tag (Deprecated, please use Taggings association to add Tags onto InvoiceHeader)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/tag-api" title="">Tag</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-amount</p>
+</td>
+<td class="entry" align="">Tax amount (not used if tax is provided at line level)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-amount-engine</p>
+</td>
+<td class="entry" align="">Tax amount calculated by either Coupa Native or External Tax Engine based on configuration</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-code</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax code (not used if tax is provided at line level)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-code-engine</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax code returned by External Tax Engine based on configuration</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-due-to-supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax due to the supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(32,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-lines</p>
+</td>
+<td class="entry" align="">
+<p class="">Line tax code (not used if tax is provided at header level)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/tax-line-api" title="">Tax Line</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax rate (not used if tax is provided at line level)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">float</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-rate-engine</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax rate returned by External Tax Engine based on configuration</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">taxes-in-origin-country-currency</p>
+</td>
+<td class="entry" align="">
+<p class="">Local Currency Tax</p>
+</td>
+<td class="entry" align="">
+<p class="">yes*</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(32,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tolerance-failures</p>
+</td>
+<td class="entry" align="">
+<p class="">Tolerance Failure</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(512)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">total-with-taxes</p>
+</td>
+<td class="entry" align="">
+<p class="">Total with taxes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">total-taxes-less-discount</p>
+</td>
+<td class="entry" align="">
+<p class="">Total taxes after applying the discount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type-of-receipt</p>
+</td>
+<td class="entry" align="">
+<p class="">Type of Receipt</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who updated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">use-of-invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">Use of the Invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">withholding-tax-lines</p>
+</td>
+<td class="entry" align="">
+<p class="">Withholding tax lines</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/withholding-tax-line-api" title="">Withholding Tax Line</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">withholding-tax-override</p>
+</td>
+<td class="entry" align="">
+<p class="">Withholding Tax Override</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,3)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-invoice-reviewer-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Invoice Reviewer NameName of invoice reviewer</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-payment-collector-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of payment collector</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">new-means-of-transport</p>
+</td>
+<td class="entry" align="">
+<p class="">New Means Of Transport</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">amount-of-advance-payment</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount Of Advance Payment</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(46,20)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">transaction-uuid</p>
+</td>
+<td class="entry" align="">
+<p class="">Transaction UUID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">transaction-notification-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Transaction Notification Date</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">content-validation</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Content Validation Indicator</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-invoice-issuer-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of invoice issuer</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-invoice-reviewer-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Invoice Reviewer Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-payment-collector-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Payment Collector Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">is-credit-note</p>
+</td>
+<td class="entry" align="">
+<p class="">Document Type Credit Note</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requester-email</p>
+</td>
+<td class="entry" align="">
+<p class="">Requester Email</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requester-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Requester Fullname</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requester-lookup-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Requester Lookup Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">delivery-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Delivery Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">delivery-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Date of delivery</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">original-value-of-supply</p>
+</td>
+<td class="entry" align="">
+<p class="">Original Value of Supply</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(46,20)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">correct-value-of-supply</p>
+</td>
+<td class="entry" align="">
+<p class="">Correct Value of Supply</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(46,20)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">original-invoice-date</p>
+</td>
+<td class="entry" align="">
+<p class="">Original invoice date used in case of a Credit Note</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type-of-relationship</p>
+</td>
+<td class="entry" align="">
+<p class="">Type of Relationship</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">original-invoice-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Original invoice number used in case of a Credit Note</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(40)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">place-of-supply</p>
+</td>
+<td class="entry" align="">
+<p class="">Place Of Supply</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">split-payment-mechanism</p>
+</td>
+<td class="entry" align="">
+<p class="">Split Payment Mechanism</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">endorsement-on-invoices</p>
+</td>
+<td class="entry" align="">
+<p class="">Endorsement On Invoices</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">new-means-of-transport</p>
+</td>
+<td class="entry" align="">
+<p class="">New Means Of Transport</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(10)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">place-of-issuance</p>
+</td>
+<td class="entry" align="">
+<p class="">Place Of Issuance</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">signed-qr-code</p>
+</td>
+<td class="entry" align="">
+<p class="">Signed QR Code</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shipping-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Shipping term code on invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-tax-registration</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer-tax-registration</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-order-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Order Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-issuance-time</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Issuance Time</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-register-operator</p>
+</td>
+<td class="entry" align="">
+<p class="">Cash Register Operator</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">means-of-payment</p>
+</td>
+<td class="entry" align="">
+<p class="">Means Of Payment</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">unique-identification-code-of-cash-receipt</p>
+</td>
+<td class="entry" align="">
+<p class="">Unique Identification Code Of Cash Receipt</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">security-code-of-issuer</p>
+</td>
+<td class="entry" align="">
+<p class="">Security Code Of Issuer</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">state-tax-number</p>
+</td>
+<td class="entry" align="">
+<p class="">State Tax ID Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">state-tax-number-for-substitute-taxpayer</p>
+</td>
+<td class="entry" align="">
+<p class="">State Tax ID Number for Substitute Taxpayer</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">municipal-tax-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Municipality Tax ID Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">serial-code-of-fiscal-invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">Serial Code of Fiscal Invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">verification-code</p>
+</td>
+<td class="entry" align="">
+<p class="">Verification Code</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type-of-document</p>
+</td>
+<td class="entry" align="">
+<p class="">Type of Document</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any OR see the <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)#section-6" title="">catalog fields section for more information</a>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">protocol-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Protocol Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">nature-of-operation</p>
+</td>
+<td class="entry" align="">
+<p class="">Nature of Operation</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type-of-operation</p>
+</td>
+<td class="entry" align="">
+<p class="">Type of Operation</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">freight-type</p>
+</td>
+<td class="entry" align="">
+<p class="">Freight Type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">vehicle-license-plate</p>
+</td>
+<td class="entry" align="">
+<p class="">Vehicle License Plate</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">national-enrollment-of-conveyor</p>
+</td>
+<td class="entry" align="">
+<p class="">National Enrollment of Conveyor</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">Volume Amount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-gross-weight</p>
+</td>
+<td class="entry" align="">
+<p class="">Volume Gross Weight</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-liquid-weight</p>
+</td>
+<td class="entry" align="">
+<p class="">Volume Liquid Weight</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-brand</p>
+</td>
+<td class="entry" align="">
+<p class="">Volume Brand</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-type</p>
+</td>
+<td class="entry" align="">
+<p class="">Volume Type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-numbering</p>
+</td>
+<td class="entry" align="">
+<p class="">Volume Numbering</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-agreement-notes</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Agreement Notes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Fully paid via Prepayment Agreement, Partially paid via Prepayment Agreement, Already paid for a Recurring Agreement, Retain payment per agreement</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tcs-tax-lines</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">-</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-from-address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Address</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ship-from-address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Address</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">vat-chargeability-system</p>
+</td>
+<td class="entry" align="">
+<p class="">VAT Chargeability System</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any OR see the <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)#section-6" title="">catalog fields section for more information</a>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer-representative-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Buyer Representative Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">Required fields marked with an asterisk * are additional required fields for compliant invoices. Required fields marked with two asterisks ** are only required when <code class="ph codeph">is-credit-note=true</code> .</li>
+<li class="li">
+<b>Fields highlighted in bold are flexible fields.</b> These fields are not indexed. If one or more of these fields are used to query invoices via the API, the response time may be slower.</li>
+</ul>
+</div>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Country Specific Elements</h2>
+<p class="">This table defining which invoice elements are supported for each country's invoicing requirements. Each row indicates an element that is valid/supported for invoices in the specified country.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Element</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Country Code</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">correct-value-of-supply</p>
+</td>
+<td class="entry" align="">
+<p class="">AE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-note-differences-with-original-invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">AE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">AE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">AE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">AE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">original-value-of-supply</p>
+</td>
+<td class="entry" align="">
+<p class="">AE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">AT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">AT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">AT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">AT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">AU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">AU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">BD</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">BD</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">BE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">BE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">BE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">BE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">BG</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">BG</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">BG</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">BG</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">BG</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">new-means-of-transport</p>
+</td>
+<td class="entry" align="">
+<p class="">BG</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">BH</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">BH</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">BH</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">folio-number</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">freight-type</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">municipal-tax-number</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">national-enrollment-of-conveyor</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">nature-of-operation</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">protocol-number</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">serial-code-of-fiscal-invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">series</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">state-tax-number</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">state-tax-number-for-substitute-taxpayer</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type-of-document</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type-of-operation</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">vehicle-license-plate</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">verification-code</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-brand</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-gross-weight</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-liquid-weight</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-numbering</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">volume-type</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">CA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-term</p>
+</td>
+<td class="entry" align="">
+<p class="">CA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">CH</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">CH</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">CH</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">late-payment-penalties</p>
+</td>
+<td class="entry" align="">
+<p class="">CH</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">CN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">CN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-invoice-issuer-name</p>
+</td>
+<td class="entry" align="">
+<p class="">CN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-invoice-reviewer-name</p>
+</td>
+<td class="entry" align="">
+<p class="">CN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-payment-collector-name</p>
+</td>
+<td class="entry" align="">
+<p class="">CN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">CO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">CO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">resolution-number</p>
+</td>
+<td class="entry" align="">
+<p class="">CO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">CZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-note-differences-with-original-invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">CZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">CZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">date-of-discovery-of-facts-decisive-for-correction</p>
+</td>
+<td class="entry" align="">
+<p class="">CZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">discount-percent</p>
+</td>
+<td class="entry" align="">
+<p class="">CZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">CZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">CZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">DE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">DE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">DE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">DE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">DE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">DK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">DK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">DK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">DK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">EE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">EE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">EE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">EE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">ES</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">ES</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">ES</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">ES</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">ES</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">FI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">FI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">FI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">FI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">FR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">FR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">FR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">FR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">late-payment-penalties</p>
+</td>
+<td class="entry" align="">
+<p class="">FR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">FR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">pre-payment-date</p>
+</td>
+<td class="entry" align="">
+<p class="">FR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">GB</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">GB</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">GB</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">GB</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">GB</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">GR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">GR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">GR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">GR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">new-means-of-transport</p>
+</td>
+<td class="entry" align="">
+<p class="">GR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-reference-number</td>
+<td class="entry" align="">GR</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-register-operator</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-date</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-number</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-office</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-issuance-time</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">late-payment-penalties</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">means-of-payment</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">security-code-of-issuer</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">unique-identification-code-of-cash-receipt</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">HU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">HU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">HU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">HU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">new-means-of-transport</p>
+</td>
+<td class="entry" align="">
+<p class="">HU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">IC</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">IC</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">IC</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">IC</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">endorsement-on-invoices</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">new-means-of-transport</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">pre-payment-date</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">IN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">IN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-number</p>
+</td>
+<td class="entry" align="">
+<p class="">IN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-reference-number</p>
+</td>
+<td class="entry" align="">
+<p class="">IN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">place-of-supply</p>
+</td>
+<td class="entry" align="">
+<p class="">IN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">signed-qr-code</p>
+</td>
+<td class="entry" align="">
+<p class="">IN</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">IT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">IT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">IT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">IT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">IT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-schedule-terms</p>
+</td>
+<td class="entry" align="">
+<p class="">IT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">vat-chargeability-system</p>
+</td>
+<td class="entry" align="">
+<p class="">IT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">JP</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">JP</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">gross-total</p>
+</td>
+<td class="entry" align="">
+<p class="">JP</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer-representative-name</p>
+</td>
+<td class="entry" align="">
+<p class="">KR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">KR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">currency-id</p>
+</td>
+<td class="entry" align="">
+<p class="">KR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">KR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-representative-name</p>
+</td>
+<td class="entry" align="">
+<p class="">KR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">LT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">LT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">LT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">LT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">LU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">LU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">LU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">LU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">LU</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">LV</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">LV</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">LV</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">LV</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">LV</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">ME</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">ME</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">MM</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">MM</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">MT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">MT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">MT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">MT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">new-means-of-transport</p>
+</td>
+<td class="entry" align="">
+<p class="">MT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">confirmation</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-number</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">folio-number</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">form-of-payment</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">issuance-place</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-method</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">series</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type-of-receipt</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type-of-relationship</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">use-of-invoice</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">MY</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">MY</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">gross-total</p>
+</td>
+<td class="entry" align="">
+<p class="">MY</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-reference-number</p>
+</td>
+<td class="entry" align="">
+<p class="">MY</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">signed-qr-code</p>
+</td>
+<td class="entry" align="">
+<p class="">MY</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">NA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">NA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">NL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">NL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">NL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">NL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">NO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">NO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">NO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">late-payment-penalties</p>
+</td>
+<td class="entry" align="">
+<p class="">NO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">NZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">NZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">NZ</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">PK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">PK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">advance-payment-received-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-date</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-number</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-office</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">pre-payment-date</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">split-payment-mechanism</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">PT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">PT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">PT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">PT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">new-means-of-transport</p>
+</td>
+<td class="entry" align="">
+<p class="">PT</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">RO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">RO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">RO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">RO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">gross-total</p>
+</td>
+<td class="entry" align="">
+<p class="">RO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">RO</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">amount-of-advance-payment</p>
+</td>
+<td class="entry" align="">
+<p class="">RS</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">RS</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">RS</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">RS</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">gross-total</p>
+</td>
+<td class="entry" align="">
+<p class="">RS</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">RS</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">place-of-issuance</p>
+</td>
+<td class="entry" align="">
+<p class="">RS</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">SA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">SA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">SE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">SE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">SE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">SE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">SE</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">SG</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">SG</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">SG</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-date</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-number</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-office</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">late-payment-penalties</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">new-means-of-transport</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">place-of-issuance</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cash-accounting-scheme-reference</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-date</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-declaration-number</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customs-office</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">discount-percent</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">late-payment-penalties</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">ZA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">currency-id</p>
+</td>
+<td class="entry" align="">
+<p class="">ZA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">ZA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">early-payment-provisions</p>
+</td>
+<td class="entry" align="">
+<p class="">ZA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exchange-rate</p>
+</td>
+<td class="entry" align="">
+<p class="">ZA</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Catalog Fields</h2>
+<p class="">Catalog of permitted enumerated field values by country code. Maps country-specific invoice elements to their valid catalog codes and human-readable descriptions for tax compliance and invoice validation. For example: Poland (PL) "margin-scheme" accepts codes: P_PMarzy_2, P_PMarzy_3_1, etc.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Country Code</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Element</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Catalog Code</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Catalog Description</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>IT</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">vat-chargeability-system</p>
+</td>
+<td class="entry" align="">
+<p class="">I</p>
+</td>
+<td class="entry" align="">
+<p class="">Immediata</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>IT</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">vat-chargeability-system</p>
+</td>
+<td class="entry" align="">
+<p class="">D</p>
+</td>
+<td class="entry" align="">
+<p class="">Differita</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>IT</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">vat-chargeability-system</p>
+</td>
+<td class="entry" align="">
+<p class="">S</p>
+</td>
+<td class="entry" align="">
+<p class="">Scissione dei pagamenti</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>BR</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">type-of-document</p>
+</td>
+<td class="entry" align="">
+<p class="">NF-e</p>
+</td>
+<td class="entry" align="">
+<p class="">NF-e</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>BR</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">type-of-document</p>
+</td>
+<td class="entry" align="">
+<p class="">NFS-e</p>
+</td>
+<td class="entry" align="">
+<p class="">NFS-e</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>BR</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">type-of-document</p>
+</td>
+<td class="entry" align="">
+<p class="">CT-e</p>
+</td>
+<td class="entry" align="">
+<p class="">CT-e</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>PL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">P_PMarzy_2</p>
+</td>
+<td class="entry" align="">
+<p class="">Biur podró?y</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>PL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">P_PMarzy_3_1</p>
+</td>
+<td class="entry" align="">
+<p class="">Towary u?ywane</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>PL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">P_PMarzy_3_2</p>
+</td>
+<td class="entry" align="">
+<p class="">Dzie?a sztuki</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>PL</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">margin-scheme</p>
+</td>
+<td class="entry" align="">
+<p class="">P_PMarzy_3_3</p>
+</td>
+<td class="entry" align="">
+<p class="">Przedmioty kolekcjonerskie i antyki</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>KR</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">기재사항의 착오·정정</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>KR</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">공급가액 변동</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>KR</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">환입</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>KR</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">계약의 해제</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>KR</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">내국신용장 사후 개설</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>KR</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">credit-reason</p>
+</td>
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">착오에 의한 이중발급</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="compliant_country_list">
+<h2 class="title sectiontitle">Compliant Country List</h2>
+<p class="">This list shows which countries are permitted for compliant invoicing. It is not a list of compliant countries Coupa currently supports.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#id</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Code</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">14</p>
+</td>
+<td class="entry" align="">
+<p class="">AU</p>
+</td>
+<td class="entry" align="">
+<p class="">Australia</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">15</p>
+</td>
+<td class="entry" align="">
+<p class="">AT</p>
+</td>
+<td class="entry" align="">
+<p class="">Austria</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">22</p>
+</td>
+<td class="entry" align="">
+<p class="">BE</p>
+</td>
+<td class="entry" align="">
+<p class="">Belgium</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">31</p>
+</td>
+<td class="entry" align="">
+<p class="">BR</p>
+</td>
+<td class="entry" align="">
+<p class="">Brazil</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">34</p>
+</td>
+<td class="entry" align="">
+<p class="">BG</p>
+</td>
+<td class="entry" align="">
+<p class="">Bulgaria</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">39</p>
+</td>
+<td class="entry" align="">
+<p class="">CA</p>
+</td>
+<td class="entry" align="">
+<p class="">Canada</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">53</p>
+</td>
+<td class="entry" align="">
+<p class="">HR</p>
+</td>
+<td class="entry" align="">
+<p class="">Croatia</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">55</p>
+</td>
+<td class="entry" align="">
+<p class="">CY</p>
+</td>
+<td class="entry" align="">
+<p class="">Cyprus</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">56</p>
+</td>
+<td class="entry" align="">
+<p class="">CZ</p>
+</td>
+<td class="entry" align="">
+<p class="">Czech Republic</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">58</p>
+</td>
+<td class="entry" align="">
+<p class="">DK</p>
+</td>
+<td class="entry" align="">
+<p class="">Denmark</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">67</p>
+</td>
+<td class="entry" align="">
+<p class="">EE</p>
+</td>
+<td class="entry" align="">
+<p class="">Estonia</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">72</p>
+</td>
+<td class="entry" align="">
+<p class="">FI</p>
+</td>
+<td class="entry" align="">
+<p class="">Finland</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">73</p>
+</td>
+<td class="entry" align="">
+<p class="">FR</p>
+</td>
+<td class="entry" align="">
+<p class="">France</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">79</p>
+</td>
+<td class="entry" align="">
+<p class="">DE</p>
+</td>
+<td class="entry" align="">
+<p class="">Germany</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">82</p>
+</td>
+<td class="entry" align="">
+<p class="">GB</p>
+</td>
+<td class="entry" align="">
+<p class="">United Kingdom</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">83</p>
+</td>
+<td class="entry" align="">
+<p class="">GR</p>
+</td>
+<td class="entry" align="">
+<p class="">Greece</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">96</p>
+</td>
+<td class="entry" align="">
+<p class="">HK</p>
+</td>
+<td class="entry" align="">
+<p class="">Hong Kong</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">97</p>
+</td>
+<td class="entry" align="">
+<p class="">HU</p>
+</td>
+<td class="entry" align="">
+<p class="">Hungary</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">98</p>
+</td>
+<td class="entry" align="">
+<p class="">IS</p>
+</td>
+<td class="entry" align="">
+<p class="">Iceland</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">103</p>
+</td>
+<td class="entry" align="">
+<p class="">IE</p>
+</td>
+<td class="entry" align="">
+<p class="">Ireland</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">104</p>
+</td>
+<td class="entry" align="">
+<p class="">IL</p>
+</td>
+<td class="entry" align="">
+<p class="">Israel</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">105</p>
+</td>
+<td class="entry" align="">
+<p class="">IT</p>
+</td>
+<td class="entry" align="">
+<p class="">Italy</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">108</p>
+</td>
+<td class="entry" align="">
+<p class="">JP</p>
+</td>
+<td class="entry" align="">
+<p class="">Japan</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">118</p>
+</td>
+<td class="entry" align="">
+<p class="">LV</p>
+</td>
+<td class="entry" align="">
+<p class="">Latvia</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">123</p>
+</td>
+<td class="entry" align="">
+<p class="">LI</p>
+</td>
+<td class="entry" align="">
+<p class="">Liechtenstein</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">124</p>
+</td>
+<td class="entry" align="">
+<p class="">LT</p>
+</td>
+<td class="entry" align="">
+<p class="">Lithuania</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">125</p>
+</td>
+<td class="entry" align="">
+<p class="">LU</p>
+</td>
+<td class="entry" align="">
+<p class="">Luxembourg</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">133</p>
+</td>
+<td class="entry" align="">
+<p class="">MT</p>
+</td>
+<td class="entry" align="">
+<p class="">Malta</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">138</p>
+</td>
+<td class="entry" align="">
+<p class="">MX</p>
+</td>
+<td class="entry" align="">
+<p class="">Mexico</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">141</p>
+</td>
+<td class="entry" align="">
+<p class="">MC</p>
+</td>
+<td class="entry" align="">
+<p class="">Monaco</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">144</p>
+</td>
+<td class="entry" align="">
+<p class="">MA</p>
+</td>
+<td class="entry" align="">
+<p class="">Morocco</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">151</p>
+</td>
+<td class="entry" align="">
+<p class="">NL</p>
+</td>
+<td class="entry" align="">
+<p class="">Netherlands</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">154</p>
+</td>
+<td class="entry" align="">
+<p class="">NZ</p>
+</td>
+<td class="entry" align="">
+<p class="">New Zealand</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">161</p>
+</td>
+<td class="entry" align="">
+<p class="">NO</p>
+</td>
+<td class="entry" align="">
+<p class="">Norway</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">171</p>
+</td>
+<td class="entry" align="">
+<p class="">PL</p>
+</td>
+<td class="entry" align="">
+<p class="">Poland</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">173</p>
+</td>
+<td class="entry" align="">
+<p class="">PT</p>
+</td>
+<td class="entry" align="">
+<p class="">Portugal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">175</p>
+</td>
+<td class="entry" align="">
+<p class="">QA</p>
+</td>
+<td class="entry" align="">
+<p class="">Qatar</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">177</p>
+</td>
+<td class="entry" align="">
+<p class="">RO</p>
+</td>
+<td class="entry" align="">
+<p class="">Romania</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">183</p>
+</td>
+<td class="entry" align="">
+<p class="">SA</p>
+</td>
+<td class="entry" align="">
+<p class="">Saudi Arabia</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">187</p>
+</td>
+<td class="entry" align="">
+<p class="">SG</p>
+</td>
+<td class="entry" align="">
+<p class="">Singapore</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">188</p>
+</td>
+<td class="entry" align="">
+<p class="">SK</p>
+</td>
+<td class="entry" align="">
+<p class="">Slovakia</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">189</p>
+</td>
+<td class="entry" align="">
+<p class="">SI</p>
+</td>
+<td class="entry" align="">
+<p class="">Slovenia</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">192</p>
+</td>
+<td class="entry" align="">
+<p class="">ZA</p>
+</td>
+<td class="entry" align="">
+<p class="">South Africa</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">193</p>
+</td>
+<td class="entry" align="">
+<p class="">ES</p>
+</td>
+<td class="entry" align="">
+<p class="">Spain</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">204</p>
+</td>
+<td class="entry" align="">
+<p class="">SE</p>
+</td>
+<td class="entry" align="">
+<p class="">Sweden</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">205</p>
+</td>
+<td class="entry" align="">
+<p class="">CH</p>
+</td>
+<td class="entry" align="">
+<p class="">Switzerland</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">222</p>
+</td>
+<td class="entry" align="">
+<p class="">AE</p>
+</td>
+<td class="entry" align="">
+<p class="">United Arab Emirates</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">223</p>
+</td>
+<td class="entry" align="">
+<p class="">US</p>
+</td>
+<td class="entry" align="">
+<p class="">United States</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">250</p>
+</td>
+<td class="entry" align="">
+<p class="">IM</p>
+</td>
+<td class="entry" align="">
+<p class="">Isle Of Man</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

@@ -1,0 +1,710 @@
+<article class="" id="ags-apay_integration_for_internal_use_only">
+<h1 class="title">AGS-APAY Integration (For Internal Use Only)</h1>
+<div class="body">
+<div class="" id="integrations_reference_document">
+<h2 class="title sectiontitle">Integrations Reference Document</h2>
+<p class="">Services/Architects, if you have questions please reach out to the CCW services team. Use the following page as reference:</p>
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://coupadev.atlassian.net/wiki/spaces/CCWE/pages/1838546951/AGS+APAY" title="">https://coupadev.atlassian.net/wiki/spaces/CVS/pages/1153018562/Contingent+Workforce</a>
+</p>
+<p class="">Configurations Used</p>
+</div>
+<div class="" id="fee_settings">
+<h2 class="title sectiontitle">Fee Settings</h2>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image1.png" alt="" title="" width="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image2.png" alt="" title="" width="">
+</div>
+<div class="" id="location_settings">
+<h2 class="title sectiontitle">Location Settings</h2>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image3.png" alt="" title="" width="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image4.png" alt="" title="" width="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image5.png" alt="" title="" width="">
+</div>
+<div class="" id="timesheet_localization_settings">
+<h2 class="title sectiontitle">Timesheet Localization Settings</h2>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image6.png" alt="" title="" width="">
+</div>
+<div class="" id="tax_settings">
+<h2 class="title sectiontitle">Tax Settings</h2>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image7.png" alt="" title="" width="">
+</div>
+<div class="" id="data_staging_information">
+<h2 class="title sectiontitle">Data Staging Information</h2>
+<p class="">Below is the worker template I used to create the workers for all data staged. You will not necessarily need to review this upload template, but it might be a good item to reference if you are validating that data was staged correctly based on the above configurations.</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Example - Worker 1 Time and Expense</h2>
+</div>
+<div class="" id="one_timesheet">
+<h2 class="title sectiontitle">One timesheet</h2>
+<ul class="ul">
+<li class="li">
+<p class="">Taxes=Yes; Timesheets only; 6%</p>
+</li>
+<li class="li">
+<p class="">Overtime=No</p>
+</li>
+<li class="li">
+<p class="">Double time=No</p>
+</li>
+<li class="li">
+<p class="">Single or Multiple Charge Number=Single</p>
+</li>
+<li class="li">
+<p class="">MSP/VMS Fees and Funding:</p>
+<ul class="ul">
+<li class="li">
+<p class="">MSP Fee=Supplier 2.5%</p>
+</li>
+<li class="li">
+<p class="">VMS Fee=Supplier 0.5%</p>
+</li>
+</ul>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image8.png" alt="" title="" width="">
+</div>
+<div class="" id="one_expense">
+<h2 class="title sectiontitle">One expense</h2>
+<ul class="ul">
+<li class="li">
+<p class="">MSP/VMS fees and funding: None (not a Misc. Fee type of expense)</p>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image9.png" alt="" title="" width="">
+</div>
+<div class="">
+<h2 class="title sectiontitle">Example - Worker 2 Time and Expense</h2>
+</div>
+<div class="" id="one_timesheet-d160e90">
+<h2 class="title sectiontitle">One timesheet</h2>
+<ul class="ul">
+<li class="li">
+<p class="">Taxes=Yes; Timesheets only; 6%</p>
+</li>
+<li class="li">
+<p class="">Overtime=Yes</p>
+</li>
+<li class="li">
+<p class="">Double time=No</p>
+</li>
+<li class="li">
+<p class="">Single or Multiple Charge Number=Multiple</p>
+</li>
+<li class="li">
+<p class="">MSP/VMS Fees and Funding:</p>
+<ul class="ul">
+<li class="li">
+<p class="">MSP Fee=Supplier 2.6%</p>
+</li>
+<li class="li">
+<p class="">VMS Fee=Client 0.4%</p>
+</li>
+</ul>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image10.png" alt="" title="" width="">
+</div>
+<div class="" id="one_expense-d160e114">
+<h2 class="title sectiontitle">One expense</h2>
+<ul class="ul">
+<li class="li">
+<p class="">MSP/VMS fees and funding: Yes (Misc. Fee type of expense)</p>
+<ul class="ul">
+<li class="li">
+<p class="">MSP Fee=Client 2%</p>
+</li>
+<li class="li">
+<p class="">VMS Fee=Client 1%</p>
+</li>
+</ul>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image11.png" alt="" title="" width="">
+</div>
+<div class="">
+<h2 class="title sectiontitle">Example - Worker 3 Time and Expense</h2>
+</div>
+<div class="" id="one_timesheet-d160e130">
+<h2 class="title sectiontitle">One timesheet</h2>
+<ul class="ul">
+<li class="li">
+<p class="">Taxes=No</p>
+</li>
+<li class="li">
+<p class="">Overtime=No</p>
+</li>
+<li class="li">
+<p class="">Double time=No</p>
+</li>
+<li class="li">
+<p class="">Single or Multiple Charge Number=Multiple</p>
+</li>
+<li class="li">
+<p class="">MSP/VMS Fees and Funding:</p>
+<ul class="ul">
+<li class="li">
+<p class="">MSP Fee=Supplier 2.7%</p>
+</li>
+<li class="li">
+<p class="">VMS Fee=Client 0.3%</p>
+</li>
+</ul>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image12.png" alt="" title="" width="">
+</div>
+<div class="" id="one_expense-d160e154">
+<h2 class="title sectiontitle">One expense</h2>
+<ul class="ul">
+<li class="li">
+<p class="">MSP/VMS fees and funding: None (not a Misc. Fee type of expense)</p>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image13.png" alt="" title="" width="">
+</div>
+<div class="">
+<h2 class="title sectiontitle">Example - Worker 4 Time and Expense</h2>
+</div>
+<div class="" id="one_timesheet-d160e166">
+<h2 class="title sectiontitle">One timesheet</h2>
+<ul class="ul">
+<li class="li">
+<p class="">Taxes=No</p>
+</li>
+<li class="li">
+<p class="">Overtime=Yes</p>
+</li>
+<li class="li">
+<p class="">Double time=Yes</p>
+</li>
+<li class="li">
+<p class="">Single or Multiple Charge Number=Single</p>
+</li>
+<li class="li">
+<p class="">MSP/VMS Fees and Funding:</p>
+<ul class="ul">
+<li class="li">
+<p class="">MSP Fee=Supplier 2.8%</p>
+</li>
+<li class="li">
+<p class="">VMS Fee=Client 0.2%</p>
+</li>
+</ul>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image14.png" alt="" title="" width="">
+</div>
+<div class="" id="one_expense-d160e190">
+<h2 class="title sectiontitle">One expense</h2>
+<ul class="ul">
+<li class="li">
+<p class="">MSP/VMS fees and funding: Yes (Misc. Fee type of expense)</p>
+<ul class="ul">
+<li class="li">
+<p class="">MSP Fee=Client 2%</p>
+</li>
+<li class="li">
+<p class="">VMS Fee=Client 1%</p>
+</li>
+</ul>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image15.png" alt="" title="" width="">
+</div>
+<div class="" id="timesheet">
+<h2 class="title sectiontitle">Calculations</h2>
+<p class="">For reference, please also refer to the 
+                <b>Calculations</b> tab on: APAY Sample Data and File 8.6.19 (internal only).xlsx
+            </p>
+<p class="">Timesheet</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Sample Reg Hours</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample Supplier Bill Rate</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample Final Bill Rate</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample MSP Funding Config</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample MSP Fee</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample VMS Funding Config</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample VMS Fee</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Total Final Amount</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Client Amount</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Supplier Amount</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>AGS Amount (MSP)</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Coupa Amount (VMS)</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Client</p>
+</td>
+<td class="entry" align="">
+<p class="">2%</p>
+</td>
+<td class="entry" align="">
+<p class="">Client</p>
+</td>
+<td class="entry" align="">
+<p class="">1%</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">103</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">2%</p>
+</td>
+<td class="entry" align="">
+<p class="">Client</p>
+</td>
+<td class="entry" align="">
+<p class="">1%</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">101</p>
+</td>
+<td class="entry" align="">
+<p class="">98</p>
+</td>
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">2%</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">1%</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">97</p>
+</td>
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Client</p>
+</td>
+<td class="entry" align="">
+<p class="">2%</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">1%</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">102</p>
+</td>
+<td class="entry" align="">
+<p class="">99</p>
+</td>
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="expense">
+<h2 class="title sectiontitle">Expense</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Sample Final Bill Rate</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample MSP Funding Config</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample MSP Fee</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample VMS Funding Config</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Sample VMS Fee</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Total Final Amount</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Client Amount</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Supplier Amount</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>AGS Amount (MSP)</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Coupa Amount (VMS)</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Client</p>
+</td>
+<td class="entry" align="">
+<p class="">2%</p>
+</td>
+<td class="entry" align="">
+<p class="">Client</p>
+</td>
+<td class="entry" align="">
+<p class="">1%</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">103</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">2%</p>
+</td>
+<td class="entry" align="">
+<p class="">Client</p>
+</td>
+<td class="entry" align="">
+<p class="">1%</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">101</p>
+</td>
+<td class="entry" align="">
+<p class="">98</p>
+</td>
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">2%</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">1%</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">97</p>
+</td>
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Client</p>
+</td>
+<td class="entry" align="">
+<p class="">2%</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">1%</p>
+</td>
+<td class="entry" align="">
+<p class="">100</p>
+</td>
+<td class="entry" align="">
+<p class="">102</p>
+</td>
+<td class="entry" align="">
+<p class="">99</p>
+</td>
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="taxes">
+<h2 class="title sectiontitle">Taxes</h2>
+<p class="">Tax percentage is configured in CLM Advanced by either AGS or Coupa during implementation, as defined by the client.</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Client Tax Amount</b> = Tax % * 0.01 * Client Amount
+                    </p>
+</li>
+<li class="li">
+<p class="">
+<b>Supplier Tax Amount</b> = Tax % * 0.01 * Supplier Amount
+                    </p>
+</li>
+<li class="li">
+<p class="">
+<b>MSP Tax Amount</b> = Tax % * 0.01 * AGS Amount
+                    </p>
+</li>
+<li class="li">
+<p class="">
+<b>Coupa Tax Amount</b> = Tax % * 0.01 * Coupa Amount
+                    </p>
+</li>
+</ul>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">The way we are calculating the taxes allows a Supplier-funded model or a Client-funded model to properly calculate the taxes (not overstated for Client-funded).</p>
+</div>
+</div>
+<div class="">
+<h2 class="title sectiontitle">File 2 Adjustments</h2>
+</div>
+<div class="" id="worker_1_rate_change">
+<h2 class="title sectiontitle">Worker 1: Rate change</h2>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image16.png" alt="" title="" width="">
+</div>
+<div class="" id="worker_2_timesheet_adjustment">
+<h2 class="title sectiontitle">Worker 2 Timesheet adjustment</h2>
+<p class="">Hours change from 40 Regular, 10 OT to 38 Regular:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image17.png" alt="" title="" width="">
+</div>
+<div class="" id="worker_3_timesheet_adjustment">
+<h2 class="title sectiontitle">Worker 3 Timesheet adjustment</h2>
+<p class="">Charge number change from 
+                <b>07652-14365</b> to 
+                <b>04062-76102:</b>
+</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image18.png" alt="" title="" width="">
+</div>
+<div class="" id="worker_4_expense_adjustment">
+<h2 class="title sectiontitle">Worker 4 Expense adjustment</h2>
+<p class="">Amount change from 
+                <b>$35</b> to 
+                <b>$45:</b>
+</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image19.png" alt="" title="" width="">
+</div>
+<div class="">
+<h2 class="title sectiontitle">File 3 Adjustments</h2>
+</div>
+<div class="" id="msp_markup_for_the_supplier">
+<h2 class="title sectiontitle">MSP Markup for the Supplier</h2>
+<p class="">Supplier config changed from 2.5% to 3.1%:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image20.png" alt="" title="" width="">
+</div>
+<div class="" id="vms_markup_for_the_supplier">
+<h2 class="title sectiontitle">VMS Markup for the Supplier</h2>
+<p class="">Supplier config changed from 0.5% to 0.9%:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image21.png" alt="" title="" width="">
+<p class="">Taxes for the Boca Raton location changed from 6% to 6.5%:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image22.png" alt="" title="" width="">
+</div>
+</div>
+</article>

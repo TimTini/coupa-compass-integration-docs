@@ -1,0 +1,14 @@
+Expense Violation API
+
+Elements
+
+Element 	 Description 	 Type 	 API In 	 API Out 	 Required 	 Length 	 Allowable Values
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	datetime 	 	yes
+created-by 	User who created 	 User 	 	yes
+id 	Coupa unique identifier 	integer 	 	yes
+limit-exceeded 	Limit exceeded 	decimal(32,4) 	 	yes
+receipt-missing 	Receipt missing 	boolean 	 	yes
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	datetime 	 	yes
+updated-by 	User who updated 	 User 	 	yes
+violable 	Violable 	 	 	yes
+violator 	Violator 	ExpenseLine 	 	yes

@@ -1,0 +1,72 @@
+<article class="" id="concept1">
+<h1 class="title">Risk Assess REST API</h1>
+<p class="font-size-lg">Retrieve Risk Assess data such as suppliers associated with the tenant and supplier extension fields.</p>
+<div class="body conbody">
+<div class="" id="overview-d126e446">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Coupa Risk Assess REST API allows you to retrieve Rist Assess data. Using this API, you can:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Retrieve a paginated and filtered/unfiltered list of suppliers belonging to a tenant.</p>
+</li>
+<li class="li">
+<p class="">Retrieve extension fields associated with a specific supplier.</p>
+</li>
+<li class="li">Retrieve evaluation data, such as evaluation scores, comments, and attachments</li>
+</ul>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Risk Assess SOAP APIs are still currently supported.</p>
+</div>
+</div>
+<div class="" id="section1">
+<h2 class="title sectiontitle">Prerequisites</h2>
+<p class="">The Risk Assess REST API requires a Coupa Core instance. To turn on the REST API functionality for your tenant, submit a Risk Assess support ticket.</p>
+</div>
+<div class="" id="section2">
+<h2 class="title sectiontitle">Authentication flow</h2>
+<p class="">The Risk Assess REST API uses Coupa Core OpenID Connect (OIDC) authentication in your Coupa Core instance. Use the following authentication flow:</p>
+<ol class="ol">
+<li class="li">Create an OIDC client in your Coupa Core instance with a <b>Grant Type</b> set to <b>Client Credentials</b>. Apply scopes to your client depending on which endpoint you need to access. For specific steps for creating a client in Coupa Core and accessing a token, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/oauth-2.0-and-oidc" title="">OAuth 2.0 and OIDC</a>.</li>
+<li class="li">Generate the access token using your Coupa Core instance.</li>
+<li class="li">Send subsequent Risk Assess API requests to your Coupa Risk Assess tenant URL. See the Base URL section below.</li>
+</ol>
+<p class="">Scopes are associated with each API endpoint:</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>riskassess.supplier.read</b>: Read supplier data.</p>
+</li>
+<li class="li">
+<p class="">
+<b>riskassess.supplier.write</b>: Update supplier data.</p>
+</li>
+<li class="li">
+<b>riskassess.evaluation.read</b>: Access evaluations data.</li>
+<li class="li">
+<b>riskassess.relationship.read</b>: Access relationship data.</li>
+</ul>
+</div>
+<div class="" id="section3">
+<h2 class="title sectiontitle">Base URL</h2>
+<p class="">The Risk Assess REST API uses your Risk Assess instance URL, for example: </p>
+<p class="">
+<code class="ph codeph">https://&lt;your-domain&gt;.risk.coupahost.com/api/suppliers</code>
+</p>
+</div>
+</div>
+<nav role="navigation" class="related-links">
+<ul class="ullinks child-links-section">
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations">GET Evaluations</a>
+<br>Retrieve evaluation data from your Coupa Risk Assess tenant, such as evaluation scores, comments, and attachments.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-suppliers">GET Suppliers</a>
+<br>Retrieve a list of suppliers belonging to the tenant.</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships">GET Relationships</a>
+<br>Retrieve a list of up to 50 relationships. Each relationship includes associated objects, such as organizations, supplier, internal manager, and external manager.</li>
+</ul>
+</nav>
+</article>

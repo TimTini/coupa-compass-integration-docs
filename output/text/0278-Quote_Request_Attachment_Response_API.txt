@@ -1,0 +1,13 @@
+Quote Request Attachment Response API
+
+Use the Quote Request Attachment Response API to view event-level attachments.
+
+Associations
+
+This resource is associated with the Quote Responses API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+quote-request-attachment 	Event-level attachment submitted by the Buyer. 	No 	No 	Any 	No 	Yes 	 Quote Request Attachment
+attachments 	Event-level attachment submitted by the Supplier. 	No 	No 	Any 	No 	Yes 	array

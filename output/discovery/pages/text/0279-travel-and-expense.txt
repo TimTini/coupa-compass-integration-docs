@@ -1,0 +1,9 @@
+travel-and-expense
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/travel-and-expense
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr87cULaZFZbqdBNq8S2iJY98IKu6TEsEtvzOaz773FcQN2k8pgv9%2F2684yg76xcDv5R3%2BDvAckn69Wc3U%2FyiwlAXvCqKgpe4g54vatrXosasRZTnIiSJT%2FRkTJ6zopUsGRNNOBakwftAySKKRclz8VW5HJSybJKP02rO5asgovS4CPz0XtLMstaM1jgePDoNHSpefKQtqbPwNr%2F%2Ft0H2AKRNc6HrzzDw5MpxCCgLFaX%2FecWcl9lRCYby7Hki3EtxoZz9gAd4Zi0CQLqGd%2BRxhlvWtNdKr1X%2BtecDU5LA6RIauiRpG%2FlZvntWoamcnccIvl1u21482OzZcmSCN1Y6cpoGnp0G3TPqsXbm%2BvTkjF5GgvFeqNmdo7LkkPfaZLxSB9Hsq%2F52WI2Tst4C3fC%2F5gObwnY4mzWWXaifLSx8nuQWq8a06n277jpHvx5pzzNI6L2%2FCGOSuxBdcv93iFR2GHXmT9XDsGHw3g3hAVki6Ptv2908QI%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Ftravel-and-expense
+
+Observed redirect page title: Coupa Portals - Sign In

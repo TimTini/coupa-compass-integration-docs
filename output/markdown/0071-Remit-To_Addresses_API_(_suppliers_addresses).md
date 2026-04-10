@@ -1,0 +1,82 @@
+---
+title: "Remit-To Addresses API (/suppliers/addresses)"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/remit-to-addresses-api-(suppliersaddresses)"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/remit-to-addresses-api-(suppliersaddresses)"
+status_code: 200
+fetched_at: "2026-04-09T11:59:17+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Remit-To Addresses API (/suppliers/addresses)"
+---
+
+# Remit-To Addresses API (/suppliers/addresses)
+
+Use the remit to address API to create, update, or query
+addresses. This address will be used in send payment to
+suppliers.
+
+The URL to access remit-to
+addresses is: `https:///api/suppliers//addresses`
+
+See [Integration Best Practices](https://compass.coupa.com/x285417.xml) for more info.
+
+## Actions
+
+The Remit-To Addresses API allows you to:
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| POST | `/api/invoices/:invoice_id/remit_to_addresses` | create | Create remit to address |
+| POST | `/api/suppliers/:supplier_id/addresses` | create | Create remit to address |
+| DELETE | `/api/suppliers/:supplier_id/remit_to_addresses/:id` | destroy | Delete remit to address |
+| DELETE | `/api/suppliers/:supplier_id/addresses/:id` | destroy | Delete remit to address |
+| GET | `/api/invoices/:invoice_id/remit_to_addresses` | index | Query remit to addresss |
+| GET | `/api/suppliers/:supplier_id/addresses` | index | Query remit to addresss |
+| GET | `/api/invoices/:invoice_id/remit_to_addresses/:id` | show | Show remit to address |
+| GET | `/api/suppliers/:supplier_id/addresses/:id` | show | Show remit to address |
+| PUT | `/api/invoices/:invoice_id/remit_to_addresses/:id` | update | Update remit to address |
+| PATCH | `/api/suppliers/:supplier_id/addresses/:id` | update | Update remit to address |
+| PUT | `/api/suppliers/:supplier_id/addresses/:id` | update | Update remit to address |
+
+## Elements
+
+The following elements are available for the Remit-To Addresses
+API:
+
+| **Element** | **Description** | **Required Field?** | **Unique?** | **Allowable Value** | **Api_In Field?** | **Api_Out Field?** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| active | Is the item given for this supplier & contract active? and if NOT then DELETE | | | | yes | yes | boolean |
+| city | City Name | yes | | | yes | yes | string(255) |
+| country | ISO Country Code | yes | | | yes | yes | Country |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| created-by | User who created | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| external-src-name | Name of the source system. | | | | yes | yes | string(255) |
+| external-src-ref | Reference number from source system. | | | | yes | yes | string(255) |
+| id | Coupa Internal Address ID | | | | | yes | integer |
+| local-tax-number | local_tax_number | yes | | | yes | yes | string |
+| name | Address 'Nickname' | | | | yes | yes | string |
+| postal-code | Postal Code | yes | | | yes | yes | string(255) |
+| remit-to-code | Remit To Code (if a Supplier address) | yes | yes | | yes | yes | string |
+| state | State Abbreviation. This field accepts any value. You can navigate to `/addresses` in your instance to see a list of states/regions associated with each country. | | | Any | yes | yes | string(255) |
+| street1 | Address Line 1 | yes | | | yes | yes | string(255) |
+| street2 | Address Line 2 | | | | yes | yes | string(255) |
+| street3 | Address Line 3 | | | | yes | yes | string(255) |
+| street4 | Address Line 4 | | | | yes | yes | string(255) |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| updated-by | User who updated | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| vat-country | vat_country | | | | yes | yes | Country |
+| vat-number | vat_number | | | | yes | yes | string(255) |
+| order_header_confirmations | Order Header Confirmation | | | state_iso_code | yes | | [OrderHeaderConfirmation](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/order-confirmations-api-(order_header_confirmations)) |
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+- You can create a remit-to address in active and inactive status. If you don't send a
+value for the active flag, the system doesn't assign any status.
+
+- The supplier and country must already exist in the system.
+
+- [Remit to Addresses API Example Calls](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/remit-to-addresses-api-(suppliersaddresses)/remit-to-addresses-api-example-calls)

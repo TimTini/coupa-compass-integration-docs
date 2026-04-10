@@ -1,0 +1,382 @@
+<article class="" id="tax_code_export">
+<h1 class="title">Tax Code Export</h1>
+<div class="body">
+<p class="">Export of these records is included as a Standard CSV
+Export.</p>
+<div class="" id="section_hkp_3bt_b1c">
+<h2 class="title sectiontitle">Tax Line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, Line Split, Tax Line, or Payment.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-number</td>
+<td class="entry" align="">The user-created invoice number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-number</td>
+<td class="entry" align="">The line number of the corresponding invoice line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-charge-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice charge</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-charge-number</td>
+<td class="entry" align="">The line number of the invoice charge</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-line-number</td>
+<td class="entry" align="">The line number of the corresponding of the tax line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the tax line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount</td>
+<td class="entry" align="">The amount of tax calculated on the line.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">rate</td>
+<td class="entry" align="">The tax rate indicated on the invoice line.</td>
+<td class="entry" align="">float</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-rate-type</td>
+<td class="entry" align="">The tax rate type description on the line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">code</td>
+<td class="entry" align="">The tax rate code for the invoice line tax rate. Must match an existing tax rate code within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount-engine</td>
+<td class="entry" align="">Amount calculated by either Coupa Native or External Tax Engine based on configuration</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">code-engine</td>
+<td class="entry" align="">Code returned by External Tax Engine based on configuration</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">rate-engine</td>
+<td class="entry" align="">Rate returned by External Tax Engine based on configuration</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">The tax line description.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">location</td>
+<td class="entry" align="">The taxable location for this tax line.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">date</td>
+<td class="entry" align="">The tax line date in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">kind-of-factor</td>
+<td class="entry" align="">Kind of Factor indicates the specific type of Withholding which applies to the line item</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">basis</td>
+<td class="entry" align="">Basis indicates the CFDI base amount of the invoice or line item to which withholding tax was applied</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Base Amount</td>
+<td class="entry" align="">Base indicates the base amount of the invoice or line item to which tax was applied</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Withholding Rate</td>
+<td class="entry" align="">CFDI Withholding Rate</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Withholding Amount</td>
+<td class="entry" align="">CFDI Withholding Amount</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">nature-of-tax</td>
+<td class="entry" align="">Nature of Tax indicates the specific type of tax which applies to the line item e.g. VAT or Withholding</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Withholding Amount</td>
+<td class="entry" align="">Withholding Amount</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Direct/Withholding Tax/TCS Tax</td>
+<td class="entry" align="">WithholdingTaxLine, TcsTaxLine or TaxLine</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">product-tax-classification</td>
+<td class="entry" align="">Product Tax Classification</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_uxw_pbt_b1c">
+<h2 class="title sectiontitle">Withholding Tax Line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, Line Split, Tax Line, or Payment.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-number</td>
+<td class="entry" align="">The user-created invoice number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-number</td>
+<td class="entry" align="">The line number of the corresponding purchase order line (if any).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-line-number</td>
+<td class="entry" align="">The line number of the corresponding of the tax line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the tax line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount</td>
+<td class="entry" align="">The amount of tax calculated on the line.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">rate</td>
+<td class="entry" align="">The tax rate indicated on the invoice line.</td>
+<td class="entry" align="">float</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">code</td>
+<td class="entry" align="">The tax rate code for the invoice line tax rate. Must match an existing tax rate code within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">The tax line description.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">location</td>
+<td class="entry" align="">The taxable location for this tax line.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">date</td>
+<td class="entry" align="">The tax line date in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">kind-of-factor</td>
+<td class="entry" align="">Kind of Factor indicates the specific type of Withholding which applies to the line item</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">basis</td>
+<td class="entry" align="">Basis indicates the CFDI base amount of the invoice or line item to which withholding tax was applied</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Withholding Base</td>
+<td class="entry" align="">Base indicates the base amount of the invoice or line item to which withholding tax was applied</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Withholding Rate</td>
+<td class="entry" align="">CFDI Withholding Rate</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Withholding Amount</td>
+<td class="entry" align="">CFDI Withholding Amount</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">nature-of-tax</td>
+<td class="entry" align="">Nature of Tax indicates the specific type of tax which applies to the line item e.g. VAT or Withholding</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Withholding Amount</td>
+<td class="entry" align="">Withholding Amount</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Direct/Withholding Tax</td>
+<td class="entry" align="">WithholdingTaxLine or TaxLine</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

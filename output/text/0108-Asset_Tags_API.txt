@@ -1,0 +1,24 @@
+Asset Tags API
+
+Use this API to specify asset tags on some transactional and reference objects.
+
+Associations
+
+This API is associated with Purchase Order Lines API, and Receiving Transactions API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+inventory-balance-id 	inventory_balance_id 	 	 	 	yes 	yes 	integer
+note 	note 	 	 	 	yes 	yes 	text
+order-line-id 	order_line_id 	 	 	 	yes 	yes 	integer
+owner 	owner 	 	 	 	yes 	yes 	string(255)
+received 	received 	 	 	 	yes 	yes 	boolean
+requisition-line-id 	requisition_line_id 	 	 	 	yes 	yes 	integer
+serial-number 	serial number 	 	 	 	yes 	yes 	string(255)
+tag 	tag 	 	yes 	 	yes 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

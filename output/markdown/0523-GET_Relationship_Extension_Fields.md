@@ -1,0 +1,25 @@
+---
+title: "GET Relationship Extension Fields"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/get-relationship-extension-fields"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8dO1HaUKut1K0gKg2I1sIDL5Pn3DJrjm18nVH%2BPY4LqCB1jzm55%2BteL1EOxovNGJ%2FsPXwfAWOx267IQ91yaJue00bJijbNkdM3%2FbGhDcz44lHN2wXMSfEFAmpnV6QuOSl2iCPsLEZpY4J4Pae8oXxxqGrBK8HbcsZnX0mxTS7aypiZTzF6FIwpN3pJ4RQhWGlK9xxlqdzApPf%2F%2FXtIsJeI3oWYvioGp2dX85HLpt7eDG9T4NgyRMemcqR454KC3HBFjtIgTEm7JKBf4C%2FSBRedcuZG217bbysyBiucRI3CygFQRCX2mw93IjUVj%2BchFO8Ph452n%2FYHUmwQIUyVbp3FcYCwh%2FCiFXy%2Bv7ssmZOXuVCuN2mya1xSnAZjUeQjvR7J%2F85P1stpWuRbhAv%2B63T5JwFZX826ZBfKZxsvPiap3bZzRquf06YHGa87VWWVEd3TYx4VMEhtNn0fADHt0Bj34zaAjOkwMYxpAWx9tv33ja5%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Fget-relationship-extension-fields"
+status_code: 200
+fetched_at: "2026-04-09T12:01:05+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Risk Assess Integrations"
+  - "Risk Assess REST API"
+  - "GET Relationships"
+  - "GET Relationship Extension Fields"
+---
+
+# GET Relationship Extension Fields
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/get-relationship-extension-fields](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/get-relationship-extension-fields)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8dO1HaUKut1K0gKg2I1sIDL5Pn3DJrjm18nVH%2BPY4LqCB1jzm55%2BteL1EOxovNGJ%2FsPXwfAWOx267IQ91yaJue00bJijbNkdM3%2FbGhDcz44lHN2wXMSfEFAmpnV6QuOSl2iCPsLEZpY4J4Pae8oXxxqGrBK8HbcsZnX0mxTS7aypiZTzF6FIwpN3pJ4RQhWGlK9xxlqdzApPf%2F%2FXtIsJeI3oWYvioGp2dX85HLpt7eDG9T4NgyRMemcqR454KC3HBFjtIgTEm7JKBf4C%2FSBRedcuZG217bbysyBiucRI3CygFQRCX2mw93IjUVj%2BchFO8Ph452n%2FYHUmwQIUyVbp3FcYCwh%2FCiFXy%2Bv7ssmZOXuVCuN2mya1xSnAZjUeQjvR7J%2F85P1stpWuRbhAv%2B63T5JwFZX826ZBfKZxsvPiap3bZzRquf06YHGa87VWWVEd3TYx4VMEhtNn0fADHt0Bj34zaAjOkwMYxpAWx9tv33ja5%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Fget-relationship-extension-fields](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8dO1HaUKut1K0gKg2I1sIDL5Pn3DJrjm18nVH%2BPY4LqCB1jzm55%2BteL1EOxovNGJ%2FsPXwfAWOx267IQ91yaJue00bJijbNkdM3%2FbGhDcz44lHN2wXMSfEFAmpnV6QuOSl2iCPsLEZpY4J4Pae8oXxxqGrBK8HbcsZnX0mxTS7aypiZTzF6FIwpN3pJ4RQhWGlK9xxlqdzApPf%2F%2FXtIsJeI3oWYvioGp2dX85HLpt7eDG9T4NgyRMemcqR454KC3HBFjtIgTEm7JKBf4C%2FSBRedcuZG217bbysyBiucRI3CygFQRCX2mw93IjUVj%2BchFO8Ph452n%2FYHUmwQIUyVbp3FcYCwh%2FCiFXy%2Bv7ssmZOXuVCuN2mya1xSnAZjUeQjvR7J%2F85P1stpWuRbhAv%2B63T5JwFZX826ZBfKZxsvPiap3bZzRquf06YHGa87VWWVEd3TYx4VMEhtNn0fADHt0Bj34zaAjOkwMYxpAWx9tv33ja5%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Fget-relationship-extension-fields)
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

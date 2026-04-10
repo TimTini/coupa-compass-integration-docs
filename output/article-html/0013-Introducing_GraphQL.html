@@ -1,0 +1,281 @@
+<article class="" id="introducing_graphql">
+<h1 class="title">Introducing GraphQL</h1>
+<div class="body">
+<p class="">GraphQL is an open specification for an API query language that allows you to request only the data you need when you need it. GraphQL can also reduce the number of calls by fetching all of the resources you need in a single call.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">API filters continue to be a key feature that should still be used to reduce resource usage when making REST API GET calls.</p>
+</div>
+<div class="" id="oidc_oauth2">
+<h2 class="title sectiontitle">Authentication</h2>
+<p class="">Coupa’s GraphQL query endpoint is authenticated using OIDC and authorization is handled using OAuth 2.0 scopes. For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/oauth-2.0-and-oidc/set-up-an-openid-connect-client" title="">Set Up an OpenID Connect Client</a>. Currently, only the client credentials grant type and read scopes are supported.</p>
+</div>
+<div class="" id="graphql_clients">
+<h2 class="title sectiontitle">GraphQL clients</h2>
+<p class="">After you have an access token, there are many tools available that can be used to make GraphQL requests. These tools include cURL, Postman, and GraphiQL.</p>
+<p class="">In the following examples, we will be using GraphiQL. One of the main advantages to using GraphiQL is that it fetches the schema and allows you to explore the schema in a user friendly way.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/graphiiQ.png" alt="" title="" width="">
+<p class="">Things to note in the above image:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Provide your instance URL and append it with <code class="ph codeph">/api/graphql</code> in the <b>GraphQL Endpoint</b> address bar.</p>
+</li>
+<li class="li">
+<p class="">Edit the HTTP headers to add your access token to the Authorization header (See image below).</p>
+</li>
+<li class="li">
+<p class="">Click on <b>Docs</b> to expand to show the schema.</p>
+</li>
+</ul>
+<p class="">When editing the header, add an authorization header by clicking the <b>Add Header</b> button and the following information:</p>
+<ul class="">
+<li class="">Header name: Authorization</li>
+<li class="">Header value: bearer {your access token}</li>
+</ul>
+<p class="">Make sure to prefix the Header value with <code class="ph codeph">bearer</code> or you won't be able to authorize.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/auth-header.png" alt="" title="" width="">
+</div>
+<div class="" id="schema">
+<h2 class="title sectiontitle">Schema</h2>
+<p class="">Expanding the Docs in GraphiQL will allow you to explore the schema. With the schema, you can find out what is queryable and the return types for the queries.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Warning: </span>
+<p class="">Mutations are not supported and should not be used.</p>
+</div>
+</div>
+<div class="" id="queries">
+<h2 class="title sectiontitle">Queries</h2>
+<p class="">With GraphQL, you can query specifically for the data you need. You can query for data for a single object, or a collection of objects.</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Single objects</h2>
+<p class="">To query for a single object, use the singular form of the object name in lower camel case and specify the object ID. For example, user(id: 1), expenseReport(id: 1).</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/single-object.png" alt="" title="" width="">
+<p class="">Data is returned in JSON format with the data for the fields queried.</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Collections</h2>
+<p class="">To query for a collection of objects, use the plural form of the object name in lower camel case. For example, <i>users, expenseReports</i>.</p>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/collections.png" alt="" title="" width="">
+</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Associations</h2>
+<p class="">GraphQL allows you to query for nested data:</p>
+<p class="">
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/associations.png" alt="" title="" width="">
+</p>
+<p class="">The image above shows a query for a single expense report (this also works for a collection of objects). In the expense report, we are querying for who created it and additional information on the report’s expense lines. Notice that even within expense lines we are querying for nested data.</p>
+</div>
+<div class="" id="custom_fields">
+<h2 class="title sectiontitle">Custom Fields</h2>
+<p class="">Objects may have custom fields that can be queried by the field name <i>customFields:</i>
+</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/custom-fields.png" alt="" title="" width="">
+<p class="">Custom fields can be any of a number of types (eg: text, datetime, user, etc…). The <i>customFields</i> field can reveal what the type is for that specific custom field, which will allow you to query for those types specifically using fragments.</p>
+</div>
+<div class="" id="fragments">
+<h2 class="title sectiontitle">Fragments</h2>
+<p class="">Fragments let you construct sets of fields, and then include them in queries. For <code class="ph codeph">customFields</code>, you can specify fragments at the type level:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/fragments.png" alt="" title="" width="">
+<p class="">In the above example, we specify two fragments: <b>… on User { … }</b> and <b>… on StringValue { … }</b>. The fragments tell Coupa to attempt to convert the custom fields to the specified types (if applicable). If it can be converted to that given type, then the fields requested will be returned.</p>
+</div>
+<div class="" id="advanced_filtering_and_querying_options">
+<h2 class="title sectiontitle">Advanced filtering and querying options</h2>
+<p class="">Collection queries have the additional option parameter called <i>query</i> that further filters out responses. The format for the <i>query</i> option is in the form of a query string parameter that’s also used to filter out values in our REST APIs.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/advanced-filtering-querying.png" alt="" title="" width="">
+<p class="">The above example uses <i>"id[lt_or_eq]=5"</i> for the query parameter which filters out ID values to less than 5. This can also be dropped straight into our REST APIs in the form of <i>/api/invoices?id[lt_or_eq]=5.</i>
+</p>
+</div>
+<div class="" id="errors">
+<h2 class="title sectiontitle">Errors</h2>
+<p class="">When checking responses, you should always check to see if the JSON response has any errors. If there are errors, a message and details of the error are shown:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/errors.png" alt="" title="" width="">
+</div>
+<div class="" id="introspection">
+<h2 class="title sectiontitle">Introspection</h2>
+<p class="">You can also query GraphQL for the schema itself. This is what GraphQL does to generate the schema for its clients. Here is an example of typical introspection query:</p>
+<pre>
+<code class="codeblock">query IntrospectionQuery {
+		__schema {
+			queryType { name }
+			mutationType { name }
+			subscriptionType { name }
+			types {
+				...FullType
+			}
+			directives {
+				name
+				description
+				args {
+					...InputValue
+				}query IntrospectionQuery {
+	__schema {
+		queryType {
+			name
+		}
+		mutationType {
+			name
+		}
+		subscriptionType {
+			name
+		}
+		types {
+			...FullType
+		}
+		directives {
+			name
+			description
+			args {
+				...InputValue
+			}
+			onOperation
+			onFragment
+			onField
+		}
+	}
+}
+
+fragment FullType on __Type {
+	kind
+	name
+	description
+	fields(includeDeprecated: true) {
+		name
+		description
+		args {
+			...InputValue
+		}
+		type {
+			...TypeRef
+		}
+		isDeprecated
+		deprecationReason
+	}
+	inputFields {
+		...InputValue
+	}
+	interfaces {
+		...TypeRef
+	}
+	enumValues(includeDeprecated: true) {
+		name
+		description
+		isDeprecated
+		deprecationReason
+	}
+	possibleTypes {
+		...TypeRef
+	}
+}
+
+fragment InputValue on __InputValue {
+	name
+	description
+	type {
+		...TypeRef
+	}
+	defaultValue
+}
+
+fragment TypeRef on __Type {
+	kind
+	name
+	ofType {
+		kind
+		name
+		ofType {
+			kind
+			name
+			ofType {
+				kind
+				name
+			}
+		}
+	}
+}
+
+				onOperation
+				onFragment
+				onField
+			}
+		}
+	}
+
+	fragment FullType on __Type {
+		kind
+		name
+		description
+		fields(includeDeprecated: true) {
+			name
+			description
+			args {
+				...InputValue
+			}
+			type {
+				...TypeRef
+			}
+			isDeprecated
+			deprecationReason
+		}
+		inputFields {
+			...InputValue
+		}
+		interfaces {
+			...TypeRef
+		}
+		enumValues(includeDeprecated: true) {
+			name
+			description
+			isDeprecated
+			deprecationReason
+		}
+		possibleTypes {
+			...TypeRef
+		}
+	}
+
+	fragment InputValue on __InputValue {
+		name
+		description
+		type { ...TypeRef }
+		defaultValue
+	}
+
+	fragment TypeRef on __Type {
+		kind
+		name
+		ofType {
+			kind
+			name
+			ofType {
+				kind
+				name
+				ofType {
+					kind
+					name
+				}
+			}
+		}
+	}</code>
+</pre>
+</div>
+<div class="" id="important_notes">
+<h2 class="title sectiontitle">Design considerations</h2>
+<ul class="ul">
+<li class="li">
+<p class="">All requests are POST requests.</p>
+</li>
+<li class="li">
+<p class="">All responses are in JSON only.</p>
+</li>
+<li class="li">
+<p class="">Always check the response body for errors, even if the response code of 200 was returned.</p>
+</li>
+</ul>
+</div>
+</div>
+</article>

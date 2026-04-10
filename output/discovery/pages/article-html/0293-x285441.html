@@ -1,0 +1,44 @@
+<article id="placeholder-generated-by-codex">
+<h1>OAuth 2.0 for Call Outs | Coupa</h1>
+<p>The discovered page did not expose a standard &lt;article&gt; block, so a placeholder was generated.</p>
+<p><strong>Requested URL:</strong> <a href="https://compass.coupa.com/x285441.xml">https://compass.coupa.com/x285441.xml</a></p>
+<p><strong>Final URL:</strong> <a href="https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/integration-knowledge-articles/oauth-2.0-for-call-outs">https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/integration-knowledge-articles/oauth-2.0-for-call-outs</a></p>
+<p>Page text preview: OAuth 2.0 for Call Outs | Coupa
+
+Skip to Content
+
+EN
+- EN - English
+- DE - Deutsch
+- JA - 日本語
+- FR - Français
+
+What can we help you find? Products Total Spend Management Platform Integration Playbooks and Resources Integration Knowledge Articles OAuth 2.0 for Call Outs
+
+OAuth 2.0 for Call Outs
+
+Revised: 11 August 2021
+
+1. Configure Coupa
+-
+
+Administrators can create, view, and edit Call Outs from Setup &gt; Integrations &gt; Call Outs, but they can only create new endpoints when creating a new Call Out When creating a new Call Out, your integration admin can use an endpoint that was previously defined or use the Create New link to define a new endpoint.
+
+-
+
+OAuth settings are available within endpoint configuration, In the Endpoint Detail section make sure to use HTTP and provide the Host Name, Token URL, Client ID, and Client Secret.
+
+-
+
+Link to detailed documentation: https://success.coupa.com/Support/Releases/26/New_Features/BSM_Platform/Coupa_Platform/Call_Outs_Support_OAuth_2.0
+
+2. Customer system/Middleware configuration
+-
+
+Client id and secret need to be configured as an auth string:
+auth_string = Base64.urlsafe_encode64(&quot;#{client_id}:#{client_secret}&quot;)
+
+-
+
+The length of the token</p>
+</article>

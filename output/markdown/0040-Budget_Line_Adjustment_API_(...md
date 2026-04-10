@@ -1,0 +1,50 @@
+---
+title: "Budget Line Adjustment API (.../budget_line_adjustments)"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/budget-lines-api-(budget-lines)/budget-line-adjustment-api-(...budget_line_adjustments)"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/budget-lines-api-(budget-lines)/budget-line-adjustment-api-(...budget_line_adjustments)"
+status_code: 200
+fetched_at: "2026-04-09T11:59:09+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Budget Lines API (/budget lines)"
+  - "Budget Line Adjustment API (.../budget_line_adjustments)"
+---
+
+# Budget Line Adjustment API (.../budget_line_adjustments)
+
+## Actions
+
+The Budget Line Adjustment API allows you to:
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| POST | /api/budget_lines/:budget_line_id/budget_line_adjustments | create | Create a budget line adjustment |
+| GET | /api/budget_lines/:budget_line_id/budget_line_adjustments | index | Query budget line adjustments |
+| GET | /api/budget_lines/:budget_line_id/budget_line_adjustments/:id | show | Show budget line adjustment |
+| PATCH | /api/budget_lines/:budget_line_id/budget_line_adjustments/:id | update | You cannot update budget line adjustments directly via the API |
+| PUT | /api/budget_lines/:budget_line_id/budget_line_adjustments/:id | update | You cannot update budget line adjustments directly via the API |
+
+## Elements
+
+The following elements are available for the Budget Line
+Adjustment API:
+
+| **Element** | **Description** | **Required Field?** | **Unique?** | **Allowable Value** | **Api_In Field?** | **Api_Out Field?** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| accounting-total | accounting_total | | | | | yes | decimal(32,4) |
+| adjuster | adjuster | | | | | yes | ["ExpenseLine", "OrderLine", "InvoiceLine", "InvoiceCharge", "ItemizedExpenseLine", "ExpenseLineAllocation", "OrderLineAllocation", "InvoiceLineAllocation", "InvoiceChargeAllocation", "OrderAmountLine", "OrderQuantityLine", "InvoiceAmountLine", "InvoiceQuantityLine", "InvoiceHandlingCharge", "InvoiceMiscCharge", "InvoiceShippingCharge"] |
+| adjustment-amount | amount | | | | yes | | decimal(32,4) |
+| amount | amount | | | | | yes | decimal(32,4) |
+| budget-line | budget_line | yes | | | yes | yes | [Budget Line](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/budget-lines-api-(budget-lines)) |
+| budget-remaining | budget_remaining | | | | | yes | decimal(32,4) |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| created-by | User who created | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| currency | Currency of transaction | | | | yes | yes | [Currency](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)) |
+| description | description | | | | yes | yes | string(255) |
+| id | Coupa unique identifier | | | | | yes | integer |
+| price | price | | | | | yes | decimal(30,6) |
+| quantity | quantity | | | | | yes | decimal(30,6) |
+| reason | reason | | | | | yes | string(255) |

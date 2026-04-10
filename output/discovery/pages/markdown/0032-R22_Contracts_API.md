@@ -1,0 +1,18 @@
+---
+title: "R22_Contracts_API.json"
+url: "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Contracts_API.json"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8nsdukHVZbqVtBVBoQrR0PvEyHc2XWHDv4nFH%2B%2BzkuTAWpe8yX%2B37deUHQmV6uh%2FBo7%2FDngBSy7WbJHqZXvBIHATkquMorDm3%2Bbjqr83o%2BraspnwtUgmVf0ZN2dskmBWfZlmjAraUANkSIT2Y5r3LB91zIupZVXcwq8Y1lm%2BiiLYTEfAyhJ1mWyg19dDsG9BZM4Z4CFMp1JfT9f%2F8eItwDUe98iF%2BixOOTm%2FCBQzXZXHfvFYgwL4lcOZZj2QfnFaaGS3YAQzgmbaKAfsZXpPEuOOXMtbattj%2BWbPBWOiBN0kKHJIOSu%2FWnWxmbyu%2BnIZIf9%2Fsmb77s9ixbE6EfK904S0OHfof%2BWSu8v7s9L5mSF6lQqjdqlpe4LDt2xpJMR3o7Uv8nP1stxmmZbuHP%2BG%2FT4W8CtrqYdVGeKZ9sevk5Sm03jTNa%2FR433UG47CQKkRDd5oc0KrEDbdZt65Eo7tAY9%2BvGI4R4mOCHuIBydbL9942uXgA%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR22%2FR22_Contracts_API.json"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:55:47+00:00"
+---
+
+# R22_Contracts_API.json
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Contracts_API.json](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R22/R22_Contracts_API.json)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8nsdukHVZbqVtBVBoQrR0PvEyHc2XWHDv4nFH%2B%2BzkuTAWpe8yX%2B37deUHQmV6uh%2FBo7%2FDngBSy7WbJHqZXvBIHATkquMorDm3%2Bbjqr83o%2BraspnwtUgmVf0ZN2dskmBWfZlmjAraUANkSIT2Y5r3LB91zIupZVXcwq8Y1lm%2BiiLYTEfAyhJ1mWyg19dDsG9BZM4Z4CFMp1JfT9f%2F8eItwDUe98iF%2BixOOTm%2FCBQzXZXHfvFYgwL4lcOZZj2QfnFaaGS3YAQzgmbaKAfsZXpPEuOOXMtbattj%2BWbPBWOiBN0kKHJIOSu%2FWnWxmbyu%2BnIZIf9%2Fsmb77s9ixbE6EfK904S0OHfof%2BWSu8v7s9L5mSF6lQqjdqlpe4LDt2xpJMR3o7Uv8nP1stxmmZbuHP%2BG%2FT4W8CtrqYdVGeKZ9sevk5Sm03jTNa%2FR433UG47CQKkRDd5oc0KrEDbdZt65Eo7tAY9%2BvGI4R4mOCHuIBydbL9942uXgA%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR22%2FR22_Contracts_API.json](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8nsdukHVZbqVtBVBoQrR0PvEyHc2XWHDv4nFH%2B%2BzkuTAWpe8yX%2B37deUHQmV6uh%2FBo7%2FDngBSy7WbJHqZXvBIHATkquMorDm3%2Bbjqr83o%2BraspnwtUgmVf0ZN2dskmBWfZlmjAraUANkSIT2Y5r3LB91zIupZVXcwq8Y1lm%2BiiLYTEfAyhJ1mWyg19dDsG9BZM4Z4CFMp1JfT9f%2F8eItwDUe98iF%2BixOOTm%2FCBQzXZXHfvFYgwL4lcOZZj2QfnFaaGS3YAQzgmbaKAfsZXpPEuOOXMtbattj%2BWbPBWOiBN0kKHJIOSu%2FWnWxmbyu%2BnIZIf9%2Fsmb77s9ixbE6EfK904S0OHfof%2BWSu8v7s9L5mSF6lQqjdqlpe4LDt2xpJMR3o7Uv8nP1stxmmZbuHP%2BG%2FT4W8CtrqYdVGeKZ9sevk5Sm03jTNa%2FR433UG47CQKkRDd5oc0KrEDbdZt65Eo7tAY9%2BvGI4R4mOCHuIBydbL9942uXgA%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR22%2FR22_Contracts_API.json)
+
+Observed redirect page title: Coupa Portals - Sign In

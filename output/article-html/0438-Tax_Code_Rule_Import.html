@@ -1,0 +1,360 @@
+<article class="" id="tax_code_rule_import">
+<h1 class="title">Tax Code Rule Import</h1>
+<div class="body">
+<div class="" id="overview-d117e175101">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Tax lines on invoices are evaluated against every tax
+code rule to find which tax lines should be linked to a tax
+code from your ERP. When your tax lines are properly encoded your
+enterprise can more easily use your ERP to reclaim VAT
+withholding. </p>
+<p class="">Every compliant invoice received will be evaluated against
+every tax code rule row.  If any tax lines
+match all of the tax code rule field entries for a row
+then that tax code link is applied.</p>
+</div>
+<div class="" id="how_it_works">
+<h2 class="title sectiontitle">How It Works</h2>
+<p class="">Tax code rules defined in this record are used to set
+the appropriate tax code on invoice lines and the invoice header
+when all row field entries match a tax line.</p>
+<p class="">You can create and revise tax code rules by CSV flat file
+upload using the Coupa UI
+at  <code class="ph codeph">/tax_code_rules</code>.  Tax code rules
+can't be loaded using SFTP.</p>
+<p class="">Tax code rules will run once an invoice is submitted for the
+first time. After that, if any details or rules have been updated
+or changed, users with appropriate permission can click
+the <b>Apply Tax Code Rules</b> button to
+re-run the invoice through the tax code rules. Coupa doesn't
+run invoices through the rules at each step of the invoice
+workflow. For more information on each field, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x295150.xml" title="">Tax Code
+Rules</a>.</p>
+</div>
+<div class="" id="notes-d117e175125">
+<h2 class="title sectiontitle">Notes</h2>
+<ul class="ul">
+<li class="li">Order of the columns below does not reflect the order presented
+in the CSV template download. Order of columns in a CSV file
+upload does not matter.</li>
+<li class="li">The fields displayed at the top of the table: ID,
+Name, Effective Date, End Date, Active, Priority, Tax Code and Tax
+Country Code are metadata about the tax code rule where value of
+Tax Code is the tag or link applied to the invoice tax line that
+matches the tax code rule values set in any of the other
+fields. </li>
+<li class="li">Values set in the remaining fields are evaluated as a set where
+all values defined must match an invoice tax line for the tax code
+rule to be applied.</li>
+</ul>
+</div>
+<div class="" id="keys-d117e175137">
+<h2 class="title sectiontitle">Keys </h2>
+<ul class="ul">
+<li class="li">Name</li>
+</ul>
+</div>
+<div class="" id="validations-d117e175144">
+<h2 class="title sectiontitle">Validations</h2>
+<p class="">Coupa use the field Name to lookup an existing
+record.</p>
+</div>
+<div class="" id="section_cy5_kq4_g1c">
+<h2 class="title sectiontitle">Tax Code Rule</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Required. Tax code to be applied. Usually the values defined based on the buyer's ERP tax codes.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Code Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Country of tax code. If not country-specific, leave blank</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Chart of Accounts</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Name of the Chart of Accounts that this rule applies to</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Tax Registration Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Buyer Tax registration number that this rule applies to. Only applicable to Buyer Created/Non Compliant invoices if Bill to Address is enabled on the default presentation.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate Type Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Country code of tax type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate Type Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Type of tax - VAT, TAX, GST, PST, etc for CSP and compliant invoices only. Required if Tax Rate Type Country Code is used.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Commodity Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Commodity Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Cash Accounting Scheme Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Cash Accounting Scheme Reference that this rule applies to</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Tax Reference that this rule applies to</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Fiscal Rep. Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Fiscal Rep. Country Code - ISO alpha-2, alpha-3 or numeric code for CSP and compliant invoices.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Fiscal Rep. Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Buyer Fiscal Rep. Country Code - ISO alpha-2, alpha-3 or numeric code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Expense Category Key</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Expense Category Key</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Jurisdiction Origin Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Jurisdiction Origin Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Jurisdiction Destination Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Jurisdiction Destination Country Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Effective Date*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Date when the rule will be activated</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Priority*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Numeric priority from 1 to 100. Priority 1 takes precedence. 50 is default.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Jurisdiction</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Domestic, Intra-EU, Cross-Border. Does not have to be compliant.</td>
+<td class="entry" align="">intra_eu, domestic, cross_border, interstate, intrastate</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Category</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Goods, Services</td>
+<td class="entry" align="">goods, services</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Subcategory</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Raw materials, Investment Goods, Services Exceptions</td>
+<td class="entry" align="">raw_materials, investment_goods, services_exceptions</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Deductibility</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Fully, Partially, Not</td>
+<td class="entry" align="">fully_deductible, partially_deductible, not_deductible</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Rate</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Tax rate as a number, exempt, or reverse charge. Field is only required to be populated on compliant invoices but is available for all.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Document Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Type of document - invoices, expenses</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Jurisdiction Origin Country State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Jurisdiction Origin Country State</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Jurisdiction Destination Country State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Jurisdiction Destination Country State</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Customer Accounting</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Whether or not the tax rate is customer accounting</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Unique rule name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Chart of accounts segment 1 value</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Chart of accounts segment 2 value</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Chart of accounts segment 3 value</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Chart of accounts segment 4 value</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Chart of accounts segment 5 value</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">End Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Date with the rule will be deactivated</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Active</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Whether or not the rule should be evaluated</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

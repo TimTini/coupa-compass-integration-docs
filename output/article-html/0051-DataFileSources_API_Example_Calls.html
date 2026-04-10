@@ -1,0 +1,1675 @@
+<article class="" id="datafilesources_api_example_calls">
+<h1 class="title">DataFileSources API Example Calls</h1>
+<div class="body">
+<div class="">
+<h2 class="title sectiontitle">DataFileSources GET Query Options</h2>
+<p class="">Below is a table showing various query options and their parameters</p>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<b>Filter Name</b>
+</td>
+<td class="entry" align="">
+<b>Purpose</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created_at</td>
+<td class="entry" align="">Use the created_at parameter to control the from and to timestamps between
+                which you need the detailed status of the files processed (file status, field level
+                errors)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">source_for</td>
+<td class="entry" align="">Use the source_for parameter to filter the files based on the object of
+                interesta</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Use the type parameter to determine whether the file type you need information
+                about - file sent to Coupa or file sent by Coupa</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">Use the status parameter to filter out data sources by processing status
+                depending on the goal of your query</td>
+</tr>
+<tr class="">
+<td class="entry" align="">file_file_name</td>
+<td class="entry" align="">Use the file_file_name parameter to search for datafilesources for a specific
+                file</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="data_structure">
+<h2 class="title sectiontitle">
+Data Structure</h2>
+<p class="">Below is a table outlining the different values returned for a
+given GET call. Spaces before a field name mean it is nested under
+one of the preceding tags:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<b>Arguement</b>
+</td>
+<td class="entry" align="">
+<b>Type</b>
+</td>
+<td class="entry" align="">
+<b>Values</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>id</b>
+</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>created-at</b>
+</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYY-MM-DDTHH:MM:SS-HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>updated-at</b>
+</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS-HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>type</b>
+</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">BackgroundCsvFileLoad, DataFileSource,
+BackgroundImportCorporateCreditCard...</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>source-for</b>
+</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">InvoiceHeader, Payment, Invoices, ExpenseReport, Supplier, User,
+Item, Commodity, Address, Contract, Account, Lookup Value...</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>status</b>
+</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Done, Failed, Retrying, Loading, Submitted to Resque, Pending,
+Uploading, Paused, Stopped</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>file-file-name</b>
+</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Invoices_20141209_234608Z.csv, etc</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>file-file-size</b>
+</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">9822</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>result-text</b>
+</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">The result of the process ex. 27 rows processed, creating 0 new
+rows and updating 11 rows.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>progress</b>
+</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">27</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>start-time</b>
+</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS-HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>end-time</b>
+</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS-HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>upload-errors</b>
+</td>
+<td class="entry" align="">array</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/<b>upload-error</b>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>id</b>
+</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">123456</td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>created-at</b>
+</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS-HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>updated-at</b>
+</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS-HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>type</b>
+</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">The type of error, ex. UploadRowError</td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>row</b>
+</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">1</td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>firstc-column</b>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>field-with-error</b>
+</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Column name where the error occurred</td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>value</b>
+</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">draft, pending_buyer_action, pending_approval, approved,
+received, ordered, partially received, rejected, with drawn</td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>field errors</b>
+</td>
+<td class="entry" align="">array</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload=error/<b>created-by</b>
+</td>
+<td class="entry" align="">user</td>
+<td class="entry" align="">User record including id, login, first and last name, email
+etc</td>
+</tr>
+<tr class="">
+<td class="entry" align="">upload-errors/upload-error/<b>updated-by</b>
+</td>
+<td class="entry" align="">user</td>
+<td class="entry" align="">User record including id, login, first and last name, email
+etc</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>created-by</b>
+</td>
+<td class="entry" align="">user</td>
+<td class="entry" align="">User record including id, login, first and last name, email
+etc</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<b>updated-by</b>
+</td>
+<td class="entry" align="">user</td>
+<td class="entry" align="">User record including id, login, first and last name, email
+etc</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="datafilesources_query_example_-_query_for_given_date">
+<h2 class="title sectiontitle">DataFileSources Query Example - Query for Given Date</h2>
+<p class="">In this example we are looking for all DataFileSources created in the last 24 hours (the
+        current time being 3PM PST April 17th 2015 or '2015-04-17 22:00:00') While you can use a
+        larger date time it is important to remember that the DataFileSource API has a number of
+        related objects and records which reference it. So querying large numbers or records can
+        cause adverse performance in your instance. In addition, as with all API calls to Coupa,
+        there is a limit of 50 records returned per call. To query the next set, add
+          <i>&amp;offset=50</i> to the end of your
+        call<pre>
+<code class="codeblock">https://&lt;instance&gt;.coupahost.com/api/data_file_sources?created_at[gt]='&lt;timestamp&gt;'https://&lt;instance&gt;.coupahost.com/api/data_file_sources?created_at[gt]='2015-04-16
+22:00:00'</code>
+</pre>
+</p>
+<p class="">
+<b>Sample Daily DataSources</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;data-file-sources type="array"&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1117&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2015-04-17T08:34:17-07:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2015-04-17T08:34:25-07:00&lt;/updated-at&gt;
+			&lt;type&gt;BackgroundCsvFileLoad&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;sample&lt;/status&gt;
+			&lt;file-file-name&gt;lookup_value_list_wbstype.csv&lt;/file-file-name&gt;
+			&lt;file-content-type&gt;text/csv&lt;/file-content-type&gt;
+			&lt;file-file-size&gt;300&lt;/file-file-size&gt;
+			&lt;result-text nil="true" /&gt;
+			&lt;progress nil="true" /&gt;
+			&lt;start-time nil="true" /&gt;
+			&lt;end-time nil="true" /&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;920&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2015-04-17T08:34:25-07:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2015-04-17T08:34:25-07:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;2&lt;/row&gt;
+						&lt;first-column&gt;SAP Upgrade&lt;/first-column&gt;
+						&lt;field-with-error&gt;parent_id&lt;/field-with-error&gt;
+						&lt;value&gt;1&lt;/value&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Parent unable to find matching parent.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;921&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2015-04-17T08:34:25-07:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2015-04-17T08:34:25-07:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;3&lt;/row&gt;
+						&lt;first-column&gt;Coupa Implementation&lt;/first-column&gt;
+						&lt;field-with-error&gt;parent_id&lt;/field-with-error&gt;
+						&lt;value&gt;1&lt;/value&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Parent unable to find matching parent.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;81&lt;/id&gt;
+				 &lt;login&gt;bknott&lt;/login&gt;
+				 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Brent&lt;/firstname&gt;
+				 &lt;lastname&gt;Knott&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code&gt;100&lt;/company-code&gt;
+				 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+				 &lt;account-category&gt;K&lt;/account-category&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;81&lt;/id&gt;
+				 &lt;login&gt;bknott&lt;/login&gt;
+				 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Brent&lt;/firstname&gt;
+				 &lt;lastname&gt;Knott&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code&gt;100&lt;/company-code&gt;
+				 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+				 &lt;account-category&gt;K&lt;/account-category&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1118&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2015-04-17T08:35:15-07:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2015-04-17T08:35:16-07:00&lt;/updated-at&gt;
+			&lt;type&gt;BackgroundCsvFileLoad&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;sample&lt;/status&gt;
+			&lt;file-file-name&gt;lookup_value_list_wbstype.csv&lt;/file-file-name&gt;
+			&lt;file-content-type&gt;text/csv&lt;/file-content-type&gt;
+			&lt;file-file-size&gt;304&lt;/file-file-size&gt;
+			&lt;result-text nil="true" /&gt;
+			&lt;progress nil="true" /&gt;
+			&lt;start-time nil="true" /&gt;
+			&lt;end-time nil="true" /&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;922&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2015-04-17T08:35:16-07:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2015-04-17T08:35:16-07:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;2&lt;/row&gt;
+						&lt;first-column&gt;SAP Upgrade&lt;/first-column&gt;
+						&lt;field-with-error&gt;parent_id&lt;/field-with-error&gt;
+						&lt;value&gt;1&lt;/value&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Parent unable to find matching parent.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;923&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2015-04-17T08:35:16-07:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2015-04-17T08:35:16-07:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;3&lt;/row&gt;
+						&lt;first-column&gt;Coupa Implementation&lt;/first-column&gt;
+						&lt;field-with-error&gt;parent_id&lt;/field-with-error&gt;
+						&lt;value&gt;1&lt;/value&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Parent unable to find matching parent.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;81&lt;/id&gt;
+				 &lt;login&gt;bknott&lt;/login&gt;
+				 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Brent&lt;/firstname&gt;
+				 &lt;lastname&gt;Knott&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code&gt;100&lt;/company-code&gt;
+				 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+				 &lt;account-category&gt;K&lt;/account-category&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;81&lt;/id&gt;
+				 &lt;login&gt;bknott&lt;/login&gt;
+				 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Brent&lt;/firstname&gt;
+				 &lt;lastname&gt;Knott&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code&gt;100&lt;/company-code&gt;
+				 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+				 &lt;account-category&gt;K&lt;/account-category&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1119&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2015-04-17T08:36:07-07:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2015-04-17T08:36:07-07:00&lt;/updated-at&gt;
+			&lt;type&gt;BackgroundCsvFileLoad&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;sample&lt;/status&gt;
+			&lt;file-file-name&gt;lookup_value_list_wbstype.csv&lt;/file-file-name&gt;
+			&lt;file-content-type&gt;text/csv&lt;/file-content-type&gt;
+			&lt;file-file-size&gt;344&lt;/file-file-size&gt;
+			&lt;result-text nil="true" /&gt;
+			&lt;progress nil="true" /&gt;
+			&lt;start-time nil="true" /&gt;
+			&lt;end-time nil="true" /&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;917&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2015-04-17T08:36:08-07:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2015-04-17T08:36:08-07:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;2&lt;/row&gt;
+						&lt;first-column&gt;SAP Upgrade&lt;/first-column&gt;
+						&lt;field-with-error&gt;parent_id&lt;/field-with-error&gt;
+						&lt;value&gt;1&lt;/value&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Parent unable to find matching parent.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;925&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2015-04-17T08:36:08-07:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2015-04-17T08:36:08-07:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;3&lt;/row&gt;
+						&lt;first-column&gt;Coupa Implementation&lt;/first-column&gt;
+						&lt;field-with-error&gt;parent_id&lt;/field-with-error&gt;
+						&lt;value&gt;1&lt;/value&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Parent unable to find matching parent.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;81&lt;/id&gt;
+							 &lt;login&gt;bknott&lt;/login&gt;
+							 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Brent&lt;/firstname&gt;
+							 &lt;lastname&gt;Knott&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code&gt;100&lt;/company-code&gt;
+							 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+							 &lt;account-category&gt;K&lt;/account-category&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;81&lt;/id&gt;
+				 &lt;login&gt;bknott&lt;/login&gt;
+				 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Brent&lt;/firstname&gt;
+				 &lt;lastname&gt;Knott&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code&gt;100&lt;/company-code&gt;
+				 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+				 &lt;account-category&gt;K&lt;/account-category&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;81&lt;/id&gt;
+				 &lt;login&gt;bknott&lt;/login&gt;
+				 &lt;email&gt;brent.knott+bknott@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Brent&lt;/firstname&gt;
+				 &lt;lastname&gt;Knott&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code&gt;100&lt;/company-code&gt;
+				 &lt;cost-center&gt;10000&lt;/cost-center&gt;
+				 &lt;account-category&gt;K&lt;/account-category&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1125&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2015-04-17T12:59:44-07:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2015-04-17T12:59:45-07:00&lt;/updated-at&gt;
+			&lt;type&gt;DataFileSource&lt;/type&gt;
+			&lt;source-for&gt;Supplier&lt;/source-for&gt;
+			&lt;status&gt;sample&lt;/status&gt;
+			&lt;file-file-name&gt;remit_to_address_list.csv&lt;/file-file-name&gt;
+			&lt;file-content-type&gt;text/csv&lt;/file-content-type&gt;
+			&lt;file-file-size&gt;221&lt;/file-file-size&gt;
+			&lt;result-text nil="true" /&gt;
+			&lt;progress nil="true" /&gt;
+			&lt;start-time nil="true" /&gt;
+			&lt;end-time nil="true" /&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;926&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2015-04-17T12:59:46-07:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2015-04-17T12:59:46-07:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadHeaderError&lt;/type&gt;
+						&lt;row nil="true" /&gt;
+						&lt;first-column nil="true" /&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors&gt;Column header Active is not valid.&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;rakesh.tatineni+01@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;rakesh.tatineni+01@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;1&lt;/id&gt;
+				 &lt;login&gt;coupasupport&lt;/login&gt;
+				 &lt;email&gt;rakesh.tatineni+01@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+				 &lt;lastname&gt;Support&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;1&lt;/id&gt;
+				 &lt;login&gt;coupasupport&lt;/login&gt;
+				 &lt;email&gt;rakesh.tatineni+01@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+				 &lt;lastname&gt;Support&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1126&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2015-04-17T13:00:05-07:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2015-04-17T13:00:04-07:00&lt;/updated-at&gt;
+			&lt;type&gt;DataFileSource&lt;/type&gt;
+			&lt;source-for&gt;Supplier&lt;/source-for&gt;
+			&lt;status&gt;sample&lt;/status&gt;
+			&lt;file-file-name&gt;remit_to_address_list.csv&lt;/file-file-name&gt;
+			&lt;file-content-type&gt;text/csv&lt;/file-content-type&gt;
+			&lt;file-file-size&gt;210&lt;/file-file-size&gt;
+			&lt;result-text nil="true" /&gt;
+			&lt;progress nil="true" /&gt;
+			&lt;start-time nil="true" /&gt;
+			&lt;end-time nil="true" /&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;927&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2015-04-17T13:00:04-07:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2015-04-17T13:00:04-07:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadHeaderError&lt;/type&gt;
+						&lt;row nil="true" /&gt;
+						&lt;first-column nil="true" /&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors&gt;Column header Line1* is not valid.&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;rakesh.tatineni+01@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;1&lt;/id&gt;
+							 &lt;login&gt;coupasupport&lt;/login&gt;
+							 &lt;email&gt;rakesh.tatineni+01@coupa.com&lt;/email&gt;
+							 &lt;employee-number /&gt;
+							 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+							 &lt;lastname&gt;Support&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;1&lt;/id&gt;
+				 &lt;login&gt;coupasupport&lt;/login&gt;
+				 &lt;email&gt;rakesh.tatineni+01@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+				 &lt;lastname&gt;Support&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;1&lt;/id&gt;
+				 &lt;login&gt;coupasupport&lt;/login&gt;
+				 &lt;email&gt;rakesh.tatineni+01@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Coupa&lt;/firstname&gt;
+				 &lt;lastname&gt;Support&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+&lt;/data-file-sources&gt; </code>
+</pre>
+</p>
+</div>
+<div class="" id="datafilesources_query_example_-_query_for_specific_object">
+<h2 class="title sectiontitle">DataFileSources Query Example - Query for Specific
+Object </h2>
+<p class="">In this example we are querying for all Incoming Lookup Values for December 15th 2014 so
+        that we can see if there were any errors with the files being processed into Coupa. This is
+        a multi stage query as can be seen
+        below:<pre>
+<code class="codeblock">https://&lt;instance&gt;.coupahost.com/api/data_file_sources?created_at[gt]='&lt;day&gt;
+00:00:00'&amp;created_at[lt]='&lt;day&gt;
+23:59:59'&amp;source_for=&lt;object&gt;</code>
+</pre>
+<pre>
+<code class="codeblock">https://&lt;instance&gt;.coupahost.com/api/data_file_sources?created_at[gt]='2014-12-15
+00:00:00'&amp;created_at[lt]='2014-12-15
+23:59:59'&amp;source_for=LookupValue</code>
+</pre>
+</p>
+<p class="">This query has three parts. The first one limits to just
+datafilesources created since midnight UTC on the 15th, and the
+second puts a limit of datafilesources created prior to midnight of
+the 16th. The final section defines what object we are looking for,
+in this case LookupValue.</p>
+<p class="">
+<b>Sample Response for LookupValues Inbound on 12/15/14</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;data-file-sources type="array"&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1332&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2014-12-15T08:47:54-08:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2014-12-15T08:48:53-08:00&lt;/updated-at&gt;
+			&lt;type&gt;DataFileSource&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;done&lt;/status&gt;
+			&lt;file-file-name&gt;_Incoming_LookupValues_Knott_LookupValues.csv&lt;/file-file-name&gt;
+			&lt;file-content-type&gt;text/csv&lt;/file-content-type&gt;
+			&lt;file-file-size&gt;282&lt;/file-file-size&gt;
+			&lt;result-text&gt;0 rows processed, creating 0 new rows and updating 0 rows.&lt;/result-text&gt;
+			&lt;progress type="integer"&gt;0&lt;/progress&gt;
+			&lt;start-time type="datetime"&gt;2014-12-15T08:48:07-08:00&lt;/start-time&gt;
+			&lt;end-time type="datetime"&gt;2014-12-15T08:48:53-08:00&lt;/end-time&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;964&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T08:48:10-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T08:48:10-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;1&lt;/row&gt;
+						&lt;first-column&gt;TESTUS1&lt;/first-column&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Row corrupt or invalid.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;965&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T08:48:13-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T08:48:13-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;2&lt;/row&gt;
+						&lt;first-column&gt;TESTEMEA1&lt;/first-column&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Row corrupt or invalid.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;966&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T08:48:13-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T08:48:13-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;3&lt;/row&gt;
+						&lt;first-column&gt;TESTSales1&lt;/first-column&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Row corrupt or invalid.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1333&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2014-12-15T08:55:19-08:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2014-12-15T08:55:53-08:00&lt;/updated-at&gt;
+			&lt;type&gt;DataFileSource&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;done&lt;/status&gt;
+			&lt;file-file-name&gt;_Incoming_LookupValues_Knott_LookupValues.csv&lt;/file-file-name&gt;
+			&lt;file-content-type&gt;text/csv&lt;/file-content-type&gt;
+			&lt;file-file-size&gt;279&lt;/file-file-size&gt;
+			&lt;result-text&gt;0 rows processed, creating 0 new rows and updating 0 rows.&lt;/result-text&gt;
+			&lt;progress type="integer"&gt;0&lt;/progress&gt;
+			&lt;start-time type="datetime"&gt;2014-12-15T08:55:27-08:00&lt;/start-time&gt;
+			&lt;end-time type="datetime"&gt;2014-12-15T08:55:53-08:00&lt;/end-time&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;967&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T08:55:29-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T08:55:29-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;1&lt;/row&gt;
+						&lt;first-column&gt;TESTUS&lt;/first-column&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Row corrupt or invalid.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;968&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T08:55:29-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T08:55:29-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;2&lt;/row&gt;
+						&lt;first-column&gt;TESTEMEA&lt;/first-column&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Row corrupt or invalid.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;969&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T08:55:29-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T08:55:29-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;3&lt;/row&gt;
+						&lt;first-column&gt;TESTSales&lt;/first-column&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Row corrupt or invalid.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1334&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2014-12-15T09:13:17-08:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2014-12-15T09:13:55-08:00&lt;/updated-at&gt;
+			&lt;type&gt;DataFileSource&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;done&lt;/status&gt;
+			&lt;file-file-name&gt;_Incoming_LookupValues_Knott_LookupValues.csv&lt;/file-file-name&gt;
+			&lt;file-content-type&gt;text/csv&lt;/file-content-type&gt;
+			&lt;file-file-size&gt;258&lt;/file-file-size&gt;
+			&lt;result-text&gt;0 rows processed, creating 0 new rows and updating 0 rows.&lt;/result-text&gt;
+			&lt;progress type="integer"&gt;0&lt;/progress&gt;
+			&lt;start-time type="datetime"&gt;2014-12-15T09:13:27-08:00&lt;/start-time&gt;
+			&lt;end-time type="datetime"&gt;2014-12-15T09:13:55-08:00&lt;/end-time&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;970&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T09:13:30-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T09:13:30-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;1&lt;/row&gt;
+						&lt;first-column&gt;TESTUS&lt;/first-column&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Row corrupt or invalid.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;971&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T09:13:30-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T09:13:30-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;2&lt;/row&gt;
+						&lt;first-column&gt;TESTEMEA&lt;/first-column&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Row corrupt or invalid.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;972&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T09:13:31-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T09:13:31-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;3&lt;/row&gt;
+						&lt;first-column&gt;TESTSales&lt;/first-column&gt;
+						&lt;field-with-error nil="true" /&gt;
+						&lt;value nil="true" /&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Row corrupt or invalid.&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1335&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2014-12-15T09:22:15-08:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2014-12-15T09:22:32-08:00&lt;/updated-at&gt;
+			&lt;type&gt;BackgroundCsvFileLoad&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;done&lt;/status&gt;
+			&lt;file-file-name&gt;_Incoming_LookupValues_Knott_LookupValues.csv&lt;/file-file-name&gt;
+			&lt;file-content-type /&gt;
+			&lt;file-file-size&gt;282&lt;/file-file-size&gt;
+			&lt;result-text&gt;3 rows processed, creating 0 new rows and updating 3 rows.&lt;/result-text&gt;
+			&lt;progress type="integer"&gt;3&lt;/progress&gt;
+			&lt;start-time type="datetime"&gt;2014-12-15T09:22:24-08:00&lt;/start-time&gt;
+			&lt;end-time type="datetime"&gt;2014-12-15T09:22:32-08:00&lt;/end-time&gt;
+			&lt;upload-errors type="array" /&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1336&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2014-12-15T09:28:19-08:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2014-12-15T09:28:32-08:00&lt;/updated-at&gt;
+			&lt;type&gt;BackgroundCsvFileLoad&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;done&lt;/status&gt;
+			&lt;file-file-name&gt;_Incoming_LookupValues_Knott_LookupValues.csv&lt;/file-file-name&gt;
+			&lt;file-content-type /&gt;
+			&lt;file-file-size&gt;282&lt;/file-file-size&gt;
+			&lt;result-text&gt;3 rows processed, creating 0 new rows and updating 3 rows.&lt;/result-text&gt;
+			&lt;progress type="integer"&gt;3&lt;/progress&gt;
+			&lt;start-time type="datetime"&gt;2014-12-15T09:28:29-08:00&lt;/start-time&gt;
+			&lt;end-time type="datetime"&gt;2014-12-15T09:28:32-08:00&lt;/end-time&gt;
+			&lt;upload-errors type="array" /&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1337&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2014-12-15T09:34:24-08:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2014-12-15T09:35:00-08:00&lt;/updated-at&gt;
+			&lt;type&gt;BackgroundCsvFileLoad&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;done&lt;/status&gt;
+			&lt;file-file-name&gt;_Incoming_LookupValues_Knott_LookupValues.csv&lt;/file-file-name&gt;
+			&lt;file-content-type /&gt;
+			&lt;file-file-size&gt;332&lt;/file-file-size&gt;
+			&lt;result-text&gt;4 rows processed, creating 0 new rows and updating 3 rows.&lt;/result-text&gt;
+			&lt;progress type="integer"&gt;4&lt;/progress&gt;
+			&lt;start-time type="datetime"&gt;2014-12-15T09:34:32-08:00&lt;/start-time&gt;
+			&lt;end-time type="datetime"&gt;2014-12-15T09:35:00-08:00&lt;/end-time&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;973&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T09:34:35-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T09:34:35-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;2&lt;/row&gt;
+						&lt;first-column&gt;0200&lt;/first-column&gt;
+						&lt;field-with-error&gt;name&lt;/field-with-error&gt;
+						&lt;value&gt;TESTUS1&lt;/value&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Name has already been taken&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;1338&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2014-12-15T10:40:57-08:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2014-12-15T10:41:33-08:00&lt;/updated-at&gt;
+			&lt;type&gt;BackgroundCsvFileLoad&lt;/type&gt;
+			&lt;source-for&gt;LookupValue&lt;/source-for&gt;
+			&lt;status&gt;done&lt;/status&gt;
+			&lt;file-file-name&gt;_Incoming_LookupValues_Knott_LookupValues.csv&lt;/file-file-name&gt;
+			&lt;file-content-type /&gt;
+			&lt;file-file-size&gt;332&lt;/file-file-size&gt;
+			&lt;result-text&gt;4 rows processed, creating 0 new rows and updating 3 rows.&lt;/result-text&gt;
+			&lt;progress type="integer"&gt;4&lt;/progress&gt;
+			&lt;start-time type="datetime"&gt;2014-12-15T10:41:06-08:00&lt;/start-time&gt;
+			&lt;end-time type="datetime"&gt;2014-12-15T10:41:33-08:00&lt;/end-time&gt;
+			&lt;upload-errors type="array"&gt;
+				 &lt;upload-error&gt;
+						&lt;id type="integer"&gt;974&lt;/id&gt;
+						&lt;created-at type="datetime"&gt;2014-12-15T10:41:11-08:00&lt;/created-at&gt;
+						&lt;updated-at type="datetime"&gt;2014-12-15T10:41:11-08:00&lt;/updated-at&gt;
+						&lt;type&gt;UploadRowError&lt;/type&gt;
+						&lt;row type="integer"&gt;2&lt;/row&gt;
+						&lt;first-column&gt;0200&lt;/first-column&gt;
+						&lt;field-with-error&gt;name&lt;/field-with-error&gt;
+						&lt;value&gt;TESTUS1&lt;/value&gt;
+						&lt;field-errors type="array"&gt;
+							 &lt;field-error&gt;Name has already been taken&lt;/field-error&gt;
+						&lt;/field-errors&gt;
+						&lt;created-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/created-by&gt;
+						&lt;updated-by&gt;
+							 &lt;id type="integer"&gt;93&lt;/id&gt;
+							 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+							 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+							 &lt;employee-number nil="true" /&gt;
+							 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+							 &lt;lastname&gt;Integration&lt;/lastname&gt;
+							 &lt;salesforce-id nil="true" /&gt;
+							 &lt;company-code /&gt;
+							 &lt;cost-center /&gt;
+							 &lt;account-category /&gt;
+						&lt;/updated-by&gt;
+				 &lt;/upload-error&gt;
+			&lt;/upload-errors&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;93&lt;/id&gt;
+				 &lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+				 &lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;sFTP&lt;/firstname&gt;
+				 &lt;lastname&gt;Integration&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+				 &lt;company-code /&gt;
+				 &lt;cost-center /&gt;
+				 &lt;account-category /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+&lt;/data-file-sources&gt; </code>
+</pre>
+</p>
+</div>
+<div class="" id="datafilesources_query_example_-_query_specific_datafilesource">
+<h2 class="title sectiontitle">DataFileSources Query Example - Query Specific DataFileSource </h2>
+<p class="">In this example we are querying datafilesource #1338. This is the internal Coupa ID
+        automatically generated for this object and is the primary method of identification for this
+        record.</p>
+<p class="">We have two methods to query this record:</p>
+<ul class="ul">
+<li class="li">Format 1:
+            <code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/data_file_sources/&lt;id&gt;</code>
+</li>
+</ul>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/data_file_sources/1338</code>
+</p>
+<p class=""> The Output for this query is show below </p>
+<ul class="ul">
+<li class="li">Format 2:
+            <code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/data_file_sources?id=&lt;id&gt;</code>
+</li>
+</ul>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/data_file_sources?id=1338</code>
+</p>
+<p class=""> For this format, the response will be slightly different. The entire of the below output
+        (excepting the xml version information) will be wrapped in
+        <pre>
+<code class="codeblock">&lt;data-file-sources type="array"&gt;
+&lt;/data-file-sources&gt;</code>
+</pre> tag as the ? parameter could return multiple records,
+        while specifying the id explicitly can only return the one</p>
+<p class="">
+<b>Sample DataSource GET Response</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;data-file-source&gt;
+	 &lt;id type="integer"&gt;1338&lt;/id&gt;
+	 &lt;created-at type="datetime"&gt;2014-12-15T10:40:57-08:00&lt;/created-at&gt;
+	 &lt;updated-at type="datetime"&gt;2014-12-15T10:41:33-08:00&lt;/updated-at&gt;
+	 &lt;type&gt;BackgroundCsvFileLoad&lt;/type&gt;
+	 &lt;source-for&gt;LookupValue&lt;/source-for&gt;
+	 &lt;status&gt;done&lt;/status&gt;
+	 &lt;file-file-name&gt;_Incoming_LookupValues_Knott_LookupValues.csv&lt;/file-file-name&gt;
+	 &lt;file-content-type /&gt;
+	 &lt;file-file-size&gt;332&lt;/file-file-size&gt;
+	 &lt;result-text&gt;4 rows processed, creating 0 new rows and updating 3 rows.&lt;/result-text&gt;
+	 &lt;progress type="integer"&gt;4&lt;/progress&gt;
+	 &lt;start-time type="datetime"&gt;2014-12-15T10:41:06-08:00&lt;/start-time&gt;
+	 &lt;end-time type="datetime"&gt;2014-12-15T10:41:33-08:00&lt;/end-time&gt;
+	 &lt;upload-errors type="array"&gt;
+			&lt;upload-error&gt;
+				 &lt;id type="integer"&gt;974&lt;/id&gt;
+				 &lt;created-at type="datetime"&gt;2014-12-15T10:41:11-08:00&lt;/created-at&gt;
+				 &lt;updated-at type="datetime"&gt;2014-12-15T10:41:11-08:00&lt;/updated-at&gt;
+				 &lt;type&gt;UploadRowError&lt;/type&gt;
+				 &lt;row type="integer"&gt;2&lt;/row&gt;
+				 &lt;first-column&gt;0200&lt;/first-column&gt;
+				 &lt;field-with-error&gt;name&lt;/field-with-error&gt;
+				 &lt;value&gt;TESTUS1&lt;/value&gt;
+				 &lt;field-errors type="array"&gt;
+						&lt;field-error&gt;Name has already been taken&lt;/field-error&gt;
+				 &lt;/field-errors&gt;
+				 &lt;created-by&gt;
+						&lt;id type="integer"&gt;93&lt;/id&gt;
+						&lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+						&lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+						&lt;employee-number nil="true" /&gt;
+						&lt;firstname&gt;sFTP&lt;/firstname&gt;
+						&lt;lastname&gt;Integration&lt;/lastname&gt;
+						&lt;salesforce-id nil="true" /&gt;
+						&lt;company-code /&gt;
+						&lt;cost-center /&gt;
+						&lt;account-category /&gt;
+				 &lt;/created-by&gt;
+				 &lt;updated-by&gt;
+						&lt;id type="integer"&gt;93&lt;/id&gt;
+						&lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+						&lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+						&lt;employee-number nil="true" /&gt;
+						&lt;firstname&gt;sFTP&lt;/firstname&gt;
+						&lt;lastname&gt;Integration&lt;/lastname&gt;
+						&lt;salesforce-id nil="true" /&gt;
+						&lt;company-code /&gt;
+						&lt;cost-center /&gt;
+						&lt;account-category /&gt;
+				 &lt;/updated-by&gt;
+			&lt;/upload-error&gt;
+	 &lt;/upload-errors&gt;
+	 &lt;created-by&gt;
+			&lt;id type="integer"&gt;93&lt;/id&gt;
+			&lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+			&lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;sFTP&lt;/firstname&gt;
+			&lt;lastname&gt;Integration&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;company-code /&gt;
+			&lt;cost-center /&gt;
+			&lt;account-category /&gt;
+	 &lt;/created-by&gt;
+	 &lt;updated-by&gt;
+			&lt;id type="integer"&gt;93&lt;/id&gt;
+			&lt;login&gt;sftp_integration@coupa.com&lt;/login&gt;
+			&lt;email&gt;sftp_integration@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;sFTP&lt;/firstname&gt;
+			&lt;lastname&gt;Integration&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;company-code /&gt;
+			&lt;cost-center /&gt;
+			&lt;account-category /&gt;
+	 &lt;/updated-by&gt;
+&lt;/data-file-source&gt;</code>
+</pre>
+</p>
+</div>
+<div class="" id="datafilesources_query_example_-_query_specific_file">
+<h2 class="title sectiontitle">DataFileSources Query Example - Query Specific File</h2>
+<p class="">In this example we are querying for a datafilesource created for
+a file named lookup_list.csv.</p>
+<p class="">We have two methods to query this record:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Format
+1: <code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/data_file_sources?file_file_name=filename</code>
+</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/data_file_sources?file_file_name=lookup_list.csv</code>
+</p>
+<p class="">
+The Output for this query is show below</p>
+</li>
+</ul>
+<p class="">
+<b>Sample DataSource GET Response</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;data-file-sources type="array"&gt;
+	 &lt;data-file-source&gt;
+			&lt;id type="integer"&gt;990&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2015-07-09T16:32:42-07:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2015-07-09T16:34:19-07:00&lt;/updated-at&gt;
+			&lt;type&gt;DataFileSource&lt;/type&gt;
+			&lt;source-for&gt;Lookup&lt;/source-for&gt;
+			&lt;status&gt;done&lt;/status&gt;
+			&lt;file-file-name&gt;lookup_list.csv&lt;/file-file-name&gt;
+			&lt;file-content-type&gt;text/csv&lt;/file-content-type&gt;
+			&lt;file-file-size&gt;170&lt;/file-file-size&gt;
+			&lt;result-text&gt;0 rows processed, creating 0 new rows and updating 0 rows.&lt;/result-text&gt;
+			&lt;progress nil="true" /&gt;
+			&lt;start-time type="datetime"&gt;2015-07-09T16:34:05-07:00&lt;/start-time&gt;
+			&lt;end-time type="datetime"&gt;2015-07-09T16:34:19-07:00&lt;/end-time&gt;
+			&lt;upload-errors type="array" /&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;85&lt;/id&gt;
+				 &lt;login&gt;staging@coupa.com&lt;/login&gt;
+				 &lt;email&gt;staging@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;John&lt;/firstname&gt;
+				 &lt;lastname&gt;Doe&lt;/lastname&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;85&lt;/id&gt;
+				 &lt;login&gt;staging@coupa.com&lt;/login&gt;
+				 &lt;email&gt;staging@coupa.com&lt;/email&gt;
+				 &lt;employee-number nil="true" /&gt;
+				 &lt;firstname&gt;John&lt;/firstname&gt;
+				 &lt;lastname&gt;Doe&lt;/lastname&gt;
+			&lt;/updated-by&gt;
+	 &lt;/data-file-source&gt;
+&lt;/data-file-sources&gt;</code>
+</pre>
+</p>
+</div>
+</div>
+</article>

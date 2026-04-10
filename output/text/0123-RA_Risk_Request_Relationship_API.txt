@@ -1,0 +1,19 @@
+RA Risk Request Relationship API
+
+Use the RA Risk Request Relationship API to view and update risk assessment relationship requests between Risk Assess and Coupa Core.
+
+Elements
+
+The following elements are available for the RA Risk Request Relationship API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+id 	Coupa unique identifier 	no 	no 	any 	 	yes 	integer
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime
+riskable-id 	 	yes 	no 	any 	 	yes 	integer
+riskable-type 	 	yes 	no 	any 	 	yes 	integer
+external-riskable-id 	 	yes 	no 	any 	 	yes 	integer
+external-riskable-type 	 	yes 	no 	any 	 	yes 	integer
+active 	 	no 	no 	any 	 	yes 	boolean
+created-by 	User who created 	no 	no 	any 	 	yes
+updated-by 	User who updated 	no 	no 	any 	 	yes

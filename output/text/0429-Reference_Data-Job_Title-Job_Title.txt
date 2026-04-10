@@ -1,0 +1,11 @@
+Reference Data-Job Title-Job Title
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/reference-data-job-title-job-title
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd%2BdOKnVi9VW6lYQlQZEa%2BGBl%2BnMOWXWEjv4OKP8exx3oILUPebL%2BW7neEnQtb3aDOHJ3uOPASlku%2B2KPUweZSNQCj6RuuJyJjWHRTPjcJwtjlOJ83kzYdlX9GScXbEqFyzbEQ24sxTAhgiJasqF5GJxKCslhJLTfD79xrJtNDEWQiI%2BhdCTKgrthh44ngJ6C23ungPk2nUF9P1%2F%2Fx4i3ANR73yIX2WBp2dXiUGArLY33TsNZZgVRK4Yu7HsvfMaU8EVO0JLOAato4B5wb9I7V1w2rU3xjbGfl%2BxwVvlgAwpCx2SClrtNx%2FvVCyqHs9DpD4cDjWvP%2B8PLNsQoR8r3TpLQ4d%2Bj%2F7FaPxyf3dZMiXPU6FUb9QsrnFZdupaSyrd6O1I%2FWt%2Btl6O0yqdwl%2Fw36bDnwRsfTXrsrhQPtv06lOU2m1r1xr9a9x0B%2BG6U5mXCTENP6ZRhR2YdtM0HoniDtvW%2Fbz1CCEeJvghLqBYn23%2FfaLr3w%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Freference-data-job-title-job-title
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

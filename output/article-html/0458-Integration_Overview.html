@@ -1,0 +1,113 @@
+<article class="" id="integration_overview">
+<h1 class="title">Integration Overview</h1>
+<div class="body">
+<p class="">Coupa primarily exchanges files with customers via the SFTP protocol. We support both username/password or SSH key authentication. SFTP is preferable to FTP as both the control and data channels are encrypted. Customer systems must connect to Coupa enterprise’s (Coupa P2P) FTP server to exchange data between Coupa Enterprise (CE) and Coupa Contingent Workforce (CCW).</p>
+<div class="" id="sftp_user_account">
+<h2 class="title sectiontitle">sFTP user account</h2>
+<p class="">You can create and manage your SFTP accounts for exchanging data with the Coupa Enterprise Administration page. In case you have issues, please coordinate with the Implementation team for additional help. Using the sFTP Account Page you can:</p>
+<ol class="ol">
+<li class="li">
+<p class="">Create and manage an sFTP user account.</p>
+</li>
+<li class="li">
+<p class="">Manage the SSH key to authenticate the account.</p>
+</li>
+<li class="li">
+<p class="">Reset your password.</p>
+</li>
+</ol>
+</div>
+<div class="" id="folder_format">
+<h2 class="title sectiontitle">Folder format</h2>
+<ul class="ul">
+<li class="li">
+<p class="">CCW-specific incoming files must be placed under 
+                        <code class="ph codeph">/Incoming/CCW</code>
+</p>
+</li>
+<li class="li">
+<p class="">CCW-specific outgoing files will be placed under 
+                        <code class="ph codeph">/Outgoing/CCW</code>
+</p>
+<p class="">
+</li>
+</ul>
+</div>
+<div class="" id="encryption">
+<h2 class="title sectiontitle">Encryption</h2>
+<p class="">sFTP is a secure file transfer protocol and supports the full security and authentication functionality of SSH. In addition to sFTP protocol, Coupa Contingent Workforce also supports an additional layer of encryption that uses PGP standard, ensuring customer data is secured while at rest. During implementation for:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Inbound file: CCW integration resource will share PGP public key (if applicable)</p>
+</li>
+<li class="li">
+<p class="">Outbound file: Customer must provide PGP public key to CCW implementation resource (if applicable)</p>
+</li>
+</ul>
+</div>
+<div class="" id="integration_workflow">
+<h2 class="title sectiontitle">Integration workflow</h2>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_flat_files/images/image23.png" alt="" title="" width="">
+</div>
+<div class="" id="callouts">
+<h2 class="title sectiontitle">Callouts</h2>
+<ul class="ul">
+<li class="li">
+<p class="">CCW supports Delta feed (Changes only) and Full feed for Master Data, however we recommend the Delta feed.</p>
+</li>
+<li class="li">
+<p class="">Across all inbound integrations, if the customer chooses to use the full file, the Status column must be excluded.</p>
+</li>
+<li class="li">
+<p class="">CCW integrates with Coupa enterprise to synchronize user data and one chart of account (COA) identified for CCW.</p>
+</li>
+<li class="li">
+<p class="">CCW supports master data integration for segment fields that are not exhausted by COA segments (11 segment fields that can support a combination of COA segments and HR-only fields, if COA consumes 3 segment
+                        <b>s, then integration can support integration for rest of the 8 segments).</b>
+</p>
+</li>
+</ul>
+</div>
+<div class="" id="master_data_user">
+<h2 class="title sectiontitle">Unified integrations</h2>
+<p class="">Master Data: User</p>
+<ul class="ul">
+<li class="li">
+<p class="">The following user data is synchronized between CE and CCW:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Status, User Name, First Name, Last Name, Nick Name, Email, Phone Number, Role(only initial sync-up), Default Currency, Employee Number.</p>
+</li>
+</ul>
+</li>
+<li class="li">
+<p class="">Supervisor Hierarchy is synchronized to support hierarchy-based approval flow.</p>
+</li>
+</ul>
+</div>
+<div class="" id="authentication">
+<h2 class="title sectiontitle">Authentication</h2>
+<p class="">CCW client users are authorized using SSO authentication by Coupa Enterprise against Customer’s SSO authenticator. Once authenticated, users having CCW License and Role can access the CCW application.</p>
+<p class="">Coupa Contingent Workforce is unified with Coupa Enterprise to synchronize User and Chart of Account data.</p>
+</div>
+<div class="" id="master_data_chart_of_accounts">
+<h2 class="title sectiontitle">Master Data: Chart of Accounts</h2>
+<ul class="ul">
+<li class="li">
+<p class="">CCW synchronizes with Coupa Enterprise to identify one Chart of account for CCW</p>
+</li>
+<li class="li">
+<p class="">As part of synchronization, CCW will apply changes to:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Chart of Account</p>
+</li>
+<li class="li">
+<p class="">Account or Lookup Values based on CCW COA definition.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</article>

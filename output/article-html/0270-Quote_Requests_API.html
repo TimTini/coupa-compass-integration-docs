@@ -1,0 +1,795 @@
+<article class="" id="quote_requests_api">
+<h1 class="title">Quote Requests API</h1>
+<p class="">
+<p class="">Use the quote requests API to create, and manage and view your sourcing events.</p>
+</p>
+<div class="body">
+<div class="" id="actions-d957e261619">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">For more endpoints associated with Quote Request attachments and tasks, see the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachments API</a> and the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/task-api-(tasks)" title="">Task API</a>.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="" colspan="1">Create a Sourcing event</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/create_from_source</code>
+</td>
+<td class="entry" align="">create_from_source</td>
+<td class="entry" align="" colspan="1">Create Sourcing event from Requisition, Contract, Catalog, Order pad, Order lines, Invoice lines, and items</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="" colspan="1">Returns all Sourcing events</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="" colspan="1">Get information about the particular event</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/quote_requests/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="" colspan="1">Update a Sourcing event.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e261762">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">allow-award-individual-line-items</td>
+<td class="entry" align="">Ability to award individual line items</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">allow-multiple-response</td>
+<td class="entry" align="">Allow multiple responses from one supplier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">attachments</td>
+<td class="entry" align="">Attachments - there can be event details, terms and conditions, regular attachments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachment</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">automatic-bid-unsealing</td>
+<td class="entry" align="">If checked, bids will be unsealed automatically</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">true, false</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">business-partners</td>
+<td class="entry" align="">Business partners</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-request-user-api" title="">Quote Requests User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">comments</td>
+<td class="entry" align="">Comments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">commodity</td>
+<td class="entry" align="">Commodity</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/commodities-api-(commodities)" title="">Commodity</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">content-groups</td>
+<td class="entry" align="">Content Groups</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/budget-period-api" title="">Period</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">Currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)" title="">Currency</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">custom-fields</td>
+<td class="entry" align="">Custom fields</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">exported</td>
+<td class="entry" align="">Indicates if event has been exported</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">Event name</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">easy-forms</td>
+<td class="entry" align="">Forms</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/form-api" title="">Form</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">end-time</td>
+<td class="entry" align="">Time when event should end, format: %m/%d/%y %I:%M %p %z</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">event-type</td>
+<td class="entry" align="">Type of event</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">hidden</td>
+<td class="entry" align="">Is true if the event is a hidden event</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">forms</td>
+<td class="entry" align="">Forms (deprecated in R23; replaced by easy-forms)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/form-api" title="">Form</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lines</td>
+<td class="entry" align="">Lines</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-request-line-api" title="">Quote Request Line</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lots</td>
+<td class="entry" align="">Lots</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-requests-lot-api" title="">Quote Requests Lot</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-request-attachments</td>
+<td class="entry" align="">Quote request attachments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-request-attachment-api" title="">Quote Request Attachment</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-suppliers</td>
+<td class="entry" align="">Quote suppliers</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Quote Supplier</td>
+</tr>
+<tr class="">
+<td class="entry" align="">revision</td>
+<td class="entry" align="">Revision</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">sealed-bids</td>
+<td class="entry" align="">If checked, bids will be sealed</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">sealing-type</td>
+<td class="entry" align="">Sealing type ('one_step_unsealing' or 'two_steps_unsealing') should be selected when Unseal Manually option is chosen</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">one_step_unsealing, two_steps_unsealing</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">sealing-stage</td>
+<td class="entry" align="">Sealing Stage</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">all_envelopes_sealed, envelope1_unsealed, envelope2_unsealed</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">start-on-submit</td>
+<td class="entry" align="">Flag that indicates whether to start event on submit or not</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">start-time</td>
+<td class="entry" align="">Time when event should start, format: %m/%d/%y %I:%M %p %z</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">state</td>
+<td class="entry" align="">State</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">tags</td>
+<td class="entry" align="">Tags</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/tag-api" title="">Tag</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">template-id</td>
+<td class="entry" align="">Template ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">timezone</td>
+<td class="entry" align="">Event timezone</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">base_price_calculation_method</td>
+<td class="entry" align="">Base price calculation method ('average_of_supplier_responses', 'lowest_supplier_response_in_prebid' or 'manually_enter_base_prices') allows to understand the method by which the base price will be calculated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">cost_avoidance</td>
+<td class="entry" align="">Cost avoidance</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">cost_avoidance_currency</td>
+<td class="entry" align="">Cost Avoidance Currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)" title="">Currency</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">creatable-from-id</td>
+<td class="entry" align="">Creatable From Object ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">creatable-from-type</td>
+<td class="entry" align="">Creatable From Object Type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">planned_savings</td>
+<td class="entry" align="">Planned savings</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">planned-savings-currency</td>
+<td class="entry" align="">Planned Savings Currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)" title="">Currency</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">negotiated_savings</td>
+<td class="entry" align="">Alias of savings to be used as a key in API</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">negotiated-savings-currency</td>
+<td class="entry" align="">Negotiated Savings Currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)" title="">Currency</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">original-id</td>
+<td class="entry" align="">Coupa unique identifier for original event</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">allow_supplier_to_send_attachments</td>
+<td class="entry" align="">If set to true by the buyer, the supplier is allowed to send attachments in the message center</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">submit-time</td>
+<td class="entry" align="">Time when event should be submitted, format: %m/%d/%y %I:%M %p %z. Default time: none</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-message</td>
+<td class="entry" align="">Messages sent or received by the buyer.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-message-api" title="">QuoteMessage</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">allow-suppliers-to-choose-currency</td>
+<td class="entry" align="">If set to true, then the supplier is allowed to choose from the list of quote request currencies</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quote-request-currencies</td>
+<td class="entry" align="">Quote Request Currencies - List of currencies for the quote request</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-request-currency-api" title="Create new sourcing events with multiple currencies. Add currencies using standard currency codes. Allow suppliers to bid in any available currency within the event.">QuoteRequestCurrency</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<example>
+<h2 class="title">Create an event from a template or an existing sourcing event</h2>
+<dl class="dl">
+<dt class="dt dlterm">Method</dt>
+<dd class="dd">POST <code class="ph codeph">/api/quote_requests</code>
+</dd>
+<dt class="dt dlterm">Example request payload</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">{
+    "source_id": 105, // Id of the template or existing event
+    "description": "New name for the event",
+    "commodity": {
+        "id": 9
+    },
+    "currency": {"id": 1},
+    "lines": [
+        {
+            "description": "New item to be added to event",
+            "type": "QuoteRequestQuantityLine",
+            "quantity": 10
+        }
+    ],
+    "quote_request_attachments":[
+        {
+            "name": "Attachmet One", 
+            "instruction": "Some dummy instruction", 
+            "response_required": true, 
+            "allow_to_respond": true
+        }
+    ]
+}</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;.com/api/quote_requests' \
+--header 'Accept: application/xml' \
+--header 'Accept: application/json' \
+--header 'Accept: application/octet-stream' \
+--header 'Content-Type: text/plain' \
+--header 'Authorization: ••••••' \
+--data '{
+    "source_id": 105, // Id of the template or existing event
+    "description": "New name for the event",
+    "commodity": {
+        "id": 9
+    },
+    "currency": {"id": 1},
+    "lines": [
+        {
+            "description": "New item to be added to event",
+            "type": "QuoteRequestQuantityLine",
+            "quantity": 10
+        }
+    ],
+    "quote_request_attachments":[
+        {
+            "name": "Attachmet One", 
+            "instruction": "Some dummy instruction", 
+            "response_required": true, 
+            "allow_to_respond": true
+        }
+    ]
+}'</code>
+</pre>
+</dd>
+</dl>
+</example>
+<example>
+<h2 class="title">Create an event with multiple currencies</h2>
+<dl class="dl">
+<dt class="dt dlterm">Method</dt>
+<dd class="dd">POST <code class="ph codeph">/api/quote_requests</code>
+</dd>
+<dt class="dt dlterm">Example request payload</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">{
+    "source_id": 108,
+    "description": "New name for the event",
+    "commodity": {
+        "id": 9
+    },
+    "currency": {"id": 1},
+    "allow_suppliers_to_choose_currency": true,
+    "quote_request_currencies": [
+        {
+            "from_currency": {"code": "INR"},
+            "rate": 10
+        }
+    ],
+    "lines": [
+        {
+            "description": "New item to be added to event",
+            "type": "QuoteRequestQuantityLine",
+            "quantity": 10
+        }
+    ]
+}</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;/api/quote_requests' \
+--header 'Accept: application/xml' \
+--header 'Accept: application/json' \
+--header 'Accept: application/octet-stream' \
+--header 'Content-Type: text/plain' \
+--header 'Authorization: ••••••' \
+--data '{
+    "source_id": 108,
+    "description": "New name for the event",
+    "commodity": {
+        "id": 9
+    },
+    "currency": {"id": 1},
+    "allow_suppliers_to_choose_currency": true,
+    "quote_request_currencies": [
+        {
+            "from_currency": {"code": "INR"},
+            "rate": 10
+        }
+    ],
+    "lines": [
+        {
+            "description": "New item to be added to event",
+            "type": "QuoteRequestQuantityLine",
+            "quantity": 10
+        }
+    ]
+}'</code>
+</pre>
+</dd>
+</dl>
+</example>
+</div>
+</article>

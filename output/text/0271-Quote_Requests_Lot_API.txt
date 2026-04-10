@@ -1,0 +1,15 @@
+Quote Requests Lot API
+
+The quote request line resource lets you work with the lots on a sourcing event.
+
+Associations
+
+This resource is associated with Quote Request API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+expected-quantity 	Quantity of lots we want 	 	 	 	yes 	yes 	integer
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+lines 	Lines which belongs to lot 	 	 	 	yes 	yes 	 Quote Request Line
+name 	Name of the lot 	 	 	 	yes 	yes 	string(255)

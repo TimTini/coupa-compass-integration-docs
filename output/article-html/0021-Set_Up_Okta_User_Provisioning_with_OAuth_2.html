@@ -1,0 +1,176 @@
+<article class="" id="set_up_okta_user_provisioning_with_oauth_2.0">
+<h1 class="title">Set Up Okta User Provisioning with OAuth 2.0</h1>
+<p class="">
+<p class="">Configure the OIDC client for Okta User Provisioning.</p>
+</p>
+<div class="body">
+<div class="" id="prerequisites">
+<h2 class="title sectiontitle">Prerequisites</h2>
+<ol class="ol">
+<li class="li">
+<p class="">Ensure you are currently using Okta user provisioning via API.</p>
+</li>
+<li class="li">
+<p class="">Ensure that the Okta App is on the newest version and that it does not have space for
+            the API key.</p>
+</li>
+<li class="li">
+<p class="">The person authenticating the integration in Okta must have admin credentials in
+            Coupa. If not, the system will throw a 404 error when it tries to apply the
+            redirect.</p>
+</li>
+</ol>
+</div>
+<div class="" id="configure_the_coupa_platform">
+<h2 class="title sectiontitle">Configure the Coupa Platform</h2>
+<ol class="ol">
+<li class="li">
+<p class="">Navigate to <b>Setup</b> &gt; <b>integrations</b> &gt; <b>OAuth2/OpenID Connect
+              Clients</b>.</p>
+</li>
+<li class="li">
+<p class="">Click <b>Create</b>.</p>
+</li>
+<li class="li">
+<p class="">Input the following values and click <b>Save</b>.</p>
+</li>
+</ol>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Field</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Value</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Grant Type</p>
+</td>
+<td class="entry" align="">
+<p class="">Authorization Code</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Redirect URL</p>
+</td>
+<td class="entry" align="">
+<p class="">https://system-admin.okta.com/admin/app/generic/oauth20redirect</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Shared Secret</p>
+</td>
+<td class="entry" align="">
+<p class="">Enabled</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Enable Scopes</p>
+</td>
+<td class="entry" align="">
+<p class="">core.user.read, core.user.write, offline_access, openid</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="configure_the_okta_application">
+<h2 class="title sectiontitle">Configure the Okta Application</h2>
+<ol class="ol">
+<li class="li">
+<p class="">Within your Okta Coupa application, select <b>Enable API integration</b>.</p>
+</li>
+<li class="li">
+<p class="">Input the following values and click <b>Save</b>.</p>
+</li>
+</ol>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Field</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Value</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">API endpoint</p>
+</td>
+<td class="entry" align="">
+<p class="">https://{your-instance-name}.coupahost.com/api</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">OAuth client identifier</p>
+</td>
+<td class="entry" align="">
+<p class="">Located in the OIDC client created in Coupa</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">OAuth client secret</p>
+</td>
+<td class="entry" align="">
+<p class="">Located in the OIDC client created in Coupa</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section-4">
+<h2 class="title sectiontitle">Authentication issues</h2>
+<p class="">If you experience a 404 error when attempting to authenticate the API integration, please
+        check for the following issues:</p>
+<ul class="ul">
+<li class="li">The person authenticating the integration in Okta must have admin credentials in
+          Coupa.</li>
+<li class="li">Make sure that the <b>Your Coupa instance URL</b> field on the general tab in the Coupa
+          application in Okta only contains the name of the instance and not the entire login
+            URL.<ul class="ul">
+<li class="li">URL should be: <code class="ph codeph">https://{your-instance-name}.coupahost.com</code>
+</li>
+<li class="li">URL should not be:
+                <code class="ph codeph">https://{your-instance-name}.coupahost.com/session/new</code>
+</li>
+</ul>
+</li>
+</ul>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Please reach out to Coupa support if you require assistance setting up your OIDC client
+          in your instance.</p>
+</div>
+</div>
+</div>
+</article>

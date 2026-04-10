@@ -1,0 +1,531 @@
+<article class="" id="coupa_pay_payments_export">
+<h1 class="title">Coupa Pay Payments Export</h1>
+<div class="body">
+<p class="">Export of these records is included as part of Standard CSV Export.</p>
+<p class="">Exportable type is <code class="ph codeph">CoupaPay::Payment</code>.</p>
+<div class="" id="section_l2x_kfr_11c">
+<h2 class="title sectiontitle">Payment</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Payment, Payment Details or Payment Detail Allocation</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment ID</td>
+<td class="entry" align="">The ID of the payment</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Batch ID</td>
+<td class="entry" align="">The ID of the Payment Batch the payment belongs to</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Batch Type</td>
+<td class="entry" align="">The type of Payment Batch the payment belongs to. It can be an Invoice Payment Batch or Expense Payment Batch</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Batch Status</td>
+<td class="entry" align="">The status of the Payment Batch the payment belongs to</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Status</td>
+<td class="entry" align="">The status of the payment</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created At</td>
+<td class="entry" align="">The date the payment was created on</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated At</td>
+<td class="entry" align="">The date the payment was last updated on</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exported</td>
+<td class="entry" align="">A flag to check if the payment was already exported</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay From Account Name</td>
+<td class="entry" align="">The company payment account name used for the payment</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay From Account Kind</td>
+<td class="entry" align="">The company payment account type used for the payment</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay From Account Currency</td>
+<td class="entry" align="">The company payment account currency used for the payment</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay From Account Total</td>
+<td class="entry" align="">The total amount to be used for the payment from the company payment account</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay To Account Name</td>
+<td class="entry" align="">The payee's payment account name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay To Account Kind</td>
+<td class="entry" align="">The payee's payment account type</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay to Account Currency</td>
+<td class="entry" align="">The payee's payment account currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay To Account Total</td>
+<td class="entry" align="">The total amount the payee is to be paid in its account currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reporting Pay To Currency</td>
+<td class="entry" align="">The reported currency for the payee</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reporting Pay To Total</td>
+<td class="entry" align="">The reported total amount to be paid based on payee's currency</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exchange Rate</td>
+<td class="entry" align="">The exchange rate used for the payment</td>
+<td class="entry" align="">decimal(30,9)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payee ID</td>
+<td class="entry" align="">A unique number identifing the payee. This is unique within each source transaction type</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payee Name</td>
+<td class="entry" align="">The name of the payee</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payee Display Name</td>
+<td class="entry" align="">A commonly used name for the payee</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payee Login</td>
+<td class="entry" align="">The login ID used for employees. This is blank for suppliers</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payee Email</td>
+<td class="entry" align="">The email used by the payee to receive payment notifications</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payee Number</td>
+<td class="entry" align="">A unique number identifing the payee. This is unique within each source transaction type</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pay To Total</td>
+<td class="entry" align="">The total amount to be paid</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Error Text</td>
+<td class="entry" align="">Error text on completed with error payments</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Digital Check Number</td>
+<td class="entry" align="">The digital check number when there is one attached to the payment</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Estimated Pay From Total</td>
+<td class="entry" align="">The estimated pay from total based on exchange rates loaded in the system</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Name</td>
+<td class="entry" align="">Source Name provided for payments loaded from external source</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Reference</td>
+<td class="entry" align="">Source Reference provided for payments in an external source</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Type</td>
+<td class="entry" align="">The Payment Type</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Description provided describing the payment</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Identifier</td>
+<td class="entry" align="">Payment Identifier provided used to reference the payment</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Legal Entity name</td>
+<td class="entry" align="">Legal Entity name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transfer Type</td>
+<td class="entry" align="">Transfer Type is used by the Bank or Payment Partner and defines how a payment will need to be processed (ACH, WIRE, Standard, Next Day, Same Day)</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requested Execution Date</td>
+<td class="entry" align="">When sending payment instructions to a bank, the Requested Execution Date can be used to request the bank to initiate a payment on a specific date</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total Processed by Payee</td>
+<td class="entry" align="">Amount of total charges processed by payee</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Value Date</td>
+<td class="entry" align="">Value Date</td>
+<td class="entry" align="">date</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_qqf_mgr_11c">
+<h2 class="title sectiontitle">Coupa Pay-Payment Detail</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Payment, Payment Details or Payment Detail Allocation</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Detail ID</td>
+<td class="entry" align="">The ID of the payment detail</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment ID</td>
+<td class="entry" align="">The ID of the payment the payment detail belongs to</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Batch ID</td>
+<td class="entry" align="">The ID of the payment batch the payment detail belongs to</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction ID</td>
+<td class="entry" align="">The ID of source for the payment detail</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction Type</td>
+<td class="entry" align="">The type of source for the payment detail. Possible values are Payables::Invoice or Payables::Expense. Legacy values are CoupaPay::Invoice or CoupaPay::Expense</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction Number</td>
+<td class="entry" align="">The reference ID of the source for the payment detail</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transaction Total</td>
+<td class="entry" align="">The total transaction amount for the payment detail</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Discount Total</td>
+<td class="entry" align="">The total discount amount for the payment detail</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Adjustment Total</td>
+<td class="entry" align="">The total adjusted amount for the payment detail</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency Code</td>
+<td class="entry" align="">The currency of the payment to the recipient</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Total</td>
+<td class="entry" align="">The total payment amount for the payment detail</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_ccs_mgr_11c">
+<h2 class="title sectiontitle">Payment Detail Allocation</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Payment, Payment Details or Payment Detail Allocation</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Detail Allocation ID</td>
+<td class="entry" align="">The ID of the payment detail allocation</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment ID</td>
+<td class="entry" align="">The ID of the payment the payment detail belongs to</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Detail ID</td>
+<td class="entry" align="">The ID of the payment detail the allocation belongs to</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction From ID</td>
+<td class="entry" align="">The ID of the transaction that emitted the allocation</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction From Type</td>
+<td class="entry" align="">The type of the transaction that emitted the allocation. Possible values are InvoiceHeader.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction From Number</td>
+<td class="entry" align="">The reference ID of the transaction that emitted the allocation</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction From Amount</td>
+<td class="entry" align="">The amount sent by the transaction that emitted the allocation</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction From Currency</td>
+<td class="entry" align="">The currency for the amount sent by the transaction that emitted the allocation</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction To ID</td>
+<td class="entry" align="">The ID of the receiving transaction</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction To Type</td>
+<td class="entry" align="">The type of the receiving transaction. Possible values are InvoiceHeader.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction To Number</td>
+<td class="entry" align="">The reference ID of the receiving transaction</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction To Amount</td>
+<td class="entry" align="">The amount sent to the receiving transaction</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source Transaction To Currency</td>
+<td class="entry" align="">The currency for the amount sent to the receiving transaction</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Source</td>
+<td class="entry" align="">The source of this allocation. Possible values are coupa_pay.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">coupa_pay, erp, ui, api, csv, early_pay_discount</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reason Code</td>
+<td class="entry" align="">The reason code for the most recent change to this allocation.</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">payment, auto_payment, epr, epr_rejected, manual</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

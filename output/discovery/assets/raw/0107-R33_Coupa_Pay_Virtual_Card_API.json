@@ -1,0 +1,6200 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "",
+    "title": "Coupa API",
+    "description": "RESTful API that provides robust access to read, edit, or integrate your data with the Coupa platform. The [JSON](/api_docs/14.json) and [YAML](/api_docs/14.yaml) are also available.  To test with OAuth2 OAuth2AccessCode, make sure to include https://invoicing-master-minus-one-qe2.coupadev.com/oauth2-redirect.html in the client's Redirect URI list"
+  },
+  "host": "invoicing-master-minus-one-qe2.coupadev.com",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Charge",
+      "description": "Charges API"
+    },
+    {
+      "name": "CoupaPay-Statement",
+      "description": "Statements API"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "OAuth2AccessCode": []
+    },
+    {
+      "OAuth2ClientCredential": []
+    }
+  ],
+  "paths": {
+    "/charges": {
+      "get": {
+        "tags": [
+          "Charge"
+        ],
+        "summary": "Query Charges",
+        "description": "Query Charges",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Charge objects",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Charge"
+              },
+              "xml": {
+                "name": "charges",
+                "wrapped": true
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/charges/{id}": {
+      "get": {
+        "tags": [
+          "Charge"
+        ],
+        "summary": "Show Charges",
+        "description": "Show Charges",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Charge object",
+            "schema": {
+              "$ref": "#/definitions/Charge"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/coupa_pay/statements": {
+      "get": {
+        "tags": [
+          "CoupaPay-Statement"
+        ],
+        "summary": "Query Statements",
+        "description": "Query Statements",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "CoupaPay-Statement objects",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CoupaPay-Statement"
+              },
+              "xml": {
+                "name": "coupa-pay-statements",
+                "wrapped": true
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/coupa_pay/statements/{id}": {
+      "get": {
+        "tags": [
+          "CoupaPay-Statement"
+        ],
+        "summary": "Show Statements",
+        "description": "Show Statements",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "CoupaPay-Statement object",
+            "schema": {
+              "$ref": "#/definitions/CoupaPay-Statement"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "CoupaPay-Statement"
+        ],
+        "summary": "Update Statement",
+        "description": "Update Statement",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "CoupaPay-Statement",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CoupaPay-Statement"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "CoupaPay-Statement object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/CoupaPay-Statement"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CoupaPay-Statement"
+        ],
+        "summary": "Update Statement",
+        "description": "Update Statement",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "CoupaPay-Statement",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CoupaPay-Statement"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "return_object",
+            "type": "string",
+            "required": false,
+            "enum": [
+              "limited",
+              "shallow",
+              "none"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "CoupaPay-Statement object",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/CoupaPay-Statement"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2ClientCredential": {
+      "type": "oauth2",
+      "flow": "application",
+      "tokenUrl": "https://invoicing-master-minus-one-qe2.coupadev.com/oauth2/access_tokens",
+      "scopes": {
+        "core.pay.statements.write": "Allows Coupa Pay statements to be modified",
+        "core.pay.virtual_cards.read": "Allows Coupa Pay virtual cards to be read"
+      }
+    },
+    "OAuth2AccessCode": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://invoicing-master-minus-one-qe2.coupadev.com/oauth2/authorizations/new",
+      "tokenUrl": "https://invoicing-master-minus-one-qe2.coupadev.com/oauth2/token",
+      "scopes": {
+        "core.pay.statements.write": "Allows Coupa Pay statements to be modified",
+        "core.pay.virtual_cards.read": "Allows Coupa Pay virtual cards to be read"
+      }
+    }
+  },
+  "definitions": {
+    "Account": {
+      "type": "object",
+      "properties": {
+        "account-type": {
+          "$ref": "#/definitions/AccountType"
+        },
+        "account-type-id": {
+          "type": "integer",
+          "description": "Account Type Id",
+          "format": "integer",
+          "readOnly": true
+        },
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "code": {
+          "type": "string",
+          "description": "All segments concatenated with a hyphen ( - )",
+          "format": "string(1024)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "This is the nickname for the account.  Users can view and search against this field through the user interface.",
+          "format": "string(1024)"
+        },
+        "segment-1": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-10": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-11": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-12": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-13": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-14": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-15": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-16": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-17": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-18": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-19": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-2": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-20": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-3": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-4": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-5": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-6": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-7": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-8": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "segment-9": {
+          "type": "string",
+          "description": "Each segment represents the segment of the account code (e.g. code: 99-9023-100132, where segment-1 is 99, segment-2 is 9023, and segment-3 is 100132)",
+          "format": "string(100)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "account-type"
+      ]
+    },
+    "AccountGroup": {
+      "type": "object",
+      "properties": {
+        "account-group-type": {
+          "type": "integer",
+          "description": "Type",
+          "format": "integer",
+          "enum": [
+            "1",
+            "2"
+          ]
+        },
+        "account-type": {
+          "$ref": "#/definitions/AccountType"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(80)"
+        },
+        "segment-10-col": {
+          "type": "string",
+          "description": "segment_10_col",
+          "format": "string(255)"
+        },
+        "segment-10-op": {
+          "type": "string",
+          "description": "segment_10_op",
+          "format": "string(255)"
+        },
+        "segment-10-val": {
+          "type": "string",
+          "description": "segment_10_val",
+          "format": "string(255)"
+        },
+        "segment-11-col": {
+          "type": "string",
+          "description": "segment_11_col",
+          "format": "string(255)"
+        },
+        "segment-11-op": {
+          "type": "string",
+          "description": "segment_11_op",
+          "format": "string(255)"
+        },
+        "segment-11-val": {
+          "type": "string",
+          "description": "segment_11_val",
+          "format": "string(255)"
+        },
+        "segment-12-col": {
+          "type": "string",
+          "description": "segment_12_col",
+          "format": "string(255)"
+        },
+        "segment-12-op": {
+          "type": "string",
+          "description": "segment_12_op",
+          "format": "string(255)"
+        },
+        "segment-12-val": {
+          "type": "string",
+          "description": "segment_12_val",
+          "format": "string(255)"
+        },
+        "segment-13-col": {
+          "type": "string",
+          "description": "segment_13_col",
+          "format": "string(255)"
+        },
+        "segment-13-op": {
+          "type": "string",
+          "description": "segment_13_op",
+          "format": "string(255)"
+        },
+        "segment-13-val": {
+          "type": "string",
+          "description": "segment_13_val",
+          "format": "string(255)"
+        },
+        "segment-14-col": {
+          "type": "string",
+          "description": "segment_14_col",
+          "format": "string(255)"
+        },
+        "segment-14-op": {
+          "type": "string",
+          "description": "segment_14_op",
+          "format": "string(255)"
+        },
+        "segment-14-val": {
+          "type": "string",
+          "description": "segment_14_val",
+          "format": "string(255)"
+        },
+        "segment-15-col": {
+          "type": "string",
+          "description": "segment_15_col",
+          "format": "string(255)"
+        },
+        "segment-15-op": {
+          "type": "string",
+          "description": "segment_15_op",
+          "format": "string(255)"
+        },
+        "segment-15-val": {
+          "type": "string",
+          "description": "segment_15_val",
+          "format": "string(255)"
+        },
+        "segment-16-col": {
+          "type": "string",
+          "description": "segment_16_col",
+          "format": "string(255)"
+        },
+        "segment-16-op": {
+          "type": "string",
+          "description": "segment_16_op",
+          "format": "string(255)"
+        },
+        "segment-16-val": {
+          "type": "string",
+          "description": "segment_16_val",
+          "format": "string(255)"
+        },
+        "segment-17-col": {
+          "type": "string",
+          "description": "segment_17_col",
+          "format": "string(255)"
+        },
+        "segment-17-op": {
+          "type": "string",
+          "description": "segment_17_op",
+          "format": "string(255)"
+        },
+        "segment-17-val": {
+          "type": "string",
+          "description": "segment_17_val",
+          "format": "string(255)"
+        },
+        "segment-18-col": {
+          "type": "string",
+          "description": "segment_18_col",
+          "format": "string(255)"
+        },
+        "segment-18-op": {
+          "type": "string",
+          "description": "segment_18_op",
+          "format": "string(255)"
+        },
+        "segment-18-val": {
+          "type": "string",
+          "description": "segment_18_val",
+          "format": "string(255)"
+        },
+        "segment-19-col": {
+          "type": "string",
+          "description": "segment_19_col",
+          "format": "string(255)"
+        },
+        "segment-19-op": {
+          "type": "string",
+          "description": "segment_19_op",
+          "format": "string(255)"
+        },
+        "segment-19-val": {
+          "type": "string",
+          "description": "segment_19_val",
+          "format": "string(255)"
+        },
+        "segment-1-col": {
+          "type": "string",
+          "description": "segment_1_col",
+          "format": "string(255)"
+        },
+        "segment-1-op": {
+          "type": "string",
+          "description": "segment_1_op",
+          "format": "string(255)"
+        },
+        "segment-1-val": {
+          "type": "string",
+          "description": "segment_1_val",
+          "format": "string(255)"
+        },
+        "segment-20-col": {
+          "type": "string",
+          "description": "segment_20_col",
+          "format": "string(255)"
+        },
+        "segment-20-op": {
+          "type": "string",
+          "description": "segment_20_op",
+          "format": "string(255)"
+        },
+        "segment-20-val": {
+          "type": "string",
+          "description": "segment_20_val",
+          "format": "string(255)"
+        },
+        "segment-2-col": {
+          "type": "string",
+          "description": "segment_2_col",
+          "format": "string(255)"
+        },
+        "segment-2-op": {
+          "type": "string",
+          "description": "segment_2_op",
+          "format": "string(255)"
+        },
+        "segment-2-val": {
+          "type": "string",
+          "description": "segment_2_val",
+          "format": "string(255)"
+        },
+        "segment-3-col": {
+          "type": "string",
+          "description": "segment_3_col",
+          "format": "string(255)"
+        },
+        "segment-3-op": {
+          "type": "string",
+          "description": "segment_3_op",
+          "format": "string(255)"
+        },
+        "segment-3-val": {
+          "type": "string",
+          "description": "segment_3_val",
+          "format": "string(255)"
+        },
+        "segment-4-col": {
+          "type": "string",
+          "description": "segment_4_col",
+          "format": "string(255)"
+        },
+        "segment-4-op": {
+          "type": "string",
+          "description": "segment_4_op",
+          "format": "string(255)"
+        },
+        "segment-4-val": {
+          "type": "string",
+          "description": "segment_4_val",
+          "format": "string(255)"
+        },
+        "segment-5-col": {
+          "type": "string",
+          "description": "segment_5_col",
+          "format": "string(255)"
+        },
+        "segment-5-op": {
+          "type": "string",
+          "description": "segment_5_op",
+          "format": "string(255)"
+        },
+        "segment-5-val": {
+          "type": "string",
+          "description": "segment_5_val",
+          "format": "string(255)"
+        },
+        "segment-6-col": {
+          "type": "string",
+          "description": "segment_6_col",
+          "format": "string(255)"
+        },
+        "segment-6-op": {
+          "type": "string",
+          "description": "segment_6_op",
+          "format": "string(255)"
+        },
+        "segment-6-val": {
+          "type": "string",
+          "description": "segment_6_val",
+          "format": "string(255)"
+        },
+        "segment-7-col": {
+          "type": "string",
+          "description": "segment_7_col",
+          "format": "string(255)"
+        },
+        "segment-7-op": {
+          "type": "string",
+          "description": "segment_7_op",
+          "format": "string(255)"
+        },
+        "segment-7-val": {
+          "type": "string",
+          "description": "segment_7_val",
+          "format": "string(255)"
+        },
+        "segment-8-col": {
+          "type": "string",
+          "description": "segment_8_col",
+          "format": "string(255)"
+        },
+        "segment-8-op": {
+          "type": "string",
+          "description": "segment_8_op",
+          "format": "string(255)"
+        },
+        "segment-8-val": {
+          "type": "string",
+          "description": "segment_8_val",
+          "format": "string(255)"
+        },
+        "segment-9-col": {
+          "type": "string",
+          "description": "segment_9_col",
+          "format": "string(255)"
+        },
+        "segment-9-op": {
+          "type": "string",
+          "description": "segment_9_op",
+          "format": "string(255)"
+        },
+        "segment-9-val": {
+          "type": "string",
+          "description": "segment_9_val",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "account-group-type",
+        "account-type",
+        "name"
+      ]
+    },
+    "AccountType": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the chart of account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "dynamic-flag": {
+          "type": "boolean",
+          "description": "Boolean value for determing if account type is dynamic",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "legal-entity-name": {
+          "type": "string",
+          "description": "Legal entity or entities that are associated with this chart of accounts",
+          "format": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(50)"
+        },
+        "primary-address": {
+          "$ref": "#/definitions/Address"
+        },
+        "primary-contact": {
+          "$ref": "#/definitions/Contact"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "currency",
+        "name"
+      ]
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "attention": {
+          "type": "string",
+          "description": "Address Default Attention Line",
+          "format": "string(255)"
+        },
+        "business-group-name": {
+          "type": "string",
+          "description": "Content Group Name for Address",
+          "format": "string"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "location-code": {
+          "type": "string",
+          "description": "location_code",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(255)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "state": {
+          "type": "string",
+          "description": "State Abbreviation",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "street3": {
+          "type": "string",
+          "description": "Address Line 3",
+          "format": "string(255)"
+        },
+        "street4": {
+          "type": "string",
+          "description": "Address Line 4",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaxRegistration"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Address type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "street1"
+      ]
+    },
+    "ApprovalLimit": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "amount",
+          "format": "decimal(32,4)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "subject": {
+          "type": "string",
+          "description": "subject",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "amount",
+        "currency",
+        "name"
+      ]
+    },
+    "BillToAddress": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "attention": {
+          "type": "string",
+          "description": "Address Default Attention Line",
+          "format": "string(255)"
+        },
+        "business-group-name": {
+          "type": "string",
+          "description": "Content Group Name for Address",
+          "format": "string"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "location-code": {
+          "type": "string",
+          "description": "location_code",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(255)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "state": {
+          "type": "string",
+          "description": "State Abbreviation",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "street3": {
+          "type": "string",
+          "description": "Address Line 3",
+          "format": "string(255)"
+        },
+        "street4": {
+          "type": "string",
+          "description": "Address Line 4",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaxRegistration"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Address type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "street1"
+      ]
+    },
+    "BusinessGroup": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(100)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Charge": {
+      "type": "object",
+      "properties": {
+        "account-type-id": {
+          "type": "integer",
+          "description": "Chart of Accounts ID associated with the charge",
+          "format": "integer",
+          "readOnly": true
+        },
+        "accounting-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "accounting-total": {
+          "type": "number",
+          "description": "Amount of charge in Chart Of Accounts Accounting Currency",
+          "format": "decimal",
+          "readOnly": true
+        },
+        "card-provider-account": {
+          "type": "string",
+          "description": "Card Provider Account",
+          "format": "string(255)"
+        },
+        "charge-allocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChargeAllocation"
+          }
+        },
+        "charge-date": {
+          "type": "string",
+          "description": "Date of the charge",
+          "format": "datetime"
+        },
+        "charge-tax-lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChargeTaxLine"
+          }
+        },
+        "coupa-pay-id": {
+          "type": "integer",
+          "description": "Unique Coupa Pay ID",
+          "format": "integer"
+        },
+        "coupa-pay-statement-id": {
+          "type": "integer",
+          "description": "Unique Coupa Pay Statement ID",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "document-id": {
+          "type": "integer",
+          "description": "Transactional document ID associated with the charged card",
+          "format": "integer",
+          "readOnly": true
+        },
+        "document-type": {
+          "type": "string",
+          "description": "Type of transactional document associated with the charged card",
+          "format": "string",
+          "readOnly": true
+        },
+        "expense-holding-account": {
+          "$ref": "#/definitions/Account"
+        },
+        "exported": {
+          "type": "boolean",
+          "description": "Indicates if transaction has been exported",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "external-ref-id": {
+          "type": "string",
+          "description": "Unique 3rd party system ID",
+          "format": "string(255)"
+        },
+        "holding-account": {
+          "$ref": "#/definitions/Account"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Unique Coupa ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "issuer-bank": {
+          "$ref": "#/definitions/Supplier"
+        },
+        "issuer-reconciliation-id": {
+          "type": "string",
+          "description": "Issuer Reconciliation ID",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "last-exported-at": {
+          "type": "string",
+          "description": "Date and time transaction was last exported in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "mcc": {
+          "type": "string",
+          "description": "Merchant Category Code",
+          "format": "string(255)"
+        },
+        "merchant-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "merchant-reference": {
+          "type": "string",
+          "description": "Card provided merchant information",
+          "format": "string(255)"
+        },
+        "merchant-total": {
+          "type": "number",
+          "description": "Total the merchant charged in merchant currency",
+          "format": "decimal"
+        },
+        "order-header-currency": {
+          "type": "string",
+          "description": "Currency from the charged card's Purchase Order",
+          "format": "string",
+          "readOnly": true
+        },
+        "order-header-id": {
+          "type": "integer",
+          "description": "Purchase Order ID associated with the charged card",
+          "format": "integer",
+          "readOnly": true
+        },
+        "order-header-number": {
+          "type": "string",
+          "description": "Purchase Order Number associated with the charged card",
+          "format": "string",
+          "readOnly": true
+        },
+        "order-header-total": {
+          "type": "string",
+          "description": "Total amount on the charged card's Purchase Order",
+          "format": "string",
+          "readOnly": true
+        },
+        "payment-partner": {
+          "$ref": "#/definitions/CoupaPay-PaymentPartner"
+        },
+        "posting-date": {
+          "type": "string",
+          "description": "Date the charge posted",
+          "format": "datetime"
+        },
+        "statement": {
+          "$ref": "#/definitions/CoupaPay-Statement"
+        },
+        "statement-id": {
+          "type": "integer",
+          "description": "Unique Coupa ID",
+          "format": "integer"
+        },
+        "statement-name": {
+          "type": "string",
+          "description": "Name of the Statement that this Charge belongs to",
+          "format": "string",
+          "readOnly": true
+        },
+        "supplier": {
+          "$ref": "#/definitions/Supplier"
+        },
+        "supplier-id": {
+          "type": "integer",
+          "description": "Unique Coupa Supplier ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "supplier-name": {
+          "type": "string",
+          "description": "Supplier in Coupa that made the charge",
+          "format": "string",
+          "readOnly": true
+        },
+        "total": {
+          "type": "number",
+          "description": "Total of the charge in the card base currency",
+          "format": "decimal"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "virtual-card": {
+          "$ref": "#/definitions/CoupaPay-VirtualCard"
+        },
+        "virtual-card-id": {
+          "type": "integer",
+          "description": "Coupa ID for associated Virtual Card",
+          "format": "integer",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "charge-date",
+        "currency",
+        "external-ref-id",
+        "statement-id"
+      ]
+    },
+    "ChargeAllocation": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "$ref": "#/definitions/Account"
+        },
+        "amount": {
+          "type": "number",
+          "description": "dollar amount for this allocation",
+          "format": "decimal(30,6)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "pct": {
+          "type": "number",
+          "description": "percent",
+          "format": "decimal(16,10)"
+        },
+        "period": {
+          "$ref": "#/definitions/Period"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "account",
+        "currency",
+        "pct"
+      ]
+    },
+    "ChargeTaxLine": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "amount",
+          "format": "decimal(32,4)"
+        },
+        "amount-engine": {
+          "type": "number",
+          "description": "Amount calculated by either Coupa Native or External Tax Engine based on configuration",
+          "format": "decimal(32,4)",
+          "readOnly": true
+        },
+        "base": {
+          "type": "number",
+          "description": "Base to Calculate Tax",
+          "format": "decimal(30,4)"
+        },
+        "basis": {
+          "type": "number",
+          "description": "Supplier Withholding Base Suggestion",
+          "format": "decimal(30,6)"
+        },
+        "code": {
+          "type": "string",
+          "description": "code",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "code-engine": {
+          "type": "string",
+          "description": "Code returned by External Tax Engine based on configuration",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "code-id": {
+          "type": "integer",
+          "description": "code_id",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "Tax Reference",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "kind-of-factor": {
+          "type": "string",
+          "description": "Kind of Factor",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "nature-of-tax": {
+          "type": "string",
+          "description": "Kind of Tax",
+          "format": "string(255)"
+        },
+        "product-tax-classification": {
+          "type": "string",
+          "description": "Product Tax Classification",
+          "format": "string(255)"
+        },
+        "rate": {
+          "type": "number",
+          "description": "rate",
+          "format": "float"
+        },
+        "rate-engine": {
+          "type": "number",
+          "description": "Rate returned by External Tax Engine based on configuration",
+          "format": "decimal(30,6)",
+          "readOnly": true
+        },
+        "supplier-rate": {
+          "type": "number",
+          "description": "Supplier Withholding Rate Suggestion",
+          "format": "decimal(30,4)"
+        },
+        "tax-code": {
+          "$ref": "#/definitions/TaxCode"
+        },
+        "tax-rate": {
+          "$ref": "#/definitions/TaxRate"
+        },
+        "tax-rate-type": {
+          "$ref": "#/definitions/TaxRateType"
+        },
+        "taxable-amount": {
+          "type": "number",
+          "description": "Amount",
+          "format": "decimal(32,4)"
+        },
+        "type": {
+          "type": "string",
+          "description": "WithholdingTaxLine, TcsTaxLine or TaxLine",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "withholding-amount": {
+          "type": "number",
+          "description": "Withholding Amount",
+          "format": "decimal(30,4)"
+        }
+      }
+    },
+    "Commodity": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean",
+          "enum": [
+            "true",
+            "false"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "description": "Category",
+          "format": "string(255)",
+          "enum": [
+            "goods",
+            "services",
+            "monetary",
+            "others"
+          ]
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "deductibility": {
+          "type": "string",
+          "description": "Deductibility",
+          "format": "string(255)",
+          "enum": [
+            "fully_deductible",
+            "partially_deductible",
+            "not_deductible"
+          ]
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "imported-from-taxonomy": {
+          "type": "boolean",
+          "description": "A true value will tell that the commodity is imported from Coupa Taxonomy. A false value will tell that the value is created by a user or system",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "parent": {
+          "$ref": "#/definitions/Commodity"
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "Subcategory",
+          "format": "string(255)",
+          "enum": [
+            "raw_materials",
+            "investment_goods",
+            "services_exceptions"
+          ]
+        },
+        "translated-name": {
+          "type": "string",
+          "description": "Translated name",
+          "format": "string",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "email": {
+          "type": "string",
+          "description": "email",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name-additional": {
+          "type": "string",
+          "description": "name_additional",
+          "format": "string(255)"
+        },
+        "name-family": {
+          "type": "string",
+          "description": "name_family",
+          "format": "string(255)"
+        },
+        "name-fullname": {
+          "type": "string",
+          "description": "name_fullname",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "name-given": {
+          "type": "string",
+          "description": "name_given",
+          "format": "string(255)"
+        },
+        "name-prefix": {
+          "type": "string",
+          "description": "name_prefix",
+          "format": "string(255)"
+        },
+        "name-suffix": {
+          "type": "string",
+          "description": "name_suffix",
+          "format": "string(255)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "notes",
+          "format": "text"
+        },
+        "phone-fax": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "phone-mobile": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "phone-work": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "photo": {
+          "type": "string",
+          "description": "photo",
+          "format": "string(255)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "CounterpartyAddress": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "attention": {
+          "type": "string",
+          "description": "Address Default Attention Line",
+          "format": "string(255)"
+        },
+        "business-group-name": {
+          "type": "string",
+          "description": "Content Group Name for Address",
+          "format": "string"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "location-code": {
+          "type": "string",
+          "description": "location_code",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(255)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "state": {
+          "type": "string",
+          "description": "State Abbreviation",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "street3": {
+          "type": "string",
+          "description": "Address Line 3",
+          "format": "string(255)"
+        },
+        "street4": {
+          "type": "string",
+          "description": "Address Line 4",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaxRegistration"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Address type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "street1"
+      ]
+    },
+    "Country": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "code",
+          "format": "string(4)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(100)"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    },
+    "CoupaPay-PaymentPartner": {
+      "type": "object",
+      "properties": {
+        "account-types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AccountType"
+          }
+        },
+        "card-network": {
+          "type": "string",
+          "description": "Card network",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "configuration": {
+          "type": "string",
+          "description": "Configuration",
+          "format": "text"
+        },
+        "coupa-pay-id": {
+          "type": "integer",
+          "description": "Coupa pay",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "financial-counterparty": {
+          "$ref": "#/definitions/FinancialCounterparty"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "issuing-bank": {
+          "type": "string",
+          "description": "Issuing bank",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notes",
+          "format": "text"
+        },
+        "payment-partner-type": {
+          "type": "string",
+          "description": "Payment partner type",
+          "format": "string(255)"
+        },
+        "po-charge-holding-account": {
+          "$ref": "#/definitions/Account"
+        },
+        "product-names": {
+          "type": "string",
+          "description": "Product names"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CoupaPay-PaymentPartner-Product"
+          }
+        },
+        "support-contact": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "name",
+        "payment-partner-type",
+        "type"
+      ]
+    },
+    "CoupaPay-PaymentPartner-Product": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "product": {
+          "type": "string",
+          "description": "Product",
+          "format": "string(255)",
+          "readOnly": true,
+          "enum": [
+            "purchase_order",
+            "invoice",
+            "expense",
+            "travel",
+            "statement"
+          ]
+        }
+      }
+    },
+    "CoupaPay-Statement": {
+      "type": "object",
+      "properties": {
+        "coupa-pay-id": {
+          "type": "integer",
+          "description": "Unique Coupa Pay ID",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "exported": {
+          "type": "boolean",
+          "description": "Indicates if transaction has been exported",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "external-ref-id": {
+          "type": "string",
+          "description": "Unique 3rd party system ID",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "last-exported-at": {
+          "type": "string",
+          "description": "Date and time transaction was last exported in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Statement Name",
+          "format": "string(255)"
+        },
+        "number-of-lines": {
+          "type": "integer",
+          "description": "Number of lines on the statement",
+          "format": "integer",
+          "readOnly": true
+        },
+        "payment-partner": {
+          "$ref": "#/definitions/CoupaPay-VirtualCardPartner"
+        },
+        "statement-date": {
+          "type": "string",
+          "description": "Date of Statement",
+          "format": "datetime"
+        },
+        "total": {
+          "type": "number",
+          "description": "Total amount on the statement",
+          "format": "decimal",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "external-ref-id",
+        "statement-date"
+      ]
+    },
+    "CoupaPay-VirtualCard": {
+      "type": "object",
+      "properties": {
+        "card-number": {
+          "type": "string",
+          "description": "Last 4 digits of card",
+          "format": "string(255)"
+        },
+        "card-type": {
+          "type": "string",
+          "description": "Card Network Identifier",
+          "format": "string(255)"
+        },
+        "coupa-pay-id": {
+          "type": "integer",
+          "description": "Internal Coupa Pay ID",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "credit-account": {
+          "type": "string",
+          "description": "Account for",
+          "format": "string(255)"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "document-id": {
+          "type": "integer",
+          "description": "ID of Backing Document supporting Virtual Card",
+          "format": "integer"
+        },
+        "document-type": {
+          "type": "string",
+          "description": "Type of Backing Document supporting Virtual Card",
+          "format": "string(255)"
+        },
+        "expiry-month": {
+          "type": "integer",
+          "description": "Expiration Month of card",
+          "format": "integer"
+        },
+        "expiry-year": {
+          "type": "integer",
+          "description": "Expiration Year of card",
+          "format": "integer"
+        },
+        "external-ref-id": {
+          "type": "string",
+          "description": "External Card Issuer Reference ID",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Virtual Card Name",
+          "format": "string(255)"
+        },
+        "order-header-id": {
+          "type": "integer",
+          "description": "PO ID if PO Virtual Card",
+          "format": "integer"
+        },
+        "payment-partner": {
+          "$ref": "#/definitions/CoupaPay-VirtualCardPartner"
+        },
+        "requested-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "requested-by-id": {
+          "type": "integer",
+          "description": "ID of user who triggered card creation",
+          "format": "integer"
+        },
+        "status": {
+          "type": "string",
+          "description": "Card Status",
+          "format": "string(255)",
+          "enum": [
+            "requested",
+            "generated",
+            "transmission_failed",
+            "update_failed",
+            "sent",
+            "cancelled",
+            "processed",
+            "processing_failed"
+          ]
+        },
+        "total-booked": {
+          "type": "number",
+          "description": "Limit card was issued for",
+          "format": "decimal"
+        },
+        "total-charged": {
+          "type": "number",
+          "description": "Amount of charges settle on card",
+          "format": "decimal"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "valid-from": {
+          "type": "string",
+          "description": "Start date when card can be charged",
+          "format": "datetime"
+        },
+        "valid-to": {
+          "type": "string",
+          "description": "End Date when card cannot be charged",
+          "format": "datetime"
+        }
+      },
+      "required": [
+        "currency",
+        "external-ref-id",
+        "requested-by-id",
+        "total-booked"
+      ]
+    },
+    "CoupaPay-VirtualCardPartner": {
+      "type": "object",
+      "properties": {
+        "account-types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AccountType"
+          }
+        },
+        "card-network": {
+          "type": "string",
+          "description": "Card network",
+          "format": "string(255)",
+          "readOnly": true,
+          "enum": [
+            "visa",
+            "mastercard",
+            "amex"
+          ]
+        },
+        "configuration": {
+          "type": "string",
+          "description": "Configuration",
+          "format": "text"
+        },
+        "coupa-pay-id": {
+          "type": "integer",
+          "description": "Coupa pay",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "financial-counterparty": {
+          "$ref": "#/definitions/FinancialCounterparty"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "issuing-bank": {
+          "type": "string",
+          "description": "Issuing bank",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notes",
+          "format": "text"
+        },
+        "payment-partner-type": {
+          "type": "string",
+          "description": "Payment partner type",
+          "format": "string(255)"
+        },
+        "po-charge-holding-account": {
+          "$ref": "#/definitions/Account"
+        },
+        "product-names": {
+          "type": "string",
+          "description": "Product names"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CoupaPay-PaymentPartner-Product"
+          }
+        },
+        "support-contact": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "currency",
+        "name",
+        "payment-partner-type",
+        "support-contact",
+        "type"
+      ]
+    },
+    "Currency": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "code",
+          "format": "string(6)"
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "decimals": {
+          "type": "integer",
+          "description": "Decimal precision",
+          "format": "integer",
+          "readOnly": true
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Enabled",
+          "format": "boolean"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(100)"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "symbol",
+          "format": "string(10)"
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "code",
+        "name"
+      ]
+    },
+    "CustomerSupportContact": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email",
+          "readOnly": true
+        },
+        "fullname": {
+          "type": "string",
+          "description": "Fullname",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "user": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "user-id": {
+          "type": "integer",
+          "description": "User",
+          "format": "integer"
+        }
+      },
+      "required": [
+        "user-id"
+      ]
+    },
+    "Department": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Control whether the Department is Active or Inactive",
+          "format": "boolean",
+          "enum": [
+            "true",
+            "false"
+          ]
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Department Name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "DiversityAssociation": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "country-id": {
+          "type": "integer",
+          "description": "Country",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Created Date and Time",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "diversity-category": {
+          "$ref": "#/definitions/DiversityCategory"
+        },
+        "diversity-category-id": {
+          "type": "integer",
+          "description": "Diversity category",
+          "format": "integer"
+        },
+        "diversity-subcategory": {
+          "$ref": "#/definitions/DiversitySubcategory"
+        },
+        "diversity-subcategory-id": {
+          "type": "integer",
+          "description": "Diversity subcategory",
+          "format": "integer"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Diversity Association ID",
+          "format": "integer"
+        },
+        "sim-diversity-certificate-artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SimDiversityCertificateArtifact"
+          }
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Last Updated Date and Time",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "country-id",
+        "diversity-category-id",
+        "diversity-subcategory-id"
+      ]
+    },
+    "DiversityCategory": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Diversity Category non-translated name",
+          "readOnly": true
+        },
+        "code": {
+          "type": "string",
+          "description": "Code to refer to a particular diversity category",
+          "format": "string(255)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "diversity-subcategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DiversitySubcategory"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "description": "Diversity Category identifier",
+          "format": "integer"
+        },
+        "parent-category": {
+          "type": "string",
+          "description": "Name of parent category for this diversity category",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "code"
+      ]
+    },
+    "DiversityCertificationAgency": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Code",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "region-type": {
+          "type": "string",
+          "description": "Region type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      }
+    },
+    "DiversitySubcategory": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Category",
+          "format": "{:african_american_black=>\"African-American | Black\", :asian_american_indian_american=>\"Asian American | Indian American\", :asian_pacific_american=>\"Asian-Pacific American\", :hispanic_latin_american=>\"Hispanic | Latin American\", :black=>\"Black\", :chinese=>\"Chinese\", :filipino=>\"Filipino\", :japanese_korean=>\"Japanese Korean\", :latin_american=>\"Latin American\", :pacific_islander=>\"Pacific Islander\", :south_asian=>\"South Asian\", :west_asian_arab=>\"West Asian/Arab\", :asian_asian_british=>\"Asian/Asian British\", :black_african_carribbean_black_british=>\"Black/African/Carribbean/Black British\", :mixed_multiple_ethnic_group=>\"Mixed/Multiple Ethnic Group\", :other_ethnic_group=>\"Other Ethnic Group\"}",
+          "readOnly": true
+        },
+        "code": {
+          "type": "string",
+          "description": "Code",
+          "format": "string(255)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "User who created",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "designation": {
+          "type": "string",
+          "description": "Designation",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Diversity Subcategory Id",
+          "format": "integer"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "User who updated",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "code"
+      ]
+    },
+    "Enterprise": {
+      "type": "object",
+      "properties": {
+        "active-flag": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean"
+        },
+        "code": {
+          "type": "string",
+          "description": "Code",
+          "format": "string(6)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(100)"
+        },
+        "system-flag": {
+          "type": "boolean",
+          "description": "System",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "tax-coding-enabled": {
+          "type": "string",
+          "description": "Tax Coding Enabled",
+          "format": "string"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vendor-remit-to-required": {
+          "type": "string",
+          "description": "Vendor Remit-To Required",
+          "format": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name"
+      ]
+    },
+    "FinancialCounterparty": {
+      "type": "object",
+      "properties": {
+        "abbreviation": {
+          "type": "string",
+          "description": "Abbreviation",
+          "format": "string(50)"
+        },
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean"
+        },
+        "counterparty-address": {
+          "$ref": "#/definitions/CounterpartyAddress"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "payment-usage": {
+          "type": "string",
+          "description": "Payment Usage",
+          "format": "string(255)"
+        },
+        "swift-code": {
+          "type": "string",
+          "description": "Swift Code",
+          "format": "string(255)"
+        },
+        "treasury-usage": {
+          "type": "string",
+          "description": "Treasury Usage",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "abbreviation",
+        "name",
+        "swift-code"
+      ]
+    },
+    "InventoryOrganization": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "fulfillment-type": {
+          "type": "string",
+          "description": "Fulfillment type",
+          "format": "string(255)",
+          "enum": [
+            "manual",
+            "automatic"
+          ]
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "warehouses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Warehouse"
+          }
+        }
+      },
+      "required": [
+        "currency",
+        "fulfillment-type"
+      ]
+    },
+    "InvoiceEmail": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "email": {
+          "type": "string",
+          "description": "email",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "send-notification": {
+          "type": "string",
+          "description": "Send Email added notification to supplier",
+          "format": "string"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "email"
+      ]
+    },
+    "LegalEntity": {
+      "type": "object",
+      "properties": {
+        "abbreviation": {
+          "type": "string",
+          "description": "Abbreviation",
+          "format": "string(50)"
+        },
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean"
+        },
+        "bill-to-address": {
+          "$ref": "#/definitions/BillToAddress"
+        },
+        "bill-to-addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BillToAddress"
+          }
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "legal-entity-address": {
+          "$ref": "#/definitions/LegalEntityAddress"
+        },
+        "legal-entity-addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LegalEntityAddress"
+          }
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "parent": {
+          "$ref": "#/definitions/LegalEntity"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "abbreviation",
+        "currency",
+        "name"
+      ]
+    },
+    "LegalEntityAddress": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "attention": {
+          "type": "string",
+          "description": "Address Default Attention Line",
+          "format": "string(255)"
+        },
+        "business-group-name": {
+          "type": "string",
+          "description": "Content Group Name for Address",
+          "format": "string"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "location-code": {
+          "type": "string",
+          "description": "location_code",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(255)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "state": {
+          "type": "string",
+          "description": "State Abbreviation",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "street3": {
+          "type": "string",
+          "description": "Address Line 3",
+          "format": "string(255)"
+        },
+        "street4": {
+          "type": "string",
+          "description": "Address Line 4",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaxRegistration"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Address type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "street1"
+      ]
+    },
+    "OnlineStore": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "login": {
+          "type": "string",
+          "description": "login",
+          "format": "string(255)"
+        },
+        "password": {
+          "type": "string",
+          "description": "password"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "url": {
+          "type": "string",
+          "description": "url",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "url"
+      ]
+    },
+    "PaymentTerm": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean",
+          "enum": [
+            "true"
+          ]
+        },
+        "code": {
+          "type": "string",
+          "description": "code",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "days-for-discount-payment": {
+          "type": "integer",
+          "description": "days_for_discount_payment",
+          "format": "integer"
+        },
+        "days-for-net-payment": {
+          "type": "integer",
+          "description": "days_for_net_payment",
+          "format": "integer"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "discount-cutoff-day": {
+          "type": "integer",
+          "description": "Document before this day are eligible for discount else they will fall into the next month",
+          "format": "integer"
+        },
+        "discount-due-day": {
+          "type": "integer",
+          "description": "This field is used to calculate the document's discount due date.",
+          "format": "integer"
+        },
+        "discount-due-month": {
+          "type": "integer",
+          "description": "This field is used to calculate the document's discount due date along with the discount due day.",
+          "format": "integer"
+        },
+        "discount-rate": {
+          "type": "number",
+          "description": "discount_rate",
+          "format": "float"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "net-cutoff-day": {
+          "type": "integer",
+          "description": "This helps to determine payment due date if the document should be counted against this month or next",
+          "format": "integer"
+        },
+        "net-due-day": {
+          "type": "integer",
+          "description": "This helps to determine the document's payment due date",
+          "format": "integer"
+        },
+        "net-due-month": {
+          "type": "integer",
+          "description": "This helps to determine the document's payment due date",
+          "format": "integer"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type can be either DaysAfterNetPaymentTerm or SpecificDayPaymentTerm",
+          "format": "string(50)",
+          "enum": [
+            "DaysAfterNetPaymentTerm",
+            "SpecificDayPaymentTerm"
+          ]
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "code",
+        "discount-due-day",
+        "discount-due-month",
+        "net-due-day",
+        "net-due-month",
+        "type"
+      ]
+    },
+    "Pcard": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "cvv": {
+          "type": "string",
+          "description": "cvv",
+          "readOnly": true
+        },
+        "expiry": {
+          "type": "string",
+          "description": "expiry",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "nickname": {
+          "type": "string",
+          "description": "nickname",
+          "format": "string(255)"
+        },
+        "number": {
+          "type": "string",
+          "description": "number",
+          "format": "string"
+        },
+        "shared": {
+          "type": "boolean",
+          "description": "shared",
+          "format": "boolean"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "expiry",
+        "name",
+        "number"
+      ]
+    },
+    "Period": {
+      "type": "object",
+      "properties": {
+        "account-type": {
+          "$ref": "#/definitions/AccountType"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime"
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "end-date": {
+          "type": "string",
+          "description": "end_date",
+          "format": "datetime"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer"
+        },
+        "is-open": {
+          "type": "boolean",
+          "description": "is_open",
+          "format": "boolean"
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(100)"
+        },
+        "segment-1": {
+          "type": "boolean",
+          "description": "segment_1",
+          "format": "boolean"
+        },
+        "segment-10": {
+          "type": "boolean",
+          "description": "segment_10",
+          "format": "boolean"
+        },
+        "segment-11": {
+          "type": "boolean",
+          "description": "segment_11",
+          "format": "boolean"
+        },
+        "segment-12": {
+          "type": "boolean",
+          "description": "segment_12",
+          "format": "boolean"
+        },
+        "segment-13": {
+          "type": "boolean",
+          "description": "segment_13",
+          "format": "boolean"
+        },
+        "segment-14": {
+          "type": "boolean",
+          "description": "segment_14",
+          "format": "boolean"
+        },
+        "segment-15": {
+          "type": "boolean",
+          "description": "segment_15",
+          "format": "boolean"
+        },
+        "segment-16": {
+          "type": "boolean",
+          "description": "segment_16",
+          "format": "boolean"
+        },
+        "segment-17": {
+          "type": "boolean",
+          "description": "segment_17",
+          "format": "boolean"
+        },
+        "segment-18": {
+          "type": "boolean",
+          "description": "segment_18",
+          "format": "boolean"
+        },
+        "segment-19": {
+          "type": "boolean",
+          "description": "segment_19",
+          "format": "boolean"
+        },
+        "segment-2": {
+          "type": "boolean",
+          "description": "segment_2",
+          "format": "boolean"
+        },
+        "segment-20": {
+          "type": "boolean",
+          "description": "segment_20",
+          "format": "boolean"
+        },
+        "segment-3": {
+          "type": "boolean",
+          "description": "segment_3",
+          "format": "boolean"
+        },
+        "segment-4": {
+          "type": "boolean",
+          "description": "segment_4",
+          "format": "boolean"
+        },
+        "segment-5": {
+          "type": "boolean",
+          "description": "segment_5",
+          "format": "boolean"
+        },
+        "segment-6": {
+          "type": "boolean",
+          "description": "segment_6",
+          "format": "boolean"
+        },
+        "segment-7": {
+          "type": "boolean",
+          "description": "segment_7",
+          "format": "boolean"
+        },
+        "segment-8": {
+          "type": "boolean",
+          "description": "segment_8",
+          "format": "boolean"
+        },
+        "segment-9": {
+          "type": "boolean",
+          "description": "segment_9",
+          "format": "boolean"
+        },
+        "start-date": {
+          "type": "string",
+          "description": "start_date",
+          "format": "datetime"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime"
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "end-date",
+        "name",
+        "start-date"
+      ]
+    },
+    "PhoneNumber": {
+      "type": "object",
+      "properties": {
+        "area-code": {
+          "type": "string",
+          "description": "area_code",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "country-code": {
+          "type": "string",
+          "description": "country_code",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "extension": {
+          "type": "string",
+          "description": "extension",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "number": {
+          "type": "string",
+          "description": "number",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "Purpose": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "kind": {
+          "type": "string",
+          "description": "Kind",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "kind",
+        "name"
+      ]
+    },
+    "RemitToAddress": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "external-src-name": {
+          "type": "string",
+          "description": "Name of the source system.",
+          "format": "string(255)"
+        },
+        "external-src-ref": {
+          "type": "string",
+          "description": "Reference number from source system.",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(255)"
+        },
+        "remit-to-code": {
+          "type": "string",
+          "description": "Remit To Code (if a Supplier address)",
+          "format": "string(255)"
+        },
+        "state": {
+          "type": "string",
+          "description": "State Abbreviation",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaxRegistration"
+          }
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "remit-to-code",
+        "street1"
+      ]
+    },
+    "Role": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "omnipotent": {
+          "type": "boolean",
+          "description": "omnipotent",
+          "format": "boolean"
+        },
+        "system-role": {
+          "type": "boolean",
+          "description": "system_role",
+          "format": "boolean"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "ShippingTerm": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean",
+          "enum": [
+            "true"
+          ]
+        },
+        "code": {
+          "type": "string",
+          "description": "code",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "text"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    },
+    "SimDiversityCertificateArtifact": {
+      "type": "object",
+      "properties": {
+        "agency": {
+          "$ref": "#/definitions/DiversityCertificationAgency"
+        },
+        "agency-id": {
+          "type": "integer",
+          "description": "Agency",
+          "format": "integer"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Created Date and Time",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description",
+          "format": "string(255)"
+        },
+        "effective-date": {
+          "type": "string",
+          "description": "Attachment Effective Date",
+          "format": "datetime"
+        },
+        "expiry-date": {
+          "type": "string",
+          "description": "Attachment Expiration Date",
+          "format": "datetime"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Artifact/Attachment ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Last Updated Date and Time",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "Supplier": {
+      "type": "object",
+      "properties": {
+        "account-number": {
+          "type": "string",
+          "description": "Account number",
+          "format": "string(255)"
+        },
+        "allow-change-requests": {
+          "type": "integer",
+          "description": "Allows suppliers to create change requests from CSP",
+          "format": "integer"
+        },
+        "allow-csp-access-without-two-factor": {
+          "type": "boolean",
+          "description": "Allows supplier to access Customer's data from CSP without Two Factor",
+          "format": "boolean"
+        },
+        "allow-cxml-invoicing": {
+          "type": "boolean",
+          "description": "Allow cXML invoicing for Supplier",
+          "format": "boolean"
+        },
+        "allow-inv-choose-billing-account": {
+          "type": "boolean",
+          "description": "allow_inv_choose_billing_account",
+          "format": "boolean"
+        },
+        "allow-inv-from-connect": {
+          "type": "boolean",
+          "description": "If yes, then the supplier can create invoices against their POs or Contracts in CSP",
+          "format": "boolean"
+        },
+        "allow-inv-no-backing-doc-from-connect": {
+          "type": "boolean",
+          "description": "If yes, then the supplier can create invoices without a backing PO or Contract in CSP.",
+          "format": "boolean"
+        },
+        "allow-inv-unbacked-lines-from-connect": {
+          "type": "boolean",
+          "description": "If yes, then the supplier can create unbacked invoices without a backing PO or Contract in CSP.",
+          "format": "boolean"
+        },
+        "business-entity-id": {
+          "type": "integer",
+          "description": "Business Entity",
+          "format": "integer"
+        },
+        "buyer-hold": {
+          "type": "boolean",
+          "description": "Hold all POs for buyer review",
+          "format": "boolean"
+        },
+        "commodity": {
+          "$ref": "#/definitions/Commodity"
+        },
+        "confirm-by-hrs": {
+          "type": "number",
+          "description": "Confirm By (In Hours)",
+          "format": "decimal(10,0)",
+          "enum": [
+            ""
+          ]
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "corporate-url": {
+          "type": "string",
+          "description": "corporate_url",
+          "format": "string(255)"
+        },
+        "coupa-connect-secret": {
+          "type": "string",
+          "description": "coupa_connect_secret",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "coupa-pay-financing-only": {
+          "type": "boolean",
+          "description": "Only pay financed invoices via Coupa Pay",
+          "format": "boolean"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "customer-support-contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CustomerSupportContact"
+          }
+        },
+        "cxml-domain": {
+          "type": "string",
+          "description": "\"From\" , our domain",
+          "format": "string"
+        },
+        "cxml-http-password": {
+          "type": "string",
+          "description": "Password required to access the Supplier's online store",
+          "format": "string(255)"
+        },
+        "cxml-http-username": {
+          "type": "string",
+          "description": "User name required to access the Supplier's online store",
+          "format": "string"
+        },
+        "cxml-identity": {
+          "type": "string",
+          "description": "\"From\", our identity",
+          "format": "string"
+        },
+        "cxml-invoice-buyer-domain": {
+          "type": "string",
+          "description": "Buyer Domain for cXML Invoicing",
+          "format": "string"
+        },
+        "cxml-invoice-buyer-identity": {
+          "type": "string",
+          "description": "Buyer Identity for cXML Invoicing",
+          "format": "string"
+        },
+        "cxml-invoice-secret": {
+          "type": "string",
+          "description": "Secret Key for cXML Invoicing Authentication",
+          "format": "string"
+        },
+        "cxml-invoice-supplier-domain": {
+          "type": "string",
+          "description": "Supplier Domain for cXML Invoicing",
+          "format": "string"
+        },
+        "cxml-invoice-supplier-identity": {
+          "type": "string",
+          "description": "Supplier Identity for cXML Invoicing",
+          "format": "string"
+        },
+        "cxml-protocol": {
+          "type": "string",
+          "description": "Transmission protocol",
+          "format": "string"
+        },
+        "cxml-secret": {
+          "type": "string",
+          "description": "Shared secret",
+          "format": "string"
+        },
+        "cxml-ssl-version": {
+          "type": "string",
+          "description": "Specify the SSL version used for cXML communication with the supplier",
+          "format": "string"
+        },
+        "cxml-supplier-domain": {
+          "type": "string",
+          "description": "\"To\", supplier domain",
+          "format": "string"
+        },
+        "cxml-supplier-identity": {
+          "type": "string",
+          "description": "\"To\", supplier identity",
+          "format": "string"
+        },
+        "cxml-url": {
+          "type": "string",
+          "description": "URL where POs are sent if PO transmission is \"cxml\"",
+          "format": "string"
+        },
+        "dd-settings": {
+          "type": "string",
+          "description": "Dynamic Discounting Settings whitelisted for supplier",
+          "format": "string"
+        },
+        "default-locale": {
+          "type": "string",
+          "description": "Default Locale for sending emails to this supplier",
+          "format": "string(255)"
+        },
+        "disable-cert-verify": {
+          "type": "boolean",
+          "description": "Specify whether to ignore SSL certificate mismatch errors",
+          "format": "boolean"
+        },
+        "display-name": {
+          "type": "string",
+          "description": "display_name",
+          "format": "string(255)"
+        },
+        "diversities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DiversityAssociation"
+          }
+        },
+        "diversity-categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DiversityCategory"
+          }
+        },
+        "do-not-accelerate": {
+          "type": "boolean",
+          "description": "Do not accelerate the payment terms",
+          "format": "boolean"
+        },
+        "duns": {
+          "type": "string",
+          "description": "Supplier DUNS number",
+          "format": "string"
+        },
+        "enterprise": {
+          "$ref": "#/definitions/Enterprise"
+        },
+        "hold-invoices-for-ap-review": {
+          "type": "boolean",
+          "description": "Prevent invoices from this supplier from being approved before AP reviews them.",
+          "format": "boolean"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "integration-contacts": {
+          "type": "string",
+          "description": "Supplier user integration contacts",
+          "format": "string",
+          "readOnly": true
+        },
+        "inventory-organization": {
+          "$ref": "#/definitions/InventoryOrganization"
+        },
+        "invoice-emails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InvoiceEmail"
+          }
+        },
+        "invoice-matching-level": {
+          "type": "string",
+          "description": "Invoice matching level",
+          "format": "string(255)",
+          "enum": [
+            "2-way",
+            "3-way",
+            "3-way-direct",
+            "none"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "description": "Supplier name",
+          "format": "string(100)"
+        },
+        "number": {
+          "type": "string",
+          "description": "Supplier number",
+          "format": "string(255)"
+        },
+        "on-hold": {
+          "type": "boolean",
+          "description": "Supplier On Hold",
+          "format": "boolean"
+        },
+        "one-time-supplier": {
+          "type": "boolean",
+          "description": "Indicates whether the supplier is a One Time Supplier",
+          "format": "boolean"
+        },
+        "online-store": {
+          "$ref": "#/definitions/OnlineStore"
+        },
+        "order-confirmation-level": {
+          "type": "integer",
+          "description": "Order Confirmation Level",
+          "format": "integer",
+          "enum": [
+            "not_applicable",
+            "header",
+            "line"
+          ]
+        },
+        "parent": {
+          "$ref": "#/definitions/Supplier"
+        },
+        "payment-method": {
+          "type": "string",
+          "description": "Default payment method, selectable from drop down",
+          "format": "string(255)"
+        },
+        "payment-term": {
+          "$ref": "#/definitions/PaymentTerm"
+        },
+        "payment-term-id": {
+          "type": "integer",
+          "description": "Payment Term ID",
+          "format": "integer"
+        },
+        "payment-terms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaymentTerm"
+          }
+        },
+        "po-change-method": {
+          "type": "string",
+          "description": "Purchase order change transmission method",
+          "format": "string(255)",
+          "enum": [
+            "cxml",
+            "xml",
+            "email",
+            "prompt",
+            "mark_as_sent",
+            "buy_online"
+          ]
+        },
+        "po-email": {
+          "type": "string",
+          "description": "Email where POs are sent if PO transmission is \"email\"",
+          "format": "string(255)"
+        },
+        "po-method": {
+          "type": "string",
+          "description": "Purchase order transmission method",
+          "format": "string(255)",
+          "enum": [
+            "cxml",
+            "xml",
+            "email",
+            "prompt",
+            "mark_as_sent",
+            "buy_online"
+          ]
+        },
+        "preferred-commodities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Commodity"
+          }
+        },
+        "primary-address": {
+          "$ref": "#/definitions/SupplierAddress"
+        },
+        "primary-contact": {
+          "$ref": "#/definitions/Contact"
+        },
+        "remit-to-addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RemitToAddress"
+          }
+        },
+        "restricted-account-types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AccountType"
+          }
+        },
+        "savings-pct": {
+          "type": "number",
+          "description": "Savings for using this supplier",
+          "format": "decimal(8,2)"
+        },
+        "scf-configs": {
+          "type": "string",
+          "description": "Supply Chain Finance Configurations whitelisted for supplier",
+          "format": "string"
+        },
+        "scope-three-emissions": {
+          "type": "boolean",
+          "description": "Indicates whether the supplier tracks Scope Three Emissions",
+          "format": "boolean"
+        },
+        "send-invoices-to-approvals": {
+          "type": "boolean",
+          "description": "If yes, then invoices will all be sent thru approvals, regardless of total amount.",
+          "format": "boolean"
+        },
+        "shipping-term": {
+          "$ref": "#/definitions/ShippingTerm"
+        },
+        "status": {
+          "type": "string",
+          "description": "Supplier status",
+          "format": "string(20)"
+        },
+        "storefront-url": {
+          "type": "string",
+          "description": "Supplier website",
+          "format": "string(255)"
+        },
+        "supplier-addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SupplierAddress"
+          }
+        },
+        "supplier-sites": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SupplierSite"
+          }
+        },
+        "taggings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tagging"
+          }
+        },
+        "tax-code": {
+          "$ref": "#/definitions/TaxCode"
+        },
+        "tax-id": {
+          "type": "string",
+          "description": "Supplier DUNS number",
+          "format": "string(255)"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "website": {
+          "type": "string",
+          "description": "Supplier website",
+          "format": "string(255)"
+        },
+        "whitelist-dd": {
+          "type": "boolean",
+          "description": "Whitelist suppliers for Dynamic Discounting",
+          "format": "boolean"
+        }
+      },
+      "required": [
+        "enterprise",
+        "name",
+        "online-store",
+        "payment-method",
+        "primary-address",
+        "primary-contact"
+      ]
+    },
+    "SupplierAddress": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "A no value will make the address inactive making it no longer available to users.  A yes value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "attention": {
+          "type": "string",
+          "description": "Address Default Attention Line",
+          "format": "string(255)"
+        },
+        "business-group-name": {
+          "type": "string",
+          "description": "Content Group Name for Address",
+          "format": "string"
+        },
+        "city": {
+          "type": "string",
+          "description": "City Name",
+          "format": "string(255)"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal Address ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local-tax-number": {
+          "type": "string",
+          "description": "Local Tax Number",
+          "format": "string(255)"
+        },
+        "location-code": {
+          "type": "string",
+          "description": "location_code",
+          "format": "string(255)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Address 'Nickname'",
+          "format": "string(255)"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal Code",
+          "format": "string(255)"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Purpose"
+          }
+        },
+        "state": {
+          "type": "string",
+          "description": "State Abbreviation",
+          "format": "string(255)"
+        },
+        "street1": {
+          "type": "string",
+          "description": "Address Line 1",
+          "format": "string(255)"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Address Line 2",
+          "format": "string(255)"
+        },
+        "street3": {
+          "type": "string",
+          "description": "Address Line 3",
+          "format": "string(255)"
+        },
+        "street4": {
+          "type": "string",
+          "description": "Address Line 4",
+          "format": "string(255)"
+        },
+        "tax-registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaxRegistration"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Address type",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "vat-country": {
+          "$ref": "#/definitions/Country"
+        },
+        "vat-number": {
+          "type": "string",
+          "description": "VAT identification number used for value added tax purposes",
+          "format": "string(255)"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "local-tax-number",
+        "postal-code",
+        "street1"
+      ]
+    },
+    "SupplierSite": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "true if the site is active",
+          "format": "boolean"
+        },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "allow-change-requests": {
+          "type": "integer",
+          "description": "Allows suppliers to create change requests from CSP",
+          "format": "integer"
+        },
+        "buyer-hold": {
+          "type": "boolean",
+          "description": "Hold all POs for buyer review",
+          "format": "boolean"
+        },
+        "code": {
+          "type": "string",
+          "description": "supplier_code",
+          "format": "string(20)"
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "cxml-domain": {
+          "type": "string",
+          "description": "\"From\" , our domain",
+          "format": "string(255)"
+        },
+        "cxml-http-username": {
+          "type": "string",
+          "description": "User name required to access the Supplier's online store",
+          "format": "string(255)"
+        },
+        "cxml-identity": {
+          "type": "string",
+          "description": "\"From\", our identity",
+          "format": "string(255)"
+        },
+        "cxml-protocol": {
+          "type": "string",
+          "description": "Transmission protocol",
+          "format": "string(255)"
+        },
+        "cxml-secret": {
+          "type": "string",
+          "description": "Shared secret",
+          "format": "string(255)"
+        },
+        "cxml-ssl-version": {
+          "type": "string",
+          "description": "Specify the SSL version used for cXML communication with the supplier",
+          "format": "string(255)"
+        },
+        "cxml-supplier-domain": {
+          "type": "string",
+          "description": "\"To\", supplier domain",
+          "format": "string(255)"
+        },
+        "cxml-supplier-identity": {
+          "type": "string",
+          "description": "\"To\", supplier identity",
+          "format": "string(255)"
+        },
+        "cxml-url": {
+          "type": "string",
+          "description": "URL where POs are sent if PO transmission is \"cxml\"",
+          "format": "string(255)"
+        },
+        "default-locale": {
+          "type": "string",
+          "description": "Default Locale for sending emails to this supplier site",
+          "format": "string(255)"
+        },
+        "disable-cert-verify": {
+          "type": "boolean",
+          "description": "Specify whether to ignore SSL certificate mismatch errors",
+          "format": "boolean"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa Internal ID",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Supplier name",
+          "format": "string(255)"
+        },
+        "payment-term": {
+          "$ref": "#/definitions/PaymentTerm"
+        },
+        "po-change-method": {
+          "type": "string",
+          "description": "Purchase order change transmission method",
+          "format": "string(255)",
+          "enum": [
+            "cxml",
+            "xml",
+            "email",
+            "prompt",
+            "mark_as_sent",
+            "buy_online"
+          ]
+        },
+        "po-email": {
+          "type": "string",
+          "description": "Email where POs are sent if PO transmission is \"email\"",
+          "format": "string(255)"
+        },
+        "po-method": {
+          "type": "string",
+          "description": "Purchase order transmission method",
+          "format": "string(255)",
+          "enum": [
+            "cxml",
+            "xml",
+            "email",
+            "prompt",
+            "mark_as_sent",
+            "buy_online"
+          ]
+        },
+        "shipping-term": {
+          "$ref": "#/definitions/ShippingTerm"
+        },
+        "supplier-id": {
+          "type": "integer",
+          "description": "Supplier id",
+          "format": "integer"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "code",
+        "cxml-domain",
+        "cxml-identity",
+        "cxml-protocol",
+        "cxml-secret",
+        "cxml-supplier-domain",
+        "cxml-supplier-identity",
+        "cxml-url",
+        "name",
+        "po-email"
+      ]
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(30)"
+        },
+        "system-tag": {
+          "type": "boolean",
+          "description": "System tag",
+          "format": "boolean"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Tagging": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Tagging active state",
+          "format": "boolean"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description on the Tag on an Object (Tags on different objects can have different descriptions)",
+          "format": "text"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "tag": {
+          "$ref": "#/definitions/Tag"
+        }
+      }
+    },
+    "TaxCode": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Tax code is enabled or disabled",
+          "format": "boolean"
+        },
+        "code": {
+          "type": "string",
+          "description": "code",
+          "format": "string(255)"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "effective-date": {
+          "type": "string",
+          "description": "Date when tax code is become active",
+          "format": "datetime"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "percentage": {
+          "type": "number",
+          "description": "percentage",
+          "format": "float"
+        },
+        "tax-rate": {
+          "$ref": "#/definitions/TaxRate"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "code",
+        "country",
+        "percentage"
+      ]
+    },
+    "TaxRate": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Tax rate is enabled or disabled",
+          "format": "boolean"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "customer-accounting": {
+          "type": "boolean",
+          "description": "Customer accounting",
+          "format": "boolean"
+        },
+        "effective-date": {
+          "type": "string",
+          "description": "Date when tax rate is become active",
+          "format": "datetime"
+        },
+        "exempt": {
+          "type": "boolean",
+          "description": "Whether Tax Rate is exempt or not",
+          "format": "boolean"
+        },
+        "expiration-date": {
+          "type": "string",
+          "description": "Date when tax rate is expiring",
+          "format": "datetime"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "out-of-scope": {
+          "type": "boolean",
+          "description": "Out of scope",
+          "format": "boolean"
+        },
+        "percentage": {
+          "type": "number",
+          "description": "Tax Rate percentage",
+          "format": "decimal(30,6)"
+        },
+        "reverse-charge": {
+          "type": "boolean",
+          "description": "Whether Tax Rate is Reverse Charge or not",
+          "format": "boolean"
+        },
+        "tax-description": {
+          "type": "string",
+          "description": "Tax Rate Description",
+          "format": "string(255)"
+        },
+        "tax-rate-type": {
+          "$ref": "#/definitions/TaxRateType"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "percentage"
+      ]
+    },
+    "TaxRateType": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the tax rate type",
+          "format": "string(255)"
+        },
+        "effective-date": {
+          "type": "string",
+          "description": "Effective date",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "expiration-date": {
+          "type": "string",
+          "description": "Expiration date",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      }
+    },
+    "TaxRegistration": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Tax code is enabled or disabled",
+          "format": "boolean"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "fiscal-representative": {
+          "description": "Fiscal representative who is locally established and who is in general held jointly and severally liable with the tax payer for the payment of the vat to the tax authorities. Can be one of multiple objects: RemitToAddress, TaxRegistration",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "local": {
+          "type": "boolean",
+          "description": "True if tax registration cannot be used for cross-border invoices",
+          "format": "boolean"
+        },
+        "number": {
+          "type": "string",
+          "description": "Tax Registration number",
+          "format": "string(47)"
+        },
+        "owner-id": {
+          "type": "integer",
+          "description": "Coupa unique identifier of the object associated with this tax registration",
+          "format": "integer"
+        },
+        "owner-type": {
+          "type": "string",
+          "description": "Type of the owning object",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "country",
+        "number"
+      ]
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "account-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AccountGroup"
+          }
+        },
+        "account-security-type": {
+          "type": "integer",
+          "description": "account_security_type",
+          "format": "integer"
+        },
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "aic-user": {
+          "type": "boolean",
+          "description": "Does the user have an AI Classification License?",
+          "format": "boolean"
+        },
+        "allow-employee-payment-account-creation": {
+          "type": "boolean",
+          "description": "Allow the user to create an Employee Payment Account, regardless of the Employee Payment Channel.",
+          "format": "boolean"
+        },
+        "analytics-user": {
+          "type": "boolean",
+          "description": "Does the user have an Analytics License?",
+          "format": "boolean"
+        },
+        "api-user": {
+          "type": "boolean",
+          "description": "Is an API User?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "approval-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserGroup"
+          }
+        },
+        "approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "authentication-method": {
+          "type": "string",
+          "description": "What Authentication Method will be used (Coupa_Credentials, LDAP, SAML)?",
+          "format": "string(255)"
+        },
+        "avatar-thumb-url": {
+          "type": "string",
+          "description": "Avatar url",
+          "format": "string",
+          "readOnly": true
+        },
+        "business-function": {
+          "type": "string",
+          "description": "The employee's main job role in your company, e.g. Sales, Executive, Administrative, Managerial, etc.",
+          "format": "string(255)"
+        },
+        "business-group-security-type": {
+          "type": "integer",
+          "description": "business_group_security_type",
+          "format": "integer",
+          "enum": [
+            "0",
+            "1"
+          ]
+        },
+        "can-expense-for": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "ccw-user": {
+          "type": "boolean",
+          "description": "Does the user have a Contingent Workforce License?",
+          "format": "boolean"
+        },
+        "clm-advanced-user": {
+          "type": "boolean",
+          "description": "Does the user have a Contract Lifecycle Management Advanced License?",
+          "format": "boolean"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "contract-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "contract-self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "contracts-user": {
+          "type": "boolean",
+          "description": "Does the user have a Contracts License?",
+          "format": "boolean"
+        },
+        "country-of-residence": {
+          "$ref": "#/definitions/Country"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "default-account": {
+          "$ref": "#/definitions/Account"
+        },
+        "default-account-type": {
+          "$ref": "#/definitions/AccountType"
+        },
+        "default-address": {
+          "$ref": "#/definitions/Address"
+        },
+        "default-currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "default-locale": {
+          "type": "string",
+          "description": "Default locale",
+          "format": "string(10)"
+        },
+        "department": {
+          "$ref": "#/definitions/Department"
+        },
+        "edit-invoice-on-quick-entry": {
+          "type": "boolean",
+          "description": "Edit invoice button routes user to fast entry screen",
+          "format": "boolean"
+        },
+        "email": {
+          "type": "string",
+          "description": "email",
+          "format": "string(255)"
+        },
+        "employee-number": {
+          "type": "string",
+          "description": "employee number",
+          "format": "string(255)"
+        },
+        "employee-payment-channel": {
+          "type": "string",
+          "description": "Determine how expenses will be paid to the employee. 'ERP' per default and can be switched to 'CoupaPay' if instance allows it.",
+          "format": "string(255)"
+        },
+        "escalation-threshold": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "expense-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "expense-self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "expense-user": {
+          "type": "boolean",
+          "description": "Does the user have a Expense License?",
+          "format": "boolean"
+        },
+        "expenses-delegated-to": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "firstname": {
+          "type": "string",
+          "description": "first name",
+          "format": "string(40)"
+        },
+        "fullname": {
+          "type": "string",
+          "description": "full name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "generate-password-and-notify": {
+          "type": "string",
+          "description": "Set to Yes if you want the system to invite the user to the system and have them set up their password",
+          "format": "string",
+          "enum": [
+            "Yes",
+            "No"
+          ]
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "inventory-organizations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InventoryOrganization"
+          }
+        },
+        "inventory-user": {
+          "type": "boolean",
+          "description": "Does the user have a Inventory License?",
+          "format": "boolean"
+        },
+        "invoice-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "invoice-self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "lastname": {
+          "type": "string",
+          "description": "last name",
+          "format": "string(40)"
+        },
+        "legal-entity": {
+          "$ref": "#/definitions/LegalEntity"
+        },
+        "login": {
+          "type": "string",
+          "description": "login",
+          "format": "string(255)"
+        },
+        "manager": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "mention-name": {
+          "type": "string",
+          "description": "Mention Name",
+          "format": "string(255)"
+        },
+        "middlename": {
+          "type": "string",
+          "description": "middle name",
+          "format": "string(255)"
+        },
+        "msp-user": {
+          "type": "boolean",
+          "description": "Boolean flag to tell if the user is of MSP type",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "password": {
+          "type": "string",
+          "description": "Changed password",
+          "format": "string"
+        },
+        "pcard": {
+          "$ref": "#/definitions/Pcard"
+        },
+        "phone-mobile": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "phone-work": {
+          "$ref": "#/definitions/PhoneNumber"
+        },
+        "purchasing-user": {
+          "type": "boolean",
+          "description": "Does the user have a Purchasing License?",
+          "format": "boolean"
+        },
+        "requisition-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "requisition-self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "risk-assess-user": {
+          "type": "boolean",
+          "description": "Does the user have a Risk Assess License?",
+          "format": "boolean"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Role"
+          }
+        },
+        "salesforce-enabled": {
+          "type": "boolean",
+          "description": "salesforce_enabled",
+          "format": "boolean"
+        },
+        "salesforce-id": {
+          "type": "string",
+          "description": "salesforce_id",
+          "format": "string(255)"
+        },
+        "self-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "seniority-level": {
+          "type": "string",
+          "description": "The employee's job grade or band in your company's hierarchy.",
+          "format": "string(255)"
+        },
+        "sourcing-user": {
+          "type": "boolean",
+          "description": "Does the user have a Sourcing License?",
+          "format": "boolean"
+        },
+        "spend-guard-user": {
+          "type": "boolean",
+          "description": "Does the user have a Spend Guard License?",
+          "format": "boolean"
+        },
+        "sso-identifier": {
+          "type": "string",
+          "description": "User's Single Sign-on ID (SSO ID)",
+          "format": "string(255)"
+        },
+        "supply-chain-user": {
+          "type": "boolean",
+          "description": "Does the user have a Supply Chain License?",
+          "format": "boolean"
+        },
+        "travel-user": {
+          "type": "boolean",
+          "description": "Does the user have a Travel License?",
+          "format": "boolean"
+        },
+        "treasury-user": {
+          "type": "boolean",
+          "description": "Does the user have a Treasury License?",
+          "format": "boolean"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "user-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserGroup"
+          }
+        },
+        "work-confirmation-approval-limit": {
+          "$ref": "#/definitions/ApprovalLimit"
+        },
+        "working-warehouses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Warehouse"
+          }
+        }
+      },
+      "required": [
+        "email",
+        "firstname",
+        "lastname",
+        "login",
+        "salesforce-id"
+      ]
+    },
+    "UserGroup": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean",
+          "description": "Active",
+          "format": "boolean"
+        },
+        "avatar-thumb-url": {
+          "type": "string",
+          "description": "URL for avatar thumbnail",
+          "format": "string",
+          "readOnly": true
+        },
+        "can-approve": {
+          "type": "boolean",
+          "description": "User group has the ability to be an approver",
+          "format": "boolean"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description",
+          "format": "text"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "mention-name": {
+          "type": "string",
+          "description": "Mention name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Name",
+          "format": "string(255)"
+        },
+        "open": {
+          "type": "boolean",
+          "description": "User group is open for everyone to join or owner must invite others",
+          "format": "boolean"
+        },
+        "owner": {
+          "$ref": "#/definitions/UserGroup"
+        },
+        "type": {
+          "type": "string",
+          "description": "Blank for Groups, Project for Projects",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserSimple"
+          }
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "UserSimple": {
+      "type": "object",
+      "properties": {
+        "account-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AccountGroup"
+          }
+        },
+        "account-security-type": {
+          "type": "integer",
+          "description": "account_security_type",
+          "format": "integer"
+        },
+        "active": {
+          "type": "boolean",
+          "description": "A false value will inactivate the account making it no longer available to users.  A true value will make it active and available to users.",
+          "format": "boolean"
+        },
+        "aic-user": {
+          "type": "boolean",
+          "description": "Does the user have an AI Classification License?",
+          "format": "boolean"
+        },
+        "allow-employee-payment-account-creation": {
+          "type": "boolean",
+          "description": "Allow the user to create an Employee Payment Account, regardless of the Employee Payment Channel.",
+          "format": "boolean"
+        },
+        "analytics-user": {
+          "type": "boolean",
+          "description": "Does the user have an Analytics License?",
+          "format": "boolean"
+        },
+        "api-user": {
+          "type": "boolean",
+          "description": "Is an API User?",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "approval-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserGroup"
+          }
+        },
+        "authentication-method": {
+          "type": "string",
+          "description": "What Authentication Method will be used (Coupa_Credentials, LDAP, SAML)?",
+          "format": "string(255)"
+        },
+        "avatar-thumb-url": {
+          "type": "string",
+          "description": "Avatar url",
+          "format": "string",
+          "readOnly": true
+        },
+        "business-function": {
+          "type": "string",
+          "description": "The employee's main job role in your company, e.g. Sales, Executive, Administrative, Managerial, etc.",
+          "format": "string(255)"
+        },
+        "business-group-security-type": {
+          "type": "integer",
+          "description": "business_group_security_type",
+          "format": "integer",
+          "enum": [
+            "0",
+            "1"
+          ]
+        },
+        "ccw-user": {
+          "type": "boolean",
+          "description": "Does the user have a Contingent Workforce License?",
+          "format": "boolean"
+        },
+        "clm-advanced-user": {
+          "type": "boolean",
+          "description": "Does the user have a Contract Lifecycle Management Advanced License?",
+          "format": "boolean"
+        },
+        "content-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessGroup"
+          }
+        },
+        "contracts-user": {
+          "type": "boolean",
+          "description": "Does the user have a Contracts License?",
+          "format": "boolean"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "default-locale": {
+          "type": "string",
+          "description": "Default locale",
+          "format": "string(10)"
+        },
+        "edit-invoice-on-quick-entry": {
+          "type": "boolean",
+          "description": "Edit invoice button routes user to fast entry screen",
+          "format": "boolean"
+        },
+        "email": {
+          "type": "string",
+          "description": "email",
+          "format": "string(255)"
+        },
+        "employee-number": {
+          "type": "string",
+          "description": "employee number",
+          "format": "string(255)"
+        },
+        "employee-payment-channel": {
+          "type": "string",
+          "description": "Determine how expenses will be paid to the employee. 'ERP' per default and can be switched to 'CoupaPay' if instance allows it.",
+          "format": "string(255)"
+        },
+        "expense-user": {
+          "type": "boolean",
+          "description": "Does the user have a Expense License?",
+          "format": "boolean"
+        },
+        "firstname": {
+          "type": "string",
+          "description": "first name",
+          "format": "string(40)"
+        },
+        "fullname": {
+          "type": "string",
+          "description": "full name",
+          "format": "string(255)",
+          "readOnly": true
+        },
+        "generate-password-and-notify": {
+          "type": "string",
+          "description": "Set to Yes if you want the system to invite the user to the system and have them set up their password",
+          "format": "string",
+          "enum": [
+            "Yes",
+            "No"
+          ]
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "inventory-organizations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InventoryOrganization"
+          }
+        },
+        "inventory-user": {
+          "type": "boolean",
+          "description": "Does the user have a Inventory License?",
+          "format": "boolean"
+        },
+        "lastname": {
+          "type": "string",
+          "description": "last name",
+          "format": "string(40)"
+        },
+        "login": {
+          "type": "string",
+          "description": "login",
+          "format": "string(255)"
+        },
+        "mention-name": {
+          "type": "string",
+          "description": "Mention Name",
+          "format": "string(255)"
+        },
+        "middlename": {
+          "type": "string",
+          "description": "middle name",
+          "format": "string(255)"
+        },
+        "msp-user": {
+          "type": "boolean",
+          "description": "Boolean flag to tell if the user is of MSP type",
+          "format": "boolean",
+          "readOnly": true
+        },
+        "password": {
+          "type": "string",
+          "description": "Changed password",
+          "format": "string"
+        },
+        "purchasing-user": {
+          "type": "boolean",
+          "description": "Does the user have a Purchasing License?",
+          "format": "boolean"
+        },
+        "risk-assess-user": {
+          "type": "boolean",
+          "description": "Does the user have a Risk Assess License?",
+          "format": "boolean"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Role"
+          }
+        },
+        "salesforce-enabled": {
+          "type": "boolean",
+          "description": "salesforce_enabled",
+          "format": "boolean"
+        },
+        "salesforce-id": {
+          "type": "string",
+          "description": "salesforce_id",
+          "format": "string(255)"
+        },
+        "seniority-level": {
+          "type": "string",
+          "description": "The employee's job grade or band in your company's hierarchy.",
+          "format": "string(255)"
+        },
+        "sourcing-user": {
+          "type": "boolean",
+          "description": "Does the user have a Sourcing License?",
+          "format": "boolean"
+        },
+        "spend-guard-user": {
+          "type": "boolean",
+          "description": "Does the user have a Spend Guard License?",
+          "format": "boolean"
+        },
+        "sso-identifier": {
+          "type": "string",
+          "description": "User's Single Sign-on ID (SSO ID)",
+          "format": "string(255)"
+        },
+        "supply-chain-user": {
+          "type": "boolean",
+          "description": "Does the user have a Supply Chain License?",
+          "format": "boolean"
+        },
+        "travel-user": {
+          "type": "boolean",
+          "description": "Does the user have a Travel License?",
+          "format": "boolean"
+        },
+        "treasury-user": {
+          "type": "boolean",
+          "description": "Does the user have a Treasury License?",
+          "format": "boolean"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "user-groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserGroup"
+          }
+        },
+        "working-warehouses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Warehouse"
+          }
+        }
+      },
+      "required": [
+        "email",
+        "firstname",
+        "lastname",
+        "login",
+        "salesforce-id"
+      ]
+    },
+    "Warehouse": {
+      "type": "object",
+      "properties": {
+        "active-flag": {
+          "type": "boolean",
+          "description": "active_flag",
+          "format": "boolean"
+        },
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "warehouse-locations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WarehouseLocation"
+          }
+        },
+        "warehouse-type": {
+          "$ref": "#/definitions/WarehouseType"
+        }
+      },
+      "required": [
+        "address",
+        "currency",
+        "description",
+        "name",
+        "warehouse-type"
+      ]
+    },
+    "WarehouseLocation": {
+      "type": "object",
+      "properties": {
+        "aisle": {
+          "type": "string",
+          "description": "aisle",
+          "format": "string(255)"
+        },
+        "bin": {
+          "type": "string",
+          "description": "bin",
+          "format": "string(255)"
+        },
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "level": {
+          "type": "string",
+          "description": "level",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "warehouse-id": {
+          "type": "integer",
+          "description": "Warehouse Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "warehouse-name": {
+          "type": "string",
+          "description": "Warehouse name",
+          "format": "string",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "aisle"
+      ]
+    },
+    "WarehouseType": {
+      "type": "object",
+      "properties": {
+        "created-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "created-by": {
+          "$ref": "#/definitions/UserSimple"
+        },
+        "description": {
+          "type": "string",
+          "description": "description",
+          "format": "string(255)"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Coupa unique identifier",
+          "format": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "format": "string(255)"
+        },
+        "updated-at": {
+          "type": "string",
+          "description": "Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ",
+          "format": "datetime",
+          "readOnly": true
+        },
+        "updated-by": {
+          "$ref": "#/definitions/UserSimple"
+        }
+      },
+      "required": [
+        "description",
+        "name"
+      ]
+    }
+  }
+}

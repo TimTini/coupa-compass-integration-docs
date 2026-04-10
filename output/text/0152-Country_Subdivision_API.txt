@@ -1,0 +1,12 @@
+Country Subdivision API
+
+Elements
+
+The following elements are available for the Country Subdivision API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+name 	 	no 	no 	any 	yes 	yes 	string(255)
+country_id 	 	no 	no 	any 	yes 	yes 	integer
+id 	Coupa unique identifier 	no 	no 	any 	yes 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	yes 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	yes 	yes 	datetime

@@ -1,0 +1,740 @@
+<article class="" id="user_api">
+<h1 class="title">User API</h1>
+<div class="body">
+<p class="">Use the User API's to create, update, or query the User Data.</p>
+<p class="">The URL to access the API's is :
+        <span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/users</span>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div class="" id="actions-d26e5664">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Performs Get action to retrieve all users</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Creates one or more users.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Updates one or more users . Can perform mass updates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Shows the user data.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/users/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update one user at a time using the ID</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d26e5806">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">These are the elements available for
+        the User API</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Field Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Field Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out *</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">ID of the user</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">state</p>
+</td>
+<td class="entry" align="">
+<p class="">Status of the user</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Blocked, Active, Disabled, Removed (Case-Sensitive)</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">The login name of the user. Once set cannot be changed.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">first-name</p>
+</td>
+<td class="entry" align="">
+<p class="">The first name of the user</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last-name</p>
+</td>
+<td class="entry" align="">
+<p class="">The last name of the user</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">phone-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Phone number of the user</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">mobile-number</p>
+</td>
+<td class="entry" align="">
+<p class="">The mobile number of the user</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">email</p>
+</td>
+<td class="entry" align="">
+<p class="">Email of the User. Once set it cannot be changed.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">company-id</p>
+</td>
+<td class="entry" align="">
+<p class="">The Company ID for the User. Once set it cannot be changed</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">street</p>
+</td>
+<td class="entry" align="">
+<p class="">Street part of the User address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">zip-code</p>
+</td>
+<td class="entry" align="">
+<p class="">Zip code part of the User address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">city</p>
+</td>
+<td class="entry" align="">
+<p class="">City part of the User address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">country</p>
+</td>
+<td class="entry" align="">
+<p class="">Country part of the User address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">keywords</p>
+</td>
+<td class="entry" align="">
+<p class="">Keywords associated to the User</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">external-user-name</p>
+</td>
+<td class="entry" align="">
+<p class="">The external user name assigned to the user.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">accepts-agreement</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates whether or not the user has accepted required agreements.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">provide-information</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates whether or not the user shall provide user information at the next
+                  login.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">change-password</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates whether or not the user shall change their password at the next
+                  login.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoicing_user</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoicing User</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Response payload does not show null values.</p>
+</div>
+</div>
+<div class="" id="examples-d26e6656">
+<h2 class="title sectiontitle">Examples</h2>
+<p class="">In this example, we queried for a User
+        API. We did a GET to the
+          URL:</p>
+<p class="">
+<span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/users</span>
+</p>
+</div>
+<div class="" id="user_get_response">
+<h2 class="title sectiontitle">User GET
+      Response</h2>
+<pre>
+<code class="codeblock">
+        {
+		"total": 3,
+		"users": [
+				{
+						"id": "9219595862193003588",
+						"state": "Active",
+						"name": "dekke434",
+						"first-name": "Arjan",
+						"last-name": "Goud",
+						"phone-number": "+310987898789",
+						"mobile-number": "+31(0) 6 98876554",
+						"email": "a.goud@deeder.com",
+						"company-id": "9219592232917474305",
+						"street": "IJsseldijk west 66",
+						"zip-code": "2935AR",
+						"city": "Ouderkerk aan den IJssel",
+						"country": "Netherlands",
+						"accepts-agreement": false,
+						"provide-information": false,
+						"change-password": false
+				},
+				{
+						"id": "9219595145795283441",
+						"state": "Active",
+						"name": "deeed",
+						"first-name": "Arjan",
+						"last-name": "Deeed",
+						"phone-number": "+313132323133",
+						"email": "mh@test.nl",
+						"company-id": "9219592331212583950",
+						"country": "Netherlands",
+						"accepts-agreement": false,
+						"provide-information": true,
+						"change-password": true
+				},
+				{
+						"id": "9219592232917474526",
+						"state": "Active",
+						"name": "eurot494",
+						"first-name": "Marjus",
+						"last-name": "van Dee",
+						"phone-number": "+31121212121",
+						"mobile-number": "+31313131333",
+						"email": "test@test.com",
+						"company-id": "9219592232917474528",
+						"street": "Brielselaan 69, Haven 1357",
+						"zip-code": "3081AA",
+						"city": "Rotterdam",
+						"country": "Netherlands",
+						"accepts-agreement": false,
+						"provide-information": true,
+						"change-password": false
+				}
+	 ]
+}</code>
+</pre>
+</div>
+<div class="" id="create_update-d26e6841">
+<h2 class="title sectiontitle">Create/Update</h2>
+<p class="">The following describes how
+        you can use the Coupa API to perform actions on User.</p>
+</div>
+<div class="" id="create-d26e6845">
+<h2 class="title sectiontitle">Create</h2>
+<p class="">
+<code class="ph codeph">/api/users</code>
+</p>
+<p class="">The
+        below payload creates two
+      users.</p>
+<pre>
+<code class="codeblock">
+        Payload: 
+{
+		"users": [
+				{
+						"state": "Active",
+						"name": "tester123456",
+						"first-name": "tester",
+						"last-name": "user1",
+						"phone-number": "+1(111)-234-5678",
+						"mobile-number": "+1(11)-123-3456",
+						"email": "testeruser@tester.com",
+						"company-id": "9220538753250662192",
+						"street": "12345 bethoven road",
+						"zip-code": "30811",
+						"city": "Rotterdam",
+						"country": "United States",
+						"accepts-agreement": false,
+						"provide-information": true,
+						"change-password": false
+				},
+				 {
+						"name": "tester12345",
+						"first-name": "testing",
+						"last-name": "user",
+						"phone-number": "+1(111)-234-5678",
+						"mobile-number": "+1(11)-123-3456",
+						"email": "tester@tester.com",
+						"company-id": "9220538753250662192",
+						"street": "12345 bethoven road",
+						"zip-code": "30811",
+						"city": "Rotterdam",
+						"country": "United States",
+						"accepts-agreement": true,
+						"provide-information": true,
+						"change-password": false
+				}
+		]
+}
+Response: 201
+{
+		"result": [
+				{
+						"type": "api.post.added",
+						"description": "2 objects created."
+				}
+		],
+		"added": 2,
+		"users": [
+				{
+						"id": "9220538753483272432"
+				},
+				{
+						"id": "9220538753482068122"
+				}
+		]
+}	 </code>
+</pre>
+</div>
+<div class="" id="update-d26e7030">
+<h2 class="title sectiontitle">Update</h2>
+<p class="">
+<code class="ph codeph">/api/users</code>
+</p>
+<p class="">The
+        below payload updates a
+          User(s).</p>
+<pre>
+<code class="codeblock">
+        To update one or more User at a time: 
+Payload:
+{
+		"users": [
+				{
+						"id": "9220538753483272432",
+						"state": "Blocked",
+						"email": "testeruser-upd@tester.com",
+						"accepts-agreement": true,
+						"provide-information": true,
+						"change-password": false
+				},
+				{
+						"id": "9220538753482068122",
+						"state": "Blocked",
+						"email": "tester-upd@tester.com",
+						"accepts-agreement": false,
+						"provide-information": true,
+						"change-password": false
+				}
+		]
+}
+
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "api.put.updated",
+						"description": "2 objects updated."
+				}
+		],
+		"updated": 2
+}</code>
+</pre>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Updates
+          are done in a lenient manner, i.e. if updating one resource fails, the other ones might be
+          successful. User ID is required for updates.</p>
+</div>
+<p class="">Successful requests will return
+          <code class="ph codeph">HTTP 200 Response</code>. The body of the response will include the created
+        requisition. Unsuccessful requests will return</p>
+<pre>
+<code class="codeblock">HTTP 400 Bad
+Request</code>
+</pre>
+<p class="">. The body of the response will include validation errors formatted as
+        XML.</p>
+</div>
+</div>
+</article>

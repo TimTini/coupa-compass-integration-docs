@@ -1,0 +1,53 @@
+Get Started with the Risk Assess Quick Integration
+
+Overview
+
+The quick integration import allows CRA users to directly upload spreadsheets via the HTTPS protocol. This allows customers to perform inbound imports in an automated manner without the need for an interface. There are various code snippets below that provide working examples of how this is performed using a variety of popular programming languages.
+
+Authentication
+
+Valid credentials must be supplied for each Risk Assess Quick Integration request issued in order to succeed.
+
+The Risk Assess user supplied must be a member of either the 'QuickIntegration' group or the 'QuickIntegration-Engagements' group. The QuickIntegration group allows an account to access all Quick Integration resources. The QuickIntegration-Engagements group limits access to only the Quick Integration Engagements resource. If these groups currently do not exist in your Risk Assess instance, please contact your local Risk Assess administrator or your Coupa Customer Services representative to have them created.
+
+HTTP Header 	 Description
+username 	Valid Risk Assess Username
+password 	Valid Risk Assess Password
+
+Content type
+
+The content type header must contain one of the following types listed below. This is used to identify the file format that is being uploaded.
+
+Note:
+
+If sending data as an octet-stream, filename is required in the Content-Disposition header.
+
+Content Type Header 	 File Type
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 	Excel 2007 or later versions (xlsx)
+application/vnd.ms-excel 	Excel 2003 or earlier versions (xls)
+text/csv 	Comma separated values (csv)
+application/octet-stream
+
+File format determined by filename value in Content-Disposition
+
+e.g. Content-Disposition: form-data; name="file"; filename="user_import.xlsx"
+
+Code samples
+
+Java
+package httpPostExample;import java.io.File;import org.apache.http.HttpEntity; import org.apache.http.HttpResponse; import org.apache.http.client.HttpClient; import org.apache.http.client.methods.HttpPost; import org.apache.http.entity.mime.HttpMultipartMode; import org.apache.http.entity.mime.MultipartEntityBuilder; import org.apache.http.entity.mime.content.FileBody; import org.apache.http.impl.client.HttpClientBuilder; import org.apache.http.protocol.BasicHttpContext; import org.apache.http.protocol.HttpContext; import org.apache.http.util.EntityUtils;public class uploadFile { public static void main(String[] args) { try { String url = "https://rportal.hiperos.com/QuickIntegration/Suppliers"; String filePath = "c:\\hiperos\\outbox\\Suppliers_import.xlsx"; HttpClient httpClient = HttpClientBuilder.create().build(); HttpContext httpContext = new BasicHttpContext(); HttpPost httpPost = new HttpPost(url); httpPost.setHeader("username", "Your_3PM_Username_Here"); httpPost.setHeader("password", "Your_3PM_Password_Here"); httpPost.setHeader("Connection", "close"); MultipartEntityBuilder builder = MultipartEntityBuilder.create(); builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE); final File file = new File(filePath); FileBody fb = new FileBody(file, "text/csv"); builder.addPart("file", fb); final HttpEntity entity = builder.build(); httpPost.setEntity(entity); HttpResponse postResponse = httpClient.execute(httpPost, httpContext); HttpEntity responseEntity = postResponse.getEntity(); System.out.println(EntityUtils.toString(responseEntity)); } catch(Exception ex) { ex.printStackTrace(); } } }
+
+C# using System; using System.Net;namespace QuickIntegration_Sample { class Program { static void Main() { const string uriString = "https://rportal.hiperos.com/QuickIntegration/Suppliers"; const string fileName = @"c:\\hiperos\\outbox\\Suppliers_import.xlsx"; // Create a new WebClient instance. WebClient client = new WebClient(); // Add authentication headers to request. client.Headers.Add("username", "Your_3PM_Username_Here"); client.Headers.Add("password", "Your_3PM_Password_Here"); // Upload the file to the URI. // The 'UploadFile(uriString,fileName)' method implicitly uses HTTP POST method. byte[] responseArray = client.UploadFile(uriString, fileName); string response = System.Text.Encoding.ASCII.GetString(responseArray); // Decode and display the response. Console.WriteLine("\nResponse Received. The contents of the file uploaded are:\n{0}", response); } } }
+
+Exception Handling and Error Codes
+
+The following HTTP response status codes are utilized by quick integration to communicate import status back to the caller.
+
+Status Code 	 Result 	 Description
+201 	Created 	New objects succesfully created.
+202 	Accepted 	Data has been queued for import (system-generated e-mail confirmation to follow).
+204 	No Content 	No new or updated data to import was found or the file was not in the correct format.
+400 	Bad Request 	Problem rows and/or columns were found. Review returned validation message in response.
+401 	Unauthorized 	Username & password http headers were not found in the request.
+403 	Forbidden 	Login failed, was not found or not authorized.
+500 	Server Error 	Failed to save import data to database

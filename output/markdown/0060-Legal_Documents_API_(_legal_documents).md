@@ -1,0 +1,58 @@
+---
+title: "Legal Documents API (/legal_documents)"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/legal-documents-api-(legal_documents)"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/legal-documents-api-(legal_documents)"
+status_code: 200
+fetched_at: "2026-04-09T11:59:15+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Legal Documents API (/legal_documents)"
+---
+
+# Legal Documents API (/legal_documents)
+
+Use the budget line API to delete and
+query legal documents that you have associated with
+your accounts.
+
+The URL to access budget lines
+is: `https:///api/legal_documents`
+
+See [Integration Best Practices](https://compass.coupa.com/x285417.xml) for more info.
+
+## Actions
+
+The Legal Documents API allows you to:
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| DELETE | `/api/contracts/:contract_id/legal_documents/:id` | destroy | Delete legal document |
+| GET | `/api/contracts/:contract_id/legal_documents` | index | Query legal documents |
+| GET | `/api/contracts/:contract_id/legal_documents/:id` | show | Show legal document |
+
+## Elements
+
+The following elements are available for the Legal
+Documents API:
+
+| **Element** | **Description** | **Required Field?** | **Unique?** | **Allowable Value** | **Api_In Field?** | **Api_Out Field?** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ccc-exec-summary-timestamp | Executive Summary updated at timestamp from ccc used to see if document is latest | | | YYYY-MM-DDTHH:MM:SS+HH:MM | yes | yes | datetime |
+| ccc-file-timestamp | Legal document updated at timestamp from ccc used to see if document is latest | | | YYYY-MM-DDTHH:MM:SS+HH:MM | yes | yes | datetime |
+| clm-id | CLM ID | | | | yes | yes | string(255) |
+| contract | contract | | | | yes | | Contract |
+| contract-template-id | CLMS template used to create the legal agreement | | | | yes | yes | int |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| created-by | User who created | | | | | yes | User |
+| external-file-upload | Flag on whether external party paper was used to create the legal agreement | | | | yes | yes | tinyint(1) |
+| id | Coupa unique identifier | | | | | yes | integer |
+| locked-by-other-party | CLMS contract party holding an edit lock | | | | yes | yes | string(255) |
+| locked-by-user-id | CLMS user holding an edit lock | | | | yes | yes | int |
+| negotiation-rounds | Negotiation Rounds | | | | yes | yes | integer |
+| reviewer-user-ids | CLMS internal reviewers | | | | yes | yes | string |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| updated-by | User who updated | | | | | yes | User |
+| url | External link to legal document | | | | yes | yes | string(255) |

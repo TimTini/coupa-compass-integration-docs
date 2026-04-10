@@ -1,0 +1,18 @@
+---
+title: "contingent-workforce"
+url: "https://compass.coupa.com/en-us/products/contingent-workforce"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ncaIEiNVWKnTTKrEtomUPvKDDuYKFY3s%2Bh3X%2F%2FZwUUJlUHvPlvl93nhH02onlEJ7MDf4ekEKyXs3ZvWyariirOu2K%2BiKtiqZMoet42kBddc1OyvrhjCW%2F0JOyZs7KjLNkTTTg2lAAEyLEy7OUV2nBt7wQ9bngF1lT3bFkFU2UgTARn0JwJPJc2sFBivuA3oDO7HOATNo%2BB%2Bf%2B%2B3cfYQdEzvoQv4oc98%2B25AOHqlxd9l8kFOE8J7L52I0lX62XOBWcsx1owjFoGwXUC74jrbfBSqsvlemUeZyzwRthgRQJAz2SCFJslt%2BvRSwqHg5DJL5tt23a%2FtxsWbIkQj9WurKGhh79Bv2Lknh7c31cckqeTYWmeqNmforLkn2vDYnpRp9Hcq%2F52WI2TovpFP6I%2Fzkd3hKwxcmss%2FxI%2BWDjxI8otV61Viv5d9x0D%2BG0U5EVE6K6dDeNCuxB6WXXeSSKO9Ta%2FrnyCCEeJvghLiBfHGw%2FPtHFPw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcontingent-workforce"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:57:09+00:00"
+---
+
+# contingent-workforce
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/contingent-workforce](https://compass.coupa.com/en-us/products/contingent-workforce)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ncaIEiNVWKnTTKrEtomUPvKDDuYKFY3s%2Bh3X%2F%2FZwUUJlUHvPlvl93nhH02onlEJ7MDf4ekEKyXs3ZvWyariirOu2K%2BiKtiqZMoet42kBddc1OyvrhjCW%2F0JOyZs7KjLNkTTTg2lAAEyLEy7OUV2nBt7wQ9bngF1lT3bFkFU2UgTARn0JwJPJc2sFBivuA3oDO7HOATNo%2BB%2Bf%2B%2B3cfYQdEzvoQv4oc98%2B25AOHqlxd9l8kFOE8J7L52I0lX62XOBWcsx1owjFoGwXUC74jrbfBSqsvlemUeZyzwRthgRQJAz2SCFJslt%2BvRSwqHg5DJL5tt23a%2FtxsWbIkQj9WurKGhh79Bv2Lknh7c31cckqeTYWmeqNmforLkn2vDYnpRp9Hcq%2F52WI2TovpFP6I%2Fzkd3hKwxcmss%2FxI%2BWDjxI8otV61Viv5d9x0D%2BG0U5EVE6K6dDeNCuxB6WXXeSSKO9Ta%2FrnyCCEeJvghLiBfHGw%2FPtHFPw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcontingent-workforce](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ncaIEiNVWKnTTKrEtomUPvKDDuYKFY3s%2Bh3X%2F%2FZwUUJlUHvPlvl93nhH02onlEJ7MDf4ekEKyXs3ZvWyariirOu2K%2BiKtiqZMoet42kBddc1OyvrhjCW%2F0JOyZs7KjLNkTTTg2lAAEyLEy7OUV2nBt7wQ9bngF1lT3bFkFU2UgTARn0JwJPJc2sFBivuA3oDO7HOATNo%2BB%2Bf%2B%2B3cfYQdEzvoQv4oc98%2B25AOHqlxd9l8kFOE8J7L52I0lX62XOBWcsx1owjFoGwXUC74jrbfBSqsvlemUeZyzwRthgRQJAz2SCFJslt%2BvRSwqHg5DJL5tt23a%2FtxsWbIkQj9WurKGhh79Bv2Lknh7c31cckqeTYWmeqNmforLkn2vDYnpRp9Hcq%2F52WI2TovpFP6I%2Fzkd3hKwxcmss%2FxI%2BWDjxI8otV61Viv5d9x0D%2BG0U5EVE6K6dDeNCuxB6WXXeSSKO9Ta%2FrnyCCEeJvghLiBfHGw%2FPtHFPw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcontingent-workforce)
+
+Observed redirect page title: Coupa Portals - Sign In

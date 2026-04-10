@@ -1,0 +1,15 @@
+Supplier Diversity Report Summaries Export
+
+Export of these records is included as a Standard CSV Export.
+
+Position 	 Column Name 	 Description 	 Type 	 Req/Unique 	 Allowable Values
+1 	reporting-period 	Reporting Period 	string(255) 	No/No 	any
+2 	start-date 	Start Date 	datetime 	No/No 	any
+3 	end-date 	End Date 	datetime 	No/No 	any
+4 	status 	Status 	 	No/No
+5 	diversity-category 	Diversity Category 	 	No/No
+6 	direct-spend-credit 	Direct Spend Credit 	decimal 	No/No 	numeric
+7 	indirect-spend 	Indirect Spend 	decimal 	No/No 	numeric
+8 	indirect-spend-credit 	Indirect Spend Credit 	decimal 	No/No 	numeric
+9 	total-spend 	Total Spend 	decimal 	No/No 	numeric
+10 	currency 	Currency 	 	No/No 	any

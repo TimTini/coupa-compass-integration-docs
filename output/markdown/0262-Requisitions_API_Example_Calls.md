@@ -1,0 +1,3233 @@
+---
+title: "Requisitions API Example Calls"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)/requisitions-api-example-calls"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)/requisitions-api-example-calls"
+status_code: 200
+fetched_at: "2026-04-09T11:59:59+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Requisitions API (/requisitions)"
+  - "Requisitions API Example Calls"
+---
+
+# Requisitions API Example Calls
+
+## Requisitions Query Example - Query by Specific User
+
+In this example we are looking for requisitions created by the
+user with a login of 'ejohnson'. We could easily replace the login
+parameter below with email or employee-number
+
+- HTTP
+GET `https://.coupahost.com/api/requisitions?requested-by[login]=`
+
+In this case
+*https://<instance>.coupahost.com/api/requisitions?requested-by[login]=ejohnson*
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<requisition-headers type="array">
+<requisition-header>
+<id type="integer">97</id>
+<created-at type="datetime">2009-04-27T09:27:56-07:00</created-at>
+<updated-at type="datetime">2009-04-27T09:27:56-07:00</updated-at>
+<buyer-note nil="true" />
+<justification nil="true" />
+<need-by-date nil="true" />
+<reject-reason-comment nil="true" />
+<status>draft</status>
+<submitted-at nil="true" />
+<exported type="boolean">false</exported>
+<ship-to-attention>Ellis (Marketing Lead) Johnson</ship-to-attention>
+<total type="decimal">20575.00</total>
+<height-passthrough />
+<custom-attach />
+<custom-field-3 />
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<department>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:00:48-07:00</created-at>
+<updated-at type="datetime">2009-05-04T18:20:29-07:00</updated-at>
+<name>Marketing</name>
+<active type="boolean">true</active>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</department>
+<requested-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</requested-by>
+<ship-to-address>
+<id type="integer">16</id>
+<created-at type="datetime">2008-10-27T13:00:19-07:00</created-at>
+<updated-at type="datetime">2009-07-11T13:33:25-07:00</updated-at>
+<name>HQ</name>
+<street1>28 Nevada Blvd</street1>
+<street2 />
+<city>Laughlin</city>
+<state>NV</state>
+<postal-code>89028</postal-code>
+<attention />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</ship-to-address>
+<attachments type="array" />
+<requisition-lines type="array">
+<requisition-line>
+<id type="integer">179</id>
+<created-at type="datetime">2009-04-27T09:27:56-07:00</created-at>
+<updated-at type="datetime">2009-04-27T09:27:57-07:00</updated-at>
+<description>Facility Rental for 8 hours</description>
+<line-num type="integer">1</line-num>
+<need-by-date nil="true" />
+<order-line-id nil="true" />
+<quantity type="float">8.0</quantity>
+<source-part-num />
+<status nil="true" />
+<sub-line-num nil="true" />
+<supp-aux-part-num nil="true" />
+<total type="decimal">16400.00</total>
+<source-type>Non-Catalog Request</source-type>
+<line-type>RequisitionQuantityLine</line-type>
+<unit-price type="decimal">2050.00</unit-price>
+<account>
+<id type="integer">164</id>
+<created-at type="datetime">2009-05-04T22:06:02-07:00</created-at>
+<updated-at type="datetime">2009-05-05T23:23:54-07:00</updated-at>
+<name>HQ -Marketing, Events</name>
+<code>HQ-Marketing-Events</code>
+<active type="boolean">true</active>
+<segment-1>HQ</segment-1>
+<segment-2>Marketing</segment-2>
+<segment-3>Events</segment-3>
+<segment-4 />
+<segment-5 />
+<segment-6 />
+<segment-7 />
+<segment-8 />
+<segment-9 />
+<segment-10 />
+<segment-11 />
+<segment-12 />
+<segment-13 />
+<segment-14 />
+<segment-15 />
+<segment-16 />
+<segment-17 />
+<segment-18 />
+<segment-19 />
+<segment-20 />
+<account-type>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2011-09-01T11:57:27-07:00</updated-at>
+<name>Ace Corporate</name>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</account-type>
+<created-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</created-by>
+<updated-by>
+<id type="integer">10</id>
+<login>amanning</login>
+<email>upgrade+am@coupa.com</email>
+<employee-number />
+<firstname>Anna (AP Director)</firstname>
+<lastname>Manning</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</account>
+<account-allocations type="array" />
+<commodity>
+<id type="integer">7</id>
+<created-at type="datetime">2008-10-27T13:04:00-07:00</created-at>
+<updated-at type="datetime">2011-04-12T14:08:22-07:00</updated-at>
+<active type="boolean">false</active>
+<name>Marketing-Services</name>
+<acct />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</commodity>
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<supplier>
+<id type="integer">25</id>
+<name>Aston's Hotel</name>
+<number nil="true" />
+<supplier-diversity />
+<primary-contact>
+<id type="integer">27</id>
+<created-at type="datetime">2008-12-09T13:08:11-08:00</created-at>
+<updated-at type="datetime">2011-07-25T16:49:07-07:00</updated-at>
+<email />
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Sanae</name-given>
+<name-family>Kadomoto</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">33</id>
+<created-at type="datetime">2008-12-09T13:08:11-08:00</created-at>
+<updated-at type="datetime">2011-07-25T16:49:07-07:00</updated-at>
+<name>Aston's Hotel</name>
+<street1>3615 Lower Honoapiilani Road</street1>
+<street2 />
+<city>Lahaina</city>
+<state>HI</state>
+<postal-code>96761</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-address>
+</supplier>
+<uom>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>EA</code>
+<name>Each</name>
+<allowable-precision type="integer">0</allowable-precision>
+<active type="boolean">true</active>
+</uom>
+<payment-term>
+<id type="integer">3</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>2/10 Net 30</code>
+<description />
+<days-for-net-payment type="integer">30</days-for-net-payment>
+<days-for-discount-payment type="integer">10</days-for-discount-payment>
+<discount-rate type="float">2.0</discount-rate>
+<active type="boolean">true</active>
+</payment-term>
+<shipping-term>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>Standard</code>
+</shipping-term>
+<asset-tags type="array" />
+<attachments type="array" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-line>
+<requisition-line>
+<id type="integer">180</id>
+<created-at type="datetime">2009-04-27T09:27:56-07:00</created-at>
+<updated-at type="datetime">2009-04-27T09:27:57-07:00</updated-at>
+<description>Ice Sculpture</description>
+<line-num type="integer">2</line-num>
+<need-by-date nil="true" />
+<order-line-id nil="true" />
+<source-part-num />
+<status nil="true" />
+<sub-line-num nil="true" />
+<supp-aux-part-num nil="true" />
+<total type="decimal">1500.00</total>
+<source-type>Non-Catalog Request</source-type>
+<line-type>RequisitionAmountLine</line-type>
+<unit-price type="decimal">1500.00</unit-price>
+<account>
+<id type="integer">164</id>
+<created-at type="datetime">2009-05-04T22:06:02-07:00</created-at>
+<updated-at type="datetime">2009-05-05T23:23:54-07:00</updated-at>
+<name>HQ -Marketing, Events</name>
+<code>HQ-Marketing-Events</code>
+<active type="boolean">true</active>
+<segment-1>HQ</segment-1>
+<segment-2>Marketing</segment-2>
+<segment-3>Events</segment-3>
+<segment-4 />
+<segment-5 />
+<segment-6 />
+<segment-7 />
+<segment-8 />
+<segment-9 />
+<segment-10 />
+<segment-11 />
+<segment-12 />
+<segment-13 />
+<segment-14 />
+<segment-15 />
+<segment-16 />
+<segment-17 />
+<segment-18 />
+<segment-19 />
+<segment-20 />
+<account-type>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2011-09-01T11:57:27-07:00</updated-at>
+<name>Ace Corporate</name>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</account-type>
+<created-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</created-by>
+<updated-by>
+<id type="integer">10</id>
+<login>amanning</login>
+<email>upgrade+am@coupa.com</email>
+<employee-number />
+<firstname>Anna (AP Director)</firstname>
+<lastname>Manning</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</account>
+<account-allocations type="array" />
+<commodity>
+<id type="integer">7</id>
+<created-at type="datetime">2008-10-27T13:04:00-07:00</created-at>
+<updated-at type="datetime">2011-04-12T14:08:22-07:00</updated-at>
+<active type="boolean">false</active>
+<name>Marketing-Services</name>
+<acct />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</commodity>
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<supplier>
+<id type="integer">25</id>
+<name>Aston's Hotel</name>
+<number nil="true" />
+<supplier-diversity />
+<primary-contact>
+<id type="integer">27</id>
+<created-at type="datetime">2008-12-09T13:08:11-08:00</created-at>
+<updated-at type="datetime">2011-07-25T16:49:07-07:00</updated-at>
+<email />
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Sanae</name-given>
+<name-family>Kadomoto</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">33</id>
+<created-at type="datetime">2008-12-09T13:08:11-08:00</created-at>
+<updated-at type="datetime">2011-07-25T16:49:07-07:00</updated-at>
+<name>Aston's Hotel</name>
+<street1>3615 Lower Honoapiilani Road</street1>
+<street2 />
+<city>Lahaina</city>
+<state>HI</state>
+<postal-code>96761</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-address>
+</supplier>
+<payment-term>
+<id type="integer">3</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>2/10 Net 30</code>
+<description />
+<days-for-net-payment type="integer">30</days-for-net-payment>
+<days-for-discount-payment type="integer">10</days-for-discount-payment>
+<discount-rate type="float">2.0</discount-rate>
+<active type="boolean">true</active>
+</payment-term>
+<shipping-term>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>Standard</code>
+</shipping-term>
+<asset-tags type="array" />
+<attachments type="array" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-line>
+<requisition-line>
+<id type="integer">181</id>
+<created-at type="datetime">2009-04-27T09:27:56-07:00</created-at>
+<updated-at type="datetime">2009-04-27T09:27:58-07:00</updated-at>
+<description>Food from Cheung</description>
+<line-num type="integer">3</line-num>
+<need-by-date nil="true" />
+<order-line-id nil="true" />
+<source-part-num />
+<status nil="true" />
+<sub-line-num nil="true" />
+<supp-aux-part-num nil="true" />
+<total type="decimal">2675.00</total>
+<source-type>Non-Catalog Request</source-type>
+<line-type>RequisitionAmountLine</line-type>
+<unit-price type="decimal">2675.00</unit-price>
+<account>
+<id type="integer">164</id>
+<created-at type="datetime">2009-05-04T22:06:02-07:00</created-at>
+<updated-at type="datetime">2009-05-05T23:23:54-07:00</updated-at>
+<name>HQ -Marketing, Events</name>
+<code>HQ-Marketing-Events</code>
+<active type="boolean">true</active>
+<segment-1>HQ</segment-1>
+<segment-2>Marketing</segment-2>
+<segment-3>Events</segment-3>
+<segment-4 />
+<segment-5 />
+<segment-6 />
+<segment-7 />
+<segment-8 />
+<segment-9 />
+<segment-10 />
+<segment-11 />
+<segment-12 />
+<segment-13 />
+<segment-14 />
+<segment-15 />
+<segment-16 />
+<segment-17 />
+<segment-18 />
+<segment-19 />
+<segment-20 />
+<account-type>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2011-09-01T11:57:27-07:00</updated-at>
+<name>Ace Corporate</name>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</account-type>
+<created-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</created-by>
+<updated-by>
+<id type="integer">10</id>
+<login>amanning</login>
+<email>upgrade+am@coupa.com</email>
+<employee-number />
+<firstname>Anna (AP Director)</firstname>
+<lastname>Manning</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</account>
+<account-allocations type="array" />
+<commodity>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:03:59-07:00</created-at>
+<updated-at type="datetime">2011-04-12T14:58:18-07:00</updated-at>
+<active type="boolean">true</active>
+<name>Labor</name>
+<acct>Temp Labor</acct>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</commodity>
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<supplier>
+<id type="integer">24</id>
+<name>Cheung Catering</name>
+<number nil="true" />
+<supplier-diversity />
+<primary-contact>
+<id type="integer">26</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<email />
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Conway</name-given>
+<name-family>Cheung</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<phone-work>
+<id type="integer">67</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<country-code>1</country-code>
+<area-code nil="true" />
+<number />
+<extension nil="true" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-work>
+<phone-mobile>
+<id type="integer">68</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<country-code>1</country-code>
+<area-code nil="true" />
+<number />
+<extension nil="true" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-mobile>
+<phone-fax>
+<id type="integer">69</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<country-code>1</country-code>
+<area-code nil="true" />
+<number />
+<extension nil="true" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-fax>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">32</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<name>Cheung Catering</name>
+<street1>2516 Pacific Coast Hwy</street1>
+<street2 />
+<city>Hermosa Beach</city>
+<state>CA</state>
+<postal-code>90254</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</primary-address>
+</supplier>
+<payment-term>
+<id type="integer">3</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>2/10 Net 30</code>
+<description />
+<days-for-net-payment type="integer">30</days-for-net-payment>
+<days-for-discount-payment type="integer">10</days-for-discount-payment>
+<discount-rate type="float">2.0</discount-rate>
+<active type="boolean">true</active>
+</payment-term>
+<shipping-term>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>Standard</code>
+</shipping-term>
+<asset-tags type="array" />
+<attachments type="array" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-line>
+</requisition-lines>
+<approvals type="array">
+<approval>
+<id type="integer">480</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<position type="integer">1</position>
+<approval-chain-id nil="true" />
+<status>pending_approval</status>
+<approval-date nil="true" />
+<note nil="true" />
+<type>ManagementHierarchyApproval</type>
+<approvable-type>RequisitionHeader</approvable-type>
+<approvable-id type="integer">97</approvable-id>
+<approver>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</approver>
+</approval>
+</approvals>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-header>
+<requisition-header>
+<id type="integer">99</id>
+<created-at type="datetime">2009-04-27T09:41:52-07:00</created-at>
+<updated-at type="datetime">2009-05-11T11:39:23-07:00</updated-at>
+<buyer-note nil="true" />
+<justification>Blair -this is for the Q2 marketing offsite you wanted me to setup.	I kept it under 25k so it fits within your budget.</justification>
+<need-by-date nil="true" />
+<reject-reason-comment nil="true" />
+<status>ordered</status>
+<submitted-at type="datetime">2009-05-11T11:38:58-07:00</submitted-at>
+<exported type="boolean">false</exported>
+<ship-to-attention>Ellis (Marketing Lead) Johnson</ship-to-attention>
+<total type="decimal">22500.00</total>
+<height-passthrough />
+<custom-attach />
+<custom-field-3 />
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<department>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:00:48-07:00</created-at>
+<updated-at type="datetime">2009-05-04T18:20:29-07:00</updated-at>
+<name>Marketing</name>
+<active type="boolean">true</active>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</department>
+<requested-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</requested-by>
+<ship-to-address>
+<id type="integer">16</id>
+<created-at type="datetime">2008-10-27T13:00:19-07:00</created-at>
+<updated-at type="datetime">2009-07-11T13:33:25-07:00</updated-at>
+<name>HQ</name>
+<street1>28 Nevada Blvd</street1>
+<street2 />
+<city>Laughlin</city>
+<state>NV</state>
+<postal-code>89028</postal-code>
+<attention />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</ship-to-address>
+<attachments type="array" />
+<requisition-lines type="array">
+<requisition-line>
+<id type="integer">219</id>
+<created-at type="datetime">2009-05-10T21:22:32-07:00</created-at>
+<updated-at type="datetime">2009-05-11T11:39:19-07:00</updated-at>
+<description>Facility Rental for Q2 Marketing Offsite</description>
+<line-num type="integer">1</line-num>
+<need-by-date type="datetime">2009-05-11T00:00:00-07:00</need-by-date>
+<order-line-id type="integer">127</order-line-id>
+<quantity type="float">8.0</quantity>
+<source-part-num />
+<status nil="true" />
+<sub-line-num nil="true" />
+<supp-aux-part-num nil="true" />
+<total type="decimal">16000.00</total>
+<source-type>Non-Catalog Request</source-type>
+<line-type>RequisitionQuantityLine</line-type>
+<unit-price type="decimal">2000.00</unit-price>
+<account>
+<id type="integer">182</id>
+<created-at type="datetime">2009-05-10T21:22:32-07:00</created-at>
+<updated-at type="datetime">2009-06-29T19:38:09-07:00</updated-at>
+<name nil="true" />
+<code>HQ-Marketing-Events</code>
+<active type="boolean">false</active>
+<segment-1>HQ</segment-1>
+<segment-2>Marketing</segment-2>
+<segment-3>Events</segment-3>
+<segment-4 nil="true" />
+<segment-5 nil="true" />
+<segment-6 nil="true" />
+<segment-7 nil="true" />
+<segment-8 nil="true" />
+<segment-9 nil="true" />
+<segment-10 nil="true" />
+<segment-11 nil="true" />
+<segment-12 nil="true" />
+<segment-13 nil="true" />
+<segment-14 nil="true" />
+<segment-15 nil="true" />
+<segment-16 nil="true" />
+<segment-17 nil="true" />
+<segment-18 nil="true" />
+<segment-19 nil="true" />
+<segment-20 nil="true" />
+<account-type>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2011-09-01T11:57:27-07:00</updated-at>
+<name>Ace Corporate</name>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</account-type>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</account>
+<account-allocations type="array" />
+<commodity>
+<id type="integer">5</id>
+<created-at type="datetime">2008-10-27T13:04:00-07:00</created-at>
+<updated-at type="datetime">2011-08-25T06:43:41-07:00</updated-at>
+<active type="boolean">true</active>
+<name>Facilities</name>
+<acct>98765</acct>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</commodity>
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<supplier>
+<id type="integer">19</id>
+<name>Metro Gateway Center</name>
+<number>233434</number>
+<supplier-diversity />
+<primary-contact>
+<id type="integer">20</id>
+<created-at type="datetime">2009-05-04T18:08:08-07:00</created-at>
+<updated-at type="datetime">2009-05-04T18:08:08-07:00</updated-at>
+<email>regus.berry@metro.com</email>
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Regus</name-given>
+<name-family>Berry</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<phone-work>
+<id type="integer">47</id>
+<created-at type="datetime">2009-05-04T18:08:08-07:00</created-at>
+<updated-at type="datetime">2009-05-04T18:08:08-07:00</updated-at>
+<country-code>1</country-code>
+<area-code>650</area-code>
+<number>2321991</number>
+<extension nil="true" />
+<created-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-work>
+<phone-mobile>
+<id type="integer">48</id>
+<created-at type="datetime">2009-05-04T18:08:08-07:00</created-at>
+<updated-at type="datetime">2009-05-04T18:08:08-07:00</updated-at>
+<country-code>1</country-code>
+<area-code nil="true" />
+<number />
+<extension nil="true" />
+<created-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-mobile>
+<phone-fax>
+<id type="integer">49</id>
+<created-at type="datetime">2009-05-04T18:08:08-07:00</created-at>
+<updated-at type="datetime">2009-05-04T18:08:08-07:00</updated-at>
+<country-code>1</country-code>
+<area-code nil="true" />
+<number />
+<extension nil="true" />
+<created-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-fax>
+<created-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">26</id>
+<created-at type="datetime">2009-05-04T18:08:09-07:00</created-at>
+<updated-at type="datetime">2009-05-04T18:08:09-07:00</updated-at>
+<name>Metro Gateway Center</name>
+<street1>239 Blizzard Drive</street1>
+<street2 />
+<city>San Francisco</city>
+<state>CA</state>
+<postal-code>92302</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</primary-address>
+</supplier>
+<uom>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>EA</code>
+<name>Each</name>
+<allowable-precision type="integer">0</allowable-precision>
+<active type="boolean">true</active>
+</uom>
+<payment-term>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>Net 30</code>
+<description />
+<days-for-net-payment type="integer">30</days-for-net-payment>
+<days-for-discount-payment nil="true" />
+<discount-rate nil="true" />
+<active type="boolean">true</active>
+</payment-term>
+<shipping-term>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>Standard</code>
+</shipping-term>
+<asset-tags type="array" />
+<attachments type="array" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-line>
+<requisition-line>
+<id type="integer">222</id>
+<created-at type="datetime">2009-05-10T21:35:45-07:00</created-at>
+<updated-at type="datetime">2009-05-11T11:39:21-07:00</updated-at>
+<description>Catering and Cleaning services for Q2 Marketing Offiste</description>
+<line-num type="integer">2</line-num>
+<need-by-date type="datetime">2009-05-11T00:00:00-07:00</need-by-date>
+<order-line-id type="integer">128</order-line-id>
+<source-part-num />
+<status nil="true" />
+<sub-line-num nil="true" />
+<supp-aux-part-num nil="true" />
+<total type="decimal">6500.00</total>
+<source-type>Non-Catalog Request</source-type>
+<line-type>RequisitionAmountLine</line-type>
+<unit-price type="decimal">6500.00</unit-price>
+<account>
+<id type="integer">182</id>
+<created-at type="datetime">2009-05-10T21:22:32-07:00</created-at>
+<updated-at type="datetime">2009-06-29T19:38:09-07:00</updated-at>
+<name nil="true" />
+<code>HQ-Marketing-Events</code>
+<active type="boolean">false</active>
+<segment-1>HQ</segment-1>
+<segment-2>Marketing</segment-2>
+<segment-3>Events</segment-3>
+<segment-4 nil="true" />
+<segment-5 nil="true" />
+<segment-6 nil="true" />
+<segment-7 nil="true" />
+<segment-8 nil="true" />
+<segment-9 nil="true" />
+<segment-10 nil="true" />
+<segment-11 nil="true" />
+<segment-12 nil="true" />
+<segment-13 nil="true" />
+<segment-14 nil="true" />
+<segment-15 nil="true" />
+<segment-16 nil="true" />
+<segment-17 nil="true" />
+<segment-18 nil="true" />
+<segment-19 nil="true" />
+<segment-20 nil="true" />
+<account-type>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2011-09-01T11:57:27-07:00</updated-at>
+<name>Ace Corporate</name>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</account-type>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</account>
+<account-allocations type="array" />
+<commodity>
+<id type="integer">5</id>
+<created-at type="datetime">2008-10-27T13:04:00-07:00</created-at>
+<updated-at type="datetime">2011-08-25T06:43:41-07:00</updated-at>
+<active type="boolean">true</active>
+<name>Facilities</name>
+<acct>98765</acct>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</commodity>
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<supplier>
+<id type="integer">24</id>
+<name>Cheung Catering</name>
+<number nil="true" />
+<supplier-diversity />
+<primary-contact>
+<id type="integer">26</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<email />
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Conway</name-given>
+<name-family>Cheung</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<phone-work>
+<id type="integer">67</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<country-code>1</country-code>
+<area-code nil="true" />
+<number />
+<extension nil="true" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-work>
+<phone-mobile>
+<id type="integer">68</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<country-code>1</country-code>
+<area-code nil="true" />
+<number />
+<extension nil="true" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-mobile>
+<phone-fax>
+<id type="integer">69</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<country-code>1</country-code>
+<area-code nil="true" />
+<number />
+<extension nil="true" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-fax>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">32</id>
+<created-at type="datetime">2008-12-09T12:56:47-08:00</created-at>
+<updated-at type="datetime">2009-08-13T14:30:23-07:00</updated-at>
+<name>Cheung Catering</name>
+<street1>2516 Pacific Coast Hwy</street1>
+<street2 />
+<city>Hermosa Beach</city>
+<state>CA</state>
+<postal-code>90254</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</primary-address>
+</supplier>
+<payment-term>
+<id type="integer">3</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>2/10 Net 30</code>
+<description />
+<days-for-net-payment type="integer">30</days-for-net-payment>
+<days-for-discount-payment type="integer">10</days-for-discount-payment>
+<discount-rate type="float">2.0</discount-rate>
+<active type="boolean">true</active>
+</payment-term>
+<shipping-term>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>Standard</code>
+</shipping-term>
+<asset-tags type="array" />
+<attachments type="array" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-line>
+</requisition-lines>
+<approvals type="array">
+<approval>
+<id type="integer">562</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<position type="integer">1</position>
+<approval-chain-id nil="true" />
+<status>approved</status>
+<approval-date type="datetime">2009-05-11T11:39:19-07:00</approval-date>
+<note nil="true" />
+<type>ManagementHierarchyApproval</type>
+<approvable-type>RequisitionHeader</approvable-type>
+<approvable-id type="integer">99</approvable-id>
+<approver>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</approver>
+</approval>
+</approvals>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-header>
+</requisition-headers>
+```
+
+## Requisitions Query Example - Query Requisitions with Status of Ordered, created within a date range
+
+In this example we are looking for requisitions with a status of
+Ordered created between two dates.
+
+We have two methods to query this record. We can use:
+
+- HTTP GET
+`https://.coupahost.com/api/requisitions?status=&created-at[gt]=&created-at[lt]=`
+
+In this
+case `https://.coupahost.com/api/requisitions?status=ordered&created-at[gt]=2010-01-01&created-at[lt]=2010-02-01`
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<requisition-headers type="array">
+<requisition-header>
+<id type="integer">187</id>
+<created-at type="datetime">2010-01-06T13:26:54-08:00</created-at>
+<updated-at type="datetime">2010-02-09T10:26:39-08:00</updated-at>
+<buyer-note nil="true" />
+<justification />
+<need-by-date nil="true" />
+<reject-reason-comment nil="true" />
+<status>ordered</status>
+<submitted-at type="datetime">2010-02-09T10:26:14-08:00</submitted-at>
+<exported type="boolean">false</exported>
+<ship-to-attention>Blair (Marketing VP) Hostler</ship-to-attention>
+<total type="decimal">750.00</total>
+<height-passthrough />
+<custom-attach />
+<custom-field-3 />
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<department>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:00:48-07:00</created-at>
+<updated-at type="datetime">2009-05-04T18:20:29-07:00</updated-at>
+<name>Marketing</name>
+<active type="boolean">true</active>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</department>
+<requested-by>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</requested-by>
+<ship-to-address>
+<id type="integer">16</id>
+<created-at type="datetime">2008-10-27T13:00:19-07:00</created-at>
+<updated-at type="datetime">2009-07-11T13:33:25-07:00</updated-at>
+<name>HQ</name>
+<street1>28 Nevada Blvd</street1>
+<street2 />
+<city>Laughlin</city>
+<state>NV</state>
+<postal-code>89028</postal-code>
+<attention />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</ship-to-address>
+<attachments type="array" />
+<requisition-lines type="array">
+<requisition-line>
+<id type="integer">588</id>
+<created-at type="datetime">2010-02-09T10:25:56-08:00</created-at>
+<updated-at type="datetime">2010-02-09T10:26:37-08:00</updated-at>
+<description>Ads</description>
+<line-num type="integer">1</line-num>
+<need-by-date nil="true" />
+<order-line-id type="integer">340</order-line-id>
+<quantity type="float">1.0</quantity>
+<source-part-num nil="true" />
+<status>draft</status>
+<sub-line-num nil="true" />
+<supp-aux-part-num nil="true" />
+<total type="decimal">750.00</total>
+<source-type>Web Form</source-type>
+<line-type>RequisitionQuantityLine</line-type>
+<unit-price type="decimal">750.00</unit-price>
+<account>
+<id type="integer">14</id>
+<created-at type="datetime">2008-10-27T13:20:36-07:00</created-at>
+<updated-at type="datetime">2011-09-22T16:25:23-07:00</updated-at>
+<name>San Francisco -Marketing, Assets</name>
+<code>SF-Marketing-Assets</code>
+<active type="boolean">true</active>
+<segment-1>SF</segment-1>
+<segment-2>Marketing</segment-2>
+<segment-3>Assets</segment-3>
+<segment-4 />
+<segment-5 />
+<segment-6 />
+<segment-7 />
+<segment-8 />
+<segment-9 />
+<segment-10 />
+<segment-11 />
+<segment-12 />
+<segment-13 />
+<segment-14 />
+<segment-15 />
+<segment-16 />
+<segment-17 />
+<segment-18 />
+<segment-19 />
+<segment-20 />
+<account-type>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2011-09-01T11:57:27-07:00</updated-at>
+<name>Ace Corporate</name>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</account-type>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">17</id>
+<login>coupa_metrics_gatherer</login>
+<email>do_not_reply_metrics@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Metrics</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</account>
+<account-allocations type="array" />
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<form-response type="array">
+<prompt-response>
+<responses type="array">
+<response>Advertising</response>
+</responses>
+<prompt>Type of Marketing Request</prompt>
+</prompt-response>
+<prompt-response>
+<responses type="array">
+<response>Ad in Local papers</response>
+</responses>
+<prompt>Description</prompt>
+</prompt-response>
+</form-response>
+<supplier>
+<id type="integer">15</id>
+<name>Omniture Marketing Services</name>
+<number nil="true" />
+<supplier-diversity />
+<primary-contact>
+<id type="integer">16</id>
+<created-at type="datetime">2008-10-27T14:04:45-07:00</created-at>
+<updated-at type="datetime">2008-10-27T14:04:45-07:00</updated-at>
+<email>upgrade@coupa.com</email>
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Brad</name-given>
+<name-family>Franklin</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<phone-work>
+<id type="integer">16</id>
+<created-at type="datetime">2008-10-27T14:04:45-07:00</created-at>
+<updated-at type="datetime">2009-08-12T17:01:02-07:00</updated-at>
+<country-code>1</country-code>
+<area-code>650</area-code>
+<number>5856306</number>
+<extension nil="true" />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-work>
+<phone-mobile>
+<id type="integer">17</id>
+<created-at type="datetime">2008-10-27T14:04:45-07:00</created-at>
+<updated-at type="datetime">2009-08-12T17:01:02-07:00</updated-at>
+<country-code>1</country-code>
+<area-code>650</area-code>
+<number>5856306</number>
+<extension nil="true" />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-mobile>
+<phone-fax>
+<id type="integer">18</id>
+<created-at type="datetime">2008-10-27T14:04:45-07:00</created-at>
+<updated-at type="datetime">2009-08-12T17:01:02-07:00</updated-at>
+<country-code>1</country-code>
+<area-code>650</area-code>
+<number>5856306</number>
+<extension nil="true" />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</phone-fax>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">19</id>
+<created-at type="datetime">2008-10-27T14:04:45-07:00</created-at>
+<updated-at type="datetime">2008-10-27T14:04:45-07:00</updated-at>
+<name>Omniture Marketing Services</name>
+<street1>2200 Old Germantown Road</street1>
+<street2 />
+<city>Redwood City</city>
+<state>CA</state>
+<postal-code>94402</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-address>
+</supplier>
+<uom>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>EA</code>
+<name>Each</name>
+<allowable-precision type="integer">0</allowable-precision>
+<active type="boolean">true</active>
+</uom>
+<payment-term>
+<id type="integer">3</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>2/10 Net 30</code>
+<description />
+<days-for-net-payment type="integer">30</days-for-net-payment>
+<days-for-discount-payment type="integer">10</days-for-discount-payment>
+<discount-rate type="float">2.0</discount-rate>
+<active type="boolean">true</active>
+</payment-term>
+<shipping-term>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>Standard</code>
+</shipping-term>
+<asset-tags type="array" />
+<attachments type="array" />
+<created-by>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">2</id>
+<login>mjordan</login>
+<email>upgrade+mj@coupa.com</email>
+<employee-number />
+<firstname>Meg (CEO)</firstname>
+<lastname>Jordan</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-line>
+</requisition-lines>
+<approvals type="array">
+<approval>
+<id type="integer">1704</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<position type="integer">1</position>
+<approval-chain-id nil="true" />
+<status>approved</status>
+<approval-date type="datetime">2010-02-09T10:26:37-08:00</approval-date>
+<note nil="true" />
+<type>ManagementHierarchyApproval</type>
+<approvable-type>RequisitionHeader</approvable-type>
+<approvable-id type="integer">187</approvable-id>
+<approver>
+<id type="integer">2</id>
+<login>mjordan</login>
+<email>upgrade+mj@coupa.com</email>
+<employee-number />
+<firstname>Meg (CEO)</firstname>
+<lastname>Jordan</lastname>
+<salesforce-id nil="true" />
+<height />
+</approver>
+</approval>
+</approvals>
+<created-by>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">2</id>
+<login>mjordan</login>
+<email>upgrade+mj@coupa.com</email>
+<employee-number />
+<firstname>Meg (CEO)</firstname>
+<lastname>Jordan</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-header>
+</requisition-headers>
+```
+
+## Requisitions Query Example - Query Specific Requisition
+
+In this example we are looking for requisition #235. This is the
+Number Coupa automatically generated for this requisition and also
+acts as the Coupa ID for this record.
+
+We have two methods to query this record. We can use:
+
+- Format
+1: `https://.coupahost.com/api/requisitions/`
+
+In this
+case *https://<instance>.coupahost.com/api/requisitions/235*
+
+The Output is shown below.
+
+- Format
+2: `https://.coupahost.com/api/requisitions?id=`
+
+In this
+case *https://<instance>.coupahost.com/api/requisitions?id=235*
+
+There is a slight difference in output using this format.
+The *<requisition-header>* tag shown below
+will not be the root element. Instead it will be found inside
+a *<requisition-headers
+type="array">*
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<requisition-header>
+<id type="integer">235</id>
+<created-at type="datetime">2010-02-06T19:03:50-08:00</created-at>
+<updated-at type="datetime">2010-02-06T19:07:50-08:00</updated-at>
+<buyer-note nil="true" />
+<justification />
+<need-by-date nil="true" />
+<reject-reason-comment nil="true" />
+<status>ordered</status>
+<submitted-at type="datetime">2010-02-06T19:05:25-08:00</submitted-at>
+<exported type="boolean">false</exported>
+<ship-to-attention>Ellis (Marketing Lead) Johnson</ship-to-attention>
+<total type="decimal">22.56</total>
+<height-passthrough />
+<custom-attach />
+<custom-field-3 />
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<department>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:00:48-07:00</created-at>
+<updated-at type="datetime">2009-05-04T18:20:29-07:00</updated-at>
+<name>Marketing</name>
+<active type="boolean">true</active>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</department>
+<requested-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</requested-by>
+<ship-to-address>
+<id type="integer">14</id>
+<created-at type="datetime">2008-10-27T12:58:55-07:00</created-at>
+<updated-at type="datetime">2010-03-23T21:03:22-07:00</updated-at>
+<name>San Francisco Office</name>
+<street1>150 Main Street</street1>
+<street2 />
+<city>San Francisco</city>
+<state>CA</state>
+<postal-code>94450</postal-code>
+<attention />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</ship-to-address>
+<attachments type="array" />
+<requisition-lines type="array">
+<requisition-line>
+<id type="integer">573</id>
+<created-at type="datetime">2010-02-06T19:05:12-08:00</created-at>
+<updated-at type="datetime">2010-02-06T19:07:48-08:00</updated-at>
+<description>Standard Battery, Battery Type Alkaline, Battery Size C, Voltage 1.5, Package Quantity 6</description>
+<line-num type="integer">1</line-num>
+<need-by-date nil="true" />
+<order-line-id type="integer">330</order-line-id>
+<quantity type="float">2.0</quantity>
+<source-part-num>3WA31</source-part-num>
+<status nil="true" />
+<sub-line-num nil="true" />
+<supp-aux-part-num>WWG3WA31</supp-aux-part-num>
+<total type="decimal">22.56</total>
+<source-type>Punchout</source-type>
+<line-type>RequisitionQuantityLine</line-type>
+<unit-price type="decimal">11.28</unit-price>
+<account>
+<id type="integer">50</id>
+<created-at type="datetime">2009-05-04T17:45:26-07:00</created-at>
+<updated-at type="datetime">2009-05-05T23:23:31-07:00</updated-at>
+<name>San Francisco -Marketing, Marketing Services</name>
+<code>SF-Marketing-Marketing Services</code>
+<active type="boolean">true</active>
+<segment-1>SF</segment-1>
+<segment-2>Marketing</segment-2>
+<segment-3>Marketing Services</segment-3>
+<segment-4 />
+<segment-5 />
+<segment-6 />
+<segment-7 />
+<segment-8 />
+<segment-9 />
+<segment-10 />
+<segment-11 />
+<segment-12 />
+<segment-13 />
+<segment-14 />
+<segment-15 />
+<segment-16 />
+<segment-17 />
+<segment-18 />
+<segment-19 />
+<segment-20 />
+<account-type>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2011-09-01T11:57:27-07:00</updated-at>
+<name>Ace Corporate</name>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</account-type>
+<created-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</created-by>
+<updated-by>
+<id type="integer">10</id>
+<login>amanning</login>
+<email>upgrade+am@coupa.com</email>
+<employee-number />
+<firstname>Anna (AP Director)</firstname>
+<lastname>Manning</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</account>
+<account-allocations type="array" />
+<contract>
+<id type="integer">7</id>
+<created-at type="datetime">2009-04-16T19:09:26-07:00</created-at>
+<updated-at type="datetime">2010-02-17T14:56:47-08:00</updated-at>
+<name>Grainger</name>
+<number>5</number>
+<version nil="true" />
+<start-date type="datetime">2009-04-16T00:00:00-07:00</start-date>
+<end-date type="datetime">2010-04-16T00:00:00-07:00</end-date>
+<status>inactive</status>
+<minimum-value type="decimal">0.00</minimum-value>
+<maximum-value type="decimal">0.00</maximum-value>
+<terms nil="true" />
+<preferred nil="true" />
+<savings-pct type="decimal">8.0</savings-pct>
+<min-commit type="decimal">0.00</min-commit>
+<max-commit type="decimal">0.00</max-commit>
+<supplier-invoiceable type="boolean">false</supplier-invoiceable>
+<is-default type="boolean">false</is-default>
+<supplier>
+<id type="integer">9</id>
+<name>Grainger</name>
+<number nil="true" />
+<supplier-diversity />
+<primary-contact>
+<id type="integer">9</id>
+<created-at type="datetime">2008-10-27T12:56:40-07:00</created-at>
+<updated-at type="datetime">2008-10-27T12:56:40-07:00</updated-at>
+<email>upgrade@coupa.com</email>
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Ben</name-given>
+<name-family>Miller</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">9</id>
+<created-at type="datetime">2008-10-27T12:56:40-07:00</created-at>
+<updated-at type="datetime">2008-10-27T12:56:40-07:00</updated-at>
+<name nil="true" />
+<street1>1 Grainger Road</street1>
+<street2 nil="true" />
+<city>Newark</city>
+<state>NJ</state>
+<postal-code>92321</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-address>
+</supplier>
+<content-groups type="array">
+<content-group>
+<id type="integer">1</id>
+<created-at type="datetime">2006-08-27T19:40:04-07:00</created-at>
+<updated-at type="datetime">2008-10-27T13:00:19-07:00</updated-at>
+<name>Global</name>
+<description>Default business group that all users have access to</description>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</content-group>
+</content-groups>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>administrator</login>
+<email>jonathan.fear@coupa.com</email>
+<employee-number />
+<firstname>Kyle</firstname>
+<lastname>Eisner</lastname>
+<salesforce-id nil="true" />
+<height>hello,,,,</height>
+</updated-by>
+</contract>
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<supplier>
+<id type="integer">9</id>
+<name>Grainger</name>
+<number nil="true" />
+<supplier-diversity />
+<primary-contact>
+<id type="integer">9</id>
+<created-at type="datetime">2008-10-27T12:56:40-07:00</created-at>
+<updated-at type="datetime">2008-10-27T12:56:40-07:00</updated-at>
+<email>upgrade@coupa.com</email>
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Ben</name-given>
+<name-family>Miller</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">9</id>
+<created-at type="datetime">2008-10-27T12:56:40-07:00</created-at>
+<updated-at type="datetime">2008-10-27T12:56:40-07:00</updated-at>
+<name nil="true" />
+<street1>1 Grainger Road</street1>
+<street2 nil="true" />
+<city>Newark</city>
+<state>NJ</state>
+<postal-code>92321</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>robert.monahon+feardemo@coupa.com</email>
+<employee-number />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</primary-address>
+</supplier>
+<uom>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>EA</code>
+<name>Each</name>
+<allowable-precision type="integer">0</allowable-precision>
+<active type="boolean">true</active>
+</uom>
+<payment-term>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>Net 30</code>
+<description />
+<days-for-net-payment type="integer">30</days-for-net-payment>
+<days-for-discount-payment nil="true" />
+<discount-rate nil="true" />
+<active type="boolean">true</active>
+</payment-term>
+<shipping-term>
+<id type="integer">1</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<code>Standard</code>
+</shipping-term>
+<asset-tags type="array" />
+<attachments type="array" />
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-line>
+</requisition-lines>
+<approvals type="array">
+<approval>
+<id type="integer">1672</id>
+<created-at nil="true" />
+<updated-at nil="true" />
+<position type="integer">1</position>
+<approval-chain-id nil="true" />
+<status>approved</status>
+<approval-date type="datetime">2010-02-06T19:07:48-08:00</approval-date>
+<note nil="true" />
+<type>ManagementHierarchyApproval</type>
+<approvable-type>RequisitionHeader</approvable-type>
+<approvable-id type="integer">235</approvable-id>
+<approver>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</approver>
+</approval>
+</approvals>
+<created-by>
+<id type="integer">7</id>
+<login>ejohnson</login>
+<email>upgrade+ej@coupa.com</email>
+<employee-number />
+<firstname>Ellis (Marketing Lead)</firstname>
+<lastname>Johnson</lastname>
+<salesforce-id nil="true" />
+<height />
+</created-by>
+<updated-by>
+<id type="integer">6</id>
+<login>bhostler</login>
+<email>upgrade+bh@coupa.com</email>
+<employee-number />
+<firstname>Blair (Marketing VP)</firstname>
+<lastname>Hostler</lastname>
+<salesforce-id nil="true" />
+<height />
+</updated-by>
+</requisition-header>
+```
+
+## Requisition Create - Amount based line example
+
+In this example we are creating a draft requisition for user
+'kyle'. We are not using any Coupa system ID's for any of the
+reference objects. The reference line is an amount based line.
+
+We posted it to the
+URL: `https://.coupahost.com/api/requisitions`.
+This created the requisition in a draft status.
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<requisition-header>
+<requested-by>
+<login>kyle</login>
+</requested-by>
+<department>
+<name>Marketing</name>
+</department>
+<pcard />
+<ship-to-address>
+<name>Headquarters</name>
+</ship-to-address>
+<justification />
+<attachments />
+<requisition-lines>
+<requisition-line>
+<description>Cleaning Services for Building A</description>
+<line-num type="integer">1</line-num>
+<need-by-date type="datetime">2010-09-23T00:00:00-07:00</need-by-date>
+<source-part-num />
+<supp-aux-part-num />
+<unit-price type="decimal">3000.00</unit-price>
+<supplier>
+<name>Maintenance Mart</name>
+</supplier>
+<account>
+<code>Cleaning Services</code>
+<account-type>
+<name>Chart of Accounts</name>
+</account-type>
+</account>
+<currency>
+<code>USD</code>
+</currency>
+<payment-term>
+<code>Net30</code>
+</payment-term>
+<shipping-term>
+<code>UPS</code>
+</shipping-term>
+<commodity>
+<name>Consulting Services</name>
+</commodity>
+</requisition-line>
+</requisition-lines>
+</requisition-header>
+```
+
+## Requisition Create Example - Catalog Item
+
+In this example we are creating a draft requisition for user
+'kyle'. We are not using any Coupa system ID's for any of the
+reference objects. The requisition line is based on a catalog item.
+You will notice that instead of passing in things such as UOM,
+price, supplier, etc... you can simply pass in the item name and
+the system will then default everything based on the item, just as
+it does through the user interface.
+
+We posted it to the
+URL: `https://.coupahost.com/api/requisitions.`
+This created the requisition in a draft status.
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<requisition-header>
+<requested-by>
+<login>kyle</login>
+</requested-by>
+<department>
+<name>Marketing</name>
+</department>
+<pcard />
+<ship-to-address>
+<name>Headquarters</name>
+</ship-to-address>
+<justification />
+<attachments />
+<requisition-lines>
+<requisition-line>
+<item>
+<name>Window Cleaner</name>
+</item>
+<line-num type="integer">1</line-num>
+<need-by-date type="datetime">2010-09-23T00:00:00-07:00</need-by-date>
+<account>
+<code>Cleaning Services</code>
+<account-type>
+<name>Chart of Accounts</name>
+</account-type>
+</account>
+</requisition-line>
+</requisition-lines>
+</requisition-header>
+```
+
+## Requisition Create - Quantity based line example
+
+In this example we are creating a draft requisition for user
+'kyle'. We are not using any Coupa system ID's for any of the
+reference objects. The requisition line is a quantity based line
+item.
+
+We posted it to the
+URL: `https://.coupahost.com/api/requisitions.`
+This created the requisition in a draft status.
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<requisition-header>
+<requested-by>
+<login>kyle</login>
+</requested-by>
+<department>
+<name>Marketing</name>
+</department>
+<pcard />
+<ship-to-address>
+<name>Headquarters</name>
+</ship-to-address>
+<justification />
+<attachments />
+<requisition-lines>
+<requisition-line>
+<description>New Projector Bulbs</description>
+<line-num type="integer">1</line-num>
+<need-by-date type="datetime">2010-07-23T00:00:00-07:00</need-by-date>
+<source-part-num />
+<supp-aux-part-num />
+<unit-price type="decimal">3000.00</unit-price>
+<quantity>2</quantity>
+<uom>
+<code>EA</code>
+</uom>
+<supplier>
+<name>Maintenance Mart</name>
+</supplier>
+<account>
+<code>Cleaning Services</code>
+<account-type>
+<name>Chart of Accounts</name>
+</account-type>
+</account>
+<currency>
+<code>USD</code>
+</currency>
+<payment-term>
+<code>Net30</code>
+</payment-term>
+<shipping-term>
+<code>UPS</code>
+</shipping-term>
+<commodity>
+<name>Consulting Services</name>
+</commodity>
+</requisition-line>
+</requisition-lines>
+</requisition-header>
+```
+
+## Requisitions Create Example - Multi Line Requisition
+
+In this example we are creating and submitting a requisition for
+user 'kyle'. We are not using any Coupa system ID's for any of the
+reference objects. The requisition has three line items: quantity
+line, amount line, and catalog line.
+
+We posted it to the URL:
+`https://.coupahost.com/api/requisitions/new/submit_for_approval.`
+This created and submitted the requisition for approval.
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<requisition-header>
+<requested-by>
+<login>kyle</login>
+</requested-by>
+<department>
+<name>Marketing</name>
+</department>
+<pcard />
+<ship-to-address>
+<name>Headquarters</name>
+</ship-to-address>
+<justification />
+<attachments />
+<requisition-lines>
+<requisition-line>
+<description>New Projector Bulbs</description>
+<line-num type="integer">1</line-num>
+<need-by-date type="datetime">2010-07-23T00:00:00-07:00</need-by-date>
+<source-part-num />
+<supp-aux-part-num />
+<unit-price type="decimal">3000.00</unit-price>
+<quantity>2</quantity>
+<uom>
+<code>EA</code>
+</uom>
+<supplier>
+<name>Maintenance Mart</name>
+</supplier>
+<account>
+<code>Cleaning Services</code>
+<account-type>
+<name>Chart of Accounts</name>
+</account-type>
+</account>
+<currency>
+<code>USD</code>
+</currency>
+<payment-term>
+<code>Net30</code>
+</payment-term>
+<shipping-term>
+<code>UPS</code>
+</shipping-term>
+<commodity>
+<name>Consulting Services</name>
+</commodity>
+</requisition-line>
+<requisition-line>
+<description>Cleaning Services for Building A</description>
+<line-num type="integer">2</line-num>
+<need-by-date type="datetime">2010-09-23T00:00:00-07:00</need-by-date>
+<source-part-num />
+<supp-aux-part-num />
+<unit-price type="decimal">3000.00</unit-price>
+<supplier>
+<name>Maintenance Mart</name>
+</supplier>
+<account>
+<code>Cleaning Services</code>
+<account-type>
+<name>Chart of Accounts</name>
+</account-type>
+</account>
+<currency>
+<code>USD</code>
+</currency>
+<payment-term>
+<code>Net30</code>
+</payment-term>
+<shipping-term>
+<code>UPS</code>
+</shipping-term>
+<commodity>
+<name>Consulting Services</name>
+</commodity>
+</requisition-line>
+<requisition-line>
+<item>
+<name>Window Cleaner</name>
+</item>
+<line-num type="integer">3</line-num>
+<need-by-date type="datetime">2010-09-23T00:00:00-07:00</need-by-date>
+<account>
+<code>Cleaning Services</code>
+<account-type>
+<name>Chart of Accounts</name>
+</account-type>
+</account>
+</requisition-line>
+</requisition-lines>
+</requisition-header>
+```
+
+## Requisitions GET (Query)
+
+## Requisitions POST
+
+## Overview
+
+The following describes how you can use the Coupa API to
+create requisitions.
+
+Our Requisition Creation API allows you to:
+
+1. Create a requisition in DRAFT mode for a specified user
+
+2. Create and submit a requisition for approval on-behalf of the
+specified user.
+
+There are 2 URLs you can now POST new requisitions to:
+
+- `/api/requisitions` - This
+will create a requisition in draft status, which will then need to
+be submitted manually.
+
+- `/api/requisitions/new/submit_for_approval` - This will
+create a requisition and attempt to submit it for approval / buyer action.
+
+In both cases, a requisition needs to be valid and submittable
+in order to be saved. Specifically, these elements are
+required:
+
+- At least one requisition line
+
+- A description or item for each line
+
+- A currency for each line
+
+- A quantity for quantity-based lines
+
+- Any required custom fields
+
+- All custom validations must pass
+
+Successful requests will return HTTP 201 Created. The body of
+the response will include the created requisition.
+
+Unsuccessful requests will return HTTP 400 Bad Request. The body
+of the response will include validation errors formatted as
+XML.
+
+## Referenced Objects
+
+This API will only create the following objects as part of the call:
+
+- Requisition headers
+
+- Requisition lines
+
+- Text attachments
+
+- URL attachments
+
+All other referenced objects (UOMs, items, users, suppliers, accounts, addresses,
+P-cards, etc.) must already exist in the system.
+
+Below is a list of referenced objects and how the alternative methods of looking up the
+object as part of the API call. For example, when specifcying the requested-by user, you
+can include the user's id, their login, or their email address, and the system will look
+them up. There's no need to include more than one of them. If multiple search criteria are
+used, then all must match in order to successfully find a record. Click [here](https://coupadocs.atlassian.net/wiki/spaces/integrate/pages/524357/Querying+Options) for instructions and examples and instructions on how to
+query using the Coupa API.
+
+| **Reference Object** | **Search Criteria Options** |
+| --- | --- |
+| Requested-by | login |
+| | email address |
+| | Coupa user ID |
+| Department | name |
+| | Coupa department ID |
+| Ship-to-address | nick name |
+| | Coupa address ID |
+| Supplier | name |
+| | Coupa supplier ID |
+| Account-Type (chart of accounts) | name |
+| | Coupa chart of accounts ID |
+| Account code | |
+| | Coupa account ID |
+| Currency | currency code |
+| | Coupa currency ID |
+| UOM | code |
+| | Coupa UOM ID |
+| Payment-Term | code |
+| | Coupa payment term ID |
+| Shipping-Term | code |
+| | Coupa shipping term ID |
+| Commodity | name |
+| | Coupa commodity ID |
+
+## Field Definitions
+
+| **Name** | **Required?** | **Type** | **Allowable Values** | **Description** |
+| --- | --- | --- | --- | --- |
+| justification | no | text | 2000 Characters | This is the requisition justification field that an be utilized to describe why the purchase is being made. |
+| attachments (text) | no | text | 2000 Characters | These are text based attachments that you can communicate within a requisition. |
+| attachments (url) | no | text | 500 Characters | These are providing a URL location to an that you want to communicate on the requisition. |
+| description | yes | text | 255 Characters | This is the line item description, when not using a catalog item. |
+| line-num | yes | integer | Integers Only | This is the line number for the requisition line you are passing. This needs to increment by 1 for each requisition line being submitted. |
+| source-part-num | no | text | 255 Characters | This is the supplier part number that is by default an optional field on the requisition line. |
+| unit-price | yes | decimal | Based on your precision. | For a quantity based line this is the unit price for each unit. For an amount based line, this is the value for the total service. |
+| need-by-date | no | datetime | Datetimne format | |
+| quantity | no | integer | Based on your precision setup for your UOM | This is only used for quantity based lines. |
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+- In a requisition-line, you can use either a description (free-form) or an item
+(catalog item). If an item id is used, the item must exist. The
+<source-type></source-type> is not used and ignored.
+
+- Currencies, users in the requested-by and suppliers must be in the system with a
+status of **active.**
+
+- Item: If a preferred supplier and price is available for an item it will be used
+unless the unit-price is specified. If a unit-price is specified, it will override the
+default pricing available for the item. While it is not an error to specify a
+description and an item, using an item will set the description to the item description,
+ignoring the passed in description field.
+
+- Defaulting: Unless otherwise specified in the XML, the system will respect the
+relevant defaulting within the system. Such as defaulting payment and shipping terms
+from the supplier record.
+
+- Line Numbering: The API expects the line-num to increment by one for each new line
+number. If you use the same line-num, the system will ignore all other lines with the
+same number.

@@ -1,0 +1,21 @@
+ExtraLineAttributes::OrderLineAttribute API
+
+ExtraLineAttributes::OrderLineAttribute is a shared object. It does not include an endpoint.
+
+Associations
+
+This API is associated with the Purchase Order Lines API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	No 	No 	No 	 	Yes 	datetime
+created-by 	User who created 	No 	No 	No 	 	Yes 	 User
+end-date 	End date 	No 	No 	No 	Yes 	Yes 	datetime
+id 	Coupa unique identifier 	No 	No 	No 	 	Yes 	integer
+manager 	Manager 	No 	No 	No 	Yes 	Yes 	 User
+rate-card 	Rate card 	No 	No 	No 	Yes 	Yes 	RateCard
+start-date 	Start date 	No 	No 	No 	Yes 	Yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	No 	No 	No 	 	Yes 	datetime
+updated-by 	User who updated 	No 	No 	No 	 	Yes 	 User
+work-confirmer-email 	Work confirmer email 	No 	No 	No 	Yes 	Yes 	string(255)

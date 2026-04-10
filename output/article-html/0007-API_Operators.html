@@ -1,0 +1,141 @@
+<article class="" id="api_operators">
+<h1 class="title">API Operators</h1>
+<div class="body">
+<p class="">Coupa supports a number of operators to enable you to query with precision.</p>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">Operator</th>
+<th class="entry " align="">Description</th>
+<th class="entry " align="">Example</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">(none/default)</td>
+<td class="entry" align="">Returns the exact match.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/purchase_orders?id=100</code>
+</p>
+<p class="">Return the Purchase Order with a Coupa ID of 100.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">contains</td>
+<td class="entry" align="">Returns results that contain the search term. Not available for datetime fields.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/suppliers?name[contains]=.com</code>
+</p>
+<p class="">Returns the first 50 suppliers containing ".com" in the Supplier Name field.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">starts_with</td>
+<td class="entry" align="">Returns results that start with the search term. Not available for datetime fields.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/budget_lines?notes[starts_with]=San%20Francisco</code>
+</p>
+<p class="">Returns the first 50 budget lines beginning with "San Francisco".</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ends_with</td>
+<td class="entry" align="">Returns results that end with the search term. Not available for datetime fields.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/items?name[ends_with]=Gray</code>
+</p>
+<p class="">Returns the first 50 items with a name ending in "Gray".</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">gt</td>
+<td class="entry" align="">Returns results that are greater than (&gt;) the search term.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/purchase_orders/version[gt]=1</code>
+</p>
+<p class="">Example returns the first 50 purchase orders that have a version of 2 or higher (&gt;1).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lt</td>
+<td class="entry" align="">Returns results that are less than (&lt;) the search term.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/suppliers?updated-at[lt]=2010-01-15</code>
+</p>
+<p class="">Returns the first 50 supplier records which were last updated before, but not including, January 15th 2010.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">gt_or_eq</td>
+<td class="entry" align="">Returns results that are greater than or equal to (&gt;=) the search term.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/purchase_orders/version[gt_or_eq]=3</code>
+</p>
+<p class="">Returns the first 50 purchase orders that have a version of 3 or higher (&gt;=3).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lt_or_eq</td>
+<td class="entry" align="">Returns results that are less than or equal to (&lt;=) the search term.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/purchase_orders/version[lt_or_eq]=1</code>
+</p>
+<p class="">Returns the first 50 purchase order records which were last updated before and including January 15th 2010.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">not_eq</td>
+<td class="entry" align="">Returns results that are not equal to (!=) the search term.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/purchase_orders?status[not_eq]=active</code>
+</p>
+<p class="">Returns the first 50 purchase order records not in "active" status.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">in</td>
+<td class="entry" align="">Returns values that match multiple terms (shorthand for multiple OR conditions).</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/invoices?account-type[name][in]=SAP100,SAP200</code>
+</p>
+<p class="">Returns the first 50 invoice records where the Chart of Account name is SAP100 or SAP200.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">not_in</td>
+<td class="entry" align="">Excludes multiple values from the query results.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/invoices?status[not_in]=ap_hold,booking_hold</code>
+</p>
+<p class="">Returns the first 50 invoices where the Status does not equal ap_hold or booking_hold.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">blank</td>
+<td class="entry" align="">Boolean operator that returns values that are or are not blank. Not available for datetime fields.</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">https://example.coupahost.com/api/suppliers?po-email[blank]=true</code>
+</p>
+<p class="">Returns the first 50 supplier records with a blank PO Email Address.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+</article>

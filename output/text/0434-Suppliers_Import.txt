@@ -1,0 +1,167 @@
+Suppliers Import
+
+Overview
+
+The Supplier Import process reads files from ./Incoming/Suppliers/ in the standard SFTP setup. These files are moved to the archive folder located at ./Incoming/Archive/Suppliers/ before being processed in alphanumeric order.
+
+Note:
+
+Not all fields on the supplier object are available through the UI. Use the UI's bulk-loader template to see what fields are available through the UI. If you're unsure about which fields to use for your supplier integration, talk to your Coupa Implementation Manager.
+
+Key Priority
+
+The following are the fields used to look up the supplier record:
+
+-
+
+ID
+
+-
+
+Supplier Number
+
+-
+
+Name
+
+If more than one field is specified, the highest priority field is used.
+
+Validations
+
+ID is Coupa's unique value for the supplier, so it can't be modified. Use it to update any field. You can also update any field (except ID) if you use either Supplier Number or Suppler Name.
+
+Note:
+
+Supplier Name and Supplier Number must be unique.
+
+Additionally, if the CSV file contains the same supplier record more than once, and if the supplier numbers differ for both records, Coupa will update the supplier number with the value from the row closest to the end of the file.
+
+Note:
+
+US numbers should be in the format xxx yyy zzzz eeee, where 'eeee' represents an optional extension. Non-US numbers must be prefaced by a + sign and the country code. +aa xxx yyy zzzz eeee
+
+For FedRAMP instances, website URLs must be in https: format.
+
+Supplier
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Name 	Yes 	Yes 	string(100) 	Must be unique supplier name or else the system will attempt to updated the existing supplier record
+Display Name 	No 	No 	string(255) 	Supplier display name
+Id 	No 	No 	integer 	Coupa Unique Supplier Id
+Content Groups 	No 	No 	 	Enter in content groups (for security)
+Status 	No 	No 	 	Possible values are active, inactive or draft.
+Commodity 	No 	No 	 	Must match the commodity name exactly.
+Enterprise Code 	No 	No 	 	Must match the enterprise code exactly.
+Supplier Number 	No 	Yes 	string(255) 	Often used to cross-reference your supplier number from the financial system
+Parent Company 	No 	No 	 	Supplier Parent Company
+Account Number 	No 	No 	string(255) 	Your account number with the supplier to be printed on the purchase order
+Tax ID 	No 	Yes 	string(255) 	Your suppliers Tax Identification Number (TIN)
+Tax Code 	No 	No 	 	If filled in, must match one of your Tax Codes
+DUNS 	No 	No 	string 	Your supplier's DUNS number
+Online Store URL 	No 	No 	 	Online Store URL
+Online Store Login 	No 	No 	 	Online Store Login
+Primary Contact Email 	No 	No 	 	Your supplier contact's email. A primary contact can only have one email address. Note: If you include multiple email addresses, you will need to delete one from the primary contact in Coupa before you can edit and save the Supplier record.
+Primary Contact Reference Code 	No 	No 	 	Your supplier contact's Reference Code
+Primary Contact Phone Work 	No 	No 	 	Your supplier contact's work phone number in the format xxx-yyy-zzzz. Intl numbers must be prefaced by a + sign and the country code. +aa xxx-yyy-zzzz
+Primary Contact Phone Mobile 	No 	No 	 	Your supplier contact's Phone Mobile
+Primary Contact Phone Fax 	No 	No 	 	Your supplier contact's Phone Fax
+Primary Contact Name Given 	No 	No 	 	Your supplier contact's Name Given
+Primary Contact Name Family 	No 	No 	 	Your supplier contact's Name Family
+Primary Address Street1 	No 	No 	 	Your supplier's Address Street Line 1
+Primary Address Street2 	No 	No 	 	Your supplier's Address Street Line 2
+Primary Address Street3 	No 	No 	 	Your supplier's Address Street Line 3
+Primary Address Street4 	No 	No 	 	Your supplier's Address Street Line 4
+Primary Address City 	No 	No 	 	Your supplier's Address City
+Primary Address State 	No 	No 	 	Your supplier's Address State
+Primary Address Postal Code 	No 	No 	 	Your supplier's Address Postal Code
+Primary Address Country Code 	No 	No 	 	Your supplier's Address Country Code
+Primary Address Vat Number 	No 	No 	 	Your supplier's Address Vat registration number
+Primary Address Vat Country Code 	No 	No 	 	Your supplier's 2-digit country code
+Primary Address Tax Type 	No 	No 	 	Your supplier's country specific tax type
+Primary Address Local Tax Number 	No 	No 	 	Your supplier's Address local tax number
+Invoice Matching Level 	No 	No 	string(255) 	Possible values are none, 2-way or 3-way. Only used for invoicing. Required when creating a supplier. Not required when updating a supplier. 	2-way, 3-way, 3-way-direct, none
+PO Method 	No 	No 	string(255) 	Possible values are email, cxml, xml, buy_online or prompt. If email, the system will send the PO via email (must fill in the PO email address). If cxml, system will send the PO via XML (must fill in the cXML values). If prompt, the system will hold the PO and wait for you to manually release the order. 	cxml, xml, email, prompt, mark_as_sent, buy_online
+PO Change Method 	No 	No 	string(255) 	Possible values are email, cxml, xml, buy_online or prompt. If email, the system will send the PO via email (must fill in the PO email address). If cxml, system will send the PO via XML (must fill in the cXML values). If prompt, the system will hold the PO and wait for you to manually release the order. 	cxml, xml, email, prompt, mark_as_sent, buy_online
+Buyer Hold 	No 	No 	boolean 	Possible values are Yes or No. If yes, then the buyer will need to review the PO before issuing. If no, the system will automatically send the PO via the preferred PO method
+Default Locale 	No 	No 	string(255) 	Will accept any valid locale short code i.e. en, en-GB, fr, fr-CA, etc.
+PO Email 	No 	No 	string(255) 	Required if PO method is email. Can contain more than one email address. Place all the addresses within quotes, separated by commas.
+Payment Method 	Yes 	No 	string(255) 	Must be "Invoice", "P-Card", "Invoice Only", or "P-Card Only"
+Remit-To Requirements 	No 	No 	 	Must be either "Address Only" or "Must include payment information"
+Payment Terms 	No 	No 	 	If filled in, must match one of your Payment Terms
+Shipping Terms 	No 	No 	 	If filled in, must match one of your Shipping Terms
+PO cXML URL 	No 	No 	string 	Must be filled in if PO method is cXML
+PO cXML Domain 	No 	No 	string 	Must be filled in if PO method is cXML
+PO cXML Identity 	No 	Yes 	string 	Must be filled in if PO method is cXML
+PO cXML Supplier Domain 	No 	No 	string 	Must be filled in if PO method is cXML
+PO cXML Supplier Identity 	No 	Yes 	string 	Must be filled in if PO method is cXML
+PO cXML Protocol 	No 	No 	string 	Must be filled in if PO method is cXML
+cXML SSL Version 	No 	No 	string 	Blank to use latest version available (recommended). Set to TLSv1 or SSLv3 to override
+Disable Cert Verify 	No 	No 	boolean 	Disable SSL Cert Checking
+PO cXML HTTP Basic Auth Username 	No 	No 	string 	If sending PO cXML has HTTP Basic Auth
+Allow cXML Invoicing 	No 	No 	boolean 	Possible values are Yes or No. If yes, then supplier will be able to send cXML invoices.
+cXML Invoicing - Supplier Domain 	No 	No 	string 	Must be filled in if Allow cXML Invoicing is Yes
+cXML Invoicing - Supplier Identity 	No 	Yes 	string 	Required if Allow cXML Invoicing is Yes. This field is unique across multiple suppliers.
+cXML Invoicing - Buyer Domain 	No 	No 	string 	Must be filled in if Allow cXML Invoicing is Yes
+cXML Invoicing - Buyer Identity 	No 	Yes 	string 	Must be filled in if Allow cXML Invoicing is Yes
+cXML Invoicing Shared Key 	No 	No 	string 	Must be filled in if Allow cXML Invoicing is Yes
+Savings (%) 	No 	No 	decimal(8,2) 	Can be any number. It is used to generate the savings from using this preferred supplier on your purchases
+On Hold 	No 	No 	boolean 	Possible values are <em>Yes</em> or <em>No</em>. If yes, then the supplier on hold and POs can not be created against supplier.
+Invoice Emails 	No 	No 	InvoiceEmail 	Registered email addresses allowed to send invoices via email to invoices@yourhost.coupahost.com.
+Account Types 	No 	No 	AccountType 	Chart of Accounts for supplier
+Always Route Invoices From This Supplier For Approval 	No 	No 	boolean 	Possible values are Yes or No. If yes, then invoices will all be sent thru approvals, regardless of total amount.
+Allow Invoicing From CSN 	No 	No 	boolean 	Possible values are Yes or No. If yes, then the supplier can create invoices against their POs or Contracts in CSN.
+Create Invoices with No Backing Document 	No 	No 	boolean 	Possible values are Yes or No. If yes, then the supplier can create invoices without a backing PO or Contract in CSN.
+Allow Invoicing Choose Billing Account From CSN 	No 	No 	boolean 	Possible values are <em>Yes</em> or <em>No</em>. If yes, then the supplier can choose the billing account for invoices in CSN.
+Restricted account types 	No 	No 	 	Chart of Accounts that supplier is restricted to select billing for. This column is only applicable if the supplier is on CSN. It can't be used for restricting suppliers to a CoA.
+Preferred Language 	No 	No 	 	Default supplier language - default is US-English
+Preferred Currency 	No 	No 	 	Default supplier currency - default is USD
+Country of Operation Code 	No 	No 	 	Country Code for Country of Operations
+Allow Non-Backed Lines on PO Invoices 	No 	No 	boolean 	'Possible values are Yes or No. If yes, then the supplier can create invoices lines without a backing PO or Contract in CSN.'
+Website 	No 	No 	string(255) 	Supplier Website
+Email domain 	No 	No 	 	Default contact email
+Default contact email 	No 	No 	 	Email Doman (ex. ibmlabs.com)
+Hold invoices for AP review 	No 	No 	boolean 	Prevent invoices from this supplier from being approved before AP reviews them.
+Allow CSP Access without Two Factor 	No 	No 	boolean 	Allows supplier to access Customer's data from CSP without Two Factor
+Request change orders 	No 	No 	boolean 	Allow supplier to initiate an Order change requests
+Send Email Added Notification 	No 	No 	 	No Description Found
+Enable for Early Payments 	No 	No 	 	No Description Found
+Early Payment Programs 	No 	No 	 	No Description Found
+Supply Chain Finance Configurations 	No 	No 	string 	Supply Chain Finance Configurations to be whitelisted for the supplier
+Only pay financed invoices via Coupa Pay 	No 	No 	boolean 	Only financed invoice will be paid via Coupa Pay, others via ERP
+Parent Business Entity Name 	No 	No 	 	Business Entity Name
+Tags 	No 	No 	 	Tags
+Preferred Commodities 	No 	No 	Commodity 	Preferred Commodities
+One Time Supplier 	No 	No 	boolean 	Is this a One Time Supplier?
+Scope Three Emissions 	No 	No 	boolean 	Do you track Scope Three Emissions?
+Last Invited Email 	No 	No 	 	No Description Found
+Last Invited At 	No 	No 	 	No Description Found
+Last Reminded At 	No 	No 	 	No Description Found
+Proxy ID 	No 	No 	 	No Description Found
+Supplier website 	No 	No 	string(255) 	No Description Found
+Do Not Offer Static Discounting 	No 	No 	boolean 	No Description Found
+Create Credit Notes without Backing Invoice 	No 	No 	boolean 	Create Credit Notes without Backing Invoice
+Payment Types 	No 	No 	PaymentType 	Valid options for Payment Types are - "Virtual Card" or "Bank Transfer" or "Check"
+Exempt from Risk Aware 	No 	No 	boolean 	Exempt from Risk Aware
+Service Sheet Required 	No 	No 	boolean 	Service Sheet Required 	yes, no, yes_customer
+Strategic Supplier 	No 	No 	boolean 	Strategic Supplier
+
+Supplier Diversity Report Direct Spend
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Company Name* 	Yes 	No 	 	Company Name
+Diversity Type 	No 	No 	 	Diversity Type
+Total Purchases* 	Yes 	No 	 	Total Purchases
+Currency* 	Yes 	No 	 	Currency
+Certificate Type 	No 	No 	 	Certificate Type
+Certificate Number 	No 	No 	 	Certificate Number
+Expiration Date 	No 	No 	 	Expiration Date
+
+Supplier Diversity Report Indirect Spend
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Diversity Type 	No 	No 	 	Diversity Type
+Ethnicity 	No 	No 	 	Ethnicity
+Total Purchases 	No 	No 	 	Total Purchases
+Currency 	No 	No 	 	Currency
+Total sales in Reporting Period 	No 	No 	 	Total sales in Reporting Period
+Total sales with Requesting Customer in Reporting Period 	No 	No 	 	Total sales with Requesting Customer in Reporting Period

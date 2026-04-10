@@ -1,0 +1,38 @@
+<article class="" id="custom_field_namespace">
+<h1 class="title">Custom Field Namespace</h1>
+<p class="">
+<p class="">Custom-fields are added to a <code class="ph codeph">&lt;custom-fields&gt;</code> namespace to avoid name conflicts and to make customer-added fields more easily identifiable.</p>
+</p>
+<div class="body">
+<div class="" id="in_the_ui">
+<p class="">Newly-created custom fields don't have the <b>API Global Namespace</b> option. They're in the new custom field namespace by default. If you disable the global namespace option for existing custom fields, they'll be placed in the custom field namespace, the checkbox will disappear, and you won't be able to add them back to the global namespace.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Expense category custom fields and attendee-type custom fields do not yet support being added to the custom fields namespace.</p>
+</div>
+</div>
+<div class="" id="api_example_using_xml">
+<h2 class="title sectiontitle">API example using XML</h2>
+<p class="">For the API, new custom fields are wrapped in a parent <code class="ph codeph">&lt;custom-fields&gt;</code> attribute.</p>
+<pre xml:space="preserve">
+        <code class="ph codeph">&lt;custom-fields&gt;
+               &lt;custom-field-1&gt;Name of first custom field&lt;/custom-field-1&gt;
+               &lt;custom-field-2&gt;Name of second custom field&lt;/custom-field-2&gt;
+        &lt;/custom-fields&gt;</code>
+      </pre>
+</div>
+<div class="" id="api_example_using_json">
+<h2 class="title sectiontitle">API example using JSON</h2>
+<p class="">For the API, new custom fields are contained in a parent <code class="ph codeph">custom-fields</code> attribute.</p>
+<pre xml:space="preserve">
+        <code class="ph codeph">{
+          "custom-fields": {
+                "custom-field-1": "Name of first custom field",
+                "custom-field-2": "Name of second custom field"
+        }
+       }     </code>
+      </pre>
+</div>
+</div>
+</article>

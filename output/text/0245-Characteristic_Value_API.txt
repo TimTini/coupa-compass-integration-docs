@@ -1,0 +1,16 @@
+Characteristic Value API
+
+Access characteristic value data when working with the Quality Collaboration API.
+
+Associations
+
+This resource is associated with the Quality Collaboration API. For more information, see Quality Collaboration API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+id 	Value ID. 	 	 	 	 	yes 	integer
+characteristicId 	Characteristic ID. 	 	 	 	 	yes 	integer
+code 	Characteristic code. 	 	 	 	 	yes 	string
+domain 	Characteristic domain. 	 	 	 	 	yes 	string
+value 	Characteristic value. 	 	 	 	 	yes 	string

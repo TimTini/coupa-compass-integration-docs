@@ -1,0 +1,19 @@
+Invoice Charge Allocation API
+
+Associations
+
+This API resource is available through Invoice Charge API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+account 	account 	yes 	 	 	yes 	yes 	 Account
+amount 	dollar amount for this allocation 	 	 	 	yes 	yes 	decimal(30,4)
+billing-note 	Billing note 	 	 	 	yes 	yes 	text
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+pct 	percent 	yes 	 	 	yes 	yes 	decimal(16,10)
+period 	budget period 	 	 	 	yes 	yes 	 Period
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

@@ -1,0 +1,86 @@
+<article class="" id="approvals_api_example_calls">
+<h1 class="title">Approvals API Example Calls</h1>
+<div class="body">
+<div class="" id="example-d957e119884">
+<h2 class="title sectiontitle">Example</h2>
+<p class="">In this example, we queried for a single approval with an ID of 12622. We did a GET to the
+        URL:
+          <code class="ph codeph">//&lt;instance&gt;.coupahost.com/api/requisitions?status=ordered&amp;created-at[gt]=2010-01-01&amp;created-at[lt]=2010-02-01
+        </code>
+</p>
+<p class="">
+<b>Approvals GET Response</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;approval&gt;
+	 &lt;id type="integer"&gt;12622&lt;/id&gt;
+	 &lt;created-at type="datetime"&gt;2012-02-15T14:56:22-08:00&lt;/created-at&gt;
+	 &lt;updated-at type="datetime"&gt;2012-04-23T11:49:25-07:00&lt;/updated-at&gt;
+	 &lt;position type="integer"&gt;1&lt;/position&gt;
+	 &lt;approval-chain-id nil="true" /&gt;
+	 &lt;status&gt;approved&lt;/status&gt;
+	 &lt;approval-date type="datetime"&gt;2012-02-15T14:56:59-08:00&lt;/approval-date&gt;
+	 &lt;note /&gt;
+	 &lt;type&gt;ManagementHierarchyApproval&lt;/type&gt;
+	 &lt;approvable-type&gt;RequisitionHeader&lt;/approvable-type&gt;
+	 &lt;approvable-id type="integer"&gt;2696&lt;/approvable-id&gt;
+	 &lt;approver&gt;
+			&lt;id type="integer"&gt;3&lt;/id&gt;
+			&lt;login&gt;vpierre&lt;/login&gt;
+			&lt;email&gt;upgrade+vp@coupa.com&lt;/email&gt;
+			&lt;employee-number /&gt;
+			&lt;firstname&gt;Victor (CFO)&lt;/firstname&gt;
+			&lt;lastname&gt;Pierre&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+	 &lt;/approver&gt;
+	 &lt;created-by&gt;
+			&lt;id type="integer"&gt;9&lt;/id&gt;
+			&lt;login&gt;bjenkins&lt;/login&gt;
+			&lt;email&gt;upgrade+bj@coupa.com&lt;/email&gt;
+			&lt;employee-number /&gt;
+			&lt;firstname&gt;Bob (VP Procurement)&lt;/firstname&gt;
+			&lt;lastname&gt;Jenkins&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+	 &lt;/created-by&gt;
+	 &lt;updated-by&gt;
+			&lt;id type="integer"&gt;17&lt;/id&gt;
+			&lt;login&gt;coupa_metrics_gatherer&lt;/login&gt;
+			&lt;email&gt;do_not_reply_metrics@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Coupa&lt;/firstname&gt;
+			&lt;lastname&gt;Metrics&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+	 &lt;/updated-by&gt;
+&lt;/approval&gt;</code>
+</pre>
+</p>
+<p class="">
+<b>Approving or Rejecting</b>
+</p>
+<p class="">The following describes how you can use the Coupa API to perform actions on Approvals.</p>
+<p class="">
+<b>Approving</b>
+</p>
+<p class="">&lt;instance url&gt;/api/approvals/&lt;approval id&gt;/approve</p>
+<p class="">
+<b>Rejecting</b>
+</p>
+<p class="">&lt;instance url&gt;/api/approvals/&lt;approval id&gt;/reject</p>
+<p class="">
+<b>Adding Reason</b>
+</p>
+<p class="">In both cases, an approval must be Pending (and not already approved or rejected) for the
+        action to be valid. It is also possible to provide a "Reason" for the rejection through the
+        XML request directly. For example, to reject an approval by id of 12612 and provide a reason
+        of "Rejected by Integration", you would use the following request:</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/approvals/12612/reject?reason=Rejected%20by%20Integration</code>
+</pre>
+</p>
+<p class="">Successful requests will return HTTP 200 Response. The body of the response will include
+        the created requisition. Unsuccessful requests will return HTTP 400 Bad Request. The body of
+        the response will include validation errors formatted as XML.</p>
+</div>
+</div>
+</article>

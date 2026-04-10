@@ -1,0 +1,14 @@
+Expense Line Attendee API
+
+Association
+
+This resource is associated with Expense Lines API.
+
+Attributes
+
+Attribute 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+expense-attendee-id 	Coupa's unique identifier for the associated expense attendee 	 	yes 	integer
+expense-line-id 	Coupa's unique identifier for the associated expense line 	 	yes 	integer
+id 	Coupa unique identifier for the expense line attendee 	 	yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime

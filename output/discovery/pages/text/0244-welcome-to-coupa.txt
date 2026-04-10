@@ -1,0 +1,9 @@
+welcome-to-coupa
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/get-started/welcome-to-coupa
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbjtMwEP2VyO%2BOnd6x2krdLYhKC0TbwgMvq6kzy1qb2MbjLOXvcVxABan7mJM5txkvCbrWq00fn%2Bw9fu%2BRYrHbrtiDnB%2F1%2BLiQ%2FA3MJJ80cOQwReByoZsKpiCnMGPFFwxknF2xUSlZsSPqcWcpgo0JkqMZlxNeyYOs1HSu5KwcjxdfWbFNLsZCzMynGD0pIbTrPXA8RQwW2tI9Ryi16wR4%2F9%2B%2FhwR7IPIuxPRVCTw9u5HsJUxG25vurYYqzgWRE0M5VrxzQWNuuGKP0BIOSeskYF7wL1IHF5127Y2xjbHfVqwPVjkgQ8pCh6SiVvvNhzuVmqrjeYjU%2B8Oh5vWn%2FYEVGyIMQ6VbZ6nvMOwxvBiNn%2B%2FvLkvm5GUulOsNmuIalxWnrrWk8pFej%2BR%2F52fr5TCt8i3CBf91OvxJwNZXsy7FhfLZxquPSWq3rV1r9M9h0x3E605VWWXENPwxjyrswLSbpglIlHbYtu7HbUCI6TAx9GkBYn22%2FfeNrn8B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fget-started%2Fwelcome-to-coupa
+
+Observed redirect page title: Coupa Portals - Sign In

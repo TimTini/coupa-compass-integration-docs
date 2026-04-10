@@ -1,0 +1,397 @@
+<article class="" id="budget_line_import">
+<h1 class="title">Budget Line Import</h1>
+<div class="body">
+<div class="" id="overview-d117e122333">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Budget Line Import process read files from <code class="ph codeph">./Incoming/BudgetLines/</code> in
+        the SFTP. These files will be moved to the archive folder located at
+          <code class="ph codeph">./Incoming/Archive/BudgetLines/</code> before being processed in alphanumeric
+        order. </p>
+<ul class="ul">
+<li class="li">The Chart of Accounts must already exist</li>
+<li class="li">The Account must already exist for the Chart of Accounts</li>
+<li class="li">Currency must be active.</li>
+</ul>
+</div>
+<div class="" id="keys">
+<h2 class="title sectiontitle">Keys</h2>
+<p class="">
+<code class="ph codeph">Budgeting Segment</code> and <code class="ph codeph">Period</code> are the keys to update an
+        existing budget line. Both keys are needed in order to perform an update.</p>
+<p class="">When specified, the <code class="ph codeph">Remaining Budget</code> field will cause the
+          <code class="ph codeph">Amount</code> column to be ignored.</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>When loading lines for the first time, always use the
+            <code class="ph codeph">Amount</code> column and do not use the <code class="ph codeph">Remaining Budget</code>
+          column.</div>
+</p>
+</div>
+<div class="" id="notes">
+<h2 class="title sectiontitle">Notes</h2>
+<p class="">Coupa's integrations don't currently provide a way to directly capture outside spend. The
+        appropriate way to capture this change to the budget would be to update the budget to reduce
+        the budget's total amount by the amount of the outside spend. For example: a $5000 budget
+        exists for Account ABC for Fall 2012 with $2000 used for by PO 123 and PO 124. $1000 of
+        budget ABC is spent outside of Coupa. An update to Account ABC's Fall 2012 budget should be
+        made to change the total budget amount from $5000 to $4000 to reflect in Coupa that only
+        $2000 is remaining.</p>
+</div>
+<div class="" id="section_ytq_rvs_d1c">
+<h2 class="title sectiontitle">Possible values</h2>
+<dl class="dl">
+<dt class="dt dlterm">Owner Is Approver</dt>
+<dd class="dd">1 or 2 (1=on all requisitions, 2=only when budget is exceeded)</dd>
+<dt class="dt dlterm">Budget Overrun Calculation</dt>
+<dd class="dd">1 or 2 (1=Approved, 2=approved and pending requisitions)</dd>
+</dl>
+</div>
+<div class="" id="section_mwk_2vs_d1c">
+<h2 class="title sectiontitle">Budget</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Segment</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Budget Segment</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Chart of Accounts</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Chart of Accounts Name. Must Exist in Coupa.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Owner (Login)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Budget Owner Login. Must Exist in Coupa</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Budget Description</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Notes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Budget Notes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Owner Is Approver</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Have Budget Owner Approve things affecting budget</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Hard Stop</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Prevent submission of requisitions that would exceed the budget</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Overrun Calculation</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Use approved or approved and pending requisitions</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_sxm_fvs_d1c">
+<h2 class="title sectiontitle">Budget Line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Period</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Budget Period Name. Must exist in Coupa</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budgeting Segment</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Budgeting Account Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">Total Budget Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Remaining</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">Budget Amount Remaining</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Pending Requisitions Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">Amount consumed by pending Requisitions</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Budget Description</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Notes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">Budget Notes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Owner</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Budget Owner Login. Must Exist in Coupa</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Owner Is Approver</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Have budget owner approve things affecting budget. Once the box is checked, update with value of 0 to uncheck. Set to 1 for all requisitions, Set to 2 when budget is exceeded.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Hard Stop</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Prevent submission of requisitions that would exceed the budget</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Overrun Calculation</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Use this field to calculate budgets against approved requisitions or approved and pending requisitions. 1 for approved, 2 for approved and pending requisitions.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account  Segment 2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account  Segment 3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 5</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 6</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 7</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 8</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 9</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 10</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 11</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 12</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 13</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 14</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 15</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 16</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 17</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 18</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 19</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">Budgeting Account Segment 20</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

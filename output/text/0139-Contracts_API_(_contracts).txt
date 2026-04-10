@@ -1,0 +1,144 @@
+Contracts API (/contracts)
+
+Overview
+
+Use the contracts API to create, update, or query a contract, including the business groups involved, key dates, the status of the contract, and the financial terms.
+
+The URL to access contracts is: https://{your_instance_name}/api/contracts
+
+See Integration Best Practices for more info.
+
+Actions
+
+Verb 	 Path 	 Action 	 Description
+PUT 	 /api/contracts/:id/add_approver 	add_approver 	Manually add an approver for a contract
+PUT 	 /api/contracts/:id/ccc_signature_created 	ccc_signature_created 	Notifies that a signature has been added in CCC.
+PUT 	 /api/contracts/:id/check_in 	check_in 	Check-in a legal document
+PUT 	 /api/contracts/:id/check_out 	check_out 	Check-out a legal document.
+PUT 	 /api/contracts/:id/complete 	complete 	Moves the contract to the completed state.
+POST 	 /api/contracts 	create 	Create contract
+POST 	 /api/contracts/:id/create_published 	create_published 	 /api/contracts/:id/create_published
+GET 	 /api/contracts 	index 	Query contracts
+POST 	 /api/contracts/:id/legal_agreement 	legal_agreement 	Add or update legal legal_agreement file
+PUT 	 /api/contracts/:id/legal_agreement 	legal_agreement 	Add or update legal legal_agreement file
+PUT 	 /api/contracts/:id/remove_approval 	remove_approval 	Remove an approver who was manually added
+GET 	 /api/contracts/:id/retrieve_legal_agreement 	retrieve_legal_agreement 	Get legal legal_agreement file
+GET 	 /api/contracts/:id/retrieve_executive_summary 	retrieve_executive_summary 	Get executive summary file
+GET 	 /api/contracts/:id 	show 	Show contract
+PUT 	 /api/contracts/:id/submit_for_approval 	submit_for_approval 	Submits the contract for approval.
+PUT 	 /api/contracts/:id 	update 	Update contract
+PUT 	 /api/contracts/:id/update_published 	update_published 	Updates a contract when it's published.*
+PUT 	 /api/contracts/:id/withdraw_signatures 	withdraw_signatures 	Moves contract to corresponding status after CCC withdraw_signatures.
+
+* Updating Completed or Published contracts (directly, without creating a draft) requires that Enable Contract Hierarchy is turned on in your company's settings (Setup > Company Information). If you do not have CLM Standard you can work with contract revisions.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+amended-contract-type 	Amended Contract Type 	 	 	 	yes 	yes 	string(255)
+auto-extend-end-date-for-renewal 	Automatically update expiry date 	 	 	 	yes 	yes 	boolean
+consent 	Notice to Consent 	 	 	notice, consent, not_required, not_assignable 	yes 	yes 	string(255)
+content-groups 	Business Groups 	 	 	 	yes 	yes 	 Business Group
+contract-owner 	Contract owner 	 	 	 	yes 	yes 	 User
+contract-terms 	contract_terms 	 	 	 	yes 	yes 	 Contract Term
+contract-type 	Custom-defined label for categorization 	no 	no 	any 	yes 	yes
+contract-type-custom-field-1 	Contract type custom field 1 	no 	no 	any 	yes 	yes 	string(255)
+contract-type-custom-field-2 	Contract type custom field 2 	no 	no 	any 	yes 	yes 	string(255)
+contract-type-custom-field-3 	Contract type custom field 3 	no 	no 	any 	yes 	yes 	string(255)
+contract-type-custom-field-4 	Contract type custom field 4 	no 	no 	any 	yes 	yes 	string(255)
+contract-type-custom-field-5 	Contract type custom field 5 	no 	no 	any 	yes 	yes 	string(255)
+contract-type-custom-field-6 	Contract type custom field 6 	no 	no 	any 	yes 	yes 	string(255)
+contract-type-custom-field-7 	Contract type custom field 7 	no 	no 	any 	yes 	yes 	string(255)
+contract-type-custom-field-8 	Contract type custom field 8 	no 	no 	any 	yes 	yes 	string(255)
+contract-type-custom-field-9 	Contract type custom field 9 	no 	no 	any 	yes 	yes 	string(255)
+contract-type-custom-field-10 	Contract type custom field 10 	no 	no 	any 	yes 	yes 	string(255)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+currency 	Contract Currency Code 	 	 	 	yes 	yes 	 Currency
+current-approval 	Current approval 	 	 	 	 	yes 	 Approval
+current-parallel-approvals 	Current parallel approvals 	 	 	 	 	yes 	 Approval
+default-account 	default_account 	 	 	 	yes 	yes 	 Account
+department 	Owner Department 	no 	no 	any 	yes 	yes 	Department
+description 	Descriptive notes about the contract 	false 	false 	any 	yes 	yes 	string(1024)
+diversity-categories 	Supplier Diversity categories 	 	 	 	 	yes 	string
+end-date 	Expire Date 	no 	 	 	yes 	yes 	datetime
+execution-date 	Date when the contract is completed and legally binding 	no 	no 	any 	yes 	yes 	datetime
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+is-default 	Default Account for Supplier Invoice 	 	 	 	yes 	yes 	boolean
+legal-agreement-url 	Optional url for the legal agreement 	 	 	 	yes 	yes 	string(255)
+length-of-notice-unit 	Unit of Length of Notice(Days/Months/Years) 	 	 	days, months, years 	yes 	yes 	string(255)
+length-of-notice-value 	Value of Length of Notice 	 	 	 	yes 	yes 	string(255)
+locked-by-other-party 	CLMS contract party holding an edit lock 	no 	no 	 	yes 	 	string
+locked-by-user-id 	CLMS user holding an edit lock 	no 	no 	 	yes 	 	integer
+master-contract 	Master Contract number or name 	 	 	 	yes 	yes 	Contract
+max-commit 	Maximum Commit Amount 	 	 	 	yes 	yes 	decimal(32,4)
+maximum-value 	Maximum Commit Amount 	 	 	 	yes 	yes 	decimal(32,4)
+min-commit 	Minimum Commit Amount 	 	 	 	yes 	yes 	decimal(32,4)
+minimum-value 	Minimum Commit Amount 	 	 	 	yes 	yes 	decimal(32,4)
+name 	Contract Name 	yes 	yes 	 	yes 	yes 	string(100)
+no-of-renewals 	No of Renewals 	yes 	 	Allowable values now include ["1..100"] 	yes 	yes 	integer
+number 	Contract Number 	yes 	yes 	 	yes 	yes 	string(50)
+object-line 	Object lines 	no 	no 	 	yes 	 	 ObjectLine
+order-window-tz 	order_window_tz 	 	 	A valid timezone 	yes 	yes 	string(255)
+parent 	Parent 	 	 	 	yes 	yes 	Contract
+payment-term 	Payment term code on contract 	 	 	 	yes 	yes 	 Payment Term
+po-message 	Order Windows PO Message 	 	 	 	yes 	yes 	string(255)
+preferred 	Indicate preferred contract for supplier 	 	 	 	yes 	yes 	boolean
+proxy-supplier-id 	Identifier for a proxy supplier 	 	 	any 	yes 	yes 	integer
+published-date 	Date when the contract was published 	no 	no 	any 	yes 	yes 	datetime
+quote-response-id 	Id of Quote Response 	 	 	 	 	yes 	integer
+ra-risk-request 	Ra risk request 	 	 	 	 	yes 	 RaRiskRequest
+rate-card 	Rate card 	 	 	 	yes 	 	 RateCard
+reason-insight-events 	Reason insight events 	yes 	 	 	yes 	yes 	 Reason Insight Event
+renewal-length-unit 	Unit of Renewal Length(Days/Months/Years) 	yes 	 	days, months, years 	yes 	yes 	string(255)
+renewal-length-value 	Value of Renewal Length 	yes 	 	 	yes 	yes 	integer
+requisition-message 	Order Windows Requisition Message 	 	 	 	yes 	yes 	string(255)
+reviewer-user-ids 	CLMS internal reviewers 	no 	no 	 	yes 	 	integer
+savings-pct 	Savings Achieved through Contracts Pricing 	 	 	A percentage between 0 and 100 	yes 	yes 	decimal(20,2)
+schedule 	schedule 	 	 	 	yes 	yes 	Order Window
+shipping-term 	Shipping term code on contract 	 	 	 	yes 	yes 	 Shipping Term
+source-id 	The source id of contract creation 	 	 	 	yes 	yes 	sting(255)
+source-type 	The source type of contract creation 	 	 	 	yes 	yes 	string(255)
+start-date 	Start Date 	 	 	 	yes 	yes 	datetime
+status 	Status of the Contract 	yes 	 	 	yes 	yes 	draft
+strict-invoicing-rules 	Strict Invoicing Rules 	 	 	 	yes 	yes 	boolean
+stop-spend-based-on-max-value 	Stop Spend Based On Max Value 	no 	no 	yes, no 	yes 	yes 	string(255)
+submitter 	User who submitted the contract for approval 	 	 	 	 	yes 	 User
+supplier 	Supplier Name 	yes 	 	 	yes 	yes 	 Supplier
+supplier-account 	Supplier Account Number 	 	 	 	yes 	yes 	string(255)
+supplier-invoiceable 	Supplier Can Invoice Directly 	 	 	 	yes 	yes 	boolean
+taggings 	Taggings 	no 	no 	 	yes 	yes 	 Tagging API
+tags 	Tags 	no 	no 	 	yes 	yes 	 Tag API
+term-type 	Term type 	 	 	fixed, auto_renew, perpetual 	yes 	yes 	string(255)
+terminated 	Terminated 	 	 	 	yes 	yes 	boolean
+termination-notice 	Termination Notice 	 	 	yes, no 	yes 	yes 	string(255)
+termination-notice-length-unit 	Unit of Termination Notice Length(Days/Months/Years) 	 	 	days, months, years 	yes 	yes 	string(255)
+termination-notice-length-value 	Value of Termination Notice Length 	 	 	 	yes 	yes 	integer
+terms 	terms 	 	 	 	yes 	yes 	text
+type 	Contract type 	 	 	MasterContract, AmendmentContract 	 	yes 	string
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User
+use-order-windows 	Use Order Windows 	 	 	 	yes 	yes 	boolean
+used-for-buying 	Used for Buying 	 	 	 	yes 	yes 	boolean
+version 	version 	 	 	 	yes 	yes 	integer
+stop-spend-based-on-max-value 	Stop Spend Based On Max Value 	no 	no 	yes, no 	yes 	yes 	string(255)
+external_contract_id 	External Contract Identifier 	no 	no 	 	yes 	yes 	string(255)
+fill-with-counterparty 	Fill with Counterparty 	 	 	 	yes 	yes 	boolean
+whose_paper 	Whose Paper 	no 	no 	not_specified, our_paper, counterparty_paper 	yes 	yes 	integer
+contract_dispute 	 	no 	no 	 	yes 	yes
+intellectual_property_and_data 	 	no 	no 	 	yes 	yes
+esign_provider_account 	 	no 	no 	 	yes 	yes
+contract_clauses 	 	no 	no 	 	yes 	yes 	[]
+use_online_signing 	Needs E-signatures 	no 	no 	 	 	yes 	boolean
+contract_classification 	Contract classification 	no 	no 	 	yes 	yes
+contract_detail 	Contract detail 	no 	no 	 	yes 	yes
+contract_parties_field_container 	Contract parties field container 	no 	no 	 	yes 	yes
+contract_terms_and_renewal 	Contract terms and renewal 	no 	no 	 	yes 	yes
+contract_termination 	Contract termination 	no 	no 	 	yes 	yes
+contract_performance 	Contract performance 	no 	no 	 	yes 	yes
+contract_price_and_payment 	Contract price and payment 	no 	no 	 	yes 	yes
+contract_relationship_and_reporting 	Contract relationship and reporting 	no 	no 	 	yes 	yes
+
+Note:
+- When dealing with large data sets of contracts, always limit your GET with some criteria.
+- The content groups and categories must already exist in the system.

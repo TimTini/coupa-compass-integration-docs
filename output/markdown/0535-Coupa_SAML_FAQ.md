@@ -1,0 +1,145 @@
+---
+title: "Coupa SAML FAQ"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-faq"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-faq"
+status_code: 200
+fetched_at: "2026-04-09T12:01:09+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core User Authentication"
+  - "Coupa SAML FAQ"
+---
+
+# Coupa SAML FAQ
+
+Check out these frequently asked questions about Coupa SSO connections.
+
+## How to setup SAML with Coupa?
+
+To start the configuration please read this FAQ and complete step 1 in [Configuration Setup](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-sso-setup). Provide your Coupa's Implementation contact requirements listed in step 2. Coupa Engineer will help setup IdP connection at Coupa end, the setup is not completely self service. Admin within Coupa has freedom to disable SAML, change login URL, logout URL and timeout URL.
+
+## Which SAML protocol does Coupa support?
+
+SAML V2.0
+
+## Where are SAML V2.0 specification?
+
+[http://saml.xml.org/saml-specifications](http://saml.xml.org/saml-specifications)
+
+## How do I validate SAML response xml?
+
+Please verify the xml against `http://docs.oasis-open.org/security/saml/v2.0/saml-schema-protocol-2.0.xsd`
+
+```text
+$ xmllint --noout --schema
+saml-schema-protocol-2.0.xsd saml_response.xml
+```
+
+## How to track and view SAML responses?
+
+Firefox add-on saml-tracer tracks HTTPS flow, decode and parse SAML response `https://addons.mozilla.org/en-US/firefox/addon/saml-tracer/`
+
+## What is Login URL?
+
+Login URL under **Setup > Security Control** is simply HTTP 302 redirect.
+
+For IdP Initiated SSO enter login URL of the IdP login screen. Coupa application will redirect user to IdP hosted login page to authenticate their users. Users will not see the Coupa sign in page.
+
+For SP-Initiated SSO you can build the URL provided you know the EntityID at IdP. to redirect to start SP Initiation.
+
+**For test/staging**
+
+`https://sso-stg1.coupahost.com/sp/startSSO.ping?PartnerIdpId= &TARGET=https://{your-test_site}.coupahost.com/sessions/saml_post`
+
+**For production**
+
+`https://sso-prd1.coupahost.com/sp/startSSO.ping?PartnerIdpId= &TARGET=https://{your_site}.coupahost.com/sessions/saml_post`
+
+## Why does Coupa need a Logout URL?
+
+When users Logout from Coupa Application, Coupa will clear the user session and redirects users to the Logout URL configured under Setup -> Security Control. Its simple redirect and not SLO implementation. There is no need for your user to signout from IdP. Logout URL is can be internal site or any landing page for your users once they are done using Coupa Application.
+
+## What is Timeout URL and how does timeout work with SAML implementation?
+
+Coupa application has session expiration timeout set under System->Security Control. After session timeout Coupa will redirect to the Timeout URL (Same as Login URL), which will start IdP Initiated or SP Initiated SSO based on URL. In most cases Timeout URL is same as Login URL. Users will see login page based on Coupa session expiration and IdP timeout set for users.
+
+## What information does Coupa use to identify IdP user?
+
+Coupa uses the NameID value from the SAML response to lookup the corresponding Coupa user. The "Single Sign-On ID" must be provided during user creation for SAML login to succeed. The Single Sign-On ID can be configured by editing the user in the User interface or User integration using Coupa API.
+
+## Is there way to access Coupa and bypass SAML?
+
+Coupa provides this support interface to bypass the SSO authentication process. The URL is `https://{your-site}.coupahost.com/sessions/support_login`
+**. **This is intended for administrators only since normal users may not have a Coupa password set when in Coupa when they were created. This prevents them from logging in with anything other than your SSO. You can optionally create a user with a Coupa password to log in through this support interface. This is useful for users that are not part of IdP but still need to access Coupa.
+
+## When does Coupa need a RelayState?
+
+RelayState is must for IdP-Initiated SSO and is not required for SP-Initiated SSO. RelayState is required by Service Provider to identify customer's Coupa instance. RelayState can be passed as QueryString or separate POST variable along SAMLResponse.
+
+This will result in the following suffix after the ACS URL: `/sp/ACS.saml2?RelayState=https:///sessions/saml_post`.
+
+One easy way is to append RelayState as QueryString to AssertionConsumerService URL you find in in stage or production metadata xml**. **
+
+## What is the work flow for IdP-Initiated SSO and SP-Initiated SSO?
+
+[http://documentation.pingidentity.com/display/PF/IdP-Initiated+SSO--POST](http://documentation.pingidentity.com/display/PF/IdP-Initiated+SSO--POST)
+
+[http://documentation.pingidentity.com/display/PF/SP-Initiated+SSO--POST-POST](http://documentation.pingidentity.com/display/PF/SP-Initiated+SSO--POST-POST)
+
+## How should we setup SAML for Stage and Production Coupa Instance?
+
+The Assertion end point URL (AssertionConsumerService) for Coupa Stage is `https://sso-stg1.coupahost.com/sp/ACS.saml2` and for Coupa production is `https://sso-prd1.coupahost.com/sp/ACS.saml2`. To have SAML working on both stage and production there needs to be two connection one for stage and another for production. If you do not have stage and only have production IdP, you can still create two different connection for Coupa Stage and Coupa Production instance. RelayState will be different for Stage and Production connection.
+
+## Can we do user provisioning using SAML?
+
+Current Coupa SAML setup is only for authentication and not user provision within Coupa. Authorization is done via Coupa user role. SAML role is to authenticate user.
+
+## What IdP systems has Coupa integrated with?
+
+Any IdP system that implements SAML 2.0. ADFS 2.0, PingFederate, Novell Access Manager, Oracle Access Manager, Tivoli access manager, open source project like Shibboleth, custom built solutions, etc. We currently do not provide IdP sample code, they are available online and from open source projects.
+
+## Seeing "Invalid InResponseTo attribute (Hg3Av..............FG) - unsolicited responses cannot have an InResponseTo." error
+
+Three reasons for such errors:
+
+- SAML response from IdP side is using same AuthnToken, replaying the SAML
+
+- Duplicate SAML POST from the same login page, for example two POST with same SAML response.
+
+- Configured PingFederate on IdP side with RelayState in ACS URL and using SP-Initiation with Coupa.
+
+1 and 2 can be detected by any using Firefox and saml_tracer plugin or any HTTP tracking tool. 3 is valid of IdP side using PingFederate, they should not set RelayState for SP-Init setup with Coupa.
+
+## Gather SAML Trace to troubleshoot SSO related issues
+
+From a support perspective, we sometimes need to gather data related to SAML / SSO authentication failure.
+
+There are 2 browser-based tools we can use for this, which are easy enough:
+
+**Firefox**
+
+SAML Tracer: [https://addons.mozilla.org/en-us/firefox/addon/saml-tracer/](https://addons.mozilla.org/en-us/firefox/addon/saml-tracer/)
+
+Once installed will appear like following screenshot and need to be opened while doing the SSO Connection:
+
+![](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/coupa_core_user_authentication/images/image1.png)
+
+The data you need to collect is found as a POST*, under the SAML tab:
+
+![](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/coupa_core_user_authentication/images/image2.png)
+
+**Chrome**
+
+SAML Tracer: [https://chrome.google.com/webstore/detail/saml-chrome-panel/paijfdbeoenhembfhkhllainmocckace?hl=en](https://chrome.google.com/webstore/detail/saml-chrome-panel/paijfdbeoenhembfhkhllainmocckace?hl=en)
+
+Once installed this will add a tab on your Developers Tool in Chrome, and again, you will find a POST* and you will have to look at the SAML tab:
+
+![](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/coupa_core_user_authentication/images/image3.png)
+
+![](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/coupa_core_user_authentication/images/image4.png)
+
+*POST call are done towards:
+
+`https://devsso35.coupahost.com` for Sandox and for dev environment
+
+`https://prdsso40.coupahost.com` for Production instances

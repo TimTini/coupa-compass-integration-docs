@@ -1,0 +1,10 @@
+Purchase Order Assignment Import'
+
+Purchase Order Assignment
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Document* 	Yes 	No 	 	OrderHeader
+Assignee Type* 	Yes 	No 	string(255) 	Assignee Type
+Assignee* 	Yes 	No 	 	Assignee
+Comment 	No 	No 	 	Comment
+Action 	No 	No 	 	Action, possible values are Assign and Unassign. Default to Assign

@@ -1,0 +1,268 @@
+---
+title: "Invoice Payments API Example Calls"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/invoice-payments-api-example-calls"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)/invoice-payments-api-example-calls"
+status_code: 200
+fetched_at: "2026-04-09T11:59:50+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Invoices API (/invoices)"
+  - "Invoice Payments API Example Calls"
+---
+
+# Invoice Payments API Example Calls
+
+## Invoice Payments PUT
+
+The following describes how you can use the Coupa API to update
+an invoice with payment information
+
+Our Invoice Payment API allows you to do two things:
+
+- Update an invoice with three attributes: Paid, Payment Date,
+and Payment Notes.
+
+Coupa originally allowed you to put information into
+these Invoice fields. If you had multiple payments, you
+would have to append that second payment information into
+payment notes.
+
+- Now you can do that and update an invoice with an array of
+payment information: Payment Date, Notes (Check Number), and Amount
+Paid. This allows you to assign multiple payment dates, check
+numbers, and amounts paid to a single invoice.
+
+Customer feedback helped us to see the value of adding more sets
+of payment data for a single invoice. Since some customers
+still use the original method of updating invoices we decided to
+support both ways of updating invoices with payment
+information.
+
+This is the URL you can PUT this information to:
+
+- `/api/invoices/`
+
+- Typically you would use the invoice number and supplier to find
+the correct invoice id in order to use in the PUT
+
+You can post payments to an existing invoice with the
+Invoice Payments API
+(..`/invoices/` endpoint) using
+a PUT call. The payload of the PUT can be formatted as
+either XML or JSON with one of several accepted
+formats.
+
+We posted it to the URL:
+
+```text
+PUT https://<instance>.coupahost.com/api/invoices/<invoice id>
+```
+
+## Example: Add payment information to an existing invoice
+
+In these examples we are adding payment information to an
+existing invoice using the fields: Paid, Flag, Payment Notes, and
+Payment Date.
+
+We posted a payload in either (XML or JSON) to the URL:
+
+```text
+https://<instance>.coupahost.com/api/invoices/<invoice id>
+```
+
+The payload can be in any of several supported formats used
+to programmatically record payments using this interface. More than
+a few examples follow below.
+
+## XML Payload Examples
+
+And here is one example of an XML payload schema which continues to be supported.
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice-header>
+<paid type="boolean">true</paid>
+<payment-date type="datetime">2009-06-23T00:00:00-08:00</payment-date>
+<payment-notes>CHECK|#1003|USD|989.00|FULLY PAID|</payment-notes>
+<payments type="array">
+<payment>
+<amount-paid>989.00</amount-paid>
+<notes>1003</notes>
+<payment-date>2009-06-23</payment-date>
+</payment>
+</payments>
+</invoice-header>
+```
+
+Here is another example XML payload:
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice-header>
+<invoice-date type="datetime">"2019-10-22 00:00:00 -0900"</invoice-date>
+<invoice-number>Invoice_Number_1571292051.310760975</invoice-number>
+<payments type="array">
+<payment>
+<amount-paid>5.00</amount-paid>
+<notes>1003</notes>
+<payment-date>2019-10-22</payment-date>
+</payment>
+</payments>
+</invoice-header>
+```
+
+And here below is an example of multiple payments using XML:
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice-header>
+<payments type="array">
+<payment>
+<amount-paid>4.00</amount-paid>
+<notes>1003</notes>
+<payment-date>2009-06-23</payment-date>
+</payment>
+<payment>
+<amount-paid>5.00</amount-paid>
+<notes>1004</notes>
+<payment-date>2009-06-23</payment-date>
+</payment>
+</payments>
+</invoice-header>
+```
+
+And an old example XML payload (still supported) that updates an existing invoice with
+multiple check numbers using payment notes. This is using the fields: Paid, Check Number,
+and Payment Date.
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice-header>
+<paid type="boolean">true</paid>
+<payment-date type="datetime">2009-06-23T00:00:00-08:00</payment-date>
+<payment-notes>CHECK|#1003|USD|989.00|FULLY PAID|</payment-notes>
+<payments type="array">
+<payment>
+<amount-paid type="decimal" nil="true">100.23</amount-paid>
+<notes nil="true">232</notes>
+<payment-date type="datetime" nil="true">2010-09-25T02:22:11Z</payment-date>
+</payment>
+<payment>
+<amount-paid type="decimal" nil="true">9032.32</amount-paid>
+<notes nil="true">233</notes>
+<payment-date type="datetime" nil="true">2010-09-25T02:22:11Z</payment-date>
+</payment>
+</payments>
+</invoice-header>
+```
+
+## JSON Payload Examples
+
+To use a JSON payload you can use one of the following examples
+as a format model.
+
+Data Format 1:
+
+```text
+{
+"payments":
+{
+"payment":
+{ "check_number": "1234567", "amount_paid": "199.98", "notes": "String", "payment_date": "9/12/2019" }
+},
+"paid": "false",
+"payment_date": "9/11/2019",
+"payment_notes": "Partial payment with one payment check."
+}
+```
+
+Data Format 2:
+
+```text
+{
+"payments":
+{
+"payment": [
+{ "check_number": "test_check_number", "amount_paid": "510", "notes": "A payment note", "payment_date": "9/12/2019" },
+{ "check_number": "test_check_number", "amount_paid": "53", "notes": "A payment note", "payment_date": "9/11/2019" }]
+},
+"paid": "false",
+"payment_date": "9/11/2019",
+"payment_notes": "One partial payment with two checks."
+}
+```
+
+Data Format 3:
+
+```text
+{
+"payments": [
+{ "check_number": "test_check_number", "amount_paid": "510", "notes": "payment_note", "payment_date": "9/12/2019" },
+{ "check_number": "test_check_number", "amount_paid": "53", "notes": "payment_note", "payment_date": "9/11/2019" }
+],
+"paid": "false",
+"payment_date": "9/11/2019",
+"payment_notes": "Two payments with two checks."
+}
+```
+
+Data Format 4:
+
+```text
+{
+"paid": "true",
+"payment-date": "2019-08-13T00:00:00Z",
+"payment-notes": "eProc Voucher#TRM-19-0009584-PV/THB",
+"payments": {
+"payment" :	[
+{
+"payable-type": "InvoiceHeader",
+"payable-id": "4835",
+"amount-paid": "49.00",
+"notes": "TRM-19-0009584-PV",
+"payment-date": "2019-08-13T00:00:00Z"
+},
+{
+"payable-type": "InvoiceHeader",
+"payable-id": "4835",
+"amount-paid": "51.00",
+"notes": "TRM-19-0009584-PV",
+"payment-date": "2019-08-13T00:00:00Z"
+}
+]
+}
+}
+```
+
+## Returns
+
+Successful requests will return: `HTTP 200 Created`.
+The body of the response will include the payment information and
+the invoice that was updated.
+
+Unsuccessful requests will return:
+
+```text
+HTTP 400 Bad Request
+```
+
+. The body of
+the response will include validation errors formatted as XML.
+
+## Field Definitions
+
+| **Name** | **Required?** | **Type** | **Allowable Values** | **Description** |
+| --- | --- | --- | --- | --- |
+| paid | no | boolean | true or false | This is the paid field on the invoice header. It's set to a true or false value. |
+| payment-date | no | datetime | YYYY-MM-DDTHH:MM:SS+HH:MM | The date and time the payment was made |
+| payment-notes | no | text | description or notes if any | These are notes you can add as part of the payment information. |
+| <payments> | | | | payment array begins |
+| <payment> | | | | payment installment |
+| amount-paid | no | decimal | 2 Decimal Number | This is the amount paid as part of the payment array. |
+| notes or<br>check-number | no | String | transactional data | Check or Transaction or payment information captured for the payment. **This field has replaced <check-number>. Any data sent to the deprecated tag will be stored in the notes field. The check # tag will be populated in the Coupa instance. (<check-number> may be used too).** |
+| payment-date | no | text | YYYY-MM-DDTHH:MM:SS+HH:MM | The date and time the payment was made |
+| </payment> | | | | |
+| </payments> | | | | payment array ends |

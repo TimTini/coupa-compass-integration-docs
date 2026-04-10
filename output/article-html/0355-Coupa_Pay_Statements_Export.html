@@ -1,0 +1,147 @@
+<article class="" id="coupa_pay_statements_export">
+<h1 class="title">Coupa Pay Statements Export</h1>
+<div class="body">
+<p class="">Export of CoupaPay Statements records is included as a
+Standard CSV Export.</p>
+<p class="">CoupaPay Statements includes rows of types:
+<code class="ph codeph">Statement</code>, <code class="ph codeph">Charge</code>,
+<code class="ph codeph">ChargeAllocation</code>, and
+<code class="ph codeph">ChargeTaxLine</code>. The value of type in the
+first position determines what table of fields applies for that
+row.  </p>
+<p class="">Before publishing an integration format table you can rename
+most any field and reorder the fields, but it is probably
+best if you leave the type field in the first position because the
+value of type determines the structure for the row data that
+follows.</p>
+<p class="">Exportable type is <code class="ph codeph">CoupaPay::Statement</code> .</p>
+<div class="" id="section_xf2_54y_11c">
+<h2 class="title sectiontitle">Statement</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Statement, Charge, or ChargeAllocation.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa internal ID for the statement</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">The status of the</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-partner-name</td>
+<td class="entry" align="">The name of the payment partner</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-partner-issuing-bank</td>
+<td class="entry" align="">The issuing bank of the payment partner</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-partner-supplier-name</td>
+<td class="entry" align="">The name of the supplier associated to the payment partner</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-partner-supplier-number</td>
+<td class="entry" align="">The number of the supplier associated to the payment partner</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">external-ref-id</td>
+<td class="entry" align="">Third party or partner document reference</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">coupa-pay-id</td>
+<td class="entry" align="">Coupa Pay Internal ID of statement</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">name</td>
+<td class="entry" align="">The name of the statement</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/Yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">statement-date</td>
+<td class="entry" align="">Date of statement</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-of-lines</td>
+<td class="entry" align="">Number of charges in statement</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount</td>
+<td class="entry" align="">Total amount of statement</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">Currency of statement</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">unbacked-amount</td>
+<td class="entry" align="">Sum of charges on statement that are not associated to a PO</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-of-unbacked-lines</td>
+<td class="entry" align="">Number of charges that do not have an associated PO</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

@@ -1,0 +1,915 @@
+<article class="" id="lmplanning_-_liquidity_planning_data_import">
+<h1 class="title">LMPLANNING - Liquidity Planning Data Import</h1>
+<div class="body">
+<div class="" id="format_descriptions-d94e5680">
+<h2 class="title sectiontitle">Format Descriptions</h2>
+<p class="">
+<a data-scope="peer" data-name="" target="" href="/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/LMPLANNING_-_Liquidity_Planning_Data_Import.pdf" title="">PDF
+      Version</a>
+</p>
+</div>
+<div class="" id="lmpln_8">
+<h2 class="title sectiontitle">LMPLN 8</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Value Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Due date of planned cash flows.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">float</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Category</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">ID # of planning category as defined in Coupa Treasury. Only categories that
+                  are assigned to entities on <b>Planning &amp; Risk &gt; Configuration &gt;
+                    Planning Structures</b>are permitted.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Name</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the account as as defined in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Remark</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 400</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Hedge Name</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Abbreviation of the underlying hedge assignment, as defined in Coupa
+                  Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Project</p>
+</td>
+<td class="entry" align="">
+<p class="">char- 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Internal reference of the project, as defined in Coupa Treasury.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="lmpln_9">
+<h2 class="title sectiontitle">LMPLN 9</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Value Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Due date of planned cash flows.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">float</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Category</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">ID # of planning category as defined in Coupa Treasury. Only categories that
+                  are assigned to entities on <b>Planning &amp; Risk &gt; Configuration &gt;
+                    Planning Structures</b>are permitted.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Name</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the account as as defined in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Remark</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 400</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Hedge Name</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Abbreviation of the underlying hedge assignment, as defined in Coupa
+                  Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Project</p>
+</td>
+<td class="entry" align="">
+<p class="">char- 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Internal reference of the project, as defined in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">9</p>
+</td>
+<td class="entry" align="">
+<p class="">Counterparty</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Abbreviation of the internal counterparty, as defined in Coupa
+                Treasury.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="lmpln_15">
+<h2 class="title sectiontitle">LMPLN 15</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Value Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Due date of planned cash flows.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">float</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Category</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">ID # of planning category as defined in Coupa Treasury. Only categories that
+                  are assigned to entities on <b>Planning &amp; Risk &gt; Configuration &gt;
+                    Planning Structures</b>are permitted.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Name</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the account as as defined in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Remark</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 400</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Hedge Name</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Abbreviation of the underlying hedge assignment, as defined in Coupa
+                  Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Project</p>
+</td>
+<td class="entry" align="">
+<p class="">char- 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Internal reference of the project, as defined in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">9</p>
+</td>
+<td class="entry" align="">
+<p class="">Counterparty</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Abbreviation of the internal counterparty, as defined in Coupa
+                Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Portfolio</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Internal reference of the portfolio, as defined in Coupa
+                Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">11</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">12</p>
+</td>
+<td class="entry" align="">
+<p class="">Probability</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">13</p>
+</td>
+<td class="entry" align="">
+<p class="">G/L Account</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">14</p>
+</td>
+<td class="entry" align="">
+<p class="">Inactive</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">15</p>
+</td>
+<td class="entry" align="">
+<p class="">Entity</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Only mandatory for server import.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="field_definition_delete_lines">
+<h2 class="title sectiontitle">Field Definition Delete Lines</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Entity Identification</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Abbreviation / Company Code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">x, y, or z</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">x – Delete all data sets.</p>
+<p class="">y – Delete all data sets from server
+                  import.</p>
+<p class="">z – Delete all data sets from file import.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Category Identification</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">ID - If empty, choose all.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">ValueDateFrom</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Defines the date (included) from which the datasets will be deleted. If
+                  empty, all datasets from the beginning of the plan until ValueDateTo will be
+                  removed.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">ValueDateUntil</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Defines the date (included) up to which the datasets will be deleted. If
+                  empty, all datasets from the beginning of ValueDateFrom will be
+                removed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="import_function-d94e6816">
+<h2 class="title sectiontitle">Import Function</h2>
+<p class="">The import function
+        exists on <b>Planning &amp; Risk &gt; Liquidity Planning &gt;</b>
+<b>Liquidity Planning
+          Data</b>.</p>
+<p class="">The import function processes files in standard text formats:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII</p>
+</li>
+<li class="li">
+<p class="">Unicode</p>
+</li>
+</ul>
+<p class="">Data sets that already exist will not be overwritten when importing them a second
+        time, but will be added to the list.</p>
+<p class="">Maximum file size: 2.1 MB</p>
+<p class="">The file contains
+        liquidity planning data of one particular entity.</p>
+<p class="">Importing planning data is only
+        possible in periods which are defined in the planning calendar. If a planning record doesn't
+        match the time period in the planning calendar, it will be ignored.</p>
+<p class="">FX rates need to
+        be available for each period in the planning calendar.</p>
+</div>
+<div class="" id="format_rules-d94e6845">
+<h2 class="title sectiontitle">Format Rules</h2>
+<p class="">Each liquidity planning file
+        format name denotes the number of fields it contains (LMPLN 8 contains 8 fields, LMPLN 15
+        contains 15 fields). If the file has more than the expected number of fields, Coupa Treasury
+        shows an error message.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/treasury_integrations/images/image8a.png" alt="" title="" width="">
+<p class="">The file must not contain
+        any headers or format descriptions.</p>
+<p class="">In the tables above, the value for “char” shows
+        how many characters is the maximum length for that field in the imported file.</p>
+<p class="">Each
+        row in the file contains exactly one data set:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII Code 13: carriage return denotes the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">ASCII Code 10: new-line denotes the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">The last data set concludes with an end-of-file (EOF).</p>
+</li>
+</ul>
+<p class="">Select format variables in the <b>File Import </b>dialog:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/treasury_integrations/images/image15.png" alt="" title="" width="">
+<p class="">The field separator may not be used for any other content
+        or format setting within that file.</p>
+<p class="">Fixed lengths are allowed, but still require field
+        separators.</p>
+<p class="">Days and months are always 2-digit values, whereas years are 4 digits.
+        Date separator, date sequence, and file format must match your user settings.</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Entity</b>– The entity assigned to the data set</p>
+</li>
+<li class="li">
+<p class="">
+<b>Field Separator</b> – semicolon (;), comma (,)</p>
+</li>
+<li class="li">
+<p class="">
+<b>Date Separator</b> – slash (/), period (.), comma (,), &lt; none &gt;</p>
+</li>
+<li class="li">
+<p class="">
+<b>Plan</b> – Liquidity Plan Name</p>
+</li>
+<li class="li">
+<p class="">
+<b>Decimal Marker</b> – period (.), comma (,)</p>
+</li>
+<li class="li">
+<p class="">
+<b>Date Sequence</b> – mdy, dmy, ymd</p>
+</li>
+<li class="li">
+<p class="">
+<b>File Format</b> – ASCII, Unicode</p>
+</li>
+<li class="li">
+<p class="">
+<b>Version</b>– LMPLN 8, LMPLN 9, LMPLN 15</p>
+</li>
+<li class="li">
+<p class="">
+<b>Entity Identification by</b> – Abbreviation or Company Code</p>
+</li>
+</ul>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">For numbers without decimals, the decimal separator is
+          optional. Do not use thousands separators or enclose text in quotation marks. Mark
+          negative amounts with a minus sign (-).</p>
+</div>
+</div>
+<div class="" id="example_data_sets-d94e6927">
+<h2 class="title sectiontitle">Example Data Sets</h2>
+<p class="">For any format
+        version, non-mandatory data fields may be empty. Empty fields still require field
+        separators. The sample data sets below contain examples with empty fields.</p>
+<p class="">
+<b>LMPLN
+          8</b>
+</p>
+<p class="">05/17/2021;24738.45;EUR;15;;Cash-Pool Transfer;;Fibu
+        Project</p>
+<p class="">05/17/2021;12000;EUR;;;;;</p>
+<p class="">
+<b>Delete Lines </b>
+</p>
+<p class="">Deletion of all
+        data sets for one month and one account:</p>
+<p class="">AERO;x;;01.05.2021;31.05.2021</p>
+</div>
+</div>
+</article>

@@ -1,0 +1,93 @@
+<article class="" id="usergroups">
+<h1 class="title">UserGroups</h1>
+<div class="body">
+<p class="">The User Groups quick integration import allows Risk
+Assess users to directly upload spreadsheets via the HTTPS
+protocol. This allows customers to perform inbound imports in an
+automated manner without the need for an Engagement interface.</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">This import adds an existing user to an existing
+          UserGroup.</li>
+<li class="li">You cannot remove UserGroups using this import.</li>
+<li class="li">This import won't create a new UserGroup.</li>
+</ul>
+</div>
+</p>
+<div class="" id="post_url-d126e7206">
+<h2 class="title sectiontitle">Post URL</h2>
+<p class="">
+<code class="ph codeph">https://&lt;CRA_TENANT&gt;.hiperos.com/QuickIntegration/UserGroups</code>
+</p>
+</div>
+<div class="" id="user_groups">
+<h2 class="title sectiontitle">User Groups</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Field</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">GroupName (*)</td>
+<td class="entry" align="">Enter the name of the group. Must match an existing group name
+defined under Group Management.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description (*)</td>
+<td class="entry" align="">Enter a short description of the group.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(max)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Activated (*)</td>
+<td class="entry" align="">Enter Yes to activate the user group.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Boolean</td>
+<td class="entry" align="">Yes or No</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Member (*)</td>
+<td class="entry" align="">Enter the email address of the internal Client user. Must match
+an existing username/email address.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">(*)Required</p>
+</div>
+</div>
+</article>

@@ -1,0 +1,305 @@
+<article class="" id="pick_lists_fulfillment_reservations_api_pick_lists">
+<h1 class="title">Pick Lists/Fulfillment Reservations API (/pick lists)</h1>
+<div class="body">
+<div class="" id="overview-d957e208897">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Use the Pick Lists API to get a list of pick lists and update
+fulfillments. The URL to access pick lists
+is: <code class="ph codeph">https://{your_instance_name}/api/pick_lists</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x298279.xml" title="">Pick
+Lists</a> for more info.</p>
+</div>
+<div class="" id="actions-d957e208909">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/pick_lists</td>
+<td class="entry" align="">Index</td>
+<td class="entry" align="" colspan="1">Query fulfillment reservations</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/pick_lists/update_fulfillments</td>
+<td class="entry" align="">Update Fulfillments</td>
+<td class="entry" align="" colspan="1">Update fulfillment reservations</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e208984">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Time of Fulfillment Reservation Creation in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa's internal unique identified</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">inventory-balance</td>
+<td class="entry" align="">The item's inventory balance</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)/inventory-balance-api" title="">Inventory Balance</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">item</td>
+<td class="entry" align="">Item</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/items-api-(items)" title="">Item</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-line</td>
+<td class="entry" align="">The order line</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""> OrderLine </td>
+</tr>
+<tr class="">
+<td class="entry" align="">qty-fulfilled</td>
+<td class="entry" align="">The fulfilled quantity</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">qty-ordered</td>
+<td class="entry" align="">The ordered quantity</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">Values can be 'active' or 'closed'.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Type of Fulfillment Reservation. Values can be
+'FulfillmentReservation' or 'FulfillmentShortfall'</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Time of Fulfillment Reservation Updation in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">warehouse</td>
+<td class="entry" align="">The warehouse where the item is located</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)/warehouse-api" title="">Warehouse</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">warehouse-location</td>
+<td class="entry" align="">The location within the warehouse where the item is located</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)/warehouse-location-api" title="">Warehouse
+Location</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="sample_calls-d957e209555">
+<h2 class="title sectiontitle">Sample calls</h2>
+</div>
+<div class="" id="get_a_specific_pick_list">
+<h2 class="title sectiontitle">Get a specific pick list</h2>
+<p class="">GET
+<code class="ph codeph">https://{your_instance_name}/api/pick_lists?id={id}</code>.</p>
+</div>
+<div class="" id="output">
+<h2 class="title sectiontitle">Output</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;fulfillment-reservations type="array"&gt;
+	&lt;fulfillment-reservation&gt;
+		&lt;id type="integer"&gt;3&lt;/id&gt;
+		&lt;created-at type="dateTime"&gt;2020-02-17T06:52:16+01:00&lt;/created-at&gt;
+		&lt;updated-at type="dateTime"&gt;2020-04-01T09:14:19+02:00&lt;/updated-at&gt;
+		&lt;type&gt;FulfillmentReservation&lt;/type&gt;
+		&lt;status&gt;active&lt;/status&gt;
+		&lt;qty-ordered type="decimal"&gt;1.0&lt;/qty-ordered&gt;
+		&lt;qty-fulfilled type="decimal"&gt;0.1&lt;/qty-fulfilled&gt;
+		&lt;item&gt; ... &lt;/item&gt;
+		&lt;inventory-balance&gt;
+			&lt;id type="integer"&gt;211&lt;/id&gt;
+			&lt;created-at type="dateTime"&gt;2019-12-02T21:24:05+01:00&lt;/created-at&gt;
+			&lt;updated-at type="dateTime"&gt;2020-04-01T09:14:19+02:00&lt;/updated-at&gt;
+			&lt;quantity type="decimal"&gt;23.689&lt;/quantity&gt;
+			&lt;allocated type="decimal"&gt;0.9&lt;/allocated&gt;
+			&lt;available type="decimal"&gt;22.789&lt;/available&gt;
+			&lt;item&gt; ... &lt;/item&gt;
+			&lt;inventory-valuations type="array"&gt;
+				&lt;inventory-valuation&gt;
+					&lt;id type="integer"&gt;206&lt;/id&gt;
+					&lt;created-at type="dateTime"&gt;2019-12-02T21:24:05+01:00&lt;/created-at&gt;
+					&lt;updated-at type="dateTime"&gt;2020-04-01T09:14:19+02:00&lt;/updated-at&gt;
+					&lt;unit-price type="decimal"&gt;12.26&lt;/unit-price&gt;
+					&lt;total type="decimal"&gt;290.427140&lt;/total&gt;
+					&lt;currency&gt; ... &lt;/currency&gt;
+				&lt;/inventory-valuation&gt;
+			&lt;/inventory-valuations&gt;
+			&lt;warehouse&gt; ... &lt;/warehouse&gt;
+			&lt;warehouse-location&gt; ... &lt;/warehouse-location&gt;
+			&lt;created-by&gt; ... &lt;/created-by&gt;
+			&lt;updated-by&gt; ... &lt;/updated-by&gt;
+		&lt;/inventory-balance&gt;
+		&lt;warehouse&gt; ... &lt;/warehouse&gt;
+		&lt;warehouse-location&gt; ... &lt;/warehouse-location&gt;
+	&lt;/fulfillment-reservation&gt;
+&lt;/fulfillment-reservations&gt;</code>
+</pre>
+</div>
+<div class="" id="update_a_fulfillment_plan">
+<h2 class="title sectiontitle">Update a fulfillment plan</h2>
+<p class="">POST
+to <code class="ph codeph">https://{your_instance_name}/api/pick_lists/update_fulfillments</code>.</p>
+</div>
+<div class="" id="payload">
+<h2 class="title sectiontitle">Payload</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;fulfillment-reservation&gt;
+	&lt;id type="integer"&gt;999&lt;/id&gt;
+	&lt;qty-pick-amt&gt;5&lt;/qty-pick-amt&gt;
+&lt;/fulfillment-reservation&gt;</code>
+</pre>
+</div>
+</div>
+<nav role="navigation" class="related-links">
+<ul class="ullinks child-links-section">
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)/inventory-balance-api">Inventory Balance API</a>
+</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)/inventory-valuation-api">Inventory Valuation API</a>
+</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)/warehouse-api">Warehouse API</a>
+</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)/warehouse-location-api">Warehouse Location API</a>
+</li>
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/pick-listsfulfillment-reservations-api-(pick-lists)/warehouse-type-api">Warehouse Type API</a>
+</li>
+</ul>
+</nav>
+</article>

@@ -1,0 +1,67 @@
+Engagements
+
+The Engagements quick integration import allows Hiperos 3PM users to directly upload spreadsheets via the HTTPS protocol. This allows customers to perform inbound imports in an automated manner without the need of a Engagement interface.
+
+Post URL
+
+https://<CRA_TENANT>.hiperos.com/QuickIntegration/Engagements
+
+Engagements
+
+Field 	 Description 	 Req'd 	 Unique 	 Type 	 Allowable Values
+EngagementNumber 	Enter a reference key that uniquely identifies the engagement record in Hiperos 3PM. 	 	yes 	String(64)
+EngagementName (*) 	Enter the name of the engagement. 	yes 	 	String(256) 	any
+Description 	Enter a short description of the engagement. 	 	 	String(256) 	any
+EngagementMgrUsername (*) 	Enter the username of the internal Client manager. Must match an existing username. 	yes 	 	String(256) 	any
+Organizations (*) 	Enter the names of the organizations participating in this engagement. Must match an existing organization defined under Organization Unit Management. Multiple values must be separated with the pipe character (|). 	yes 	 	 	any
+Activated 	[Yes or No] Enter Yes to mark the engagement as active. 	 	 	boolean 	true/false
+ContractNumber 	Enter the contract reference number assigned to the contract upon creation. 	 	 	String(64) 	any
+ContractAmount 	Enter the total (or annual) dollar value assigned to the contract. 	 	 	 	any
+CurrencyCode
+
+Enter the currency code.AUD > Australian Dollar
+
+CAD > Canadian Dollar
+
+CNY > Chinese Yuan
+
+EUR > Euro
+
+GBP > British Pound
+
+USD > US Dollar
+
+AUD > Australian Dollar
+
+CAD > Canadian Dollar
+
+CNY > Chinese Yuan
+
+EUR > Euro
+
+GBP > British Pound
+
+USD > US Dollar
+
+StartDate (*) 	Enter the start date of contract period of performance. 	yes 	 	DateTime 	any
+ExpirationDate 	Enter the end date of contract period of performance. 	 	 	DateTime 	any
+ContractDocumentFileName 	Enter the name of the engagement contract. 	 	 	 	any
+AtRiskFee 	Enter the dollar amount that will be used to calculate performance-based compensation for a supplier or relationship based on the final score of an assessment from a performance program. 	 	 	 	any
+RiskRating 	Enter the appropriate assessment of overall risk assigned to the engagement. See Setup Data Management on how to create and maintain these values. 	 	 	String(64) 	any
+Geography 	Enter the location where the contract will be utilized. Must match an existing geography defined under Setup Data Management. 	 	 	String(256) 	any
+Classification 	Enter the engagement segmentation classification. Classification indicates the type of business relationship the client has with the engagement (e.g., commodity, strategic) and can be populated with any labels the client organization uses to classify suppliers. Must match an existing classification defined under Setup Data Management. 	 	 	 	any
+Category 	Enter the services classification for the engagement. Must match an existing category defined under Setup Data Management. 	 	 	String(64) 	any
+SubCategory 	Enter the services subclassification for the engagement. See Setup Data Management. 	 	 	String(64) 	any
+HiperosFamily 	Enter the category. Must match an existing Hiperos Category Family type. Refer to Setup Data Management.
+HiperosCategory 	Enter the Hiperos category. Must match an existing Hiperos Category type. Refer to Setup Data Management.
+HiperosSubCategory 	Enter the Hiperos subcategory for the engagement.
+ClientAccess
+
+Enter the client access to allow viewing and editing of the engagement record.Manager Only
+
+Team
+
+All
+String(64)
+
+(*)Required

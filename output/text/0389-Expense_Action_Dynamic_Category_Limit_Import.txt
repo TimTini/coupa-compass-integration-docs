@@ -1,0 +1,11 @@
+Expense Action Dynamic Category Limit Import
+
+Expense Action Dynamic Category Limit
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Expense Category Key 	Yes 	No 	 	Expense Category Key
+Lookup 	No 	No 	 	Lookup Name
+Start Date 	Yes 	No 	 	Start Date
+End Date 	Yes 	No 	 	End Date
+Limit Amount 	Yes 	No 	 	Limit Amount
+Code 	No 	No 	 	Currency Code

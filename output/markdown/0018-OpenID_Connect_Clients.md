@@ -1,0 +1,99 @@
+---
+title: "OpenID Connect Clients"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/oauth-2.0-and-oidc/openid-connect-clients"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/oauth-2.0-and-oidc/openid-connect-clients"
+status_code: 200
+fetched_at: "2026-04-09T11:59:05+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "OAuth 2.0 and OIDC"
+  - "OpenID Connect Clients"
+---
+
+# OpenID Connect Clients
+
+Use OpenID Connect (OIDC) to provide additional security that's beyond traditional API keys.
+
+OIDC is a way of authenticating clients using OAuth 2.0 when they connect to Coupa. For more information, see [OpenID Connect](https://openid.net/connect/).
+
+## OAuth 2.0 clients
+
+When you create a new Open Connect client, you're granting access to a specific application or user client for specific areas of the product, defined by scopes. Once you create the client in Coupa, use the application or client to request an access token based on the grant type you specify.
+
+You can create, activate, or deactivate individual clients from the OpenIDConnect Clients table by going to **Setup > Integrations > Oauth2/OpenID Connect Clients** .
+
+| **Setting** | **Details** |
+| --- | --- |
+| Grant type | -<br>**Client credentials:** Used when there is no user involved. Typically used for system-to-system integrations. (Most common)<br>-<br>**Authorization code:** Used when an end user is involved and requires the user's consent before granting an access token to be used to access resources.<br>-<br>**Device code:** Used in cases where the client resides on a device and the user gets authenticated and authorizes the request on another. |
+| Name | Name of the client/application |
+| Redirect URIs | A redirection URI where the response will be sent. |
+| Scopes | When a customer registers a client they have to assign scopes to the client. Scopes are required and determines what the client/application is allowed to do. |
+
+## Scopes
+
+Coupa scopes take the form of `service.object.right`. For example, `core.accounting.read` or `core.accounting.write`. There are a handful of scopes listed today on the client create/edit page. You can find the list of scopes and their underlying Coupa permissions by going to the **Scope management** page at `/oauth2/scopes`. When you drill down into a scope, you can see the specific API permissions associated with that scope.
+
+## Client credentials grant type
+
+Use the `client credentials` grant type when there is no user involved, such as in system-to-system integrations. The token is automatically accepted and generated.
+
+Example client credential cURL request
+
+`curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "client_id=&grant_type=client_credentials&scope=&client_secret=" https:///oauth2/token`
+
+## Authorization code grant type
+
+Used when an end user is involved. Requires the user's consent before granting an access token to be used to access resources.
+
+User flow
+
+- In a web browser, paste the following URL into the address bar (replacing the elements between brackets with the correct values).
+
+```text
+https://<INSTANCE_DOMAIN>/oauth2/authorizations/new?client_id=<CLIENT_ID>&response_type=code&scope=<SPACE_SEPARATED_LIST_OF_SCOPES>&redirect_uri=<REDIRECT_URI>
+```
+
+- Click **Allow** on the consent screen. The application redirects to REDIRECT_URI specified when you created the client.
+
+To retrieve the access token with the code, make an HTTPS POST request . Below is an example of a request using cURL:
+
+Example authorization code cURL request
+
+`curl -XPOST -i https:///oauth2/token?client_id=&grant_type=authorization_code&code=&scope=&client_secret=&redirect_uri=`
+
+## Device code grant type
+
+Used in cases where the client resides on a device and the user gets authenticated and authorizes the request on another. The device asks the user to go to a link on their computer or smartphone and authorize the device.
+
+Example device code cURL request
+
+`curl -XPOST -i https:///oauth2/device_authorizations?client_id=&scope=`
+
+The JSON response contains the `verification_uri` and user code among other values. Go to the `verification_uri` on a browser and enter the user code to complete the flow.
+
+## Design Considerations
+
+- When developing an integration, ensure that you include at least a five-second buffer in your code between when you generate a token and when you submit an API call using the token. Otherwise, the second call is submitted before the authentication token is generated and your call may fail.
+
+- Tokens are provided in JWT format. By design, there is no limit to the length of a JWT token. Tokens can become very long, partially dependent on the number of scopes supported by the token.
+
+- Refresh tokens expire every 90 days, after which you must reauthenticate. For security purposes, tokens also expire if a client encounters an issue when attempting to obtain a new access token.
+
+## Additional Resources
+
+- OpenID Connect Clients
+
+- [OAuth 2.0 for Call Outs](https://compass.coupa.com/x285441.xml)
+
+- [Postman Collection for Coupa APIs](https://compass.coupa.com/x285429.xml)
+
+- [OAuth 2.0 Getting Started with Coupa API](https://compass.coupa.com/x285439.xml)
+
+## Related webinars
+
+- Oct 14, 2021: [OAuth (API)](https://attendee.gotowebinar.com/recording/8752277902190897675)
+
+- March 25, 2022: [Transitioning to OAuth(API)](https://value.coupa.com/api/mailings/click/PMRHK4TMEI5CE2DUORYHGORPF5QXI5DFNZSGKZJOM5XXI33XMVRGS3TBOIXGG33NF5ZGKY3POJSGS3THF43DGNJSGIYTGMZUG4YTIMJSGA4DQMZVEIWCE2LEEI5CENRXGIRCYITPOJTSEORCMUYWGMLFMVTGGLLGG44DILJUGQ2DKLJYGY4GCLLDME4DOYTBG4YDIYRQMIRCYITWMVZHG2LPNYRDUIRUEIWCE43JM4RDUITMOEYXEWSNGJFDQTSSLFWEO6SPNJKUY4KVOR4VETBNPFFWKZL2K52VKOL2GFTWWSKWNY4D2IT5)
+
+- May 3, 2022: [OAuth migration for NetSuite Bundle Customers](https://value.coupa.com/api/mailings/click/PMRHK4TMEI5CE2DUORYHGORPF5QXI5DFNZSGKZJOM5XXI33XMVRGS3TBOIXGG33NF5ZGKY3POJSGS3THF44DSMZSGQ2TCNJXHA2TKNRZGQ4DONBZEIWCE2LEEI5CENRXGIRCYITPOJTSEORCMUYWGMLFMVTGGLLGG44DILJUGQ2DKLJYGY4GCLLDME4DOYTBG4YDIYRQMIRCYITWMVZHG2LPNYRDUIRUEIWCE43JM4RDUIRVGVSFSNDXPJ2GEMDBGRIDMUZZPJQWWTBTMZWVKVZTHBJEMZ3QK53E6MLWOFCFOZJZNFET2IT5)

@@ -1,0 +1,85 @@
+Coupa Pay Payments Export
+
+Export of these records is included as part of Standard CSV Export.
+
+Exportable type is CoupaPay::Payment.
+
+Payment
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+Type 	Describes the type of row. Possible values are Payment, Payment Details or Payment Detail Allocation 	 	No/No
+Payment ID 	The ID of the payment 	integer 	No/No
+Payment Batch ID 	The ID of the Payment Batch the payment belongs to 	integer 	No/No
+Payment Batch Type 	The type of Payment Batch the payment belongs to. It can be an Invoice Payment Batch or Expense Payment Batch 	 	No/No
+Payment Batch Status 	The status of the Payment Batch the payment belongs to 	 	No/No
+Payment Status 	The status of the payment 	string(255) 	No/No
+Created At 	The date the payment was created on 	datetime 	No/No
+Updated At 	The date the payment was last updated on 	datetime 	No/No
+Exported 	A flag to check if the payment was already exported 	 	No/No
+Pay From Account Name 	The company payment account name used for the payment 	 	No/No
+Pay From Account Kind 	The company payment account type used for the payment 	 	No/No
+Pay From Account Currency 	The company payment account currency used for the payment 	 	No/No
+Pay From Account Total 	The total amount to be used for the payment from the company payment account 	 	No/No
+Pay To Account Name 	The payee's payment account name 	 	No/No
+Pay To Account Kind 	The payee's payment account type 	 	No/No
+Pay to Account Currency 	The payee's payment account currency 	 	No/No
+Pay To Account Total 	The total amount the payee is to be paid in its account currency 	 	No/No
+Reporting Pay To Currency 	The reported currency for the payee 	 	No/No
+Reporting Pay To Total 	The reported total amount to be paid based on payee's currency 	decimal 	No/No
+Exchange Rate 	The exchange rate used for the payment 	decimal(30,9) 	No/No
+Payee ID 	A unique number identifing the payee. This is unique within each source transaction type 	integer 	No/No
+Payee Name 	The name of the payee 	string(255) 	No/No
+Payee Display Name 	A commonly used name for the payee 	 	No/No
+Payee Login 	The login ID used for employees. This is blank for suppliers 	 	No/No
+Payee Email 	The email used by the payee to receive payment notifications 	 	No/No
+Payee Number 	A unique number identifing the payee. This is unique within each source transaction type 	 	No/No
+Pay To Total 	The total amount to be paid 	decimal 	No/No
+Error Text 	Error text on completed with error payments 	text 	No/No
+Digital Check Number 	The digital check number when there is one attached to the payment 	 	No/No
+Estimated Pay From Total 	The estimated pay from total based on exchange rates loaded in the system 	decimal 	No/No
+Source Name 	Source Name provided for payments loaded from external source 	string(255) 	No/No
+Source Reference 	Source Reference provided for payments in an external source 	string(255) 	No/No
+Payment Type 	The Payment Type 	 	No/No
+Description 	Description provided describing the payment 	string(255) 	No/No
+Payment Identifier 	Payment Identifier provided used to reference the payment 	string(255) 	No/No
+Legal Entity name 	Legal Entity name 	 	No/No
+Transfer Type 	Transfer Type is used by the Bank or Payment Partner and defines how a payment will need to be processed (ACH, WIRE, Standard, Next Day, Same Day) 	string(255) 	No/No
+Requested Execution Date 	When sending payment instructions to a bank, the Requested Execution Date can be used to request the bank to initiate a payment on a specific date 	datetime 	No/No
+Total Processed by Payee 	Amount of total charges processed by payee 	 	No/No
+Value Date 	Value Date 	date 	No/No
+
+Coupa Pay-Payment Detail
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+Type 	Describes the type of row. Possible values are Payment, Payment Details or Payment Detail Allocation 	 	No/No
+Payment Detail ID 	The ID of the payment detail 	integer 	No/No
+Payment ID 	The ID of the payment the payment detail belongs to 	string(255) 	No/No
+Payment Batch ID 	The ID of the payment batch the payment detail belongs to 	 	No/No
+Source Transaction ID 	The ID of source for the payment detail 	 	No/No
+Source Transaction Type 	The type of source for the payment detail. Possible values are Payables::Invoice or Payables::Expense. Legacy values are CoupaPay::Invoice or CoupaPay::Expense 	 	No/No
+Source Transaction Number 	The reference ID of the source for the payment detail 	 	No/No
+Transaction Total 	The total transaction amount for the payment detail 	decimal 	No/No
+Discount Total 	The total discount amount for the payment detail 	decimal 	No/No
+Adjustment Total 	The total adjusted amount for the payment detail 	decimal 	No/No
+Currency Code 	The currency of the payment to the recipient 	 	No/No
+Payment Total 	The total payment amount for the payment detail 	decimal 	No/No
+
+Payment Detail Allocation
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+Type 	Describes the type of row. Possible values are Payment, Payment Details or Payment Detail Allocation 	 	No/No
+Payment Detail Allocation ID 	The ID of the payment detail allocation 	integer 	No/No
+Payment ID 	The ID of the payment the payment detail belongs to 	 	No/No
+Payment Detail ID 	The ID of the payment detail the allocation belongs to 	 	No/No
+Source Transaction From ID 	The ID of the transaction that emitted the allocation 	 	No/No
+Source Transaction From Type 	The type of the transaction that emitted the allocation. Possible values are InvoiceHeader. 	 	No/No
+Source Transaction From Number 	The reference ID of the transaction that emitted the allocation 	 	No/No
+Source Transaction From Amount 	The amount sent by the transaction that emitted the allocation 	 	No/No
+Source Transaction From Currency 	The currency for the amount sent by the transaction that emitted the allocation 	 	No/No
+Source Transaction To ID 	The ID of the receiving transaction 	 	No/No
+Source Transaction To Type 	The type of the receiving transaction. Possible values are InvoiceHeader. 	 	No/No
+Source Transaction To Number 	The reference ID of the receiving transaction 	 	No/No
+Source Transaction To Amount 	The amount sent to the receiving transaction 	 	No/No
+Source Transaction To Currency 	The currency for the amount sent to the receiving transaction 	 	No/No
+Source 	The source of this allocation. Possible values are coupa_pay. 	string(255) 	No/No 	coupa_pay, erp, ui, api, csv, early_pay_discount
+Reason Code 	The reason code for the most recent change to this allocation. 	string(40) 	No/No 	payment, auto_payment, epr, epr_rejected, manual

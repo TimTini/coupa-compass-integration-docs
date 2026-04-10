@@ -1,0 +1,31 @@
+<article class="" id="id-c078efb3-5bfd-41ba-cd8f-c356dfa523c7">
+<h1 class="title">Exception Handling and Error Codes</h1>
+<div class="body">
+<p class="">An exception is thrown when something goes wrong when executing a request. The exception will
+      contain an error code and may also contain a short description which will help you understand
+      what went wrong during the request. There are many reasons an exception may occur, below are
+      some common reasons:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Your code expects a value from a field that is currently null</p>
+</li>
+<li class="li">
+<p class="">An insert or update statement fails to pass a validation rule</p>
+</li>
+<li class="li">
+<p class="">Assigning a query that returns no records</p>
+</li>
+<li class="li">
+<p class="">Accessing a list index that is out of bounds</p>
+</li>
+</ul>
+<p class="">For the list of standard HTTP status codes, click here: <a data-scope="external" data-name="" target="_blank" href="https://httpstatuses.com/" title="">https://httpstatuses.com/</a>
+</p>
+<div class="">
+<h2 class="title sectiontitle">Query rate limitations</h2>
+<p class="">Coupa limits the number of requests made to the
+        API to 25 requests per second and a burst query limit of 20 calls. So, if you make calls
+        more quickly than the rate limit, Coupa will querey up to 20 calls.</p>
+</div>
+</div>
+</article>

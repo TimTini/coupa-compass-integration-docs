@@ -1,0 +1,105 @@
+---
+title: "Supplier Information Address API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-api-(supplier_information)/supplier-information-address-api-da-5812-da-5812"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-api-(supplier_information)/supplier-information-address-api-da-5812-da-5812"
+status_code: 200
+fetched_at: "2026-04-09T11:59:21+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Supplier Information API (/supplier_information)"
+  - "Supplier Information Address API"
+---
+
+# Supplier Information Address API
+
+## Associations
+
+This API resource is associated with the [Supplier Information API](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-api-(supplier_information)-da-5810-da-5810).
+
+## Elements
+
+| **Element** | **Description** | **Required Field?** | **Unique?** | **Allowable Value** | **Api_In Field?** | **Api_Out Field?** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| account-type-item | Bank Account Type | | | | yes | yes | string(255) |
+| active | Active | | | | yes | yes | boolean |
+| address-name | Address Name | | | | yes | yes | string(255) |
+| bank-account-number | Bank Account Number | | | | yes | yes | |
+| bank-address | Bank Address | | | | yes | yes | string(255) |
+| bank-city | Bank City | | | | yes | yes | string(255) |
+| bank-code | Bank Code | | | | yes | yes | string(255) |
+| bank-country | Bank Country | | | | yes | yes | Country |
+| bank-fax-phone | Bank Fax | | | | yes | yes | Phone Number |
+| bank-postal-code | Bank Postal Code | | | | yes | yes | string(255) |
+| bank-routing-number | Bank Account Routing Number | | | | yes | yes | |
+| bank-state-region | Bank State | | | | yes | yes | string(255) |
+| bank-work-phone | Bank Work Phone | | | | yes | yes | Phone Number |
+| beneficiary_account_type | The type of beneficiary account for the supplier. | no | | | | | |
+| bic | BIC | | | | yes | yes | |
+| bic-routing-code | BIC Routing Code | | | | yes | yes | |
+| bsb-number | BSB Number (Australian Routing Code) | | | | yes | yes | |
+| city | City | | | | yes | yes | string(255) |
+| country | Country | | | | yes | yes | Country |
+| created-at | Created Date and Time | | | | | yes | datetime |
+| created-by | User who created | | | | | yes | integer |
+| csp-tra-id | Coupa Supplier Portal Remit-to Address ID | | | | | yes | integer |
+| email | Remit To Contact Email | | | | yes | yes | string(255) |
+| iban-number | IBAN Number | | | | yes | yes | |
+| id | Address ID | | | | | yes | integer |
+| intermediary-bank-name | Intermediary Bank Name | | | | yes | yes | string(255) |
+| international-bank-account-number | International Bank Account Number (IBAN) | | | | yes | yes | |
+| ifsc | IFSC | | | | yes | yes | string(255) |
+| kind | Address Type | yes | | RTA, User, Primary, Standard, | yes | yes | string(255) |
+| location-code | Remit To Location Code / Address ID / Key | | | | yes | yes | string(255) |
+| name-on-bank-account | Name on Bank Account | | | | yes | yes | string(255) |
+| payment-method-item | Payment Method | | | tran, cash, cred, pcard | yes | yes | string(255) |
+| po-box | PO Box | | | | yes | yes | string(255) |
+| po-box-postal-code | PO Box Postal Code | | | | yes | yes | string(255) |
+| postal-code | Postal Code | | | | yes | yes | string(255) |
+| purposes | Address purposes | | | | yes | yes | [] |
+| sort-code | Sort Code | | | | yes | yes | |
+| state-iso-code | State ISO code | no | | | | yes | string(255) |
+| state-region | State | | | | yes | yes | string(255) |
+| street-address | Street Address 1 | | | | yes | yes | string(255) |
+| street-address2 | Street Address 2 | | | | yes | yes | string(255) |
+| street_address3 | Street Address 3 | | | | yes | | string(255) |
+| street_address4 | Street Address 4 | | | | yes | | string(255) |
+| supplier-information-id | Supplier Information ID | | | | | yes | integer(11) |
+| supplier_information_tax_registrations | Supplier information tax registrations | | | | | yes | [] |
+| swift-code | SWIFT Code | | | | yes | yes | |
+| transit_number_and_institution_number | Transit Number And Institution Number | | | | yes | yes | string(255) |
+| updated-at | Last Updated Date and Time | | | | | yes | datetime |
+| updated-by | User who updated | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| virtual-card-email | Email where Virtual Cards are sent when Payment Method is Virtual Card | | | | yes | yes | string(255) |
+| wire_routing_number | Bank Account Wire Routing Number | | | | yes | yes | |
+| custom-field-1 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-2 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-3 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-4 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-5 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-6 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-7 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-8 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-9 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-10 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-11 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-12 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-13 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-14 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-15 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-16 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-17 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-18 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-19 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+| custom-field-20 | Custom fields only available when kind=RTA | | | | yes | yes | string(255) |
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+- Custom fields are only available for Remit-to Addresses.
+
+- The address type is specified with the `kind` element.
+
+- The RTA address is owned by the supplier and we don't allow customers to update it. The `active` flag (setup key needs to be enabled - Coupa Support function) is the only field that can be updated from the API.

@@ -1,0 +1,9 @@
+Expense API Example Calls
+
+The URL to access Expense Reports is https://<instance>.coupahost.com/api/expense_reports
+
+The URL to access Expense Report Lines is https://<instance>.coupahost.com/api/expense_lines
+
+Note:
+
+Use the API key from the API user (created from: /api_keys) to be able to retrieve expense reports from all users. If you use individual API keys, you will get expense reports for specified user.

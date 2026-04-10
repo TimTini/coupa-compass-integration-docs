@@ -1,0 +1,9 @@
+Additional CSV Exports | Coupa
+
+The discovered page did not expose a standard <article> block, so a placeholder was generated.
+
+Requested URL: https://compass.coupa.com/x285475.xml
+
+Final URL: https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/other-integration-playbooks/additional-csv-exports
+
+Page text preview: Additional CSV Exports | Coupa Skip to Content EN - EN - English - DE - Deutsch - JA - 日本語 - FR - Français Additional CSV Exports With the proper license the following objects are also available for export as flat files (usually CSV) over SFTP. The following are additional objects available for export as flat files (usually CSV) over SFTP. These data objects are not included with the standard Coupa Platform license which provides for exports of these Standard CSV exports. Here below are links to more information about each object and you can find out more about these objects here: Additional SFTP Exports Add-on. Addresses Export 28 May 2019 Coupa's Address flat file integration object contains a single set of header columns. Approval Delegates Export 28 May 2019 Coupa's approval delegates flat file integration object contains only a single set of header columns. Approvals Export 28 May 2019 Coupa's approvals flat file integration object contains only a single set of header columns. Coupa Pay Payment Detail Allocation Export 31 August 2020 The Coupa Pay Payment Detail Allocation Export flat file integration object contains only a single set of header columns. Cou

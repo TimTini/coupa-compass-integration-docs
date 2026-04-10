@@ -1,0 +1,23 @@
+---
+title: "Getting Started"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9sgFP4rFu8YTHMzSiKlzaZFajeryfawl4rYJysqBsrBXfbvi512yialj%2F58vts5zFG1xstVFx%2FtPTx3gDHbrBfkYdYUExiXgpYw4nQ0HU%2FoXswEnZWzw%2FiqvJruD4pkPyCgdnZBRM5JtkHsYGMxKhsTxMWE8hHl5a4QknNZiHxSTn%2BSbJ1ctFVxYD7G6FEyVrvOKwrHCMEqk7unqPLatUx5%2F9%2B%2FhwR7hehdiOmrYHB8coJ3XI3E%2Brr9VKsiThmiY305kn12oYah4YIclEHok1ZJQL%2FAX6QKLrramWttG21%2FLUgXrHQKNUqrWkAZa7ld3d3K1FTuT0Mov%2Bx2Fa2%2BbXckWyFC6CvdOItdC2EL4UXX8P3%2B9rzkkDwfCg31ek12iUuyY2ssyuFIH0fyb%2FnJct5Py%2BEW4Yz%2FMV29JyDLi1nn7Ez5ZOPl1yS1WVfO6PpPv%2BlWxctORV4MiG7oYRiV0CptVk0TADHt0Bj3%2ByaAiukwMXRpAWx5sv33jS5fAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started"
+status_code: 200
+fetched_at: "2026-04-09T12:00:10+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Getting Started"
+---
+
+# Getting Started
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9sgFP4rFu8YTHMzSiKlzaZFajeryfawl4rYJysqBsrBXfbvi512yialj%2F58vts5zFG1xstVFx%2FtPTx3gDHbrBfkYdYUExiXgpYw4nQ0HU%2FoXswEnZWzw%2FiqvJruD4pkPyCgdnZBRM5JtkHsYGMxKhsTxMWE8hHl5a4QknNZiHxSTn%2BSbJ1ctFVxYD7G6FEyVrvOKwrHCMEqk7unqPLatUx5%2F9%2B%2FhwR7hehdiOmrYHB8coJ3XI3E%2Brr9VKsiThmiY305kn12oYah4YIclEHok1ZJQL%2FAX6QKLrramWttG21%2FLUgXrHQKNUqrWkAZa7ld3d3K1FTuT0Mov%2Bx2Fa2%2BbXckWyFC6CvdOItdC2EL4UXX8P3%2B9rzkkDwfCg31ek12iUuyY2ssyuFIH0fyb%2FnJct5Py%2BEW4Yz%2FMV29JyDLi1nn7Ez5ZOPl1yS1WVfO6PpPv%2BlWxctORV4MiG7oYRiV0CptVk0TADHt0Bj3%2ByaAiukwMXRpAWx5sv33jS5fAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9sgFP4rFu8YTHMzSiKlzaZFajeryfawl4rYJysqBsrBXfbvi512yialj%2F58vts5zFG1xstVFx%2FtPTx3gDHbrBfkYdYUExiXgpYw4nQ0HU%2FoXswEnZWzw%2FiqvJruD4pkPyCgdnZBRM5JtkHsYGMxKhsTxMWE8hHl5a4QknNZiHxSTn%2BSbJ1ctFVxYD7G6FEyVrvOKwrHCMEqk7unqPLatUx5%2F9%2B%2FhwR7hehdiOmrYHB8coJ3XI3E%2Brr9VKsiThmiY305kn12oYah4YIclEHok1ZJQL%2FAX6QKLrramWttG21%2FLUgXrHQKNUqrWkAZa7ld3d3K1FTuT0Mov%2Bx2Fa2%2BbXckWyFC6CvdOItdC2EL4UXX8P3%2B9rzkkDwfCg31ek12iUuyY2ssyuFIH0fyb%2FnJct5Py%2BEW4Yz%2FMV29JyDLi1nn7Ez5ZOPl1yS1WVfO6PpPv%2BlWxctORV4MiG7oYRiV0CptVk0TADHt0Bj3%2ByaAiukwMXRpAWx5sv33jS5fAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started)
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

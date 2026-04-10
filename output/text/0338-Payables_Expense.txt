@@ -1,0 +1,31 @@
+Payables :: Expense
+
+Column Name 	 Description 	 Req'd 	 Unique 	 Type 	 Allowable Values
+type 	Describes the type of row. Possible value is Expense 	false 	false 	 	any
+id 	The ID of the expense 	false 	false 	integer 	any
+created-at 	The date the expense was created on 	false 	false 	datetime 	any
+updated-at 	The date the expense was last updated on 	false 	false 	datetime 	any
+status 	The status of the expense 	false 	false 	string(255) 	any
+paid-date 	The date the expense was marked as fully paid 	false 	false 	datetime 	any
+paid-total 	The total amount paid 	false 	false 	decimal 	any
+remaining-total 	The total amount remaining to be paid 	false 	false 	decimal 	any
+remittance-total 	The total remittance amount required 	false 	false 	decimal 	any
+accounting-total 	The total of the expense in the CoA currency 	false 	false 	decimal 	any
+exported 	A flag indicating if the expense has been marked as exported 	false 	false 	 	any
+last-exported-at 	The date that the expense was last marked as exported 	false 	false 	datetime 	any
+document-type 	The type of expense 	false 	false 	 	any
+payment-channel 	The payment channel on the associated ExpenseReport 	false 	false 	string(255) 	any
+payable-type 	The type of associated payable. Value is ExpenseReport 	false 	false 	 	any
+payable-id 	The ID of the associated ExpenseReport 	false 	false 	 	any
+chart-of-account-code 	The Chart of Accounts name 	false 	false 	 	any
+legal-entity-name 	The Chart of Accounts Legal Entity name 	false 	false 	 	any
+custom-field-1 	Integration Custom Field 1 	false 	false 	string(255) 	any
+custom-field-2 	Integration Custom Field 2 	false 	false 	string(255) 	any
+custom-field-3 	Integration Custom Field 3 	false 	false 	string(255) 	any
+custom-field-4 	Integration Custom Field 4 	false 	false 	string(255) 	any
+custom-field-5 	Integration Custom Field 5 	false 	false 	string(255) 	any
+custom-field-6 	Integration Custom Field 6 	false 	false 	string(255) 	any
+custom-field-7 	Integration Custom Field 7 	false 	false 	string(255) 	any
+custom-field-8 	Integration Custom Field 8 	false 	false 	string(255) 	any
+custom-field-9 	Integration Custom Field 9 	false 	false 	string(255) 	any
+custom-field-10 	Integration Custom Field 10 	false 	false 	string(255) 	any

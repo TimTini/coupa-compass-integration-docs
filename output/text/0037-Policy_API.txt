@@ -1,0 +1,18 @@
+Policy API
+
+Associations
+
+This API is associated with the Announcements API.
+
+Elements
+
+The following elements are available for the Policy API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+name 	Policy name 	 	true 	true 	 	yes 	string(100)
+text 	Policy description 	 	 	 	 	yes 	text
+created_by 	User who created 	 	 	 	 	yes
+updated_by 	User who updated 	 	 	 	 	yes

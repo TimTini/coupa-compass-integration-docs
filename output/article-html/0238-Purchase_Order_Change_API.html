@@ -1,0 +1,711 @@
+<article class="" id="purchase_order_change_api">
+<h1 class="title">Purchase Order Change API</h1>
+<div class="body">
+<div class="" id="overview-d957e218096">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Use this API to modify orders that are already in flight, either
+in approvals or sent to the supplier.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Purchase Order Changes GET API is not
+          intended to retrieve PO revisions to out to ERP.</p>
+<p class="">For PO Revisions, always use PO GET API with exported = false, and use the 'version'
+          value to identify whether the PO is a new one or a revised PO.</p>
+</div>
+</div>
+<div class="" id="actions-d957e218107">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">Purchase order changes API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/purchase_order_changes/:id/add_approver</code>
+</td>
+<td class="entry" align="">add_approver</td>
+<td class="entry" align="" colspan="1">Manually add an approver for an order header
+                change</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/purchase_order_changes</code>
+</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="" colspan="1">Create purchase order change. Cannot submit POST
+                call for purchase orders in draft or pending approval statuses.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/purchase_order_changes</code>
+</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="" colspan="1">Query purchase order changes</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/purchase_order_changes/:id/remove_approval</code>
+</td>
+<td class="entry" align="">remove_approval</td>
+<td class="entry" align="" colspan="1">Remove an approver who was manually added</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/purchase_order_changes/:id</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="" colspan="1">Show purchase order change</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/purchase_order_changes/:id/submit_for_approval</code>
+</td>
+<td class="entry" align="">submit_for_approval</td>
+<td class="entry" align="" colspan="1">Submit purchase order change for approval</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/purchase_order_changes/:id</code>
+</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="" colspan="1">Update purchase order change. Cannot update
+                records created through the Coupa Supplier Portal.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e218298">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">acknowledged-at</td>
+<td class="entry" align="">acknowledged_at</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">date</td>
+</tr>
+<tr class="">
+<td class="entry" align="">approvals</td>
+<td class="entry" align="">
+<code class="ph codeph">&lt;approver&gt;</code> attribute with
+<code class="ph codeph">&lt;login&gt;</code> value must be included for PUT/PATCH to
+an existing PO change request.</td>
+<td class="entry" align="">Yes*</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Current approver <code class="ph codeph">&lt;login&gt;</code> must exist in
+Coupa</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/approvals-api-(approvals)" title="">Approval</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">attachments</td>
+<td class="entry" align="">Attachments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachment</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">current-approval</td>
+<td class="entry" align="">Current/Pending Approval</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/approvals-api-(approvals)" title="">Approval</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">department</td>
+<td class="entry" align="">department</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/departments-api-(departments)" title="">Department</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">easy_form_response_id</td>
+<td class="entry" align="">Easy Form Response Id</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">exported</td>
+<td class="entry" align="">Indicates if transaction has been exported</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">hide-price</td>
+<td class="entry" align="">Hide Price from supplier. True or False</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Order Header Change</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa's unique identifier for the PO change request.
+Req'd for PUT update to existing change request</td>
+<td class="entry" align="">Yes*</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Valid PO change request ID</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">justification</td>
+<td class="entry" align="">justification</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-header-id</td>
+<td class="entry" align="">ID of the order that is being changed. Req'd for new POST change
+request</td>
+<td class="entry" align="">Yes*</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Valid PO header ID</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-line-changes</td>
+<td class="entry" align="">Order line changes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-method</td>
+<td class="entry" align="">payment_method</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-term</td>
+<td class="entry" align="">payment terms</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/payment-terms-api-(payment_terms)" title="">Payment Term</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">pcard</td>
+<td class="entry" align="">pcard</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Pcard</td>
+</tr>
+<tr class="">
+<td class="entry" align="">po-number</td>
+<td class="entry" align="">PO Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(20)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-hidden</td>
+<td class="entry" align="">Hide Price from supplier. True or False</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">reject-reason</td>
+<td class="entry" align="">Reject reason</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/comments-api" title="">Comment</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">requester</td>
+<td class="entry" align="">Requesting Account's login</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">requisition-header-id</td>
+<td class="entry" align="">requisition_header_id</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address</td>
+<td class="entry" align="">Ship to address</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)-da-5757-da-5757" title="">Address</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-user</td>
+<td class="entry" align="">Ship to user</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">shipping-term</td>
+<td class="entry" align="">shipping terms</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/shipping-terms-api-(shipping_terms)" title="">Shipping Term</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">source-part-num</td>
+<td class="entry" align="">source_part_num</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">PO Status</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier</td>
+<td class="entry" align="">Supplier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)-da-5797-da-5797" title="">Supplier</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">transmission-emails</td>
+<td class="entry" align="">Transmission Email comma separated list</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">any</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">transmission-method-override</td>
+<td class="entry" align="">Transmission Method Override</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">supplier_default, email, do_not_transmit</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(30)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">version</td>
+<td class="entry" align="">PO Supplier Version Number - Increase each time a PO is changed
+and triggers a resend to the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">manufacturer_name</td>
+<td class="entry" align="">Manufacturer Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">manufacturer_part_number</td>
+<td class="entry" align="">Manufacturer Part Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">extra_line_attribute</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">service_type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">milestones</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">recurring-rules</td>
+<td class="entry" align="">Recurring rules</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">-</td>
+</tr>
+<tr class="">
+<td class="entry" align="">total</td>
+<td class="entry" align="">PO Change document total</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">pending-cancel</td>
+<td class="entry" align="">Is the PO pending cancellation? True or False</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lines-count</td>
+<td class="entry" align="">Number of lines in the PO Change document</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lines-pending-add-count</td>
+<td class="entry" align="">Number of lines pending addition in PO Change document</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">lines-pending-delete-count</td>
+<td class="entry" align="">Number of lines pending deletion in PO Change document</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="example_calls">
+<h2 class="title sectiontitle">Example Calls</h2>
+</div>
+<div class="" id="create_a_po_change_request">
+<h2 class="title sectiontitle">Create a PO change request</h2>
+<p class="">Create a PO change request:</p>
+<p class="">
+<code class="ph codeph">POST https://{your_instance}.coupahost.com/api/purchase_order_changes</code>
+</p>
+</div>
+<div class="" id="payload-d957e219776">
+<h2 class="title sectiontitle">Payload</h2>
+<p class="">To POST, you need to include the ID of the original header, and
+any elements you want to modify. Use the same format as the
+original PO for the attribute changes.</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;order-header-change&gt;
+	&lt;order-header-id&gt;1000&lt;/order-header-id&gt;
+	&lt;!-- Requested changes to the PO --&gt;
+&lt;/order-header-change&gt;</code>
+</pre>
+</div>
+<div class="" id="_201_success_response">
+<h2 class="title sectiontitle">201 Success response</h2>
+<p class="">Coupa returns a new <code class="ph codeph">&lt;order-header-change&gt;</code>
+with an ID for the change and the full PO, including any of
+the changes you specified in your POST payload.</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;order-header-change&gt;
+	&lt;id type="integer"&gt;501&lt;/id&gt;
+	&lt;created-at type="dateTime"&gt;2018-04-06T23:14:50+05:30&lt;/created-at&gt;
+	&lt;updated-at type="dateTime"&gt;2018-04-06T23:14:51+05:30&lt;/updated-at&gt;
+	&lt;order-header-id type="integer"&gt;123750&lt;/order-header-id&gt;
+	&lt;!-- Original PO with requested changes --&gt;
+&lt;/order-header-change&gt;</code>
+</pre>
+<p class="">The <code class="ph codeph">&lt;status&gt;</code> of the PO will be
+<code class="ph codeph">approved</code> if the change didn't require new approvals,
+or <code class="ph codeph">pending_approval</code> if the change does require new
+approvals.</p>
+</div>
+<div class="" id="update_a_po_change_request">
+<h2 class="title sectiontitle">Update a PO change request</h2>
+<p class="">You can modify a PO change request that's pending approval
+by sending an <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com//Integrate/Technical_Documentation/API/Get_Started/Get_Started#Authentication" title="">authenticated</a>
+API call:</p>
+<p class="">
+<code class="ph codeph">POST https://{your_instance}.coupahost.com/api/purchase_order_changes/{id}</code>
+        where <code class="ph codeph">{id}</code> is the <code class="ph codeph">&lt;id type="integer"&gt;</code> attribute in
+        the 201 response. You can't modify a PO change request that's already approved.</p>
+</div>
+<div class="" id="payload-d957e219857">
+<h2 class="title sectiontitle">Payload</h2>
+<p class="">The payload format is essentially the same as the POST, except
+that you need to include the current approver for the PO
+change.</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;order-header-change&gt;
+	&lt;approver&gt;
+		&lt;login&gt;Approver Name&lt;/login&gt;
+	&lt;/approver&gt;
+	&lt;!-- Requested changes to the PO --&gt;
+&lt;/order-header-change&gt;</code>
+</pre>
+</div>
+<div class="" id="_200_response">
+<h2 class="title sectiontitle">200 Response</h2>
+<p class="">The response is the same as a POST: the
+<code class="ph codeph">&lt;order-header-change&gt;</code> with the ID and the full
+PO, including any of the changes you specified in your PUT
+payload.</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;order-header-change&gt;
+	&lt;id type="integer"&gt;501&lt;/id&gt;
+	&lt;created-at type="dateTime"&gt;2018-04-06T23:14:50+05:30&lt;/created-at&gt;
+	&lt;updated-at type="dateTime"&gt;2018-04-06T23:14:51+05:30&lt;/updated-at&gt;
+	&lt;order-header-id type="integer"&gt;123750&lt;/order-header-id&gt;
+	&lt;!-- Original PO with requested changes --&gt;
+&lt;/order-header-change&gt;</code>
+</pre>
+</div>
+<div class="" id="_400_bad_request_response">
+<h2 class="title sectiontitle">400 Bad request response</h2>
+<p class="">If you send a bad request, Coupa will provide a list of
+errors.</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;errors&gt;
+	&lt;error&gt;
+		&lt;!-- List of errors --&gt;
+	&lt;/error&gt;
+&lt;/errors&gt;</code>
+</pre>
+</div>
+</div>
+</article>

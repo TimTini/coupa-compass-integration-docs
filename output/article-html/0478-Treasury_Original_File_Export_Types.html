@@ -1,0 +1,225 @@
+<article class="" id="reference1">
+<h1 class="title">Treasury Original File Export Types</h1>
+<p class="font-size-lg">You can select which original files should be exported to sFTP with various Standard integrations. You can also configure custom Original File export integrations. Original file exports include two types.</p>
+<div class="body refbody">
+<div class="">
+<h2 class="title sectiontitle">Bank file integrations</h2>
+<p class="">Bank Files are the original files received by the bank and are not yet assigned to a legal entity or an account. You can download the files from Treasury Management at <span class="menucascade">
+<span class="uicontrol">Banking</span> &gt; <span class="uicontrol">Bank Connectivity</span> &gt; <span class="uicontrol">Bank Files Overview</span>
+</span>.</p>
+<p class="">For more information, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/treasury-management-product-documentation/banking/bank-connectivity/bank-files-overview" title="">Bank Files Overview</a>.</p>
+<p class="">These integrations are included in Standard:</p>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Type</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Description</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>sFTP folder</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Standard Treasury End-of-Day Account Statement Bank File Export</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all bank files of type <b>Account Statements</b> (only end of day statement formats) received within the last 7 days.</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/Outgoing/OriginalBankFile/AccountStatements/EndofDays</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Standard Treasury Intraday Account Statement Bank File Export</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all bank files of type <b>Account Statements</b> (only intraday statement formats) received within the last 7 days and which have not yet been exported and marks files as exported.</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/Outgoing/OriginalBankFile/AccountStatements/Intradays</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Standard Treasury Bank Transaction Report Bank File Export</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all bank files of type <b>Bank Transaction</b> Report received within the last 7 days and which have not yet been exported and marks files as exported.</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/Outgoing/OriginalBankFile/BankTransactionReports</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Standard Treasury Payment Status Report Bank File Export</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all bank files of type <b>Payment Status Report</b> received within the last 7 days and which have not yet been exported and marks files as exported.</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/Outgoing/OriginalBankFile/PaymentStatusReports</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Standard Treasury Bank Service Fees Bank File Export</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all bank files of type <b>Bank Service Fees</b> received within the last 7 days and which have not yet been exported and marks files as exported.</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/Outgoing/OriginalBankFile/BankServiceFees</code>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Standard Treasury PDF Account Statement Bank Files Export</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all bank files of format PDF and File Identifier BKA received within the last 7 days and which have not yet been exported and marks files as exported.</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/Outgoing/OriginalBankFile/PdfAccountStatements</code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Account statement integrations</h2>
+<p class="">Accounts Statements are the original statements received by the Bank and are assigned to a legal entity and an account. You can download the files from Treasury Management at <span class="menucascade">
+<span class="uicontrol">Treasury</span> &gt; <span class="uicontrol">Cash Management</span> &gt; <span class="uicontrol">Account Statements</span>
+</span>.</p>
+<p class="">These integrations are included in Standard:</p>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Type</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Description</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>sFTP folder</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Standard Treasury Original Account Statement Export</p>
+</td>
+<td class="entry" align="">
+<p class="">Exports all account statements processed within the last 7 days and which have not yet been exported and marks files as exported.</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/Outgoing/OriginalAccountStatement</code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>If you need export capabilities beyond the standard integrations, you can create custom Original File export integrations using <b>Automation Views</b> in Treasury Management. For details, see <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-sftp-integrations/treasury-csv-exports#AutoViewCustomInteg" title="">Custom Treasury export integrations</a> and <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/treasury-management-product-documentation/getting-started-with-treasury-management/automated-processes-and-integrations/automation-views-in-treasury-management" title="Use automation views to configure and schedule Treasury processes and integrations from Coupa Core.">Automation Views in Treasury Management</a>.</div>
+</div>
+<div class="">
+<h2 class="title sectiontitle">File names</h2>
+<p class="">Depending on the integration type, files may have different files names. Use date/time stamps to ensure that files do not override each other. Outbound files from Coupa use the following formats:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Business Object</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>File Name (ZIP)</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>File Name (Original File)</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>To or From COUPA</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Original Bank Files</p>
+</td>
+<td class="entry" align="">
+<p class="">originalbankfiles_&lt;YYYYMMDD_HHMMSSZ&gt;.zip</p>
+</td>
+<td class="entry" align="">
+<p class="">&lt;File Name&gt;</p>
+</td>
+<td class="entry" align="">
+<p class="">From Coupa</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Original Account Statements</p>
+</td>
+<td class="entry" align="">
+<p class="">accountstatements_&lt;YYYYMMDD_HHMMSSZ&gt;.zip</p>
+</td>
+<td class="entry" align="">
+<p class="">&lt;File Format&gt;_&lt;YYYYMMDD_HHMMSSZ&gt;</p>
+</td>
+<td class="entry" align="">
+<p class="">From Coupa</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

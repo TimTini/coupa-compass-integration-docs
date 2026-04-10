@@ -1,0 +1,101 @@
+IC Balances - FX Rates Import - CSV Format
+
+Format Description
+
+PDF Version
+
+#
+
+Name
+
+Type
+
+Mandatory
+
+Comment
+
+1
+
+Reconciliation
+
+char - 7
+
+Yes
+
+Recon code in IC Balances.
+
+2
+
+Currency
+
+char - 3
+
+Yes
+
+Currency ISO code.
+
+3
+
+Average rate
+
+decimal
+
+Yes
+
+FX rate compared to the group currency (for P/L account)
+
+4
+
+Reporting date rate
+
+decimal
+
+No
+
+FX rate compared to the group currency (for B/S account)
+
+Import Function
+
+The import function is under Special Functions on Recon & Netting > IC Balances > Rates.The import function processes files in standard text formats:
+
+-
+
+ASCII
+
+-
+
+Unicode
+
+Format Rules
+
+One file may contain multiple data sets. The file cannot contain any headers or format descriptions. Do not enclose text in quotation marks.
+
+Each row in the file contains exactly one data set:
+
+-
+
+ASCII Code 13: carriage return shows the end of a data set.
+
+-
+
+ASCII Code 10: new line shows the end of a data set.
+
+-
+
+The last data set concludes by an end of file (EOF).
+
+In the table above, the value for “char” shows how many characters is the maximum length for that field in the imported file.
+
+-
+
+Field Separator – semicolon (;), comma (,)
+
+-
+
+Decimal Separator – period (.), comma (,)
+
+Example Data Sets
+
+K09Q1;USD;1;3362
+
+k09Q2;EUR;1;3862

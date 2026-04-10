@@ -1,0 +1,4291 @@
+<article class="" id="invoices_export">
+<h1 class="title">Invoices Export</h1>
+<div class="body">
+<div class="" id="overview-d117e25346">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Invoice Export process from Coupa queries for all Invoices that are approved and have NOT been exported. The frequency of the integration run is once every hour. The generated files will be placed into <code class="ph codeph">./Outgoing/Invoices</code> on the <a data-scope="external" data-name="" target="_blank" href="https://coupadocs.atlassian.net/wiki/display/integrate/SFTP+Overview" title="">Standard SFTP setup</a>. Once the files are successfully placed into the sFTP folder the invoices will be marked/flagged as exported.</p>
+<p class="">Export of these records is included as a Standard CSV Export.</p>
+</div>
+<div class="" id="voids">
+<h2 class="title sectiontitle">Voids</h2>
+<p class="">Voided Invoices can also be exported and will be placed into <code class="ph codeph">./Outgoing/Invoices/</code>. Currently this is the only change to an Invoice that is captured in the integration.</p>
+</div>
+<div class="" id="row_types">
+<h2 class="title sectiontitle">Row Types</h2>
+<p class="">The invoice export file can contains the following types of rows, each with its own column format:</p>
+<ul class="ul">
+<li class="li">Invoice Header</li>
+<li class="li">Invoice Line</li>
+<li class="li">Invoice Line Allocation</li>
+<li class="li">Invoice Charge</li>
+<li class="li">Invoice Charge Allocation</li>
+<li class="li">Tax Line</li>
+<li class="li">Withholding Tax Line</li>
+<li class="li">Matching Allocation</li>
+<li class="li">Failed Tolerance</li>
+</ul>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>Invoice Header line counts include header rows and rows from the associated objects.</div>
+</div>
+<div class="" id="section_zhc_cjq_11c">
+<h2 class="title sectiontitle">Invoice</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, or Line Split or Tax Line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">The unique identifier Coupa assigned to the invoice.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">When the invoice was created in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">When the invoice was last updated in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">The current status of the invoice. Possible values are: new, ap_hold, draft, on_hold, pending_receipt, disputed, pending_approval, approved, voided, booking_hold, save_as_draft, abandoned</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">internal-note</td>
+<td class="entry" align="">Text field for comments made by employees. Not visible to the supplier.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-date</td>
+<td class="entry" align="">The date of the invoice in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">delivery-date</td>
+<td class="entry" align="">The date of supply in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-number</td>
+<td class="entry" align="">The user-created invoice number.</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">line-level-taxation</td>
+<td class="entry" align="">Flag indicating if the invoice has taxes at the line level. True or False. If True, adds fourth header: Tax Line.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-note</td>
+<td class="entry" align="">Text field for comments from the supplier. Visible to both Coupa users and the supplier.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">header-tax-amount</td>
+<td class="entry" align="">The amount of tax calculated on the invoice summary.</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">header-tax-rate</td>
+<td class="entry" align="">The tax rate indicated on the invoice summary.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">header-tax-code</td>
+<td class="entry" align="">The tax rate code for the invoice summary tax rate. Must match an existing tax rate code within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">paid</td>
+<td class="entry" align="">Flag indicating if the invoice was paid or not. Manually set. True or False. Default is False.</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-date</td>
+<td class="entry" align="">The date of the invoice was marked as paid in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-notes</td>
+<td class="entry" align="">Text field for comments on the payment. Visible only to Coupa users.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">exported</td>
+<td class="entry" align="">Flag indicating if the invoice was exported to the ERP. True or False.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-type-id</td>
+<td class="entry" align="">The unique identifier Coupa assigned to the Chart of Accounts.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-type-name</td>
+<td class="entry" align="">The name of the Chart of Accounts within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-term</td>
+<td class="entry" align="">The payment term code on the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">handling-amount</td>
+<td class="entry" align="">Summary handling amount added to the invoice by the supplier.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">misc-amount</td>
+<td class="entry" align="">Summary charge added to the invoice by the supplier.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">shipping-amount</td>
+<td class="entry" align="">Summary shipping charge added to the invoice by the supplier.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">total</td>
+<td class="entry" align="">The total amount of the invoice, including all summary amounts.</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">The currency code of the transaction.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total-amount</td>
+<td class="entry" align="">The total amount of the invoice using the Chart of Accounts currency. Doesn't include line and summary amounts.</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total-currency</td>
+<td class="entry" align="">The currency code of the Chart of Accounts.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-id</td>
+<td class="entry" align="">The unique identifier Coupa assigned to the supplier.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-name</td>
+<td class="entry" align="">The name of the supplier.</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-number</td>
+<td class="entry" align="">The number of the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-email</td>
+<td class="entry" align="">The email address of the user who created the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-employee-number</td>
+<td class="entry" align="">The employee number of the user who created the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-login</td>
+<td class="entry" align="">The login name of the user who created the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-email</td>
+<td class="entry" align="">The email address of the user who last updated the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-employee-number</td>
+<td class="entry" align="">The employee number of the user who last updated the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-login</td>
+<td class="entry" align="">The login name of the user who last updated the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">attachment-texts</td>
+<td class="entry" align="">The URLs of the attached files. The files can be set to the supplier, but cannot be downloaded as part of the CSV export.</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">comments</td>
+<td class="entry" align="">Not currently used.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-code</td>
+<td class="entry" align="">Remit to Address Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-attention</td>
+<td class="entry" align="">Remit to Address Attention</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-street1</td>
+<td class="entry" align="">Remit to Address Line 1</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-street2</td>
+<td class="entry" align="">Remit to Address Line 2</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-city</td>
+<td class="entry" align="">Remit to Address City</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-state</td>
+<td class="entry" align="">Remit to Address State</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-postal-code</td>
+<td class="entry" align="">Remit to Address Postal Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-country-code</td>
+<td class="entry" align="">Remit to Address Country Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-country-name</td>
+<td class="entry" align="">Remit To Address Country Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-name</td>
+<td class="entry" align="">Remit To Address Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-vat-number</td>
+<td class="entry" align="">The VAT number associated with the remit-to address (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-vat-country-code</td>
+<td class="entry" align="">The country code for the remit-to address (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remit-to-address-vat-country-name</td>
+<td class="entry" align="">The country name for the remit-to address (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-vat-number</td>
+<td class="entry" align="">The VAT number of the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-vat-country-code</td>
+<td class="entry" align="">The VAT country code of the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">document-type</td>
+<td class="entry" align="">The type of document. Possible values are Invoice or Credit Note, or nil.</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">original-invoice-number</td>
+<td class="entry" align="">The credit note must refer to the original invoice. Required if document-type is set to Credit Note.</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">original-invoice-date</td>
+<td class="entry" align="">The date that the original invoice was issued.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">canceled</td>
+<td class="entry" align="">Balanced out transaction and no payment needed.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-legal-entity-name</td>
+<td class="entry" align="">The legal name of the bill-to address company. This is often different the then company name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-attention</td>
+<td class="entry" align="">The contact person at the bill-to address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-street1</td>
+<td class="entry" align="">The first bill-to address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-street2</td>
+<td class="entry" align="">The second bill-to address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-city</td>
+<td class="entry" align="">The bill-to address city.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-state</td>
+<td class="entry" align="">The bill-to address state.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-postal-code</td>
+<td class="entry" align="">The bill-to address zip or postal code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-country-code</td>
+<td class="entry" align="">The bill-to address country code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-country-name</td>
+<td class="entry" align="">The bill-to address country name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bill-to-address-name</td>
+<td class="entry" align="">The user-friendly name given to the bill-to address to make it more easily identifiable.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address-attention</td>
+<td class="entry" align="">The contact person at the bill-to address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address-street1</td>
+<td class="entry" align="">The first ship-to address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address-street2</td>
+<td class="entry" align="">The second ship-to address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address-city</td>
+<td class="entry" align="">The ship-to address city.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address-state</td>
+<td class="entry" align="">The ship-to address state or province.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address-postal-code</td>
+<td class="entry" align="">The ship-to address zip or postal code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address-country-code</td>
+<td class="entry" align="">The ship-to address country code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address-country-name</td>
+<td class="entry" align="">The ship-to address country name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-to-address-name</td>
+<td class="entry" align="">The user-friendly name given to the ship-to address to make it more easily identifiable.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-remit-to-code</td>
+<td class="entry" align="">The name/code given to the supplier remit-to address by the supplier</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-remit-to-supplier-name</td>
+<td class="entry" align="">The user-friendly name given to the remit-to address by the supplier to make it more easily identifiable</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-remit-to-street1</td>
+<td class="entry" align="">The supplier-created remit-to first address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-remit-to-street2</td>
+<td class="entry" align="">The supplier-created remit-to second address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-remit-to-city</td>
+<td class="entry" align="">The supplier-created remit-to city.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-remit-to-state</td>
+<td class="entry" align="">The supplier-created remit-to state.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-remit-to-postal-code</td>
+<td class="entry" align="">The supplier-created remit-to zip or postal code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-remit-to-country-code</td>
+<td class="entry" align="">The supplier-created remit-to country code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-remit-to-country-name</td>
+<td class="entry" align="">The supplier-created remit-to country name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Rep. Name</td>
+<td class="entry" align="">Fiscal Rep. Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Rep. VAT ID </td>
+<td class="entry" align="">Fiscal Rep. Vat Id</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Rep. Address Code</td>
+<td class="entry" align="">Fiscal Rep. Address Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Rep. Address Street 1</td>
+<td class="entry" align="">Fiscal Rep. Address Street 1</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Rep. Address Street 2</td>
+<td class="entry" align="">Fiscal Rep. Address Street 2</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Rep. Address City</td>
+<td class="entry" align="">Fiscal Rep. Address City</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Rep. Address State</td>
+<td class="entry" align="">Fiscal Rep. Address State</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Rep. Address Postal Code</td>
+<td class="entry" align="">Fiscal Rep. Address Postal Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fiscal Rep. Address Country Code</td>
+<td class="entry" align="">Fiscal Rep. Address Country Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">discount_due_date</td>
+<td class="entry" align="">The date the invoice needs to be paid by in order to get the early-payment discount. Calculated by Coupa based on payment-term in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">net_due_date</td>
+<td class="entry" align="">The date the invoice needs to be paid by. Calculated by Coupa based payment-term in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">discount_amount</td>
+<td class="entry" align="">The value of the discount if the invoice is paid by the discount_due_date. Calculated by Coupa basedtotal and payment-term.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">late-payment-penalties</td>
+<td class="entry" align="">Late Payment Penalties</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">margin-scheme</td>
+<td class="entry" align="">A reference to the margin scheme used</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">cash-accounting-scheme-reference</td>
+<td class="entry" align="">A reference to the cash accounting scheme used</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">exchange-rate</td>
+<td class="entry" align="">Exchange Rate</td>
+<td class="entry" align="">decimal(30,9)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">early-payment-provisions</td>
+<td class="entry" align="">Early Payment Provisions (This field has been deprecated)</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">pre-payment-date</td>
+<td class="entry" align="">Pre-Payment Date</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">reverse-charge-reference</td>
+<td class="entry" align="">Reverse Charge Reference</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">discount-percent</td>
+<td class="entry" align="">Discount %</td>
+<td class="entry" align="">float</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">credit-note-differences-with-original-invoice</td>
+<td class="entry" align="">Credit Note differences with Original Invoice</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">customs-declaration-number</td>
+<td class="entry" align="">Customs Declaration Number</td>
+<td class="entry" align="">string(60)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">customs-office</td>
+<td class="entry" align="">Customs Office</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">customs-declaration-date</td>
+<td class="entry" align="">Customs Declaration Date</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-order-reference</td>
+<td class="entry" align="">A code given by banks to use it instead of a bank account transfer.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-order-number</td>
+<td class="entry" align="">Payment Order Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Resolution Number</td>
+<td class="entry" align="">Resolution Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">advance-payment-received-amount</td>
+<td class="entry" align="">Amount of advance payment received</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">series</td>
+<td class="entry" align="">The serial number used by the Company for internal control of the information.</td>
+<td class="entry" align="">string(30)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">folio-number</td>
+<td class="entry" align="">The internal folio number used by the Company.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">buyer-representative-name</td>
+<td class="entry" align="">Buyer Representative Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-representative-name</td>
+<td class="entry" align="">Supplier Representative Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-schedule-terms</td>
+<td class="entry" align="">Payment Schedule Terms</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">vat-chargeability-system</td>
+<td class="entry" align="">VAT Chargeability System</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">customer-account-number</td>
+<td class="entry" align="">Customer Account Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">use-of-invoice</td>
+<td class="entry" align="">The purpose invoice is going to be used for.</td>
+<td class="entry" align="">string(10)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">form-of-payment</td>
+<td class="entry" align="">The specific code in accordance with a catalogue: cash, check, transfer of funds, etc.</td>
+<td class="entry" align="">string(10)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">type-of-receipt</td>
+<td class="entry" align="">Type of the invoice: income, expense, transfer, payroll or payment.</td>
+<td class="entry" align="">string(10)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-method</td>
+<td class="entry" align="">Installments or lump sum payments.</td>
+<td class="entry" align="">string(10)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">issuance-place</td>
+<td class="entry" align="">Issuance Place</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">confirmation</td>
+<td class="entry" align="">This is a unique number provided by the Tax Authorities or the PAC.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">withholding-tax-override</td>
+<td class="entry" align="">Withholding Tax Override</td>
+<td class="entry" align="">decimal(30,3)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">type-of-relationship</td>
+<td class="entry" align="">Relationship of this document to its parent invoice. Chosen from a catalog.</td>
+<td class="entry" align="">string(10)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-reference-number</td>
+<td class="entry" align="">The IRN is a unique ID generated using SHA256 algorithm and based on the parameters GST reg number, document number, financial year, and document type</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">gross-total</td>
+<td class="entry" align="">Gross Total</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-registration-number</td>
+<td class="entry" align="">Registration number of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-place-of-registration</td>
+<td class="entry" align="">Place of registration of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-type</td>
+<td class="entry" align="">The type of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-managing-directors</td>
+<td class="entry" align="">A list of managing directors of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">credit-reason</td>
+<td class="entry" align="">The reason of creating the credit</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-permit-number</td>
+<td class="entry" align="">Permit number of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-permit-date</td>
+<td class="entry" align="">Permit date of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-liquidator-name</td>
+<td class="entry" align="">Liquidator name of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-share-capital</td>
+<td class="entry" align="">Share capital of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Nature</td>
+<td class="entry" align="">Estonia compliance required field</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-unique-shareholder</td>
+<td class="entry" align="">Unique shareholder of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-liable-company</td>
+<td class="entry" align="">Liable company of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-tax-regime</td>
+<td class="entry" align="">Tax Regime of the registered company</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-legal-status</td>
+<td class="entry" align="">Legal status of the company (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">QST Registration Number</td>
+<td class="entry" align="">QST Registration Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Authorised Person </td>
+<td class="entry" align="">Authorised Person </td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Authorised Person Address</td>
+<td class="entry" align="">Authorised Person Address</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Authorised Person VAT ID </td>
+<td class="entry" align="">Authorised Person VAT ID </td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Date of Registration </td>
+<td class="entry" align="">Date of Registration </td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Sole Registration Code</td>
+<td class="entry" align="">Sole Registration Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-mercantile-register</td>
+<td class="entry" align="">Mercantile Register</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">origin-currency-net</td>
+<td class="entry" align="">Net Amount in local currency</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">taxes-in-origin-country-currency</td>
+<td class="entry" align="">Tax Amount in local currency</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">origin-currency-gross</td>
+<td class="entry" align="">Gross Amount in local currency</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">self-billing-reference</td>
+<td class="entry" align="">Self billing reference - used for compliant countries like The Netherlands</td>
+<td class="entry" align="">string(191)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-legal-type</td>
+<td class="entry" align="">Legal type of the company (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-registered-seat</td>
+<td class="entry" align="">Registered seat of the company (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-chairman-of-the-board</td>
+<td class="entry" align="">Name of the chairperson of the board (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-court-of-registration</td>
+<td class="entry" align="">Court where the company is registered (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-liquidation-remark</td>
+<td class="entry" align="">Remark if the company is in liquidation (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-commercial-register-number</td>
+<td class="entry" align="">Commercial register number of the company (for tax and compliance purposes).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-license-number</td>
+<td class="entry" align="">Company License Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-register-legal-entities</td>
+<td class="entry" align="">Register Legal Entities</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">registered-company-name</td>
+<td class="entry" align="">Registered Company Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">company-in-examinership</td>
+<td class="entry" align="">Company in examinership</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">company-is-being-wound-up</td>
+<td class="entry" align="">Company is being wound up</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">company-receiver-appointed</td>
+<td class="entry" align="">Receiver of the property of a company has been appointed</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">preference-agreement</td>
+<td class="entry" align="">Preference Agreement</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">file-reference-number</td>
+<td class="entry" align="">File Reference No.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">number-of-issued-stocks</td>
+<td class="entry" align="">Number of Issued Stocks</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">issued_share-capital</td>
+<td class="entry" align="">Unpaid Share Capital</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-telephone-number</td>
+<td class="entry" align="">Supplier Telephone Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">permanent-account-number</td>
+<td class="entry" align="">Permanent Account Number (PAN)</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Disputed Invoice Number</td>
+<td class="entry" align="">Disputed Invoice Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Channel</td>
+<td class="entry" align="">Channel the invoice was created from</td>
+<td class="entry" align="">string(80)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Taxable Amount</td>
+<td class="entry" align="">Taxable Amount</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-from-code</td>
+<td class="entry" align="">The name/code given to the supplier invoice-from address by the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-from-supplier-name</td>
+<td class="entry" align="">The user-friendly name given to the invoice-from address by the supplier to make it more easily identifiable</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-from-street1</td>
+<td class="entry" align="">The supplier-created invoice-from first address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-from-street2</td>
+<td class="entry" align="">The supplier-created invoice-from second address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-from-city</td>
+<td class="entry" align="">The supplier-created invoice-from city.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-from-state</td>
+<td class="entry" align="">The supplier-created invoice-from state.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-from-postal-code</td>
+<td class="entry" align="">The supplier-created invoice-from zip or postal code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-from-country-code</td>
+<td class="entry" align="">The supplier-created invoice-from country code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-from-country-name</td>
+<td class="entry" align="">The supplier-created invoice-from country name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-from-code</td>
+<td class="entry" align="">The name/code given to the supplier ship-from address by the supplier</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-from-supplier-name</td>
+<td class="entry" align="">The user-friendly name given to the ship-from address by the supplier to make it more easily identifiable</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-from-street1</td>
+<td class="entry" align="">The supplier-created ship-from first address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-from-street2</td>
+<td class="entry" align="">The supplier-created ship-from second address line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-from-city</td>
+<td class="entry" align="">The supplier-created ship-from city.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-from-state</td>
+<td class="entry" align="">The supplier-created ship-from state.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-from-postal-code</td>
+<td class="entry" align="">The supplier-created ship-from zip or postal code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-from-country-code</td>
+<td class="entry" align="">The supplier-created ship-from country code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ship-from-country-name</td>
+<td class="entry" align="">The supplier-created ship-from country name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-tax-registration-number</td>
+<td class="entry" align="">The supplier-created supplier-tax-number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-tax-registration-country-code</td>
+<td class="entry" align="">The supplier-created supplier-tax-registration country code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-tax-registration-country-name</td>
+<td class="entry" align="">The supplier-created supplier-tax-registration country name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-tax-registration-local</td>
+<td class="entry" align="">The supplier-created supplier-tax-registration local indicator.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">buyer-tax-registration-number</td>
+<td class="entry" align="">The buyer-created buyer-tax-number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">buyer-tax-registration-country-code</td>
+<td class="entry" align="">The buyer-created buyer-tax-registration country code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">buyer-tax-registration-country-name</td>
+<td class="entry" align="">The buyer-created buyer-tax-registration country name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">buyer-tax-registration-local</td>
+<td class="entry" align="">The buyer-created buyer-tax-registration local indicator.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">dispute-method</td>
+<td class="entry" align="">Dispute Method, Possible values are: Auto, Manual</td>
+<td class="entry" align="">string(10)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">is-ers-invoice</td>
+<td class="entry" align="">Is ERS Invoice</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">date-received</td>
+<td class="entry" align="">The date when the invoice is received by enterprise via email</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">sender-email</td>
+<td class="entry" align="">The sender email who sent the invoice to enterprise via email</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">inbox-name</td>
+<td class="entry" align="">Inbox which the invoice was received into</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount-due</td>
+<td class="entry" align="">Amount due to the supplier - Invoice Total without withholding and customer accounting taxes</td>
+<td class="entry" align="">decimal(46,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-due-to-supplier</td>
+<td class="entry" align="">Tax due to the supplier</td>
+<td class="entry" align="">decimal(46,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">customer-accounting-tax</td>
+<td class="entry" align="">Customer accounting tax</td>
+<td class="entry" align="">decimal(46,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-channel</td>
+<td class="entry" align="">Where the invoice payment will be handled. Examples are ERP, Coupa Pay Virtual Card, Coupa Pay Invoice</td>
+<td class="entry" align="">string(40)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">date-of-discovery-of-facts-decisive-for-correction</td>
+<td class="entry" align="">Date of Discovery of Facts Decisive for Correction</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">place-of-supply</td>
+<td class="entry" align="">Place Of Supply</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">split-payment-mechanism</td>
+<td class="entry" align="">Split Payment Mechanism</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">gross-total-less-discount</td>
+<td class="entry" align="">Total less discount</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">net-total-less-discount</td>
+<td class="entry" align="">Net total less discount</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">total-taxes-less-discount</td>
+<td class="entry" align="">Total taxes less discount</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">customer-accounting-tax-less-discount</td>
+<td class="entry" align="">Customer accounting tax less discount</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount-due-less-discount</td>
+<td class="entry" align="">Amount due less discount</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">endorsement-on-invoices</td>
+<td class="entry" align="">Endorsement On Invoices</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">new-means-of-transport</td>
+<td class="entry" align="">New Means Of Transport</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">place-of-issuance</td>
+<td class="entry" align="">Place Of Issuance</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount-of-advance-payment</td>
+<td class="entry" align="">Amount Of Advance Payment</td>
+<td class="entry" align="">decimal(46,20)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">transaction-uuid</td>
+<td class="entry" align="">Unique identifier created by the tax authority's system for a specific document</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">transaction-notification-date</td>
+<td class="entry" align="">Date on which the invoice is received from the tax authority's system</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-invoice-issuer-name</td>
+<td class="entry" align="">Supplier Invoice Issuer Name</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-invoice_reviewer-name</td>
+<td class="entry" align="">Supplier Invoice Reviewer Name</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-payment-collector-name</td>
+<td class="entry" align="">Supplier Payment Collector Name</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-issuance-time</td>
+<td class="entry" align="">Invoice Issuance Time</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">cash-register-operator-id</td>
+<td class="entry" align="">Cash Register Operator</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">means-of-payment</td>
+<td class="entry" align="">Means Of Payment</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">unique-identification-code-of-cash-receipt</td>
+<td class="entry" align="">Unique Identification Code Of Cash Receipt</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">security-code-of-issuer</td>
+<td class="entry" align="">Security Code Of Issuer</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">state-tax-number</td>
+<td class="entry" align="">State Tax ID Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">state-tax-number-for-substitute-taxpayer</td>
+<td class="entry" align="">State Tax ID Number for Substitute Taxpayer</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">municipal-tax-number</td>
+<td class="entry" align="">Municipality Tax ID Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">serial-code-of-fiscal-invoice</td>
+<td class="entry" align="">Serial Code of Fiscal Invoice</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">verification-code</td>
+<td class="entry" align="">Verification Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">type-of-document</td>
+<td class="entry" align="">Type of Document</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">protocol-number</td>
+<td class="entry" align="">Protocol Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">nature-of-operation</td>
+<td class="entry" align="">Nature of Operation</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">type-of-operation</td>
+<td class="entry" align="">Type of Operation</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">freight-type</td>
+<td class="entry" align="">Freight Type</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">vehicle-license-plate</td>
+<td class="entry" align="">Vehicle License Plate</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">national-enrollment-of-conveyor</td>
+<td class="entry" align="">National Enrollment of Conveyor</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">volume-amount</td>
+<td class="entry" align="">Volume Amount</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">volume-gross-weight</td>
+<td class="entry" align="">Volume Gross Weight</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">volume-liquid-weight</td>
+<td class="entry" align="">Volume Liquid Weight</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">volume-brand</td>
+<td class="entry" align="">Volume Brand</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">volume-type</td>
+<td class="entry" align="">Volume Type</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">volume-numbering</td>
+<td class="entry" align="">Volume Numbering</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency-tax-rounding-mode</td>
+<td class="entry" align="">Currency Tax Rounding Method</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-agreement-notes</td>
+<td class="entry" align="">Payment Agreement Notes</td>
+<td class="entry" align="">ReasonInsight</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">parent-invoice-header-id</td>
+<td class="entry" align="">Parent Invoice Header ID</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_f31_2jq_11c">
+<h2 class="title sectiontitle">Invoice Line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, Line Split, Tax Line, or Payment.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">When the invoice line was created at in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">When the invoice line was last updated at in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">total</td>
+<td class="entry" align="">The total amount of the invoice, excluding all distributed summary amounts.</td>
+<td class="entry" align="">decimal(46,20)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total</td>
+<td class="entry" align="">The total amount of the invoice line using the Chart of Accounts currency.</td>
+<td class="entry" align="">decimal(46,20)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total-currency</td>
+<td class="entry" align="">The currency code of the Chart of Accounts.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">line-num</td>
+<td class="entry" align="">The line number of the invoice line, as it appears on the invoice. Line numbers aren't necessarily listed sequential, but will appear sequentially on the invoice.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">The invoice line description, usually taken from the description of the item.</td>
+<td class="entry" align="">string(1550)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-header-num</td>
+<td class="entry" align="">The unique identifier assigned to the corresponding purchase order within Coupa (if any).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">po-number</td>
+<td class="entry" align="">The number given to the corresponding purchase order within Coupa (if any).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-header-requested-by-email</td>
+<td class="entry" align="">The email address of the user who created the corresponding purchase order.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-header-requested-by-employee-number</td>
+<td class="entry" align="">The employee number of the user who created the purchase order.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-header-requested-by-login</td>
+<td class="entry" align="">the username of the person who created the purchase order.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the corresponding line on the purchase order (if any).</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-line-num</td>
+<td class="entry" align="">The line number of the corresponding purchase order line (if any).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-line-commodity</td>
+<td class="entry" align="">The commodity ID of the line item on the purchase order (if any).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">price</td>
+<td class="entry" align="">The price of the order line item.</td>
+<td class="entry" align="">decimal(46,20)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">quantity</td>
+<td class="entry" align="">The quantity of the order line item.</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">uom</td>
+<td class="entry" align="">The unit of measure code. it must already exist in Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">price-per-weight</td>
+<td class="entry" align="">The price per weight of the order line item.</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">net-weight</td>
+<td class="entry" align="">The net weight of the order line item.</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">weight-uom</td>
+<td class="entry" align="">The unit of measure code of weight. it must already exist in Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bulk-price</td>
+<td class="entry" align="">Describes the non unit quantity price. This can be used to provide price agreed for a bulk quantity. This should be accompanied with 'Bulk Price Quantity' and optionally 'Bulk Price UoM', 'Bulk Price Conversion Numerator' and 'Bulk Price Conversion Denominator'.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bulk-price-qty</td>
+<td class="entry" align="">Describes the number of units of the line item the 'Bulk Price' describes the price for.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bulk-price-uom</td>
+<td class="entry" align="">Describes the UoM to express the Bulk Price. This is required if the line UoM is different than 'Bulk Price UoM'.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bulk-price-conversion-numerator</td>
+<td class="entry" align="">Numerator value for the ratio to convert from 'Bulk Price UoM' to line UoM. Value defaults from corresponding PO line if invoice line UoM matches PO line UoM and the PO Bulk Price UoM matches the invoice 'Bulk Price UoM'.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">bulk-price-conversion-denominator</td>
+<td class="entry" align="">Denominator value for the ratio to convert from 'Bulk Price UoM' to line UoM. A blank is interpreted as 1 as long as 'Bulk Price UoM' is present.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">The current status of the invoice line. Possible values are: new, ap_hold, draft, on_hold, pending_receipt, disputed, pending_approval, approved, voided, booking_hold, save_as_draft</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-rate</td>
+<td class="entry" align="">The tax rate indicated on the invoice line. Only has a value if the header item line level taxation is set toTrue.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-location</td>
+<td class="entry" align="">Only has a value if the header item line level taxation is set to True.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-code</td>
+<td class="entry" align="">The tax rate code for the line tax rate. Must match an existing tax rate code within Coupa. Only has a value if the header item line level taxation is set to True.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-amount</td>
+<td class="entry" align="">Only has a value if the header item line level taxation is set to True.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">total-tax</td>
+<td class="entry" align="">The amount of total tax of the invoice line with multiple tax lines.</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-description</td>
+<td class="entry" align="">The line level tax description.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-supply-date</td>
+<td class="entry" align="">The line level tax supply date in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-code</td>
+<td class="entry" align="">The account code from Coupa. All segments are concatenated with a hyphen ( - ).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-active</td>
+<td class="entry" align="">A flag in Coupa to indicate if the account is active and can be selected. True or False.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">original-date-of-supply</td>
+<td class="entry" align="">Original Date of Supply</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">delivery-note-number</td>
+<td class="entry" align="">Delivery Note Number</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">discount-amount</td>
+<td class="entry" align="">Discount Amount</td>
+<td class="entry" align="">decimal(30,3)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">company-uom</td>
+<td class="entry" align="">The unit of measurement that the company uses internally (for comercial purposes).</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">property-tax-account</td>
+<td class="entry" align="">Property Tax Account</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">commodity-name</td>
+<td class="entry" align="">The Name of the Invoice Line Commodity</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-part-number</td>
+<td class="entry" align="">Part or identification number of the goods.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">customs-declaration-number</td>
+<td class="entry" align="">Customs Declaration Number</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">hsn-sac</td>
+<td class="entry" align="">HSN/SAC</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">unspsc</td>
+<td class="entry" align="">UNSPSC</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">category</td>
+<td class="entry" align="">Used to automate tax codes in Coupa Invoicing. Acceptable values: Goods or Services.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">goods, services</td>
+</tr>
+<tr class="">
+<td class="entry" align="">subcategory</td>
+<td class="entry" align="">Used to automate tax codes in Coupa Invoicing. Acceptable values: Raw materials, Investment goods or Services exceptions.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">raw_materials, investment_goods, services_exceptions</td>
+</tr>
+<tr class="">
+<td class="entry" align="">deductibility</td>
+<td class="entry" align="">Used to automate tax codes in Coupa Invoicing. Acceptable values: Fully, Partially or Not.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">fully_deductible, partially_deductible, not_deductible</td>
+</tr>
+<tr class="">
+<td class="entry" align="">billing-notes</td>
+<td class="entry" align="">A text field for adding notes to a billing line.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-1</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-2</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-3</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-4</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-5</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-6</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-7</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-8</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-9</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-10</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-11</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-12</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-13</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-14</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-15</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-16</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-17</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-18</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-19</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-20</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-name</td>
+<td class="entry" align="">The account name from Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-email</td>
+<td class="entry" align="">The email address of the user who created the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-employee-number</td>
+<td class="entry" align="">The employee number of the user who created the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-login</td>
+<td class="entry" align="">The username of the user who created the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-email</td>
+<td class="entry" align="">The email address of the user who last updated the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-employee-number</td>
+<td class="entry" align="">The employee number of the user who last updated the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-login</td>
+<td class="entry" align="">The username of the user who last updated the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">distributed-tax-amount</td>
+<td class="entry" align="">The amount of tax for the line item based on weighted summary expense distribution.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">distributed-shipping-amount</td>
+<td class="entry" align="">The amount of shipping for the line item based on weighted summary expense distribution.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">distributed-handling-amount</td>
+<td class="entry" align="">The amount of handling for the line item based on weighted summary expense distribution.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">distributed-misc-amount</td>
+<td class="entry" align="">The amount of misc for the line item based on weighted summary expense distribution.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">match-reference</td>
+<td class="entry" align="">Three-way match attribute to connect with Receipt and Invoice Header.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">fiscal-code</td>
+<td class="entry" align="">Fiscal Code</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">classification-of-goods</td>
+<td class="entry" align="">Classification of Goods</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">municipality-taxation-code</td>
+<td class="entry" align="">Municipality Taxation Code</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">item-barcode</td>
+<td class="entry" align="">Item Barcode</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_acw_2jq_11c">
+<h2 class="title sectiontitle">Invoice Line Allocation</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, or Line Split or Tax Line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">line-num</td>
+<td class="entry" align="">The line number of the invoice line, as it appears on the invoice. Line numbers aren't necessarily listed sequential, but will appear sequentially on the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-header-num</td>
+<td class="entry" align="">The number given to the corresponding purchase order within Coupa (if any).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the corresponding line on the purchase order (if any).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-line-num</td>
+<td class="entry" align="">The line number of the corresponding purchase order line (if any).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-allocation-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the account allocation. Split line accounting must be enabled.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-allocation-sequence</td>
+<td class="entry" align="">The unique sequential counter Coupa assigns to the account allocation split. Split line accounting must be enabled.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-allocation-amount</td>
+<td class="entry" align="">The dollar amount for this account allocation. Split line accounting must be enabled.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-allocation-percent</td>
+<td class="entry" align="">The percentage of the total amount allocated to this split. Split line accounting must be enabled.</td>
+<td class="entry" align="">decimal(16,10)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-code</td>
+<td class="entry" align="">The account code from Coupa. All segments are concatenated with a hyphen ( - ).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-active</td>
+<td class="entry" align="">A flag in Coupa to indicate if the account is active and can be selected. True or False.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">billing-notes</td>
+<td class="entry" align="">A note to capture any information on this account allocation split.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-1</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-2</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-3</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-4</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-5</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-6</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-7</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-8</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-9</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-10</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-11</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-12</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-13</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-14</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-15</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-16</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-17</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-18</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-19</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-20</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-name</td>
+<td class="entry" align="">The account name from Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency_code</td>
+<td class="entry" align="">The currency code of the transaction.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total</td>
+<td class="entry" align="">The total amount of the invoice using the Chart of Accounts currency. Doesn't include line and summary amounts.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting_currency</td>
+<td class="entry" align="">The currency code of the Chart of Accounts.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">distributed-tax-amount</td>
+<td class="entry" align="">The amount of tax for the line item based on weighted summary expense distribution.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">distributed-shipping-amount</td>
+<td class="entry" align="">The amount of shipping for the line item based on weighted summary expense distribution.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">distributed-handling-amount</td>
+<td class="entry" align="">The amount of handling for the line item based on weighted summary expense distribution.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">distributed-misc-amount</td>
+<td class="entry" align="">The amount of misc for the line item based on weighted summary expense distribution.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_fxt_fjq_11c">
+<h2 class="title sectiontitle">Invoice Charge</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, Line Split, Charge, Charge Split, Tax Line, or Payment.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-charge-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice charge.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">line-type</td>
+<td class="entry" align="">The kind of charge. Possible values are InvoiceShippingCharge, InvoiceHandlingCharge, or InvoiceMiscCharge.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">When the invoice charge was created at in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">When the invoice charge was last updated at in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">total</td>
+<td class="entry" align="">The total amount of the charge.</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">percent</td>
+<td class="entry" align="">The percent value of this charge (only for percent-based charges &amp; allowances. Not yet used.)</td>
+<td class="entry" align="">decimal(16,10)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total</td>
+<td class="entry" align="">The total amount of the invoice charge using the Chart of Accounts currency.</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total-currency</td>
+<td class="entry" align="">The currency code of the Chart of Accounts.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">line-num</td>
+<td class="entry" align="">The line number of the invoice charge, as it appears on the invoice. Line numbers aren't necessarily listed sequential, but will appear sequentially on the invoice.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">The invoice charge description.</td>
+<td class="entry" align="">string(1550)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-rate</td>
+<td class="entry" align="">The tax rate indicated on the invoice charge.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-location</td>
+<td class="entry" align="">The location for tax on this charge</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-code</td>
+<td class="entry" align="">The tax rate code for the charge tax rate. Must match an existing tax rate code within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-amount</td>
+<td class="entry" align="">The amount of the tax on this charge</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">total-tax</td>
+<td class="entry" align="">The amount of total tax on this charge</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-description</td>
+<td class="entry" align="">The charge level tax description.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-supply-date</td>
+<td class="entry" align="">The charge level tax supply date in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-code</td>
+<td class="entry" align="">The account code from Coupa. All segments are concatenated with a hyphen ( - ).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-active</td>
+<td class="entry" align="">A flag in Coupa to indicate if the account is active and can be selected. True or False.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">billing-notes</td>
+<td class="entry" align="">A text field for adding notes to a billing line.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-1</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-2</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-3</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-4</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-5</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-6</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-7</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-8</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-9</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-10</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-11</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-12</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-13</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-14</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-15</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-16</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-17</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-18</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-19</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-20</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-name</td>
+<td class="entry" align="">The account name from Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-email</td>
+<td class="entry" align="">The email address of the user who created the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-employee-number</td>
+<td class="entry" align="">The employee number of the user who created the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-login</td>
+<td class="entry" align="">The username of the user who created the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-email</td>
+<td class="entry" align="">The email address of the user who last updated the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-employee-number</td>
+<td class="entry" align="">The employee number of the user who last updated the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-login</td>
+<td class="entry" align="">The username of the user who last updated the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_jyk_gjq_11c">
+<h2 class="title sectiontitle">Invoice Charge Allocation</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, or Line Split or Tax Line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-charge-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice charge.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">line-num</td>
+<td class="entry" align="">The line number of the invoice charge, as it appears on the invoice. Line numbers aren't necessarily listed sequential, but will appear sequentially on the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-allocation-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the account allocation. Split line accounting must be enabled.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-allocation-sequence</td>
+<td class="entry" align="">The unique sequential counter Coupa assigns to the account allocation split. Split line accounting must be enabled.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-allocation-amount</td>
+<td class="entry" align="">The dollar amount for this account allocation. Split line accounting must be enabled.</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-allocation-percent</td>
+<td class="entry" align="">The percentage of the total amount allocated to this split. Split line accounting must be enabled.</td>
+<td class="entry" align="">decimal(16,10)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-code</td>
+<td class="entry" align="">The account code from Coupa. All segments are concatenated with a hyphen ( - ).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-active</td>
+<td class="entry" align="">A flag in Coupa to indicate if the account is active and can be selected. True or False.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">billing-notes</td>
+<td class="entry" align="">A note to capture any information on this account allocation split.</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-1</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-2</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-3</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-4</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-5</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-6</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-7</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-8</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-9</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-10</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-11</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-12</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-13</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-14</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-15</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-16</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-17</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-18</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-19</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">segment-20</td>
+<td class="entry" align="">Account segment within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">account-name</td>
+<td class="entry" align="">The account name from Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency_code</td>
+<td class="entry" align="">The currency code of the transaction.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total</td>
+<td class="entry" align="">The total amount of the invoice using the Chart of Accounts currency. Doesn't include line and summary amounts.</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting_currency</td>
+<td class="entry" align="">The currency code of the Chart of Accounts.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_fz4_n4q_11c">
+<h2 class="title sectiontitle">Tax Line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, Line Split, Tax Line, or Payment.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-number</td>
+<td class="entry" align="">The user-created invoice number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-number</td>
+<td class="entry" align="">The line number of the corresponding invoice line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-charge-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice charge</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-charge-number</td>
+<td class="entry" align="">The line number of the invoice charge</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-line-number</td>
+<td class="entry" align="">The line number of the corresponding of the tax line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the tax line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount</td>
+<td class="entry" align="">The amount of tax calculated on the line.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">rate</td>
+<td class="entry" align="">The tax rate indicated on the invoice line.</td>
+<td class="entry" align="">float</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-rate-type</td>
+<td class="entry" align="">The tax rate type description on the line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">code</td>
+<td class="entry" align="">The tax rate code for the invoice line tax rate. Must match an existing tax rate code within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount-engine</td>
+<td class="entry" align="">Amount calculated by either Coupa Native or External Tax Engine based on configuration</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">code-engine</td>
+<td class="entry" align="">Code returned by External Tax Engine based on configuration</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">rate-engine</td>
+<td class="entry" align="">Rate returned by External Tax Engine based on configuration</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">The tax line description.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">location</td>
+<td class="entry" align="">The taxable location for this tax line.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">date</td>
+<td class="entry" align="">The tax line date in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">kind-of-factor</td>
+<td class="entry" align="">Kind of Factor indicates the specific type of Withholding which applies to the line item</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">basis</td>
+<td class="entry" align="">Basis indicates the CFDI base amount of the invoice or line item to which withholding tax was applied</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Base Amount</td>
+<td class="entry" align="">Base indicates the base amount of the invoice or line item to which tax was applied</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Withholding Rate</td>
+<td class="entry" align="">CFDI Withholding Rate</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Withholding Amount</td>
+<td class="entry" align="">CFDI Withholding Amount</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">nature-of-tax</td>
+<td class="entry" align="">Nature of Tax indicates the specific type of tax which applies to the line item e.g. VAT or Withholding</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Withholding Amount</td>
+<td class="entry" align="">Withholding Amount</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Direct/Withholding Tax/TCS Tax</td>
+<td class="entry" align="">WithholdingTaxLine, TcsTaxLine or TaxLine</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">product-tax-classification</td>
+<td class="entry" align="">Product Tax Classification</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_hvh_44q_11c">
+<h2 class="title sectiontitle">Withholding Tax Line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, Line Split, Tax Line, or Payment.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-number</td>
+<td class="entry" align="">The user-created invoice number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-number</td>
+<td class="entry" align="">The line number of the corresponding purchase order line (if any).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-line-number</td>
+<td class="entry" align="">The line number of the corresponding of the tax line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">tax-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the tax line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount</td>
+<td class="entry" align="">The amount of tax calculated on the line.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">rate</td>
+<td class="entry" align="">The tax rate indicated on the invoice line.</td>
+<td class="entry" align="">float</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">code</td>
+<td class="entry" align="">The tax rate code for the invoice line tax rate. Must match an existing tax rate code within Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">The tax line description.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">location</td>
+<td class="entry" align="">The taxable location for this tax line.</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">date</td>
+<td class="entry" align="">The tax line date in the format YYYY-MM-DDTHH:MM:SS+HH:MM.</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">kind-of-factor</td>
+<td class="entry" align="">Kind of Factor indicates the specific type of Withholding which applies to the line item</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">basis</td>
+<td class="entry" align="">Basis indicates the CFDI base amount of the invoice or line item to which withholding tax was applied</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Withholding Base</td>
+<td class="entry" align="">Base indicates the base amount of the invoice or line item to which withholding tax was applied</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Withholding Rate</td>
+<td class="entry" align="">CFDI Withholding Rate</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Withholding Amount</td>
+<td class="entry" align="">CFDI Withholding Amount</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">nature-of-tax</td>
+<td class="entry" align="">Nature of Tax indicates the specific type of tax which applies to the line item e.g. VAT or Withholding</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Withholding Amount</td>
+<td class="entry" align="">Withholding Amount</td>
+<td class="entry" align="">decimal(30,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Direct/Withholding Tax</td>
+<td class="entry" align="">WithholdingTaxLine or TaxLine</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_y2h_p4q_11c">
+<h2 class="title sectiontitle">Matching Allocation</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the corresponding line on the purchase order (if any).</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-header-number</td>
+<td class="entry" align="">The order header number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-line-num</td>
+<td class="entry" align="">The order line number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-line-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the invoice line.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">receipt-id</td>
+<td class="entry" align="">The unique identifier Coupa assigns to the receipt.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">match-reference-key</td>
+<td class="entry" align="">The match reference key as described in the receipt used to trigger a match attempt to a candidate invoice line.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">quantity</td>
+<td class="entry" align="">The quantity of the invoice line item.</td>
+<td class="entry" align="">decimal(32,6)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount</td>
+<td class="entry" align="">The total amount of the receipt allocation to this invoice line.</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">uom</td>
+<td class="entry" align="">The unit of measure code. It must already exist in Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">The currency code of the transaction.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">Describes the current status of this allocation record, If the allocation described in this record is active or has been voided. Can have values in Void, Matched.</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="failed_tolerance_columns">
+<h2 class="title sectiontitle">Failed tolerance columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<b>#</b>
+</td>
+<td class="entry" align="">
+<b>Column Name</b>
+</td>
+<td class="entry" align="">
+<b>Description</b>
+</td>
+<td class="entry" align="">
+<b>Type</b>
+</td>
+<td class="entry" align="">
+<b>Req/Unique</b>
+</td>
+<td class="entry" align="">
+<b>Allowable Values</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">1</td>
+<td class="entry" align="">code</td>
+<td class="entry" align="">Code</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align="">Any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">2</td>
+<td class="entry" align="">failable-id</td>
+<td class="entry" align="">Failable ID</td>
+<td class="entry" align="">integer(11)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">3</td>
+<td class="entry" align="">failable-type</td>
+<td class="entry" align="">Failable Type</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">4</td>
+<td class="entry" align="">resolved</td>
+<td class="entry" align="">Resolved</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Yes/No, True/False</td>
+</tr>
+<tr class="">
+<td class="entry" align="">5</td>
+<td class="entry" align="">resolution-strategy</td>
+<td class="entry" align="">Resolution Strategy</td>
+<td class="entry" align="">string(25)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">6</td>
+<td class="entry" align="">breach-amount</td>
+<td class="entry" align="">Breach Amount</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">7</td>
+<td class="entry" align="">breach-limit</td>
+<td class="entry" align="">Breach Limit</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">8</td>
+<td class="entry" align="">breach-detail-1</td>
+<td class="entry" align="">Breach Detail 1</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">9</td>
+<td class="entry" align="">breach-detail-2</td>
+<td class="entry" align="">Breach Detail 2</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">10</td>
+<td class="entry" align="">breach-detail-3</td>
+<td class="entry" align="">Breach Detail 3</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">Any</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_hww_3jq_11c">
+<h2 class="title sectiontitle">Invoice Reconciliation Line</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">Describes the type of row. Possible values are Header, Line, Line Split, Tax Line, or ReconciliationLine.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Adjustment Date</td>
+<td class="entry" align="">The date the payment was made</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type of document</td>
+<td class="entry" align="">The type of document that was paid</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount</td>
+<td class="entry" align="">The total amount paid</td>
+<td class="entry" align="">decimal(46,20)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice ID</td>
+<td class="entry" align="">The document ID that is being paid</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created By ID</td>
+<td class="entry" align="">The user ID that created the payment</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created By Login</td>
+<td class="entry" align="">The user login that created the invoice payment</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created Date</td>
+<td class="entry" align="">The date the payment initially drafted</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated By ID</td>
+<td class="entry" align="">The user ID that most recently updated the payment</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated By Login</td>
+<td class="entry" align="">Ther user login that most recently updated the invoice payment</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated Date</td>
+<td class="entry" align="">The date the payment was most recently updated</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Note</td>
+<td class="entry" align="">Note associated with the payment</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Category</td>
+<td class="entry" align="">Category of the reconciliation (payment, discount, adjustment, credit)</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align="">payment, discount, adjustment, tax, credit, tax_line_adjustment, system_adjustment, auto_adjustment, prepayment_adjustment, recurring_adjustment, post_approval_early_payment_discount</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_zpq_y4q_11c">
+<h2 class="title sectiontitle">Invoice To Pay</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">type</td>
+<td class="entry" align="">Describes the type of row. Possible value is InvoicePayable</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">The ID of the invoice</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">The date the invoice was created on</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">The date the invoice was last updated on</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">The status of the invoice</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">paid-date</td>
+<td class="entry" align="">The date the invoice was marked as fully paid</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">paid-total</td>
+<td class="entry" align="">The total amount paid</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remaining-total</td>
+<td class="entry" align="">The total amount remaining to be paid</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">remittance-total</td>
+<td class="entry" align="">The total remittance amount required</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">accounting-total</td>
+<td class="entry" align="">The total of the invoice in the CoA currency</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">exported</td>
+<td class="entry" align="">A flag indicating if the invoice has been marked as exported</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">last-exported-at</td>
+<td class="entry" align="">The date that the invoice was last marked as exported</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">discount-amount</td>
+<td class="entry" align="">The discount amount taken</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">discount-rate</td>
+<td class="entry" align="">The discount rate taken</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">discount-due-date</td>
+<td class="entry" align="">The discount due date</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">document-type</td>
+<td class="entry" align="">The type of invoice</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-channel</td>
+<td class="entry" align="">The payment channel on the associated InvoiceHeader</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payable-type</td>
+<td class="entry" align="">The type of associated payable. Value is InvoiceHeader</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">payable-id</td>
+<td class="entry" align="">The ID of the associated InvoiceHeader</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">net-due-date</td>
+<td class="entry" align="">The net due date of the invoice</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-name</td>
+<td class="entry" align="">The suppliers name from the associated InvoiceHeader</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier-number</td>
+<td class="entry" align="">The suppliers number from the associated InvoiceHeader</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice-number</td>
+<td class="entry" align="">The invoice number from the associated InvoiceHeader</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">chart-of-account-code</td>
+<td class="entry" align="">The Chart of Accounts name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">legal-entity-name</td>
+<td class="entry" align="">The Chart of Accounts Legal Entity name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">wc-eligibility</td>
+<td class="entry" align="">Eligible for Coupa Pay Working Capital</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

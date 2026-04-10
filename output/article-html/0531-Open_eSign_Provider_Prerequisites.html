@@ -1,0 +1,28 @@
+<article class="" id="open_esign_provider_prerequisites">
+<h1 class="title">Open eSign Provider Prerequisites</h1>
+<div class="body">
+<p class="">To have Coupa add a new e-signature provider as an available
+Open eSign option, the provider must satisfy the following
+requirements:</p>
+<ul class="ul">
+<li class="li">Provide a UI for signing and integrating the User workflow from
+Coupa to the provider.</li>
+<li class="li">Provide a default configuration that ensures that the
+integration with Coupa works without expecting any additional
+configuration or parameters for the integration.</li>
+<li class="li">Provide an API endpoint for Coupa to connect to</li>
+</ul>
+<p class="">Additionally, the API must meet the following authentication
+requirements:</p>
+<ul class="ul">
+<li class="li">Custom - Basic Authentication</li>
+<li class="li">Callback mechanism to call Coupa endpoints for signing
+statuses</li>
+</ul>
+<p class="">Finally, the provider must be able to build and host the Open
+eSign Connector that implements Coupa's Open eSign API. The coding
+language and infrastructure can be of the provider's choosing, as
+long as Coupa is able to call the connector's API, just as we would
+any other external API.</p>
+</div>
+</article>

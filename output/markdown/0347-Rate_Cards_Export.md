@@ -1,0 +1,33 @@
+---
+title: "Rate Cards Export"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/rate-cards-export"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/rate-cards-export"
+status_code: 200
+fetched_at: "2026-04-09T12:00:26+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Export"
+  - "Rate Cards Export"
+---
+
+# Rate Cards Export
+
+## Rate Cards
+
+| Field Name | Description | Field Type | Required/Unique | Possible Values |
+| --- | --- | --- | --- | --- |
+| RateCardLine | Specifies the header format for the row. | | No/No | |
+| PO Number / Coupa Internal ID | The PO Number or Coupa Internal ID associated with the order header. | | No/No | |
+| Coupa Purchase Order Line ID | The Coupa Purchase Order Line ID. | | No/No | |
+| Coupa Purchase Order Line Number | The Coupa Purchase Order Line Number. | | No/No | |
+| Active | Indicates whether the rate card line is active. | boolean | No/No | |
+| Name | The name of the rate card line. | string(255) | Yes/No | |
+| Code | The code of the rate card line. | string(255) | No/No | |
+| Type | The type of the rate card line. | | No/No | |
+| Price | The price associated with the rate card line. | decimal(30,6) | Yes/No | |
+| Unit of Measure | The unit of measure for the rate card line. | | No/No | |
+| Currency | The currency of the rate card line. | | Yes/No | |
+| Source | The source of the rate card line. | | No/No | |
+| Created At | The timestamp when the rate card line was created. | datetime | No/No | |
+| Updated At | The timestamp when the rate card line was last updated. | datetime | No/No | |

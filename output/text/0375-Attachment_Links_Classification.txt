@@ -1,0 +1,17 @@
+Attachment Links Classification
+
+Export of these records is included as a Standard CSV Export.
+
+Attachment Links Classification
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Contract Header 	No 	No 	 	Contract Header
+Contract ID 	No 	No 	 	Contract ID
+Contract Number 	No 	No 	 	Contract Number
+Contract Name 	No 	No 	 	Contract Name
+Attachment Header 	No 	No 	 	Attachment Header
+Attachment Name 	No 	No 	 	Attachment Name
+Attachment ID 	No 	No 	 	Attachment ID
+Classification Name 	No 	No 	 	Classification Name
+Classification ID 	No 	No 	 	Classification ID
+Attachment Description 	No 	No 	 	Attachment Description

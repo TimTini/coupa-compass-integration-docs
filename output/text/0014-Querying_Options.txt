@@ -1,0 +1,101 @@
+Querying Options
+
+See how you can use queries to quickly identify and pull the data you require.
+
+Through the Coupa API you can execute advanced queries along you to quickly identify and pull the data that you require. We've established a "syntax" for constructing these queries. With this capability, you can also search for attributes on referenced / child objects. For instance, you can find requisitions by searching on attributes related to the requisition lines.
+
+General Syntax <url>?<attribute><[operator]>=<value>&...
+
+So, if you see:
+<order-header> <order-lines> <order-line> <account> <code>a-c</code> </account> </order-line> </order-lines> </order-header>
+
+You would query the account via order-lines[account][code]. Note that for collections of elements, such as order-lines in this case, use the plural form and ignore the nested singular form.
+
+Supported Operators
+
+Operator
+
+Notes
+
+<none/no operator>
+
+Exact match/equality, same as the previous behavior
+
+contains
+
+Not used with date fields
+
+starts_with
+
+Not used with date fields
+
+ends_with
+
+Not used with date fields
+
+blank
+
+Accepts true or false
+
+gt
+
+Greater than
+
+lt
+
+Less than
+
+gt_or_eq
+
+Greater than or equal to
+
+lt_or_eq
+
+Less than or equal to
+
+not_eq
+
+Not equal to
+
+in
+
+Within list of values
+
+not_in 	Not within a list of values
+
+Examples
+
+Querying with operators
+<instancename>.coupahost.com/api/purchase_orders?exported=false&created_at[gt]=2010-01-15
+
+Testing for equality through an association
+<instancename>.coupahost.com/api/purchase_orders?exported=false&created_at[gt]=2010-01-15&supplier[name]=Fishy
+
+Using operators through an association
+<instancename>.coupahost.com/api/purchase_orders?exported=false&created_at[gt]=2010-01-15&supplier[name][gt]=Fish
+
+Querying through 2 levels of association, including a one-to-many
+<instancename>.coupahost.com/api/purchase_orders?exported=false&created_at[gt]=2010-01-15&supplier[name][gt]=Fish&order_lines[account][code]=a-c
+
+In list of values
+<instancename>.coupahost.com/api/invoices?status[in]=approved,voided
+
+If your search provides no records, you should see that message in the API response. If your search query is invalid, we will try to help you identify the problem in the API response.
+
+Note Regarding Dates & Times
+
+We expect dates to specified in a strict subset of the ISO 8601 format (e.g. 2010-03-25T18:38:00-07:00 for 6:38pm on 3/25/10 PDT). We will attempt to parse whatever we receive, but be aware that time zone effects may lead to unexpected results if dates are in a different format. Currently, any date specified without a time and timezone will be interpreted as midnight at the beginning of that day, UTC.
+
+Dates are always stored with an implicit or explicit time component, representing a specific point in time. Dates entered via the Coupa UI have a time that corresponds to midnight in the company's default timezone. Automatically generated dates, such as created_at and updated_at attributes, are more precise. If you don't know the specific time you're querying for, and are interested in documents created over the course of particular days, make sure you query for the appropriate time ranges and not for one particular time.
+
+When using dates and times in queries via URL, note that a colon ( :) needs to be replaced with %3A and a plus sign ( +) needs to be replaced with %2B. Since all conditions you pass in must be true for results to be returned, you can effectively specify date ranges using the comparison operators. For example, to limit queries to a particular day in Pacific Time, you could use the conditions:
+created_at[gt_or_eq]=2010-03-25T00:00:00-07:00&created_at[lt]=2010-03-26T00:00:00-07:00
+
+Limit of records per each query call
+
+We allow up to 50 records per API GET to keep processing speeds more efficient and guard both you and Coupa from unintentionally returning large data packets.
+
+If you need to get more than 50 records, you can rerun API get with an offset. Ex. below API URL would provide next 50 records after first 50 was pulled (51-100). So you can keep adjusting the offset to get increments of 50.
+https://instance.coupahost.com/api/invoices?offset=50&exported=false
+
+You want to ensure to pull 'exported=false' queries in your API calls so that you only pull records that have not been exported before. That should limit amount of records that you are pulling when you run your integrations.

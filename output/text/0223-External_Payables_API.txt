@@ -1,0 +1,40 @@
+External Payables API
+
+Actions
+
+Verb 	 Path 	 Action 	 Description
+POST 	 /api/payables/external/payables 	create 	Create External Payable
+GET 	 /api/payables/external/payables 	index 	Query External Payables
+GET 	 /api/payables/external/payables/:id 	show 	Show External Payable
+PATCH 	 /api/payables/external/payables/:id 	update 	Update External Payable
+PUT 	 /api/payables/external/payables/:id 	update 	Update External Payable
+PUT 	 /api/payables/external/payables/:id/void 	void 	Void External Payable
+PATCH 	 /api/payables/external/payables/:id/void 	void 	Void External Payable
+
+Elements
+
+Keys: id
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+account-type 	Chart of Accounts 	yes 	 	 	yes 	 	AccountType
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	User
+currency 	Currency 	yes 	 	 	yes 	 	Currency
+currency-id 	Currency Id 	 	 	 	 	yes 	integer
+document-amount 	The total amount of the document being paid 	yes 	 	 	yes 	yes 	decimal(30,6)
+document-date 	The date of the document being paid 	 	 	 	yes 	 	datetime
+document-number 	Associated document reference number from source system 	yes 	 	 	yes 	yes 	string(255)
+document-type 	The type of the document being paid 	yes 	 	valid_document_types 	yes 	yes 	string(50)
+due-date 	Due date 	 	 	 	yes 	 	datetime
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+paid-amount 	Total amount paid 	 	 	 	yes 	yes 	decimal(30,6)
+paid-date 	Paid date 	 	 	 	yes 	yes 	datetime
+payable-amount 	The amount of the document which is ready to be paid 	yes 	 	 	yes 	yes 	decimal(30,6)
+payable-detail 	Additional payable details 	 	 	 	yes 	 	Payables/ExternalSupplierPayable
+remaining-amount 	Remaining amount to pay 	 	 	 	yes 	 	decimal(30,6)
+remittance-amount 	Total amount to pay 	 	 	 	yes 	 	decimal(30,6)
+source-name 	The name of the source system 	yes 	 	 	yes 	yes 	string(50)
+source-reference 	Unique reference number from source system 	yes 	 	 	yes 	yes 	string(255)
+status 	The current status of the payable 	 	 	 	 	yes 	string(50)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	User

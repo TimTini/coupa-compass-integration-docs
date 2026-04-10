@@ -1,0 +1,343 @@
+<article class="" id="comments_api">
+<h1 class="title">Comments API</h1>
+<p class="">
+<p class="">Use the Comments API to create, display, and update comments on Coupa documents.</p>
+</p>
+<div class="body">
+<div class="" id="introduction-d957e107425">
+<h2 class="title sectiontitle">Introduction</h2>
+<p class="">The URL to access contract terms
+is: <code class="ph codeph">https://&lt;instance&gt;/api/comments</code>. You
+can also include attachments with your comment by adding
+<code class="ph codeph">/attachments</code> to the end of the URL. See the warning
+below for limitations.</p>
+</div>
+<div class="" id="actions-d957e107434">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">To GET or POST comments, use the API for the object you’d
+like to pull data for, and add <code class="ph codeph">/comments</code> to the end of
+the url; it should look like this:</p>
+<p class="">
+<code class="ph codeph">/api/{transactional_object}/{object_id}/comments</code>.</p>
+<p class="">Using the GET call gets all comments for the document, where the
+POST call adds a new comment.</p>
+<p class="">Comments can also be added by using <code class="ph codeph">/api/comments</code>,
+where a payload is required to GET or POST properly.</p>
+<p class="">The Comments API allows you to perform the following
+actions:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/invoices/:invoice_id/comments</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create comment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/expense_reports/:expense_report_id/comments</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create comment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/purchase_orders/:purchase_order_id/comments</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create comment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/users/:user_id/comments</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create comment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/requisitions/:requisition_id/comments</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create comment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/invoices/:invoice_id/comments</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query comments</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/expense_reports/:expense_report_id/comments</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query comments</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/purchase_orders/:purchase_order_id/comments</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query comments</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/users/:user_id/comments</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query comments</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/requisitions/:requisition_id/comments</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query comments</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/invoices/:invoice_id/comments/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show comment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/expense_reports/:expense_report_id/comments/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show comment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/purchase_orders/:purchase_order_id/comments/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show comment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/users/:user_id/comments/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show comment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/requisitions/:requisition_id/comments/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show comment</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Warning: </span>
+<ul class="ul">
+<li class="li">Passing an invalid id to the endpoint which has the nested loop as
+            /api/comments/{invalid comment id}/attachments results in an airbrake and it's same for
+            other objects</li>
+<li class="li">While passing the URL type attachment id to the endpoint /api/comments/{comment
+            id}/attachments/{URL type attachment id} to view the particular attachment shows the
+            following error: <i>Attachment does not have a file attached</i>
+</li>
+</ul>
+</div>
+</div>
+<div class="" id="elements-d957e107821">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the
+Comments API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api-In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api-Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">attachments</td>
+<td class="entry" align="">attachments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">N/A</td>
+</tr>
+<tr class="">
+<td class="entry" align="">commentable-id</td>
+<td class="entry" align="">commentable-id</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">commentable-type</td>
+<td class="entry" align="">commentable-type</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">comment-type</td>
+<td class="entry" align="">Denotes the type of the comment and is for internal use only</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">comments</td>
+<td class="entry" align="">The comment you want to post. You can mention a user by
+including <code class="ph codeph">@[User:{id}]</code> as part of the comment
+field.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">text</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by</td>
+<td class="entry" align="">User who created the comment.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa's unique identifier for the comment.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">reason-code</td>
+<td class="entry" align="">Comment reason code</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">to-supplier</td>
+<td class="entry" align="">to be shown to supplier?</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">boolean</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by</td>
+<td class="entry" align="">User who updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">user</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="example_post_call">
+<h2 class="title sectiontitle">Example: POST Call</h2>
+<pre>
+<code class="codeblock">&lt;comment&gt;
+	 &lt;commentable-id type="integer"&gt;123456&lt;/commentable-id&gt;
+	 &lt;commentable-type&gt;InvoiceHeader&lt;/commentable-type&gt;
+	 &lt;comments&gt;COMMENT TEXT&lt;/comments&gt;
+&lt;/comment&gt;</code>
+</pre>
+<p class="">It is also possible to mention a specific user in a comment posted via the API, this will
+        notify the user that they have been mentioned in the comment, provided that they have
+        document mentions notifications turned on. When mentioning a user in a comment via the API
+        refer to them via their user's technical ID, for example, to mention the user with technical
+        ID 2 - include "@[User:2] " in the comment text, like
+        this:<pre>
+<code class="codeblock">&lt;comment&gt;
+	 &lt;commentable-id type="integer"&gt;123456&lt;/commentable-id&gt;
+	 &lt;commentable-type&gt;InvoiceHeader&lt;/commentable-type&gt;
+	 &lt;comments&gt;@[User:2] please see this comment&lt;/comments&gt;
+&lt;/comment&gt;</code>
+</pre>
+</p>
+</div>
+</div>
+</article>

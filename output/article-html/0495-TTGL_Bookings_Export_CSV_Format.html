@@ -1,0 +1,456 @@
+<article class="" id="ttgl_bookings_export_csv_format">
+<h1 class="title">TTGL Bookings Export CSV Format</h1>
+<div class="body">
+<div class="" id="format_description-d94e11973">
+<h2 class="title sectiontitle">Format Description</h2>
+<p class="">
+<a data-scope="peer" data-name="" target="" href="/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/TTGL_Bookings_Export_CSV_Format.pdf" title="">PDF Version</a>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Receipt No.</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Receipt Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Booking Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Booking Period</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Company Code</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 255</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Contract Type</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 10</p>
+</td>
+<td class="entry" align="">
+<p class="">MM, LD, etc</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Contract Sub Type</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 255</p>
+</td>
+<td class="entry" align="">
+<p class="">Abbreviation of contract subtypes as they appear in Coupa
+                Treasury</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Contract ID</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">Contract ID in Coupa Treasury</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">9</p>
+</td>
+<td class="entry" align="">
+<p class="">Flow Type</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 5</p>
+</td>
+<td class="entry" align="">
+<p class="">Long or Short</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">10</p>
+</td>
+<td class="entry" align="">
+<p class="">Type</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 255</p>
+</td>
+<td class="entry" align="">
+<p class="">Start, End, Interest, Tax, Rebooking, Accrued interest, Special
+                  disbursement, Special repayment, or Principal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">11</p>
+</td>
+<td class="entry" align="">
+<p class="">Flow Direction</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">+ or -</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">12</p>
+</td>
+<td class="entry" align="">
+<p class="">Amount</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Absolute values only, line 11 defines whether it is a negative or positive
+                  amount</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">13</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">ISO code for the currency</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">14</p>
+</td>
+<td class="entry" align="">
+<p class="">Start Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">15</p>
+</td>
+<td class="entry" align="">
+<p class="">End Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">16</p>
+</td>
+<td class="entry" align="">
+<p class="">Value Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">17</p>
+</td>
+<td class="entry" align="">
+<p class="">Counterparty Short</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">18</p>
+</td>
+<td class="entry" align="">
+<p class="">Counterparty Country</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 2</p>
+</td>
+<td class="entry" align="">
+<p class="">ISO code for country</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">19</p>
+</td>
+<td class="entry" align="">
+<p class="">Counterparty Internal/External</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 8</p>
+</td>
+<td class="entry" align="">
+<p class="">Internal or External</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">20</p>
+</td>
+<td class="entry" align="">
+<p class="">Underlying</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">21</p>
+</td>
+<td class="entry" align="">
+<p class="">Add Text</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 255</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">22</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Debit</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 255</p>
+</td>
+<td class="entry" align="">
+<p class="">Bookings account in Coupa Treasury</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">23</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Credit</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 255</p>
+</td>
+<td class="entry" align="">
+<p class="">Bookings account in Coupa Treasury</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">24</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">25</p>
+</td>
+<td class="entry" align="">
+<p class="">Reciprocal</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">26</p>
+</td>
+<td class="entry" align="">
+<p class="">Counter Value HW</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="export_function-d94e12560">
+<h2 class="title sectiontitle">Export Function</h2>
+<p class="">The export generates an
+        ASCII formatted text file. Configure the file extension and prefixes on System &gt; System
+        Settings &gt; System Settings.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/treasury_integrations/images/image18.png" alt="" title="" width="">
+<p class="">The exported file
+        contains contract data for interface with an ERP system.</p>
+<p class="">Bookings originate from
+        various financial instruments in Coupa Treasury:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Money market</p>
+</li>
+<li class="li">
+<p class="">Long-term loans</p>
+</li>
+<li class="li">
+<p class="">FX deals</p>
+</li>
+<li class="li">
+<p class="">Collaterals</p>
+</li>
+<li class="li">
+<p class="">FRAs</p>
+</li>
+<li class="li">
+<p class="">Letters of credit</p>
+</li>
+<li class="li">
+<p class="">Credit lines</p>
+</li>
+<li class="li">
+<p class="">FX options</p>
+</li>
+<li class="li">
+<p class="">Securities</p>
+</li>
+<li class="li">
+<p class="">Interest payments</p>
+</li>
+</ul>
+<p class="">The file may also contain maturities, valuations, accruals, and
+      deferrals.</p>
+</div>
+<div class="" id="format_rules-d94e12598">
+<h2 class="title sectiontitle">Format Rules</h2>
+<p class="">The file does not contain any
+        headers or format descriptions.</p>
+<p class="">Each row in the file contains exactly one data
+        set:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII Code 13: carriage return denotes the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">ASCII Code 10: new line denotes the end of a data set.</p>
+</li>
+</ul>
+<p class="">The field delimiter is the semicolon (;).</p>
+<p class="">For decimal values, the period (.) is
+        the decimal separator.</p>
+<p class="">For integer values, there are no thousands or decimal
+        separators.</p>
+<p class="">For text values, there are no quotation marks. The char value is the
+        maximum number of characters for that field.</p>
+<p class="">Days and months are always 2-digit values
+        and years are 4-digit values. There are no date separators and the date sequence is
+      ymd.</p>
+</div>
+<div class="" id="example_data_set">
+<h2 class="title sectiontitle">Example Data
+        Set</h2>
+<p class="">1;20090519;20090519;05;001;Staffel;TWAG-ABN-USD;9;Long;Zinsen;+;001;</p>
+<p class="">USD;20090512;20090512;20090512;AMRODeu;DE;Extern;;;;;0;0;0</p>
+</div>
+</div>
+</article>

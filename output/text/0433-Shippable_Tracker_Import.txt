@@ -1,0 +1,21 @@
+Shippable Tracker Import
+
+Possible values Carrier fedex, usps, ups, dhl, ontrac, asendia, apc, firstmile, newgistics, globegistics, rr_donnelley, purolator_ca Document Type Order, ASN
+
+Shippable Tracker
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Tracking Number* 	Yes 	No 	 	Tracking number
+Carrier* 	Yes 	No 	 	carrier
+Document Type* 	Yes 	No 	 	Document type Order or ASN
+Document Number* 	Yes 	No 	 	Order/ASN number
+Note 	No 	No 	 	Note optional
+Delete 	No 	No 	 	Delete the tracker if present in system
+
+Shipping Terms
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Code 	Yes 	Yes 	string(255) 	Shipping Code
+Description 	No 	No 	text 	Shipping Code Description
+Content Groups 	No 	No 	 	Enter in content groups (for security)
+Active 	Yes 	No 	boolean 	Is this shipping code available for use? 	true

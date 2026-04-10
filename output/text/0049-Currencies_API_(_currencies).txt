@@ -1,0 +1,33 @@
+Currencies API (/currencies)
+
+Use the currencies API to query the different currencies your account has set up within Coupa.
+
+Note:
+
+The PUT, POST, and PATCH actions are not supported and will be removed. Coupa will automatically create new currencies as new ISO currencies are added. For any new currencies needed that are not in Coupa, please contact Support or post as a request on the Coupa Community.
+
+The URL to access currencies is: https://<instance>/api/currencies
+
+See Integration Best Practices for more info.
+
+Actions
+
+The Currencies API allows you to:
+
+Verb 	 Path 	 Action 	 Description
+GET 	 /api/currencies 	index 	Query currencies
+GET 	 /api/currencies/:id 	show 	Show currency
+
+Elements
+
+The following elements are available for the Currencies API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+code 	code 	yes 	yes 	 	yes 	yes 	string
+created-by 	created_by 	 	 	 	 	yes 	 User
+decimals 	decimals 	 	 	 	 	yes 	integer
+enabled-flag 	enabled_flag 	 	 	 	yes 	 	boolean
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+name 	name 	yes 	yes 	 	yes 	 	string
+symbol 	symbol 	 	 	 	yes 	 	string
+updated-by 	updated_by 	 	 	 	 	yes 	 User

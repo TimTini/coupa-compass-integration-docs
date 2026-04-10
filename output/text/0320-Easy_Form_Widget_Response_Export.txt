@@ -1,0 +1,14 @@
+Easy Form Widget Response Export
+
+Export of these records is included as a Standard CSV Export.
+
+Easy Form Widget Response
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+RecordType 	The type of record type found in each row 	 	No/No
+Id 	Easy form widget respond ID 	integer 	No/No
+Created At 	The time of record creation in the format YYYY-MM-DDTHH:MM:SS+HH:MM 	datetime 	No/No
+Updated At 	Time that the record was updated in the format YYYY-MM-DDTHH:MM:SS+HH:MM 	datetime 	No/No
+Widget Type 	The type of widget added by admin to the expense preapproval form 	 	No/No
+Widget Name 	The name of the widget added to the expense preapproval form 	 	No/No
+User Response 	User's response to the widget on form response 	 	No/No

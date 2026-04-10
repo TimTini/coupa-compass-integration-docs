@@ -1,0 +1,38 @@
+Object Line API
+
+For more information, see Contract Line Definitions.
+
+Element 	 Description 	 Req 	 Unique 	 Allowed Values 	 In 	 Out 	 Type
+object_type 	Object type 	No 	No 	Any 	Yes 	 	string(255)
+object_id 	Object 	No 	No 	Any 	Yes 	 	integer
+object_line_configuration_id 	Object line configuration 	No 	No 	Any 	Yes 	 	integer
+object_line_configuration_custom_field_1 	Object line configuration custom field 1 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_2 	Object line configuration custom field 2 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_3 	Object line configuration custom field 3 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_4 	Object line configuration custom field 4 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_5 	Object line configuration custom field 5 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_6 	Object line configuration custom field 6 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_7 	Object line configuration custom field 7 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_8 	Object line configuration custom field 8 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_9 	Object line configuration custom field 9 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_10 	Object line configuration custom field 10 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_11 	Object line configuration custom field 11 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_12 	Object line configuration custom field 12 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_13 	Object line configuration custom field 13 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_14 	Object line configuration custom field 14 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_15 	Object line configuration custom field 15 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_16 	Object line configuration custom field 16 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_17 	Object line configuration custom field 17 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_18 	Object line configuration custom field 18 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_19 	Object line configuration custom field 19 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_20 	Object line configuration custom field 20 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_21 	Object line configuration custom field 21 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_22 	Object line configuration custom field 22 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_23 	Object line configuration custom field 23 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_24 	Object line configuration custom field 24 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_25 	Object line configuration custom field 25 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_26 	Object line configuration custom field 26 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_27 	Object line configuration custom field 27 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_28 	Object line configuration custom field 28 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_29 	Object line configuration custom field 29 	No 	No 	Any 	Yes 	 	string(255)
+object_line_configuration_custom_field_30 	Object line configuration custom field 30 	No 	No 	Any 	Yes 	 	string(255)

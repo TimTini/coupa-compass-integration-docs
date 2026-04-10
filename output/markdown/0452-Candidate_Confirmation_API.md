@@ -1,0 +1,100 @@
+---
+title: "Candidate Confirmation API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/candidate-confirmation-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/candidate-confirmation-api"
+status_code: 200
+fetched_at: "2026-04-09T12:00:50+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The CCW API"
+  - "Candidate Confirmation API"
+---
+
+# Candidate Confirmation API
+
+The CCW Candidate Confirmation API is designed for customers who manage some or all candidate onboarding activities through third-party applications and want to automate the process of confirming candidates, one at a time, as contingent workers (CWs). The API can process a request to confirm a single candidate, with no other data passed in the request.
+
+The CCW Candidate Lookup API can be used, in conjunction, to find candidates that meet the criteria necessary for confirmation. The Candidate Confirmation API can then confirm each eligible candidate, one by one.
+
+The base URL to access the CCW Candidate Confirmation API is: `https:///api/candidates//confirm`
+
+Refer to the [CCW API Overview](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-ccw-api/ccw-api-overview) to learn how to be authenticated by CCW APIs.
+
+## Example Request
+
+The CCW Candidate Confirm API is supported by the PUT method to confirm one candidate as a CW, by passing only that candidate's unique ID in the API request, with no explicit Request Body required. In the example below, "12345" is the unique ID retrieved from a Candidate Lookup API request:
+
+```text
+PUT /api/candidates/12345/confirm
+HOST: <CCW FQDN>
+Authorization: Bearer <token>
+Accept: "application/json"
+Correlation-Id: Z098Jth56Nkio343YY1vXt
+```
+
+## Example Responses
+
+Below is an example of a successful response. The requested candidate ID is validated and then confirmed. CCW indicates that the confirmation was a success by sending a response with the HTTP 200 response code and the Candidate ID:
+
+```text
+{
+"id":"12345"
+}
+```
+
+In the following example the confirmation request has failed. The HTTP error code is returned, along with applicable error messages:
+
+```text
+{
+"error_code": "string",
+"error_summary": "string",
+"error_causes": [
+{
+"error_sub_code": "string",
+"error_sub_code_desc": "string",
+}
+]
+}
+```
+
+## Error Codes
+
+When a Confirm API request fails, the response will include one of the following error codes:
+
+| **HTTP Status Code** | **Error Code** | **Error Sub Code** | **Error Message** |
+| --- | --- | --- | --- |
+| 400 | E4000000 | E4000001 | Bad request. Missing one or more of the mandatory HTTP headers |
+| 400 | E4000000 | E4000006 | The Start Date cannot be a past date |
+| 400 | E4000000 | E4000007 | Invalid start day |
+| 400 | E4000000 | E4000008 | End date must be after Start date |
+| 400 | E4000000 | E4000009 | Contract period exceeds the length of service requirements of <configured number of days/weeks/months/years> <days/weeks/months/years> |
+| 400 | E4000000 | E4000010 | Invalid Account <account> |
+| 400 | E4000000 | E4000012 | A candidate or worker with this CCW ID already exists |
+| 400 | E4000000 | E4000013 | The Start Date cannot be a future date |
+| 400 | E4000000 | E4000019 | Task Order is not Valid. Either it is canceled, Inactive or not found |
+| 400 | E4000000 | E4000020 | Work Package is not Valid. Either it is canceled, Inactive or not found |
+| 400 | E4000000 | E4000023 | Candidate did not meet the confirmation criteria |
+| 400 | E4000000 | E4000024 | The candidate is already confirmed |
+| 400 | E4000000 | E4000025 | OT Pay Rate must be greater than or equal to the Pay Rate |
+| 400 | E4000000 | E4000026 | DT Pay Rate must be greater than or equal to OT Pay Rate |
+| 400 | E4000000 | E4000027 | Supplier OT Bill Rate must be greater than or equal to the Supplier Bill Rate |
+| 400 | E4000000 | E4000028 | Supplier DT Bill Rate must be greater than or equal to the Supplier OT Bill Rate |
+| 400 | E4000000 | E4000029 | Final OT Bill Rate must be greater than or equal to the Final Bill Rate |
+| 400 | E4000000 | E4000030 | Final DT Bill Rate must be greater than or equal to Final OT Bill Rate |
+| 400 | E4000000 | E4000031 | Bill Rate must be greater than or equal to the Pay Rate |
+| 400 | E4000000 | E4000032 | Final Bill Rate must be greater than or equal to Supplier Bill Rate |
+| 400 | E4000000 | E4000033 | Supplier OT Bill Rate must be greater than or equal to the OT Pay Rate |
+| 400 | E4000000 | E4000034 | Final OT Bill Rate must be greater than or equal to Supplier OT Bill Rate |
+| 400 | E4000000 | E4000035 | Supplier DT Bill Rate must be greater than or equal to DT Pay Rate |
+| 400 | E4000000 | E4000036 | Final DT Bill Rate must be greater than or equal to Supplier DT Bill Rate |
+| 400 | E4000000 | E4000037 | Supplier Bill rate should be the same as Final Bill rate |
+| 400 | E4000000 | E4000038 | Request cannot be completed as the requisition is closed |
+| 400 | E4000000 | E4000039 | Request cannot be completed as the requisition is cancelled |
+| 401 | E4010000 | E4010001 | Authentication failed. Check the credentials associated with your consumer app |
+| 401 | E4010000 | E4010002 | Authentication failed. Access token is invalid or expired |
+| 403 | E4030000 | E4030001 | Not Authorized. The user does not have the rights to perform the action |
+| 403 | E4030000 | E4030002 | Not Authorized. Invalid scope |
+| 403 | E4030000 | E4030003 | Not Authorized. The API user is invalid. Ensure user is active and set as an API user |
+| 404 | E4040000 | E4040001 | Not found |
+| 405 | E4050000 | E4050001 | Method Not Supported. Service does not support the requested HTTP method |
+| 500 | E5000000 | E5000001 | A system or application error occurred, Please contact Coupa CW Admin |

@@ -1,0 +1,2466 @@
+<article class="" id="suppliers_api_suppliers">
+<h1 class="title">Suppliers API (/suppliers)</h1>
+<div class="body">
+<div class="" id="overview-d957e60540">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Use the suppliers API to create, update, and query the suppliers in Coupa.</p>
+<p class="">The URL to access suppliers is: <code class="ph codeph">https://&lt;instance&gt;/api/suppliers </code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Supplier API GET calls include Supplier Sites in response payloads. For more information, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285429.xml" title="">Postman Collection for Coupa APIs</a>.</p>
+</div>
+</div>
+<div class="" id="actions-d957e60554">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Suppliers API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/suppliers</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Create supplier</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/suppliers/create_supplier_user_preferences</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create_supplier_user_preferences</p>
+</td>
+<td class="entry" align="">
+<p class="">Create supplier user preferences</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/suppliers</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query suppliers</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/suppliers/logout_iframe_session</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">logout_iframe_session</p>
+</td>
+<td class="entry" align="">
+<p class="">Log out (CSP)iframe session</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/suppliers/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show supplier</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/suppliers/sync_supplier_user_locale</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">sync_supplier_user_locale</p>
+</td>
+<td class="entry" align="">
+<p class="">Sync supplier user locale</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/suppliers/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update supplier</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e60744">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Suppliers API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Required Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api_In Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api_Out Field?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">account-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Account number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">account-types</p>
+</td>
+<td class="entry" align="">
+<p class="">Account Types</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-types-api-(account_types)" title="">AccountType</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-change-requests</p>
+</td>
+<td class="entry" align="">
+<p class="">Allows suppliers to create change requests from CSP</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-cn-no-backing-doc-from-connect</p>
+</td>
+<td class="entry" align="">
+<p class="">If yes, then the supplier can create Credit Notes without backing invoice.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-csp-access-without-two-factor</p>
+</td>
+<td class="entry" align="">
+<p class="">Allows supplier to access Customer's data from CSP without Two Factor</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-cxml-invoicing</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow cXML invoicing for Supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-inv-choose-billing-account</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow inv choose billing account</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-inv-from-connect</p>
+</td>
+<td class="entry" align="">
+<p class="">If yes, then the supplier can create invoices against their POs or Contracts in the CSP</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-inv-no-backing-doc-from-connect</p>
+</td>
+<td class="entry" align="">
+<p class="">If yes, then the supplier can create invoices without a backing PO or Contract in the CSP.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-inv-unbacked-lines-from-connect</p>
+</td>
+<td class="entry" align="">
+<p class="">If yes, then the supplier can create unbacked invoices without a backing PO or Contract in the CSP.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-order-confirmation-item-substitutions</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow supplier to propose item substitute on Order Confirmations</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">business-groups</p>
+</td>
+<td class="entry" align="">
+<p class="">business groups</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/content-groups-api-(business_groups)" title="">ContentGroup</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer-hold</p>
+</td>
+<td class="entry" align="">
+<p class="">Hold all POs for buyer review</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">contacts</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-api-(supplier_information)/supplier-information-contact-api" title="">Supplier Information Contacts</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">commodity</p>
+</td>
+<td class="entry" align="">
+<p class="">Default commodity, selectable from drop-down</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">corporate-url</p>
+</td>
+<td class="entry" align="">
+<p class="">Corporate URL</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">coupa-connect-secret</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa connect secret</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">coupa-pay-financing-only</p>
+</td>
+<td class="entry" align="">
+<p class="">Only pay financed invoices via Coupa Pay</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who created</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-domain</p>
+</td>
+<td class="entry" align="">
+<p class="">"From" , our domain</p>
+<p class="">cXML domain</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-http-password</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML HTTP password</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-http-username</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML HTTP username</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-identity</p>
+</td>
+<td class="entry" align="">
+<p class="">"From", our identity</p>
+<p class="">cXML identity</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-invoice-buyer-domain</p>
+</td>
+<td class="entry" align="">
+<p class="">Buyer Domain for cXML Invoicing</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-invoice-buyer-identity</p>
+</td>
+<td class="entry" align="">
+<p class="">Buyer Identity for cXML Invoicing</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-invoice-secret</p>
+</td>
+<td class="entry" align="">
+<p class="">Secret Key for cXML Invoicing Authentication</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-invoice-supplier-domain</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Domain for cXML Invoicing</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-invoice-supplier-identity</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Identity for cXML Invoicing</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-protocol</p>
+</td>
+<td class="entry" align="">
+<p class="">Transmission protocol</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-secret</p>
+</td>
+<td class="entry" align="">
+<p class="">Shared secret</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-ssl-version</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML SSL version</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-supplier-domain</p>
+</td>
+<td class="entry" align="">
+<p class="">"To", supplier domain</p>
+<p class="">cXML supplier domain</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-supplier-identity</p>
+</td>
+<td class="entry" align="">
+<p class="">"To", supplier identity</p>
+<p class="">cXML supplier identity</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-url</p>
+</td>
+<td class="entry" align="">
+<p class="">URL where POs are sent if PO transmission is "cxml"</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default-locale</p>
+</td>
+<td class="entry" align="">
+<p class="">Default Locale for sending emails to this supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">disable-cert-verify</p>
+</td>
+<td class="entry" align="">
+<p class="">Disable cert verify</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">display-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Display name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">duns</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier DUNS number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">enterprise</p>
+</td>
+<td class="entry" align="">
+<p class="">Enterprise</p>
+</td>
+<td class="entry" align="">
+<p class="">True</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hold-invoices-for-ap-review</p>
+</td>
+<td class="entry" align="">
+<p class="">Prevent invoices from this supplier from being approved before AP reviews them.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa Internal ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-emails</p>
+</td>
+<td class="entry" align="">
+<p class="">Registered email addresses allowed to send invoices via email to invoices@yourhost.coupahost.com.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-matching-level</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice matching level</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">2-way, 3-way, 3-way-direct, none</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier name</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">number</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">on-hold</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier On Hold</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">online-store</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier website</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">parent</p>
+</td>
+<td class="entry" align="">
+<p class="">parent</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-method</p>
+</td>
+<td class="entry" align="">
+<p class="">Default payment method, selectable from drop down</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">invoice, pcard, invoice_only, pcard_only, virtual_card</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Default payment term, selectable from drop down</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/payment-terms-api-(payment_terms)" title="">PaymentTerm</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-term-id-for-api</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment term ID for API</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-types</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment types</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Type</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-change-method</p>
+</td>
+<td class="entry" align="">
+<p class="">Purchase order change transmission method</p>
+</td>
+<td class="entry" align="">
+<p class="">true</p>
+</td>
+<td class="entry" align="">
+<p class="">false</p>
+</td>
+<td class="entry" align="">
+<p class="">cxml, xml, email, prompt, mark_as_sent, buy_online</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-email</p>
+</td>
+<td class="entry" align="">
+<p class="">Email where POs are sent if PO transmission is "email"</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-method</p>
+</td>
+<td class="entry" align="">
+<p class="">Purchase order transmission method</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">cxml, xml, email, prompt, mark_as_sent, buy_online</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">price-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">Price amount</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">primary-address</p>
+</td>
+<td class="entry" align="">
+<p class="">Primary address</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Supplier Address</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-api-(supplier_information)/supplier-information-address-api-da-5812-da-5812" title="">Supplier Information Address</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">primary-contact</p>
+</td>
+<td class="entry" align="">
+<p class="">Primary supplier contact email</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">remit-to-addresses</p>
+</td>
+<td class="entry" align="">
+<p class="">Remit to addresses</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/remit-to-addresses-api-(suppliersaddresses)" title="">RemitToAddress</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">restricted-account-types</p>
+</td>
+<td class="entry" align="">
+<p class="">Restricted account types</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-types-api-(account_types)" title="">AccountType</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">savings-pct</p>
+</td>
+<td class="entry" align="">
+<p class="">Savings for using this supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">send-invoices-to-approvals</p>
+</td>
+<td class="entry" align="">
+<p class="">If yes, then invoices will all be sent thru approvals, regardless of total amount.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">scf-configs</p>
+</td>
+<td class="entry" align="">
+<p class="">Supply chain finance configurations whitelisted for supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shipping-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier shipping term, selectable from drop down</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/shipping-terms-api-(shipping_terms)" title="">ShippingTerm</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier status</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">storefront-url</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier website</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-addresses</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_classification_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Classification Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">SupplierClassificationDetail</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_enterprise_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Enterprise Supplier Data Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">SupplierEnterpriseDetail</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_insurance_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Insurance Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">SupplierInsuranceDetail</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_risk_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Risk Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">SupplierRiskDetail</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_tax_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">SupplierTaxDetail</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-community-enablement</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates community enablement status for the supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-status</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier status</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">draft</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">strategic_supplier</td>
+<td class="entry" align="">Strategic Supplier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-code</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier tax code</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier DUNS number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">User who updated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">website</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier website</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">whitelist-dd</p>
+</td>
+<td class="entry" align="">
+<p class="">Whitelist suppliers for Dynamic Discounting</p>
+</td>
+<td class="entry" align="">
+<p class="">false</p>
+</td>
+<td class="entry" align="">
+<p class="">false</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">dd-settings</p>
+</td>
+<td class="entry" align="">
+<p class="">Dynamic Discounting Settings whitelisted for supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">customer-support-contacts</p>
+</td>
+<td class="entry" align="">
+<p class="">Contains list of supplier account owners (customer support contacts) with their purpose</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">diversities</p>
+</td>
+<td class="entry" align="">
+<p class="">List of Supplier Diversities.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Refer to Diversity Marker Codes below.</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">business-entity-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Business Entity</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-terms</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">preferred-commodities</p>
+</td>
+<td class="entry" align="">
+<p class="">List of Preferred Commodities</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tags</p>
+</td>
+<td class="entry" align="">
+<p class="">List of Tags</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">taggings</p>
+</td>
+<td class="entry" align="">
+<p class="">List of Tags</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type</p>
+</td>
+<td class="entry" align="">
+<p class="">Type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">diversity-categories</p>
+</td>
+<td class="entry" align="">
+<p class="">Diversity categories</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">inventory-organization</p>
+</td>
+<td class="entry" align="">
+<p class="">Inventory organization</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">order_confirmation_level</p>
+</td>
+<td class="entry" align="">
+<p class="">Order Confirmation Level</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">not_applicable, header, line</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">confirm_by_hrs</p>
+</td>
+<td class="entry" align="">
+<p class="">Confirm By (In Hours)</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">,</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(10,0)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">one_time_supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates whether the supplier is a One Time Supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">scope_three_emissions</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates whether the supplier tracks Scope Three Emissions</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">do_not_accelerate</p>
+</td>
+<td class="entry" align="">
+<p class="">Do not accelerate the payment terms. This field corresponds to "Do Not Offer Static Discounting".</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">
+<p class="">There are dependent fields that can become queryable based on the value from the source field. For example, if you query against po-method=email, then po-email can be added as an additional query criteria. Please see fields with Yes*.</p>
+</li>
+<li class="li">
+<p class="">For large data set and performance optimization, always limit your result with some GET criteria.</p>
+</li>
+<li class="li">
+<p class="">If you do not set a status for the supplier, the system defaults to draft.</p>
+</li>
+<li class="li">
+<p class="">If you do not set a default payment method, the system defaults to invoice.</p>
+</li>
+<li class="li">
+<p class="">For the API to recognize custom fields, the fields must be set as API editable in the setup.</p>
+</li>
+<li class="li">
+<p class="">If you have Coupa Supplier Portal (CSP) enabled in your environment, the <b>Allow Supplier to Create Invoice</b> field defaults to checked.</p>
+</li>
+<li class="li">
+<p class="">When updating the primary address of the supplier, you can update every attribute on the address object, but you cannot associate a different address ID to the supplier record.</p>
+</li>
+<li class="li">
+<p class="">When updating the primary contact on the supplier record, you can update every attribute on the contact information, but you cannot assign a completely different contact ID to the supplier record.</p>
+</li>
+</ul>
+</div>
+</p>
+</div>
+<div class="" id="diversity_marker_codes">
+<h2 class="title sectiontitle">Diversity marker codes</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Diversity Marker Code</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">MBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Minority-Owned Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">WBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Woman-Owned Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Small Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">LGBTBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Lesbian, Gay, Bisexual, Transgender Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Disability Owned Businesses</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">NPO</p>
+</td>
+<td class="entry" align="">
+<p class="">Non-profit Organization</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Disadvantaged Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SDB</p>
+</td>
+<td class="entry" align="">
+<p class="">Small Disadvantaged Business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SDVBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Service Disabled Veteran Owned Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">WOSB</p>
+</td>
+<td class="entry" align="">
+<p class="">Woman-Owned Small Business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">VOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Veteran Owned Business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DVBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Disabled Veteran Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SDVOSB</p>
+</td>
+<td class="entry" align="">
+<p class="">Service Disabled Veteran Owned Small Business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">HUBZone</p>
+</td>
+<td class="entry" align="">
+<p class="">Historically Underutilized Business Zone</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SBA8A</p>
+</td>
+<td class="entry" align="">
+<p class="">SBA-8(A)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ACDBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Airport Concession Disadvantaged Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ANC</p>
+</td>
+<td class="entry" align="">
+<p class="">Alaskan Native Corporation</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">HBCU</p>
+</td>
+<td class="entry" align="">
+<p class="">Historically Black College or University / Minority Institution</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">LSA</p>
+</td>
+<td class="entry" align="">
+<p class="">Labor Surplus Area</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">VVO</p>
+</td>
+<td class="entry" align="">
+<p class="">Vietnam Veteran Owned</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ABILITYONE</p>
+</td>
+<td class="entry" align="">
+<p class="">Ability One Program</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">EDWOSB</p>
+</td>
+<td class="entry" align="">
+<p class="">Economically Disadvantaged Women-Owned Small Business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">NAO</p>
+</td>
+<td class="entry" align="">
+<p class="">Native American owned</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">IOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Indigenous-owned business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">AMS</p>
+</td>
+<td class="entry" align="">
+<p class="">Aboriginal and Minority Supplier</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">BOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Black-owned business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">MGOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Minority group owned business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">EMB</p>
+</td>
+<td class="entry" align="">
+<p class="">Ethnic minority businesses (EMBs)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

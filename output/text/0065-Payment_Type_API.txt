@@ -1,0 +1,61 @@
+Payment Type API
+
+Use the Payment Type API to manage payment types.
+
+Associations
+
+This API is associated with Suppliers API.
+
+Elements
+
+Element
+
+Description
+
+Req'd
+
+Unique
+
+Allowable Value
+
+In
+
+Out
+
+Data Type
+
+created-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+id
+
+Coupa unique identifier
+
+yes
+
+yes
+
+integer
+
+name
+
+Name
+
+yes
+
+virtual_card, bank_transfer, check
+
+yes
+
+yes
+
+string(255)
+
+updated-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes

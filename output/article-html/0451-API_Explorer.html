@@ -1,0 +1,116 @@
+<article class="" id="api_explorer">
+<h1 class="title">API Explorer</h1>
+<div class="body">
+<p class="">CCW's REST API Explorer is an interactive tool that allows users to test and explore the CCW
+      API in the following ways:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Browse available REST API resources and end points</p>
+</li>
+<li class="li">
+<p class="">Learn about the methods available for each API, along with supported parameters and
+          inline documentation</p>
+</li>
+<li class="li">
+<p class="">Experiment by submitting sample requests for any available API endpoint, and see
+          responses in real time</p>
+</li>
+<li class="li">
+<p class="">Make authenticated and authorized API calls through an intuitive framework that doesn't
+          require a technical background</p>
+</li>
+</ul>
+<p class="">To use the API Explorer, access to CCW's REST API must first be requested from CCW support.
+      Please review the <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x298143.xml" title="">CCW API Overview documentation</a> to learn more about how to access and
+      use the API.</p>
+<div class="" id="accessing_the_explorer">
+<h2 class="title sectiontitle">Accessing the Explorer</h2>
+<p class="">To get started,
+        navigate to: <b>Integration Toolkit &gt; Integration Documentation</b> . Click <b>REST API
+          Explorer.</b>
+</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Specific access to the Explorer can be given to any CCW user
+          and/or role by assigning the right, <b>Integration Toolkit &gt; Integration
+            Documentation</b> .</p>
+</div>
+<p class="">The APIs currently available are displayed:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Candidate Lookup (/api/candidates/search)</p>
+</li>
+<li class="li">
+<p class="">Candidate Confirm (/api/candidates/{id}/confirm)</p>
+</li>
+<li class="li">
+<p class="">Contingent Worker Lookup (/api/contingent_workers)</p>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_api/images/image1.png" alt="" title="" width="">
+<p class="">The <b>Base URL</b> , used for submitting API
+        requests, represents your current CCW testing environment.</p>
+<p class="">As CCW adds more APIs, the
+          <b>Filter by Tag</b> bar will allow you to find a specific API by entering key words that
+        match section headers.</p>
+</div>
+<div class="" id="testing_apis">
+<h2 class="title sectiontitle">Testing APIs</h2>
+<p class="">Click the API you want to test, and a
+        form is expanded showing the <b>Names</b> and <b>Descriptions</b> of available
+        parameters:</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_api/images/image2.png" alt="" title="" width="">
+<p class="">Certain parameters include an
+          <b>Example Value</b> (displayed by default) and <b>Model</b> (click to see the properties
+        of each field listed).</p>
+<p class="">The <b>Responses</b> section includes code numbers (with
+        descriptions) that could be included in API responses from CCW.</p>
+<p class="">Click <b>Try it
+          Out</b> to manually edit an example request on the Explorer form.</p>
+<p class="">For proper
+        formatting and other requirements of CCW API requests, please review each specific API's
+        documentation:</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x298145.xml" title="">Candidate Lookup API</a>
+</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x298147.xml" title="">Candidate Confirm API</a>
+</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x298151.xml" title="">Contingent Worker Lookup API</a>
+</p>
+</li>
+</ul>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/ccw_api/images/image3.png" alt="" title="" width="">
+<p class="">
+<b>X-Correlation ID,</b> a mandatory field,
+        auto-generates when <b>Try it Out</b> is clicked.</p>
+<p class="">
+<b>Authorization,</b> also
+        mandatory, requires an access token which must be generated outside the Explorer. Once
+        generated, the access token lasts 1 hour.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/tip.png" style="width:24px;">
+<span style="font-weight: 700;">Tip: </span>
+<p class="">An application such as
+            <i>Postman</i> can be used to generate the access token and copy it into the
+          Authorization field. In Postman, enter the API access credentials provided to you by
+          Coupa, including Access Token URL, Secret and Scope.</p>
+</div>
+<p class="">Click <b>Execute</b> to
+        submit your request to the Base URL with the additional parameters you entered. Or click
+          <b>Cancel</b> to discard your changes.</p>
+<p class="">After executing, the <b>Response</b> section
+        includes the response body, headers (and errors, if applicable) sent in response to your API
+        request. Please review the documentation linked above for more detail.</p>
+<p class="">
+</div>
+</div>
+</article>

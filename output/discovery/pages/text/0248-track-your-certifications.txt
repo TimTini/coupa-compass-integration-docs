@@ -1,0 +1,9 @@
+track-your-certifications
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/learning/track-your-certifications
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8TOyFtgtVW6lYQlQZEa%2BGBl8l1bpk1xza%2Bzij%2Ffo4LqCB1jzm55%2BteL1AM2vH1GB7NPfwYAUO23SzJA8g3Yjbv%2Bxya%2BpDXsmnzljVv87pt2llVN%2FPjoSbZV%2FCorFmSqmAk2yKOsDUYhAkRYtU8Z3Vesj0r%2BazhrClmbfuNZJvooowIifkYgkNOqbSjEzmcAngjdGGfgiikHahw7r9%2FDxF2AtFZH%2BJXSeH0ZCs2MlFXm5vhnRRlaCiipVM5kr23XkJquCRHoRGmpF0UUM%2FwF%2Bm8DVZafaNMr8z3JRm94VagQm7EAMiD5Lv1xzsem%2FLDeQj5h%2F2%2By7vPuz3J1ojgp0q31uA4gN%2BBf1YSvtzfXZZMyYtUKNWbNOk1LslOgzbI05Fej%2BR%2B5yerxTTN0y38Bf91uviTgKyuZl3QC%2BWzjeOfotR201mt5K9p04MI153KokyI6vNjGuUwCKXXfe8BMe5Qa%2Fvz1oMI8TDBj3EBdHW2%2FfeNrl4A&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Flearning%2Ftrack-your-certifications
+
+Observed redirect page title: Coupa Portals - Sign In

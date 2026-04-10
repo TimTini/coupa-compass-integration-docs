@@ -1,0 +1,22 @@
+User UDF Imports
+
+User UDF Imports
+
+Field 	 Description 	 Req'd 	 Unique 	 Type 	 Allowable Values
+EmailAddress 	[* required] - Hiperos username associated with the user for which the UDF value is populated 	yes 	 	String(256)
+
+Uses regular expressions:
+
+Default: ^[\w.+'-]+@[\w\.-]+\.(\w{2,7})$ Used when http context doen't exist
+
+Filtering on top level domains: ^[\w.+'-]+@[\w\.-]+\.(TOPLEVELDOMAINLIST)$ Used for a logged in user
+
+*Note: regex can be chaned per client via a localization change request.
+
+AND Can't contain ..
+
+AND Can't contain .@
+
+AND Can't contain whitespace
+
+<UDF fieldname> 	fieldname of the UDF in CRA system

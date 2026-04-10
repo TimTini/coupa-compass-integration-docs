@@ -1,0 +1,197 @@
+---
+title: "Inventory Transactions (Receipts) Export"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/inventory-transactions-(receipts)-export"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/inventory-transactions-(receipts)-export"
+status_code: 200
+fetched_at: "2026-04-09T12:00:18+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Export"
+  - "Inventory Transactions (Receipts) Export"
+---
+
+# Inventory Transactions (Receipts) Export
+
+## Overview
+
+The inventory transaction export process from Coupa queries for all inventory transactions that have not been exported. The frequency of the integration run is once every hour.
+
+The generated files will be placed into `./Outgoing/Receipts`. Once the files are successfully placed into the sFTP folder the inventory transactions will be marked/flagged as exported. Export of these records is included as a Standard CSV Export.
+
+Voided Inventory Transactions can also be exported and will be placed into `./Outgoing/Receipts/`. Currently this is the only change to an Inventory Transaction that is captured in the integration.
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+For languages that use spaces as a currency delimiter, the CSV export interprets the space as `“ `.
+
+## Inventory Transaction
+
+| Field Name | Description | Field Type | Required/Unique | Possible Values |
+| --- | --- | --- | --- | --- |
+| Record Type | Describes the type of row. Possible value is Inventory Transaction. | | No/No | |
+| ID | Coupa's Internal Inventory Transaction ID | integer | No/No | |
+| Barcode | Barcode Value | string(255) | No/No | |
+| Created at | Time of Inventory Transaction Creation | datetime | No/No | |
+| Created-By email | Email of user who created transaction record | | No/No | |
+| Created-By employee number | Employee Number of user who created transaction record | | No/No | |
+| Created-By id | Internal Coupa User ID for user who created transaction | | No/No | |
+| Created-By login | Login of user who created transaction record | | No/No | |
+| Created-By Lastname, Firstname | Employee Name who created transaction record | | No/No | |
+| Price | Item Price | decimal(30,6) | No/No | |
+| Quantity | Receipt Quantity | | No/No | |
+| RFID Tag | RFID Tag Value | string(255) | Yes/No | |
+| Total | Receipt Total | decimal(30,6) | No/No | |
+| Type | Inventory Transaction Type | string(255) | Yes/No | |
+| Status | Inventory Transaction Status | string(255) | No/No | |
+| Updated-At | Time of Inventory Transaction Updation | datetime | No/No | |
+| Updated-By email | Email of user who updated transaction record | | No/No | |
+| Updated-By employee number | Employee Number of user who updated transaction record | | No/No | |
+| Updated-By id | Internal Coupa User ID for user who updated transaction | | No/No | |
+| Updated-By login | Login of user who updated transaction record | | No/No | |
+| Updated-By Lastname, Firstname | Employee Name who updated transaction record | | No/No | |
+| Exported | Has the transaction been exported? | | No/No | |
+| Account Code | Receipt Account Code | | No/No | |
+| Chart of Accounts | Chart of Accounts Name | | No/No | |
+| From Warehouse Location ID | Coupa's Internal To-Warehouse-Location ID | | No/No | |
+| From Warehouse Aisle | Warehouse Aisle Location | | No/No | |
+| From Warehouse Bin | Warehouse Bin Location | | No/No | |
+| From Warehouse Level | Warehouse Level Location | | No/No | |
+| From Warehouse - Warehouse ID | Warehouse ID | | No/No | |
+| From Warehouse - Warehouse Description | Warehouse Description | | No/No | |
+| From Warehouse - Warehouse Name | Warehouse Name | | No/No | |
+| From Warehouse Type ID | Coupa's Internal Warehouse Type ID | | No/No | |
+| From Warehouse Type Name | Warehouse Type Name | | No/No | |
+| From Warehouse Type Description | Warehouse Type Description | | No/No | |
+| Order Line ID | Coupa Internal ID of line received against | | No/No | |
+| Order Line Accounting-Total | Total Line value in Accounting Currency | | No/No | |
+| Order Line Created-At | Date Line was Created | | No/No | |
+| Order Line Description | Order Line Description | | No/No | |
+| Order Line Qty Invoiced | Order Line Quantity Invoiced | | No/No | |
+| Order Line Number | Line Number on Order | | No/No | |
+| Order Line Need By Date | Date Line was Updated | | No/No | |
+| Order Line PO ID | Coupa's Internal PO Header ID | | No/No | |
+| Order Line Price | Order Line Unit Price | | No/No | |
+| Order Line Quantity | Quantity Ordered on Order Line | | No/No | |
+| Order Line Received | Quantity Received against order line | | No/No | |
+| Order Line Source Part Number | Source Part Number for Order Line | | No/No | |
+| Order Line Status | Status for Order Line | | No/No | |
+| Order Line Sub-line-num | Reserved for future use | | No/No | |
+| Order Line Supp-Aux-Part-Num | Supplier Auxiliary Part Number for Order Line | | No/No | |
+| Order Line Total | Total for Order Line | | No/No | |
+| Order Line Type | Type of Order Line (Quanity or Service) | | No/No | |
+| Order Line Updated-At | Date Order Line was last updated | | No/No | |
+| Order Line Version | Order Line version Number | | No/No | |
+| Order Line Account Code | Account Code on PO Line | | No/No | |
+| Order Line Chart of Accounts | Chart of Accounts Name on PO Line | | No/No | |
+| Order Line Accounting Total Currency | Accounting Currency Code for Order Line | | No/No | |
+| Order Line Currency | Currency Code for Order Line amounts | | No/No | |
+| Order Line Commodity Name | Commodity Name for Item on Order Line | | No/No | |
+| Order Line Department Name | Department Name for Item on Order Line | | No/No | |
+| Order Line Item ID | Coupa's Internal Item ID for Item on Order Line | | No/No | |
+| Order Line Item Number | Item Number | | No/No | |
+| Order Line Item Name | Item Name | | No/No | |
+| Order Line Supplier Name | Supplier Name | | No/No | |
+| Order Line Item Supplier Number | Supplier Number | | No/No | |
+| To Warehouse Location ID | Coupa's Internal To-Warehouse-Location ID | | No/No | |
+| To Warehouse Aisle | Warehouse Aisle Location | | No/No | |
+| To Warehouse Bin | Warehouse Bin Location | | No/No | |
+| To Warehouse Level | Warehouse Level Location | | No/No | |
+| To Warehouse - Warehouse ID | Warehouse ID | | No/No | |
+| To Warehouse - Warehouse Description | Warehouse Description | | No/No | |
+| To Warehouse - Warehouse Name | Warehouse Name | | No/No | |
+| To Warehouse Type ID | Coupa's Internal Warehouse Type ID | | No/No | |
+| To Warehouse Type Name | Warehouse Type Name | | No/No | |
+| To Warehouse Type Description | Warehouse Type Description | | No/No | |
+| UOM Code | Unit of Measure Code | | No/No | |
+| Inspection Code | Inspection Code | | No/No | |
+| Inspection Code ID | Coupa's Internal Inspection Code ID | | No/No | |
+| Inspection Code Description | Inspection Code Description | | No/No | |
+| Inspection Code Created-By email | email of user who created inspection code record | | No/No | |
+| Inspection Code Created-By employee number | Employee Number of user who created inspection code record | | No/No | |
+| Inspection Code Created-By id | Internal Coupa User ID for user who created inspection code | | No/No | |
+| Inspection Code Created-By login | Login of user who created inspection code record | | No/No | |
+| Inspection Code Created-By Lastname, Firstname | Employee Name who created inspection code record | | No/No | |
+| Inspection Code Created-At | Date Inspection Code was created. | | No/No | |
+| Inspection Code Updated-By email | email of user who updated inspection code record | | No/No | |
+| Inspection Code Updated-By employee number | Employee Number of user who updated inspection code record | | No/No | |
+| Inspection Code Updated-By id | Internal Coupa User ID for user who updated inspection code | | No/No | |
+| Inspection Code Updated-By login | Login of user who updated inspection code record | | No/No | |
+| Inspection Code Updated-By Lastname, Firstname | Employee Name who updated inspection code record | | No/No | |
+| Inspection Code Updated-At | Date Inspection Code was Updated. | | No/No | |
+| Asset Tag | Semi Colon seperated list of Asset Tag Identifiers | | No/No | |
+| Asset Tag Serial Number | Semi Colon seperated list of Asset Serial Number | | No/No | |
+| Asset Tag Owner | Semi Colon seperated list of Asset Owner | | No/No | |
+| Asset Tag Note | Semi Colon seperated list of Additional Notes | | No/No | |
+| Transaction Reason | Inventory Code Name | | No/No | |
+| Transaction Code | Inventory Code | | No/No | |
+| Received Weight | Received Weight | decimal(30,6) | No/No | |
+| Match Reference | Three-way match attribute to connect with Receipt and Invoice Header | string(255) | No/No | |
+| Transaction Reference | ID of original transaction | integer | No/No | |
+| Reason Insight | Reason Insight Code | | No/No | |
+| Inventory Request Number | Inventory Request Number | | No/No | |
+| Inventory Request RMA | Inventory Request RMA | | No/No | |
+| Inventory Request Address Location Code | Inventory Request Address Location Code | | No/No | |
+| Inventory Request Address Attention | Inventory Request Address Attention | | No/No | |
+| Inventory Request Address Name | Inventory Request Address Name | | No/No | |
+| Inventory Request Address Street1 | Inventory Request Address Street1 | | No/No | |
+| Inventory Request Address Street2 | Inventory Request Address Street2 | | No/No | |
+| Inventory Request Address City | Inventory Request Address City | | No/No | |
+| Inventory Request Address State | Inventory Request Address State | | No/No | |
+| Inventory Request Address Postal Code | Inventory Request Address Postal Code | | No/No | |
+| Inventory Request Address Country Code | Inventory Request Address Country Code | | No/No | |
+
+## Inventory Txn Allocation
+
+| Field Name | Description | Field Type | Required/Unique | Possible Values |
+| --- | --- | --- | --- | --- |
+| Record Type | Describes the type of row. Possible value is Line Split. | | No/No | |
+| Inventory Transaction Id | Coupa's Inventory Transaction ID. | integer | No/No | |
+| PO Number | Coupa's Order Header Number. | | No/No | |
+| Order Line Id | Coupa's Order Line ID. | | No/No | |
+| Order Line Number | Coupa's Order Line Number. | | No/No | |
+| Id | Account Allocation ID | integer | No/No | |
+| Allocation Number | Position in the Account Allocation Sequence | | No/No | |
+| Amount | Amount allocated to the account | decimal(32,4) | No/No | |
+| Percent | Percentage allocated to the account | decimal(16,10) | Yes/No | |
+| Currency | Currency | | No/No | |
+| Account Code | Account Code | | No/No | |
+| Account Active | Account Active | | No/No | |
+| Account Segment 1 | Account Segment 1 | | No/No | |
+| Account Segment 2 | Account Segment 2 | | No/No | |
+| Account Segment 3 | Account Segment 3 | | No/No | |
+| Account Segment 4 | Account Segment 4 | | No/No | |
+| Account Segment 5 | Account Segment 5 | | No/No | |
+| Account Segment 6 | Account Segment 6 | | No/No | |
+| Account Segment 7 | Account Segment 7 | | No/No | |
+| Account Segment 8 | Account Segment 8 | | No/No | |
+| Account Segment 9 | Account Segment 9 | | No/No | |
+| Account Segment 10 | Account Segment 10 | | No/No | |
+| Account Segment 11 | Account Segment 11 | | No/No | |
+| Account Segment 12 | Account Segment 12 | | No/No | |
+| Account Segment 13 | Account Segment 13 | | No/No | |
+| Account Segment 14 | Account Segment 14 | | No/No | |
+| Account Segment 15 | Account Segment 15 | | No/No | |
+| Account Segment 16 | Account Segment 16 | | No/No | |
+| Account Segment 17 | Account Segment 17 | | No/No | |
+| Account Segment 18 | Account Segment 18 | | No/No | |
+| Account Segment 19 | Account Segment 19 | | No/No | |
+| Account Segment 20 | Account Segment 20 | | No/No | |
+| Account Name | Account Name | | No/No | |
+| Account Type | Account Type | | No/No | |
+
+## Inventory Transaction Valuation
+
+| Field Name | Description | Field Type | Required/Unique | Possible Values |
+| --- | --- | --- | --- | --- |
+| Record Type | Describes the type of row. Possible value is Line Split. | | No/No | |
+| Inventory Transaction Id | Coupa's Inventory Transaction ID. | integer | No/No | |
+| Quantity | Quantity of Valuation | decimal(30,6) | Yes/No | |
+| Uom Code | Uom Code from Coupa | | No/No | |
+| Currency | The currency code of the valuation. | | No/No | |
+| Price | Price of Valuation | decimal(30,6) | No/No | |
+
+## Valid Transaction Type List
+
+InventoryReceipt, ReceivingConsumption, ReceivingAmountConsumption, ReceivingQuantityConsumption, ReceivingReturnToSupplier, ReceivingAmountReturnToSupplier, ReceivingQuantityReturnToSupplier, ReceivingDisposal, ReceivingAmountDisposal, ReceivingQuantityDisposal, InventoryTransferOut, InventoryAdjustment

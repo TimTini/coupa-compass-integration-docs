@@ -1,0 +1,59 @@
+Data File Sources API (/data_file_sources)
+
+Overview
+
+The URL to access the approvals API is: https://<instance>/api/data_file_sources.
+
+See Integration Best Practices for more info.
+
+Actions
+
+Verb 	 Path 	 Action 	 Description
+GET 	 /api/data_file_sources 	index 	Query data file sources
+POST 	 /api/data_file_sources/load_file 	load_file 	/api/data_file_sources/load_file
+POST 	 /api/data_file_sources/load_files 	load_files 	/api/data_file_sources/load_files
+POST 	 /api/data_file_sources/load_from_coupa_file_service 	load_from_coupa_file_service 	Load from Coupa file service
+POST 	 /api/data_file_sources/load_from_sftp 	load_from_sftp 	Upload flat file and process via data file source
+GET 	 /api/data_file_sources/:id 	show 	Show data file source
+GET 	 /api/data_file_sources/validate_api_key 	validate_api_key 	Validate API key
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+end-time 	end_time 	 	 	 	 	yes 	datetime
+file-content-type 	file_content_type 	 	 	 	 	yes 	string(255)
+file-file-name 	file_file_name 	 	 	 	 	yes 	string(255)
+file-file-size 	file_file_size 	 	 	 	 	yes 	string(255)
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+integration-id 	Unique identifier for integration 	 	 	 	 	yes 	integer
+integration-run-id 	Unique identifier for integration run 	 	 	 	 	yes 	integer
+progress 	progress 	 	 	 	 	yes 	integer
+records-count 	number of records in the CSV (grouping of related header + lines) 	 	 	 	 	yes 	integer
+records-created 	number of records created 	 	 	 	 	yes 	integer
+records-updated 	number of records updated 	 	 	 	 	yes 	integer
+result-text 	result_text 	 	 	 	 	yes 	text
+source-for 	source_for 	yes 	 	 	 	yes 	string(50)
+start-time 	start_time 	 	 	 	 	yes 	datetime
+status 	transaction status 	 	 	 	 	yes 	string(50)
+type 	type 	 	 	 	 	yes 	string(50)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User
+upload-errors 	upload_errors 	 	 	 	 	yes 	 Upload Error
+upload-errors-count 	number of upload errors 	 	 	 	 	yes 	integer
+
+Upload Error Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+field-errors 	field_errors 	yes 	 	 	 	yes 	text
+field-with-error 	field_with_error 	 	 	 	 	yes 	string(255)
+first-column 	first_column 	 	 	 	 	yes 	string(255)
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+row 	row 	 	 	 	 	yes 	integer
+type 	type 	 	 	 	 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User
+value 	value 	 	 	 	 	yes 	string(255)

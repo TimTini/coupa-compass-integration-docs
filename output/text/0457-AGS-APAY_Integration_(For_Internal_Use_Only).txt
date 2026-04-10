@@ -1,0 +1,461 @@
+AGS-APAY Integration (For Internal Use Only)
+
+Integrations Reference Document
+
+Services/Architects, if you have questions please reach out to the CCW services team. Use the following page as reference:
+
+https://coupadev.atlassian.net/wiki/spaces/CVS/pages/1153018562/Contingent+Workforce
+
+Configurations Used
+
+Fee Settings
+
+Location Settings
+
+Timesheet Localization Settings
+
+Tax Settings
+
+Data Staging Information
+
+Below is the worker template I used to create the workers for all data staged. You will not necessarily need to review this upload template, but it might be a good item to reference if you are validating that data was staged correctly based on the above configurations.
+
+Example - Worker 1 Time and Expense
+
+One timesheet
+-
+
+Taxes=Yes; Timesheets only; 6%
+
+-
+
+Overtime=No
+
+-
+
+Double time=No
+
+-
+
+Single or Multiple Charge Number=Single
+
+-
+
+MSP/VMS Fees and Funding:
+
+-
+
+MSP Fee=Supplier 2.5%
+
+-
+
+VMS Fee=Supplier 0.5%
+
+One expense
+-
+
+MSP/VMS fees and funding: None (not a Misc. Fee type of expense)
+
+Example - Worker 2 Time and Expense
+
+One timesheet
+-
+
+Taxes=Yes; Timesheets only; 6%
+
+-
+
+Overtime=Yes
+
+-
+
+Double time=No
+
+-
+
+Single or Multiple Charge Number=Multiple
+
+-
+
+MSP/VMS Fees and Funding:
+
+-
+
+MSP Fee=Supplier 2.6%
+
+-
+
+VMS Fee=Client 0.4%
+
+One expense
+-
+
+MSP/VMS fees and funding: Yes (Misc. Fee type of expense)
+
+-
+
+MSP Fee=Client 2%
+
+-
+
+VMS Fee=Client 1%
+
+Example - Worker 3 Time and Expense
+
+One timesheet
+-
+
+Taxes=No
+
+-
+
+Overtime=No
+
+-
+
+Double time=No
+
+-
+
+Single or Multiple Charge Number=Multiple
+
+-
+
+MSP/VMS Fees and Funding:
+
+-
+
+MSP Fee=Supplier 2.7%
+
+-
+
+VMS Fee=Client 0.3%
+
+One expense
+-
+
+MSP/VMS fees and funding: None (not a Misc. Fee type of expense)
+
+Example - Worker 4 Time and Expense
+
+One timesheet
+-
+
+Taxes=No
+
+-
+
+Overtime=Yes
+
+-
+
+Double time=Yes
+
+-
+
+Single or Multiple Charge Number=Single
+
+-
+
+MSP/VMS Fees and Funding:
+
+-
+
+MSP Fee=Supplier 2.8%
+
+-
+
+VMS Fee=Client 0.2%
+
+One expense
+-
+
+MSP/VMS fees and funding: Yes (Misc. Fee type of expense)
+
+-
+
+MSP Fee=Client 2%
+
+-
+
+VMS Fee=Client 1%
+
+Calculations
+
+For reference, please also refer to the Calculations tab on: APAY Sample Data and File 8.6.19 (internal only).xlsx
+
+Timesheet
+
+Sample Reg Hours
+
+Sample Supplier Bill Rate
+
+Sample Final Bill Rate
+
+Sample MSP Funding Config
+
+Sample MSP Fee
+
+Sample VMS Funding Config
+
+Sample VMS Fee
+
+Total Final Amount
+
+Client Amount
+
+Supplier Amount
+
+AGS Amount (MSP)
+
+Coupa Amount (VMS)
+
+10
+
+10
+
+10
+
+Client
+
+2%
+
+Client
+
+1%
+
+100
+
+103
+
+100
+
+2
+
+1
+
+10
+
+10
+
+10
+
+Supplier
+
+2%
+
+Client
+
+1%
+
+100
+
+101
+
+98
+
+2
+
+1
+
+10
+
+10
+
+10
+
+Supplier
+
+2%
+
+Supplier
+
+1%
+
+100
+
+100
+
+97
+
+2
+
+1
+
+10
+
+10
+
+10
+
+Client
+
+2%
+
+Supplier
+
+1%
+
+100
+
+102
+
+99
+
+2
+
+1
+
+Expense
+
+Sample Final Bill Rate
+
+Sample MSP Funding Config
+
+Sample MSP Fee
+
+Sample VMS Funding Config
+
+Sample VMS Fee
+
+Total Final Amount
+
+Client Amount
+
+Supplier Amount
+
+AGS Amount (MSP)
+
+Coupa Amount (VMS)
+
+10
+
+Client
+
+2%
+
+Client
+
+1%
+
+100
+
+103
+
+100
+
+2
+
+1
+
+10
+
+Supplier
+
+2%
+
+Client
+
+1%
+
+100
+
+101
+
+98
+
+2
+
+1
+
+10
+
+Supplier
+
+2%
+
+Supplier
+
+1%
+
+100
+
+100
+
+97
+
+2
+
+1
+
+10
+
+Client
+
+2%
+
+Supplier
+
+1%
+
+100
+
+102
+
+99
+
+2
+
+1
+
+Taxes
+
+Tax percentage is configured in CLM Advanced by either AGS or Coupa during implementation, as defined by the client.
+
+-
+
+Client Tax Amount = Tax % * 0.01 * Client Amount
+
+-
+
+Supplier Tax Amount = Tax % * 0.01 * Supplier Amount
+
+-
+
+MSP Tax Amount = Tax % * 0.01 * AGS Amount
+
+-
+
+Coupa Tax Amount = Tax % * 0.01 * Coupa Amount
+
+Note:
+
+The way we are calculating the taxes allows a Supplier-funded model or a Client-funded model to properly calculate the taxes (not overstated for Client-funded).
+
+File 2 Adjustments
+
+Worker 1: Rate change
+
+Worker 2 Timesheet adjustment
+
+Hours change from 40 Regular, 10 OT to 38 Regular:
+
+Worker 3 Timesheet adjustment
+
+Charge number change from 07652-14365 to 04062-76102:
+
+Worker 4 Expense adjustment
+
+Amount change from $35 to $45:
+
+File 3 Adjustments
+
+MSP Markup for the Supplier
+
+Supplier config changed from 2.5% to 3.1%:
+
+VMS Markup for the Supplier
+
+Supplier config changed from 0.5% to 0.9%:
+
+Taxes for the Boca Raton location changed from 6% to 6.5%:

@@ -1,0 +1,9 @@
+R42_Worker_Management_API.json
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R42/R42_Worker_Management_API.json
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLJbtswEP0VgXeJkiwvIWwDTtyiBtJWiJ0eegkm1KghIpEsh0rdvw9Ft4FbwDnqad42wyVB31mxGfyTvsOfA5JPdtsVe7gqpm0FzWM6bxdVWskW04WERZpflfOZlGVVTVqWfENHyugVK7OcJTuiAXeaPGgfoLycpXmVFvkhL8R0JqaTbD5ZfGfJNrgoDT4yn7y3JDiXZrCQ4tGj09Bl5tlDJk3Pwdr%2F%2Fj0E2AKRNc6Hr4Lj8dmU%2BZBDVW6v%2Bw8SCj%2FnRIaP5Vjy0TiJseGKtdARjknrIKBe8A2pnfFGmu5a6UbpHys2OC0MkCKhoUcSXor95vOtCE3F42mIxKfDoU7rr%2FsDSzZE6MZKN0bT0KPbo3tREu%2Fvbs9LxuRZLBTrjZr8Epclx77TJOKR3o9k%2F%2BRn6%2BU4LeIt3Bn%2FfTr8TcDWF7Mu%2BZnyycaKL0Fqt61Np%2BTvcdM9%2BMtORVZERDVpG0cF9qC6TdM4JAo77Drz68Yh%2BHAY74awAL4%2B2f77Rtev&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR42%2FR42_Worker_Management_API.json
+
+Observed redirect page title: Coupa Portals - Sign In

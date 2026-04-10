@@ -1,0 +1,227 @@
+---
+title: "GET Evaluations"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations"
+status_code: 200
+fetched_at: "2026-04-09T12:01:03+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Risk Assess Integrations"
+  - "Risk Assess REST API"
+  - "GET Evaluations"
+---
+
+# GET Evaluations
+
+Retrieve evaluation data from your Coupa Risk Assess tenant, such as evaluation scores, comments, and attachments.
+
+## Endpoint
+
+| **Endpoint** | `/api/evaluations` |
+| --- | --- |
+| **Method** | GET |
+
+## Headers
+
+| **Header** | **Argument** |
+| --- | --- |
+| Authorization | Bearer token |
+| Accept | application/json or application/xml |
+
+## Parameters
+
+| **Paremeter** | **Data Type** | **Description** |
+| --- | --- | --- |
+| limit | int | Maximum number of items in the response. Maximum: 50. |
+| offset | int | Number of items to skip from the start. Default: 0. |
+| entityId | guid | Unique identifier of evaluation. You can filter by this parameter using these operators: [eq] |
+| name | string | Evaluation name. You can filter by this parameter using these operators: [eq], [contains] |
+| status | string | Evaluation status. You can filter by this parameter using these operators: [eq], [contains] |
+| createdAt | datetime | Evaluation creation timestamp in the following format: YYYY-MM-DDTHH:MM:SS.FFZ. You can filter by this parameter using these operators: [eq], [lt], [gt] |
+| modifiedAt | datetime | Last updated timestamp in the following format: YYYY-MM-DDTHH:MM:SS.FFZ. You can filter by this parameter using these operators: [eq], [lt], [gt] |
+| includeDeleted | boolean | Specify whether to include the deleted evaluations in the returned list of evaluations. Default: False. |
+
+## Elements
+
+The following elements are available for the Evaluations API:
+
+| **Element** | **Data Type** | **Available Options** | **Description** |
+| --- | --- | --- | --- |
+| success | boolean | | Whether the request was successful. |
+| totalCount | integer | | Total number of evaluations that match the filter criteria across all pages.<br>![](https://compass.coupa.com/DITARoot/icons/important.png) Note:<br>Use the limit and offset query parameters to retrieve additional sets of data if totalCount exceeds the page size. |
+| result | array | | Current page of evaluation results, with up to 50 evaluations per request (determined by limit and offset). |
+| errors | array | | List of error objects. Typically empty when the request is successful. |
+| entityId | string | | Unique, permanent GUID that represents the evaluation within the system. |
+| name | string | | Name of the evaluation, which is generated automatically by the system. |
+| status | string | PrgCancelled, PrgCollaborate, PrgCompleted, PrgExtApprInprocess, PrgExtApprPending, PrgExtEvalApproved, PrgExtEvalComplete, PrgExtEvalInprocess, PrgExtEvalPending, PrgIntApprInprocess, PrgIntApprPending, PrgIntEvalComplete, PrgIntEvalInprocess, PrgIntEvalPending, PrgCancelled | Enumeration that indicates the current state of the evaluation. |
+| finalScore | number | See the **FinalScore and FinalRating values** section below. | Final score assigned to the evaluation, calculated based on KPI scores, weights, and other configurations. A value of **-1** signifies that the evaluation is incomplete (**status** is not **PrgCompleted**). |
+| finalRating | string | See the **FinalScore and FinalRating values** section below. | Rating label derived from the **finalScore**, based on the configured rating range within the evaluation's program. This value is null if the rating range is not set or if the evaluation is incomplete. |
+| createdAt | datetime | | Date and time when the evaluation was created. |
+| modifiedAt | datetime | | Date and time when the evaluation was last modified. |
+| enrollment | [Enrollment](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-enrollment-object) | | Details recorded during the enrollment of an object for evaluation. Encompasses the target of evaluation (such as a supplier or engagement) as well as evaluation-specific configurations, including assigned evaluators, approvers, and other relevant data. |
+| program | [Program](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-program-object) | | Details about the evaluation program that governs the creation of this specific evaluation instance. Includes overall framework, regulations, scoring setup, and timeline for the evaluation process. |
+| riskableObject | [RiskableObject](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-riskableobject-object) | | Details about the evaluable or riskable entity that underwent evaluation. Represents various types of entities, including Supplier, Relationship, Engagement, and more. |
+| organizations | Array of [Organizations](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-organizations-object) objects | | Represents Organization Score Accumulators linked to the evaluation process. These accumulators compile the scores of Key Performance Indicators (KPIs) at the organizational level. While the object is referred to as organizations, the values pertain to score accumulator records rather than the organizations themselves. |
+| comments | Array of [Comments](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-comments-object) objects | | Represents comments provided by evaluators or approvers at the overall evaluation level. This object does not include comments made at lower levels, such as organization, category, or KPI. |
+| attachments | Array of [Attachments](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-attachments-object) objects | | Files attached by evaluators or approvers at the overall evaluation level. This array does not contain attachments added at lower levels, such as organization, category, or KPI. |
+
+## FinalScore and FinalRating values
+
+The fields **FinalScore** and **FinalRating** can have a different set of possible values based on the type of program the evaluation was created for. Below is the set of possible values:
+
+| **Evaluation Program Type** | **Possible Values For FinalScore** | **Possible Values For FinalRating** |
+| --- | --- | --- |
+| Enterprise Compliance | 0/100 | PASS/FAIL |
+| Enterprise Performance | decimal value between 0 and100 | Based on range values assigned to program |
+| Enterprise Risk | decimal value between 0 and100 | Based on range values assigned to program |
+| InformationManagement | -1 | None |
+| Robo | -1 | None |
+| Run As Robo | -1 | None |
+| Incomplete Evaluation | -1 | None |
+
+## Get evaluations
+
+Endpoint
+
+GET `/api/evaluations`
+
+Example cURL request
+
+```text
+curl --location 'https://<your-instance>.risk.com/api/evaluations' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••'
+```
+
+Example response
+
+```text
+{
+"result": {
+"totalCount": 1,
+"evaluations": [
+{
+"entityId": "70d4920d-4db3-4e15-a607-00139fae905a",
+"name": "Evaluation-RuleEqualsTodayProgram [AutoSupplier_20220218171430] - Quarterly - Period Start 29 Aug 23",
+"status": "PrgIntEvalPending",
+"createdAt": "2023-08-29T18:06:08.037Z",
+"modifiedAt": "2023-08-29T18:06:08.303Z",
+"finalScore": -1.0,
+"finalRating": null,
+"program": {
+"entityId": "639f950f-9d2b-49d1-ae3f-840970f3a58a",
+"name": "RuleEqualsTodayProgram",
+"status": "Performance_Active",
+"links": null
+},
+"enrollment": {
+"entityId": "dc920003-f6cc-4c0d-bf9a-ccce277b8797",
+"name": "AutoSupplier_20220218171430",
+"links": null
+},
+"riskableObject": {
+"entityId": "495e7410-cf2d-4346-91de-c1420f5b1de5",
+"name": "AutoSupplier_20220218171430",
+"objectName": "Hiperos.Models.Supplier",
+"status": "General_Active",
+"links": [
+{
+"href": "api/suppliers",
+"rel": "retrieve-suppliers",
+"method": "GET"
+},
+{
+"href": "api/suppliers?entityId[eq]=495e7410-cf2d-4346-91de-c1420f5b1de5",
+"rel": "_self",
+"method": "GET"
+}
+]
+},
+"organizations": [
+{
+"entityId": "a205cbdb-a575-49a1-9985-9457d6ebac73",
+"name": "QAAutomation",
+"links": null
+}
+],
+"comments": null,
+"attachments": null
+},
+{
+"entityId": "98dc3811-d2ea-492c-8318-001e972827b1",
+"name": "Evaluation-RuleEqualsTodayProgram [Auto_SyncAddress_20220330080032] - Quarterly - Period Start 29 Aug 23",
+"status": "PrgIntEvalPending",
+"createdAt": "2023-08-29T18:26:45.92Z",
+"modifiedAt": "2023-08-29T18:26:46.85Z",
+"finalScore": -1.0,
+"finalRating": null,
+"program": {
+"entityId": "639f950f-9d2b-49d1-ae3f-840970f3a58a",
+"name": "RuleEqualsTodayProgram",
+"status": "Performance_Active",
+"links": null
+},
+"enrollment": {
+"entityId": "a10b710e-4432-4945-bddb-16e628527406",
+"name": "Auto_SyncAddress_20220330080032",
+"links": null
+},
+"riskableObject": {
+"entityId": "242fa13c-224f-44ed-80d1-95d83ea31692",
+"name": "Auto_SyncAddress_20220330080032",
+"objectName": "Hiperos.Models.Supplier",
+"status": "General_Active",
+"links": [
+{
+"href": "api/suppliers",
+"rel": "retrieve-suppliers",
+"method": "GET"
+},
+{
+"href": "api/suppliers?entityId[eq]=242fa13c-224f-44ed-80d1-95d83ea31692",
+"rel": "_self",
+"method": "GET"
+}
+]
+},
+"organizations": [
+{
+"entityId": "9c9f45b8-1a5a-463e-8bc0-8d83edeee15c",
+"name": "QAAutomation",
+"links": null
+}
+],
+"comments": null,
+"attachments": null
+},
+]
+},
+"errors": [],
+"success": true
+}
+```
+
+- [Risk Assess Enrollment Object](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-enrollment-object)
+
+Contains details recorded when an object is enrolled for evaluation. Includes the target of evaluation (such as a supplier or engagement) and evaluation-specific configurations, including assigned evaluators, approvers, and other relevant data.
+
+- [Risk Assess Program Object](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-program-object)
+
+The Program object contains evaluation program data related to an evaluation. The Program object contails framework, regulations, scoring setup, and timeline for the evaluation process.
+
+- [Risk Assess RiskableObject Object](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-riskableobject-object)
+
+Provides details about the evaluable or riskable entity that underwent evaluation. The RiskableObject object can represent various types of entities, including Supplier, Relationship, Engagement, and others.
+
+- [Risk Assess Attachments Object](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-attachments-object)
+
+Contains the files attached by evaluators or approvers at the overall evaluation level. Does not contain attachments added at lower levels, such as organization, category, or KPI.
+
+- [Risk Assess Comments Object](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-comments-object)
+
+Contains comments provided by evaluators or approvers at the overall evaluation level. This object does not contain comments made at lower levels, such as organization, category, or KPI.
+
+- [Risk Assess Organizations Object](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-evaluations/risk-assess-organizations-object)
+
+Represents Organization Score Accumulators linked to the evaluation process. Accumulators compile the scores of Key Performance Indicators at the organizational level. The Object contains score accumulator records rather than the organizations themselves.

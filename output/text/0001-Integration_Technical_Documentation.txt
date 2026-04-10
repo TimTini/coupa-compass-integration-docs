@@ -1,0 +1,33 @@
+Integration Technical Documentation
+
+The Integration Technical Documentation includes information on our API and flat file integrations, SSO, and Coupa IP addresses.
+
+The power behind Coupa is flexibility. Coupa's open architecture allows you to integrate with any third-party system, such as financial ERPs, HR systems, and Inventory Management.
+
+You can use the Coupa API, flat file CSV imports and exports, custom code, or any integration provider to make connections between Coupa and your third-party system.
+
+Use this reference material to learn about and create your API, CSV, and SSO integrations with Coupa.
+
+Additional resources
+
+For more help, see these resources:
+
+- Integration Knowledge Articles: Troubleshoot problems and develop solutions for your Coupa integrations.
+- Supplier Integration Resources: Supplier-related resources like cXML examples.
+
+- Build on the Coupa Platform
+- The Coupa Core API
+- Coupa Core Flat Files (CSV)
+- The CCW API
+- CCW Flat Files (CSV)
+- The CSO API
+- Coupa Supplier Portal REST API
+The Coupa Supplier Portal (CSP) REST API allows you to integrate CSP data with third-party systems.
+- Treasury Integrations
+This section contains documentation for integrations used with the Treasury Management application.
+- Risk Assess Integrations
+- CLM Open eSign Framework
+- Coupa Core User Authentication
+- Coupa Core Application IP Addresses
+- Coupa Treasury Application IP Addresses
+- Core API and CSV Download Formats

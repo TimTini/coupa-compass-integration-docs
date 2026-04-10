@@ -1,0 +1,9 @@
+x330965.xml
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/x330965.xml
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd%2Bd2KFZM6ut1K0gKg2I1o4HXibHvWHWHDv4OqP8exwXUJnUPebknq97vUDZm0Gsx%2FBk7%2BHHCBiy7WZJHhmroZ3PO1rW9Ts643BN66pTtK2u25bLsquqmmRfwaN2dknKnJFsizjC1mKQNkSIlVeUzShne8ZFVQt2lfPZ%2FBvJNtFFWxkS8ymEAUVRKDcOksIxgLfS5O45yFy5vpDD8OrfY4QHiTg4H%2BIXL%2BD47Eo2MjkrNzf9eyV5mBeIrpjKkeyD8wpSwyXppEGYkjZRQL%2FAP6TxLjjlzI22B22%2FL8norXASNQore0ARlNitP92J2FS0pyEUH%2Ff7hjZfdnuSrRHBT5VuncWxB78D%2F6IVPNzfnZdMyfNUKNWbNItLXJIde2NRpCO9HWn4k5%2BsFtO0SLfwZ%2Fy36fJvArK6mHVRnCmfbAbxOUptN40zWv2aNt3LcNmJ5zwh%2BkC7NCqgl9qsDwcPiHGHxriftx5kiIcJfowLKFYn2%2F%2Ff6Oo3&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Frelease-notes%2Fmay-2023-release-(r36)%2Fwhats-new-in-this-release%2Fplatform%2Fintegration%2Fintegration-control-center
+
+Observed redirect page title: Coupa Portals - Sign In

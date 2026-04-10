@@ -1,0 +1,34 @@
+---
+title: "Expense Payment Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/expense-payment-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/expense-payment-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:38+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Expense Payment Import"
+---
+
+# Expense Payment Import
+
+## Overview
+
+The Expense Payments Import process read files from the
+`./Incoming/ExpensePayments/` folder in the SFTP. These files will be moved
+to the archive folder located at `./Incoming/Archive/ExpensePayments/` before
+being processed in Alphanumeric order. Flat Files are then transformed to Coupa's XML
+format.
+
+Payment records for expenses must have an `Expense Report Id` value.
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note: While Expense payments can be created using CSV integration, all
+updates must be done through the Expense Report UI.
+
+| **Column Name** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| Expense Report Id* | This is the Coupa generated Expense Number | Yes | | integer | |
+| Paid-in-Full Date* | This is the date the payment was completed in the payment system. | Yes | | datetime | YYYY-MM-DDTHH:MM:SS+HH:MM |
+| Paid-in-Full Note | This is an optional free form note regarding the payment that was made (paid by who, transaction number, etc) | No | | string(255) | |

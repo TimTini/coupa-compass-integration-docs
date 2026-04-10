@@ -1,0 +1,9 @@
+security
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/trust/security
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9owFP4rkd9zIwkpFiDRsmlI7RYVuoe9VAfnsFp17MzH6di%2Fn2PWilWij%2Flyvts5nhN0querwT3pe%2Fw1ILlos16wx7qq9vVhNo1nYj%2BNy6Iq4v1V3sYzLGYFFEUBVcGi72hJGr1gkyRj0YZowI0mB9p5KJtM46yM82yX5byqeZUlZV3%2BYNHau0gNLjCfnOuJp6kwQw8xHh1aDSoxzw4SYboU%2Bv7dv0cP90DUG%2Bv8V57i8dlMsiGDcrK%2B7j4JyF2dEpl0LMeiz8YKDA0X7ACKcEzaeAH5gm9IY40zwqhrqVupfy7YYDU3QJK4hg6JO8G3q7tb7pvy%2FWmI%2BJfdrombb9sdi1ZEaMdKN0bT0KHdon2RAh%2Fub89LhuRJKBTqjZrpJS6Ljp3SxMORPo7U%2F8vPlvNxmodb2DP%2Bx3R4TcCWF7PO0zPlk03Pv3qpzboxSoo%2F46Y7cJed8iQPiGzjQxjl2IFUq7a1SOR3qJT5fWMRnD%2BMs4NfQLo82f7%2FRpd%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Ftrust%2Fsecurity
+
+Observed redirect page title: Coupa Portals - Sign In

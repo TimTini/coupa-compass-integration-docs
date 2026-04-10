@@ -1,0 +1,11 @@
+Quote Cost Elements API
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-cost-elements-api
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbjtMwEP2VyO9OnPTC1mordbcgKi0QbQsPvKymzoS11rGNx1nK3%2BOkgApS9zEnc24zXhJ0xstNH5%2FsA37vkWK2267YYwvtZA6TGYfFVPFpM2%2F5zeR45Kiqm4UQswnijGVfMJB2dsWqXLBsR9TjzlIEGxMkqjkXUy4Wh7KSQkgxz8ty9pVl2%2BSiLcSR%2BRSjJ1kUyvUeOJ4iBgsmd88RcuW6Arz%2F799jgj0QeRdi%2BioLPD27SvQCptX2tnuroIxvCiJXDOVY9s4FhWPDFWvBEA5J6ySgX%2FAvUgcXnXLmVttG228r1gcrHZAmaaFDklHJ%2FebDvUxN5fE8RPL94VDz%2BtP%2BwLINEYah0p2z1HcY9hhetMLPD%2FeXJcfk%2BVhorDdoFte4LDt1xpIcj%2FR6JP87P1svh2k53iJc8F%2Bnw58EbH0167K4UD7bePkxSe22tTNa%2FRw23UG87lTm5YjohrfjqMQOtNk0TUCitENj3I%2B7gBDTYWLo0wKK9dn23ze6%2FgU%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-cost-elements-api
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

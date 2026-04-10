@@ -1,0 +1,22 @@
+Return Request Line API
+
+Use the Return Request Line API to work with return request line items. This is a shared object and does not have an endpoint.
+
+This API is associated with:
+
+- Return Request API
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	No 	No 	 	 	Yes 	datetime
+id 	Coupa unique identifier 	No 	No 	 	 	Yes 	integer
+inventory-transaction-id 	Inventory transaction 	No 	No 	 	 	Yes 	integer
+price 	Price 	Yes 	No 	 	Yes 	Yes 	decimal(30,6)
+quantity 	Quantity 	Yes 	No 	 	Yes 	Yes 	decimal(30,6)
+reason-insight 	Reason Insight 	No 	No 	 	Yes 	Yes 	 ReasonInsight
+source-transaction-id 	Source transaction 	No 	No 	 	Yes 	Yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	No 	No 	 	 	Yes 	datetime
+warehouse 	Warehouse 	No 	No 	 	Yes 	Yes 	 Warehouse
+warehouse-location 	Warehouse location 	No 	No 	 	Yes 	Yes 	 WarehouseLocation
+weight 	Weight 	Yes 	No 	 	Yes 	Yes 	decimal(30,6)

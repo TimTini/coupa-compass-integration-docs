@@ -1,0 +1,18 @@
+Inventory Transaction Lot API
+
+Associations
+
+This resource is associated with Receipts API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+adjustment-code 	Adjustment code 	 	 	 	 	yes 	AdjustmentCode
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+inventory-lot 	Inventory lot 	yes 	yes 	 	yes 	yes 	InventoryLot
+inventory-lot-id 	Inventory lot 	 	 	 	yes 	 	integer
+quantity 	Quantity 	yes 	 	 	yes 	yes 	decimal(32,4)
+uom 	Unit of Measure 	yes 	 	 	 	yes 	Uom
+uom-id 	Uom 	 	 	 	yes 	yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime

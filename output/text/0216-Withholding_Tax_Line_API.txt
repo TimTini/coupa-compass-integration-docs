@@ -1,0 +1,30 @@
+Withholding Tax Line API
+
+Associations
+
+This API resource is available through Invoices API and Invoice Lines API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+amount 	amount 	 	 	 	yes 	yes 	decimal(32,4)
+base 	Base to Calculate Withholding 	 	 	 	yes 	yes 	decimal(30,4)
+basis 	Supplier Withholding Base Suggestion 	 	 	 	yes 	yes 	decimal(30,6)
+code 	code 	 	 	 	 	yes 	string(255)
+code-id 	code_id 	 	 	 	yes 	 	integer
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+description 	Tax Reference 	 	 	 	yes 	yes 	string(255)
+id 	Coupa unique identifier 	 	 	 	yes 	yes 	integer
+kind-of-factor 	Kind of Factor 	 	 	 	 	yes 	string(255)
+nature-of-tax 	Kind of Tax 	 	 	 	 	yes 	string(255)
+rate 	rate 	 	 	 	yes 	yes 	float
+supplier-rate 	Supplier Withholding Rate Suggestion 	 	 	 	yes 	yes 	decimal(32,4)
+tax-code 	tax_code 	 	 	 	yes 	yes 	Tax Code
+tax-rate 	Rate of Tax 	 	 	 	yes 	yes 	 Tax Rate
+tax-rate-type 	Type of Tax 	 	 	 	yes 	yes 	 Tax Rate Type
+taxable-amount 	Amount 	 	 	 	yes 	yes 	decimal(32,4)
+type 	WithholdingTaxLine or TaxLine 	 	 	 	yes 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User
+withholding-amount 	Withholding Amount 	 	 	 	yes 	yes 	decimal(30,4)

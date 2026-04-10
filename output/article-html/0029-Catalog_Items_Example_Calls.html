@@ -1,0 +1,80 @@
+<article class="" id="catalog_items_example_calls">
+<h1 class="title">Catalog Items Example Calls</h1>
+<div class="body">
+<div class="" id="create_sample_item">
+<h2 class="title sectiontitle">Create Sample Item</h2>
+<p class="">In this example we are creating an item.</p>
+<p class="">We posted it to the URL:
+        <code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/items</code>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;item&gt;
+	 &lt;active&gt;true&lt;/active&gt;
+	 &lt;description&gt;Example API Created Item&lt;/description&gt;
+	 &lt;item-number&gt;ExpAPI1001&lt;/item-number&gt;
+	 &lt;name&gt;Example API Item 1001&lt;/name&gt;
+	 &lt;commodity&gt;
+			&lt;name&gt;IT&lt;/name&gt;
+	 &lt;/commodity&gt;
+	 &lt;uom&gt;
+			&lt;code&gt;EA&lt;/code&gt;
+	 &lt;/uom&gt;
+	 &lt;reorder-alerts /&gt;
+&lt;/item&gt;</code>
+</pre>
+</p>
+<p class="">Below is the response that I received back when I posted the
+        above:<pre>
+<code class="codeblock"> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;item&gt;
+	 &lt;id type="integer"&gt;51&lt;/id&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;created-at type="datetime"&gt;2011-04-05T09:01:49-07:00&lt;/created-at&gt;
+	 &lt;description&gt;Example API Created Item&lt;/description&gt;
+	 &lt;item-number&gt;ExpAPI1001&lt;/item-number&gt;
+	 &lt;name&gt;Example API Item 1001&lt;/name&gt;
+	 &lt;updated-at type="datetime"&gt;2011-04-05T09:01:49-07:00&lt;/updated-at&gt;
+	 &lt;test-text-field type="string" /&gt;
+	 &lt;commodity&gt;
+			&lt;active type="boolean"&gt;true&lt;/active&gt;
+			&lt;created-at type="datetime"&gt;2008-10-27T20:04:00Z&lt;/created-at&gt;
+			&lt;id type="integer"&gt;2&lt;/id&gt;
+			&lt;name&gt;IT&lt;/name&gt;
+			&lt;updated-at type="datetime"&gt;2010-02-25T00:32:35Z&lt;/updated-at&gt;
+			&lt;created-by&gt;
+				 &lt;email&gt;example@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Example&lt;/firstname&gt;
+				 &lt;id type="integer"&gt;101&lt;/id&gt;
+				 &lt;lastname&gt;User&lt;/lastname&gt;
+				 &lt;login&gt;example&lt;/login&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;email&gt;example+ke@coupa.com&lt;/email&gt;
+				 &lt;employee-number /&gt;
+				 &lt;firstname&gt;Kyle&lt;/firstname&gt;
+				 &lt;id type="integer"&gt;16&lt;/id&gt;
+				 &lt;lastname&gt;Eisner&lt;/lastname&gt;
+				 &lt;login&gt;administrator&lt;/login&gt;
+			&lt;/updated-by&gt;
+			&lt;code type="string" /&gt;
+	 &lt;/commodity&gt;
+	 &lt;api-user&gt;
+			&lt;email&gt;example+supportAPI@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Example&lt;/firstname&gt;
+			&lt;id type="integer"&gt;44&lt;/id&gt;
+			&lt;lastname&gt;API User&lt;/lastname&gt;
+			&lt;login&gt;example+supportAPI@coupa.com&lt;/login&gt;
+	 &lt;/api-user&gt;
+	 &lt;uom&gt;
+			&lt;code&gt;EA&lt;/code&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+	 &lt;/uom&gt;
+	 &lt;reorder-alerts /&gt;
+&lt;/item&gt;</code>
+</pre>
+</p>
+</div>
+</div>
+</article>

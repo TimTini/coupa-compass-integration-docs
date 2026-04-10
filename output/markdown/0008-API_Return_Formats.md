@@ -1,0 +1,153 @@
+---
+title: "API Return Formats"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-return-formats"
+status_code: 200
+fetched_at: "2026-04-09T11:59:02+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Get Started with the API"
+  - "API Return Formats"
+---
+
+# API Return Formats
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+Coupa now offers more advanced [API Filters](https://compass.coupa.com/x294274.xml) that let you define a specific output. We suggest using these filters instead of the shallow format, which will be deprecated in a future release.
+
+Coupa's API returns a lot of data by default (for example: full objects for associated objects). The API return payloads can be very large and therefore slow. This can be a problem for customers that do not need the extraneous data.
+
+To make things easier, Coupa has a return format `return_object=shallow` that returns a limited JSON or XML response instead of the entire schema, and all associations, for an object. If no return_object is specified then the full return value is returned.
+
+## How It Works
+
+The optional query parameter `return_object` supports the following 3 values:
+
+- `none` : Nothing is returned. This is only supported for PUT and POST (not queries, like GET, where it doesn't make sense).
+
+- `limited` : Only IDs are returned. This is supported for all commands.
+
+- `shallow` : This parameter returns all attributes/fields of the object being called and only the IDs and natural keys of the one-deep associations.
+
+The parameter `return_object=shallow` is supported for the following:
+
+- POST commands
+
+- PUT commands
+
+- GET commands
+
+The `fields` query operator allows you to pass the fields you want in the response body. The format of the `fields` value is JSON. Please refer to the example below:
+
+`?fields=["id","invoice_number",{"invoice_lines":["id","line_num"]}]`
+
+## Return Object
+
+You can use the `return_object` parameter to control the response body format on any basic create, update, or query calls.
+
+On create and update return_object values supported are: none, limited, and shallow.
+
+On query calls values supported are: limited and shallow.
+
+## Example: limited response on query
+
+```text
+Query: https://example.coupahost.com/api/expense_reports?return_object=limited
+Response Code: 200
+Response Body:
+{“id”:1}
+```
+
+## Example: none response on create
+
+```text
+POST: https://example.coupahost.com/api/ex...rn_object=none
+Request Body:
+{
+"id":2,
+"currency":{
+"code":"USD"
+},
+"expense-lines":[
+{
+"description":"Airfare to Reno",
+"merchant":"American Airlines",
+"reason":"",
+"amount":"255.0",
+"expense-date":"2010-02-05T00:00:00-08:00",
+"start-date":"2010-02-05T00:00:00-08:00",
+"expense-category":{
+"name":"Airfare",
+}
+},
+],
+}
+Response Code: 200
+Response Body:
+```
+
+## Example: shallow response on create
+
+```text
+Query: https://example.coupahost.com/api/ex...object=shallow
+Response Code: 200
+Response Body:
+{
+"id":158,
+"created-at":"2010-09-22T20:42:57-07:00",
+"updated-at":"2014-04-24T14:56:49-07:00",
+"title":"",
+"status":"pending_approval",
+"submitted-at":"2014-04-24T14:56:49-07:00",
+"auditor-note":null,
+"reject-reason":null,
+"paid":false,
+"total":"567.07",
+"audit-score":26,
+"exported":false,
+"last-exported-at":null,
+"external-src-ref":null,
+"external-src-name":null,
+"currency":{
+"id":1,
+"code":"USD"
+},
+"expensed-by":{
+"id":20,
+"login":"user_login",
+"email":"user_login@coupa.com"
+},
+"created-by":{
+"id":20,
+"login":"user_login",
+"email":"user_login@coupa.com"
+},
+"updated-by":{
+"id":20,
+"login":"user_login",
+"email":"user_login@coupa.com"
+},
+"expense-lines":[
+{
+"id":546,
+"external-src-ref":null
+},
+{
+"id":547,
+"external-src-ref":null
+},
+{
+"id":548,
+"external-src-ref":null
+},
+{
+"id":549,
+"external-src-ref":null
+}
+],
+"comments":[ ]
+}
+```

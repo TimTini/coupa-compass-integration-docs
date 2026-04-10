@@ -1,0 +1,98 @@
+Tag API
+
+Use the Tag API to specify tags and to specify whether tags are external.
+
+Associations
+
+The tag API resource is associated with many Coupa objects, including the invoice, and sourcing APIs.
+
+Elements
+
+Element
+
+Description
+
+Req'd
+
+Unique
+
+Allowable Value
+
+In
+
+Out
+
+Data Type
+
+created-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+datetime
+
+created-by
+
+User who created
+
+yes
+
+User
+
+id
+
+Coupa unique identifier
+
+yes
+
+integer
+
+name
+
+Name
+
+yes
+
+yes
+
+yes
+
+yes
+
+string(30)
+
+system-tag
+
+System tag
+
+yes
+
+yes
+
+boolean
+
+updated-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+datetime
+
+updated-by
+
+User who updated
+
+yes
+
+User
+
+active 	Tagging active state 	 	 	 	yes 	yes 	boolean
+
+Example
+
+When using the Tag API, <tag> should always be wrapped inside <tagging>.
+
+Here is an example:
+<invoice-lines> <invoice-line> <taggings> <tagging> <tag> <name>header_tag</name> <system_tag>true</system_tag> </tag> <description>API Desc</description> </tagging> </taggings> </invoice-line> </invoice-lines>

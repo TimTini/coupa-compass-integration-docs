@@ -1,0 +1,173 @@
+<article class="" id="candidate_suppliers">
+<h1 class="title">Candidate Suppliers</h1>
+<div class="body">
+<p class="">The Candidate Suppliers quick integration import allows Risk
+Assess users to directly upload spreadsheets via the HTTPS
+protocol. This allows customers to perform inbound imports in an
+automated manner without the need of a user interface.</p>
+<div class="" id="post_url-d126e8179">
+<h2 class="title sectiontitle">Post URL</h2>
+<p class="">
+<code class="ph codeph">https://&lt;CRA_TENANT&gt;.hiperos.com/QuickIntegration/CandidateSuppliers</code>
+</p>
+</div>
+<div class="" id="candidate_suppliers-d126e8185">
+<h2 class="title sectiontitle">Candidate Suppliers</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Field</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">EngagementNumber (*)</td>
+<td class="entry" align="">Engagement number of the Candidate Supplier. NOTE: this field is
+required but can be left blank if the EngagementName is populated.
+If both EngagementNumber and EngagementName are both included,
+EngagementNumber is used.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">EngagementName (*)</td>
+<td class="entry" align="">Engagement name of the Candidate Supplier. NOTE: this field is
+required but can be left blank if the EngagementNumber is
+populated.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ExternalReference (*)</td>
+<td class="entry" align="">Enter the unique reference key to link to external systems (ERP
+system, etc). NOTE: this field is required but can be left blank if
+the SupplierName is populated.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierName (*)</td>
+<td class="entry" align="">Enter the name of the supplier. NOTE: this field is required but
+can be left blank if the ExternalReference is populated.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierContactUserName (*)</td>
+<td class="entry" align="">Risk Assess username for the responsible individual at the
+supplier company. Can create a new user here, but existing users
+must be on the supplier. NOTE: Always required.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierContactFirstName (*)</td>
+<td class="entry" align="">First name for Supplier Contact. Can create a new user here, but
+existing users must be on the supplier. NOTE: Required only if
+creating a new user.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierContactLastName (*)</td>
+<td class="entry" align="">Last name for Supplier Contact. Can create a new user here, but
+existing users must be on the supplier. NOTE: Required only if
+creating a new user.</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Status</td>
+<td class="entry" align="">Indicates whether the candidate supplier is active and available
+to the R.Portal workflow (i.e., able to be enrolled in programs and
+engagements) or if the candidate supplier is inactive and
+unavailable to the workflow. Defaults to "Active" if blank on
+create. Valid values are "Active", "Inactive", or blank.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String</td>
+<td class="entry" align="">Defaults to "Active" if blank on create. Valid values are
+"Active", "Inactive", or blank.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Rank</td>
+<td class="entry" align="">Indicates how the candidate is rated (rank-ordered) with respect
+to other candidate suppliers. Can be any positive integer starting
+with 0 and can go to anything above.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Integer</td>
+<td class="entry" align="">0 or above</td>
+</tr>
+<tr class="">
+<td class="entry" align="">CandidateNotes</td>
+<td class="entry" align="">Remarks/comments about the candidate supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Awarded</td>
+<td class="entry" align="">Indicates if the candidate supplier is awarded or not. Defaults
+to not awarded for new imports if left blank. Candidate Suppliers
+can be awarded through this import, but an award cannot be
+reversed. Valid values are "True" or "False". For a new import, if
+you do not want to award the Candidate Supplier right away, leave
+this blank for awarded being set to false.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">udfs_&lt;fieldname&gt;</td>
+<td class="entry" align="">Enter one column for each Candidate Supplier UDF to be entered.
+Enter the field name of the UDF to import in each column, and the
+value for each candidate supplier in the rows. Must match an
+existing r.portal UDF name for Candidate Suppliers. NOTE: field
+name must be in the format udfs_&lt;fieldname&gt;</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">(*)Required</p>
+</div>
+</div>
+</article>

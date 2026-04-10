@@ -1,0 +1,82 @@
+---
+title: "IC Netting - Payments Export - CSV Format"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-csv-format-descriptions-(classic)/ic-netting-payments-export-csv-format"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-csv-format-descriptions-(classic)/ic-netting-payments-export-csv-format"
+status_code: 200
+fetched_at: "2026-04-09T12:00:58+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Treasury Integrations"
+  - "Treasury CSV Format Descriptions (classic)"
+  - "IC Netting - Payments Export - CSV Format"
+---
+
+# IC Netting - Payments Export - CSV Format
+
+## Format Description
+
+| **#** | **Name** | **Type** | **Comment** |
+| --- | --- | --- | --- |
+| 1 | Netting code | char - 7 | |
+| 2 | Booking date | date | |
+| 3 | Value date | date | |
+| 4 | Payer name abbrev. | char - 100 | |
+| 5 | Payer company code | char - 4 | |
+| 6 | Netting center - intercompany account (IC account at center) of payer | char - 50 | |
+| 7 | Payer account abbrev. | char - 50 | |
+| 8 | Payer account no. G/L | char - 30 | |
+| 9 | Amount | decimal | |
+| 10 | Currency | char - 3 | ISO code of currency |
+| 11 | Payee name abbrev. | char - 100 | |
+| 12 | Payee company code | char - 4 | |
+| 13 | Netting center - intercompany account (IC account at center) of payee | char - 50 | |
+| 14 | Payee account abbrev. | char - 50 | |
+| 15 | Payee account no. G/L | char - 30 | |
+| 16 | Payment reference | char - 255 | |
+
+## Export Function
+
+The export function is under Special Functions on **Recon & Netting** > **AP/AR
+Netting** > **Payments**.
+
+![](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/treasury_integrations/images/image13.png)
+
+The export function produces text files with the .csv file extension.
+
+## Format Rules
+
+The export function uses the user-defined **Export Format Settings** under **User
+Settings**.
+
+![](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/treasury_integrations/images/image6b.png)
+
+The file does not contain any headers or format descriptions.
+
+One file can contain multiple data sets.
+
+Each row in the file contains exactly one data set:
+
+- ASCII Code 13: carriage return denotes the end of a data set.
+
+- ASCII Code 10: new line denotes the end of a data set.
+
+The field delimiter is the semicolon (;).
+
+For decimal values, the period (.) is the decimal separator. There are no thousands
+separators.
+
+For text values, there are no quotation marks. The char value is the maximum number of
+characters for that field.
+
+Days and months are always 2-digit values and years are 4-digit values. There are no date
+separators and the date sequence is ymd.
+
+## Example Data Sets
+
+N1010;8/18/2010;10/19/2010;NewAir;7;;;;613400;USD;Airtrans;;;Airtrans-DBNY-USD;;N1010
+
+N1010;8/18/2010;10/19/2010;TWAG;1;;TWAG-ABN-CHF;;1492673,96;CHF;Alpen;3;9688700;ALP-DBZ-CHF;;N1010
+
+N0910;8/18/2010;10/19/2010;BLG;4;;BLG-FOB-EUR;;321184,56;EUR;TWAG;1;;TWAG-ABN-EUR;;N1010
+
+N1010;8/18/2010;10/19/2010;TWAG;1;;TWAG-ABN-SEK;;316681500;SEK;Dufte;;;DLA-SHB-SEK;;N1010

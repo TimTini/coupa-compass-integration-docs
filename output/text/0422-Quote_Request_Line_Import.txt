@@ -1,0 +1,36 @@
+Quote Request Line Import
+
+Overview
+
+The Quote Request Line Import is used on sourcing events. You can add quote request lines to sourcing events via the UI in the Details section of the sourcing event. Quote request lines cannot be loaded via SFTP.
+
+Keys
+- None - quote request lines cannot be updated once loaded. They can be deleted from the UI.
+
+Quote Request Line
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Id 	No 	No 	integer 	Id
+Type* 	Yes 	No 	 	Type
+Quantity* 	Yes 	No 	decimal(30,6) 	Quantity if not a service line
+UOM code* 	Yes 	No 	 	UOM code. Must exist in Coupa
+Base Price 	No 	No 	decimal(30,6) 	Base Price for Item
+Currency 	No 	No 	 	Currency for Base Price
+Description 	No 	No 	string(255) 	Description of Item
+Commodity 	No 	No 	 	Commodity Name. Must Exist in Coupa
+Start date 	No 	No 	 	Start date
+End date 	No 	No 	 	End date
+Initial Price 	No 	No 	 	Initial Price
+Incremental Increase 	No 	No 	 	Incremental Increase
+Incremental Increase Unit 	No 	No 	 	Incremental Increase Unit
+Need by date 	No 	No 	datetime 	Need by date
+Easy Form 	No 	No 	 	Easy Form Name. Must Exist in Coupa and be a Sourcing Form.
+Manufacturer Name 	No 	No 	string(255) 	Manufacturer Name
+Manufacturer Part Number 	No 	No 	string(255) 	Manufacturer Part Number
+Item Description 	No 	No 	text 	Extended Description for Item
+Fiscal Code 	No 	No 	string(255) 	Fiscal Code for Item
+Classification Of Goods 	No 	No 	string(255) 	Classification Of Goods for Item
+Shipping Term 	No 	No 	 	Shipping Term
+Lot Name 	No 	No 	 	Lot Name. If the given lot does not exist, a new one will be created.
+Ship to Address 	No 	No 	 	Ship to Address location code. Must exist in Coupa.
+Details 	No 	No 	 	Comma-separated list of attachments. Supports file paths (file://filename.pdf), URLs (https://example.com/file.pdf), or plain text notes

@@ -1,0 +1,1125 @@
+<article class="" id="inventory_transactions_receipts_export">
+<h1 class="title">Inventory Transactions (Receipts) Export</h1>
+<div class="body">
+<div class="" id="overview-d117e19581">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The inventory transaction export process from Coupa queries for all inventory transactions that have not been exported. The frequency of the integration run is once every hour.</p>
+<p class="">The generated files will be placed into <code class="ph codeph">./Outgoing/Receipts</code>. Once the files are successfully placed into the sFTP folder the inventory transactions will be marked/flagged as exported. Export of these records is included as a Standard CSV Export.</p>
+<p class="">Voided Inventory Transactions can also be exported and will be placed into <code class="ph codeph">./Outgoing/Receipts/</code>. Currently this is the only change to an Inventory Transaction that is captured in the integration.<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">For languages that use spaces as a currency delimiter, the CSV export interprets the space as <code class="ph codeph">“&amp;nbsp</code>.</p>
+</div>
+</p>
+</div>
+<div class="" id="section_ft5_v3q_11c">
+<h2 class="title sectiontitle">Inventory Transaction</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Record Type</td>
+<td class="entry" align="">Describes the type of row. Possible value is Inventory Transaction.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">ID</td>
+<td class="entry" align="">Coupa's Internal Inventory Transaction ID</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Barcode</td>
+<td class="entry" align="">Barcode Value</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created at</td>
+<td class="entry" align="">Time of Inventory Transaction Creation</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By email</td>
+<td class="entry" align="">Email of user who created transaction record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By employee number</td>
+<td class="entry" align="">Employee Number of user who created transaction record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By id</td>
+<td class="entry" align="">Internal Coupa User ID for user who created transaction</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By login</td>
+<td class="entry" align="">Login of user who created transaction record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Created-By Lastname, Firstname</td>
+<td class="entry" align="">Employee Name who created transaction record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price</td>
+<td class="entry" align="">Item Price</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity</td>
+<td class="entry" align="">Receipt Quantity</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">RFID Tag</td>
+<td class="entry" align="">RFID Tag Value</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total</td>
+<td class="entry" align="">Receipt Total</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">Inventory Transaction Type</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Status</td>
+<td class="entry" align="">Inventory Transaction Status</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-At</td>
+<td class="entry" align="">Time of Inventory Transaction Updation</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By email</td>
+<td class="entry" align="">Email of user who updated transaction record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By employee number</td>
+<td class="entry" align="">Employee Number of user who updated transaction record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By id</td>
+<td class="entry" align="">Internal Coupa User ID for user who updated transaction</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By login</td>
+<td class="entry" align="">Login of user who updated transaction record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Updated-By Lastname, Firstname</td>
+<td class="entry" align="">Employee Name who updated transaction record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Exported</td>
+<td class="entry" align="">Has the transaction been exported?</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">Receipt Account Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Chart of Accounts</td>
+<td class="entry" align="">Chart of Accounts Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse Location ID</td>
+<td class="entry" align="">Coupa's Internal To-Warehouse-Location ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse Aisle</td>
+<td class="entry" align="">Warehouse Aisle Location</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse Bin</td>
+<td class="entry" align="">Warehouse Bin Location</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse Level</td>
+<td class="entry" align="">Warehouse Level Location</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse - Warehouse ID</td>
+<td class="entry" align="">Warehouse ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse - Warehouse Description</td>
+<td class="entry" align="">Warehouse Description</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse - Warehouse Name</td>
+<td class="entry" align="">Warehouse Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse Type ID</td>
+<td class="entry" align="">Coupa's Internal Warehouse Type ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse Type Name</td>
+<td class="entry" align="">Warehouse Type Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Warehouse Type Description</td>
+<td class="entry" align="">Warehouse Type Description</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line ID</td>
+<td class="entry" align="">Coupa Internal ID of line received against</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Accounting-Total</td>
+<td class="entry" align="">Total Line value in Accounting Currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Created-At</td>
+<td class="entry" align="">Date Line was Created</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Description</td>
+<td class="entry" align="">Order Line Description</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Qty Invoiced</td>
+<td class="entry" align="">Order Line Quantity Invoiced</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Number</td>
+<td class="entry" align="">Line Number on Order</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Need By Date</td>
+<td class="entry" align="">Date Line was Updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line PO ID</td>
+<td class="entry" align="">Coupa's Internal PO Header ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Price</td>
+<td class="entry" align="">Order Line Unit Price</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Quantity</td>
+<td class="entry" align="">Quantity Ordered on Order Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Received</td>
+<td class="entry" align="">Quantity Received against order line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Source Part Number</td>
+<td class="entry" align="">Source Part Number for Order Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Status</td>
+<td class="entry" align="">Status for Order Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Sub-line-num</td>
+<td class="entry" align="">Reserved for future use</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Supp-Aux-Part-Num</td>
+<td class="entry" align="">Supplier Auxiliary Part Number for Order Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Total</td>
+<td class="entry" align="">Total for Order Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Type</td>
+<td class="entry" align="">Type of Order Line (Quanity or Service)</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Updated-At</td>
+<td class="entry" align="">Date Order Line was last updated</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Version</td>
+<td class="entry" align="">Order Line version Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Account Code</td>
+<td class="entry" align="">Account Code on PO Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Chart of Accounts</td>
+<td class="entry" align="">Chart of Accounts Name on PO Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Accounting Total Currency</td>
+<td class="entry" align="">Accounting Currency Code for Order Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Currency</td>
+<td class="entry" align="">Currency Code for Order Line amounts</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Commodity Name</td>
+<td class="entry" align="">Commodity Name for Item on Order Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Department Name</td>
+<td class="entry" align="">Department Name for Item on Order Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Item ID</td>
+<td class="entry" align="">Coupa's Internal Item ID for Item on Order Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Item Number</td>
+<td class="entry" align="">Item Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Item Name</td>
+<td class="entry" align="">Item Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Supplier Name</td>
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Item Supplier Number</td>
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse Location ID</td>
+<td class="entry" align="">Coupa's Internal To-Warehouse-Location ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse Aisle</td>
+<td class="entry" align="">Warehouse Aisle Location</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse Bin</td>
+<td class="entry" align="">Warehouse Bin Location</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse Level</td>
+<td class="entry" align="">Warehouse Level Location</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse - Warehouse ID</td>
+<td class="entry" align="">Warehouse ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse - Warehouse Description</td>
+<td class="entry" align="">Warehouse Description</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse - Warehouse Name</td>
+<td class="entry" align="">Warehouse Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse Type ID</td>
+<td class="entry" align="">Coupa's Internal Warehouse Type ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse Type Name</td>
+<td class="entry" align="">Warehouse Type Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Warehouse Type Description</td>
+<td class="entry" align="">Warehouse Type Description</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">UOM Code</td>
+<td class="entry" align="">Unit of Measure Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code</td>
+<td class="entry" align="">Inspection Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code ID</td>
+<td class="entry" align="">Coupa's Internal Inspection Code ID</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Description</td>
+<td class="entry" align="">Inspection Code Description</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Created-By email</td>
+<td class="entry" align="">email of user who created inspection code record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Created-By employee number</td>
+<td class="entry" align="">Employee Number of user who created inspection code record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Created-By id</td>
+<td class="entry" align="">Internal Coupa User ID for user who created inspection code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Created-By login</td>
+<td class="entry" align="">Login of user who created inspection code record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Created-By Lastname, Firstname</td>
+<td class="entry" align="">Employee Name who created inspection code record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Created-At</td>
+<td class="entry" align="">Date Inspection Code was created.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Updated-By email</td>
+<td class="entry" align="">email of user who updated inspection code record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Updated-By employee number</td>
+<td class="entry" align="">Employee Number of user who updated inspection code record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Updated-By id</td>
+<td class="entry" align="">Internal Coupa User ID for user who updated inspection code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Updated-By login</td>
+<td class="entry" align="">Login of user who updated inspection code record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Updated-By Lastname, Firstname</td>
+<td class="entry" align="">Employee Name who updated inspection code record</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inspection Code Updated-At</td>
+<td class="entry" align="">Date Inspection Code was Updated.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Asset Tag</td>
+<td class="entry" align="">Semi Colon seperated list of Asset Tag Identifiers</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Asset Tag Serial Number</td>
+<td class="entry" align="">Semi Colon seperated list of Asset Serial Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Asset Tag Owner</td>
+<td class="entry" align="">Semi Colon seperated list of Asset Owner</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Asset Tag Note</td>
+<td class="entry" align="">Semi Colon seperated list of Additional Notes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transaction Reason</td>
+<td class="entry" align="">Inventory Code Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transaction Code</td>
+<td class="entry" align="">Inventory Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Received Weight</td>
+<td class="entry" align="">Received Weight</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Match Reference</td>
+<td class="entry" align="">Three-way match attribute to connect with Receipt and Invoice Header</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transaction Reference</td>
+<td class="entry" align="">ID of original transaction</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Reason Insight</td>
+<td class="entry" align="">Reason Insight Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Number</td>
+<td class="entry" align="">Inventory Request Number</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request RMA</td>
+<td class="entry" align="">Inventory Request RMA</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Address Location Code</td>
+<td class="entry" align="">Inventory Request Address Location Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Address Attention</td>
+<td class="entry" align="">Inventory Request Address Attention</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Address Name</td>
+<td class="entry" align="">Inventory Request Address Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Address Street1</td>
+<td class="entry" align="">Inventory Request Address Street1</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Address Street2</td>
+<td class="entry" align="">Inventory Request Address Street2</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Address City</td>
+<td class="entry" align="">Inventory Request Address City</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Address State</td>
+<td class="entry" align="">Inventory Request Address State</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Address Postal Code</td>
+<td class="entry" align="">Inventory Request Address Postal Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Request Address Country Code</td>
+<td class="entry" align="">Inventory Request Address Country Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_tjj_x3q_11c">
+<h2 class="title sectiontitle">Inventory Txn Allocation</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Record Type</td>
+<td class="entry" align="">Describes the type of row. Possible value is Line Split.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Transaction Id</td>
+<td class="entry" align="">Coupa's Inventory Transaction ID.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Number</td>
+<td class="entry" align="">Coupa's Order Header Number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Id</td>
+<td class="entry" align="">Coupa's Order Line ID.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Line Number</td>
+<td class="entry" align="">Coupa's Order Line Number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Id</td>
+<td class="entry" align="">Account Allocation ID</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allocation Number</td>
+<td class="entry" align="">Position in the Account Allocation Sequence</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount</td>
+<td class="entry" align="">Amount allocated to the account</td>
+<td class="entry" align="">decimal(32,4)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Percent</td>
+<td class="entry" align="">Percentage allocated to the account</td>
+<td class="entry" align="">decimal(16,10)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">Currency</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">Account Code</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Active</td>
+<td class="entry" align="">Account Active</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Name</td>
+<td class="entry" align="">Account Name</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Type</td>
+<td class="entry" align="">Account Type</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_e1w_x3q_11c">
+<h2 class="title sectiontitle">Inventory Transaction Valuation</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Required/Unique</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Record Type</td>
+<td class="entry" align="">Describes the type of row. Possible value is Line Split.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Inventory Transaction Id</td>
+<td class="entry" align="">Coupa's Inventory Transaction ID.</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity</td>
+<td class="entry" align="">Quantity of Valuation</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">Yes/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Uom Code</td>
+<td class="entry" align="">Uom Code from Coupa</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">The currency code of the valuation.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price</td>
+<td class="entry" align="">Price of Valuation</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align="">No/No</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="valid_transaction_type_list">
+<h2 class="title sectiontitle">Valid Transaction Type List</h2>
+<p class="">InventoryReceipt, ReceivingConsumption, ReceivingAmountConsumption, ReceivingQuantityConsumption, ReceivingReturnToSupplier, ReceivingAmountReturnToSupplier, ReceivingQuantityReturnToSupplier, ReceivingDisposal, ReceivingAmountDisposal, ReceivingQuantityDisposal, InventoryTransferOut, InventoryAdjustment</p>
+</div>
+</div>
+</article>

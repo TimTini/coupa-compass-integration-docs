@@ -1,0 +1,324 @@
+# Existing auth-gated TOC items
+
+- Generated at: 2026-04-10T01:54:51+00:00
+- Count: 40
+
+## 0281. Quote Cost Elements API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > Sourcing API (/quote_requests) > Quote Cost Elements API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-cost-elements-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbjtMwEP2VyO9OnPTC1mordbcgKi0QbQsPvKymzoS11rGNx1nK3%2BOkgApS9zEnc24zXhJ0xstNH5%2FsA37vkWK2267YYwvtZA6TGYfFVPFpM2%2F5zeR45Kiqm4UQswnijGVfMJB2dsWqXLBsR9TjzlIEGxMkqjkXUy4Wh7KSQkgxz8ty9pVl2%2BSiLcSR%2BRSjJ1kUyvUeOJ4iBgsmd88RcuW6Arz%2F799jgj0QeRdi%2BioLPD27SvQCptX2tnuroIxvCiJXDOVY9s4FhWPDFWvBEA5J6ySgX%2FAvUgcXnXLmVttG228r1gcrHZAmaaFDklHJ%2FebDvUxN5fE8RPL94VDz%2BtP%2BwLINEYah0p2z1HcY9hhetMLPD%2FeXJcfk%2BVhorDdoFte4LDt1xpIcj%2FR6JP87P1svh2k53iJc8F%2Bnw58EbH0167K4UD7bePkxSe22tTNa%2FRw23UG87lTm5YjohrfjqMQOtNk0TUCitENj3I%2B7gBDTYWLo0wKK9dn23ze6%2FgU%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-cost-elements-api
+- Markdown placeholder: `markdown\0281-Quote_Cost_Elements_API.md`
+- Raw HTML: `raw-html\0281-Quote_Cost_Elements_API.html`
+
+## 0282. Quote Cost Formula API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > Sourcing API (/quote_requests) > Quote Cost Formula API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-cost-formula-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZcdoYiEJkDYbFqDbjCbbw14KRmFWobKkiXKX%2Ff1kpRuyAembdOLx7kjNCXrtxGoIT%2BYBfwxIIdusF%2Bxxf5xMKt7McgA5yRuIp%2F0Umly2OJsh7o%2FtlLPsK3pS1ixYXcTbhmjAjaEAJkSI1zc5b3Le7qpacC74TcHb9hvL1lFFGQiJ%2BRSCI1GW0g4OcjwF9AZ0YZ8DFNL2JTj339tjhB0QOetDvFUlnp5tzQcOTb2%2B7d9JqMK0JLLlGI5l762XmBIu2BE04ei0iw3UC%2F5FOm%2BDlVbfKnNQ5vuCDd4IC6RIGOiRRJBiu%2Fp4L2JSsT8Xkfiw23V593m7Y9mKCP0Y6c4aGnr0W%2FQvSuKXh%2FvLkMl5kQKleGPP8hqXZadeGxJpSW9bcq%2F%2B2XI%2BVou0C3%2FBf5sOfxyw5VWv8%2FKi81nGiU%2Bx1WbdWa3kr3HSPYTrSlVRJUQd8mMqFdiD0qvDwSNRnKHW9uedRwhxMcEPcQDl8iz77x9d%2FgY%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-cost-formula-api
+- Markdown placeholder: `markdown\0282-Quote_Cost_Formula_API.md`
+- Raw HTML: `raw-html\0282-Quote_Cost_Formula_API.html`
+
+## 0283. Quote Task Attributes API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > Sourcing API (/quote_requests) > Quote Task Attributes API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-task-attributes-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd8dOyEEYgESLZuG1G1RoXvYS3VjzGrVsTNfp2P%2Fvk7YKjaJPubknq97vUBoTSfWfXiy9%2BpnrzAk282SPMKkmDQVFHReHUtazGdTCsV0Rpv5tJRNnk0nTUmSb8qjdnZJ8pSTZIvYq63FADZEiOcl5QXl1T7LBeeClymvqu8k2UQXbSGMzKcQOhSMSdd3QNUpKG%2FBpO45QCpdy6Dr%2Fvv3GOEOEDvnQ%2FzKmDo9u5z3HIp8c9N%2BkJCFGUN0bChHko%2FOSzU2XJIjGFRD0joK6Bf1htTeBSedudH2oO2PJem9FQ5Qo7DQKhRBit36852ITUVzHkLxab%2Bvaf11tyfJGlH5odKts9i3yu%2BUf9FSPdzfXZYck6djobHeoMmucUlyao1FMR7p%2FUjdn%2FxktRimxXgLf8F%2Fnw5%2FE5DV1awLdqF8tunElyi13dTOaPl72HQL4bpTlmYjog%2F0OI4K1YI268PBK8S4Q2Pcr1uvIMTDBN%2FHBbDV2fbfN7p6BQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-task-attributes-api
+- Markdown placeholder: `markdown\0283-Quote_Task_Attributes_API.md`
+- Raw HTML: `raw-html\0283-Quote_Task_Attributes_API.html`
+
+## 0284. Quote Request Currency API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > Sourcing API (/quote_requests) > Quote Request Currency API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/sourcing-api-(quote_requests)/quote-request-currency-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu6yZMN1WiEJkDYbFqDbjCbdYZeCkdlWqC1potxl%2F36ysxXZgPTIJ%2FJ9kJoT9J1XqyE%2B2zv8MSDFbLNesAdd4gxmes9hXwGv9hXyK6g1ry7rFiTW9WUpWfYNAxlnF6zMU7UhGnBjKYKNCZJlzWXF5dWuKJWUSs5yWV58Z9k6qRgLcZp8jtGTEkK7wQPHQ8RgocvdS4Rcu16A9%2F%2B9PSTYA5F3IaaqEHh4caUcJFTl%2Brr%2FoKGIM0HkxBiOZR9d0DglXLBH6AhHp00iMK%2F4hjTBRaddd21sa%2BzTgg3BKgdkSFnokVTUarv6fKtSUrU%2FNpH6tNs1vPm63bFsRYRhjHTjLA09hi2GV6Px%2Fu72NOTkPJ8CTfFGTnFulmWHvrOkpiO9b8n%2F8c%2BW87FbTbcIJ%2FPvj8NfB2x51utcnDAfZbz6kqg268Z1Rv8aN91DPK9U5MWEmJY%2FTq0KezDdqm0DEqUddp37eRMQYjpMDENagFgeZf%2F9o8vf&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fsourcing-api-(quote_requests)%2Fquote-request-currency-api
+- Markdown placeholder: `markdown\0284-Quote_Request_Currency_API.md`
+- Raw HTML: `raw-html\0284-Quote_Request_Currency_API.html`
+
+## 0286. User Reassignments API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > User Reassignments API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/user-reassignments-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndkIaigVItGwaUrtFhe1hL9XhHKvVxE59Tsf%2B%2Bzlmm%2Bgk%2Bpgv9%2F2685yga3u5GvyTecCXAcknm%2FWCPc7UJM%2BryVV6KA77tEQQKUywSsvr%2FUzkqrnCqmLJN3SkrVmwIhMs2RANuDHkwfgAiaJKRZmK2S4vpBBSTLNpWX5nyTq4aAM%2BMp%2B870lyruzQQ4pHj85Am9lnD5myHYe%2B%2F%2B%2FfY4B7IOqt8%2BEr53h8toUYBJTF%2Bqb7oCD3U05k%2BViOJR%2BtUxgbLtgBWsIxaR0E9Cv%2BQ2pnvVW2vdGm0ebHgg3OSAukSRrokKRXcru6v5Ohqdyfhkh%2B2u3qtP6y3bFkRYRurHRrDQ0dui26V63w68PdecmYPIuFYr1Rk1%2FisuTYtYZkPNL7kfo%2F%2BdlyPk7LeAt3xn%2BfDn8TsOXFrHN%2Bpnyy6eXnILVZ17bV6te46Q78Zac8yyOim%2FQQRyV2oNtV0zgkCjtsW%2Fvz1iH4cBjvhrAAvjzZvn2jy98%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fuser-reassignments-api
+- Markdown placeholder: `markdown\0286-User_Reassignments_API.md`
+- Raw HTML: `raw-html\0286-User_Reassignments_API.html`
+
+## 0293. Worker Address API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > Worker API > Worker Address API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-address-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndlKgYAESLZuG1G5RoXvYS3V1jtWqY2c%2Bp2P%2F%2FRyzVqwSfcyX%2B37deU7Qmk6u%2BvBk7%2FBXjxSyzXrBHnAMCi72Vb4XYpSPGlXmMG1UPlbVI4xRlNPJlGXf0ZN2dsGqQrBsQ9TjxlIAGyIkqkkeuWK2KysphBSz4mIy%2B8GydXTRFkJiPoXQkeRcub6DHA8BvQVTuOcAhXIth6579%2B8hwh0Qdc6H%2BFVyPDy7SvQCRtX6qv2koAyXnMjxoRzLPjuvMDVcsD0YwiFpHQX0C74htXfBKWeutG20%2FblgvbfSAWmSFlokGZTcrm5vZGwqH49DJL%2FsdnVef9vuWLYiQj9UunaW%2Bhb9Fv2LVnh%2Fd3NaMiUvUqFUb9Dk57gsO7TGkkxH%2BjhS9y8%2FW86HaZlu4U%2F4H9PhNQFbns065yfKR5tOfo1Sm3XtjFZ%2Fhk23EM47lUWZEN3k%2BzQqsQVtVk3jkSju0Bj3%2B9ojhHiY4Pu4AL482v7%2FRpd%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fworker-api%2Fworker-address-api
+- Markdown placeholder: `markdown\0293-Worker_Address_API.md`
+- Raw HTML: `raw-html\0293-Worker_Address_API.html`
+
+## 0294. Worker Documents API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > Worker API > Worker Documents API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-documents-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8nTrLQEKut1K0gKg2I1sIDL9PNuTBrjh18zij%2F%2FRwXUEHqHvPlvl93XhIMehSbyT%2BaO%2FwxIflkt12x%2B6pY9CVc1WkDRZ9WWDdp0y0ghauHt2%2BKSvZ1Byz5io6UNStWZjlLdkQT7gx5MD5AeblI8yrNm0NRijwXeZPVdfGNJdvgogz4yHz0fiTBubTTCCkePToDOrNPHjJpBw7j%2BN%2B%2F%2BwCPQDRa58NXwfH4ZMt8yqEqt9fDOwmFrzmR5XM5lry3TmJsuGI9aMI5aRsE1DP%2BRVpnvZVWXyvTKfN9xSZnhAVSJAwMSMJLsd98vBWhqXg4DZH4cDi0aft5f2DJhgjdXOnGGpoGdHt0z0ril7vb85IxeRYLxXqzJr%2FEZclx0IZEPNLrkcbf%2Bdl6OU%2BLeAt3xn%2BdDn8SsPXFrEt%2BpnyyGcWnILXbtlYr%2BWve9AD%2BslORFRFRXdrHUYEDKL3pOodEYYda2583DsGHw3g3hQXw9cn23ze6fgE%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fworker-api%2Fworker-documents-api
+- Markdown placeholder: `markdown\0294-Worker_Documents_API.md`
+- Raw HTML: `raw-html\0294-Worker_Documents_API.html`
+
+## 0295. Worker Email API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > Worker API > Worker Email API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-email-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ncUy2EqutVOimVYItot0e9oKu6XVYOLbxOaz773FcmLpJ5TFf7vt15ylBr51cDOHB3OHTgBSy1XLG7uHiEjnwOt9ebJu8BtjnIOoqn1wKwbFpGpgIlv1AT8qaGRMFZ9mKaMCVoQAmRIiLj3kU4M2mEpJzWfGi%2FtD8ZNkyuigDITEfQnAky7Kzg4McDwG9AV3YxwBFZ%2FsSnPvv332EHRA560P8qko8PFrBBw61WF71nzqowqQksuVYjmWfre8wNZyxPWjCMWkbBdQz%2FkVab4PtrL5SZqfMrxkbvJEWSJE00CPJ0Mn14vZGxqZyexwi%2BWWzafP223rDsgUR%2BrHStTU09OjX6J9Vh9%2Fvbk5LpuRFKpTqjZrlOS7LDr02JNOR3o%2FkXvOz%2BXSclukW%2FoT%2FPh3eErD52azT8kT5aOPk1yi1WrZWq%2B7PuOkewnmnqqgSonb5Po1K7EHpxW7nkSjuUGv7%2B9ojhHiY4Ie4gHJ%2BtP33jc5fAA%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fworker-api%2Fworker-email-api
+- Markdown placeholder: `markdown\0295-Worker_Email_API.md`
+- Raw HTML: `raw-html\0295-Worker_Email_API.html`
+
+## 0296. Worker Phone Number API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > Worker API > Worker Phone Number API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-phone-number-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8ncVKvU6y2UreCqDQgWsse9jId8ZVZc%2Bzgc0b573FcQAWpe8yX%2B37deUHQm0Gux%2FBs7%2FH7iBSy7WbJnpSCmZpdz3PBr1QuBFZ5M1d1zmcwO4iaN6K5YtkDetLOLlldcJZtiUbcWgpgQ4R4Pc%2B5yHmzr2rJuax4IRrxyLJNdNEWQmI%2BhzCQLMvOjQPkeAzoLZjCvQQoOteXMAz%2F%2FXuK8ABEg%2FMhflUlHl9czUcOot7c9O86qMJ1SeTKqRzL3jvfYWq4ZAcwhFPSNgroV%2FyLtN4F1zlzo63S9tuSjd5KB6RJWuiRZOjkbv3xTsam8utpiOSH%2Fb7N28%2B7PcvWROinSrfO0tij36F%2F1R1%2Bub87L5mSF6lQqjdplpe4LDv2xpJMR3o70vA7P1stpmmZbuHP%2BG%2FT4U8CtrqYdVGeKZ9sBvkpSm03rTO6%2Bzltuodw2akqqoRolR%2FSqMQetFkr5ZEo7tAY9%2BPWI4R4mODHuIBydbL9942ufgE%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fworker-api%2Fworker-phone-number-api
+- Markdown placeholder: `markdown\0296-Worker_Phone_Number_API.md`
+- Raw HTML: `raw-html\0296-Worker_Phone_Number_API.html`
+
+## 0297. Worker Derived Phone Number API
+
+- TOC Path: Integration Technical Documentation > The Coupa Core API > Resources > Transactional Resources > Worker API > Worker Derived Phone Number API
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api/worker-derived-phone-number-api
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8njtOsLVZbqVtBVBoQrYUHXqabe2PWHNv4nFH%2BexwXUEHqHvPlvl93XhD0xsv1EJ%2FsHX4fkGKx3SzZ%2FVzMEKbtrBStgLKdNFACwlU5n0M7napGPIgJK75gIO3skjVVzYot0YBbSxFsTFDdTMu6Les3e9HIupairq4ms6%2Bs2CQXbSFm5lOMniTnyg0eSjxGDBZM5Z4jVMr1HLz%2F7999gj0QeRdi%2BhIcj8%2BuqYca2mZz3b9VIOKMEzk%2BlmPFOxcU5oZL9giGcEzaJQH9gn%2BRLrjolDPX2h60%2FbZkQ7DSAWmSFnokGZXcrT%2FcytRUPpyGSL7f77uy%2B7Tbs2JNhGGsdOMsDT2GHYYXrfDz3e15yZy8yoVyvVGTX%2BKy4tgbSzIf6fVI%2Fnd%2BtlqM0zLfIpzxX6fDnwRsdTHrgp8pn2y8%2FJiktpvOGa1%2BjpvuIV52EpXIiD6Uj3lUYg%2FarA%2BHgERph8a4HzcBIabDxDCkBfDVyfbfN7r6BQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fthe-coupa-core-api%2Fresources%2Ftransactional-resources%2Fworker-api%2Fworker-derived-phone-number-api
+- Markdown placeholder: `markdown\0297-Worker_Derived_Phone_Number_API.md`
+- Raw HTML: `raw-html\0297-Worker_Derived_Phone_Number_API.html`
+
+## 0301. Getting Started
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Getting Started
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9sgFP4rFu8YTHMzSiKlzaZFajeryfawl4rYJysqBsrBXfbvi512yialj%2F58vts5zFG1xstVFx%2FtPTx3gDHbrBfkYdYUExiXgpYw4nQ0HU%2FoXswEnZWzw%2FiqvJruD4pkPyCgdnZBRM5JtkHsYGMxKhsTxMWE8hHl5a4QknNZiHxSTn%2BSbJ1ctFVxYD7G6FEyVrvOKwrHCMEqk7unqPLatUx5%2F9%2B%2FhwR7hehdiOmrYHB8coJ3XI3E%2Brr9VKsiThmiY305kn12oYah4YIclEHok1ZJQL%2FAX6QKLrramWttG21%2FLUgXrHQKNUqrWkAZa7ld3d3K1FTuT0Mov%2Bx2Fa2%2BbXckWyFC6CvdOItdC2EL4UXX8P3%2B9rzkkDwfCg31ek12iUuyY2ssyuFIH0fyb%2FnJct5Py%2BEW4Yz%2FMV29JyDLi1nn7Ez5ZOPl1yS1WVfO6PpPv%2BlWxctORV4MiG7oYRiV0CptVk0TADHt0Bj3%2ByaAiukwMXRpAWx5sv33jS5fAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started
+- Markdown placeholder: `markdown\0301-Getting_Started.md`
+- Raw HTML: `raw-html\0301-Getting_Started.html`
+
+## 0302. Integration Schedules and File Names
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Getting Started > Integration Schedules and File Names
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/integration-schedules-and-file-names
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbhshEPyVE%2B93wNmxdci25MStailJT7Hbh75Ea4wbFA4oy6Xu35fDSeRWcl6QGHZ2ZnaZIXTGi2Ufn%2ByD%2BtUrjMV6NSePkyvWTMcgS15zXo5hJEs4pGMyqpur3aRhox0nxXcVUDs7J3XFSLFG7NXaYgQbE8TqScnGJWu2vBaMCV5XU9b8IMUqqWgLMTOfYvQoKJWu91CqY1TBgqncc4RKuo6C9%2F%2B9PSbYA6J3IaYbp%2Br47GrWMxjXq%2BvukwQepxTR0SEcKT67IFVOOCcHMKgGp21qoF%2FUO9IGF5105lrbvbY%2F56QPVjhAjcJCp1BEKTbLu1uRkordqQjFl%2B22Lduvmy0plogqDJFunMW%2BU2GjwouW6tvD7XnI7LzKgXK8oSe9xCXFsTMWRV7Sx5b8q3%2BymA3VIu8inPE%2FpsObA7K46HVGzzqfZLy4T63Wq9YZLf8Mk%2B4gXlbiFc%2BI3peHXCpUB9os9%2FugENMMjXG%2Fb4KCmBYTQ58GQBcn2X%2F%2F6OIv&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fintegration-schedules-and-file-names
+- Markdown placeholder: `markdown\0302-Integration_Schedules_and_File_Names.md`
+- Raw HTML: `raw-html\0302-Integration_Schedules_and_File_Names.html`
+
+## 0303. SFTP Overview
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Getting Started > SFTP Overview
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/sftp-overview-da-3411-da-3411
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8Tx%2BmNWm2lbgVRaUC0djzwMp0mp8yaYxsfZ5R%2Fj%2BMCKpO6x3w53%2B0cLwg67eS6D0%2FmHn%2F0SCHbbpbssUIcTUaTQz6ZikM%2BPpbjfC6gzWfvWtHOD%2BMZ4JRlX9GTsmbJqqJk2Zaox62hACZEqKymeaSV872oZFlKURUzMfrGsk10UQZCYj6F4Ehy3tjeQY6ngN6ALuxzgKKxHQfnXv17jLADImd9iF%2BC4%2BnZVmVfwrja3HTvGxBhxoksH8qx7IP1DaaGS3YETTgkraOAesF%2FSO1tsI3VN8q0ynxfst4baYEUSQMdkgyN3K0%2F3cnYVB7OQyQ%2F7vd1Xn%2FZ7Vm2JkI%2FVLq1hvoO%2FQ79i2rw4f7usmRKXqRCqd6gya9xWXbqtCGZjvR2JPcnP1sthmmZbuEv%2BG%2FT4W8CtrqadcEvlM82Tn6OUttNbbVqfg2b7iBcdxKFSIhq82MaldiB0uu29UgUd6i1%2FXnrEUI8TPB9XABfnW3%2Ff6Or3w%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fsftp-overview-da-3411-da-3411
+- Markdown placeholder: `markdown\0303-SFTP_Overview.md`
+- Raw HTML: `raw-html\0303-SFTP_Overview.html`
+
+## 0304. Standard Flat File Export Configurations
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Getting Started > Standard Flat File Export Configurations
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/standard-flat-file-export-configurations-da-3412-da-3412
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr87tkML1GorFbppldgW0bKHvaCrcxkWiZ35HNb99zjphrpJ5TFf7vt15zlB23R61ccnd48%2Fe6SYbdYL9jgFvFLV5TWf1fsZn0xmkkO9N1wVRlbF9bRGmLLsGway3i1YkUuWbYh63DiK4GKCZHHJ5YTL2U4VWkqtLnJ1Mf3OsnVysQ7iyHyKsSMthPF9BxwPEYODJvfPEXLjWwFd99%2B%2FxwR3QNT5ENOXEnh49oXsJUyK9U37wYCKV4LIi6Ecyz76YHBsuGA1NIRD0jIJ2Bd8Q8rgoze%2BubGusu7HgvXBaQ9kSTtokXQ0erv6fKdTU70%2FDpH%2BtNuVvPy63bFsRYRhqHTrHfUthi2GF2vw4f7utOSYPB8LjfUGTXGOy7JD2zjS45Hej9T9yc%2BW82Faj7cIJ%2Fz36fA3AVuezToXJ8pHm05%2FSVKbdekba34Pm24hnndSuRoRW%2FF6HNXYgm1WVRWQKO2wafyv24AQ02Fi6NMCxPJo%2B%2B8bXb4C&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fstandard-flat-file-export-configurations-da-3412-da-3412
+- Markdown placeholder: `markdown\0304-Standard_Flat_File_Export_Configurations.md`
+- Raw HTML: `raw-html\0304-Standard_Flat_File_Export_Configurations.html`
+
+## 0305. Using the Flat File Format
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Getting Started > Using the Flat File Format
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/using-the-flat-file-format
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN8NhpB0WEmktNm0SN2GmmwPe6kOc6xWwWY%2B02X%2FfQ1pp3RS%2BsjHfb%2FuvCTo2l5uBv9g7vD3gOSj3XbF7mtQzRwXM97gPOe5qhpe5EXFi0qkBeTVh%2FksZdEPdKStWbEsFizaEQ24M%2BTB%2BACJbMFFzkVxSDMphExncbrIfrJoG1y0AT8xH7zvSSaJskMPHI8enYE2to8eYmW7BPr%2Bv3%2F3Ae6BqLfOh680weOjzcQgIM%2B2191HBam%2FSohsMpZj0SfrFE4NV6yBlnBMWgYB%2FYT%2FkNJZb5Vtr7Wptfm1YoMz0gJpkgY6JOmV3G%2B%2B3MrQVFanIZKfD4eSl9%2F2BxZtiNCNlW6soaFDt0f3pBV%2Bv7s9Lzklj6dCU71RM7nEZdGxaw3J6UjvR%2Bpf8rP1cpyW0y3cGf99OrwmYOuLWZfJmfLJppdfg9RuW9pWq7%2Fjpjvwl53SOJ0QXfNmGpXYgW43de2QKOywbe2fG4fgw2G8G8ICkvXJ9u0bXT8D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fusing-the-flat-file-format
+- Markdown placeholder: `markdown\0305-Using_the_Flat_File_Format.md`
+- Raw HTML: `raw-html\0305-Using_the_Flat_File_Format.html`
+
+## 0309. Business Entity Export
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Export > Business Entity Export
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/business-entity-export
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8T26FtqNVW6lYQlQZEa%2BGBl8l1b5g1xza%2Bzij%2Ffo4LqCB1jzm55%2BteL1D2xov1EB%2FtPfwYAGOx3SzJQ9013UEpKJs58HIyh6aU9RzK2fTtm451HW8OQIqvEFA7uyR1xUixRRxgazFKGxPE6lnJJiWb73ktGBN8Ws2m%2FBspNslFWxkz8zFGj4JS5QYvSzhFCFaayj1FWSnXU%2Bn9f%2F8eEuwlonchpi9O4fTkajYwOak3N%2F07JXlsKKKjYzlSvHdBQW64JJ00CGPSNgnoZ%2FiLtMFFp5y50fao7fclGYIVTqJGYWUPKKISu%2FXHO5GaisN5CMWH%2Fb4t28%2B7PSnWiBDGSrfO4tBD2EF41gq%2B3N9dlszJq1wo1xs16TUuKU69sSjykV6P5H%2FnJ6vFOC3yLcIF%2F3W6%2FJOArK5mXdAL5bONF5%2BS1HbTOqPVr3HTvYzXnXjFM6KPZZdHBfRSm%2FXxGAAx7dAY9%2FM2gIzpMDEMaQF0dbb9942uXgA%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fbusiness-entity-export
+- Markdown placeholder: `markdown\0309-Business_Entity_Export.md`
+- Raw HTML: `raw-html\0309-Business_Entity_Export.html`
+
+## 0311. Business Entity External Reference Export
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Export > Business Entity External Reference Export
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/business-entity-external-reference-export
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfT9swEP5XIr8ncUJpqNVWKnTTKsEW0bKHvaCrcxkWjp35HNb993PcgTqk8pgv9%2F2685yg071YDf7J3OOvAcknm%2FWCPV60s0nTVphWs0qmk%2FayTAFlmVa8nMHVfrqf4gVLvqMjZc2ClRlnyYZowI0hD8YHiJfTlE9SPtsVpeBcFNOMX1Y%2FWLIOLsqAj8wn73sSeS7t0EOKB4%2FOgM7ss4dM2i6Hvn%2F37zHAPRD11vnwVeR4eLYlHzhMyvV190lC4aucyOZjOZZ8tk5ibLhgLWjCMWkdBNQLviG1s95Kq6%2BVaZT5uWCDM8ICKRIGOiThpdiu7m5FaCr2xyESX3a7Oq2%2FbXcsWRGhGyvdWENDh26L7kVJfLi%2FPS0Zk2exUKw3aubnuCw5dNqQiEf6OFL%2FLz9bzsdpEW%2FhTvgf0%2BE1AVuezTrPT5SPNr34GqQ269pqJf%2BMm%2B7An3cqsiIiqknbOCqwA6VXTeOQKOxQa%2Fv7xiH4cBjvhrCAfHm0%2Ff%2BNLv8C&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fbusiness-entity-external-reference-export
+- Markdown placeholder: `markdown\0311-Business_Entity_External_Reference_Export.md`
+- Raw HTML: `raw-html\0311-Business_Entity_External_Reference_Export.html`
+
+## 0314. Coupa Pay Dynamic Discounting Setting Export
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Export > Coupa Pay Dynamic Discounting Setting Export
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/coupa-pay-dynamic-discounting-setting-export
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdTxsxEPwrJ7%2FfZwJRrCRSIKBGou2JBB76gvZ8e8XCZ7teH03%2FfX0OrQJSeLPHOzszu14Q9Mry9eCf9T3%2BGpB8st0s2VPTQFuJGaRNi1067dpwEuU87SaXzQVMLmbNfM6SR3QkjV6yKitYsiUacKvJg%2FYBKqrLtJimxXxfVrwoeDnLpuXkB0s2QUVq8JH57L0lnufCDBZSPHh0GlRmXjxkwvQ5WPvh7SnAFoiscT7cyhwPL6YqhgKm1eaqvxFQ%2BllOZPIxHEtujRMYEy5ZB4pwdFqHBvIV%2FyO1M94Io66kbqX%2BuWSD09wASeIaeiTuBd%2Btv97xkJQ3xyLiX%2Fb7Oq2%2F7%2FYsWROhGyNdG01Dj26H7lUKfLi%2FOw0ZnWcxUIw39szPcVly6JUmHpf0uSX75p%2BtFmM1j7twJ%2FzP6fDPAVud9brITzofZSz%2FFlptN7VRUvwZJ92DP69UZmVEZJt2sZRjD1Kt29YhUZihUub3tUPwYTHeDWEA%2Beoo%2B%2F6Prv4C&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fcoupa-pay-dynamic-discounting-setting-export
+- Markdown placeholder: `markdown\0314-Coupa_Pay_Dynamic_Discounting_Setting_Export.md`
+- Raw HTML: `raw-html\0314-Coupa_Pay_Dynamic_Discounting_Setting_Export.html`
+
+## 0315. Coupa Pay Dynamic Discounting Setting Supplier Whitelist Export
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Export > Coupa Pay Dynamic Discounting Setting Supplier Whitelist Export
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/coupa-pay-dynamic-discounting-setting-supplier-whitelist-export
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd%2BdW7N1tdpK3Qqi0oBoLTzwMp04J8yaYxsfZ5R%2FPycFVJC6x3w53%2B0cLwl67cRmCE%2FmAX8MSCHZbVfssZk1pQS84tUCWl41Tcdv5OyGd7Mql9dXi5ksOpZ8RU%2FKmhUr05wlO6IBd4YCmBChvLzmecXzxaEoRZ6LYp5W1fwbS7bRRRkIE%2FMpBEciy6QdHHA8BvQGdGqfA6TS9hk499%2B%2Fxwg7IHLWh%2FhVZHh8tmU%2B5FCV29v%2BnYQizDMim43lWPLeeolTwxXrQBOOSesooF7wL1J7G6y0%2BlaZVpnvKzZ4IyyQImGgRxJBiv3m472ITUVzGiLx4XCoef15f2DJhgj9WOnOGhp69Hv0L0ril4f785JT8nQqNNUbNbNLXJYce21ITEd6O5L7nZ%2Btl%2BO0mG7hz%2Fhv0%2BFPAra%2BmHWZnSmfbJz4FKV229pqJX%2BNm%2B4hXHYq0mJCVMu7aVRgD0pv2tYjUdyh1vbnnUcI8TDBD3EB2fpk%2B%2B8bXb8C&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fcoupa-pay-dynamic-discounting-setting-supplier-whitelist-export
+- Markdown placeholder: `markdown\0315-Coupa_Pay_Dynamic_Discounting_Setting_Supplier_W.md`
+- Raw HTML: `raw-html\0315-Coupa_Pay_Dynamic_Discounting_Setting_Supplier_W.html`
+
+## 0316. Coupa Pay Early Payment Discount Program Discounted Term
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Export > Coupa Pay Early Payment Discount Program Discounted Term
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/coupa-pay-early-payment-discount-program-discounted-term
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87dtJoVq22UreCqDQgWgsPvEy35LpZS%2Bzgc0b573HcMRWk7jFf7vt15wVB3w16PYYne4c%2FR6SQbTdLdi%2Br2WGuCsll2yheqVLy%2BbxQXOEDgpwVaoYVy76jJ%2BPskpW5ZNmWaMStpQA2REiWV1xWXM73Raml1IXKVXn1g2Wb6GIshMR8CmEgLUTjxgE4HgN6C13ungPkjesFDMN%2F%2F%2B4jPADR4HyIX4XA47Mr5SihKjfX%2FYcGiqAEkRNTOZZ9dL7B1HDJDtARTknrKGBe8A2pvQuucd21sa2xj0s2eqsdkCFtoUfSodG79edbHZvqh9MQ6U%2F7fc3rr7s9y9ZE6KdKN87S2KPfoX8xDX67uz0vmZLnqVCqN2mKS1yWHfvOkk5Hej%2FS8JqfrRbTtE638Gf89%2BnwNwFbXcy6EGfKJ5tBf4lS203tOtP8njbdQ7jsVORFQkzLD2lUYw%2BmW7etR6K4w65zv248QoiHCX6MCxCrk%2B2%2Fb3T1Bw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fcoupa-pay-early-payment-discount-program-discounted-term
+- Markdown placeholder: `markdown\0316-Coupa_Pay_Early_Payment_Discount_Program_Discoun.md`
+- Raw HTML: `raw-html\0316-Coupa_Pay_Early_Payment_Discount_Program_Discoun.html`
+
+## 0351. Sensitive Configuration Change Requests Export
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Export > Sensitive Configuration Change Requests Export
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/sensitive-configuration-change-requests-export
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8nsVMGxAIkWloNqduiQvewl%2Bow19WqY3s%2Bp2P%2F%2FZywVqwSfcyX%2B37deUbQGi%2BXXXyyd%2FirQ4rZejVnD5NqB5MKeA7V5FM%2BEqBy2I15Xo%2FH04sLIaa1QJZ9x0Da2TmrCs6yNVGHa0sRbEwQr8Y5H%2BW83opKci6raVGP6h8sWyUXbSEOzKcYPcmyVK7zkOMhYrBgCvccoVCuLcH7d%2F8eEuyByLsQ05co8fDsKt5xGFWry%2FZagYiTksiVfTmW3bigcGg4Z49gCPukTRLQL%2FiGNMFFp5y51Hav7c8564KVDkiTtNAiyajkZvnlVqamcnccIvl5u23y5ttmy7IlEYa%2B0pWz1LUYNhhetML7u9vTkkPyYig01Os1y3Nclh1aY0kOR%2Fo4kv%2BXny1m%2FbQcbhFO%2BB%2FT4TUBW5zNOitPlI82Xn5NUutV44xWf%2FpNtxDPO4lCDIje54%2FDqMQWtFnu9wGJ0g6Ncb%2BvAkJMh4mhSwsoF0fb%2F9%2Fo4i8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fsensitive-configuration-change-requests-export
+- Markdown placeholder: `markdown\0351-Sensitive_Configuration_Change_Requests_Export.md`
+- Raw HTML: `raw-html\0351-Sensitive_Configuration_Change_Requests_Export.html`
+
+## 0361. Supplier Sharing Setting Export
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Export > Supplier Sharing Setting Export
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/supplier-sharing-setting-export
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndgzrwAIkWjYNqduiQvfQl%2BpwjtaqY2c%2Bp2P%2FfZ3QVmwSfcyX%2B37deUbQ2FYtu%2FjobvB3hxSz9WrO7nU9mU4mu30%2B2knMx1B%2BygG1zPcohawvdI1TybJfGMh4N2eyECxbE3W4dhTBxQQJeZGLcS6m21IqIdRIFqUc3bFslVyMgzgwH2NsSXGufddCjoeIwYEt%2FFOEQvuGQ9v%2B9%2B8%2BwS0QtT7E9FVyPDx5KToBY7m6bL5oKONnTuR5X45lX33QODScsz1Ywj5plQTMM74jVfDRa28vjauNe5izLjjlgQwpBw2Silptlt%2BvVWqqdschUt%2B22yqvfm62LFsSYegrXXlHXYNhg%2BHZaLy9uT4tOSQvhkJDvV6Tn%2BOy7NBYR2o40seR2tf8bDHrp9Vwi3DC%2F5gObwnY4mzWGT9RPtq06keSWq8qb43%2B22%2B6gXjeqSzKATF1vh9GFTZg7LKuAxKlHVrr%2F1wFhJgOE0OXFsAXR9t%2F3%2BjiBQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-export%2Fsupplier-sharing-setting-export
+- Markdown placeholder: `markdown\0361-Supplier_Sharing_Setting_Export.md`
+- Raw HTML: `raw-html\0361-Supplier_Sharing_Setting_Export.html`
+
+## 0399. Flexible Attribute Import
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Flexible Attribute Import
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/flexible-attribute-import
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2ByZMdNOiEJkDYdFqDbjCbdw14KTmZWobbkiXKX%2Ff1kZS2yAumLAJ14vDtSc4Ku7dVqCI%2F2Dn8NSCHbrBfsQU4usamk5vsG97wCKDnA5QVvJrOJhHhM5ZRl39CTcXbBylyybEM04MZSABsiJMsplxWXH3ZFqaRUlcxn08l3lq2jirEQEvMxhJ6UENoNPXA8BPQW2tw9Bci16wT0%2FZu3hwj3QNQ7H%2BKtEHh4cqUcJFTl%2Bqq70VCEmSByYgzHso%2FOa0wJF2wPLeHotI4NzDO%2BIrV3wWnXXhnbGPtzwQZvlQMypCx0SCpotV19vlUxqfpxLCL1aberef11u2PZigj9GOnaWRo69Fv0z0bj%2Fd3tacjkPE%2BBUryxpzjHZdmhay2ptKT3LfX%2F%2FLPlfKxWaRf%2BhP8%2BHV4csOVZr3Nx0vko06svsdVmXbvW6D%2FjpDsI55WKvEiIafg%2BlSrswLSrpvFIFGfYtu73tUcIcTHBD3EAYnmU%2Ff%2BPLv8C&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Fflexible-attribute-import
+- Markdown placeholder: `markdown\0399-Flexible_Attribute_Import.md`
+- Raw HTML: `raw-html\0399-Flexible_Attribute_Import.html`
+
+## 0403. Intelligent Import Review
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Intelligent Import Review
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/intelligent-import-review
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu6ybCONYyEJkDYbFqDtjCbbYZeCsZlVqC1potxl%2F36y0hbZgPTIJ%2FJ9kJoT9J2Vq8E%2F6Qf8NSD5ZLNesMe2qgoEvOLT6gB8UkDJYXbI%2BH7alvtZtZ9dlRlLvqMjZfSCFWmoNkQDbjR50D5AWTHl2YRn1S4vZJbJSZ5OZ%2BUPlqyDitLg4%2BST95akEI0ZLHA8enQautQ8e0gb0wuw9r%2B3xwBbILLG%2BVDlAo%2FPpsiGDCbF%2Brr%2F1EDuS0FkxBiOJZ%2BNazAmXLADdISj0zoQqBd8R2pnvGlMd610q%2FTPBRuclgZIkdTQI0nfyO3q7laGpHJ%2FaiL5Zberef11u2PJigjdGOnGaBp6dFt0L6rBbw%2B35yGj8zQGivFGTnFpliXHvtMk45E%2BtmRf%2FbPlfOyW8RbubP7jcXhzwJYXvc7FGfNJxsr7QLVZ16ZTzZ9x0z34y0p5mkdEtfwQWyX2oLpV2zokCjvsOvP7xiH4cBjvhrAAsTzJ%2FvtHl38B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Fintelligent-import-review
+- Markdown placeholder: `markdown\0403-Intelligent_Import_Review.md`
+- Raw HTML: `raw-html\0403-Intelligent_Import_Review.html`
+
+## 0425. Reference Data-Document Type
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Reference Data-Document Type
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/reference-data-document-type
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN%2FBNiKhs5JIadNpkboNNeke9lJdzNFaBZv5TJf99zNkq7JJ6SMf9%2F2684Kga3u1HsKzvccfA1JItpsle7y6KuuZOEDa5MUhLQAPKUhZpuW8aWa11EKWwJJv6Mk4u2R5JliyJRpwaymADRES%2BTwVRSo%2B7GWuhFDFPJsJ%2BZ0lm%2BhiLISJ%2BRxCT4pz7YYeUjwG9BbazL0EyLTrOPT9f%2F8eI9wDUe98iF%2BS4%2FHF5WIQUOSb6%2B5WgwwlJ3J8LMeSj85rnBouWQMt4Zi0igLmFd%2BQyrvgtGuvja2NfVqywVvlgAwpCx2SClrt1p%2FvVGyqDqchUp%2F2%2Byqtvu72LFkToR8r3ThLQ4d%2Bh%2F7VaHy4vzsvOSXPpkJTvVGTX%2BKy5Ni1ltR0pPcj9X%2Fys9VinFbTLfwZ%2F306%2FE3AVhezLviZ8smmV1%2Bi1HZTudboX%2BOmOwiXnWQmJ8TUaTONKuzAtOu69kgUd9i27ueNRwjxMMEPcQF8dbL9942ufgM%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Freference-data-document-type
+- Markdown placeholder: `markdown\0425-Reference_Data-Document_Type.md`
+- Raw HTML: `raw-html\0425-Reference_Data-Document_Type.html`
+
+## 0426. Reference Data-External Identifier Type
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Reference Data-External Identifier Type
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/reference-data-external-identifier-type
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb5swFP0ryO9gQxEIK4mUNpsWqdtQk%2FWhL9XFuK1VY3u%2Bpsv%2B%2FQzpqrRS%2Bsjhnq97vUAYtOPrMTyZG%2Fl7lBiS7WZJ7vOiAVE0ZQodXKQlq0XalHWfXnSsq%2FK86aqyJsmt9KisWZIiYyTZIo5yazCACRFiRZWyMmXNPi84Y7yssqou7kiyiS7KQJiZTyE45JQKOzpI5SFIb0Bn9jlAJuxAwbkP%2F%2B4j7ADRWR%2FiV07l4dkWbGRQFpvL4YuAPNQU0dKpHEm%2BWi%2Fk3HBJHkCjnJK2UUC9yDek9TZYYfWlMr0yj0syesMtoEJuYJDIg%2BC79fdrHpvy7jiE%2FNt%2B36btz92eJGtE6adKV9bgOEi%2Fk%2F5FCfnr5vq05Jw8mwvN9SZNeo5LksOgDfL5SJ9Hcq%2F5yWoxTfP5Fv6E%2Fzkd%2Ficgq7NZF%2FRE%2BWjj%2BI8otd20Vivxd9r0AOG8U57lM6L69GEe5XIApdd97yVi3KHW9s%2BVlxDiYYIf4wLo6mj7%2Fo2u%2FgE%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Freference-data-external-identifier-type
+- Markdown placeholder: `markdown\0426-Reference_Data-External_Identifier_Type.md`
+- Raw HTML: `raw-html\0426-Reference_Data-External_Identifier_Type.html`
+
+## 0427. Reference Data-Job Category-Job Category
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Reference Data-Job Category-Job Category
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/reference-data-job-category-job-category
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu82tkWdBCWR0mbTInWb1aR72Et1jemKioFxcZf9%2B2HSTemk9NHH93zdyxJh0I5vxvBk7uTPUWLIdtsVeZiJCmad6PK6qfqc9Q3LAViXz1lXM8GabjG%2FItk36VFZsyJ1UZJshzjKncEAJkSorJu8ZHm5OFQ1L0vOmmJ%2BtfhOsm10UQZCYj6F4JBTKuzoIJfHIL0BXdjnAIWwAwXn%2Fvv3EGEHiM76EL8qKo%2FPti7HEli9vR4%2BCKjCjCJaOpUj2UfrhUwNV%2BQRNMopaRsF1Iv8h7TeBiusvlamV%2BbHiozecAuokBsYJPIg%2BH7z%2BZbHprw7DSH%2FdDi0eft1fyDZBlH6qdKNNTgO0u%2Blf1FC3t%2FdnpdMyYtUKNWbNOklLsmOgzbI05Hej%2BRe85P1cprm6Rb%2BjP8%2BHf4mIOuLWZf0TPlk4%2FiXKLXbtlYr8Xva9ADhslNVVAlRff6YRrkcQOlN33uJGHeotf114yWEeJjgx7gAuj7Zvn2j6z8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Freference-data-job-category-job-category
+- Markdown placeholder: `markdown\0427-Reference_Data-Job_Category-Job_Category.md`
+- Raw HTML: `raw-html\0427-Reference_Data-Job_Category-Job_Category.html`
+
+## 0428. Reference Data-Job Level-Job Level
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Reference Data-Job Level-Job Level
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/reference-data-job-level-job-level
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdj9MwEPwrkd%2BTOLnQD6ut1LuCqHRAdC088HLauFvOOsc2Xuco%2Fx7HBVSQei%2BWPN7Zmdn1gqDXTqyH8GQe8PuAFLLtZskea6ybGzx2uTxymTdTaPJuwuPRdRM5fzOdzaobln1BT8qaJasLzrIt0YBbQwFMiBCvJ3lk8Pm%2BqgXnopkUs%2FlXlm2iiDIQEvEpBEeiLKUdHOR4CugN6MI%2BByik7Utw7r%2B3xwg7IHLWh3irSjw925oPHJp6c9u%2FlVCFaUlkyzEby95ZLzEFXLIjaMLRaBsbqBf8i7TeBiutvlXmoMy3JRu8ERZIkTDQI4kgxW794V7EoKI7F5F4v9%2B3eftpt2fZmgj9GOnOGhp69Dv0L0ri54f7y5DJeZECpXhjz%2FIal2WnXhsSaUevW3K%2F%2FbPVYqwWaRX%2Bgv86Hf44YKurXhflReezjBMfY6vtprVayZ%2FjpHsI15WqokqIOuTHVCqwB6XXh4NHojhDre2PO48Q4mKCH%2BIAytVZ9t8vuvoF&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Freference-data-job-level-job-level
+- Markdown placeholder: `markdown\0428-Reference_Data-Job_Level-Job_Level.md`
+- Raw HTML: `raw-html\0428-Reference_Data-Job_Level-Job_Level.html`
+
+## 0429. Reference Data-Job Title-Job Title
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Reference Data-Job Title-Job Title
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/reference-data-job-title-job-title
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd%2BdOKnVi9VW6lYQlQZEa%2BGBl%2BnMOWXWEjv4OKP8exx3oILUPebL%2BW7neEnQtb3aDOHJ3uOPASlku%2B2KPUweZSNQCj6RuuJyJjWHRTPjcJwtjlOJ83kzYdlX9GScXbEqFyzbEQ24sxTAhgiJasqF5GJxKCslhJLTfD79xrJtNDEWQiI%2BhdCTKgrthh44ngJ6C23ungPk2nUF9P1%2F%2Fx4i3ANR73yIX2WBp2dXiUGArLY33TsNZZgVRK4Yu7HsvfMaU8EVO0JLOAato4B5wb9I7V1w2rU3xjbGfl%2BxwVvlgAwpCx2SClrtNx%2FvVCyqHs9DpD4cDjWvP%2B8PLNsQoR8r3TpLQ4d%2Bj%2F7FaPxyf3dZMiXPU6FUb9QsrnFZdupaSyrd6O1I%2FWt%2Btl6O0yqdwl%2Fw36bDnwRsfTXrsrhQPtv06lOU2m1r1xr9a9x0B%2BG6U5mXCTENP6ZRhR2YdtM0HoniDtvW%2Fbz1CCEeJvghLqBYn23%2FfaLr3w%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Freference-data-job-title-job-title
+- Markdown placeholder: `markdown\0429-Reference_Data-Job_Title-Job_Title.md`
+- Raw HTML: `raw-html\0429-Reference_Data-Job_Title-Job_Title.html`
+
+## 0430. Reference Data-Skill
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Reference Data-Skill
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/reference-data-skill
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9owFP0rkd8TJyaDYgESLZuG1G5RYXvYS2Wcm9WqY3u%2BTsf%2BfR3TTmwSfczJPV%2F3eoGi146vh%2FBo7uHXABiy7WZJHlhZyfnkMMk%2FSFbn9WF6lR8mLcuns66edR1AxSYk%2Bw4elTVLwoqSZFvEAbYGgzAhQiWb5mWdl%2FN9xXhZ8npWzBn7QbJNdFFGhMR8DMEhp1TawYkcjgG8EbqwT0EU0vZUOPffv4cIO4HorA%2Fxq6JwfLKsHEpRs811%2F1GKKswooqVjOZJ9sl5CargkndAIY9ImCqhn%2BIs03gYrrb5WplXm55IM3nArUCE3ogfkQfLd%2Bu6Wx6b8cBpC%2Fnm%2Fb%2FLm625PsjUi%2BLHSjTU49OB34J%2BVhG%2F3t%2BclU%2FIiFUr1Rk16iUuyY68N8nSk9yO51%2FxktRinebqFP%2BO%2FTxdvCcjqYtYFPVM%2B2Tj%2BJUptN43VSv4ZN92LcNmpKqqEqDbv0iiHXii9blsPiHGHWtvfNx5EiIcJfogLoKuT7b9vdPUC&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Freference-data-skill
+- Markdown placeholder: `markdown\0430-Reference_Data-Skill.md`
+- Raw HTML: `raw-html\0430-Reference_Data-Skill.html`
+
+## 0442. User Reassignment Import
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > User Reassignment Import
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/user-reassignment-import
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87dkKyUKut1K0gKg2I1o4HXiY3uTJrjm18zij%2F%2FRwXpoLUPfrz3ffj7uYoB%2B3EagyP5g5%2BjoAh26wX5KGp38miLGe0buA9rfi%2BorN6xinf91fVnjeHquhJ9g08KmsWpMw5yTaII2wMBmlChHh5RXlF%2BWxXlIJzURd5UTffSbaOKsrIkDofQ3AoGOvs6CSFYwBvpM7tU5B5Zwcmnfvv7yHCTiI660N8FQyOT7bkI5dVub4ePnSyCA1DtGwKR7KP1neQEi7IQWqEyWkbCdQzvCKtt8F2Vl8r0yvzY0FGb4SVqFAYOQCK0Int6vOtiEnF%2FlSE4tNu19L263ZHshUi%2BCnSjTU4DuC34J9VB%2Fd3t%2Bchk%2FM8BUrxJk52qZdkx0EbFGlJb1tyf%2FyT5XyqFmkX%2Fqz%2F7Xb51wFZXvQ6Z2fMJxknvkSqzbq1WnW%2Fp0kPMlxWigeQENXTQyoVMEilV33vATHOUGv768aDDHExwY9xAGx5kv33Rpcv&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Fuser-reassignment-import
+- Markdown placeholder: `markdown\0442-User_Reassignment_Import.md`
+- Raw HTML: `raw-html\0442-User_Reassignment_Import.html`
+
+## 0448. Worker Assignment Import
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Worker Assignment Import
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/worker-assignment-import
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLLbtswEPwVgXdKlOQ4MWEbcOIWNZC2Quz00EuwodYNEYpkuVTq%2Fn0ouQ3cAs5Ro9l57HJO0BkvV318snf4s0eK2Wa9YA%2FqqrwANZvxGtqSTx7VlF%2FtxSWvZnUtWgFiilOWfcNA2tkFq3LBsg1RjxtLEWxMkKimXEy4mO3KSgohLxKprr%2BzbJ1ctIU4Tj7F6EkWhXK9B46HiMGCyd1zhFy5rgDv%2F%2Fv3kGAPRN6FmL7KAg%2FPrhK9gEm1vu4%2BKCjjZUHkiqEcyz66oHBsuGB7MIRD0iYJ6Bd8Q5rgolPOXGvbavtjwfpgpQPSJC10SDIquV19vpWphHw8kkh%2B2u0a3nzd7li2IsIwVLpxlvoOwxbDi1Z4f3d7WnJMno%2BFxnqDZnFulmWHzliS45Hej%2BT%2F5GfL%2BcCW4y3Cyfz74%2FA3AVuezTovTpSPNl5%2BSVKbdeOMVr%2BHTXcQzzuVeTkiuuX7kSqxA21WbRuQKO3QGPfrJiDEdJgY%2BrSAYnm0%2FfeNLl8B&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Fworker-assignment-import
+- Markdown placeholder: `markdown\0448-Worker_Assignment_Import.md`
+- Raw HTML: `raw-html\0448-Worker_Assignment_Import.html`
+
+## 0449. Worker Import
+
+- TOC Path: Integration Technical Documentation > Coupa Core Flat Files (CSV) > Flat File (CSV) Import > Worker Import
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/worker-import
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZDdpGiEJkDYbFqDbjCbdw14KWaZbobKkiXKX%2Ff1kZS2yAukjT7zjHakFil47vh7Ck7mDXwNgyLabJXlo5VUjZl2XdyWwfNLM5%2FkVNLO8mk3nU9ZcXE4bRrIf4FFZsyRVEast4gBbg0GYECFWXeZskrP5vqw4Y3xaFZH7k2SbOEUZERLzKQSHnFJpBydyOATwRujCPgdRSNtT4dy7t4cIO4HorA%2BxKikcnm3FBiYm1ea6%2FyRFGWYU0dIxHMk%2BWy8hJVySTmiE0WkdBdQLvCG1t8FKq6%2BVaZV5XJLBG24FKuRG9IA8SL5bf73lMSlvjk3Iv%2Bz3dV5%2F3%2B1JtkYEP0a6sQaHHvwO%2FIuScH93exoyOS9SoBRv1KTnuCQ79NogT0f62JL755%2BsFmM3T7fwJ%2FyP6eLVAVmd9bqgJ8rHMY5%2Fi1LbTW21kn%2FGTfcinJ9UFmVCVJt3qZVDL5Ret60HxLhDre3vGw8ixMMEP8QF0NVx7P9%2FdPUX&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fflat-file-(csv)-import%2Fworker-import
+- Markdown placeholder: `markdown\0449-Worker_Import.md`
+- Raw HTML: `raw-html\0449-Worker_Import.html`
+
+## 0522. GET Relationships
+
+- TOC Path: Integration Technical Documentation > Risk Assess Integrations > Risk Assess REST API > GET Relationships
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2bMFrUyEJkDYrFqDbjCbdw14K2mZWobKkiXKX%2Ff1kZS2yASn0pBOPd0dqTjBoJ1djeDL3%2BHNECtlmvWCPNUJbfRD7vO1Fm9eirPMZtnWOM5hd7SEeRJZ9Q0%2FKmgUTRcmyDdGIG0MBTIhQKS7ySCuvdpWQZSXLy6KuxHeWraOKMhAS8ykER5Lzzo4OcjwE9AZ0YZ8DFJ0dODj339tjhB0QOetDvFUcD89WlGMJtVhfDx87qMIlJ7J8CseyW%2Bs7TAkXbA%2BacHLaxAbqBd%2BQxttgO6uvlemV%2BbFgozfSAimSBgYkGTq5XX2%2BkzGpbI9FJD%2Ftdk3efN3uWLYiQj9FurGGxgH9Fv2L6vDh%2Fu40ZHJepEAp3tSTn%2BOy7DBoQzIt6X1L7q9%2FtpxP1TLtwp%2Fw36fDqwO2POt1zk86H2Wc%2FBJbbdaN1ar7PU16gHBeqSqqhKg%2B36dSiQMovep7j0RxhlrbXzceIcTFBD%2FGAfDlUfbfP7r8Aw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships
+- Markdown placeholder: `markdown\0522-GET_Relationships.md`
+- Raw HTML: `raw-html\0522-GET_Relationships.html`
+
+## 0523. GET Relationship Extension Fields
+
+- TOC Path: Integration Technical Documentation > Risk Assess Integrations > Risk Assess REST API > GET Relationships > GET Relationship Extension Fields
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/get-relationship-extension-fields
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8dO1HaUKut1K0gKg2I1sIDL5Pn3DJrjm18nVH%2BPY4LqCB1jzm55%2BteL1EOxovNGJ%2FsPXwfAWOx267IQ91yaJue00bJijbNkdM3%2FbGhDcz44lHN2wXMSfEFAmpnV6QuOSl2iCPsLEZpY4J4Pae8oXxxqGrBK8HbcsZnX0mxTS7aypiZTzF6FIwpN3pJ4RQhWGlK9xxlqdzApPf%2F%2FXtIsJeI3oWYvioGp2dX85HLpt7eDG9T4NgyRMemcqR454KC3HBFjtIgTEm7JKBf4C%2FSBRedcuZG217bbysyBiucRI3CygFQRCX2mw93IjUVj%2BchFO8Ph452n%2FYHUmwQIUyVbp3FcYCwh%2FCiFXy%2Bv7ssmZOXuVCuN2mya1xSnAZjUeQjvR7J%2F85P1stpWuRbhAv%2B63T5JwFZX826ZBfKZxsvPiap3bZzRquf06YHGa87VWWVEd3TYx4VMEhtNn0fADHt0Bj34zaAjOkwMYxpAWx9tv33ja5%2FAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Fget-relationship-extension-fields
+- Markdown placeholder: `markdown\0523-GET_Relationship_Extension_Fields.md`
+- Raw HTML: `raw-html\0523-GET_Relationship_Extension_Fields.html`
+
+## 0524. Risk Assess Engagement Object
+
+- TOC Path: Integration Technical Documentation > Risk Assess Integrations > Risk Assess REST API > GET Relationships > Risk Assess Engagement Object
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/risk-assess-engagement-object
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8dXxa6YrWVuhVEpQ2itfDAy%2BQ4DrOW2MbH2cq%2Fn%2BNuqCB1j%2Flyvts5XoAcei%2FWY3ywd%2Fr3qCEW280S3TecdR3lEs8aynHFGoWbD7MOt13F5uzi8mKuWlT80AGMs0vES4qKLcCotxaitDFBlM8wrTD9uGdcUCbovOS8%2BomKTXIxVsbMfIjRgyBEudFLrA9RByv70j1GWSo3EOn9f%2F%2FuE%2BwlgHchpi9G9OHRcTpSWfHN1fBJSRYvCYAjUzlUfHZB6dxwiTrZg56S1knAPOm%2FSB1cdMr1V8a2xv5aojFY4SQYEFYOGkRUYre%2BvRGpqWiOQyC%2B7Pc1rr%2Ft9qhYA%2BgwVbp2FsZBh50OT0bp73c3pyVz8jIXyvUmTXKOi4rD0FsQ%2BUjvR%2FKv%2BdFqMU2LfItwwn%2BfLt8SoNXZrAtyony08eJrktpuatcb9Wfa9CDjeSdWsoyYFnd5VOhBmn7dtkEDpB32vXu%2BDlrGdJgYxrQAsjra%2FvtGVy8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Frisk-assess-engagement-object
+- Markdown placeholder: `markdown\0524-Risk_Assess_Engagement_Object.md`
+- Raw HTML: `raw-html\0524-Risk_Assess_Engagement_Object.html`
+
+## 0525. Risk Assess Parent Relationship Object
+
+- TOC Path: Integration Technical Documentation > Risk Assess Integrations > Risk Assess REST API > GET Relationships > Risk Assess Parent Relationship Object
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/risk-assess-parent-relationship-object
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNj9MwEP0rke%2BO4yQtxWordbcgKi0QbQsHLqvBmbLWJnbwOEv59zguoILUPeZl3teMlwR9N6jNGB7tPX4fkUK2267Yw2xWLWQlNYeyRl7Pq5ZDhcjL42J%2BrFupq5lk2Wf0ZJxdsTIvWLYjGnFnKYANESrKOS9qXrw%2ByFIVUhWLfFZ%2BYdk2mhgLIREfQxhICaHdOADHU0BvocvdU4Bcu17AMPz37yHCAxANzof4JQWenlxZjAXU5famf6NBhleCyImpG8veOq8xFVyxI3SEU9AmCphn%2FIs03gWnXXdjbGvstxUbvVUOyJCy0COpoNV%2B8%2F5OxaLq63mI1LvDoeHNx%2F2BZRsi9FOlW2dp7NHv0T8bjZ%2Fu7y5LpuR5KpTqTZriGpdlp76zpNKNXo40%2FM7P1stpWqVT%2BAv%2By3T4k4Ctr2Zdigvls82gPkSp3bZxndE%2Fp033EK47yVwmxLT8mEYV9mC6Tdt6JIo77Dr349YjhHiY4Me4ALE%2B2%2F77RNe%2FAA%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Frisk-assess-parent-relationship-object
+- Markdown placeholder: `markdown\0525-Risk_Assess_Parent_Relationship_Object.md`
+- Raw HTML: `raw-html\0525-Risk_Assess_Parent_Relationship_Object.html`
+
+## 0526. Risk Assess Internal Manager Object
+
+- TOC Path: Integration Technical Documentation > Risk Assess Integrations > Risk Assess REST API > GET Relationships > Risk Assess Internal Manager Object
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/risk-assess-internal-manager-object
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdT9swFP0rkd8dO2lDqNVWKnTTKsEW0bKHvSDj3A6LxPZ8Hdb9%2BznuQB1SeczJPV%2F3eo6y75xYDeHJ3MGvATBkm%2FWCPDxWE1WXxZ627YTTaT2d0JmsOOV1eVHNZm21L2qSfQeP2poFKXNOsg3iABuDQZoQIV5eUD6lfLYrSsELwS%2Fzilc%2FSLaOLtrIkJhPITgUjCk7OEnhEMAb2eX2Ochc2Z5J5979e4iwk4jO%2BhC%2FCgaHZ1vygctpub7qPylZhJohWjaWI9ln6xWkhguylx3CmLSJAvoF3pDG22CV7a60abX5uSCDN8JK1CiM7AFFUGK7ur0Rsal4PA6h%2BLLbNbT5tt2RbIUIfqx0bQ0OPfgt%2BBet4P7u5rRkSp6nQqneqMnOcUl26DuDIh3p40juX36ynI%2FTIt3Cn%2FA%2FpsvXBGR5NuucnSgfbZz4GqU268Z2Wv0ZN93LcN6pyIuE6Jbu06iAXupu1bYeEOMOu87%2BvvYgQzxM8ENcAFsebf9%2Fo8u%2F&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Frisk-assess-internal-manager-object
+- Markdown placeholder: `markdown\0526-Risk_Assess_Internal_Manager_Object.md`
+- Raw HTML: `raw-html\0526-Risk_Assess_Internal_Manager_Object.html`
+
+## 0527. Risk Assess External Manager Object
+
+- TOC Path: Integration Technical Documentation > Risk Assess Integrations > Risk Assess REST API > GET Relationships > Risk Assess External Manager Object
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-relationships/risk-assess-external-manager-object
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8d22npitVW6lYQlQZEa8cDL5Ob3DBrjm18nVH%2B%2FRwXpoLUPebknq97vUDVGy%2FXQ3y0d%2FBzAIzFdrMkD1U7g06oKyraSUunkxmn87mY0JYDPxxE13XVnBTfIKB2dkmqkpNiizjA1mJUNiaIVzPKp5S%2F34tKciH5vHzHZ99JsUku2qqYmY8xepSMNW7wisIxQrDKlO4pqrJxPVPe%2F%2FfvIcFeIXoXYvoSDI5PruIDV9Nqc91%2FaJSIVwzRsbEcKT660EBuuCSdMghj0joJ6Gd4Rergomucuda21fbHkgzBSqdQo7SqB5Sxkbv151uZmsrDaQjlp%2F2%2BpvXX3Z4Ua0QIY6UbZ3HoIewgPOsG7u9uz0vm5GUulOuNmuwSlxTH3liU%2BUhvR%2FJ%2F8pPVYpyW%2BRbhjP82Xf1NQFYXsy7YmfLJxssvSWq7qZ3Rze9x072Kl51EKTKiW9rlUQm90mbdtgEQ0w6Ncb9uAqiYDhPDkBbAVifbf9%2Fo6gU%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Frisk-assess-integrations%2Frisk-assess-rest-api%2Fget-relationships%2Frisk-assess-external-manager-object
+- Markdown placeholder: `markdown\0527-Risk_Assess_External_Manager_Object.md`
+- Raw HTML: `raw-html\0527-Risk_Assess_External_Manager_Object.html`
+
+## 0530. Open eSign Connector Specifications
+
+- TOC Path: Integration Technical Documentation > CLM Open eSign Framework > Open eSign Connector Specifications
+- Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/clm-open-esign-framework/open-esign-connector-specifications
+- Redirect URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr8ntrO0EKut1K0gKg2I1sIDL9PNuTJrjh18zij%2F%2FZwUUEHqHvPlvl93XhB0tlfrIT66O%2FwxIMVsu1my%2B%2FlbrGYwO%2BRXdT3PqxLa%2FEG387yeiYOuWg21rFn2FQMZ75asLATLtkQDbh1FcDFBopznospFvZelElJJUcj66hvLNsnFOIgT8zHGnhTn2g895HiMGBzYwj9FKLTvOPT9f%2F%2FuE9wDUe9DTF%2BS4%2FHJl2IQUJWb6%2B6dBhnfcCLPx3Ise%2B%2BDxqnhkh3AEo5JmyRgnvEv0gQfvfb22rjWuO9LNgSnPJAh5aBDUlGr3frjrUpN1cNpiNSH%2Fb7Jm8%2B7PcvWRBjGSjfe0dBh2GF4Nhq%2F3N2el5ySF1Ohqd6oyS9xWXbsrCM1Hen1SP3v%2FGy1GKfVdItwxn%2BdDn8SsNXFrAt%2Bpnyy6dWnJLXdNN4a%2FWvcdAfxspMs5ISYNj9Mowo7MHbdtgGJ0g6t9T9vAkJMh4lhSAvgq5Ptv2909QI%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fclm-open-esign-framework%2Fopen-esign-connector-specifications
+- Markdown placeholder: `markdown\0530-Open_eSign_Connector_Specifications.md`
+- Raw HTML: `raw-html\0530-Open_eSign_Connector_Specifications.html`

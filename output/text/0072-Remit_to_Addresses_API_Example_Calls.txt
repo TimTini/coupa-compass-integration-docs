@@ -1,0 +1,61 @@
+Remit to Addresses API Example Calls
+
+Different Query Options for Remit to Addresses
+
+Here are more examples of how to use the Expense Report API to query and get the result set you want.
+
+This query will give you the expense reports with total greater than certain dollar amount
+
+https://<instance>.coupahost.com/api/expense_reports?total[gt]=800
+
+This query will give you the Remit to Addresses updated by a particular user with Login = coupasupport
+
+https://<instance>.coupahost.com/api/suppliers/1/addresses?updated_by[login]=coupasupport
+
+This query will give you all the remit to addresses created after March 1st 2010
+
+https://<instance>.coupahost.com/api/suppliers/1/addresses?created-at[gt]=2010-03-01T12:00:00
+
+This query will give you all the remit to Address with Country Code US
+
+https://<instance>.coupahost.com/api/suppliers/1/addresses?country[code]=US
+
+Get Single Remit To Address
+
+In this example, we queried for a single remit to address with an ID of 492
+
+We did a GET to the URL:
+
+https://<instance>.coupahost.com/api/suppliers/1/addresses/492
+
+or
+
+https://<instance>.coupahost.com/api/suppliers/1/addresses?id=492
+
+The Result:
+
+Query Remit to Address Sample Result <?xml version="1.0" encoding="UTF-8"?> <remit-to-address> <id type="integer">492</id> <created-at type="datetime">2014-04-02T15:23:59-07:00</created-at> <updated-at type="datetime">2014-04-03T09:04:07-07:00</updated-at> <remit-to-code>REMIT1</remit-to-code> <name>Test Remit Address</name> <street1>123 test street</street1> <street2>testing</street2> <city>Pleasanton</city> <state>CA</state> <postal-code>94566</postal-code> <active type="boolean">true</active> <country> <id type="integer">223</id> <code>US</code> <name>United States</name> </country> <created-by> <id type="integer">1</id> <login>coupasupport</login> <email>upgrade@coupa.com</email> <employee-number /> <firstname>Coupa</firstname> <lastname>Support</lastname> <salesforce-id nil="true" /> <mycustom-userfield /> </created-by> <updated-by> <id type="integer">1</id> <login>coupasupport</login> <email>upgrade@coupa.com</email> <employee-number /> <firstname>Coupa</firstname> <lastname>Support</lastname> <salesforce-id nil="true" /> <mycustom-userfield /> </updated-by> </remit-to-address>
+
+Remit to Address Create
+
+In this example we are creating a Remit To Address in Active status for a supplier with ID '1'. We are using a Coupa system supplier ID for Reference.
+
+We posted it to the URL: https://<instance url>/api/suppliers/<supplier id>/addresses/. This created the Remit To Address in active status.
+
+Example Code to Create Remit to Address <?xml version="1.0" encoding="UTF-8"?> <remit-to-address> <remit-to-code>REMIT2</remit-to-code> <name>Test Remit Address</name> <street1>123 test street</street1> <street2>testing</street2> <city>Pleasanton</city> <state>CA</state> <postal-code>94566</postal-code> <active>true</active> <country> <name>United States</name> </country> </remit-to-address>
+
+Remit to Address Update
+
+In these examples, we are updating a single Remit To Address record.
+
+We did a PUT to the URL: https://instance.coupahost.com/api/expense_reports/ <id>
+
+For Example, to update the status of the Remit To Address with ID 495 for a supplier with ID 1
+
+URL: https://instance.coupahost.com/api/s.../addresses/495
+
+Sample Code to Update Status of Remit To Address <?xml version="1.0" encoding="UTF-8"?> <remit-to-address> <active>true</active> </remit-to-address>
+
+For Example to update the Remit to Code value for a Remit To Address with an ID 495
+
+Sample Code to Update Remit To Code for a Remit To Address <?xml version="1.0" encoding="UTF-8"?> <remit-to-address> <remit-to-code>REMIT5</remit-to-code> </remit-to-address>

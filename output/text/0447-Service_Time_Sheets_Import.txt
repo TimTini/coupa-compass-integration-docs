@@ -1,0 +1,360 @@
+Service/Time Sheets Import
+
+Overview
+
+This loader is available for Services Maestro customers.
+
+The Service/Time Sheets import process reads files from ./Incoming/ServiceTimeSheets in the standard SFTP setup. These files are moved to the archive folder located at ./Incoming/Archive/ServiceTimeSheets before being processed in alphanumeric order.
+
+You can also find this integration object in your Coupa instance at: https://{your_instance}/integration_documents/bulk_show/WorkConfirmation::Header.
+
+Service Sheets
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Service Sheet Header 	No 	No 	 	Specifies the type of row.
+PO Number 	No 	No 	string 	PO number of the associated PO.
+Supplier Name 	No 	No 	 	The name of the supplier.
+Supplier Number 	No 	No 	 	Used to cross-reference the supplier number from your financial system.
+External Reference 	No 	No 	 	External Reference
+Time Sheet Line 	No 	No 	 	Time Sheet Line
+PO Line Number 	No 	No 	 	PO Line Number
+Week Start Date 	No 	No 	 	Week Start Date
+Day 1 	No 	No 	 	Day 1
+Day 2 	No 	No 	 	Day 2
+Day 3 	No 	No 	 	Day 3
+Day 4 	No 	No 	 	Day 4
+Day 5 	No 	No 	 	Day 5
+Day 6 	No 	No 	 	Day 6
+Day 7 	No 	No 	 	Day 7
+Service Line 	No 	No 	 	Service Line
+Price 	No 	No 	 	Price
+Currency 	No 	No 	 	Currency
+Quantity 	No 	No 	 	Quantity
+Actual Completion 	No 	No 	 	Actual Completion
+UOM 	No 	No 	 	UOM
+
+Time sheet line
+
+Column Name
+
+Description
+
+Req'd
+
+Unique
+
+Type
+
+Allowable Values
+
+Time Sheet Line
+
+Specifies the type of row
+
+FALSE
+
+FALSE
+
+string(255)
+
+Time Sheet Line
+
+PO Line Number
+
+Line number of the associated PO line
+
+FALSE
+
+FALSE
+
+string(20)
+
+any
+
+Week Start Date
+
+Date when the work began. Can't be in the future.
+
+FALSE
+
+FALSE
+
+date
+
+Can't be future. Format must include dashes. Acceptable formats are:
+
+-
+
+dd-mm-yyyy
+
+-
+
+mm-dd-yyyy
+
+-
+
+yyyy-mm-dd
+
+Day 1
+
+Hours worked. Sum of hours for all days must be greater than zero.
+
+FALSE
+
+FALSE
+
+decimal(30,3)
+
+any
+
+Day 2
+
+Hours worked. Sum of hours for all days must be greater than zero.
+
+FALSE
+
+FALSE
+
+decimal(30,3)
+
+any
+
+Day 3
+
+Hours worked. Sum of hours for all days must be greater than zero.
+
+FALSE
+
+FALSE
+
+decimal(30,3)
+
+any
+
+Day 4
+
+Hours worked. Sum of hours for all days must be greater than zero.
+
+FALSE
+
+FALSE
+
+decimal(30,3)
+
+any
+
+Day 5
+
+Hours worked. Sum of hours for all days must be greater than zero.
+
+FALSE
+
+FALSE
+
+decimal(30,3)
+
+any
+
+Day 6
+
+Hours worked. Sum of hours for all days must be greater than zero.
+
+FALSE
+
+FALSE
+
+decimal(30,3)
+
+any
+
+Day 7
+
+Hours worked. Sum of hours for all days must be greater than zero.
+
+FALSE
+
+FALSE
+
+decimal(30,3)
+
+any
+
+My Custom Field
+
+Custom Field
+
+FALSE
+
+FALSE
+
+any
+
+Note
+
+Day 1 is always the first day of the week. Currently, it's always Sunday, but in future releases, the actual day (Sunday, Monday, etc) of Day 1 could be determined by your locale.
+
+Service Sheet Line
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Service Sheet Header 	No 	No 	 	Service Sheet Header
+Service Sheet 	No 	No 	 	Service Sheet
+Service Sheet Line Number 	No 	No 	 	Service Sheet Line Number
+Description 	No 	No 	string(255) 	Description
+Quantity 	No 	No 	decimal(30,6) 	Quantity
+Unit Of Measure 	No 	No 	 	Unit Of Measure
+Total 	No 	No 	decimal(30,6) 	Total
+Rate Card Summary 	No 	No 	 	Rate Card Summary
+
+Service line
+
+Column Name
+
+Description
+
+Req'd
+
+Unique
+
+Type
+
+Allowable Values
+
+Service Line
+
+Specifies the type of row
+
+FALSE
+
+FALSE
+
+string(255)
+
+Service Line
+
+Price
+
+For service quantity lines, must match the PO's line. For service amount lines, can be any valid amount.
+
+FALSE
+
+FALSE
+
+decimal(30,6)
+
+any
+
+Currency
+
+Must match the PO line's currency code
+
+FALSE
+
+FALSE
+
+string(6)
+
+any
+
+Quantity
+
+For amount-based lines, must be blank
+
+FALSE
+
+FALSE
+
+decimal(30,6)
+
+any
+
+Actual Completion
+
+Time and date of when the work was completed
+
+FALSE
+
+FALSE
+
+datetime
+
+any
+
+UOM
+
+For service quantity lines, Must match the PO line. For service amount lines, must be blank.
+
+FALSE
+
+FALSE
+
+string(100)
+
+any
+
+Rate card line (when applicable)
+
+Column Name
+
+Description
+
+Req'd
+
+Unique
+
+Type
+
+Allowable Values
+
+PO line number
+
+Line number of the associated PO line
+
+FALSE
+
+FALSE
+
+string(20)
+
+Any
+
+Rate line
+
+Specify the rate line
+
+TRUE
+
+Name
+
+Describes the service associated with the rate. Typically the same as the Rate line field
+
+TRUE
+
+Code
+
+Describes the service associated with the rate.
+
+FALSE
+
+Line type
+
+Amount, Quantity, or Resource
+
+TRUE
+
+Price
+
+Total budget for the request
+
+TRUE
+
+Quantity
+
+For amount-based lines, must be blank
+
+FALSE
+
+UOM
+
+Unit of measure. Required for Quantity-based lines.
+
+FALSE

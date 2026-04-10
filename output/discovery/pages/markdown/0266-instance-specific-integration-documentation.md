@@ -1,0 +1,18 @@
+---
+title: "instance-specific-integration-documentation"
+url: "https://compass.coupa.com/en-us/products/product-documentation/total-spend-management-platform/instance-specific-integration-documentation"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TtKsLVZbqVtBVBoQrYUHXqarc2XWEtv4nFH%2BexwXUEHqHvPlvl93XhD0nZPrITyZB%2Fw%2BIIVsu1myRzU9HNR0jhzmR%2BB1Vbd8Pq2BT24mbYmzCVbQsuwLetLWLFmVFyzbEg24NRTAhAgV1ZQXNS%2BLfVHKm5ksJ3n1pvrKsk100QZCYj6F4EgKoezggOMpoDfQ5fY5QK5sL8C5%2F%2F49RtgBkbM%2BxK9S4OnZVsVQQF1tbvu3CsowE0RWjOVY9s56hanhkh2hIxyTNlFAv%2BBfpPE2WGW7W21abb4t2eCNtECapIEeSQYld%2BsP9zI2lYfzEMn3%2B33Dm0%2B7PcvWROjHSnfW0NCj36F%2F0Qo%2FP9xflkzJ81Qo1Rs1xTUuy059Z0imI70eyf3Oz1aLcVqmW%2FgL%2Fut0%2BJOAra5mXYgL5bONkx%2Bj1HbT2E6rn%2BOmewjXncq8TIhu%2BTGNSuxBd%2Bu29UgUd9h19sedRwjxMMEPcQFidbb9942ufgE%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Finstance-specific-integration-documentation"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:57:14+00:00"
+---
+
+# instance-specific-integration-documentation
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/total-spend-management-platform/instance-specific-integration-documentation](https://compass.coupa.com/en-us/products/product-documentation/total-spend-management-platform/instance-specific-integration-documentation)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TtKsLVZbqVtBVBoQrYUHXqarc2XWEtv4nFH%2BexwXUEHqHvPlvl93XhD0nZPrITyZB%2Fw%2BIIVsu1myRzU9HNR0jhzmR%2BB1Vbd8Pq2BT24mbYmzCVbQsuwLetLWLFmVFyzbEg24NRTAhAgV1ZQXNS%2BLfVHKm5ksJ3n1pvrKsk100QZCYj6F4EgKoezggOMpoDfQ5fY5QK5sL8C5%2F%2F49RtgBkbM%2BxK9S4OnZVsVQQF1tbvu3CsowE0RWjOVY9s56hanhkh2hIxyTNlFAv%2BBfpPE2WGW7W21abb4t2eCNtECapIEeSQYld%2BsP9zI2lYfzEMn3%2B33Dm0%2B7PcvWROjHSnfW0NCj36F%2F0Qo%2FP9xflkzJ81Qo1Rs1xTUuy059Z0imI70eyf3Oz1aLcVqmW%2FgL%2Fut0%2BJOAra5mXYgL5bONkx%2Bj1HbT2E6rn%2BOmewjXncq8TIhu%2BTGNSuxBd%2Bu29UgUd9h19sedRwjxMMEPcQFidbb9942ufgE%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Finstance-specific-integration-documentation](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87TtKsLVZbqVtBVBoQrYUHXqarc2XWEtv4nFH%2BexwXUEHqHvPlvl93XhD0nZPrITyZB%2Fw%2BIIVsu1myRzU9HNR0jhzmR%2BB1Vbd8Pq2BT24mbYmzCVbQsuwLetLWLFmVFyzbEg24NRTAhAgV1ZQXNS%2BLfVHKm5ksJ3n1pvrKsk100QZCYj6F4EgKoezggOMpoDfQ5fY5QK5sL8C5%2F%2F49RtgBkbM%2BxK9S4OnZVsVQQF1tbvu3CsowE0RWjOVY9s56hanhkh2hIxyTNlFAv%2BBfpPE2WGW7W21abb4t2eCNtECapIEeSQYld%2BsP9zI2lYfzEMn3%2B33Dm0%2B7PcvWROjHSnfW0NCj36F%2F0Qo%2FP9xflkzJ81Qo1Rs1xTUuy059Z0imI70eyf3Oz1aLcVqmW%2FgL%2Fut0%2BJOAra5mXYgL5bONkx%2Bj1HbT2E6rn%2BOmewjXncq8TIhu%2BTGNSuxBd%2Bu29UgUd9h19sedRwjxMMEPcQFidbb9942ufgE%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Ftotal-spend-management-platform%2Finstance-specific-integration-documentation)
+
+Observed redirect page title: Coupa Portals - Sign In

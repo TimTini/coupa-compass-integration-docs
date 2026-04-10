@@ -1,0 +1,103 @@
+Users
+
+The Users quick integration import allows Risk Assess users to directly upload spreadsheets via the HTTPS protocol. This allows customers to perform inbound imports in an automated manner without the need for a user interface.
+
+Post URL
+
+https://<CRA_TENANT>.hiperos.com/QuickIntegration/Users
+
+Users
+
+Field 	 Description 	 Req'd 	 Unique 	 Type 	 Allowable Values
+EmailAddress (*) 	Enter the email address of the user. 	Yes 	Yes 	String(256)
+
+Uses regular expressions:
+
+Default: ^[\w.+'-]+@[\w\.-]+\.(\w{2,7})$ Used when http context doen't exist
+
+Filtering on top level domains: ^[\w.+'-]+@[\w\.-]+\.(TOPLEVELDOMAINLIST)$ Used for a logged in user
+
+*Note: regex can be chaned per client via a localization change request.
+
+AND Can't contain ..
+
+AND Can't contain .@
+
+AND Can't contain whitespace
+
+AlternateEmail 	Enter the alternate email address of the user; this value sets the email address different from the username. NOTE: this field populates the Email field on the User Profile page and also the Contacts page (for suppliers). 	 	 	String(256)
+
+Uses regular expressions:
+
+Default: ^[\w.+'-]+@[\w\.-]+\.(\w{2,7})$ Used when http context doen't exist
+
+Filtering on top level domains: ^[\w.+'-]+@[\w\.-]+\.(TOPLEVELDOMAINLIST)$ Used for a logged in user
+
+*Note: regex can be chaned per client via a localization change request.
+
+AND Can't contain ..
+
+AND Can't contain .@
+
+AND Can't contain whitespace
+
+FirstName (*) 	Enter the first name of the user. 	Yes 	 	String(64) 	any
+Middle 	Enter the middle name of the user. 	 	String(64) 	any
+LastName (*) 	Enter the last name of the user. 	Yes 	 	String(64) 	any
+Prefix 	Enter the prefix. Must match an existing prefix defined under Setup Data Management. 	 	 	String(64) 	any
+Title 	Enter the title of the user. 	 	 	String(64) 	any
+Activated (*) 	[Yes or No] Enter Yes to activate the user. 	Yes 	 	Boolean 	Yes or No
+IsSupplierUser (*) 	[Yes or No] Enter Yes to indicate the user is a supplier user. 	Yes 	 	Boolean 	Yes or No
+ExternalSupplierReference 	Enter the unique reference key to link to external systems (ERP system, etc). 	Yes if IsSupplierUser = yes and SupplierName is empty
+SupplierName 	Enter the name of the supplier. Must match an existing supplier. 	Yes if IsSupplierUser = yes and ExternalSupplierReference is empty 	 	any
+IsAdministrator (*) 	[Yes or No] Enter Yes to indicate the user is an administrator . 	Yes 	 	Boolean 	Yes or No
+Culture 	Enter the user language. 	 	 	String(64) 	Must match an existing setup data code for Culture setup data type. Will set either active or inactive setup codes.
+TurnOffEmails 	[Yes or No] Enter Yes to not send custom emails. 	 	 	Boolean 	Yes or No
+NoticeLinkMode 	Enter Default, Direct or SSO. See SSO Notice Link Mode.
+DefaultDashboardView 	Enter Personal, Widgets, or Analytics* to set the default tab on the home page. *must be an internal user and have analytics enabled for this to work.
+PersonalizationMode 	Enter Open, Locked or Restricted; default value is Open. See Personalization Mode/Template.
+PersonalizeTemplateName 	Enter the template name. Must be a string no longer than 256 characters. 	 	 	String(255)
+EnableTabQuickAccess 	Enter Yes to use the quick access Relationships tab. 	 	 	Boolean 	Yes or No
+BusinessPhone 	Enter the business phone number. 10 digits, US format. 	 	 	String(10)
+
+Uses regular expressions:
+
+must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?: x[0-9]{1,4})?$
+
+must have at least 7 digits
+
+MobilePhone 	Enter the mobile phone number. 10 digits, US format. 	 	 	String(10)
+
+Uses regular expressions:
+
+must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?: x[0-9]{1,4})?$
+
+must have at least 7 digits
+
+FaxNumber 	Enter the fax number. 10 digits, US format. 	 	 	String(10)
+
+Uses regular expressions:
+
+must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?: x[0-9]{1,4})?$
+
+must have at least 7 digits
+
+HomePhone 	Enter the home phone number. Format? US vs International? 	 	 	String(10)
+
+Uses regular expressions:
+
+must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?: x[0-9]{1,4})?$
+
+must have at least 7 digits
+
+Country 	Enter the setup data code or display name of the country from the MailCountry setup data type. 	 	 	String(64) 	Must match an existing setup data code for Culture setup data type. Will set either active or inactive setup codes.
+Address1 	Enter the first line of the user address. 	 	 	String(64) 	any
+Address2 	Enter the second line of the user address. 	 	 	String(64) 	any
+City 	Enter the city of the user. 	 	 	String(64) 	any
+State 	Enter the setup data code or display name of the state/province from either the MailState setup data type if the country column value is us or the MailProvince setup data type if the country column value is ca. 	 	 	String(64) 	any
+PostalCode 	Enter the zip code of the user. 	 	 	String(64) 	any
+County 	Enter the county of the user. 	 	 	String(64) 	any
+UserGroup 	Enter the name of the user group. Must match an existing group name defined under Group Management.
+SSOUsername 	Enter the SSO username of the user. See Single Sign On (SSO). 	 	 	String(1000) 	any
+
+(*)Required

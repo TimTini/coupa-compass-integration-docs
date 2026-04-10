@@ -1,0 +1,9 @@
+about-coupa-releases
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/release-notes/about-coupa-releases
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9MwEP5XIr87ibOkLVZbqVtBVBoQrR0PvEy39MqsObbxOaP89zguoDKpe8yX%2B37deU7QaydXQ3gyd%2FhjQArZZr1gD00lsJmJGb%2BaHgSvJ5XgMK0P%2FHFa1tCIssEJsOwrelLWLFiVlyzbEA24MRTAhAiV1YSXNRflrhSyeSevZnmEvrFsHV2UgZCYTyE4kkXR2cEBx2NAb0Dn9jlA3tm%2BAOde%2FXuIsAMiZ32IX6LA47OtyqGEulpf9%2B87EGFaENliLMeyD9Z3mBou2AE04Zi0jQLqBf8hrbfBdlZfK7NX5vuCDd5IC6RIGuiRZOjkdvXpVsam8vE0RPLjbtfy9st2x7IVEfqx0o01NPTot%2BhfVIf3d7fnJVPyPBVK9UbN4hKXZcdeG5LpSG9Hcn%2Fys%2BV8nJbpFv6M%2FzYd%2FiZgy4tZ58WZ8snGyc9RarNurVbdr3HTPYTLTiIXCVF7fkijEntQerXfeySKO9Ta%2FrzxCCEeJvghLqBYnmz%2Ff6PL3w%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Frelease-notes%2Fabout-coupa-releases
+
+Observed redirect page title: Coupa Portals - Sign In

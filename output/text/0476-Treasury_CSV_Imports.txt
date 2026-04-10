@@ -1,0 +1,88 @@
+Treasury CSV Imports
+
+View available imports and download templates.
+
+Use these guidelines when setting up Standard Treasury CSV imports:
+
+- Use the templates in the table below to import content. Templates downloaded from the Treasury Management user interface (UI) are intended for UI upload only, as they are based on user language settings.
+-
+
+Avoid loading dependency object files at the same time. For example, do not load the Project, Portfolio, and corresponding Cash Flow files at the same time, but load the Project and Portfolio files first, and then the Cash Flow file.
+
+-
+
+For a small data set, create the data records manually through the UI instead of using a CSV import.
+
+-
+
+Each inbound file has a 5000 row and 100 MB limit.
+
+- The date format must be one of the following:
+- yyyy-MM-dd
+- MM/dd/yyyy
+- dd.MM.yyyy
+
+- You must use a period mark (.) as the decimal separator for all upload files.
+- For more information on the elements for the CSV imports, refer to the API documentation in the Treasury application. See View Treasury API Documentation.
+
+For more information, see Using the Flat File Format.
+
+Available imports
+
+Inbound files are picked up every 3-6 minutes from your Coupa sFTP site for further processing. This schedule cannot be modified. Once the file corresponding to each object is processed, the file is moved to the corresponding /Archive folder.
+
+Add files to the respective folders under the /Incoming folder. For example: /Incoming/FxRates.
+
+Export name and template download 	Inbound folder
+
+Cash Flow
+
+/Incoming/CashFlows/
+
+Intercompany Payment
+
+/Incoming/IntercompanyPayment
+
+Commodity Rates
+
+/Incoming/CommodityRates
+
+Credit Spreads
+
+/Incoming/CreditSpreads
+
+FX Forward Rates
+
+/Incoming/FxForwardRates
+
+FX Rates
+
+/Incoming/FxRates
+
+Implied FX Volatilities 	/Incoming/ImpliedFxVolatilities
+
+Interest Rates
+
+/Incoming/InterestRates
+
+Interest Volatilities
+
+/Incoming/InterestVolatilities
+
+Liquidity Planning Data 	/Incoming/LiquidityPlanningData
+
+Security Prices
+
+/Incoming/SecurityRates
+
+Categories
+
+/Incoming/PlanningCategories
+
+Portfolio
+
+/Incoming/TreasuryPortfolios
+
+Project
+
+/Incoming/TreasuryProjects

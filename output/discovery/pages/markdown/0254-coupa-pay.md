@@ -1,0 +1,18 @@
+---
+title: "coupa-pay"
+url: "https://compass.coupa.com/en-us/products/coupa-pay"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8T26WXzWordSuISgOiteOBl8lxTpg1xzY%2Bzij%2FHscFVCZ1j%2Flyvts5XqLsjRebIT7Ze%2FgxAMZit12Rx6bpmq5r35WqaefldMqvyyt5NS%2FnTE47vmBqtuhI8RUCamdXZFIxUuwQB9hZjNLGBLHJvGTTkrMD42K2EOy6mnH%2BjRTb5KKtjJn5FKNHQalyg5clHCMEK03lnqOslOup9P7Vv8cEe4noXYjpi1M4PrsJG1Kyyfamf68kjwuK6OhYjhQfXFCQG65IJw3CmLROAvoF%2FiF1cNEpZ260bbX9viJDsMJJ1Cis7AFFVGK%2F%2BXQnUlPRnIZQfDwc6rL%2Bsj%2BQYoMIYax06ywOPYQ9hBet4OH%2B7rxkTl7lQrneqEkvcUlx7I1FkY%2F0diT%2FJz9ZL8dpkW8Rzvhv0%2BXfBGR9MeuSnimfbLz4nKR229oZrX6Nm%2B5lvOzEK54R3ZZdHhXQS202bRsAMe3QGPfzNoCM6TAxDGkBdH2y%2Ff%2BNrn8D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcoupa-pay"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:57:10+00:00"
+---
+
+# coupa-pay
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/coupa-pay](https://compass.coupa.com/en-us/products/coupa-pay)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8T26WXzWordSuISgOiteOBl8lxTpg1xzY%2Bzij%2FHscFVCZ1j%2Flyvts5XqLsjRebIT7Ze%2FgxAMZit12Rx6bpmq5r35WqaefldMqvyyt5NS%2FnTE47vmBqtuhI8RUCamdXZFIxUuwQB9hZjNLGBLHJvGTTkrMD42K2EOy6mnH%2BjRTb5KKtjJn5FKNHQalyg5clHCMEK03lnqOslOup9P7Vv8cEe4noXYjpi1M4PrsJG1Kyyfamf68kjwuK6OhYjhQfXFCQG65IJw3CmLROAvoF%2FiF1cNEpZ260bbX9viJDsMJJ1Cis7AFFVGK%2F%2BXQnUlPRnIZQfDwc6rL%2Bsj%2BQYoMIYax06ywOPYQ9hBet4OH%2B7rxkTl7lQrneqEkvcUlx7I1FkY%2F0diT%2FJz9ZL8dpkW8Rzvhv0%2BXfBGR9MeuSnimfbLz4nKR229oZrX6Nm%2B5lvOzEK54R3ZZdHhXQS202bRsAMe3QGPfzNoCM6TAxDGkBdH2y%2Ff%2BNrn8D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcoupa-pay](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8T26WXzWordSuISgOiteOBl8lxTpg1xzY%2Bzij%2FHscFVCZ1j%2Flyvts5XqLsjRebIT7Ze%2FgxAMZit12Rx6bpmq5r35WqaefldMqvyyt5NS%2FnTE47vmBqtuhI8RUCamdXZFIxUuwQB9hZjNLGBLHJvGTTkrMD42K2EOy6mnH%2BjRTb5KKtjJn5FKNHQalyg5clHCMEK03lnqOslOup9P7Vv8cEe4noXYjpi1M4PrsJG1Kyyfamf68kjwuK6OhYjhQfXFCQG65IJw3CmLROAvoF%2FiF1cNEpZ260bbX9viJDsMJJ1Cis7AFFVGK%2F%2BXQnUlPRnIZQfDwc6rL%2Bsj%2BQYoMIYax06ywOPYQ9hBet4OH%2B7rxkTl7lQrneqEkvcUlx7I1FkY%2F0diT%2FJz9ZL8dpkW8Rzvhv0%2BXfBGR9MeuSnimfbLz4nKR229oZrX6Nm%2B5lvOzEK54R3ZZdHhXQS202bRsAMe3QGPfzNoCM6TAxDGkBdH2y%2Ff%2BNrn8D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fcoupa-pay)
+
+Observed redirect page title: Coupa Portals - Sign In

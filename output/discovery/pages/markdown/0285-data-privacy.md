@@ -1,0 +1,36 @@
+---
+title: "Global Privacy Program | Coupa"
+url: "https://compass.coupa.com/en-us/trust/data-privacy"
+final_url: "https://compass.coupa.com/en-us/trust/data-privacy"
+content_type: "text/html"
+classification: "placeholder"
+fetched_at: "2026-04-10T01:57:49+00:00"
+---
+
+# Global Privacy Program | Coupa
+
+The discovered page did not expose a standard <article> block, so a placeholder was generated.
+
+**Requested URL:** [https://compass.coupa.com/en-us/trust/data-privacy](https://compass.coupa.com/en-us/trust/data-privacy)
+
+Page text preview: Global Privacy Program | Coupa
+
+Skip to Content
+
+EN
+- EN - English
+- DE - Deutsch
+- JA - 日本語
+- FR - Français
+
+Global Privacy Program
+
+This section on Coupa’s global privacy program provides details on Coupa’s approach to data privacy compliance, and offers additional insight into operational details.
+
+Coupa has an ISO 27701/ISO 27001 and Global Privacy Recognition for Processor (Global/PRP) - certified global privacy program to support our customers' compliance efforts, and to meet the expectations of key stakeholders.
+
+Our privacy program is integrated into our Enterprise Risk Management process together with all other significant compliance domains, and it is aligned with the GRI and SASB sustainability reporting standards, as we view data privacy as a fundamental human right.
+
+For further information, please visit coupa.com/legal.
+
+Legal Disclaimer - This website is provided for informational purposes only and should not be considered as a contractual commitment or legal advice and does not discuss other privacy-related laws or regulations that may also be relevant to our customers and prospects, including any industry-specific requirements. The relevant privacy and data protect

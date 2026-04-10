@@ -1,0 +1,1574 @@
+<article class="" id="requisitions_import">
+<h1 class="title">Requisitions Import</h1>
+<div class="body">
+<div class="" id="overview-d117e166274">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Requisition Import process reads files from the
+          <code class="ph codeph">./Incoming/Requisitions/</code> in the SFTP. These files are moved to the
+        archive folder located at <code class="ph codeph">./Incoming/Archive/Requisitions/</code> before being
+        processed in alphanumeric order.</p>
+<p class="">Coupa can't update a requisition using flat file Integration.</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>When specifying a ship-to address, Coupa first looks for Ship to
+          Id and then Ship to Country Location Code. If neither field is found, then a new ship-to
+          address is created.</div>
+</p>
+</div>
+<div class="" id="item_finder_logic-d117e166290">
+<h2 class="title sectiontitle">Item finder logic </h2>
+<p class="">Coupa searches <code class="ph codeph">Supplier Items</code> for <code class="ph codeph">Header Requestor User</code>
+        on an item with a matching <code class="ph codeph">Supplier Part Number</code>. If nothing is found, Coupa
+        uses the first created <code class="ph codeph">Supplier Item</code> for <code class="ph codeph">Header Requestor
+          User</code>.</p>
+<p class="">If your search is successful, refer to the Requisition Line Defaults for All Lines section
+        below.</p>
+<p class="">If you run into errors, refer to the Item Finder Errors section below.</p>
+</div>
+<div class="" id="section_xfp_3vq_f1c">
+<h2 class="title sectiontitle">Requisition</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requisition</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Field indicating record type - Header.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Record Identifier</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Record Identifier</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requisition Title</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align="">Requisition Title</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Submit For Approval?</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">When true, the requisition should be immediately submitted for approval. When false, it will be left in Draft mode.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Need By Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Need By Date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Justification</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">Requisition Justification Comments.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Department Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Requisition Department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Buyer Note</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">Any comments or notes from the Buyer.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requested By (Email)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">User email of requisition requester. Value is the 'on behalf of' user if requisition is on behalf of another user.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requested By (Login)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">User login of requisition requester. Value is the 'on behalf of' user if requisition is on behalf of another user.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PCard Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">PCard Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Id</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Unique ID of the address. If specified, must exist in Coupa, but no other address fields are required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Attention</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">Either the Requester or the attention linked to Address in Coupa (defaults to the requester).</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Street 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Street 1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Street 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Street 2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Street 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Street 3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Street 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship To Street 4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to Address City. Provide if the address does not exist in Coupa.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to Address state. Provide if the address does not exist in Coupa.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship To Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to Address Postal code. Provide if the address does not exist in Coupa.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship to Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to Address Country Code. Must exist in Coupa.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship to Country Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Ship to Country Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Ship to Location Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">If specified and exists in Coupa, no other address fields are required. If doesn't exist in Coupa, a new address is created.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Hide Price</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Hide Price from supplier</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">External PO Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">External System ID or PO Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Requisition Line</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Requisition Line</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Catalog Item Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Catalog Item Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Catalog Item Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Catalog Item Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Non Catalog Item Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Non Catalog Item Description</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Part Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Part Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Aux Part Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Aux Part Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Price</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transmission Method Override</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Transmission Method Override</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Transmission Emails</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Transmission Emails</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Site Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Site Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">UOM Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">UOM Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Commodity Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Commodity Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Contract Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Currency Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Asset Tags</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Asset Tags</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Chart of Account Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Chart of Account Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 1</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 2</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 3</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 4</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 5</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 6</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 7</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 8</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 9</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 10</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 11</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 12</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 13</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 14</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 15</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 16</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 17</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 18</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 19</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Segment 20</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Allocation Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Allocation Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Allocation Percent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Allocation Percent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Term Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Payment Term Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Shipping Term Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Shipping Term Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Period Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Budget Period Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Manufacturer Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Manufacturer Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Manufacturer Part Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Manufacturer Part Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Confirm By (In Hours)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Confirm By (In Hours)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Order Confirmation Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Order Confirmation Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Allocation</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Account Allocation</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Estimated Tax Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Estimated Tax Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Percent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Percent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tag</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Tag</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Object Number*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The parent object's number, used to add a tagging to a header level object</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The Tag's name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Description</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">System Tag</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">System Tag, defaults to false if not specified</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Agreement</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Payment Agreement</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount Type</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Amount Type</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Due Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Due Date</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Estimated Tax Line</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Estimated Tax Line</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Tax Line Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Estimated Tax Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Estimated Tax Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Estimated Tax Rate</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Estimated Tax Rate</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Tax Reference</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Tax Reference</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Base Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Base Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Product Classification</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Product Classification</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Delete</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Delete</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section_jmn_3wn_g1c">
+<h2 class="title sectiontitle">Requisition Header Assignment</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Document*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">RequisitionHeaderID</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Assignee Type*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align="">The type of asignee: User or UserGroup.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Assignee*</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Allowable values: login, email address, group name. For Asignee Type = User: user login or email address. For Asignee Type = UserGroup: group name.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Comment</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Comment</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Action</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Action, possible values are Assign and Unassign. Default is Assign.</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="requisition_line_columns-d117e167571">
+<h2 class="title sectiontitle">Requisition line columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Requisition Line</td>
+<td class="entry" align="">Field indicating record type (Line)</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Requisition Line</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Record Identifier</td>
+<td class="entry" align="">Used to identify record to associate header &amp; lines. Only used in load, not
+                sent to Coupa.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer(11)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Catalog Item Number</td>
+<td class="entry" align="">Catalog Item Number (blank if Non Catalog Item)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Catalog Item Name</td>
+<td class="entry" align="">Catalog Item Name (blank if Non Catalog Item)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Non Catalog Item Description</td>
+<td class="entry" align="">Item Description for Non Catalog Items</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Part Number</td>
+<td class="entry" align="">Supplier Part Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Aux Part Number</td>
+<td class="entry" align="">Supplier Aux Part Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity</td>
+<td class="entry" align="">Line Qty Amount (blank for Service-based line)</td>
+<td class="entry" align="">No*</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,6)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price</td>
+<td class="entry" align="">Item Unit Price</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,3)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Need By Date</td>
+<td class="entry" align="">Item Need By Date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Name</td>
+<td class="entry" align="">Supplier Name (required unless Supplier Number is provided)</td>
+<td class="entry" align="">Yes**</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Number</td>
+<td class="entry" align="">Supplier Number (required unless Supplier Name is provided)</td>
+<td class="entry" align="">Yes**</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Site Code</td>
+<td class="entry" align="">ID of Supplier Site</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer(11)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">UOM Code</td>
+<td class="entry" align="">Unit of Measure Code</td>
+<td class="entry" align="">No*</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(6)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Commodity Name</td>
+<td class="entry" align="">Commodity Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract Name</td>
+<td class="entry" align="">Name of Contract used for purchase</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency Code</td>
+<td class="entry" align="">Currency Code</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(6)</td>
+<td class="entry" align="">Any ISO 4217 three letter currency code</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Asset Tags</td>
+<td class="entry" align="">Not currently used</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Chart of Account Name</td>
+<td class="entry" align="">Chart of Accounts for Line. Although this field isn't required, you should
+                enter something in this field. If this value is left blank, your integration may not
+                work.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Name</td>
+<td class="entry" align="">Account Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Code</td>
+<td class="entry" align="">Account Code (can be provided instead of Account Segments below)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(2020)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Segment 1..20</td>
+<td class="entry" align="">Account Billing Code Segment for Line</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(100)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Allocation Amount</td>
+<td class="entry" align="">Not currently used</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">float</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Account Allocation Percent</td>
+<td class="entry" align="">Not currently used</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Payment Term Code</td>
+<td class="entry" align="">Payment Term Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Shipping Term Code</td>
+<td class="entry" align="">Shipping Term Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Budget Period Name</td>
+<td class="entry" align="">Name fo budget period</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Manufacturer Name</td>
+<td class="entry" align="">Manufacturer Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Manufacturer Part Number</td>
+<td class="entry" align="">Manufacturer Part Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Type</td>
+<td class="entry" align="">Service type being requested</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string</td>
+<td class="entry" align="">Service (Amt), Service (Qty), or Resource</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Start Date</td>
+<td class="entry" align="">Service start date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Due Date</td>
+<td class="entry" align="">Service due (or end) date</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Manager</td>
+<td class="entry" align="">Manager requesting the service</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align="">Any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Work Confirmer Email</td>
+<td class="entry" align="">Email of the manager performing the service</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(60)</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">* Service based lines don't have a quantity or UOM</p>
+<p class="">** Requires one of Supplier Name or Supplier Number</p>
+</div>
+<div class="" id="requisition_line_defaults_for_all_lines">
+<h2 class="title sectiontitle">Requisition line defaults for all lines</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<b>Line Attribute</b>
+</td>
+<td class="entry" align="">
+<b>Source</b>
+</td>
+<td class="entry" align="">
+<b>Source Attribute</b>
+</td>
+<td class="entry" align="">
+<b>Conditions</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">Item</td>
+<td class="entry" align="">name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">line_num</td>
+<td class="entry" align="">CSV</td>
+<td class="entry" align="">csv_row[:line_number]</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">unit_price</td>
+<td class="entry" align="">CSV</td>
+<td class="entry" align="">csv_row[ rice]</td>
+<td class="entry" align="">If provided</td>
+</tr>
+<tr class="">
+<td class="entry" align="">unit_price</td>
+<td class="entry" align="">SupplierItem</td>
+<td class="entry" align="">price</td>
+<td class="entry" align="">If CSV value (above) is blank</td>
+</tr>
+<tr class="">
+<td class="entry" align="">contract</td>
+<td class="entry" align="">#load_contract</td>
+<td class="entry" align="">csv_row[:contract_number] or csv_row[:contract_name]</td>
+<td class="entry" align="">If provided</td>
+</tr>
+<tr class="">
+<td class="entry" align="">contract</td>
+<td class="entry" align="">SupplierItem</td>
+<td class="entry" align="">contract</td>
+<td class="entry" align="">If CSV value (above) is blank</td>
+</tr>
+<tr class="">
+<td class="entry" align="">source_part_num</td>
+<td class="entry" align="">CSV</td>
+<td class="entry" align="">csv_row[:supplier_part_number]</td>
+<td class="entry" align="">If provided</td>
+</tr>
+<tr class="">
+<td class="entry" align="">source_part_num</td>
+<td class="entry" align="">SupplierItem</td>
+<td class="entry" align="">supplier_part_num</td>
+<td class="entry" align="">If CSV value (above) is blank</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier_aux_part_num</td>
+<td class="entry" align="">CSV</td>
+<td class="entry" align="">csv_row[:supplier_aux_part_number]</td>
+<td class="entry" align="">If provided</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier_aux_part_num</td>
+<td class="entry" align="">SupplierItem</td>
+<td class="entry" align="">supplier_aux_part_num</td>
+<td class="entry" align="">If CSV value (above) is blank</td>
+</tr>
+<tr class="">
+<td class="entry" align="">unspsc_code</td>
+<td class="entry" align="">SupplierItem</td>
+<td class="entry" align="">unspsc_code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier</td>
+<td class="entry" align="">#load_supplier</td>
+<td class="entry" align="">Supplier</td>
+<td class="entry" align="">Matching Name or Number &amp; "active"</td>
+</tr>
+<tr class="">
+<td class="entry" align="">supplier_site</td>
+<td class="entry" align="">#load_supplier_site</td>
+<td class="entry" align="">SupplierSite</td>
+<td class="entry" align="">Find with "Supplier Site Code" for Supplier and "Requested By" User</td>
+</tr>
+<tr class="">
+<td class="entry" align="">uom</td>
+<td class="entry" align="">#load_uom</td>
+<td class="entry" align="">Uom</td>
+<td class="entry" align="">Matching "Uom Code"</td>
+</tr>
+<tr class="">
+<td class="entry" align="">commodity</td>
+<td class="entry" align="">#load_commodity</td>
+<td class="entry" align="">Commodity</td>
+<td class="entry" align="">Matching Commodity Name</td>
+</tr>
+<tr class="">
+<td class="entry" align="">contract</td>
+<td class="entry" align="">#load_contract</td>
+<td class="entry" align="">Contract</td>
+<td class="entry" align="">Matching Name or Number</td>
+</tr>
+<tr class="">
+<td class="entry" align="">currency</td>
+<td class="entry" align="">#load_supplier</td>
+<td class="entry" align="">Currency</td>
+<td class="entry" align="">Matching "Currency Code"</td>
+</tr>
+<tr class="">
+<td class="entry" align="">shipping_term</td>
+<td class="entry" align="">#load_shipping_term</td>
+<td class="entry" align="">ShippingTerm</td>
+<td class="entry" align="">Matching "Shipping Term Code"</td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment_term</td>
+<td class="entry" align="">#load_payment_term</td>
+<td class="entry" align="">PaymentTerm</td>
+<td class="entry" align="">Matching "Payment Term Code"</td>
+</tr>
+<tr class="">
+<td class="entry" align="">account_type</td>
+<td class="entry" align="">#load_account_type</td>
+<td class="entry" align="">AccountType</td>
+<td class="entry" align="">Matching "Chart Of Account Name"</td>
+</tr>
+<tr class="">
+<td class="entry" align="">period</td>
+<td class="entry" align="">#load_period</td>
+<td class="entry" align="">BudgetPeriod</td>
+<td class="entry" align="">Matching "Budget Period Name" for AccountType (above)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">need_by_date</td>
+<td class="entry" align="">CSV</td>
+<td class="entry" align="">csv_row[:need_by_date]</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">transmission_method_override</td>
+<td class="entry" align="">CSV</td>
+<td class="entry" align="">csv_row[:transmission_method_override]</td>
+<td class="entry" align="">If provided</td>
+</tr>
+<tr class="">
+<td class="entry" align="">transmission_method_override</td>
+<td class="entry" align="">RequisitionLine</td>
+<td class="entry" align="">.transmission_method_default_value</td>
+<td class="entry" align="">If CSV value (above) is blank</td>
+</tr>
+<tr class="">
+<td class="entry" align="">transmission_emails</td>
+<td class="entry" align="">CSV</td>
+<td class="entry" align="">csv_row[:transmission_emails]</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="additional_defaults_for_quantity-based_requisition_lines">
+<h2 class="title sectiontitle">Additional defaults for quantity-based requisition lines</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<b>Line Attribute</b>
+</td>
+<td class="entry" align="">
+<b>Source</b>
+</td>
+<td class="entry" align="">
+<b>Source Attribute</b>
+</td>
+<td class="entry" align="">
+<b>Conditions</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">minimum_order_quantity</td>
+<td class="entry" align="">Supplier Item</td>
+<td class="entry" align="">minimum_order_quantity</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">order_increment</td>
+<td class="entry" align="">Supplier Item</td>
+<td class="entry" align="">order_increment</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="defaults_for_free-form_requisition_lines-d117e169293">
+<h2 class="title sectiontitle">Defaults for free-form requisition lines</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<b>Line Attribute</b>
+</td>
+<td class="entry" align="">
+<b>Source</b>
+</td>
+<td class="entry" align="">
+<b>Source Attribute</b>
+</td>
+<td class="entry" align="">
+<b>Conditions</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">description</td>
+<td class="entry" align="">CSV</td>
+<td class="entry" align="">csv_row[:non_catalog_item_description]</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="rate_card_line_columns">
+<h2 class="title sectiontitle">Rate Card Line Columns</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Column Name</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Record Identifier</td>
+<td class="entry" align="">Used to identify record to associate header &amp; lines. Only used in load, not
+                sent to Coupa.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">Line Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">integer(11)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name</td>
+<td class="entry" align="">name describing the service associated with the rate.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Code</td>
+<td class="entry" align="">code describing the service associated with the rate.</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Type</td>
+<td class="entry" align="">
+<p class="">Select whether the requisition line is based on an amount, a price per quantity,
+                  or a resource (such as an hourly rate)</p>
+<p class="">Note: Values must be lowercase.</p>
+</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">amount, quantity, or resource</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Price</td>
+<td class="entry" align="">amount that estimates your total budget for the service.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">UOM</td>
+<td class="entry" align="">Unit of Measurement</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Depends on the line type (UOM is required for a Quanity line type)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="item_finder_errors-d117e169595">
+<h2 class="title sectiontitle">Item finder errors</h2>
+<ul class="ul">
+<li class="li">
+<code class="ph codeph">Supplier Name</code> or <code class="ph codeph">Supplier Number</code> cannot find a
+          Supplier</li>
+<li class="li">Catalog and/or Manufacturer details are included in the loader input and no catalog item
+          is found. This includes cases where there is an existing match to "Catalog..." details but
+          with different "Manufacturer..." details.</li>
+<li class="li">The <code class="ph codeph">Supplier Item Required?</code> setup key is enabled and no Supplier Item
+          is found.</li>
+<li class="li">
+<code class="ph codeph">Supplier Item</code> is found and the line type is <code class="ph codeph">Order Quantity
+            Line</code> and: <ul class="ul">
+<li class="li">
+<code class="ph codeph">Quantity</code> is less than the<code class="ph codeph"> Minimum Order
+              Quantity</code>
+</li>
+<li class="li">
+<code class="ph codeph">Quantity</code> is not a multiple of <code class="ph codeph">Order Increment</code>
+</li>
+</ul>
+</li>
+<li class="li">If no details are provided in loader data for "Catalog..." or "Manufacturer...", a
+          "free-form" <code class="ph codeph">Requisition Line</code> will be created and <code class="ph codeph">Non Catalog Item
+            Description</code> will be copied to the <code class="ph codeph">Requisition Line</code>
+<code class="ph codeph">description</code>. No error is returned for a blank description.</li>
+<li class="li">
+<code class="ph codeph">Service Type</code> is set to <code class="ph codeph">Service (Amt)</code>, however, a
+          Quantity is entered.</li>
+<li class="li">
+<code class="ph codeph">Service Type</code> is set to <code class="ph codeph">Service (Qty)</code>, however, a
+          Quantity or UOM is not entered (or the <code class="ph codeph">UOM Code</code> entered doesn't match one
+          of the UOM Codes configured).</li>
+<li class="li">
+<code class="ph codeph">Service Type</code> is set to <code class="ph codeph">Resource</code>, however, a
+            <code class="ph codeph">Quantity</code> is not entered, or a <code class="ph codeph">UOM Code</code> is
+          entered,</li>
+<li class="li">(attribute) has been incorrectly added to a request line that is not a <code class="ph codeph">Service
+            Amount</code>.</li>
+<li class="li">(attribute) has been added without the proper user permissions.</li>
+<li class="li">(attribute) was incorrectly added with a <code class="ph codeph">Unit of Measurement</code>.</li>
+<li class="li">(attribute) was entered with an incorrect value.</li>
+<li class="li">(attribute) was added with an incorrect value that is not configured for
+            <code class="ph codeph">Resource</code>.</li>
+<li class="li">(attribute) is incorrect, Rate Card Lines are only valid for Service Amount
+          Requests.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,10 @@
+Expense Import Category Map Import
+
+Expense Import Category Map
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Corp Card Integration Name* 	No 	No 	 	Corporate Card Integration Name
+Industry Code Type** 	Yes 	No 	 	Industry Code Type
+Industry Code** 	Yes 	No 	 	Industry Code
+Expense Category Key** 	Yes 	No 	 	Expense Category Key
+Payment Partner Name 	No 	No 	 	Payment Partner Name

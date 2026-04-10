@@ -1,0 +1,15 @@
+Inventory Valuation API
+
+Associations
+
+This resource is associated with Pick Lists/Fulfillment Reservations API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+currency 	Currency 	yes 	 	 	 	yes 	 Currency
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+total 	Total 	 	 	 	 	yes
+unit-price 	Unit price 	 	 	 	 	yes 	decimal
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime

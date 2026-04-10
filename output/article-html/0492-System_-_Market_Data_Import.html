@@ -1,0 +1,2361 @@
+<article class="" id="system_-_market_data_import">
+<h1 class="title">System - Market Data Import</h1>
+<div class="body">
+<div class="" id="format_descriptions-d94e7872">
+<h2 class="title sectiontitle">Format Descriptions</h2>
+<p class="">
+<a data-scope="local" data-name="" target="" href="/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/System_Market-Data-Import_Format_Description.pdf" title="">PDF Version</a>
+</p>
+<p class="">This document describes the interface for importing market data (FX rates, implicit volatilities, interest rates, interest rate volatilities and security/commodity rates and credit spreads) into the System component of Coupa Treasury. Two types of import format are available: Market Data Import Format 2.0 (Flexible) and Market Data Import Format 1.0 (Fixed).</p>
+</div>
+<div class="" id="differences_between_formats_2.0_flexible_and_1.0_fixed">
+<h2 class="title sectiontitle">Differences between Formats 2.0 (Flexible) and 1.0 (Fixed)</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Market Data Import Format 2.0</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Market Data Import Format 1.0</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">The character following the prefix is automatically set as the field separator.</p>
+<p class="">All non-numeric values, with the exception of the dash (-) are permissible field separators.</p>
+</td>
+<td class="entry" align="">
+<p class="">The field separator is the semicolon (;).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Permissible date formats are dmy, mdy, and ymd, indicated in a separate field.</p>
+<p class="">The date format specified for the first set of data applies to all sets of data of a file.</p>
+</td>
+<td class="entry" align="">
+<p class="">The date format is dmy.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Permissible date separators are periods (.), dashes (-), and slashes (/).</p>
+</td>
+<td class="entry" align="">
+<p class="">The date separator is the period (.).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Permissible decimal separators are periods (.) and commas (,).</p>
+</td>
+<td class="entry" align="">
+<p class="">The decimal separator is the comma (,).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">A decimal separator is mandatory for all decimals, even in the absence of decimal places.</p>
+</td>
+<td class="entry" align="">
+<p class="">Decimal separators are optional.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="market_data_import_format_2.0_flexible">
+<h2 class="title sectiontitle">Market Data Import Format 2.0 (Flexible)</h2>
+<p class="">
+<b>Field definition</b>
+</p>
+<p class="">
+<b>Import of FX Rates</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: d</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "d" to mark the data set for the import of FX rates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date settings</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Permissible date conventions are dmy, mdy, and ymd.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which the FX rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">ISO code for the currency of the FX rate.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Ask rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to the group currency. When the ask rate is empty or ≤0, it is automatically set to the mid rate.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Mid rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to the group currency. The mid rate must be greater than 0.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Bid rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to the group currency. When the bid rate is empty or ≤0, it is automatically set to the mid rate.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Implicit Volatilities (historical volatilities can be calculated in Coupa Treasury from FX rates)</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: v</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "v" to mark the data set for volatilities.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date settings</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Permissible date conventions are dmy, mdy, and ymd.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which the volatility is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency 1</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">ISO code for the first currency of the volatility.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency 2</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">ISO code for the second currency of the volatility.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Time range</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Time range for averaging.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Strike</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Strike for averaging.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Volatility</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Volatility value between currency 1 and currency 2.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Interest Rates</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: z</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "z" to mark the data set for adding interest rates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date settings</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Permissible date conventions are dmy, mdy, and ymd.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which the interest rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Time range</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">The number of days in the time range.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Period</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any value available to select from the Period dropdown menu.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Interest rate in %</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Interest Rate Volatilities</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: i</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "i" to mark the data set for adding interest volatilities.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date settings</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Permissible date conventions are dmy, mdy, and ymd.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which the volatility is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Time range</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">The number of days in the time range.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Period</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any value available to select from the Period dropdown menu.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Interest rate in %</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Volatility of the interest rate.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Security Rates</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: w</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "w" to mark the data set for adding security rates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date settings</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Permissible date conventions are dmy, mdy, and ymd.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which the security rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">ISIN</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">ISIN of the security.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate for the security for the date.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Commodity Rates</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: r</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "r" to mark the data set for adding commodity rates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date settings</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Permissible date conventions are dmy, mdy, and ymd.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which the commodity rate is valid</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Commodity</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Commodity rate as ISO code</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Period</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any value available to select from the Period dropdown menu.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Buying rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to the group commodity currency.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Mid-marketrate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to the group commodity currency.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">8</p>
+</td>
+<td class="entry" align="">
+<p class="">Selling rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to the group commodity currency.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Credit Spreads</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: c</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "c" to mark the data set for adding credit spreads.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date settings</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Permissible date conventions are dmy, mdy, and ymd.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which the credit spread is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Entity</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Abbreviation for the entity in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Period</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any value available to select from the Period dropdown menu.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Credit spread</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Credit spread in basis points.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="functional_description-d94e9484">
+<h2 class="title sectiontitle">Functional Description</h2>
+<p class="">The function is located on the page <b>System &gt; Market Data / Scenarios &gt; Import</b>.</p>
+<p class="">Required setting: on <b>System &gt; System Settings &gt; System Settings</b> under <b>Market Data</b>,select<b> Receive by File </b>or <b>Receive by Web</b>.</p>
+<p class="">The import function can process text files coded in one of the following standards:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII</p>
+</li>
+<li class="li">
+<p class="">Unicode</p>
+</li>
+</ul>
+<p class="">One file may contain information about FX rates, implicit volatilities, interest rates, interest rate volatilities, security rates, commodity rates and credit spreads.</p>
+</div>
+<div class="" id="format_rules-d94e9516">
+<h2 class="title sectiontitle">Format Rules</h2>
+<p class="">The file may not contain any headers or format descriptions.</p>
+<p class="">Each row in the file contains exactly one data set:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII Code 13: carriage return denotes the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">ASCII Code 10: new-line denotes the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">The last data set concludes by an end-of-file (EOF).</p>
+</li>
+</ul>
+<p class="">Permissible field separators are all non-numeric values, with the exception of the dash (-).</p>
+<p class="">The field separator may not appear elsewhere within the sets of data.</p>
+<p class="">Field separators must also be placed</p>
+<ul class="ul">
+<li class="li">
+<p class="">for fields of a fixed length.</p>
+</li>
+<li class="li">
+<p class="">for optional fields left blank.</p>
+</li>
+</ul>
+<p class="">Field separators, date separators and decimal separators are detected automatically.</p>
+<p class="">For decimal values:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Permissible separators are commas (,) and periods (.).</p>
+</li>
+<li class="li">
+<p class="">Separators are mandatory, even in the absence of decimal places.</p>
+</li>
+<li class="li">
+<p class="">Thousands separators are not allowed.</p>
+</li>
+<li class="li">
+<p class="">Negative amounts are marked with a minus sign (-). Spaces between the minus sign and the amount are allowed.</p>
+</li>
+<li class="li">
+<p class="">Examples: <b>12345,99</b> or <i>-</i>
+<b>12345.00</b>or <b>12345,</b> or <b>0,0231</b>
+</p>
+</li>
+</ul>
+<p class="">For integer values:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Decimal or thousands separators are not permitted</p>
+</li>
+<li class="li">
+<p class="">Example: <b>12345</b>
+</p>
+</li>
+</ul>
+<p class="">Empty data sets are dismissed.</p>
+<p class="">For text values, there are no quotation marks. The char value is the maximum number of characters for that field.</p>
+<p class="">Days and months are always 2-digit values, whereas years are 4 digits. Date sequence may be dmy, mdy, or ymd (lower-case). Date separator may be slash (/), comma (,), or dash (-).</p>
+<ul class="ul">
+<li class="li">
+<p class="">Examples: <b>31.12.2021, 12-31-2021, 2021/12/31</b>
+</p>
+</li>
+</ul>
+</div>
+<div class="" id="example_data_sets-d94e9597">
+<h2 class="title sectiontitle">Example Data Sets</h2>
+<p class="">
+<b>Import of FX Rates</b>
+</p>
+<p class="">d;dmy;26.09.2021;USD;1,3361;1,3391;1,3421</p>
+<p class="">d;mdy;09-27-2021;USD;1,3362;1,3392;1,3422</p>
+<p class="">d;ymd;2021/09/28;USD;1,3363;1,3393;1,3423</p>
+<p class="">d|dmy|25.09.2021|USD|1,3364|1,3394|1,3424</p>
+<p class="">d;dmy;22.09.2021;CHF;1,1;1,1;1,2</p>
+<p class="">
+<b>Import of Implicit Volatilities</b>
+</p>
+<p class="">v;dmy; 29.09.2021;CAD;EUR;30;0,;8,39</p>
+<p class="">
+<b>Import of Interest Rates</b>
+</p>
+<p class="">z;dmy; 29.09.2021;CAD;60;;2,46833</p>
+<p class="">
+<b>Import of Interest Rate Volatilities</b>
+</p>
+<p class="">i;dmy; 29.09.2021;CAD;30;;8,39</p>
+<p class="">
+<b>Import of Security Rates</b>
+</p>
+<p class="">w;dmy; 29.09.2021;6511811640;120,9551</p>
+<p class="">
+<b>Import of Commodity Rates</b>
+</p>
+<p class="">r;dmy; 29.09.2021;XAU;3M;675,465;675,465;675,465</p>
+<p class="">
+<b>Import of Credit Spreads</b>
+</p>
+<p class="">c;dmy; 29.09.2021;DB Frankfurt;5Y;135,52</p>
+</div>
+<div class="" id="market_data_import_format_1.0_fixed">
+<h2 class="title sectiontitle">Market Data Import Format 1.0 (Fixed)</h2>
+<p class="">
+<b>Field definition</b>
+</p>
+<p class="">
+<b>Import of FX Rates</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: d</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "d" to mark the data set for the import of FX rates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which FX rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency of FX rate as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Ask rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to group currency; when the ask rate is left empty or ≤0 it will be populated with the mid rate.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Mid rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to group currency; the mid rate cannot be ≤0.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Bid rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to group currency; when the bid rate is left empty or ≤0 it will be populated with the mid rate.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Implicit Volatilities (historical volatilities can be calculated in Coupa Treasury from FX Rates)</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: v</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "v" to mark the data set for volatilities.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+<p class="">
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+<p class="">
+</td>
+<td class="entry" align="">
+<p class="">Date for which volatility is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency 1</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">First currency of volatility as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency 2</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Second currency of volatility as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Time range</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Time range for averaging.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Strike</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Strike for averaging.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Volatility</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Volatility value between currency 1 and currency 2.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Interest Rates</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: z</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "z" to mark the data set for adding interest rates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which interest rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Time range</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">The number of days in the time range.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Period</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Period; permitted values as they can be selected from dropdown menu in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Interest rate in %</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Interest Rate Volatilities</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: i</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "i" to mark the data set for adding interest volatilities.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which volatility is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Time range</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">The number of days in the time range.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Period</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Period; permitted values as they can be selected from dropdown menu in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Interest rate volatility</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Volatility of interest rate.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Security Rates</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: w</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "w" to mark the data set for adding security rates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which security rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">ISIN</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">ISIN of security.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate for security for stated day.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Commodity Rates</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: r</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "r" to mark the data set for adding commodity rates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which commodity rate is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Commodity</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Commodity rate as ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Period</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 4</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Period; permitted values as they can be selected from dropdown menu in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Buying rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to group commodity currency.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">6</p>
+</td>
+<td class="entry" align="">
+<p class="">Mid-market rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to group commodity currency.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">7</p>
+</td>
+<td class="entry" align="">
+<p class="">Selling rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Rate in relation to group commodity currency.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+<b>Import of Credit Spreads</b>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefix: c</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 1</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Enter "c" to mark the data set for adding credit spreads.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Date</p>
+</td>
+<td class="entry" align="">
+<p class="">date</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Date for which credit spread is valid.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Entity</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 50</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Short name of Coupa Treasury entity.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Period</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Period; permitted values as they can be selected from dropdown menu in Coupa Treasury.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">5</p>
+</td>
+<td class="entry" align="">
+<p class="">Credit spread</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Credit spread in basis points.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="functional_description-d94e10986">
+<h2 class="title sectiontitle">Functional Description</h2>
+<p class="">The import function can process text files coded in one of the following standards:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII</p>
+</li>
+<li class="li">
+<p class="">Unicode</p>
+</li>
+</ul>
+<p class="">One file may contain information about FX rates, implicit volatilities, interest rates, interest rate volatilities, security rates, commodity rates and credit spreads.</p>
+<p class="">The function is located on the page <b>System &gt; Market Data &gt; Import.</b>
+</p>
+<p class="">Required setting: <b>System &gt; Administration &gt; System Settings &gt; Market Data</b> must be set to "File" or "File or Web".</p>
+</div>
+<div class="" id="format_rules-d94e11009">
+<h2 class="title sectiontitle">Format Rules</h2>
+<p class="">The file may not contain any headers or format descriptions.</p>
+<p class="">Each row in the file contains exactly one data set:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII Code 13: carriage return denotes the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">ASCII Code 10: new-line denotes the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">The last data set concludes by an end-of-file (EOF).</p>
+</li>
+</ul>
+<p class="">The data set field delimiter is the semicolon (;). The semicolon may not appear elsewhere within the sets of data.</p>
+<p class="">Field separators must also be placed</p>
+<ul class="ul">
+<li class="li">
+<p class="">for fields of a fixed length.</p>
+</li>
+<li class="li">
+<p class="">for optional fields left blank. .</p>
+</li>
+</ul>
+<p class="">For decimal values:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Permissible separator is the comma (,).</p>
+</li>
+<li class="li">
+<p class="">Separators are optional for numbers without decimal places.</p>
+</li>
+<li class="li">
+<p class="">Thousands separators are not allowed.</p>
+</li>
+<li class="li">
+<p class="">Negative amounts are marked with a minus sign (-). Spaces between the minus sign and the amount are allowed.</p>
+</li>
+<li class="li">
+<p class="">Examples: <b>12345,99</b> or <i>-</i>
+<b>12345.00</b>or <b>12345</b>or <b>0,0231</b>
+</p>
+</li>
+</ul>
+<p class="">For integer values:</p>
+<ul class="ul">
+<li class="li">
+<p class="">Decimal or thousands separators are not permitted.</p>
+</li>
+<li class="li">
+<p class="">Example: <b>12345</b>
+</p>
+</li>
+</ul>
+<p class="">Empty data sets are dismissed.</p>
+<p class="">For text values, there are no quotation marks. The char value is the maximum number of characters for that field.</p>
+<p class="">Days and months are always 2-digit values, whereas years are 4 digits. Date sequence is dmy (lower case). Permissable date separator is the period (.).</p>
+<ul class="ul">
+<li class="li">
+<p class="">Example: <b>31.10.2021</b>
+</p>
+</li>
+</ul>
+</div>
+<div class="" id="example_data_sets-d94e11086">
+<h2 class="title sectiontitle">Example Data Sets</h2>
+<p class="">
+<b>Import of FX Rates</b>
+</p>
+<p class="">d;26.09.2021;USD;1,3362;1,3392;1,3422</p>
+<p class="">
+<b>Import of Implicit Volatilities</b>
+</p>
+<p class="">v;29.09.2021;CAD;EUR;30;0,;8,39</p>
+<p class="">
+<b>Import of Interest Rates</b>
+</p>
+<p class="">z;29.09.2021;CAD;60;;2,46833</p>
+<p class="">
+<b>Import of Interest Rate Volatilities</b>
+</p>
+<p class="">i;29.09.2021;CAD;30;;8,39</p>
+<p class="">
+<b>Import of Security Rates</b>
+</p>
+<p class="">w;29.09.2021;6511811640;120,9551</p>
+<p class="">
+<b>Import of Commodity Rates</b>
+</p>
+<p class="">r;29.09.2021;XAU;3M;675,465;675,465;675,465</p>
+<p class="">
+<b>Import of Credit Spreads</b>
+</p>
+<p class="">c;29.09.2021;DB Frankfurt;5Y;135,52</p>
+</div>
+</div>
+</article>

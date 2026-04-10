@@ -1,0 +1,24 @@
+Expense Preapproval Line API
+
+Association
+
+This resource is associated with Expense Lines API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Values 	 Api_In Field? 	 Api_Out Field? 	 Type
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+type 	Type 	 	 	 	 	yes 	string(255)
+estimated_amount 	Estimated amount 	 	 	 	 	yes 	decimal(32,4)
+requested_amount 	Requested amount 	 	 	 	 	yes 	decimal(32,4)
+accounting_total 	Accounting total 	 	 	 	 	yes 	decimal(32,4)
+estimated_reporting_total 	Estimated reporting total 	 	 	 	 	yes 	decimal(32,4)
+requested_reporting_total 	Requested reporting total 	 	 	 	 	yes 	decimal(32,4)
+notes 	Notes 	 	 	 	 	yes 	text
+estimated_amount_currency 	Estimated amount currency 	 	 	 	 	yes
+requested_amount_currency 	Requested amount currency 	 	 	 	 	yes
+accounting_total_currency 	Accounting total currency 	 	 	 	 	yes
+account_type 	Account type 	 	 	 	 	yes
+account 	Account 	 	 	 	 	yes

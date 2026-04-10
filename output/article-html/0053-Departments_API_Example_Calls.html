@@ -1,0 +1,111 @@
+<article class="" id="departments_api_example_calls">
+<h1 class="title">Departments API Example Calls</h1>
+<div class="body">
+<div class="" id="different_query_options_for_departments">
+<h2 class="title sectiontitle">Different Query Options for Departments</h2>
+<p class="">Here are more examples of how to use the Departments API to
+query and get the result set you want.</p>
+<p class="">This query will give you the departments with name=Marketing</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/departments?name=Marketing</code>
+</p>
+<p class="">This query will give you the departments updated by a particular
+user with Login = coupasupport</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/departments?created_by[login]=coupasupport</code>
+</p>
+<p class="">This query will give you all the expense reports created after
+Jan 1st 2007</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/departments?created_at[gt]=2007-01-01</code>
+</p>
+</div>
+<div class="" id="get_single_department">
+<h2 class="title sectiontitle">Get Single Department</h2>
+<p class="">In this example, we queried for a single department with an ID
+of 1.</p>
+<p class="">We did a GET to the URL:</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/departments/1</code>
+</p>
+<p class="">
+or</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/departments?id=1</code>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;department&gt;
+	 &lt;id type="integer"&gt;1&lt;/id&gt;
+	 &lt;created-at type="datetime"&gt;2008-10-27T13:00:48-07:00&lt;/created-at&gt;
+	 &lt;updated-at type="datetime"&gt;2014-03-28T08:53:19-07:00&lt;/updated-at&gt;
+	 &lt;name&gt;Marketing&lt;/name&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;created-by&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+			&lt;login&gt;coupasupport&lt;/login&gt;
+			&lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Coupa&lt;/firstname&gt;
+			&lt;lastname&gt;Support&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;mycustom-userfield /&gt;
+	 &lt;/created-by&gt;
+	 &lt;updated-by&gt;
+			&lt;id type="integer"&gt;69&lt;/id&gt;
+			&lt;login&gt;coupasupport+rohitdemo@coupa.com&lt;/login&gt;
+			&lt;email&gt;coupasupport+rohitdemo@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Integration&lt;/firstname&gt;
+			&lt;lastname&gt;User&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;mycustom-userfield /&gt;
+	 &lt;/updated-by&gt;
+&lt;/department&gt;</code>
+</pre>
+</div>
+<div class="" id="departments_create">
+<h2 class="title sectiontitle">Departments Create</h2>
+<p class="">In this example we are creating a Department. We are not using
+any Coupa system ID's for any of the reference objects.</p>
+<p class="">We posted it to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/departments/. </code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;department&gt;
+	 &lt;name&gt;Marketing&lt;/name&gt;
+	 &lt;active&gt;false&lt;/active&gt;
+&lt;/department&gt; </code>
+</pre>
+</div>
+<div class="" id="departments_update">
+<h2 class="title sectiontitle">Departments Update</h2>
+<p class="">In these examples, we are updating a single Department
+record.</p>
+<p class="">We did a PUT to the URL:  <a data-scope="external" data-name="" target="_blank" href="https://instance.coupahost.com/api/departments/" title="">https://instance.coupahost.com/api/departments/</a>
+<code class="ph codeph">&lt;id&gt;</code>
+</p>
+<p class="">For Example, to deactivate an existing department with ID
+195</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;department&gt;
+	 &lt;id&gt;195&lt;/id&gt;
+	 &lt;active&gt;false&lt;/active&gt;
+&lt;/department&gt;</code>
+</pre>
+<p class="">For Example, to update the name of an existing department with
+ID 195</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;department&gt;
+	 &lt;id&gt;195&lt;/id&gt;
+	 &lt;name&gt;new name&lt;/name&gt;
+&lt;/department&gt;</code>
+</pre>
+</div>
+</div>
+</article>

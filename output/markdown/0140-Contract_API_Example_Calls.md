@@ -1,0 +1,339 @@
+---
+title: "Contract API Example Calls"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/contract-api-example-calls"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/contract-api-example-calls"
+status_code: 200
+fetched_at: "2026-04-09T11:59:33+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Contracts API (/contracts)"
+  - "Contract API Example Calls"
+---
+
+# Contract API Example Calls
+
+## Different Query Options for Contracts
+
+Here are more examples of how to use the Contracts API to query and get the result set you
+want.
+
+This Query will give you the contracts which are inactive
+
+`https://.coupahost.com/api/contracts?status=inactive`
+
+This query will give you the contract for a supplier with number = 1, name = test &
+city = Seattle
+
+`https://.coupahost.com/api/contracts?number=1&name=test&supplier[primary_address[city]]=Seattle`
+
+This query will give you all the contracts for a supplier with a primary contact given name
+= Allison
+
+`https://.coupahost.com/api/contracts?supplier[primary-contact[name-given]]=Allison`
+
+## Contracts API GET Example
+
+In this example, we queried for a single contract record with an ID of 2.
+
+We did a GET to the URL:
+
+`https:///api/contracts/2`
+
+or
+
+`https:///api/contracts?id=2`
+
+Here is the response matching the search
+criteria:
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<contract>
+<id type="integer">2</id>
+<created-at type="datetime">2008-10-27T13:26:13-07:00</created-at>
+<updated-at type="datetime">2014-03-20T15:20:45-07:00</updated-at>
+<name>Amazon.com</name>
+<number>2</number>
+<version nil="true" />
+<start-date type="datetime">2008-10-26T17:00:00-07:00</start-date>
+<end-date type="datetime">2012-10-26T17:00:00-07:00</end-date>
+<status>inactive</status>
+<minimum-value type="decimal">0.00</minimum-value>
+<maximum-value type="decimal">0.00</maximum-value>
+<terms nil="true" />
+<preferred nil="true" />
+<savings-pct type="decimal">10.0</savings-pct>
+<min-commit type="decimal">0.00</min-commit>
+<max-commit type="decimal">0.00</max-commit>
+<supplier-invoiceable type="boolean">false</supplier-invoiceable>
+<is-default type="boolean">false</is-default>
+<supplier-account nil="true" />
+<use-order-windows type="boolean">false</use-order-windows>
+<order-window-tz nil="true" />
+<requisition-message nil="true" />
+<po-message nil="true" />
+<supplier>
+<id type="integer">4</id>
+<name>Amazon.com</name>
+<number nil="true" />
+<supplier-diversity />
+<primary-contact>
+<id type="integer">4</id>
+<created-at type="datetime">2008-10-27T12:56:39-07:00</created-at>
+<updated-at type="datetime">2008-10-27T12:56:39-07:00</updated-at>
+<email>upgrade@coupa.com</email>
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Allison</name-given>
+<name-family>Livingston</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">4</id>
+<created-at type="datetime">2008-10-27T12:56:39-07:00</created-at>
+<updated-at type="datetime">2009-08-20T09:35:04-07:00</updated-at>
+<name>Amazon.com</name>
+<street1>1516 2nd Ave</street1>
+<street2 />
+<city>Seattle</city>
+<state>WA</state>
+<postal-code>98101</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<business-group-name nil="true" />
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</created-by>
+<updated-by>
+<id type="integer">16</id>
+<login>rohit</login>
+<email>rohit.jalisatgi@coupa.com</email>
+<employee-number />
+<firstname>Rohit</firstname>
+<lastname>Jalisatgi</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+</primary-address>
+</supplier>
+<content-groups type="array">
+<content-group>
+<id type="integer">1</id>
+<created-at type="datetime">2006-08-27T19:40:04-07:00</created-at>
+<updated-at type="datetime">2013-03-29T21:11:14-07:00</updated-at>
+<name>Everyone</name>
+<description>All users can see documents assigned to this group</description>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+</content-group>
+<content-group>
+<id type="integer">6</id>
+<created-at type="datetime">2013-10-09T10:15:01-07:00</created-at>
+<updated-at type="datetime">2013-10-09T10:15:01-07:00</updated-at>
+<name>What Pattern</name>
+<description nil="true" />
+<created-by>
+<id type="integer">69</id>
+<login>coupasupport+rohitdemo@coupa.com</login>
+<email>coupasupport+rohitdemo@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Integration</firstname>
+<lastname>User</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</created-by>
+<updated-by>
+<id type="integer">69</id>
+<login>coupasupport+rohitdemo@coupa.com</login>
+<email>coupasupport+rohitdemo@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Integration</firstname>
+<lastname>User</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+</content-group>
+</content-groups>
+<schedule>
+<day0>anytime</day0>
+<day1>anytime</day1>
+<day2>anytime</day2>
+<day3>anytime</day3>
+<day4>anytime</day4>
+<day5>anytime</day5>
+<day6>anytime</day6>
+</schedule>
+<contract-terms type="array" />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</created-by>
+<updated-by>
+<id type="integer">69</id>
+<login>coupasupport+rohitdemo@coupa.com</login>
+<email>coupasupport+rohitdemo@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Integration</firstname>
+<lastname>User</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+</contract>
+```
+
+Query to find out all the contracts
+
+`https:///api/contracts/`
+
+Query to find out contracts which are inactive
+
+`/api/contracts?status=/api/contracts?number=<>&name=<>&supplier[primary_address[city]]=<>`
+
+`https:///api/contracts?supplier[primary_address[city]]=<>`
+
+## Contract Create - Inactive Status
+
+In this example, we are creating a Contract in inactive status. We are using Coupa system
+IDs for content groups reference objects.
+
+We posted it to the URL :
+
+```text
+https://<instance url>/api/contracts.
+```
+
+This created the contract in inactive
+status
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<contract>
+<name>YRIAmazon.com</name>
+<number>119</number>
+<start-date>2014-04-01T17:00:00-07:00</start-date>
+<end-date>2014-04-26T17:00:00-07:00</end-date>
+<status>inactive</status>
+<supplier>
+<name>Amazon.com</name>
+</supplier>
+<content-groups>
+<content-group>
+<id>1</id>
+<name>Everyone</name>
+<description>All users can see documents assigned to this group</description>
+</content-group>
+</content-groups>
+</contract>
+```
+
+## Contracts API PUT Examples
+
+**Sample Code for Status Update of a Contract**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<contract>
+<id>73</id>
+<status>published</status>
+</contract>
+```
+
+**Sample Code to Update Name of a Contract**
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<contract>
+<name>Amazon.com</name>
+</contract>
+```
+
+## **Add a Rate Card Line to an existing Contract**
+
+You can add a Rate Card Line to an existing Contract to define rates for services
+procurement.
+
+- Endpoint: `/api/contracts/`
+
+- Method: PATCH
+
+Example body for the request:
+
+```text
+{
+"id": <contract_id>,
+"rate_card": {
+"rateable_id": <contract_id>,
+"rateable_type": "Contract",
+"line_object_type": "rate_card_line",
+"line_object_parent_type": "rate_card",
+"rate_card_lines": [ //there could be multiple rate card line
+{
+
+"id": <rate_card_line_id> //ignore this parameter if creating a new line
+"name": <name>,
+"code": <code>,
+"rate_card_line_type": <rate_card_line_type_id>,
+"price": <price>,
+"currency": {
+"id": <id>,
+"code": <code>
+},
+"uom":<uom>,
+"id_num": <rate_card_line_id>, //ignore this parameter if creating a new line
+"rate_card_type": 2 //2 for Contracts
+}
+]
+}
+}
+```

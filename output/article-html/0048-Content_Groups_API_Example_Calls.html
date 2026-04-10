@@ -1,0 +1,89 @@
+<article class="" id="content_groups_api_example_calls">
+<h1 class="title">Content Groups API Example Calls</h1>
+<div class="body">
+<div class="" id="different_query_options_for_content_groups">
+<h2 class="title sectiontitle">Different Query Options for Content Groups</h2>
+<p class="">Here are more examples of how to use the Content Groups API to
+query and get the result set you want.</p>
+<p class="">This query will give you the content groups with name as
+test</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/business_groups?name[contains]=test</code>
+</p>
+<p class="">This query will give you the content groups updated by a
+particular user with Login = testsupport</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/business_groups?created_by[login]=testsupport</code>
+</p>
+<p class="">This query will give you all the business groups created after
+March 1st 2014</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/business_groups?created-at[gt]=2014-03-01T12:00:00</code>
+</p>
+</div>
+<div class="" id="get_single_content_group">
+<h2 class="title sectiontitle">GET Single Content Group</h2>
+<p class="">In this example, we queried for a single expense report with an
+ID of 9.</p>
+<p class="">We did a GET to the URL:</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/business_groups/9</code>
+</p>
+<p class="">or</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/business_groups?id=9</code>
+</p>
+<p class="">The Result:</p>
+<p class="">
+<b>Query Content Group Sample Result</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;business-group&gt;
+	 &lt;id type="integer"&gt;9&lt;/id&gt;
+	 &lt;created-at type="datetime"&gt;2014-04-04T14:04:20-07:00&lt;/created-at&gt;
+	 &lt;updated-at type="datetime"&gt;2014-04-04T14:04:20-07:00&lt;/updated-at&gt;
+	 &lt;name&gt;Test1&lt;/name&gt;
+	 &lt;description&gt;test1 group&lt;/description&gt;
+	 &lt;created-by&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+			&lt;login&gt;coupasupport&lt;/login&gt;
+			&lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Coupa&lt;/firstname&gt;
+			&lt;lastname&gt;Support&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;mycustom-userfield /&gt;
+	 &lt;/created-by&gt;
+	 &lt;updated-by&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+			&lt;login&gt;coupasupport&lt;/login&gt;
+			&lt;email&gt;upgrade@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Coupa&lt;/firstname&gt;
+			&lt;lastname&gt;Support&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+			&lt;mycustom-userfield /&gt;
+	 &lt;/updated-by&gt;
+&lt;/business-group&gt;</code>
+</pre>
+</p>
+</div>
+<div class="" id="content_groups_creation">
+<h2 class="title sectiontitle"> Content Groups Creation</h2>
+<p class="">In this example we are creating a Content Group. We are not
+using any Coupa system ID's for any of the reference objects.</p>
+<p class="">We posted it to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/business_groups/.</code>
+</pre>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;business-group&gt;
+	 &lt;name&gt;test sample content group&lt;/name&gt;
+	 &lt;description&gt;What Pattern Group&lt;/description&gt;
+&lt;/business-group&gt;</code>
+</pre>
+</div>
+</div>
+</article>

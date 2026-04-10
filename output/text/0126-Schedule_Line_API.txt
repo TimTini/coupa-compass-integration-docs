@@ -1,0 +1,18 @@
+Schedule Line API
+
+The Schedule Line API is a shared object associated with the Purchase Order Lines API.
+
+This API is associated with:
+
+- Purchase Order Lines API
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+id 	Coupa unique identifier 	no 	no 	any 	 	yes 	integer
+created_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime
+updated_at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime
+delivery_date 	Delivery date 	no 	no 	any 	 	yes 	datetime
+quantity 	Quantity 	yes 	no 	any 	 	yes 	decimal(30,6)
+created_by 	User who created 	no 	no 	any 	 	yes
+updated_by 	User who updated 	no 	no 	any 	 	yes

@@ -1,0 +1,77 @@
+<article class="" id="exchange_rate_import">
+<h1 class="title">Exchange Rate Import</h1>
+<div class="body">
+<div class="" id="overview-d117e129453">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">The Exchange Rate Import process read files from <code class="ph codeph">./Incoming/ExchangeRates/</code>
+        in the SFTP. These files will be moved to the archive folder located at
+          <code class="ph codeph">./Incoming/Archive/ExchangeRates/</code> before being processed in alphanumeric
+        order.</p>
+<p class="">Coupa does not support modifying existing exchange rates, only creating new rates.</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>The Exchange Rates loader only supports the creation of one-way
+          exchange rates. For example, if you include for EUR &gt; USD in the loader, you'll have
+          that rate populated in your Coupa instance, but the reverse rate (USD &gt; EUR) won't be
+          created. You need to explicitly include USD &gt; EUR for it to be included.</div>
+</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>Although the allowable values for the <code class="ph codeph">Rate Date</code>
+          column are in the <code class="ph codeph">YYYY-MM-DDTHH :MM:SS+HH:MM</code> format, the column floors
+          the date and time to the beginning of the day (<code class="ph codeph">00:00</code>).</div>
+</p>
+</div>
+<div class="" id="section_j2z_xcp_21c">
+<h2 class="title sectiontitle">Exchange Rate</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">From Currency</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Base Currency Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">To Currency</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Target Currency Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Rate</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">decimal(30,9)</td>
+<td class="entry" align="">Exchange Rate</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Rate Date</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">Exchange Rate Effective Start Date</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

@@ -1,0 +1,49 @@
+Departments API Example Calls
+
+Different Query Options for Departments
+
+Here are more examples of how to use the Departments API to query and get the result set you want.
+
+This query will give you the departments with name=Marketing
+
+https://<instance>.coupahost.com/api/departments?name=Marketing
+
+This query will give you the departments updated by a particular user with Login = coupasupport
+
+https://<instance>.coupahost.com/api/departments?created_by[login]=coupasupport
+
+This query will give you all the expense reports created after Jan 1st 2007
+
+https://<instance>.coupahost.com/api/departments?created_at[gt]=2007-01-01
+
+Get Single Department
+
+In this example, we queried for a single department with an ID of 1.
+
+We did a GET to the URL:
+
+https://<instance>.coupahost.com/api/departments/1
+
+or
+
+https://<instance>.coupahost.com/api/departments?id=1
+<?xml version="1.0" encoding="UTF-8"?> <department> <id type="integer">1</id> <created-at type="datetime">2008-10-27T13:00:48-07:00</created-at> <updated-at type="datetime">2014-03-28T08:53:19-07:00</updated-at> <name>Marketing</name> <active type="boolean">true</active> <created-by> <id type="integer">1</id> <login>coupasupport</login> <email>upgrade@coupa.com</email> <employee-number nil="true" /> <firstname>Coupa</firstname> <lastname>Support</lastname> <salesforce-id nil="true" /> <mycustom-userfield /> </created-by> <updated-by> <id type="integer">69</id> <login>coupasupport+rohitdemo@coupa.com</login> <email>coupasupport+rohitdemo@coupa.com</email> <employee-number nil="true" /> <firstname>Integration</firstname> <lastname>User</lastname> <salesforce-id nil="true" /> <mycustom-userfield /> </updated-by> </department>
+
+Departments Create
+
+In this example we are creating a Department. We are not using any Coupa system ID's for any of the reference objects.
+
+We posted it to the URL: https://<instance url>/api/departments/.
+<?xml version="1.0" encoding="UTF-8"?> <department> <name>Marketing</name> <active>false</active> </department>
+
+Departments Update
+
+In these examples, we are updating a single Department record.
+
+We did a PUT to the URL: https://instance.coupahost.com/api/departments/ <id>
+
+For Example, to deactivate an existing department with ID 195
+<?xml version="1.0" encoding="UTF-8"?> <department> <id>195</id> <active>false</active> </department>
+
+For Example, to update the name of an existing department with ID 195
+<?xml version="1.0" encoding="UTF-8"?> <department> <id>195</id> <name>new name</name> </department>

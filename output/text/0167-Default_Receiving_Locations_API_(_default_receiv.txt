@@ -1,0 +1,26 @@
+Default Receiving Locations API (/default_receiving_locations)
+
+Associations
+
+This resource is associated with Warehouse Location API.
+
+Actions
+
+Verb 	 Path 	 Action 	 Description
+POST 	/api/default_receiving_locations 	create 	 /api/default_receiving_locations/api/default_receiving_locations/api/default_receiving_locations
+GET 	/api/default_receiving_locations 	index 	 /api/default_receiving_locations/api/default_receiving_locations/api/default_receiving_locations
+GET 	/api/default_receiving_locations/:id 	show 	 /api/default_receiving_locations/:id/api/default_receiving_locations/:id/api/default_receiving_locations/:id
+POST 	/api/default_receiving_locations 	create 	 /api/default_receiving_locations/api/default_receiving_locations/api/default_receiving_locations
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+item 	item 	yes 	 	 	 	yes 	 Item
+item-id 	Item identifier 	 	 	 	yes 	 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+warehouse 	warehouse 	yes 	yes 	 	 	yes 	 Warehouse
+warehouse-id 	Warehouse identifier 	 	 	 	yes 	 	integer
+warehouse-location 	warehouse location 	yes 	 	 	 	yes 	 WarehouseLocation
+warehouse-location-id 	Warehouse Location identifier 	 	 	 	yes 	 	integer

@@ -1,0 +1,18 @@
+---
+title: "R34_Expense_Reporting_API.json"
+url: "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Expense_Reporting_API.json"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8d21loOqut1K0gKg2I1sIDL9Ot4zFrjm18nVH%2BPU4KqCB1jzm55%2BteLxB6G%2BR6SE%2FuXn8fNKZiu1mSh3rW1FU3B3p9aK5oPb8GCnMlqGrEFUA1g4MQpPiiIxrvlqQqOSm2iIPeOkzgUoZ4NaO8poLvuZBvZpI3ZcOrr6TYZBfjIE3Mp5QCSsaUHwJQfUw6OrClf05QKt8zCOG%2Ffw8ZDoAYfEz5SzB9fPYVHzjU1eamf6tApIYhejaWI8U7H5WeGi7JI1jUY9I2C5gX%2FRdpo09eeXtjXGfctyUZopMe0KB00GuUScnd%2BsOdzE3l4TSE8v1%2B39L2025PijWijmOlW%2B9w6HXc6fhilP58f3deckpeToWmeqMmu8QlxbG3DuV0pNcjhd%2F5yWoxTsvpFvGM%2Fzod%2FiQgq4tZF%2BxM%2BWQT5Mcstd203hr1c9x0D%2BmykyjFhJiOPk6jUvdg7LrrokbMO7TW%2F7iNGlI%2BTIpDXgBbnWz%2FfaOrXw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Expense_Reporting_API.json"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:56:08+00:00"
+---
+
+# R34_Expense_Reporting_API.json
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Expense_Reporting_API.json](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Expense_Reporting_API.json)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8d21loOqut1K0gKg2I1sIDL9Ot4zFrjm18nVH%2BPU4KqCB1jzm55%2BteLxB6G%2BR6SE%2FuXn8fNKZiu1mSh3rW1FU3B3p9aK5oPb8GCnMlqGrEFUA1g4MQpPiiIxrvlqQqOSm2iIPeOkzgUoZ4NaO8poLvuZBvZpI3ZcOrr6TYZBfjIE3Mp5QCSsaUHwJQfUw6OrClf05QKt8zCOG%2Ffw8ZDoAYfEz5SzB9fPYVHzjU1eamf6tApIYhejaWI8U7H5WeGi7JI1jUY9I2C5gX%2FRdpo09eeXtjXGfctyUZopMe0KB00GuUScnd%2BsOdzE3l4TSE8v1%2B39L2025PijWijmOlW%2B9w6HXc6fhilP58f3deckpeToWmeqMmu8QlxbG3DuV0pNcjhd%2F5yWoxTsvpFvGM%2Fzod%2FiQgq4tZF%2BxM%2BWQT5Mcstd203hr1c9x0D%2BmykyjFhJiOPk6jUvdg7LrrokbMO7TW%2F7iNGlI%2BTIpDXgBbnWz%2FfaOrXw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Expense_Reporting_API.json](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9MwFP0rkd8d21loOqut1K0gKg2I1sIDL9Ot4zFrjm18nVH%2BPU4KqCB1jzm55%2BteLxB6G%2BR6SE%2FuXn8fNKZiu1mSh3rW1FU3B3p9aK5oPb8GCnMlqGrEFUA1g4MQpPiiIxrvlqQqOSm2iIPeOkzgUoZ4NaO8poLvuZBvZpI3ZcOrr6TYZBfjIE3Mp5QCSsaUHwJQfUw6OrClf05QKt8zCOG%2Ffw8ZDoAYfEz5SzB9fPYVHzjU1eamf6tApIYhejaWI8U7H5WeGi7JI1jUY9I2C5gX%2FRdpo09eeXtjXGfctyUZopMe0KB00GuUScnd%2BsOdzE3l4TSE8v1%2B39L2025PijWijmOlW%2B9w6HXc6fhilP58f3deckpeToWmeqMmu8QlxbG3DuV0pNcjhd%2F5yWoxTsvpFvGM%2Fzod%2FiQgq4tZF%2BxM%2BWQT5Mcstd203hr1c9x0D%2BmykyjFhJiOPk6jUvdg7LrrokbMO7TW%2F7iNGlI%2BTIpDXgBbnWz%2FfaOrXw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Expense_Reporting_API.json)
+
+Observed redirect page title: Coupa Portals - Sign In

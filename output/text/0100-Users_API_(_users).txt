@@ -1,0 +1,877 @@
+Users API (/users)
+
+Overview
+
+The users API allows you to create, update, or query users. This ranges from basic demographics, to managing passwords, to managing the groups and approval permissions they may have.
+
+The URL to access users is: https://{your_instance_name}/api/users
+
+See Integration Best Practices for more info.
+
+Actions
+
+The Users API allows you to:
+
+Verb
+
+Path
+
+Action
+
+Description
+
+POST
+
+/api/users
+
+create
+
+Create user
+
+GET
+
+/api/users
+
+index
+
+Query users
+
+GET
+
+/api/users/:id
+
+show
+
+Show user
+
+PUT
+
+/api/users/:id
+
+update
+
+Update user
+
+Elements
+
+The following elements are available for the Users API:
+
+Element
+
+Description
+
+Required Field?
+
+Unique?
+
+Allowable Value
+
+Api_In Field?
+
+Api_Out Field?
+
+Data Type
+
+account-groups
+
+account_groups
+
+yes
+
+yes
+
+Account Group
+
+account-security-type
+
+account_security_type
+
+yes
+
+yes
+
+integer
+
+active
+
+When true, the user is active. You can query active users only using the query parameter: /api/users?status=active
+
+yes
+
+yes
+
+boolean
+
+aic-user
+
+Does the user have an AI classification license?
+
+no
+
+no
+
+yes/no;
+
+true/false
+
+yes
+
+boolean
+
+analytics-user
+
+Does the user have an Analytics License?
+
+yes
+
+yes
+
+boolean
+
+api-user
+
+Is an API User?
+
+yes
+
+boolean
+
+approval-groups
+
+approval_groups
+
+yes
+
+yes
+
+Approval Group
+
+approval-limit
+
+Maximum amount allowed to approve.
+
+yes
+
+Approval Limit
+
+authentication-method
+
+What Authentication Method will be used (coupa_credentials, ldap, saml)?
+
+Note
+
+Authentication methods are case-sensitive
+
+yes
+
+yes
+
+string(255)
+
+avatar-thumb-url
+
+Avitar update using the API is no longer supported for security reasons.
+
+No
+
+yes
+
+string
+
+business-function
+
+Business function
+
+yes
+
+string(255)
+
+business-group-security-type
+
+business_group_security_type
+
+0, 1
+
+yes
+
+yes
+
+integer
+
+can-expense-for
+
+can_expense_for
+
+yes
+
+User
+
+category_planner_user
+
+Does the user have a Category Planner License?
+
+yes
+
+yes
+
+boolean
+
+category_strategy_user 	Does the user have a Category Strategy License? 	no 	 	 	 	yes 	boolean
+
+ccw-user
+
+Does the user have a Contingent Workforce License?
+
+no
+
+no
+
+any
+
+yes
+
+yes
+
+boolean
+
+content-groups
+
+Content Groups
+
+yes
+
+yes
+
+Business Group
+
+contract-approval-limit
+
+Contract approval limit
+
+yes
+
+yes
+
+Approval Limit
+
+contract-self-approval-limit
+
+Contract self approval limit
+
+yes
+
+yes
+
+Approval Limit
+
+contracts-user
+
+Does the user have a Contracts License?
+
+yes
+
+yes
+
+boolean
+
+country-of-residence
+
+Country of residence
+
+no
+
+no
+
+any
+
+yes
+
+yes
+
+Country
+
+created-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+datetime
+
+created-by
+
+User who created
+
+yes
+
+User
+
+default-account
+
+default_account
+
+yes
+
+yes
+
+Account
+
+default-account-type
+
+default_account_type
+
+yes
+
+yes
+
+AccountType
+
+default-address
+
+default_address
+
+yes
+
+yes
+
+Address
+
+default-currency
+
+Not a required field. But if a value is not provided and the user record doesn't have a default currency already set, then the default currency is set to the instance's reporting currency.
+
+yes
+
+yes
+
+Currencies
+
+default-locale
+
+en, tr, ja, bg, cs, es, da, de-AT, de-BE, de-CH, de-LU, de, el, en-AU, en-CA, en-CN, en-GB, en-HK, en-IE, en-IN, en-ME, en-MT, en-MY, en-NZ, en-PH, en-SG, en_TW, en-ZA, es-CO, es-MX, es-PR, et, fi, fr-BE, fr-CA, fr-CH, fr-LU, fr, hr, hu, it-CH, it, ko, lt, lv, mt, nl-BE, nl, no, pl, pt-BR, pt, ro, ru, sk, sl, sr, sv, zh-CN, zh-HK, zh-TW, en-ZZ, en, tr, ja, bg, cs, es, da, de-AT, de-BE, de-CH, de-LU, de, el, en-AU, en-CA, en-GB, en-HK, en-IE, en-IN, en-MT, en-MY, en-NZ, en-SG, en-ZA, es-CO, es-MX, es-PR, et, fi, fr-BE, fr-CA, fr-CH, fr-LU, fr, hr, hu, it-CH, it, ko, lt, lv, mt, nl-BE, nl, no, pl, pt-BR, pt, ro, ru, sk, sl, sr, sv, zh-CN, zh-HK, zh-TW, en-ZZ, es-IC
+
+yes
+
+yes
+
+string(10)
+
+department
+
+department
+
+yes
+
+yes
+
+Department
+
+email
+
+email
+
+yes
+
+yes
+
+yes
+
+yes
+
+string(255)
+
+employee-number
+
+employee number
+
+yes
+
+yes
+
+yes
+
+string(255)
+
+employee-payment-channel
+
+Determine how expenses will be paid to the employee. 'ERP' per default and can be switched to 'CoupaPay' if instance allows it.
+
+yes
+
+yes
+
+string(255)
+
+escalation-threshold
+
+Escalation threshold
+
+no
+
+no
+
+any
+
+yes
+
+yes
+
+Approval Limit
+
+expense-approval-limit
+
+expense_approval_limit
+
+yes
+
+yes
+
+Approval Limit
+
+expense-self-approval-limit
+
+expense_self_approval_limit
+
+yes
+
+yes
+
+Approval Limit
+
+expense-user
+
+Does the user have a Expense License?
+
+yes
+
+yes
+
+boolean
+
+expenses-delegated-to
+
+Expenses delegated to
+
+yes
+
+User
+
+firstname
+
+first name
+
+yes
+
+yes
+
+yes
+
+string(40)
+
+fullname
+
+full name
+
+yes
+
+string(255)
+
+generate-password-and-notify
+
+Set to Yes if you want the system to invite the user to the system and have them set up their password
+
+Yes, No
+
+yes
+
+string
+
+id
+
+Coupa unique identifier
+
+yes
+
+integer
+
+inventory-organizations
+
+inventory_organizations
+
+yes
+
+yes
+
+Inventory Organization
+
+inventory-user
+
+Does the user have a Inventory License?
+
+yes
+
+yes
+
+boolean
+
+invoice-approval-limit
+
+invoice_approval_limit
+
+yes
+
+yes
+
+Approval Limit
+
+invoice-self-approval-limit
+
+Maximum amount allowed for Invoice self approvals
+
+yes
+
+Approval Limit
+
+invoicing_user
+
+Does the user have a Invoicing License?
+
+yes
+
+boolean
+
+lastname
+
+last name
+
+yes
+
+yes
+
+yes
+
+string(40)
+
+login
+
+login
+
+yes
+
+yes
+
+yes
+
+yes
+
+string(255)
+
+manager
+
+Manager
+
+yes
+
+yes
+
+User
+
+mention-name
+
+Mention Name
+
+yes
+
+yes
+
+yes
+
+string(255)
+
+password
+
+Changed password
+
+yes
+
+string
+
+phone-mobile
+
+phone mobile
+
+yes
+
+yes
+
+Phone Number
+
+phone-work
+
+phone work
+
+yes
+
+yes
+
+Phone Number
+
+purchasing-user
+
+Does the user have a Purchasing License?
+
+yes
+
+yes
+
+boolean
+
+requisition-approval-limit
+
+requisition_approval_limit
+
+yes
+
+yes
+
+Approval Limit
+
+requisition-self-approval-limit
+
+requisition_self_approval_limit
+
+yes
+
+yes
+
+Approval Limit
+
+risk-assess-user
+
+Does the user have a Risk Assess License?
+
+yes
+
+yes
+
+boolean
+
+roles
+
+roles
+
+yes
+
+yes
+
+Role
+
+salesforce-enabled
+
+salesforce_enabled
+
+yes
+
+boolean
+
+salesforce-id
+
+salesforce_id
+
+yes
+
+yes
+
+yes
+
+string(255)
+
+self-approval-limit
+
+Maximum amount allowed for self approvals
+
+yes
+
+Approval Limit
+
+seniority-level
+
+The employee's job grade or band in your company's hierarchy.
+
+yes
+
+yes
+
+string(255)
+
+sourcing-user
+
+Does the user have a Sourcing License?
+
+yes
+
+yes
+
+boolean
+
+spend-guard-user
+
+Indicates whether user has a Spend Guard license
+
+no
+
+no
+
+yes/no;
+
+true/false
+
+yes
+
+boolean
+
+sso-identifier
+
+User's Single Sign-on ID (SSO ID)
+
+yes
+
+yes
+
+string(255)
+
+supply-chain-user
+
+Does the user have a Supply Chain License?
+
+yes
+
+yes
+
+boolean
+
+treasury_user
+
+Does the user have a Treasury License?
+
+yes
+
+yes
+
+boolean
+
+updated-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+datetime
+
+updated-by
+
+User who updated
+
+yes
+
+User
+
+user-groups
+
+User groups
+
+yes
+
+yes
+
+User Group
+
+work-confirmation-approval-limit
+
+work_confirmation_approval_limit
+
+yes
+
+Approval Limit
+
+working-warehouses
+
+working_warehouses
+
+yes
+
+yes
+
+Warehouse
+
+account-groups
+
+Account groups that the user should have access to (for account-based document security)
+
+yes
+
+yes
+
+allow-employee-payment-account-creation
+
+Allow the user to create an Employee Payment Account, regardless of the Employee Payment Channel.
+
+Yes/No
+
+yes
+
+yes
+
+boolean
+
+allow-user-to-upload-invoice-from-mobile
+
+Allow user to upload Invoice images from Coupa Mobile to Invoice Inbox
+
+yes
+
+yes
+
+boolean
+
+legal-entity
+
+Assigns user to legal entity to set requirements for expense report receipt retention.
+
+yes
+
+yes
+
+invoice-self-approval-limit
+
+Maximum amount allowed for Invoice self approvals
+
+yes
+
+travel-user
+
+Does the user have a Travel License?
+
+yes
+
+yes
+
+boolean
+
+middlename
+
+middle name
+
+yes
+
+yes
+
+string(255)
+
+msp_user
+
+Boolean flag to tell if the user is of MSP type
+
+yes
+
+boolean

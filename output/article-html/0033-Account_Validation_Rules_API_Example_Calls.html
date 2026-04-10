@@ -1,0 +1,277 @@
+<article class="" id="account_validation_rules_api_example_calls">
+<h1 class="title">Account Validation Rules API Example Calls</h1>
+<div class="body">
+<div class="" id="different_query_options_for_account_validation_rules">
+<h2 class="title sectiontitle">Different Query Options for Account Validation Rules</h2>
+<p class="">Here are more examples of how to use the Account Validation
+Rules API to query and get the result set you want. </p>
+<p class="">This Query will give you the account validation rules which are
+not active</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/account_validation_rules?active=false</code>
+</p>
+<p class="">This query will give you the account validation rules created by
+a particular user with id == 55</p>
+<p class="">
+<code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/account_validation_rules?id=68&amp;[created_by[id]]=55</code>
+</p>
+</div>
+<div class="" id="account_validation_rule_api_example">
+<h2 class="title sectiontitle">Account Validation Rule API Example</h2>
+<p class="">In this example, we queried for a single Account Validation Rule
+record with an ID of 68.</p>
+<p class="">We did a GET to the URL: </p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/account_validation_rules/68</code>
+</pre>
+</p>
+<p class="">
+or</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/account_validation_rules?id=68</code>
+</pre>
+</p>
+<p class="">Here is the response matching the search criteria:
+        <pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account-validation-rule&gt;
+	 &lt;id type="integer"&gt;68&lt;/id&gt;
+	 &lt;created-at type="datetime"&gt;2013-10-30T09:20:53-06:00&lt;/created-at&gt;
+	 &lt;updated-at type="datetime"&gt;2014-01-08T13:22:14-07:00&lt;/updated-at&gt;
+	 &lt;name&gt;AS_BS_A1001_1&lt;/name&gt;
+	 &lt;error-message&gt;TEST_1 - Invalid Combination&lt;/error-message&gt;
+	 &lt;description&gt;CAS_CBS&lt;/description&gt;
+	 &lt;active type="boolean"&gt;false&lt;/active&gt;
+	 &lt;segment-1-condition nil="true" /&gt;
+	 &lt;segment-1-min&gt;BS1001&lt;/segment-1-min&gt;
+	 &lt;segment-1-max&gt;BS1001&lt;/segment-1-max&gt;
+	 &lt;segment-2-condition&gt;blank_value&lt;/segment-2-condition&gt;
+	 &lt;segment-2-min nil="true" /&gt;
+	 &lt;segment-2-max nil="true" /&gt;
+	 &lt;segment-3-condition nil="true" /&gt;
+	 &lt;segment-3-min&gt;BS11200&lt;/segment-3-min&gt;
+	 &lt;segment-3-max&gt;BS11200&lt;/segment-3-max&gt;
+	 &lt;segment-4-condition nil="true" /&gt;
+	 &lt;segment-4-min nil="true" /&gt;
+	 &lt;segment-4-max nil="true" /&gt;
+	 &lt;segment-5-condition nil="true" /&gt;
+	 &lt;segment-5-min nil="true" /&gt;
+	 &lt;segment-5-max nil="true" /&gt;
+	 &lt;segment-6-condition nil="true" /&gt;
+	 &lt;segment-6-min nil="true" /&gt;
+	 &lt;segment-6-max nil="true" /&gt;
+	 &lt;segment-7-condition nil="true" /&gt;
+	 &lt;segment-7-min nil="true" /&gt;
+	 &lt;segment-7-max nil="true" /&gt;
+	 &lt;segment-8-condition nil="true" /&gt;
+	 &lt;segment-8-min nil="true" /&gt;
+	 &lt;segment-8-max nil="true" /&gt;
+	 &lt;segment-9-condition nil="true" /&gt;
+	 &lt;segment-9-min nil="true" /&gt;
+	 &lt;segment-9-max nil="true" /&gt;
+	 &lt;segment-10-condition nil="true" /&gt;
+	 &lt;segment-10-min nil="true" /&gt;
+	 &lt;segment-10-max nil="true" /&gt;
+	 &lt;segment-11-condition nil="true" /&gt;
+	 &lt;segment-11-min nil="true" /&gt;
+	 &lt;segment-11-max nil="true" /&gt;
+	 &lt;segment-12-condition nil="true" /&gt;
+	 &lt;segment-12-min nil="true" /&gt;
+	 &lt;segment-12-max nil="true" /&gt;
+	 &lt;segment-13-condition nil="true" /&gt;
+	 &lt;segment-13-min nil="true" /&gt;
+	 &lt;segment-13-max nil="true" /&gt;
+	 &lt;segment-14-condition nil="true" /&gt;
+	 &lt;segment-14-min nil="true" /&gt;
+	 &lt;segment-14-max nil="true" /&gt;
+	 &lt;segment-15-condition nil="true" /&gt;
+	 &lt;segment-15-min nil="true" /&gt;
+	 &lt;segment-15-max nil="true" /&gt;
+	 &lt;segment-16-condition nil="true" /&gt;
+	 &lt;segment-16-min nil="true" /&gt;
+	 &lt;segment-16-max nil="true" /&gt;
+	 &lt;segment-17-condition nil="true" /&gt;
+	 &lt;segment-17-min nil="true" /&gt;
+	 &lt;segment-17-max nil="true" /&gt;
+	 &lt;segment-18-condition nil="true" /&gt;
+	 &lt;segment-18-min nil="true" /&gt;
+	 &lt;segment-18-max nil="true" /&gt;
+	 &lt;segment-19-condition nil="true" /&gt;
+	 &lt;segment-19-min nil="true" /&gt;
+	 &lt;segment-19-max nil="true" /&gt;
+	 &lt;segment-20-condition nil="true" /&gt;
+	 &lt;segment-20-min nil="true" /&gt;
+	 &lt;segment-20-max nil="true" /&gt;
+	 &lt;account-type&gt;
+			&lt;id type="integer"&gt;9&lt;/id&gt;
+			&lt;created-at type="datetime"&gt;2013-08-02T15:23:09-06:00&lt;/created-at&gt;
+			&lt;updated-at type="datetime"&gt;2014-04-14T09:43:03-06:00&lt;/updated-at&gt;
+			&lt;name&gt;A0001&lt;/name&gt;
+			&lt;active type="boolean"&gt;true&lt;/active&gt;
+			&lt;currency&gt;
+				 &lt;id type="integer"&gt;1&lt;/id&gt;
+				 &lt;code&gt;USD&lt;/code&gt;
+			&lt;/currency&gt;
+			&lt;primary-contact&gt;
+				 &lt;id type="integer"&gt;66&lt;/id&gt;
+				 &lt;created-at type="datetime"&gt;2013-08-02T15:23:09-06:00&lt;/created-at&gt;
+				 &lt;updated-at type="datetime"&gt;2013-09-30T15:46:28-06:00&lt;/updated-at&gt;
+				 &lt;email&gt;APQuestions@vailresorts.com&lt;/email&gt;
+				 &lt;name-prefix nil="true" /&gt;
+				 &lt;name-suffix nil="true" /&gt;
+				 &lt;name-additional nil="true" /&gt;
+				 &lt;name-given&gt;CBS Billing/AP&lt;/name-given&gt;
+				 &lt;name-family&gt;Contact&lt;/name-family&gt;
+				 &lt;name-fullname nil="true" /&gt;
+				 &lt;notes nil="true" /&gt;
+				 &lt;created-by&gt;
+						&lt;id type="integer"&gt;15&lt;/id&gt;
+						&lt;login&gt;Tester&lt;/login&gt;
+						&lt;email&gt;Tester@testing.com&lt;/email&gt;
+						&lt;employee-number&gt;156720&lt;/employee-number&gt;
+						&lt;firstname&gt;Test&lt;/firstname&gt;
+						&lt;lastname&gt;ER&lt;/lastname&gt;
+						&lt;salesforce-id nil="true" /&gt;
+				 &lt;/created-by&gt;
+				 &lt;updated-by&gt;
+						&lt;id type="integer"&gt;12&lt;/id&gt;
+						&lt;login&gt;Testinguser&lt;/login&gt;
+						&lt;email&gt;testinguser@test.com&lt;/email&gt;
+						&lt;employee-number /&gt;
+						&lt;firstname&gt;Teasting&lt;/firstname&gt;
+						&lt;lastname&gt;USer&lt;/lastname&gt;
+						&lt;salesforce-id nil="true" /&gt;
+				 &lt;/updated-by&gt;
+			&lt;/primary-contact&gt;
+			&lt;primary-address&gt;
+				 &lt;id type="integer"&gt;162&lt;/id&gt;
+				 &lt;created-at type="datetime"&gt;2013-08-02T15:23:09-06:00&lt;/created-at&gt;
+				 &lt;updated-at type="datetime"&gt;2013-09-30T15:46:28-06:00&lt;/updated-at&gt;
+				 &lt;name nil="true" /&gt;
+				 &lt;street1&gt;390 Test Crescent&lt;/street1&gt;
+				 &lt;street2&gt;Suite 1000&lt;/street2&gt;
+				 &lt;city&gt;Testcity&lt;/city&gt;
+				 &lt;state&gt;CA&lt;/state&gt;
+				 &lt;postal-code&gt;80021&lt;/postal-code&gt;
+				 &lt;attention nil="true" /&gt;
+				 &lt;active type="boolean"&gt;true&lt;/active&gt;
+				 &lt;business-group-name nil="true" /&gt;
+				 &lt;country&gt;
+						&lt;id type="integer"&gt;223&lt;/id&gt;
+						&lt;code&gt;US&lt;/code&gt;
+						&lt;name&gt;United States&lt;/name&gt;
+				 &lt;/country&gt;
+				 &lt;created-by&gt;
+						&lt;id type="integer"&gt;15&lt;/id&gt;
+						&lt;login&gt;Testin&lt;/login&gt;
+						&lt;email&gt;Testing@test.com&lt;/email&gt;
+						&lt;employee-number&gt;156720&lt;/employee-number&gt;
+						&lt;firstname&gt;Tst&lt;/firstname&gt;
+						&lt;lastname&gt;usr&lt;/lastname&gt;
+						&lt;salesforce-id nil="true" /&gt;
+				 &lt;/created-by&gt;
+				 &lt;updated-by&gt;
+						&lt;id type="integer"&gt;12&lt;/id&gt;
+						&lt;login&gt;tsuer&lt;/login&gt;
+						&lt;email&gt;tsuer.test@test.com&lt;/email&gt;
+						&lt;employee-number /&gt;
+						&lt;firstname&gt;test&lt;/firstname&gt;
+						&lt;lastname&gt;usr&lt;/lastname&gt;
+						&lt;salesforce-id nil="true" /&gt;
+				 &lt;/updated-by&gt;
+			&lt;/primary-address&gt;
+			&lt;created-by&gt;
+				 &lt;id type="integer"&gt;15&lt;/id&gt;
+				 &lt;login&gt;Tester2&lt;/login&gt;
+				 &lt;email&gt;Tst2@test.com&lt;/email&gt;
+				 &lt;employee-number&gt;156720&lt;/employee-number&gt;
+				 &lt;firstname&gt;Test&lt;/firstname&gt;
+				 &lt;lastname&gt;User2&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+			&lt;/created-by&gt;
+			&lt;updated-by&gt;
+				 &lt;id type="integer"&gt;15&lt;/id&gt;
+				 &lt;login&gt;testing3&lt;/login&gt;
+				 &lt;email&gt;tstuser3@test.com&lt;/email&gt;
+				 &lt;employee-number&gt;156720&lt;/employee-number&gt;
+				 &lt;firstname&gt;Test&lt;/firstname&gt;
+				 &lt;lastname&gt;User3&lt;/lastname&gt;
+				 &lt;salesforce-id nil="true" /&gt;
+			&lt;/updated-by&gt;
+	 &lt;/account-type&gt;
+	 &lt;created-by&gt;
+			&lt;id type="integer"&gt;55&lt;/id&gt;
+			&lt;login&gt;test.coupa&lt;/login&gt;
+			&lt;email&gt;test.coupa@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Edi&lt;/firstname&gt;
+			&lt;lastname&gt;Integration&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+	 &lt;/created-by&gt;
+	 &lt;updated-by&gt;
+			&lt;id type="integer"&gt;55&lt;/id&gt;
+			&lt;login&gt;test.coupa&lt;/login&gt;
+			&lt;email&gt;test.coupa@coupa.com&lt;/email&gt;
+			&lt;employee-number nil="true" /&gt;
+			&lt;firstname&gt;Edi&lt;/firstname&gt;
+			&lt;lastname&gt;Integration&lt;/lastname&gt;
+			&lt;salesforce-id nil="true" /&gt;
+	 &lt;/updated-by&gt;
+&lt;/account-validation-rule&gt;</code>
+</pre>
+</p>
+</div>
+<div class="" id="account_validation_rule_create_-_inactive_status">
+<h2 class="title sectiontitle">Account Validation Rule Create - inactive Status</h2>
+<p class="">In this example we are creating a Account Validation Rule in
+inactive status.  We are using Coupasystem ID's for chart of
+account reference objects.</p>
+<p class="">We posted it to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/account_validation_rules.</code>
+</pre> This
+        created the account_validation_rules in inactive
+        status<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account-validation-rule&gt;
+	 &lt;name&gt;TESTRULE&lt;/name&gt;
+	 &lt;error-message&gt;TESTRULE- Invalid Combination&lt;/error-message&gt;
+	 &lt;description&gt;Testrule&lt;/description&gt;
+	 &lt;active type="boolean"&gt;false&lt;/active&gt;
+	 &lt;segment-1-condition nil="true" /&gt;
+	 &lt;segment-1-min&gt;V0070&lt;/segment-1-min&gt;
+	 &lt;segment-1-max&gt;V0070&lt;/segment-1-max&gt;
+	 &lt;segment-2-condition nil="true" /&gt;
+	 &lt;segment-2-min&gt;582&lt;/segment-2-min&gt;
+	 &lt;segment-2-max&gt;582&lt;/segment-2-max&gt;
+	 &lt;segment-3-condition nil="true" /&gt;
+	 &lt;segment-3-min&gt;0832&lt;/segment-3-min&gt;
+	 &lt;segment-3-max&gt;5034&lt;/segment-3-max&gt;
+	 &lt;account-type&gt;
+			&lt;name&gt;V0070&lt;/name&gt;
+	 &lt;/account-type&gt;
+&lt;/account-validation-rule&gt;</code>
+</pre>
+</p>
+</div>
+<div class="" id="account_validation_rules_api_put_example">
+<h2 class="title sectiontitle">Account Validation Rules API Put Example</h2>
+<p class="">Example for a PUT: </p>
+<p class="">
+<b>To update the status for a Account Validation
+Rule</b>
+</p>
+<p class=""> URL:
+        <code class="ph codeph">https://&lt;instance&gt;/api/account_validation_rules/&lt;id&gt;</code>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account-validation-rule&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+&lt;/account-validation-rule&gt; </code>
+</pre>
+</p>
+</div>
+</div>
+</article>

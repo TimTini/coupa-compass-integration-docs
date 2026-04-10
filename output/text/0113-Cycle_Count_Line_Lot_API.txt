@@ -1,0 +1,22 @@
+Cycle Count Line Lot API
+
+Associations
+
+This resource is available through the Cycle Count Line API.
+
+Elements
+
+Name 	 Description 	 Req'd 	 Unique 	 Allowable Values 	 In 	 Out 	 Data Type
+balance-quantity 	Balance Quantity 	 	 	 	 	yes 	decimal(32,4)
+consumption-quantity 	Quantity in consumption uom 	 	 	 	yes 	yes 	decimal(32,4)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+cycle-count-line-id 	Cycle count line identifier 	 	 	 	 	yes 	integer
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+inventory-lot 	Inventory Lot 	yes 	yes 	 	 	yes 	InventoryLot
+inventory-lot-id 	Inventory lot 	 	 	 	yes 	yes 	integer
+inventory-lot-number 	Inventory lot number 	 	 	 	yes
+order-quantity 	Quantity in order uom 	 	 	 	yes 	yes 	decimal(32,4)
+quantity 	Quantity 	yes 	 	 	yes 	yes 	decimal(32,4)
+uom 	Uom 	yes 	 	 	 	yes 	 Uom
+uom-id 	Uom Identifier 	 	 	 	yes 	yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime

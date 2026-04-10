@@ -1,0 +1,9 @@
+R34_Sourcing_API.json
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Sourcing_API.json
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLRbtswDPwVQ%2B%2B2ZTdNGyEJkDYbFqDbjCbdw14KRqZXobKkiXKX%2FX1lZSuyAemLAJ14vDtSc4JeO7EawpO5x58DUsg26wV73MuZrPn0Mp9UGI96us9nbQc5zOBCYtddTK73LPuGnpQ1C1YXnGUbogE3hgKYECFeT3M%2BySu%2B45W4nAp%2BVcyuv7NsHUWUgZCITyE4EmUp7eAgx0NAb0AX9jlAIW1fgnP%2FvT1G2AGRsz7EW1Xi4dnWfOAwqdc3%2FQcJVbgqiWw5ZmPZR%2BslpoAL1oEmHI02sYF6wTek8TZYafWNMq0yPxZs8EZYIEXCQI8kghTb1ec7EYOK%2FbGIxKfdrsmbr9sdy1ZE6MdIt9bQ0KPfon9REh%2Fu705DJudFCpTijT3Lc1yWHXptSKQdvW%2FJ%2FfHPlvOxWqRV%2BBP%2B%2B3T464Atz3qdlyedjzJOfImtNuvGaiV%2Fj5PuIZxXqooqIarNu1QqsAelV23rkSjOUGv769YjhLiY4Ic4gHJ5lP33iy5fAQ%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Sourcing_API.json
+
+Observed redirect page title: Coupa Portals - Sign In

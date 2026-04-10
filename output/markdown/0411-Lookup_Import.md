@@ -1,0 +1,73 @@
+---
+title: "Lookup Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/lookup-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/lookup-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:41+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Lookup Import"
+---
+
+# Lookup Import
+
+## Overview
+
+The Lookup Values Import process read files from the
+`./Incoming/LookupValues/` SFTP folder. These files will be moved to the
+archive folder located at `./Incoming/Archive/LookupValues/` before being
+processed in alphanumeric order.
+
+## Unique Keys
+
+Here are the keys used to look up and modify existing records, listed in order of
+priority.
+
+- External Ref Code
+
+- External Ref Num
+
+- Name
+
+## Validations
+
+- `External Ref Num` can only be updated using `External Ref Code` to identify an existing record. If you update `External Ref Num`, then the `External Ref Code` will also get updated.
+
+- `Name` can be updated using `External Ref Num`.
+`Name` can be used to update the anything else except `External Ref Num` or `External Ref Code`.
+
+## Lookup
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Name* | Yes | Yes | string(255) | Lookup Name | |
+| description | No | No | string(255) | Description of Lookup | |
+| Active* | Yes | No | boolean | Is this Lookup Active? | |
+| Fixed Depth? | No | No | boolean | Is this a Fixed Depth Hierarchical lookup | |
+| Content Groups | No | No | | Enter in content groups (for security) | |
+| Level 1 Name | No | No | string(255) | Level 1 Name if hierarchical | |
+| Level 2 Name | No | No | string(255) | Level 2 Name if hierarchical | |
+| Level 3 Name | No | No | string(255) | Level 3 Name if hierarchical | |
+| Level 4 Name | No | No | string(255) | Level 4 Name if hierarchical | |
+| Level 5 Name | No | No | string(255) | Level 5 Name if hierarchical | |
+| Level 6 Name | No | No | string(255) | Level 6 Name if hierarchical | |
+| Level 7 Name | No | No | string(255) | Level 7 Name if hierarchical | |
+| Level 8 Name | No | No | string(255) | Level 8 Name if hierarchical | |
+| Level 9 Name | No | No | string(255) | Level 9 Name if hierarchical | |
+| Level 10 Name | No | No | string(255) | Level 10 Name if hierarchical | |
+
+## Lookup Value
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Name* | Yes | Yes | string(255) | Lookup Value Name. Unique per Lookup and Parent | |
+| Active | No | No | boolean | Possible values Yes or No | |
+| Lookup* | Yes | No | | Lookup Name. Must Exist in Coupa | |
+| Description | No | No | string(255) | Description of Lookup Value | |
+| External Ref Num | No | Yes | string(255) | Part of the External Ref Code. Unique per Lookup and Parent. | |
+| External Ref Code | No | Yes | string(255) | Unique code to allow selection of lookup value | |
+| Chart of Accounts | No | No | | If Lookup is used for dynamic accounting, restrict this lookup value to this single existing chart of accounts | |
+| Parent External Ref Code | No | No | | For Hierarchical Lookup Values, this sets the parent element | |
+| Default | No | No | | For Hierarchical Lookup Values, this is the Default for this level. This only applies to lookups used for dynamic accounts. It has no effect when the lookup is used for custom fields. | |

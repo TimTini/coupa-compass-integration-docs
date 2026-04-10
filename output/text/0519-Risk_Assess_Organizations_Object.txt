@@ -1,0 +1,30 @@
+Risk Assess Organizations Object
+
+Represents Organization Score Accumulators linked to the evaluation process. Accumulators compile the scores of Key Performance Indicators at the organizational level. The Object contains score accumulator records rather than the organizations themselves.
+
+Associations
+
+Access the Organizations object through the Evaluations API. For more information, see Risk Assess Evaluations API.
+
+Elements
+
+The following elements are available for the Organizations object:
+
+Element
+
+Data Type
+Description
+
+entityId
+
+string
+
+Unique entity ID of the organization score accumulator in CRA
+
+name
+
+string
+
+Name of the organization score accumulator
+
+links 	Array of objects 	Contains HATEOAS-style links, which facilitate navigation to specific APIs. Only currently populated for supplier-related objects, for example, a riskableObject that pertains to a supplier. For other APIs, the value is null.

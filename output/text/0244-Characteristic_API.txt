@@ -1,0 +1,46 @@
+Characteristic API
+
+Access characteristic data when working with the Quality Collaboration API.
+
+Associations
+
+This resource is associated with the Quality Collaboration API. For more information, see Quality Collaboration API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+id 	ID of the characteristic. 	 	 	 	no 	yes 	integer
+lineNum 	Line number. 	 	 	 	no 	yes 	integer
+inspectionId 	Inspection ID. 	 	 	 	no 	yes 	integer
+name 	Name of the characteristic. 	 	 	 	yes 	yes 	string
+type 	Type of characteristic.
+- required
+- optional
+yes 	yes 	string
+isQuantitative 	Whether the characteristic is quantitative. 	 	 	 	yes 	yes 	boolean
+remarks 	Remarks associated with the characteristic. 	 	 	 	no 	yes 	string
+specification 	Specification of the characteristic. 	 	 	 	no 	yes 	string
+requirement 	Requirement for the characteristic. 	 	 	 	yes 	no 	string
+valueType 	Type of value.
+-
+
+none
+
+-
+
+numeric
+
+-
+
+decision
+
+-
+
+choice
+
+yes 	yes 	string
+recordingType 	Recording type. 	 	 	summarized 	yes 	yes 	string
+characteristicValues 	Details about the characteristic value. 	 	 	 	yes 	yes 	 CharacteristicValue
+expectedResults 	Details about the expected results. 	 	 	 	yes 	yes 	 ExpectedResult
+expectedLimits 	Details about the expected limits. 	 	 	 	yes 	yes 	 ExpectedLimit
+recordedCharacteristic 	Details about the recorded characteristic. 	 	 	 	no 	yes 	 RecordedCharacteristic

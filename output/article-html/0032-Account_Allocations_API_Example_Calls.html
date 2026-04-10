@@ -1,0 +1,63 @@
+<article class="" id="account_allocations_api_example_calls">
+<h1 class="title">Account Allocations API Example Calls</h1>
+<div class="body">
+<div class="" id="account_allocations_get">
+<h2 class="title sectiontitle">Account Allocations GET</h2>
+<p class="">Our Account Allocations API allows you to query against a number
+of core attributes on the account allocations record.</p>
+<p class="">This is the URL you use to query account information</p>
+<ul class="ul">
+<li class="li">
+<code class="ph codeph">https://&lt;instance url&gt;/api/accounts</code>
+</li>
+<li class="li">Typically you would use one of the account allocation
+segments or account allocation code to find the account allocations
+id in order to use the GET</li>
+</ul>
+<p class="">Successful requests will return HTTP 200 OK. The body of the
+response will include the accounts allocations matching your search
+criteria. Unsuccessful requests will return HTTP 404 Not Found. The
+error message will indicate no results matching your search
+criteria.</p>
+</div>
+<div class="" id="account_allocations_post">
+<h2 class="title sectiontitle">Account Allocations POST</h2>
+<p class="">Our Account Allocations API allows you to create an account
+allocations in Coupa.</p>
+<p class="">This is the URL you can POST this information to:</p>
+<ul class="ul">
+<li class="li">
+<code class="ph codeph">https://&lt;instance url&gt;/api/accounts</code>
+</li>
+</ul>
+<p class="">Successful requests will return HTTP 200 Created. The body of
+the response will include the account allocations that was created,
+including the ID if you needed to do further processing.</p>
+<p class="">Unsuccessful requests will return HTTP 400 Bad Request. The body
+of the response will include validation errors formatted as
+XML.</p>
+</div>
+<div class="" id="account_allocations_put">
+<h2 class="title sectiontitle">Account Allocations PUT</h2>
+<p class="">Our Account Allocations API allows you to update an existing
+account allocations in Coupa.</p>
+<p class="">This is the URL you can PUT this information to:</p>
+<ul class="ul">
+<li class="li">
+<pre>
+<code class="codeblock">https://&lt;instance url&gt;/api/accountAllocations</code>
+</pre>
+</li>
+<li class="li">Typically you would use one of the account allocations segments
+or account allocations code to find the account id in order to use
+the PUT</li>
+</ul>
+<p class="">Successful requests will return HTTP 200 OK. The body of the
+response will include the account allocations that was just
+updated.</p>
+<p class="">Unsuccessful requests will return HTTP 400 Bad Request. The body
+of the response will include validation errors formatted as
+XML.</p>
+</div>
+</div>
+</article>

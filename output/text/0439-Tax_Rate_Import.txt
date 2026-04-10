@@ -1,0 +1,31 @@
+Tax Rate Import
+
+Overview
+
+The Tax Rate Import process reads files from the ./Incoming/TaxRates/ in the SFTP. These files will be moved to the archive folder located at ./Incoming/Archive/TaxRates/ before being processed in alpha-numeric order.
+
+Keys
+- Tax Rate Id
+- Country Code
+- Tax Rate Type
+- Percentage
+
+Validations
+
+You can update any field if you specify Tax Rate Id. If there is no Tax Rate Id, then Coupa uses the combination of Country Code, Tax Rate Type and Percentage to look up an existing record.
+
+Tax Rate
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Country Code 	Yes 	No 	 	The country code where the tax rate will be applied
+Tax Rate Type 	Yes 	No 	 	The type of Tax Rate (ex: VAT, GST)
+Percentage 	Yes 	No 	decimal(30,6) 	Tax Percentage Amount
+Tax Rate ID 	No 	No 	integer 	Internal ID of tax rate.
+Active 	No 	No 	boolean 	Determines if the tax rate is enabled or disabled
+Exempt 	No 	Yes 	boolean 	Determines if the tax rate is exempt or not
+Reverse Charge 	No 	Yes 	boolean 	Determines tax rate is reverse charge or not
+Customer Accounting 	No 	No 	boolean 	Determines if the tax rate is customer accounting
+Out of Scope 	No 	No 	boolean 	Determines tax rate is out of scope or not
+Tax Rate Description 	No 	No 	string(255) 	Tax Rate Description
+Effective Date 	No 	No 	datetime 	The date when the tax rate will become active
+Expiration Date 	No 	No 	datetime 	The date when the tax rate will expire

@@ -1,0 +1,10 @@
+Integration Contacts Import
+
+Integration Contact
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Integration 	Yes 	No 	 	Integration Name. Must Exist In Coupa
+Id 	No 	No 	integer 	Coupa Unique Integration Contact Id
+Contactable Type 	Yes 	No 	string(255) 	Type of Contact: User, ApprovalGroup, Supplier 	User, UserGroup, ApprovalGroup, Supplier, SupplierUser
+Contactable 	Yes 	No 	string 	Coupa User login name or Approval Group name for Contact
+Contact Alert Type 	Yes 	No 	string(255) 	Type of alerts to send 	Technical, Functional, Both

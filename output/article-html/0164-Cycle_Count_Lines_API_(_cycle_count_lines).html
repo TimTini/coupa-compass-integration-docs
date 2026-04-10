@@ -1,0 +1,642 @@
+<article class="" id="cycle_count_lines_api_cycle_count_lines">
+<h1 class="title">Cycle Count Lines API (/cycle_count_lines)</h1>
+<div class="body">
+<div class="" id="overview-d957e148311">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">Use the Cycle Count Lines API to get a list of items to
+count. The URL to access pick lists
+is: 
+                <code class="ph codeph">https://{your_instance_name}/api/cycle_count_lines</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x298253.xml" title="">Cycle
+          Counts</a> for more info. </p>
+</div>
+<div class="" id="actions-d957e148333">
+<h2 class="title sectiontitle">Actions </h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/cycle_counts/:cycle_count_id/cycle_count_lines</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="" colspan="1">Query Cycle Count Lines</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/cycle_counts/:cycle_count_id/cycle_count_lines/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="" colspan="1">Show Cycle Count Line</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/cycle_counts/:cycle_count_id/cycle_count_lines/:id</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="" colspan="1">/api/cycle_counts/:cycle_count_id/cycle_count_lines/:id</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">/api/cycle_counts/:cycle_count_id/cycle_count_lines/:id</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="" colspan="1">/api/cycle_counts/:cycle_count_id/cycle_count_lines/:id</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e148450">
+<h2 class="title sectiontitle">Elements </h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>In</b>
+</th>
+<th class="entry " align="">
+<b>Out</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">balance-quantity</td>
+<td class="entry" align="">Balance Quantity</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">consumption-quantity</td>
+<td class="entry" align="">Quantity in Consumption UOM</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">cycle-count-id</td>
+<td class="entry" align="">Coupa unique identifier of Cycle Count</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">cycle-count-line-adjustments</td>
+<td class="entry" align="">Cycle count line adjustments</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""> CycleCountLineAdjustment </td>
+</tr>
+<tr class="">
+<td class="entry" align="">cycle-count-line-lots</td>
+<td class="entry" align="">Line Lots</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""> CycleCountLineLot </td>
+</tr>
+<tr class="">
+<td class="entry" align="">discrepancy</td>
+<td class="entry" align="">Discrepancy</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">discrepancy-value</td>
+<td class="entry" align="">Discrepancy Value</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">inventory-balance</td>
+<td class="entry" align="">Inventory balance</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""> InventoryBalance </td>
+</tr>
+<tr class="">
+<td class="entry" align="">item</td>
+<td class="entry" align="">Item</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""> Item </td>
+</tr>
+<tr class="">
+<td class="entry" align="">non-voided-inventory-transactions</td>
+<td class="entry" align="">Inventory Transactions</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""> InventoryTransaction </td>
+</tr>
+<tr class="">
+<td class="entry" align="">on-hand-balance</td>
+<td class="entry" align="">Snapshot Balance</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">order-quantity</td>
+<td class="entry" align="">Order Quantity</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quantity</td>
+<td class="entry" align="">Quantity</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">decimal(30,6)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">Status of Line</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">uom</td>
+<td class="entry" align="">UOM</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""> Uom </td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="sample_calls">
+<h2 class="title sectiontitle">Sample calls</h2>
+<p class="">You can create to get a specific Cycle Count line by ID</p>
+<p class="">GET
+
+                <code class="ph codeph">https://{your_instance_name}/api/cycle_count_line?id={id}</code>.
+            </p>
+<p class="">Output<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+2&lt;cycle-count-line&gt;
+3	&lt;id type="integer"&gt;51&lt;/id&gt;
+4	&lt;created-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/created-at&gt;
+5	&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/updated-at&gt;
+6	&lt;quantity nil="true"/&gt;
+7	&lt;discrepancy type="integer"&gt;-10&lt;/discrepancy&gt;
+8	&lt;status&gt;pending&lt;/status&gt;
+9	&lt;balance-quantity nil="true"/&gt;
+10	&lt;order-quantity nil="true"/&gt;
+11	&lt;discrepancy-value type="decimal"&gt;-10.00&lt;/discrepancy-value&gt;
+12	&lt;consumption-quantity nil="true"/&gt;
+13	&lt;cycle-count-id type="integer"&gt;13&lt;/cycle-count-id&gt;
+14	&lt;on-hand-balance type="decimal"&gt;10.0&lt;/on-hand-balance&gt;
+15	&lt;inventory-balance&gt;
+16		&lt;id type="integer"&gt;51&lt;/id&gt;
+17		&lt;created-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/created-at&gt;
+18		&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/updated-at&gt;
+19		&lt;quantity type="decimal"&gt;10.0&lt;/quantity&gt;
+20		&lt;allocated type="decimal"&gt;0.0&lt;/allocated&gt;
+21		&lt;available type="decimal"&gt;10.0&lt;/available&gt;
+22		&lt;item&gt;
+23			&lt;id type="integer"&gt;51&lt;/id&gt;
+24			&lt;created-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/created-at&gt;
+25			&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/updated-at&gt;
+26			&lt;description&gt;This is a sample item description that the user would see.&lt;/description&gt;
+27			&lt;item-number&gt;xxxx2&lt;/item-number&gt;
+28			&lt;name&gt;Coupa Demodata Product Name 2&lt;/name&gt;
+29			&lt;active type="boolean"&gt;true&lt;/active&gt;
+30			&lt;storage-quantity nil="true"/&gt;
+31			&lt;consumption-quantity nil="true"/&gt;
+32			&lt;image-url nil="true"/&gt;
+33			&lt;external-image-url nil="true"/&gt;
+34			&lt;manufacturer-part-number nil="true"/&gt;
+35			&lt;manufacturer-name nil="true"/&gt;
+36			&lt;item-type&gt;Item&lt;/item-type&gt;
+37			&lt;require-inspection nil="true"/&gt;
+38			&lt;require-asset-tag nil="true"/&gt;
+39			&lt;use-pack-weight nil="true"/&gt;
+40			&lt;pack-qty nil="true"/&gt;
+41			&lt;pack-weight nil="true"/&gt;
+42			&lt;pack-uom-id nil="true"/&gt;
+43			&lt;receive-catch-weight nil="true"/&gt;
+44			&lt;allow-partial-quantity type="boolean"&gt;false&lt;/allow-partial-quantity&gt;
+45			&lt;inventory-lot-tracking-enabled type="boolean"&gt;false&lt;/inventory-lot-tracking-enabled&gt;
+46			&lt;inventory-lot-expiration-type&gt;Not Required&lt;/inventory-lot-expiration-type&gt;
+47			&lt;reorder-alerts type="array"/&gt;
+48			&lt;commodity nil="true"/&gt;
+49			&lt;receiving-form nil="true"/&gt;
+50			&lt;uom&gt;
+51				&lt;id type="integer"&gt;1&lt;/id&gt;
+52				&lt;created-at type="dateTime"&gt;2022-06-25T14:01:05-07:00&lt;/created-at&gt;
+53				&lt;updated-at type="dateTime"&gt;2022-06-25T14:01:05-07:00&lt;/updated-at&gt;
+54				&lt;code&gt;EA&lt;/code&gt;
+55				&lt;name&gt;Each&lt;/name&gt;
+56				&lt;allowable-precision type="integer"&gt;0&lt;/allowable-precision&gt;
+57				&lt;active type="boolean"&gt;true&lt;/active&gt;
+58			&lt;/uom&gt;
+59			&lt;storage-uom nil="true"/&gt;
+60			&lt;consumption-uom nil="true"/&gt;
+61			&lt;tax-detail nil="true"/&gt;
+62			&lt;updated-by&gt;
+63				&lt;id type="integer"&gt;26&lt;/id&gt;
+64				&lt;login&gt;test_user1&lt;/login&gt;
+65				&lt;employee-number nil="true"/&gt;
+66				&lt;firstname&gt;test1&lt;/firstname&gt;
+67				&lt;lastname&gt;user1&lt;/lastname&gt;
+68				&lt;fullname&gt;test1 user1&lt;/fullname&gt;
+69				&lt;email&gt;test_user1@coupa.com&lt;/email&gt;
+70				&lt;salesforce-id nil="true"/&gt;
+71				&lt;avatar-thumb-url nil="true"/&gt;
+72			&lt;/updated-by&gt;
+73		&lt;/item&gt;
+74		&lt;warehouse&gt;
+75			&lt;id type="integer"&gt;11&lt;/id&gt;
+76			&lt;created-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/created-at&gt;
+77			&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/updated-at&gt;
+78			&lt;active-flag type="boolean"&gt;true&lt;/active-flag&gt;
+79			&lt;description&gt;Description of warehouse 1&lt;/description&gt;
+80			&lt;name&gt;Warehouse 1&lt;/name&gt;
+81			&lt;currency&gt;
+82				&lt;id type="integer"&gt;1&lt;/id&gt;
+83				&lt;code&gt;USD&lt;/code&gt;
+84				&lt;decimals type="integer"&gt;2&lt;/decimals&gt;
+85			&lt;/currency&gt;
+86			&lt;address&gt;
+87				&lt;id type="integer"&gt;11&lt;/id&gt;
+88				&lt;created-at type="dateTime"&gt;2022-06-25T15:20:11-07:00&lt;/created-at&gt;
+89				&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:11-07:00&lt;/updated-at&gt;
+90				&lt;name nil="true"/&gt;
+91				&lt;location-code nil="true"/&gt;
+92				&lt;street1&gt;1 Anywhere&lt;/street1&gt;
+93				&lt;street2 nil="true"/&gt;
+94				&lt;city&gt;Oakland&lt;/city&gt;
+95				&lt;state nil="true"/&gt;
+96				&lt;postal-code&gt;94607&lt;/postal-code&gt;
+97				&lt;attention nil="true"/&gt;
+98				&lt;active type="boolean"&gt;true&lt;/active&gt;
+99				&lt;business-group-name nil="true"/&gt;
+100				&lt;vat-number&gt;VAT-456&lt;/vat-number&gt;
+101				&lt;local-tax-number&gt;&lt;/local-tax-number&gt;
+102				&lt;type nil="true"/&gt;
+103				&lt;country&gt;
+104					&lt;id type="integer"&gt;223&lt;/id&gt;
+105					&lt;code&gt;US&lt;/code&gt;
+106					&lt;name&gt;United States&lt;/name&gt;
+107				&lt;/country&gt;
+108				&lt;vat-country&gt;
+109					&lt;id type="integer"&gt;223&lt;/id&gt;
+110					&lt;code&gt;US&lt;/code&gt;
+111					&lt;name&gt;United States&lt;/name&gt;
+112				&lt;/vat-country&gt;
+113			&lt;/address&gt;
+114			&lt;warehouse-type&gt;
+115				&lt;id type="integer"&gt;11&lt;/id&gt;
+116				&lt;created-at type="dateTime"&gt;2022-06-25T15:20:11-07:00&lt;/created-at&gt;
+117				&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:11-07:00&lt;/updated-at&gt;
+118				&lt;name&gt;Warehouse Type 1&lt;/name&gt;
+119				&lt;description&gt;Description for warehouse type 1&lt;/description&gt;
+120			&lt;/warehouse-type&gt;
+121			&lt;warehouse-locations type="array"&gt;
+122				&lt;warehouse-location&gt;
+123					&lt;id type="integer"&gt;21&lt;/id&gt;
+124					&lt;created-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/created-at&gt;
+125					&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/updated-at&gt;
+126					&lt;aisle&gt;1&lt;/aisle&gt;
+127					&lt;bin&gt;1&lt;/bin&gt;
+128					&lt;level&gt;1&lt;/level&gt;
+129					&lt;warehouse-id type="integer"&gt;11&lt;/warehouse-id&gt;
+130					&lt;warehouse-name&gt;Warehouse 1&lt;/warehouse-name&gt;
+131				&lt;/warehouse-location&gt;
+132				&lt;warehouse-location&gt;
+133					&lt;id type="integer"&gt;22&lt;/id&gt;
+134					&lt;created-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/created-at&gt;
+135					&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/updated-at&gt;
+136					&lt;aisle&gt;A001&lt;/aisle&gt;
+137					&lt;bin&gt;0001&lt;/bin&gt;
+138					&lt;level&gt;L001&lt;/level&gt;
+139					&lt;warehouse-id type="integer"&gt;11&lt;/warehouse-id&gt;
+140					&lt;warehouse-name&gt;Warehouse 1&lt;/warehouse-name&gt;
+141				&lt;/warehouse-location&gt;
+142			&lt;/warehouse-locations&gt;
+143		&lt;/warehouse&gt;
+144		&lt;warehouse-location&gt;
+145			&lt;id type="integer"&gt;21&lt;/id&gt;
+146			&lt;created-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/created-at&gt;
+147			&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/updated-at&gt;
+148			&lt;aisle&gt;1&lt;/aisle&gt;
+149			&lt;bin&gt;1&lt;/bin&gt;
+150			&lt;level&gt;1&lt;/level&gt;
+151			&lt;warehouse-id type="integer"&gt;11&lt;/warehouse-id&gt;
+152			&lt;warehouse-name&gt;Warehouse 1&lt;/warehouse-name&gt;
+153		&lt;/warehouse-location&gt;
+154		&lt;uom&gt;
+155			&lt;id type="integer"&gt;1&lt;/id&gt;
+156			&lt;created-at type="dateTime"&gt;2022-06-25T14:01:05-07:00&lt;/created-at&gt;
+157			&lt;updated-at type="dateTime"&gt;2022-06-25T14:01:05-07:00&lt;/updated-at&gt;
+158			&lt;code&gt;EA&lt;/code&gt;
+159			&lt;name&gt;Each&lt;/name&gt;
+160			&lt;allowable-precision type="integer"&gt;0&lt;/allowable-precision&gt;
+161			&lt;active type="boolean"&gt;true&lt;/active&gt;
+162		&lt;/uom&gt;
+163		&lt;inventory-valuations type="array"&gt;
+164			&lt;inventory-valuation&gt;
+165				&lt;id type="integer"&gt;51&lt;/id&gt;
+166				&lt;created-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/created-at&gt;
+167				&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/updated-at&gt;
+168				&lt;unit-price type="decimal"&gt;1.00&lt;/unit-price&gt;
+169				&lt;total type="decimal"&gt;10.00&lt;/total&gt;
+170				&lt;currency&gt;
+171					&lt;id type="integer"&gt;1&lt;/id&gt;
+172					&lt;code&gt;USD&lt;/code&gt;
+173					&lt;decimals type="integer"&gt;2&lt;/decimals&gt;
+174				&lt;/currency&gt;
+175			&lt;/inventory-valuation&gt;
+176		&lt;/inventory-valuations&gt;
+177	&lt;/inventory-balance&gt;
+178	&lt;item&gt;
+179		&lt;id type="integer"&gt;51&lt;/id&gt;
+180		&lt;created-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/created-at&gt;
+181		&lt;updated-at type="dateTime"&gt;2022-06-25T15:20:12-07:00&lt;/updated-at&gt;
+182		&lt;description&gt;This is a sample item description that the user would see.&lt;/description&gt;
+183		&lt;item-number&gt;xxxx2&lt;/item-number&gt;
+184		&lt;name&gt;Coupa Demodata Product Name 2&lt;/name&gt;
+185		&lt;active type="boolean"&gt;true&lt;/active&gt;
+186		&lt;storage-quantity nil="true"/&gt;
+187		&lt;consumption-quantity nil="true"/&gt;
+188		&lt;image-url nil="true"/&gt;
+189		&lt;external-image-url nil="true"/&gt;
+190		&lt;manufacturer-part-number nil="true"/&gt;
+191		&lt;manufacturer-name nil="true"/&gt;
+192		&lt;item-type&gt;Item&lt;/item-type&gt;
+193		&lt;require-inspection nil="true"/&gt;
+194		&lt;require-asset-tag nil="true"/&gt;
+195		&lt;use-pack-weight nil="true"/&gt;
+196		&lt;pack-qty nil="true"/&gt;
+197		&lt;pack-weight nil="true"/&gt;
+198		&lt;pack-uom-id nil="true"/&gt;
+199		&lt;receive-catch-weight nil="true"/&gt;
+200		&lt;allow-partial-quantity type="boolean"&gt;false&lt;/allow-partial-quantity&gt;
+201		&lt;inventory-lot-tracking-enabled type="boolean"&gt;false&lt;/inventory-lot-tracking-enabled&gt;
+202		&lt;inventory-lot-expiration-type&gt;Not Required&lt;/inventory-lot-expiration-type&gt;
+203		&lt;reorder-alerts type="array"/&gt;
+204		&lt;commodity nil="true"/&gt;
+205		&lt;receiving-form nil="true"/&gt;
+206		&lt;uom&gt;
+207			&lt;id type="integer"&gt;1&lt;/id&gt;
+208			&lt;created-at type="dateTime"&gt;2022-06-25T14:01:05-07:00&lt;/created-at&gt;
+209			&lt;updated-at type="dateTime"&gt;2022-06-25T14:01:05-07:00&lt;/updated-at&gt;
+210			&lt;code&gt;EA&lt;/code&gt;
+211			&lt;name&gt;Each&lt;/name&gt;
+212			&lt;allowable-precision type="integer"&gt;0&lt;/allowable-precision&gt;
+213			&lt;active type="boolean"&gt;true&lt;/active&gt;
+214		&lt;/uom&gt;
+215		&lt;storage-uom nil="true"/&gt;
+216		&lt;consumption-uom nil="true"/&gt;
+217		&lt;tax-detail nil="true"/&gt;
+218		&lt;updated-by&gt;
+219			&lt;id type="integer"&gt;26&lt;/id&gt;
+220			&lt;login&gt;test_user1&lt;/login&gt;
+221			&lt;employee-number nil="true"/&gt;
+222			&lt;firstname&gt;test1&lt;/firstname&gt;
+223			&lt;lastname&gt;user1&lt;/lastname&gt;
+224			&lt;fullname&gt;test1 user1&lt;/fullname&gt;
+225			&lt;email&gt;test_user1@coupa.com&lt;/email&gt;
+226			&lt;salesforce-id nil="true"/&gt;
+227			&lt;avatar-thumb-url nil="true"/&gt;
+228		&lt;/updated-by&gt;
+229	&lt;/item&gt;
+230	&lt;uom&gt;
+231		&lt;id type="integer"&gt;1&lt;/id&gt;
+232		&lt;created-at type="dateTime"&gt;2022-06-25T14:01:05-07:00&lt;/created-at&gt;
+233		&lt;updated-at type="dateTime"&gt;2022-06-25T14:01:05-07:00&lt;/updated-at&gt;
+234		&lt;code&gt;EA&lt;/code&gt;
+235		&lt;name&gt;Each&lt;/name&gt;
+236		&lt;allowable-precision type="integer"&gt;0&lt;/allowable-precision&gt;
+237		&lt;active type="boolean"&gt;true&lt;/active&gt;
+238	&lt;/uom&gt;
+239	&lt;cycle-count-line-adjustments type="array"/&gt;
+240	&lt;non-voided-inventory-transactions type="array"/&gt;
+241	&lt;cycle-count-line-lots type="array"/&gt;
+242&lt;/cycle-count-line&gt;</code>
+</pre>
+</p>
+</div>
+<div class="" id="payloads">
+<h2 class="title sectiontitle">Payloads</h2>
+<p class="">XML:</p>
+<p class="">
+<b>Simple line without lot item</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;cycle-count-line&gt;
+  &lt;id type="integer"&gt;#{cycle_count_line.id}&lt;/id&gt;
+  &lt;quantity type="integer"&gt;100&lt;/quantity&gt;
+&lt;/cycle-count-line&gt;</code>
+</pre>
+</p>
+<p class="">
+<b>line with lot item, no multi uom:</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      &lt;cycle-count-line&gt;
+        &lt;id type="integer"&gt;12&lt;/id&gt;
+        &lt;cycle-count-line-lots type="array"&gt;
+         &lt;cycle-count-line-lot&gt;
+           &lt;quantity type="integer"&gt;10&lt;/quantity&gt;
+           &lt;inventory-lot-id type="integer"&gt;#{balance_lot2.inventory_lot.id}&lt;/inventory-lot-id&gt;
+         &lt;/cycle-count-line-lot&gt;
+         &lt;cycle-count-line-lot&gt;
+           &lt;quantity type="integer"&gt;10&lt;/quantity&gt;
+           &lt;inventory-lot-number &gt;#{balance_lot1.inventory_lot.number}&lt;/inventory-lot-number&gt;
+         &lt;/cycle-count-line-lot&gt;
+        &lt;/cycle-count-line-lots&gt;
+      &lt;/cycle-count-line&gt;</code>
+</pre>
+</p>
+<p class="">
+<b>Line with multi uom item</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;cycle-count-line&gt;
+  &lt;id type="integer"&gt;#{multi_uom_line.id}&lt;/id&gt;
+  &lt;order-quantity type="integer"&gt;10&lt;/order-quantity&gt;
+  &lt;consumption-quantity type="integer"&gt;10&lt;/consumption-quantity&gt;
+&lt;/cycle-count-line&gt;</code>
+</pre>
+</p>
+<p class="">
+<b>Multi UOM with lots</b>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;cycle-count-line&gt;
+  &lt;id type="integer"&gt;21&lt;/id&gt;
+  &lt;cycle-count-line-lots type="array"&gt;
+  &lt;cycle-count-line-lot&gt;
+    &lt;order-quantity type="integer"&gt;10&lt;/order-quantity&gt;
+    &lt;consumption-quantity type="integer"&gt;10&lt;/consumption-quantity&gt;
+    &lt;inventory-lot-id type="integer"&gt;12&lt;/inventory-lot-id&gt;
+  &lt;/cycle-count-line-lot&gt;
+  &lt;cycle-count-line-lot&gt;
+    &lt;order-quantity type="integer"&gt;10&lt;/order-quantity&gt;
+    &lt;consumption-quantity type="integer"&gt;10&lt;/consumption-quantity&gt;
+    &lt;inventory-lot-number &gt;EXISTING_LOT_NUMBER&lt;/inventory-lot-number&gt;
+  &lt;/cycle-count-line-lot&gt;
+&lt;/cycle-count-line-lots&gt;
+&lt;/cycle-count-line&gt;</code>
+</pre>
+</p>
+<p class="">
+<p class="">JSON:  </p>
+<p class="">
+<p class="">
+<b>Simple line</b>
+<pre id="pre_o2q_ybl_w1c" xml:space="preserve">{ "id": #{cycle_count_line.id}, "quantity": 100}</pre>
+</p>
+<p class="">
+<p class="">
+<b>Simple line with lots</b>: <pre>
+<code class="codeblock">{
+  "id": #{cycle_count_line.id},
+  "cycle_count_line_lots":
+    [
+      {"quantity": 10, "inventory_lot_id": "#{balance_lot.inventory_lot.id}"},
+      {"quantity": 10, "inventory_lot_number": "#{balance_lot.inventory_lot.number}"}
+    ]
+}</code>
+</pre>
+</p>
+<p class="">
+<p class="">
+<b>Line with multi-uom item:</b>
+<pre>
+<code class="codeblock">{"id": #{multi_uom_line.id},"order_quantity": 10, "consumption_quantity": 10}</code>
+</pre>
+</p>
+<p class="">
+<p class="">
+<b>Line with multi-uom item and lot support:</b>
+<pre>
+<code class="codeblock">{
+"id": 12,
+"cycle_count_line_lots":
+  [
+    {"order_quantity": 10, "consumption_quantity": 10, "inventory_lot_id": 'existing-lot-id'},
+    {"order_quantity": 10, "consumption_quantity": 10, "inventory_lot_number": "existing-lot-number}"}
+   ]
+}</code>
+</pre>
+</p>
+</div>
+</div>
+</article>

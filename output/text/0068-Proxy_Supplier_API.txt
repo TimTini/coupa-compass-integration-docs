@@ -1,0 +1,28 @@
+Proxy Supplier API
+
+Associations
+
+This API resource is available through Suppliers API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+name 	 	 	 	 	 	yes
+display-name 	 	 	 	 	 	yes
+status 	 	 	 	 	 	yes
+owner-id 	 	 	 	 	 	yes
+owner-login 	 	 	 	 	 	yes
+website 	 	 	 	 	 	yes
+duns 	 	 	 	 	 	yes
+tax-id 	 	 	 	 	 	yes
+reference-number 	 	 	 	 	 	yes
+provider-reference-number 	 	 	 	 	 	yes
+primary-address 	 	 	 	 	 	yes
+primary-contact 	 	 	 	 	 	yes
+default-commodity 	 	 	 	 	 	yes
+created-by 	User who created 	 	 	 	 	yes
+updated-by 	User who updated 	 	 	 	 	yes
+parent-id 	Parent ID 	 	 	 	 	yes

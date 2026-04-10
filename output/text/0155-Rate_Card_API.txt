@@ -1,0 +1,11 @@
+Rate Card API
+
+Element 	 Description 	 Req 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+active 	Active 	 	 	 	yes 	yes 	boolean
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+rate-card-lines 	Rate card lines 	 	 	 	yes 	yes 	 RateCardLine
+rateable-type 	Rateable type 	 	 	 	 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

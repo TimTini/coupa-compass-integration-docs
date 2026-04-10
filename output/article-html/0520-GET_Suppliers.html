@@ -1,0 +1,186 @@
+<article class="" id="reference1">
+<h1 class="title">GET Suppliers</h1>
+<p class="font-size-lg">Retrieve a list of suppliers belonging to the tenant.</p>
+<div class="body refbody">
+<div class="">
+<h2 class="title sectiontitle">Endpoint</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="simpletable properties simpletableborder">
+<tr>
+<td class="entry" align="">
+<p class="">
+<b>Endpoint</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/suppliers</code>
+</p>
+</td>
+</tr>
+<tr>
+<td class="entry" align="">
+<p class="">
+<b>Method</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+</tr>
+</table>
+</div>
+</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Headers</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Header</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Argument</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Authorization</p>
+</td>
+<td class="entry" align="">
+<p class="">Bearer token</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Accept</p>
+</td>
+<td class="entry" align="">
+<p class="">application/json or application/xml</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Parameters</h2>
+<p class="">
+<div class="table-wrap scroll">
+<table class="table">
+<caption>
+<span class="table--title-label">Table 1. </span>
+<span class="title">Query parameters</span>
+</caption>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">
+<b>Paremeter</b>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>Description</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">limit</p>
+</td>
+<td class="entry" align="">
+<p class="">(Optional) Maximum number of items in the response. Maximum: 50.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">offset</p>
+</td>
+<td class="entry" align="">
+<p class="">(Optional) Number of items to skip from the start. Default: 0.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">(Optional) Supplier status. For example: Active, Inactive.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">sourceSystem</p>
+</td>
+<td class="entry" align="">
+<p class="">(Optional) Filter by source system.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</div>
+<example>
+<h2 class="title">Get suppliers</h2>
+<dl class="dl">
+<dt class="dt dlterm">Endpoint</dt>
+<dd class="dd">
+<p class="">GET <code class="ph codeph">/api/suppliers</code>
+</p>
+</dd>
+<dt class="dt dlterm">Example cURL request</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;.risk.com/api/suppliers' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••'</code>
+</pre>
+</dd>
+<dt class="dt dlterm">Example response</dt>
+<dd class="dd">
+<pre>
+<code class="codeblock">{
+    "result": {
+        "totalCount": 1,
+        "suppliers": [
+            {
+                "entityId": "8df17abd-1ce4-47dd-96a9-03c310ddd230",
+                "name": "Auto_BulkUpload_BE_05032023234658_T2",
+                "supplierNumber": "392",
+                "status": "General_Active",
+                "createdAt": "2023-08-29T17:36:04.303Z",
+                "modifiedAt": "2023-08-29T18:17:07.363Z",
+                "sourceId": null,
+                "sourceObjectType": null,
+                "sourceSystem": null
+            }
+        ]
+    },
+    "errors": [],
+    "success": true
+}</code>
+</pre>
+</dd>
+</dl>
+</example>
+</div>
+<nav role="navigation" class="related-links">
+<ul class="ullinks child-links-section">
+<li class="link ulchildlink">
+<a href="/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-rest-api/get-suppliers/get-supplier-extension-fields">GET Supplier Extension Fields</a>
+<br>Retrieves all extension field records for a specific supplier using the CRA Entity ID.</li>
+</ul>
+</nav>
+</article>

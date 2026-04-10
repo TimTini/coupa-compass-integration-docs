@@ -1,0 +1,289 @@
+<article class="" id="reference1">
+<h1 class="title">Expense Delegates API</h1>
+<p class="font-size-lg">Get expense delegates data from Coupa to use in your third-party systems. </p>
+<div class="body refbody">
+<div class="" id="introduction-d957e107425">
+<h2 class="title sectiontitle">Introduction</h2>
+<p class="">The URLs to access expense delegates is: <code class="ph codeph">https://&lt;instance&gt;/api/expense_delegations</code>.</p>
+</div>
+<div class="" id="actions-d957e107434">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Expense Delegates API allows you to perform the following actions:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/expense_delegations</code>
+</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Get all delegates in the /expense_delegations table</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="section1">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Expense Delegates API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api-In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api-Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa unique identifier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created-by-id</td>
+<td class="entry" align="">Identifies the user who created this expense delegation record. Automatically created by Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-by-id</td>
+<td class="entry" align="">Identifies the user who last updated this expense delegation record. Automatically created by Coupa.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">expense-delegate-for</td>
+<td class="entry" align="">Identifies the user that expense delegates are created for.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">expenses-delegated-to</td>
+<td class="entry" align="">Identifies the user that is designated as the delegate.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<example>
+<h2 class="title">Example cURL request</h2>
+<p class="">This cURL request sends a GET call to <code class="ph codeph">/api/expense_delegations</code>.</p>
+<pre>
+<code class="codeblock">curl --location 'https://&lt;your-instance&gt;.com/api/expense_delegations' \
+--header 'Accept: application/xml' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--header 'Cookie: _mkra_ctxt=5849d15968776318f7c19861021bcb280b3a06d139c39bcdd851759b21c2ee2a--200'</code>
+</pre>
+</example>
+<example>
+<h2 class="title">Example response</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;expense-delegations type="array"&gt;
+  &lt;expense-delegation&gt;
+    &lt;id type="integer"&gt;1&lt;/id&gt;
+    &lt;created-at type="dateTime"&gt;2023-09-26T15:37:30-04:00&lt;/created-at&gt;
+    &lt;updated-at type="dateTime"&gt;2023-09-26T15:37:30-04:00&lt;/updated-at&gt;
+    &lt;created-by-id nil="true"/&gt;
+    &lt;updated-by-id nil="true"/&gt;
+    &lt;expense-delegate-for&gt;
+      &lt;id type="integer"&gt;1144&lt;/id&gt;
+      &lt;login&gt;suryatest99&lt;/login&gt;
+      &lt;employee-number&gt;&lt;/employee-number&gt;
+      &lt;firstname&gt;ITERATE_ONCE&lt;/firstname&gt;
+      &lt;lastname&gt;Test99&lt;/lastname&gt;
+      &lt;fullname&gt;ITERATE_ONCE Test99&lt;/fullname&gt;
+      &lt;email&gt;upgrade+sg@coupa.com&lt;/email&gt;
+      &lt;salesforce-id nil="true"/&gt;
+      &lt;avatar-thumb-url nil="true"/&gt;
+      &lt;custom-fields&gt;
+        &lt;mp-html&gt;&lt;/mp-html&gt;
+        &lt;userbusinessunit nil="true"/&gt;
+        &lt;ap-custom-field- nil="true"/&gt;
+      &lt;/custom-fields&gt;
+    &lt;/expense-delegate-for&gt;
+    &lt;expenses-delegated-to&gt;
+      &lt;id type="integer"&gt;1145&lt;/id&gt;
+      &lt;login&gt;delegatetest&lt;/login&gt;
+      &lt;employee-number&gt;&lt;/employee-number&gt;
+      &lt;firstname&gt;ITERATE_ONCE&lt;/firstname&gt;
+      &lt;lastname&gt;Test&lt;/lastname&gt;
+      &lt;fullname&gt;DelegateUsr Test&lt;/fullname&gt;
+      &lt;email&gt;upgrade+du@coupa.com&lt;/email&gt;
+      &lt;salesforce-id nil="true"/&gt;
+      &lt;avatar-thumb-url nil="true"/&gt;
+      &lt;custom-fields&gt;
+        &lt;mp-html&gt;&lt;/mp-html&gt;
+        &lt;userbusinessunit nil="true"/&gt;
+        &lt;ap-custom-field- nil="true"/&gt;
+      &lt;/custom-fields&gt;
+    &lt;/expenses-delegated-to&gt;
+  &lt;/expense-delegation&gt;
+  &lt;expense-delegation&gt;
+    &lt;id type="integer"&gt;2&lt;/id&gt;
+    &lt;created-at type="dateTime"&gt;2023-11-16T15:05:12-05:00&lt;/created-at&gt;
+    &lt;updated-at type="dateTime"&gt;2023-11-16T15:05:12-05:00&lt;/updated-at&gt;
+    &lt;created-by-id nil="true"/&gt;
+    &lt;updated-by-id nil="true"/&gt;
+    &lt;expense-delegate-for&gt;
+      &lt;id type="integer"&gt;1685&lt;/id&gt;
+      &lt;login&gt;colinuser1&lt;/login&gt;
+      &lt;employee-number&gt;&lt;/employee-number&gt;
+      &lt;firstname&gt;Colin &lt;/firstname&gt;
+      &lt;lastname&gt;Expense&lt;/lastname&gt;
+      &lt;fullname&gt;Colin Expense&lt;/fullname&gt;
+      &lt;email&gt;test@coupa.com&lt;/email&gt;
+      &lt;salesforce-id nil="true"/&gt;
+      &lt;avatar-thumb-url nil="true"/&gt;
+      &lt;custom-fields&gt;
+        &lt;mp-html&gt;&lt;/mp-html&gt;
+        &lt;userbusinessunit nil="true"/&gt;
+        &lt;ap-custom-field- nil="true"/&gt;
+      &lt;/custom-fields&gt;
+    &lt;/expense-delegate-for&gt;
+    &lt;expenses-delegated-to&gt;
+      &lt;id type="integer"&gt;1688&lt;/id&gt;
+      &lt;login&gt;colinuser3&lt;/login&gt;
+      &lt;employee-number&gt;&lt;/employee-number&gt;
+      &lt;firstname&gt;Expense&lt;/firstname&gt;
+      &lt;lastname&gt;Manager&lt;/lastname&gt;
+      &lt;fullname&gt;Expense Manager&lt;/fullname&gt;
+      &lt;email&gt;test@coupa.com&lt;/email&gt;
+      &lt;salesforce-id nil="true"/&gt;
+      &lt;avatar-thumb-url nil="true"/&gt;
+      &lt;custom-fields&gt;
+        &lt;mp-html&gt;&lt;/mp-html&gt;
+        &lt;userbusinessunit nil="true"/&gt;
+        &lt;ap-custom-field- nil="true"/&gt;
+      &lt;/custom-fields&gt;
+    &lt;/expenses-delegated-to&gt;
+  &lt;/expense-delegation&gt;
+&lt;/expense-delegations&gt;</code>
+</pre>
+</example>
+</div>
+</article>

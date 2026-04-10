@@ -1,0 +1,22 @@
+Lookup Values Export
+
+Export of these records is included as a Standard CSV Export.
+
+Lookup Value
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+Id 	Coupa unique identifier 	integer 	No/No
+Created Date 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	datetime 	No/No
+Last Updated Date 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	datetime 	No/No
+External Ref Code 	Used for Identification of individual Lookup Value when using Hierarchical Lookups. This field is a concatenation of the External Ref Num fields starting with the root LookupValue. It does not get set by the integration, but is used to identify an existing lookup to update. 	string(255) 	No/Yes
+External Ref Num 	External Ref Num (actual account value when used in accounting) 	string(255) 	No/Yes
+Name 	Lookup value name 	string(255) 	Yes/Yes
+Description 	Lookup value description 	string(255) 	No/No
+Lookup ID 	Lookup ID 	integer 	No/No
+Lookup Name 	Lookup Name 	 	No/No
+Parent External Ref Code 	External Ref Code of Parent element 	 	No/No
+Parent ID 	Parent ID 	integer 	No/No
+Depth 	depth 	integer 	No/No
+Active 	A false value will inactivate the account making it no longer available to users. A true value will make it active and available to users. 	boolean 	No/No
+Account Type ID 	Acccount Type ID 	 	No/No
+Account Type Name 	Acccount Type name 	 	No/No

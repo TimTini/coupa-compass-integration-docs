@@ -1,0 +1,211 @@
+Work Confirmation Line API
+
+Information about service sheet lines.
+
+Associations
+
+This API resource is available through the Work Confirmation Header API.
+
+Elements
+
+Element
+
+Description
+
+Required Field?
+
+Unique?
+
+Allowable Value
+
+Api_In Field?
+
+Api_Out Field?
+
+Data Type
+
+attachments
+
+Attachments
+
+yes
+
+Attachment
+
+created-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+datetime
+
+created-by
+
+User who created
+
+yes
+
+User
+
+currency
+
+Currency
+
+yes
+
+Currency
+
+custom-fields
+
+Custom fields
+
+yes
+
+Custom fields
+
+delivered-at
+
+Date work was completed
+
+yes
+
+datetime
+
+description
+
+Service Sheet Line description
+
+yes
+
+string(255)
+
+id
+
+Coupa’s Internal ID
+
+yes
+
+integer
+
+ontime-status
+
+Captures whether the work submitted is on-time or late
+
+yes
+
+order-line-id
+
+Coupa’s Internal Purchase Order Line ID
+
+yes
+
+integer
+
+position
+
+Position
+
+yes
+
+integer
+
+price
+
+Price
+
+yes
+
+decimal(30,6)
+
+quantity
+
+Quantity
+
+yes
+
+decimal(30,6)
+
+rate-card
+
+Rate card
+
+yes
+
+WorkConfirmation::Line
+
+service-details
+
+Service details
+
+yes
+
+WorkConfirmation::ServiceDetail
+
+service-end-date
+
+Service end date
+
+yes
+
+service-start-date
+
+Service start date
+
+yes
+
+service-type
+
+Purchase Order Line Type (amount_deliverable, quantity_deliverable or resource)
+
+yes
+
+timesheet
+
+Time sheet
+
+yes
+
+WorkConfirmation::Timesheet
+
+total
+
+Total amount as per the order currency.
+
+By default, this field contains full precision values. To use rounded values, reach out to customer support.
+
+yes
+
+decimal(30,6)
+
+type
+
+Type
+
+yes
+
+string(255)
+
+uom
+
+Unit of Measure
+
+yes
+
+Uom
+
+updated-at
+
+Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ
+
+yes
+
+datetime
+
+updated-by
+
+User who updated
+
+yes
+
+User

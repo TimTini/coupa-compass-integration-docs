@@ -1,0 +1,68 @@
+<article class="" id="coupa_saml_sso_setup">
+<h1 class="title">Coupa SAML SSO Setup</h1>
+<p class="">
+<p class="">Learn how to set up SAML SSO for your Coupa instance.</p>
+</p>
+<div class="body">
+<div class="" id="method">
+<h2 class="title sectiontitle">Method</h2>
+<ol class="ol">
+<li class="li">Import initial <a data-scope="external" data-name="" target="_blank" href="https://s3.amazonaws.com/sso-metadata-us-east/metadata_stg.xml" title="">stage SP metadata</a> (<a data-scope="external" data-name="" target="_blank" href="https://s3.amazonaws.com/sso-metadata-us-east/metadata_prd.xml" title="">production SP metadata xml</a>) file into stage IdP server. <ul class="ul">
+<li class="li">
+<ul class="ul">
+<li class="li">If the IdP does not support Metadata exchange please open the xml file to extract the information.</li>
+<li class="li">Coupa's preferred setup is SP-Init-SSO. Coupa can also setup IdP-Init-SSO, IdP-Init-SSO requires IdP to send the <b>RelayState</b> parameter along with SAML request. One way to do this is add a QueryString to AssertionConsumerService in the xml ....<code class="ph codeph">/sp/ACS.saml2?RelayState=https://&lt;coupa-instance-domain-name&gt;/sessions/saml_post</code>. You can change the xml before creating connection.</li>
+<li class="li">Complete the connection setup at IdP.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="li">Send the following information to Coupa: <ul class="ul">
+<li class="li">
+<ul class="ul">
+<li class="li">Metadata: The export the metadata xml from IdP <ul class="ul">
+<li class="li">If the IdP does not support Metadata exchange, please provide Entity ID (a.k.a Connection ID) and X509 Certificate to verify digital signature in SAML response.</li>
+</ul>
+</li>
+<li class="li">Login URL: The IdP login page for the user. Required for IdP Initiated SSO. Read FAQ for more details.</li>
+<li class="li">Logout URL: The page Coupa will display when user logout from Coupa application and their session are cleared. This can be internal page, home page or any landing page hosted by customer.</li>
+<li class="li">Test User: Create a test user on IdP to test the connection.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="li">Coupa to import the IdP metadata and complete the connection from SP to IdP and inform customer.</li>
+<li class="li">The assigned Coupa Administrator to enable users to use SAML.<ol class="ol">
+<li class="li">Change user settings to enable SAML authentication </li>
+<li class="li">Set "Single Sign-On ID", this is same as NameID passed in SAML request to Coupa, please check with your system administrator on how the NameID is provisioned.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="" id="enable_sso_in_coupa">
+<h2 class="title sectiontitle">Enable SSO in Coupa</h2>
+<ol class="ol">
+<li class="li">Go to https://&lt;your_site&gt;.coupahost.com/administration/security.</li>
+<li class="li">Select <b>Log in using SAML</b>.</li>
+<li class="li">Enter <b>Login Page URL</b> in the following format: <ul class="ul">
+<li class="li">
+<ul class="ul">
+<li class="li">For SP-initiated login: <ul class="ul">
+<li class="li">For test/staging: https://sso-stg1.coupahost.com/sp/startSSO.ping?PartnerIdpId= &lt;stage_IdP_entityid&gt;&amp;TARGET=https://&lt;your-test_site&gt;.coupahost.com/sessions/saml_post</li>
+<li class="li">For production: https://sso-prd1.coupahost.com/sp/startSSO.ping?PartnerIdpId= &lt;prod_IdP_entityid&gt;&amp;TARGET=https://&lt;your_site&gt;.coupahost.com/sessions/saml_post</li>
+</ul>
+</li>
+<li class="li">For IdP initiated login: <ul class="ul">
+<li class="li">Use your IdP login URL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="li">Supply the <b>Logout Page URL</b> if you would like to redirect your users upon logging out of Coupa.</li>
+<li class="li">Supply the <b>Timeout URL</b>; it should be the same as your <b>Login page URL</b>.</li>
+</ol>
+</div>
+</div>
+</article>

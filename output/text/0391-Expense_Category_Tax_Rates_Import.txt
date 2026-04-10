@@ -1,0 +1,9 @@
+Expense Category Tax Rates Import
+
+Expense Category Tax Rate
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Expense Category Key* 	Yes 	No 	 	Expense Category Key
+Tax Rate Type Country Code 	No 	No 	 	Country Code of Tax Type
+Tax Rate Type Description 	No 	No 	 	Type of tax - VAT, TAX, GST, PST, etc.
+Tax Rate Percentage* 	Yes 	No 	 	Tax Percentage Amount

@@ -1,0 +1,576 @@
+<article class="" id="company_api">
+<h1 class="title">Company API</h1>
+<div class="body">
+<p class="">Use the Company API's to create, update, or query the Company Data.</p>
+<p class="">The URL to access the API's is : <span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/companies</span>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div class="" id="actions">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/companies</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Performs Get action to retrieve all Companies</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/companies</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Creates one or more Companies objects.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/companies</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Updates one or more Companies . Can perform mass updates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/companies/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show one Company data.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/companies/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update one Company at a time using the ID</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">These are the elements available for the Company API</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Field Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Field Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out *</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">ID of the Company</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">state</p>
+</td>
+<td class="entry" align="">
+<p class="">Status of the company</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Active, Removed (Case-Sensitive)</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the Company</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">phone-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Phone number of the company</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">email</p>
+</td>
+<td class="entry" align="">
+<p class="">Email of the company</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">street</p>
+</td>
+<td class="entry" align="">
+<p class="">Street part of the company address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">zipcode</p>
+</td>
+<td class="entry" align="">
+<p class="">Zip code part of the company address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">city</p>
+</td>
+<td class="entry" align="">
+<p class="">City part of the company address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">country</p>
+</td>
+<td class="entry" align="">
+<p class="">Country part of the company address</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">duns-scac</p>
+</td>
+<td class="entry" align="">
+<p class="">The duns scac code for the company.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">keywords</p>
+</td>
+<td class="entry" align="">
+<p class="">Keywords associated to the company</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Response payload does not show null values.</p>
+</div>
+</div>
+<div class="" id="examples">
+<h2 class="title sectiontitle">Examples</h2>
+<p class="">In this example, we queried for a company API. We did a GET to the URL:</p>
+<p class="">
+<span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/companies</span>
+</p>
+</div>
+<div class="" id="company_get_response">
+<h2 class="title sectiontitle">Company GET Response</h2>
+<pre>
+<code class="codeblock">
+        {
+		"total": 7,
+		"compannies": [
+				{
+						"id": "9219592888303484960",
+						"state": "Active",
+						"name": "! New Supplier (Spanish)"
+				},
+				{
+						"id": "9219594398656586067",
+						"state": "Active",
+						"name": "! Simon Test Organization",
+						"email": "simon@kepgames.com"
+				},
+				{
+						"id": "9219592919623127484",
+						"state": "Active",
+						"name": "! SKF (test bidders)"
+				},
+				{
+						"id": "9219592881350550871",
+						"state": "Active",
+						"name": "! Spanish bidder",
+						"email": "heloisa.spanish@tradeext.com"
+				},
+				{
+						"id": "9219592230193035378",
+						"state": "Active",
+						"name": "! TE",
+						"email": "lorena@te.se",
+						"duns-scac": "testing123456789",
+						"keywords": "test"
+				},
+				{
+						"id": "9219596145584379778",
+						"state": "Active",
+						"name": "! TE Test Company"
+				},
+				{
+						"id": "9219592639285418804",
+						"state": "Active",
+						"name": "! TE Test Company 2",
+						"phone-number": "123-234-3456",
+						"email": "testcompany2+upg@coupa.com",
+						"street": "street address1",
+						"zip-code": "12345",
+						"city": "valahalla",
+						"country": "United States Minor Outlying Islands",
+						"keywords": "Carrier"
+				}
+	 ]
+}</code>
+</pre>
+</div>
+<div class="" id="create_update">
+<h2 class="title sectiontitle">Create/Update</h2>
+<p class="">The following describes how you can use the Coupa API to perform actions on Company.</p>
+</div>
+<div class="" id="create">
+<h2 class="title sectiontitle">Create</h2>
+<p class="">
+<code class="ph codeph">/api/companies</code>
+</p>
+<p class="">The below payload creates two Companies.</p>
+<pre>
+<code class="codeblock">
+        Payload: 
+{
+		"companies": [
+				{
+						"state": "Active",
+						"name": "Yes Heloisa",
+						"duns-scac": "Shall be updated"
+				},
+				{
+						"name": "TE Test Company 2",
+						"phone-number": "123-234-3456",
+						"email": "testcompany2+upg@coupa.com"
+				}
+		]
+}
+
+Response: 201
+{
+		"result": [
+				{
+						"type": "api.post.added",
+						"description": "2 objects created."
+				}
+		],
+		"added": 2,
+		"companies": [
+				{
+						"id": "9220538753256092391"
+				},
+				{
+						"id": "9220538753250662192"
+				}
+		]
+}	 </code>
+</pre>
+</div>
+<div class="" id="update">
+<h2 class="title sectiontitle">Update</h2>
+<p class="">
+<code class="ph codeph">/api/companies</code>
+</p>
+<p class="">The below payload updates a Company(ies).</p>
+<pre>
+<code class="codeblock">
+        To update one or more Company at a time: 
+Payload:
+{
+		"companies": [
+				{
+						"id": "9219594319065198091",
+						"state": "Active",
+						"name": "! (TE) Heloisa",
+						"duns-scac": "Shall be updated"
+				},
+				{
+						"id": "9219596218212801426",
+						"state": "Active",
+						"name": "! (TE) Org only with bidders (Italian)",
+						"duns-scac": "Shall be updated",
+						"email": "testbidders_itl@coupa.com"
+				},
+				{
+						"id": "9219596218212801429",
+						"state": "Active",
+						"name": "! (TE) Org with only bidders",
+						"duns-scac": "Shall be updated",
+						"keywords": "Bidders"
+				}
+		]
+}
+
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "api.put.updated",
+						"description": "3 objects updated."
+				}
+		],
+		"updated": 3
+}</code>
+</pre>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Updates are done in a lenient manner, i.e. if updating one resource fails, the other ones might be successful. Company ID is required for updates.</p>
+</div>
+<p class="">Successful requests will return <code class="ph codeph">HTTP 200 Response</code>. The body of the response will include the created requisition. Unsuccessful requests will return</p>
+<pre>
+<code class="codeblock">HTTP 400 Bad
+Request</code>
+</pre>
+<p class="">. The body of the response will include validation errors formatted as XML.</p>
+</div>
+</div>
+</article>

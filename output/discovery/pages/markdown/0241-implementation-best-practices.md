@@ -1,0 +1,18 @@
+---
+title: "implementation-best-practices"
+url: "https://compass.coupa.com/en-us/get-started/implementation-best-practices"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu625MxJUCEJkDYbFqDrjCbdYZeCtplVqCxpotxl%2F36yshbZgPTIJ%2FJ9kFoQ9NrJ9RCezD3%2BHJBCtt0s2WOHMK1m0zJvynmVV%2B10njcIIj9Ac3WoYIZNJ1j2DT0pa5ZsUsRqSzTg1lAAEyIkJrNcVHkp9qKU07kUs0J8qL6zbBNVlIGQJp9CcCQ5b%2B3gIMdjQG9AF%2FY5QNHanoNz%2F709RtgBkbM%2BxKrkeHy2EzEIqCab6%2F5jC2WYcyLLx3As%2B2R9iynhkh1AE45O60igXvANqb0NtrX6WplOmR9LNngjLZAiaaBHkqGVu%2FWXWxmTyubURPLzfl%2Fn9dfdnmVrIvRjpBtraOjR79C%2FqBYf7m%2FPQybnRQqU4o2c%2FNIsy469NiTTkd635P76Z6vF2C3TLfzZ%2FPvj8OqArS56XfAz5pOMk3eRaruprVbt73HTPYTLSmVRJkR1%2BSG1SuxB6XXXeSSKO9Ta%2FrrxCCEeJvghLoCvTrL%2F%2FtHVHw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fget-started%2Fimplementation-best-practices"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:57:07+00:00"
+---
+
+# implementation-best-practices
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/get-started/implementation-best-practices](https://compass.coupa.com/en-us/get-started/implementation-best-practices)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu625MxJUCEJkDYbFqDrjCbdYZeCtplVqCxpotxl%2F36yshbZgPTIJ%2FJ9kFoQ9NrJ9RCezD3%2BHJBCtt0s2WOHMK1m0zJvynmVV%2B10njcIIj9Ac3WoYIZNJ1j2DT0pa5ZsUsRqSzTg1lAAEyIkJrNcVHkp9qKU07kUs0J8qL6zbBNVlIGQJp9CcCQ5b%2B3gIMdjQG9AF%2FY5QNHanoNz%2F709RtgBkbM%2BxKrkeHy2EzEIqCab6%2F5jC2WYcyLLx3As%2B2R9iynhkh1AE45O60igXvANqb0NtrX6WplOmR9LNngjLZAiaaBHkqGVu%2FWXWxmTyubURPLzfl%2Fn9dfdnmVrIvRjpBtraOjR79C%2FqBYf7m%2FPQybnRQqU4o2c%2FNIsy469NiTTkd635P76Z6vF2C3TLfzZ%2FPvj8OqArS56XfAz5pOMk3eRaruprVbt73HTPYTLSmVRJkR1%2BSG1SuxB6XXXeSSKO9Ta%2FrrxCCEeJvghLoCvTrL%2F%2FtHVHw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fget-started%2Fimplementation-best-practices](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJNb9swDP0rhu625MxJUCEJkDYbFqDrjCbdYZeCtplVqCxpotxl%2F36yshbZgPTIJ%2FJ9kFoQ9NrJ9RCezD3%2BHJBCtt0s2WOHMK1m0zJvynmVV%2B10njcIIj9Ac3WoYIZNJ1j2DT0pa5ZsUsRqSzTg1lAAEyIkJrNcVHkp9qKU07kUs0J8qL6zbBNVlIGQJp9CcCQ5b%2B3gIMdjQG9AF%2FY5QNHanoNz%2F709RtgBkbM%2BxKrkeHy2EzEIqCab6%2F5jC2WYcyLLx3As%2B2R9iynhkh1AE45O60igXvANqb0NtrX6WplOmR9LNngjLZAiaaBHkqGVu%2FWXWxmTyubURPLzfl%2Fn9dfdnmVrIvRjpBtraOjR79C%2FqBYf7m%2FPQybnRQqU4o2c%2FNIsy469NiTTkd635P76Z6vF2C3TLfzZ%2FPvj8OqArS56XfAz5pOMk3eRaruprVbt73HTPYTLSmVRJkR1%2BSG1SuxB6XXXeSSKO9Ta%2FrrxCCEeJvghLoCvTrL%2F%2FtHVHw%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fget-started%2Fimplementation-best-practices)
+
+Observed redirect page title: Coupa Portals - Sign In

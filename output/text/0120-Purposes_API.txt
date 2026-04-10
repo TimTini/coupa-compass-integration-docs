@@ -1,0 +1,20 @@
+Purposes API
+
+Use the purposes API to query, create, or update personal or supplier remit-to address information.
+
+Associations
+
+This API is associated with Address API, Contact API and Suppliers API.
+
+Use the purposes API to query, create, or update the purpose of supplier contact information.
+
+Elements
+
+The following elements are available for the Purposes API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+id 	Coupa's unique identifier for the address 	 	 	 	 	yes 	integer
+kind 	 	yes 	 	 	yes 	yes 	string(255)
+name 	Address 'Nickname' 	yes 	 	 	yes 	yes 	string(255)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime

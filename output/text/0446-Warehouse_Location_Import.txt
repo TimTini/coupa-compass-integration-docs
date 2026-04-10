@@ -1,0 +1,15 @@
+Warehouse Location Import
+
+Warehouse Location
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Aisle 	Yes 	Yes 	string(255) 	Identifier for Aisle Location
+Bin 	No 	No 	string(255) 	Identifier for Bin location
+Level 	No 	No 	string(255) 	Identifier for Level location
+Active 	No 	No 	boolean 	Active
+
+Warehouse Type
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Name 	Yes 	Yes 	string(255) 	Warehouse Type Name
+Description 	Yes 	No 	string(255) 	Description of this type of Warehouse

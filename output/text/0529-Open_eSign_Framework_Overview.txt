@@ -1,0 +1,22 @@
+Open eSign Framework Overview
+
+The purpose of this framework is to build an Open API definition to allow e-signature providers to self-configure (build & maintain) integration with Coupa CLM. In order to make this happen, Coupa will Publish an Open API SDK, including a test harness to ease the implementation of new eSign providers.
+
+The Open eSign Framework provides an integration for the e-signature provider to Coupa Platform. The Open API definition of the eSign Framework contains all the details of the API specifications that the e-signature provider would need to implement for the integration.
+
+Coupa e-signing integration flow
+
+- Provider Services: This is the provider's e-signature service.
+- Provider Hosted Service: This is the new connector that the provider needs to build and host as per the Coupa API Specification. For more information, see Open eSign Connector Specifications.
+
+Sequence diagram detailing flows
+
+Create e-signature account: Create the e-signature account on the Coupa Platform that will authenticate against the signing provider via the connector and subsequently initiate all the API calls.
+
+Provider configuration details: the e-signature provider configuration parameters that the user will need to populate when creating the esignature account. These parameters are then passed through to the e-signature provider as part of the authentication.
+
+Contract e-signature integration flow: Sender view
+
+Contract signature status flow: Callbacks
+
+Contract withdraw signature

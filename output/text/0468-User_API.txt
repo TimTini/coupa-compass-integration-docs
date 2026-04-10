@@ -1,0 +1,276 @@
+User API
+
+Use the User API's to create, update, or query the User Data.
+
+The URL to access the API's is : https://<instance>.cso.coupahost.com/api/users
+
+See Integration Best Practices for more info.
+
+Actions
+
+Verb
+
+Path
+
+Action
+
+Description
+
+GET
+
+/api/users
+
+index
+
+Performs Get action to retrieve all users
+
+POST
+
+/api/users
+
+create
+
+Creates one or more users.
+
+PUT
+
+/api/users
+
+update
+
+Updates one or more users . Can perform mass updates.
+
+GET
+
+/api/users/:id
+
+show
+
+Shows the user data.
+
+PUT
+
+/api/users/:id
+
+update
+
+Update one user at a time using the ID
+
+Elements
+
+These are the elements available for the User API
+
+Field Name
+
+Field Description
+
+Req'd
+
+Unique?
+
+Allowable Values
+
+In
+
+Out *
+
+Type
+
+id
+
+ID of the user
+
+Yes
+
+yes
+
+integer
+
+state
+
+Status of the user
+
+Blocked, Active, Disabled, Removed (Case-Sensitive)
+
+yes
+
+yes
+
+string
+
+name
+
+The login name of the user. Once set cannot be changed.
+
+Yes
+
+yes
+
+string
+
+first-name
+
+The first name of the user
+
+yes
+
+last-name
+
+The last name of the user
+
+yes
+
+phone-number
+
+Phone number of the user
+
+yes
+
+yes
+
+string
+
+mobile-number
+
+The mobile number of the user
+
+yes
+
+email
+
+Email of the User. Once set it cannot be changed.
+
+yes
+
+string
+
+company-id
+
+The Company ID for the User. Once set it cannot be changed
+
+street
+
+Street part of the User address
+
+yes
+
+yes
+
+string
+
+zip-code
+
+Zip code part of the User address
+
+yes
+
+yes
+
+string
+
+city
+
+City part of the User address
+
+yes
+
+yes
+
+string
+
+country
+
+Country part of the User address
+
+yes
+
+yes
+
+string
+
+keywords
+
+Keywords associated to the User
+
+yes
+
+yes
+
+string
+
+external-user-name
+
+The external user name assigned to the user.
+
+yes
+
+accepts-agreement
+
+Indicates whether or not the user has accepted required agreements.
+
+yes
+
+yes
+
+provide-information
+
+Indicates whether or not the user shall provide user information at the next login.
+
+yes
+
+yes
+
+change-password
+
+Indicates whether or not the user shall change their password at the next login.
+
+yes
+
+invoicing_user
+
+Invoicing User
+
+any
+
+yes
+
+boolean
+
+Note:
+
+Response payload does not show null values.
+
+Examples
+
+In this example, we queried for a User API. We did a GET to the URL:
+
+https://<instance>.cso.coupahost.com/api/users
+
+User GET Response { "total": 3, "users": [ { "id": "9219595862193003588", "state": "Active", "name": "dekke434", "first-name": "Arjan", "last-name": "Goud", "phone-number": "+310987898789", "mobile-number": "+31(0) 6 98876554", "email": "a.goud@deeder.com", "company-id": "9219592232917474305", "street": "IJsseldijk west 66", "zip-code": "2935AR", "city": "Ouderkerk aan den IJssel", "country": "Netherlands", "accepts-agreement": false, "provide-information": false, "change-password": false }, { "id": "9219595145795283441", "state": "Active", "name": "deeed", "first-name": "Arjan", "last-name": "Deeed", "phone-number": "+313132323133", "email": "mh@test.nl", "company-id": "9219592331212583950", "country": "Netherlands", "accepts-agreement": false, "provide-information": true, "change-password": true }, { "id": "9219592232917474526", "state": "Active", "name": "eurot494", "first-name": "Marjus", "last-name": "van Dee", "phone-number": "+31121212121", "mobile-number": "+31313131333", "email": "test@test.com", "company-id": "9219592232917474528", "street": "Brielselaan 69, Haven 1357", "zip-code": "3081AA", "city": "Rotterdam", "country": "Netherlands", "accepts-agreement": false, "provide-information": true, "change-password": false } ] }
+
+Create/Update
+
+The following describes how you can use the Coupa API to perform actions on User.
+
+Create
+
+/api/users
+
+The below payload creates two users.
+Payload: { "users": [ { "state": "Active", "name": "tester123456", "first-name": "tester", "last-name": "user1", "phone-number": "+1(111)-234-5678", "mobile-number": "+1(11)-123-3456", "email": "testeruser@tester.com", "company-id": "9220538753250662192", "street": "12345 bethoven road", "zip-code": "30811", "city": "Rotterdam", "country": "United States", "accepts-agreement": false, "provide-information": true, "change-password": false }, { "name": "tester12345", "first-name": "testing", "last-name": "user", "phone-number": "+1(111)-234-5678", "mobile-number": "+1(11)-123-3456", "email": "tester@tester.com", "company-id": "9220538753250662192", "street": "12345 bethoven road", "zip-code": "30811", "city": "Rotterdam", "country": "United States", "accepts-agreement": true, "provide-information": true, "change-password": false } ] } Response: 201 { "result": [ { "type": "api.post.added", "description": "2 objects created." } ], "added": 2, "users": [ { "id": "9220538753483272432" }, { "id": "9220538753482068122" } ] }
+
+Update
+
+/api/users
+
+The below payload updates a User(s).
+To update one or more User at a time: Payload: { "users": [ { "id": "9220538753483272432", "state": "Blocked", "email": "testeruser-upd@tester.com", "accepts-agreement": true, "provide-information": true, "change-password": false }, { "id": "9220538753482068122", "state": "Blocked", "email": "tester-upd@tester.com", "accepts-agreement": false, "provide-information": true, "change-password": false } ] } Response: 200 OK { "result": [ { "type": "api.put.updated", "description": "2 objects updated." } ], "updated": 2 }
+
+Note:
+
+Updates are done in a lenient manner, i.e. if updating one resource fails, the other ones might be successful. User ID is required for updates.
+
+Successful requests will return HTTP 200 Response. The body of the response will include the created requisition. Unsuccessful requests will return
+HTTP 400 Bad Request
+
+. The body of the response will include validation errors formatted as XML.

@@ -1,0 +1,17 @@
+Supplier Diversity Report Direct Spends Export
+
+Export of these records is included as a Standard CSV Export.
+
+Position 	 Column Name 	 Description 	 Type 	 Req/Unique 	 Allowable Values
+1 	reporting-period 	Reporting Period 	string(255) 	No/No 	any
+2 	start-date 	Start Date 	datetime 	No/No 	any
+3 	end-date 	End Date 	datetime 	No/No 	any
+4 	status 	Status 	 	No/No
+5 	tier-2-supplier 	Tier 2 Supplier 	string(255) 	No/No 	any
+6 	prime-supplier 	Prime Supplier 	string(255) 	No/No 	any
+7 	diversity-category 	Diversity Category 	 	No/No
+8 	certificate-type 	Certificate Type 	string(255) 	No/No 	any
+9 	certificate-number 	Certificate Number 	string(255) 	No/No 	any
+10 	expiration-date 	Expiration Date 	datetime 	No/No 	any
+11 	total-spend 	Total Spend 	decimal 	No/No 	numeric
+12 	currency 	Currency 	 	No/No 	any

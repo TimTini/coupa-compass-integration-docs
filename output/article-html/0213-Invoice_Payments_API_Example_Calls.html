@@ -1,0 +1,326 @@
+<article class="" id="invoice_payments_api_example_calls">
+<h1 class="title">Invoice Payments API Example Calls</h1>
+<div class="body">
+<div class="" id="invoice_payments_put">
+<h2 class="title sectiontitle">Invoice Payments PUT</h2>
+<p class="">The following describes how you can use the Coupa API to update
+an invoice with payment information</p>
+<p class="">Our Invoice Payment API allows you to do two things:</p>
+<ol class="ol">
+<li class="li">
+<p class="">Update an invoice with three attributes: Paid, Payment Date,
+and Payment Notes.</p>
+<p class="">
+Coupa originally allowed you to put information into
+these Invoice fields. If you had multiple payments, you
+would have to append that second payment information into
+payment notes.</p>
+</li>
+<li class="li">Now you can do that and update an invoice with an array of
+payment information: Payment Date, Notes (Check Number), and Amount
+Paid.  This allows you to assign multiple payment dates, check
+numbers, and amounts paid to a single invoice.</li>
+</ol>
+<p class="">Customer feedback helped us to see the value of adding more sets
+of payment data for a single invoice. Since some customers
+still use the original method of updating invoices we decided to
+support both ways of updating invoices with payment
+information.</p>
+<p class="">This is the URL you can PUT this information to:</p>
+<ul class="ul">
+<li class="li">
+<code class="ph codeph">&lt;your_instance_URL&gt;/api/invoices/&lt;invoiceid&gt;</code>
+</li>
+<li class="li">Typically you would use the invoice number and supplier to find
+the correct invoice id in order to use in the PUT</li>
+</ul>
+<p class="">You can post payments to an existing invoice with the
+Invoice Payments API
+(..<code class="ph codeph">/invoices/&lt;invoice_id&gt;</code> endpoint) using
+a PUT call. The payload of the PUT can be formatted as
+either XML or JSON with one of several accepted
+formats. </p>
+<p class="">We posted it to the URL:
+        <pre>
+<code class="codeblock">PUT https://&lt;instance&gt;.coupahost.com/api/invoices/&lt;invoice id&gt; </code>
+</pre>
+</p>
+</div>
+<div class="" id="example_add_payment_information_to_an_existing_invoice">
+<h2 class="title sectiontitle">Example: Add payment information to an existing invoice</h2>
+<p class="">In these examples we are adding payment information to an
+existing invoice using the fields: Paid, Flag, Payment Notes, and
+Payment Date.</p>
+<p class="">We posted a payload in either (XML or JSON) to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance&gt;.coupahost.com/api/invoices/&lt;invoice id&gt;</code>
+</pre>
+</p>
+<p class="">The payload can be in any of several supported formats used
+to programmatically record payments using this interface. More than
+a few examples follow below.</p>
+</div>
+<div class="" id="xml_payload_examples">
+<h2 class="title sectiontitle">XML Payload Examples</h2>
+<p class="">And here is one example of an XML payload schema which continues to be supported.</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;invoice-header&gt;
+	 &lt;paid type="boolean"&gt;true&lt;/paid&gt;
+	 &lt;payment-date type="datetime"&gt;2009-06-23T00:00:00-08:00&lt;/payment-date&gt;
+	 &lt;payment-notes&gt;CHECK|#1003|USD|989.00|FULLY PAID|&lt;/payment-notes&gt;
+	 &lt;payments type="array"&gt;
+			&lt;payment&gt;
+				 &lt;amount-paid&gt;989.00&lt;/amount-paid&gt;
+				 &lt;notes&gt;1003&lt;/notes&gt;
+				 &lt;payment-date&gt;2009-06-23&lt;/payment-date&gt;
+			&lt;/payment&gt;
+	 &lt;/payments&gt;
+&lt;/invoice-header&gt;</code>
+</pre>
+<p class="">Here is another example XML payload: </p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;invoice-header&gt;
+	 &lt;invoice-date type="datetime"&gt;"2019-10-22 00:00:00 -0900"&lt;/invoice-date&gt;
+	 &lt;invoice-number&gt;Invoice_Number_1571292051.310760975&lt;/invoice-number&gt;
+	 &lt;payments type="array"&gt;
+			&lt;payment&gt;
+				 &lt;amount-paid&gt;5.00&lt;/amount-paid&gt;
+				 &lt;notes&gt;1003&lt;/notes&gt;
+				 &lt;payment-date&gt;2019-10-22&lt;/payment-date&gt;
+			&lt;/payment&gt;
+	 &lt;/payments&gt;
+&lt;/invoice-header&gt;</code>
+</pre>
+<p class="">And here below is an example of multiple payments using XML:</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;invoice-header&gt;
+	 &lt;payments type="array"&gt;
+			&lt;payment&gt;
+				 &lt;amount-paid&gt;4.00&lt;/amount-paid&gt;
+				 &lt;notes&gt;1003&lt;/notes&gt;
+				 &lt;payment-date&gt;2009-06-23&lt;/payment-date&gt;
+			&lt;/payment&gt;
+			&lt;payment&gt;
+				 &lt;amount-paid&gt;5.00&lt;/amount-paid&gt;
+				 &lt;notes&gt;1004&lt;/notes&gt;
+				 &lt;payment-date&gt;2009-06-23&lt;/payment-date&gt;
+			&lt;/payment&gt;
+	 &lt;/payments&gt;
+&lt;/invoice-header&gt;</code>
+</pre>
+<p class="">And an old example XML payload (still supported) that updates an existing invoice with
+        multiple check numbers using payment notes. This is using the fields: Paid, Check Number,
+        and Payment Date.</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;invoice-header&gt;
+	 &lt;paid type="boolean"&gt;true&lt;/paid&gt;
+	 &lt;payment-date type="datetime"&gt;2009-06-23T00:00:00-08:00&lt;/payment-date&gt;
+	 &lt;payment-notes&gt;CHECK|#1003|USD|989.00|FULLY PAID|&lt;/payment-notes&gt;
+	 &lt;payments type="array"&gt;
+			&lt;payment&gt;
+				 &lt;amount-paid type="decimal" nil="true"&gt;100.23&lt;/amount-paid&gt;
+				 &lt;notes nil="true"&gt;232&lt;/notes&gt;
+				 &lt;payment-date type="datetime" nil="true"&gt;2010-09-25T02:22:11Z&lt;/payment-date&gt;
+			&lt;/payment&gt;
+			&lt;payment&gt;
+				 &lt;amount-paid type="decimal" nil="true"&gt;9032.32&lt;/amount-paid&gt;
+				 &lt;notes nil="true"&gt;233&lt;/notes&gt;
+				 &lt;payment-date type="datetime" nil="true"&gt;2010-09-25T02:22:11Z&lt;/payment-date&gt;
+			&lt;/payment&gt;
+	 &lt;/payments&gt;
+&lt;/invoice-header&gt;</code>
+</pre>
+</div>
+<div class="" id="json_payload_examples">
+<h2 class="title sectiontitle">JSON Payload Examples</h2>
+<p class="">To use a JSON payload you can use one of the following examples
+as a format model.</p>
+<p class="">Data Format 1:</p>
+<pre>
+<code class="codeblock">{
+	"payments": 
+	{
+		"payment":
+			{ "check_number": "1234567", "amount_paid": "199.98", "notes": "String", "payment_date": "9/12/2019" }
+	},
+	"paid": "false",
+	"payment_date": "9/11/2019",
+	"payment_notes": "Partial payment with one payment check."
+}</code>
+</pre>
+<p class=""> Data Format 2:</p>
+<pre>
+<code class="codeblock">{
+	"payments": 
+	{
+		"payment": [
+			{ "check_number": "test_check_number", "amount_paid": "510", "notes": "A payment note", "payment_date": "9/12/2019" },
+			{ "check_number": "test_check_number", "amount_paid": "53", "notes": "A payment note", "payment_date": "9/11/2019" }]
+	},
+	"paid": "false",
+	"payment_date": "9/11/2019",
+	"payment_notes": "One partial payment with two checks."
+}</code>
+</pre>
+<p class="">Data Format 3: </p>
+<pre>
+<code class="codeblock">{
+	"payments": [
+		{ "check_number": "test_check_number", "amount_paid": "510", "notes": "payment_note", "payment_date": "9/12/2019" },
+		{ "check_number": "test_check_number", "amount_paid": "53", "notes": "payment_note", "payment_date": "9/11/2019" }
+	],
+	"paid": "false",
+	"payment_date": "9/11/2019",
+	"payment_notes": "Two payments with two checks."
+}</code>
+</pre>
+<p class="">Data Format 4: </p>
+<pre>
+<code class="codeblock">{
+	"paid": "true",
+	"payment-date": "2019-08-13T00:00:00Z",
+	"payment-notes": "eProc Voucher#TRM-19-0009584-PV/THB",
+	"payments": {
+		 "payment" :	[
+			 {
+				 "payable-type": "InvoiceHeader",
+				 "payable-id": "4835",
+				 "amount-paid": "49.00",
+				 "notes": "TRM-19-0009584-PV",
+				 "payment-date": "2019-08-13T00:00:00Z"
+			 },
+			{
+				 "payable-type": "InvoiceHeader",
+				 "payable-id": "4835",
+				 "amount-paid": "51.00",
+				 "notes": "TRM-19-0009584-PV",
+				 "payment-date": "2019-08-13T00:00:00Z"
+			 }
+		]
+	}
+}</code>
+</pre>
+</div>
+<div class="" id="returns">
+<h2 class="title sectiontitle">Returns</h2>
+<p class="">Successful requests will return: <code class="ph codeph">HTTP 200 Created</code>.
+The body of the response will include the payment information and
+the invoice that was updated.</p>
+<p class="">Unsuccessful requests will return: <pre>
+<code class="codeblock">HTTP 400 Bad Request</code>
+</pre>. The body of
+        the response will include validation errors formatted as XML.</p>
+</div>
+<div class="" id="field_definitions">
+<h2 class="title sectiontitle">Field Definitions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<b>Name</b>
+</td>
+<td class="entry" align="">
+<b>Required?</b>
+</td>
+<td class="entry" align="">
+<b>Type</b>
+</td>
+<td class="entry" align="">
+<b>Allowable Values</b>
+</td>
+<td class="entry" align="">
+<b>Description</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">paid</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">true or false</td>
+<td class="entry" align="">This is the paid field on the invoice header. It's set to a true
+or false value.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-date</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">datetime</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+<td class="entry" align="">The date and time the payment was made</td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-notes</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">description or notes if any</td>
+<td class="entry" align="">These are notes you can add as part of the payment
+information.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">&lt;payments&gt;</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">payment array begins</td>
+</tr>
+<tr class="">
+<td class="entry" align="">&lt;payment&gt;</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">payment installment</td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount-paid</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">decimal</td>
+<td class="entry" align="">2 Decimal Number</td>
+<td class="entry" align="">This is the amount paid as part of the payment array.</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">notes or</p>
+<p class="">
+check-number</p>
+</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">String</td>
+<td class="entry" align="">transactional data</td>
+<td class="entry" align="">Check or Transaction or payment information captured for the
+payment. <b>This field has replaced &lt;check-number&gt;.
+Any data sent to the deprecated tag will be stored in the notes
+field. The check # tag will be populated in the Coupa instance.
+(&lt;check-number&gt; may be used too).</b>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">payment-date</td>
+<td class="entry" align="">no</td>
+<td class="entry" align="">text</td>
+<td class="entry" align="">YYYY-MM-DDTHH:MM:SS+HH:MM</td>
+<td class="entry" align="">The date and time the payment was made</td>
+</tr>
+<tr class="">
+<td class="entry" align="">&lt;/payment&gt;</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">&lt;/payments&gt;</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">payment array ends</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

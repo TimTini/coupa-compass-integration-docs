@@ -1,0 +1,202 @@
+<article class="" id="accounts_api_example_calls">
+<h1 class="title">Accounts API Example Calls</h1>
+<div class="body">
+<div class="" id="query_options">
+<h2 class="title sectiontitle">Query Options</h2>
+<p class="">Here are some examples on how to use the account API to query
+for a set of accounts.</p>
+<p class="">This will return all inactive accounts:</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance name&gt;.coupahost.com/api/accounts?active=false</code>
+</pre>
+</p>
+<p class="">This will return all account codes with a value of 'SF' in
+segment-1:</p>
+<p class="">
+<pre>
+<code class="codeblock">https://&lt;instance name&gt;.coupahost.com/api/accounts?segment-1=SF</code>
+</pre>
+</p>
+</div>
+<div class="" id="get_single_account">
+<h2 class="title sectiontitle">GET Single Account</h2>
+<p class="">In this example we queried for a single account with an id of 13.</p>
+<p class="">We did a GET to the URL:
+          <code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/accounts/13</code>
+</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account&gt;
+	 &lt;active type="boolean"&gt;false&lt;/active&gt;
+	 &lt;code&gt;SF-Marketing-Indirect&lt;/code&gt;
+	 &lt;id type="integer"&gt;13&lt;/id&gt;
+	 &lt;name /&gt;
+	 &lt;segment-1&gt;SF&lt;/segment-1&gt;
+	 &lt;segment-10 nil="true" /&gt;
+	 &lt;segment-11 nil="true" /&gt;
+	 &lt;segment-12 nil="true" /&gt;
+	 &lt;segment-13 nil="true" /&gt;
+	 &lt;segment-14 nil="true" /&gt;
+	 &lt;segment-15 nil="true" /&gt;
+	 &lt;segment-16 nil="true" /&gt;
+	 &lt;segment-17 nil="true" /&gt;
+	 &lt;segment-18 nil="true" /&gt;
+	 &lt;segment-19 nil="true" /&gt;
+	 &lt;segment-2&gt;Marketing&lt;/segment-2&gt;
+	 &lt;segment-20 nil="true" /&gt;
+	 &lt;segment-3&gt;Indirect&lt;/segment-3&gt;
+	 &lt;segment-4 nil="true" /&gt;
+	 &lt;segment-5 nil="true" /&gt;
+	 &lt;segment-6 nil="true" /&gt;
+	 &lt;segment-7 nil="true" /&gt;
+	 &lt;segment-8 nil="true" /&gt;
+	 &lt;segment-9 nil="true" /&gt;
+	 &lt;account-type&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+			&lt;name&gt;Ace Corporate&lt;/name&gt;
+	 &lt;/account-type&gt;
+&lt;/account&gt;</code>
+</pre>
+</div>
+<div class="" id="account_create_with_an_account_name">
+<h2 class="title sectiontitle">Account Create With An Account Name</h2>
+<p class="">In this example we are creating an account with the account name
+specified.</p>
+<p class=""> We posted it to the URL: <a data-scope="external" data-name="" target="_blank" href="https://.coupahost.com/api/accounts" title="">https://.coupahost.com/api/accounts</a>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;name&gt;demo account name&lt;/name&gt;
+	 &lt;segment-1&gt;SF&lt;/segment-1&gt;
+	 &lt;segment-2&gt;Marketing&lt;/segment-2&gt;
+	 &lt;segment-3&gt;Expense&lt;/segment-3&gt;
+	 &lt;account-type&gt;
+			&lt;name&gt;Ace Corporate&lt;/name&gt;
+	 &lt;/account-type&gt;
+&lt;/account&gt;</code>
+</pre>
+</p>
+<p class="">Below is the response from the above POST</p>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;code&gt;SF-Marketing-Expense&lt;/code&gt;
+	 &lt;id type="integer"&gt;206&lt;/id&gt;
+	 &lt;name&gt;demo account name&lt;/name&gt;
+	 &lt;segment-1&gt;SF&lt;/segment-1&gt;
+	 &lt;segment-10 nil="true" /&gt;
+	 &lt;segment-11 nil="true" /&gt;
+	 &lt;segment-12 nil="true" /&gt;
+	 &lt;segment-13 nil="true" /&gt;
+	 &lt;segment-14 nil="true" /&gt;
+	 &lt;segment-15 nil="true" /&gt;
+	 &lt;segment-16 nil="true" /&gt;
+	 &lt;segment-17 nil="true" /&gt;
+	 &lt;segment-18 nil="true" /&gt;
+	 &lt;segment-19 nil="true" /&gt;
+	 &lt;segment-2&gt;Marketing&lt;/segment-2&gt;
+	 &lt;segment-20 nil="true" /&gt;
+	 &lt;segment-3&gt;Expense&lt;/segment-3&gt;
+	 &lt;segment-4 nil="true" /&gt;
+	 &lt;segment-5 nil="true" /&gt;
+	 &lt;segment-6 nil="true" /&gt;
+	 &lt;segment-7 nil="true" /&gt;
+	 &lt;segment-8 nil="true" /&gt;
+	 &lt;segment-9 nil="true" /&gt;
+	 &lt;account-type&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+			&lt;name&gt;Ace Corporate&lt;/name&gt;
+	 &lt;/account-type&gt;
+&lt;/account&gt;</code>
+</pre>
+</div>
+<div class="" id="create_account_with_3_segments">
+<h2 class="title sectiontitle">Create Account with 3 Segments</h2>
+<p class="">In this example we are creating an account with 3 segments.</p>
+<p class=""> We posted it to the URL:
+          <code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/accounts</code>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;segment-1&gt;SF&lt;/segment-1&gt;
+	 &lt;segment-2&gt;Marketing&lt;/segment-2&gt;
+	 &lt;segment-3&gt;Direct&lt;/segment-3&gt;
+	 &lt;account-type&gt;
+			&lt;name&gt;Ace Corporate&lt;/name&gt;
+	 &lt;/account-type&gt;
+&lt;/account&gt;</code>
+</pre>
+</p>
+<p class=""> Below is the response that I received back when I posted the
+        above:<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account&gt;
+	 &lt;active type="boolean"&gt;true&lt;/active&gt;
+	 &lt;code&gt;SF-Marketing-Direct&lt;/code&gt;
+	 &lt;id type="integer"&gt;205&lt;/id&gt;
+	 &lt;name nil="true" /&gt;
+	 &lt;segment-1&gt;SF&lt;/segment-1&gt;
+	 &lt;segment-10 nil="true" /&gt;
+	 &lt;segment-11 nil="true" /&gt;
+	 &lt;segment-12 nil="true" /&gt;
+	 &lt;segment-13 nil="true" /&gt;
+	 &lt;segment-14 nil="true" /&gt;
+	 &lt;segment-15 nil="true" /&gt;
+	 &lt;segment-16 nil="true" /&gt;
+	 &lt;segment-17 nil="true" /&gt;
+	 &lt;segment-18 nil="true" /&gt;
+	 &lt;segment-19 nil="true" /&gt;
+	 &lt;segment-2&gt;Marketing&lt;/segment-2&gt;
+	 &lt;segment-20 nil="true" /&gt;
+	 &lt;segment-3&gt;Direct&lt;/segment-3&gt;
+	 &lt;segment-4 nil="true" /&gt;
+	 &lt;segment-5 nil="true" /&gt;
+	 &lt;segment-6 nil="true" /&gt;
+	 &lt;segment-7 nil="true" /&gt;
+	 &lt;segment-8 nil="true" /&gt;
+	 &lt;segment-9 nil="true" /&gt;
+	 &lt;account-type&gt;
+			&lt;id type="integer"&gt;1&lt;/id&gt;
+			&lt;name&gt;Ace Corporate&lt;/name&gt;
+	 &lt;/account-type&gt;
+&lt;/account&gt;
+      </code>
+</pre>
+</p>
+</div>
+<div class="" id="update_account_change_segment_2">
+<h2 class="title sectiontitle">Update Account Change Segment 2</h2>
+<p class="">In this example we are updating an account by changing segment 2 of the account to
+        '9999'</p>
+<p class=""> We posted it to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance&gt;.coupahost.com/api/accounts/&lt;account id&gt;</code>
+</pre>.<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account&gt;
+	 &lt;segment-2&gt;9999&lt;/segment-2&gt;
+&lt;/account&gt;
+      </code>
+</pre>
+</p>
+</div>
+<div class="" id="update_account_set_active">
+<h2 class="title sectiontitle">Update Account Set Active</h2>
+<p class="">In this example we are updating an account and setting it to
+active.</p>
+<p class=""> We posted it to the URL:
+        <pre>
+<code class="codeblock">https://&lt;instance&gt;.coupahost.com/api/accounts/&lt;account id&gt;</code>
+</pre>
+</p>
+<pre xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;account&gt;
+	 &lt;active&gt;true&lt;/active&gt;
+&lt;/account&gt;</pre>
+</div>
+</div>
+</article>

@@ -1,0 +1,1326 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <base href="https://compass.coupa.com/" />
+	<title>Address API (/addresses) | Coupa</title>
+	<link rel="canonical" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)" />
+		<link rel="alternate" hreflang="en-us" href="https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)" />
+			<link rel="alternate" hreflang="ja-jp" href="https://compass.coupa.com/ja-jp/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)-da-13957" />
+			<link rel="alternate" hreflang="fr-fr" href="https://compass.coupa.com/fr-fr/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)" />
+			<link rel="alternate" hreflang="de-de" href="https://compass.coupa.com/de-de/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)-da-13421" />
+	<meta name="locale" content="en-us" />
+		<meta name="audience" content="Audience; Audience|External; Audience|External|Customer; Audience|External|Customer|Admin; Audience|External|Customer|Non-Admin; Audience|External|Supplier; Audience|Internal; Audience|Internal|Employee;" />
+		<meta name="product" content="Products; Products|Total Spend Management Platform;" />
+		<meta name="content_type" content="Content Type; Content Type|Knowledge;" />
+		<meta name="content_owner" content="Content Owner; Content Owner|Documentation;" />
+		<meta name="source" content="" />
+		<meta name="language" content="" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap-grid.min.css">
+<link href="/Content/css/coupa_css?v=oSR2VU2UAauSq61U5RF7aW7MAfwDS82Mo5MuvSkpljY1" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-coy.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.10098/css/CoveoFullSearch.css" />
+        <script class="coveo-script" src="https://static.cloud.coveo.com/searchui/v2.10098/js/CoveoJsSearch.Lazy.min.js"></script>
+                <link rel="icon" sizes="32x32" href="/Images/Icons/favicon_32x32.ico" />
+                <link rel="icon" sizes="64x64" href="/Images/Icons/favicon_64x64.ico" />
+                <link rel="icon" sizes="120x120" href="/Images/Icons/favicon_128x128.ico" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K6XGTMF');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body >
+        
+    <div id="page" class="layout-docs">
+
+<header>
+	<div class="container-fluid">
+		<a class="skip-to-content" href="#content">Skip to Content</a>
+		<div class="header-content">
+				<a class="open-toc" href="#" title="Toggle TOC">
+					<i class="fal fa-bars"></i>
+					<i class="fal fa-times"></i>
+				</a>
+						<a href="/en-us"  class="logo">		<img  src="/Images/Logos/Coupa-Compass-Stacked-Logo_210x60.png" alt="Coupa Logo"   />
+</a>
+
+			<div class="links">
+													<div class="lang-menu d-none d-sm-inline-block">
+						<a class="toggle" href="#">
+							<span class="default">EN</span>
+									<img  src="/Images/Icons/Navigation/CoupaCompass_icon_language.svg" alt="globe icon"   />
+
+						</a>
+						<ul>
+								<li>
+									<a href="/en-us" class="set-language" data-value="en_US" data-token="f96ff213e70bc29811095f7fd803251d455b022b37d4065497d993cccaae21a0">
+										<span class="short">EN</span>
+										<span class="long">- English</span>
+									</a>
+								</li>
+								<li>
+									<a href="/de-de/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)-da-13421" class="set-language" data-value="de" data-token="33ba4aa60871f87ad70f457df0a7e48a34eaacf48b55ddb2b59fa5efc22f2658">
+										<span class="short">DE</span>
+										<span class="long">- Deutsch</span>
+									</a>
+								</li>
+								<li>
+									<a href="/ja-jp/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)-da-13957" class="set-language" data-value="ja_jp" data-token="b9089d60c88c3cfa00649f487c65b2c5175a27d7712803f4b1abc3a5c9a1b3fa">
+										<span class="short">JA</span>
+										<span class="long">- 日本語</span>
+									</a>
+								</li>
+								<li>
+									<a href="/fr-fr/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)" class="set-language" data-value="fr" data-token="7c30dd2f1b464bac6b076bb49dd8a806676269c20591ede94bec1b2f5344ee0c">
+										<span class="short">FR</span>
+										<span class="long">- Fran&#231;ais</span>
+									</a>
+								</li>
+						</ul>
+						<form class="language-form" style="display:none;" action="/Salesforce/SetLanguage" method="post">
+							<input type="hidden" name="guid" value="f8646e30-a8d6-47fc-aedd-5e96195805e0" />
+							<input type="hidden" name="token" id="token" />
+							<input type="hidden" name="language" id="language" value="" />
+							<input type="hidden" name="redirect" id="redirect" value="" />
+						</form>
+					</div>
+				<div class="user-menu">
+						<a href="/Saml/SingleSignOn?returnUrl=http%3a%2f%2fcompass.coupa.com%2fen-us%2fproducts%2fproduct-documentation%2fintegration-technical-documentation%2fthe-coupa-core-api%2fresources%2freference-data-resources%2faddress-api-(addresses)" title="My Coupa" class="user clickable">
+									<img  src="/Images/Icons/Navigation/CoupaCompass_icon_account.svg" alt="user icon"   />
+
+						</a>
+				</div>
+				<a class="open-menu" href="#" title="Open menu">
+					<i class="fas fa-ellipsis-v"></i>
+					<i class="fal fa-times"></i>
+				</a>
+			</div>
+		</div>
+		
+	</div>
+</header>        <main id="content">
+            		<section class="tray tray-notice site-alert alert-low white-text"  style="display:none;" id="07385139-549e-5194-2d0c-c4fa0bbef8cf-1814f87a5d6d57e21d42e490b81c48570f8f8890261502062736e06e169f720d">
+			<div class="container">
+				<div class="content">
+					<div class="row row-gutter-10 justify-content-center align-items-center">
+						<div class="col-auto">
+							<p class="h4"><i class="fal fa-info"></i></p>
+						</div>
+							<div class="col-auto">
+										<div  class="body-copy-inner ">
+			<b>We’ve upgraded our documentation!</b> This page is part of our legacy documentation and is no longer being maintained. Visit the new site for the most up-to-date content, improved search, and all release notes.
+
+<a href="https://docs.coupa.com" target="_blank" rel="noopener noreferrer">Take me to the new site</a>
+
+		</div>
+
+							</div>
+					</div>
+				</div>
+				<a class="close-notice" href="#" title="Close notice"><i class="fal fa-times"></i></a>
+			</div>
+		</section>
+            
+<div class="content-inner">
+	<div class="row">
+		<div class="order-md-2 col-md-4 col-xl-auto">
+			<div class="side-stick">
+				<div class="side-nav">
+					<div class="side-menu">
+						<div class="tools">
+							<a href="#" class="copy-content" title="Copy" data-target=".onthispage-content"><i class="far fa-edit"></i></a>
+							
+							<a href="javascript:print()" title="Print"><i class="far fa-print"></i></a>
+							
+						</div>
+						<div class="head">
+							<a class="toggle" href="#" title="Toggle menu">
+								<span class="text"><i class="far fa-list"></i> On This Page</span>
+								<span class="icons">
+									<i class="fal fa-plus"></i>
+									<i class="fal fa-minus"></i>
+								</span>
+							</a>
+						</div>
+						<div class="side-menu-list">
+							<ul id="onthispage-links">
+								<li class="active"><a class="scroll-to-link" href="#page-title">Address API (/addresses)</a></li>
+								<li><hr></li>
+							</ul>
+						</div>
+						<div class="d-none d-md-block">
+							<div class="note-meta ">
+								<div class="content">
+									<ul class="list-meta">
+										
+																					<li><strong>Last edited on:</strong> 		<span >
+			24 April 2023
+		</span>
+</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="order-md-1 col-md-8 col-xl">
+			<div class="docs-copy">
+				
+<div class="crumbs">
+	<a href="/en-us"    title="What can we help you find?">
+		What can we help you find?
+	</a>
+            <span><i class="fas fa-angle-right"></i></span>
+	<a href="/en-us/products"    title="Products ">
+		Products 
+	</a>
+            <span><i class="fas fa-angle-right"></i></span>
+	<a href="/en-us/products/product-documentation"    title="Coupa Product Documentation ">
+		Coupa Product Documentation 
+	</a>
+            <span><i class="fas fa-angle-right"></i></span>
+            <span class="active">Address API (/addresses)</span>
+</div>
+				<div class="onthispage-content" data-url="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)">
+			<h1   id="page-title">Address API (/addresses)</h1>
+									<div class="font-size-lg" >
+					<p>Use the address API to query, create, or update personal or supplier remit-to address information.</p>
+				</div>
+							<div  class="body-copy-inner ">
+			<p>Use the address API to query, create, or update personal or supplier remit-to address information.</p>
+<p>The URL to access addresses is:&nbsp;<code>https://&lt;instance&gt;/api/addresses</code></p>
+<ul>
+<li>Use this URL to query personal address information:&nbsp;<code>https://&lt;instance url&gt;/api/users/&lt;user ID&gt;/addresses</code></li>
+<li>Use this URL to query supplier remit-to address information:&nbsp;<code>https://&lt;instance url&gt;/api/suppliers/&lt;user ID&gt;/addresses</code></li>
+</ul>
+<p>See <a href="/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/integration-knowledge-articles" title="Integration Best Practices">Integration Best Practices</a> for more info.</p>
+<h2>Actions</h2>
+<p>The Addresses API allows you to:</p>
+<div class="table-wrap" style="width: 100%;">
+<table class="integration" style="width: 100%;">
+<thead>
+<tr>
+<th scope="col" style="width: 10%;">Verb</th>
+<th scope="col" style="width: 40%;">Path</th>
+<th scope="col" style="width: 10%;">Action</th>
+<th scope="col" style="width: 40%;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/addresses</code></td>
+<td>create</td>
+<td>Create address</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/addresses</code></td>
+<td>index</td>
+<td>Query addresses</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/addresses/:id</code></td>
+<td>show</td>
+<td>Show address</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/addresses/:id</code></td>
+<td>update</td>
+<td>Update address</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Elements</h2>
+<p>The following elements are available for the Addresses API:</p>
+<div class="table-wrap" style="width: 100%;">
+<table class="integration" style="width: 100%;">
+<thead>
+<tr>
+<th style="width: 10%;">Element</th>
+<th style="width: 30%;">Description</th>
+<th style="width: 10%;">Required Field?</th>
+<th style="width: 7.72469%;">Unique?</th>
+<th style="width: 12.2753%;">Allowable Value</th>
+<th style="width: 10%;">Api_In Field?</th>
+<th style="width: 10%;">Api_Out Field?</th>
+<th style="width: 10%;">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 10%;">active</td>
+<td style="width: 30%;">A no value will make the address inactive making it no longer available to users. A yes value will make it active and available to users.</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">boolean</td>
+</tr>
+<tr>
+<td style="width: 10%;">attention</td>
+<td style="width: 30%;">Address Default Attention Line</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">business-group-name</td>
+<td style="width: 30%;">Content Group Name for Address</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">city</td>
+<td style="width: 30%;">City Name</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">content-groups</td>
+<td style="width: 30%;">Content groups.</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;"><a href="/x285815.xml" title="Content Groups">ContentGroup</a></td>
+</tr>
+<tr>
+<td style="width: 10%;">country</td>
+<td style="width: 30%;">country</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">Country</td>
+</tr>
+<tr>
+<td style="width: 10%;">created-at</td>
+<td style="width: 30%;">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 10%;">created-by</td>
+<td style="width: 30%;">User who created</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;"><a href="/x285915.xml" title="Users">User</a></td>
+</tr>
+<tr>
+<td style="width: 10%;">id</td>
+<td style="width: 30%;">Coupa's unique identifier for the address</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">integer</td>
+</tr>
+<tr>
+<td style="width: 10%;">local-tax-number</td>
+<td style="width: 30%;">local_tax_number</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">location-code</td>
+<td style="width: 30%;">location_code</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">yes</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">name</td>
+<td style="width: 30%;">Address 'Nickname'</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">postal-code</td>
+<td style="width: 30%;">Postal Code</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">purposes</td>
+<td style="width: 30%;">Purposes for&nbsp;<a href="/x303277.xml" title="Multiple Contacts and Addresses for Suppliers">Multiple Contacts and Addresses&nbsp;for Suppliers</a></td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">Purpose</td>
+</tr>
+<tr>
+<td style="width: 10%;">state</td>
+<td style="width: 30%;">State Abbreviation</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">See note below this table to download a list of allowable values.&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">state-iso-code</td>
+<td style="width: 30%;">
+<p>ISO Code for the State</p>
+<div class="note primary">
+<div class="note-inner">
+<div class="heading"><span class="icon primary-text"><i class="fas fa-info-circle"></i></span>Note</div>
+<div class="content">
+<p>In 36.1, the allowable syntax for field values changed to the format: <code>CC-SSS</code>, where <code>CC</code> represents the two-character country code and <code>SSS</code> represents the one-to-three-character alpha-numeric subdivision code. For example, <strong>US-CA</strong>. See note below this table to download a list of allowable values.</p>
+</div>
+</div>
+</div>
+</td>
+<td style="width: 10%;"></td>
+<td style="width: 7.72469%;"></td>
+<td style="width: 12.2753%;">See note below this table to download a list of allowable values.&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">street1</td>
+<td style="width: 30%;">Address Line 1</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;"></td>
+</tr>
+<tr>
+<td style="width: 10%;">street2</td>
+<td style="width: 30%;">Address Line 2</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">street3</td>
+<td style="width: 30%;">Address Line 3</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">street4</td>
+<td style="width: 30%;">Address Line 4</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;">tax-registrations</td>
+<td style="width: 30%;">Tax registrations</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;"><a href="/x285905.xml" target="_blank" title="Tax Registrations API (/tax_registrations)" rel="noopener">Tax Registration</a></td>
+</tr>
+<tr>
+<td style="width: 10%;">updated-at</td>
+<td style="width: 30%;">Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">datetime</td>
+</tr>
+<tr>
+<td style="width: 10%;">updated-by</td>
+<td style="width: 30%;">User who updated</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;"><a href="/x285915.xml" title="Users">User</a></td>
+</tr>
+<tr>
+<td style="width: 10%;">vat-country</td>
+<td style="width: 30%;">vat_country</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">Country</td>
+</tr>
+<tr>
+<td style="width: 10%;">vat-number</td>
+<td style="width: 30%;">vat_number</td>
+<td style="width: 10%;">&nbsp;</td>
+<td style="width: 7.72469%;">&nbsp;</td>
+<td style="width: 12.2753%;">&nbsp;</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;">string(255)</td>
+</tr>
+<tr>
+<td style="width: 10%;"><span>external-src-ref</span></td>
+<td style="width: 30%;"><span>External Source Reference</span></td>
+<td style="width: 10%;"></td>
+<td style="width: 7.72469%;"></td>
+<td style="width: 12.2753%;"></td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;"></td>
+<td style="width: 10%;"><span>string(255)</span></td>
+</tr>
+<tr>
+<td style="width: 10%;"><span>external-src-name</span><span><br /></span></td>
+<td style="width: 30%;"><span>External Source Name</span></td>
+<td style="width: 10%;"></td>
+<td style="width: 7.72469%;"></td>
+<td style="width: 12.2753%;"></td>
+<td style="width: 10%;">yes</td>
+<td style="width: 10%;"></td>
+<td style="width: 10%;"><span>string(255)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note primary">
+<div class="note-inner">
+<div class="heading"><span class="icon primary-text"><i class="fas fa-info-circle"></i></span>Note</div>
+<div class="content">
+<ul>
+<li>Starting with the May 2023 release, state ISO codes and names have changed. To see a complete list of the changes and allowable values, download the <a href="Import/Integrate/Technical_Documentation/API/Subdivisions/subdivisions-code-changes-format.xlsx" class="intLink" title="subdivision-code-changes">Subdivision Code Changes Excel file</a>.&nbsp;</li>
+<li>The reference object Country and the respective country name, code or ID must already exist in the system.</li>
+<li>If the address is deactivated or inactive, the address record and its attributes cannot be updated using the API.</li>
+</ul>
+</div>
+</div>
+</div>
+		</div>
+					<div  class="trays-list">
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+                        
+
+
+
+<div class="toc">
+	<div class="toc-inner">
+		<div class="content">
+			<ul>
+				<li class="heading">Table Of Contents</li>
+			</ul>
+		</div>
+	</div>
+	<a class="toggle-toc" href="#" title="Toggle TOC"><i class="fas fa-caret-left"></i></a>
+</div>
+
+                    </main>
+
+
+<footer>
+	<div class="footer-content">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-sm">
+					<p>
+									<a href="/en-us"  class="logo">		<img  src="/Images/Logos/coupa-compass-footer.svg" alt="Coupa white footer logo"   />
+</a>
+
+					</p>
+				</div>
+				<div class="col-sm-auto">
+					<p>
+						
+					</p>
+				</div>
+			</div>
+			<div class="spacer-10"></div>
+			<div class="legal">
+				© 2026 Coupa Software Inc. All Rights Reserved.
+					<span class="pipe">|</span>
+	<a href="https://www.coupa.com/privacy-policy/"    title="Privacy Policy">
+		Privacy Policy
+	</a>
+					<span class="pipe">|</span>
+	<a href="https://www.coupa.com/cookie-policy/"    title="Cookie Policy">
+		Cookie Policy
+	</a>
+					<span class="pipe">|</span>
+<div style="display: inline-block;" id="teconsent" ></div>					<span class="pipe">|</span>
+	<a href="http://www.coupa.com/"    title="Coupa Home">
+		Coupa Home
+	</a>
+			</div>
+		</div>
+	</div>
+</footer>        <a class="top-target" href="#" title="Scroll to top"><i class="fas fa-angle-up"></i></a>
+
+<div class="menu">
+	<div class="menu-inner">
+		
+		<div class="main">
+			<ul>
+					<li>
+
+	<a href="/en-us/get-started"    title="Get Started">
+		Get Started
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>New to Coupa? Start here!</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/get-started/welcome-to-coupa"    title="Welcome to Coupa ">
+		Welcome to Coupa 
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/portals-and-resources"    title="Portals and Resources">
+		Portals and Resources
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/your-coupa-journey"    title="Your Coupa Journey">
+		Your Coupa Journey
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>Implementation Resources</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/get-started/implementation-overview"    title="Implementation Overview">
+		Implementation Overview
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/implementation-best-practices"    title="Implementation Best Practices">
+		Implementation Best Practices
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-documentation/supplier-resources"    title="Supplier Resources">
+		Supplier Resources
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/learning"    title="Learning">
+		Learning
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="https://expertsdirectory.coupa.com/"    title="Credential Spotlight Directory">
+		Credential Spotlight Directory
+	</a>
+</li>
+		<li >	<a href="/en-us/learning/track-your-certifications"    title="Track Your Credentials">
+		Track Your Credentials
+	</a>
+</li>
+		<li >	<a href="/en-us/learning/coupa-training-partners"    title="Instructor-led Training">
+		Instructor-led Training
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/products"    title="Products ">
+		Products 
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/products/category-strategy"    title="Category Strategy">
+		Category Strategy
+	</a>
+</li>
+		<li >	<a href="/en-us/products/procure"    title="Procure">
+		Procure
+	</a>
+</li>
+		<li >	<a href="/en-us/products/invoice"    title="Invoice">
+		Invoice
+	</a>
+</li>
+		<li >	<a href="/en-us/products/travel-and-expense"    title="Travel & Expense">
+		Travel & Expense
+	</a>
+</li>
+		<li >	<a href="/en-us/products/coupa-pay"    title="Coupa Pay">
+		Coupa Pay
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/products/treasury-management"    title="Treasury Management">
+		Treasury Management
+	</a>
+</li>
+		<li >	<a href="/en-us/products/supply-chain-design-and-planning"    title="Supply Chain Design and Planning">
+		Supply Chain Design and Planning
+	</a>
+</li>
+		<li >	<a href="/en-us/products/supply-chain-collaboration"    title="Supply Chain Collaboration">
+		Supply Chain Collaboration
+	</a>
+</li>
+		<li >	<a href="/en-us/products/strategic-sourcing"    title="Strategic Sourcing">
+		Strategic Sourcing
+	</a>
+</li>
+		<li >	<a href="/en-us/products/contract-management"    title="Contract Management">
+		Contract Management
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/products/supplier-management"    title="Supplier Management">
+		Supplier Management
+	</a>
+</li>
+		<li >	<a href="/en-us/products/spend-analysis"    title="Spend Analysis">
+		Spend Analysis
+	</a>
+</li>
+		<li >	<a href="/en-us/products/contingent-workforce"    title="Contingent Workforce">
+		Contingent Workforce
+	</a>
+</li>
+		<li >	<a href="/en-us/products/total-spend-management-platform"    title="Total Spend Management Platform">
+		Total Spend Management Platform
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>Resources</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/products/release-notes"    title="Release Notes">
+		Release Notes
+	</a>
+</li>
+		<li >	<a href="https://compass.coupa.com/en-us/products/release-notes/about-coupa-releases"    title="About Coupa Releases">
+		About Coupa Releases
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-documentation/roadmaps-overview"    title="Product Roadmaps ">
+		Product Roadmaps 
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-compliance-downloads"    title="Product Compliance Downloads">
+		Product Compliance Downloads
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/community"    title="Community">
+		Community
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>Stay informed and get involved!</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="https://community.coupa.com/c/coupa-official/41"    title="News">
+		News
+	</a>
+</li>
+		<li >	<a href="https://community.coupa.com/" target="_blank"   title="Coupa Online Community">
+		Coupa Online Community
+	</a>
+</li>
+		<li >	<a href="https://www.coupaadvantageportal.com/"    title="Coupa Advantage Program">
+		Coupa Advantage Program
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong>Attend an event!</strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="https://community.coupa.com/upcoming-events"    title="See All Events">
+		See All Events
+	</a>
+</li>
+		<li >	<a href="https://community.coupa.com/webinars"    title="Find Upcoming Webinars">
+		Find Upcoming Webinars
+	</a>
+</li>
+		<li >	<a href="https://usergroups.coupa.com/"    title="Join a Coupa User Group Chapter">
+		Join a Coupa User Group Chapter
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/support"    title="Support">
+		Support
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+										
+									</div>
+							</div>
+					</li>
+					<li>
+
+	<a href="/en-us/trust"    title="Trust">
+		Trust
+	</a>
+
+							<a class="toggle-sub-list" href="#" title="Toggle list">
+								<i class="fal fa-angle-right"></i>
+							</a>
+							<div class="sub-list">
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="https://www.coupa.com/legal" target="_blank"   title="Legal">
+		Legal
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/coupa-accessibility-statement"    title="Coupa Accessibility Statement">
+		Coupa Accessibility Statement
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/data-privacy"    title="Global Privacy Program">
+		Global Privacy Program
+	</a>
+</li>
+		<li >	<a href="https://www.coupa.com/compliance-security/" target="_blank"   title="AI Trust Center">
+		AI Trust Center
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+									<div class="sub-list-item">
+										<div class="sub-list-head">
+											<strong></strong>
+											<a href="#" title="Toggle list"><i class="fal fa-plus"></i></a>
+										</div>
+												<ul  >
+		<li >	<a href="/en-us/trust/security"    title="Security">
+		Security
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/compliance"    title=" Compliance">
+		 Compliance
+	</a>
+</li>
+		<li >	<a href="https://support.coupa.com/s/compliance-downloads"    title="Security and Compliance Downloads">
+		Security and Compliance Downloads
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/system-up-time-and-metrics"    title="System Uptime and Metrics">
+		System Uptime and Metrics
+	</a>
+</li>
+
+		</ul>
+
+									</div>
+							</div>
+					</li>
+			</ul>
+		</div>
+		<div class="foot">
+			<ul>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="mega">
+			<div id="mega-0" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>New to Coupa? Start here!</strong></div>
+											<ul  >
+		<li >	<a href="/en-us/get-started/welcome-to-coupa"    title="Welcome to Coupa ">
+		Welcome to Coupa 
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/portals-and-resources"    title="Portals and Resources">
+		Portals and Resources
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/your-coupa-journey"    title="Your Coupa Journey">
+		Your Coupa Journey
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>Implementation Resources</strong></div>
+											<ul  >
+		<li >	<a href="/en-us/get-started/implementation-overview"    title="Implementation Overview">
+		Implementation Overview
+	</a>
+</li>
+		<li >	<a href="/en-us/get-started/implementation-best-practices"    title="Implementation Best Practices">
+		Implementation Best Practices
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-documentation/supplier-resources"    title="Supplier Resources">
+		Supplier Resources
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-1" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="https://expertsdirectory.coupa.com/"    title="Credential Spotlight Directory">
+		Credential Spotlight Directory
+	</a>
+</li>
+		<li >	<a href="/en-us/learning/track-your-certifications"    title="Track Your Credentials">
+		Track Your Credentials
+	</a>
+</li>
+		<li >	<a href="/en-us/learning/coupa-training-partners"    title="Instructor-led Training">
+		Instructor-led Training
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-2" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="/en-us/products/category-strategy"    title="Category Strategy">
+		Category Strategy
+	</a>
+</li>
+		<li >	<a href="/en-us/products/procure"    title="Procure">
+		Procure
+	</a>
+</li>
+		<li >	<a href="/en-us/products/invoice"    title="Invoice">
+		Invoice
+	</a>
+</li>
+		<li >	<a href="/en-us/products/travel-and-expense"    title="Travel & Expense">
+		Travel & Expense
+	</a>
+</li>
+		<li >	<a href="/en-us/products/coupa-pay"    title="Coupa Pay">
+		Coupa Pay
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="/en-us/products/treasury-management"    title="Treasury Management">
+		Treasury Management
+	</a>
+</li>
+		<li >	<a href="/en-us/products/supply-chain-design-and-planning"    title="Supply Chain Design and Planning">
+		Supply Chain Design and Planning
+	</a>
+</li>
+		<li >	<a href="/en-us/products/supply-chain-collaboration"    title="Supply Chain Collaboration">
+		Supply Chain Collaboration
+	</a>
+</li>
+		<li >	<a href="/en-us/products/strategic-sourcing"    title="Strategic Sourcing">
+		Strategic Sourcing
+	</a>
+</li>
+		<li >	<a href="/en-us/products/contract-management"    title="Contract Management">
+		Contract Management
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="/en-us/products/supplier-management"    title="Supplier Management">
+		Supplier Management
+	</a>
+</li>
+		<li >	<a href="/en-us/products/spend-analysis"    title="Spend Analysis">
+		Spend Analysis
+	</a>
+</li>
+		<li >	<a href="/en-us/products/contingent-workforce"    title="Contingent Workforce">
+		Contingent Workforce
+	</a>
+</li>
+		<li >	<a href="/en-us/products/total-spend-management-platform"    title="Total Spend Management Platform">
+		Total Spend Management Platform
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>Resources</strong></div>
+											<ul  >
+		<li >	<a href="/en-us/products/release-notes"    title="Release Notes">
+		Release Notes
+	</a>
+</li>
+		<li >	<a href="https://compass.coupa.com/en-us/products/release-notes/about-coupa-releases"    title="About Coupa Releases">
+		About Coupa Releases
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-documentation/roadmaps-overview"    title="Product Roadmaps ">
+		Product Roadmaps 
+	</a>
+</li>
+		<li >	<a href="/en-us/products/product-compliance-downloads"    title="Product Compliance Downloads">
+		Product Compliance Downloads
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-3" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>Stay informed and get involved!</strong></div>
+											<ul  >
+		<li >	<a href="https://community.coupa.com/c/coupa-official/41"    title="News">
+		News
+	</a>
+</li>
+		<li >	<a href="https://community.coupa.com/" target="_blank"   title="Coupa Online Community">
+		Coupa Online Community
+	</a>
+</li>
+		<li >	<a href="https://www.coupaadvantageportal.com/"    title="Coupa Advantage Program">
+		Coupa Advantage Program
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong>Attend an event!</strong></div>
+											<ul  >
+		<li >	<a href="https://community.coupa.com/upcoming-events"    title="See All Events">
+		See All Events
+	</a>
+</li>
+		<li >	<a href="https://community.coupa.com/webinars"    title="Find Upcoming Webinars">
+		Find Upcoming Webinars
+	</a>
+</li>
+		<li >	<a href="https://usergroups.coupa.com/"    title="Join a Coupa User Group Chapter">
+		Join a Coupa User Group Chapter
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-4" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+									
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="mega-5" class="mega-menu">
+				<div class="container">
+					<div class="row row-gutter-0">
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="https://www.coupa.com/legal" target="_blank"   title="Legal">
+		Legal
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/coupa-accessibility-statement"    title="Coupa Accessibility Statement">
+		Coupa Accessibility Statement
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/data-privacy"    title="Global Privacy Program">
+		Global Privacy Program
+	</a>
+</li>
+		<li >	<a href="https://www.coupa.com/compliance-security/" target="_blank"   title="AI Trust Center">
+		AI Trust Center
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+							<div class="col-6 col-sm-3">
+								<div class="content">
+									<div class="mega-menu-head"><strong></strong></div>
+											<ul  >
+		<li >	<a href="/en-us/trust/security"    title="Security">
+		Security
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/compliance"    title=" Compliance">
+		 Compliance
+	</a>
+</li>
+		<li >	<a href="https://support.coupa.com/s/compliance-downloads"    title="Security and Compliance Downloads">
+		Security and Compliance Downloads
+	</a>
+</li>
+		<li >	<a href="/en-us/trust/system-up-time-and-metrics"    title="System Uptime and Metrics">
+		System Uptime and Metrics
+	</a>
+</li>
+
+		</ul>
+
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+</div>    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="/Content/js/coupa_foot?v=ObtuKn9rfH0O6eQfjZbh9aaNqZg8PzXibAtTnmvwg8Y1"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous"></script>
+
+    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gumshoe/5.1.1/gumshoe.polyfills.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			// Scroll Spy
+			var spy = new Gumshoe('.side-nav .side-menu-list a', {
+				offset: 90,
+				reflow: true
+			});
+		});
+	</script>
+
+        
+</body>
+</html>

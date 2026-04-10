@@ -1,0 +1,52 @@
+<article class="" id="arguments">
+<h1 class="title">Arguments</h1>
+<p class="">
+<p class="">Learn about the types of arguments that Coupa supports in conjunction with operators.</p>
+</p>
+<div class="body">
+<p class="">Arguments are made up of attributes, operators and values. They can be appended to any request to limit the results, the available attributes are listed in each business object's detailed documentation. Coupa supports a number of <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/get-started-with-the-api/api-operators" title="">operators</a> in addition to the default equality/exact match.</p>
+<div class="" id="general_request_format">
+<h2 class="title sectiontitle">General Request Format</h2>
+<pre xml:space="preserve">
+        <code class="ph codeph">&lt;url&gt;?&lt;attribute&gt;&lt;[operator]&gt;=&lt;value&gt;&amp;...</code>
+      </pre>
+<p class="">The first example returns the first 50 active suppliers start with id=1. The second example returns the first 50 POs with a updated-at dategreater than or equal to the specified date.</p>
+<p class="">Examples:</p>
+<p class="">
+<pre xml:space="preserve">https://example.coupahost.com/api/suppliers?status=active
+https://example.coupahost.com/api/purchase_orders?updated_at[gt_or_eq]=2010-12-31
+https://example.coupahost.com/api/purchase_orders?offset=50
+https://example.coupahost.com/api/purchase_orders?offset=100</pre>
+</p>
+</div>
+<div class="" id="searching_on_a_collection">
+<h2 class="title sectiontitle">Searching on a collection</h2>
+<p class="">For collections of elements, such as order-lines in this case, use the plural form and ignore the nested singular form.</p>
+<p class="">Example:</p>
+<pre xml:space="preserve">&lt;order-header&gt;
+         &lt;order-lines&gt;
+            &lt;order-line&gt;
+               &lt;account&gt;
+                  &lt;code&gt;a-c&lt;/code&gt;
+               &lt;/account&gt;
+            &lt;/order-line&gt;
+         &lt;/order-lines&gt;
+      &lt;/order-header&gt;</pre>
+<p class="">Becomes:</p>
+<pre xml:space="preserve">https://example.coupahost.com/api/purchase_orders?order-lines[account][code]=a-c</pre>
+</div>
+<div class="" id="underscores">
+<h2 class="title sectiontitle">Underscores</h2>
+<p class="">When using elements from resources in your arguments any dashes should be converted to underscores.</p>
+<p class="">Example:</p>
+<pre xml:space="preserve">&lt;exchange-rate&gt;
+         &lt;from-currency&gt;
+            &lt;code&gt;USD&lt;/code&gt;
+            &lt;id type="integer"&gt;1&lt;/id&gt;
+         &lt;/from-currency&gt;
+      &lt;/exchange-rate&gt;</pre>
+<p class="">Becomes:</p>
+<pre xml:space="preserve">https://example.coupahost.com/api/exchange_rates?from_currency_id=1</pre>
+</div>
+</div>
+</article>

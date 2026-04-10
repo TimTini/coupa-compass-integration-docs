@@ -1,0 +1,9 @@
+The CCW API
+
+Using CCW's REST API customers and partners can build new applications and integrate with CCW in new ways, to improve their capabilities around managing a contingent workforce. CCW's APIs are HTTP-based RESTful APIs that use OAuth 2.0 for authentication and TLS 1.2 for transport layer security. This documentation explains how to access CCW's API and make requests to obtain the data you need.
+
+- API Explorer
+- Candidate Confirmation API
+- Candidate Lookup API
+- CCW API Overview
+- Managing Your API Consumer Apps and Credentials

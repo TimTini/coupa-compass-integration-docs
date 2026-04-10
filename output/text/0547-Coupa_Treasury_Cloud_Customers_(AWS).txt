@@ -1,0 +1,201 @@
+Coupa Treasury Cloud Customers (AWS)
+
+IP addresses that may be required to be whitelisted by European and North American customers hosted on Amazon Web Services (AWS) and their connected third parties.
+
+EU - Germany Cloud IP Addresses
+
+Coupa customers and third parties (such as banks) should whitelist the following IP addresses for Coupa Treasury sandbox and production environments for cXML document exchange.
+
+You should whitelist all addresses, as data could come from any of these IPs.
+
+Production environments hosted in EU - Germany
+
+IP Address
+
+Date Added
+
+18.193.44.6
+
+February 2025
+
+18.192.168.53
+
+February 2025
+
+18.198.10.240
+
+February 2025
+
+3.72.195.108
+
+--
+
+3.124.164.113
+
+--
+
+18.185.73.193
+
+--
+
+Sandbox environments hosted in EU - Germany
+
+IP Address
+
+Date Added
+
+18.157.204.184
+
+February 2025
+
+18.158.210.146
+
+February 2025
+
+3.69.9.241
+
+February 2025
+
+18.194.68.163
+
+--
+
+3.123.114.19
+
+--
+
+3.72.30.224
+
+--
+
+EU - Ireland Cloud IP Addresses
+
+Coupa customers and third parties (such as banks) should whitelist the following IP addresses for Coupa Treasury sandbox and production environments for cXML document exchange.
+
+You should whitelist all addresses, as data could come from any of these IPs.
+
+Production environments hosted in EU - Ireland
+
+IP Address
+
+Date Added
+
+52.210.60.70
+
+February 2025
+
+52.213.58.230
+
+February 2025
+
+52.215.2.214
+
+February 2025
+
+54.74.113.224
+
+--
+
+54.74.149.134
+
+--
+
+54.155.92.26
+
+--
+
+Sandbox environments hosted in EU - Ireland
+
+IP Address
+
+Date Added
+
+52.16.139.241
+
+February 2025
+
+52.19.120.124
+
+February 2025
+
+52.49.101.164
+
+February 2025
+
+54.72.233.113
+
+--
+
+54.73.129.47
+
+--
+
+54.73.142.4
+
+--
+
+US - Virginia Cloud IP Addresses
+
+Coupa customers and third parties (such as banks) should whitelist the following IP addresses for Coupa Treasury sandbox and production environments for cXML document exchange.
+
+You should whitelist all addresses, as data could come from any of these IPs.
+
+Production environments hosted in US - Virginia
+
+IP Address
+
+Date Added
+
+34.194.82.238
+
+February 2025
+
+54.144.172.51
+
+February 2025
+
+3.211.88.16
+
+February 2025
+
+44.195.175.21
+
+--
+
+44.196.106.199
+
+--
+
+52.2.144.138
+
+--
+
+Sandbox environments hosted in US - Virginia
+
+IP Address
+
+Date Added
+
+3.233.87.13
+
+February 2025
+
+44.195.7.183
+
+February 2025
+
+54.90.202.98
+
+February 2025
+
+3.214.105.68
+
+--
+
+52.4.37.212
+
+--
+
+3.224.146.60
+
+--

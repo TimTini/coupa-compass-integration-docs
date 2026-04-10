@@ -1,0 +1,33 @@
+Supplier Information Tax Registrations API (/supplier_information_tax_registrations)
+
+The URL to access supplier information is: https://<instance>/api/supplier_information_tax_registrations
+
+SIM API permissions must be included with your API key to enable proper usage. Existing API keys without SIM API permissions won't be able to access the /api/supplier_information_tax_registrations resource. See API Key Security and Integration Best Practices for more info.
+
+Actions
+
+The Supplier Information Tax Registrations API allows you to:
+
+Verb 	 Path 	 Action 	 Description
+POST 	 /api/supplier_information_tax_registrations 	create 	Create supplier information tax registration
+DELETE 	 /api/supplier_information_tax_registrations/:id 	destroy 	/api/supplier_information_tax_registrations/:id
+GET 	 /api/supplier_information_tax_registrations/:id 	show 	Show supplier information tax registration
+PATCH 	 /api/supplier_information_tax_registrations/:id 	update 	Update supplier information tax registration
+PUT 	 /api/supplier_information_tax_registrations/:id 	update 	Update supplier information tax registration
+
+Elements
+
+The following elements are available for the Supplier Information Tax Registrations API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+number 	Tax Number 	yes 	no 	any 	yes 	yes 	string(940)
+supplier_information_address_id 	Primary Address ID 	no 	no 	any 	yes 	yes 	integer
+supplier_information_id 	Supplier Information ID 	no 	no 	any 	yes 	yes 	integer
+active 	Tax Registration Status 	no 	no 	any 	yes 	yes 	boolean
+local 	Local Tax Number 	no 	no 	any 	yes 	yes 	boolean
+country 	Country Sub Object 	yes 	no 	any 	yes 	yes
+id 	Tax Registration ID 	no 	no 	any 	yes 	yes 	integer
+created_at 	Created Date and Time 	no 	no 	any 	yes 	yes 	datetime
+updated_at 	Last Updated Date and Time 	no 	no 	any 	yes 	yes 	datetime
+created_by 	User who created 	no 	no 	any 	yes 	yes 	integer
+updated_by 	User who last updated 	no 	no 	any 	yes 	yes 	integer

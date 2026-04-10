@@ -1,0 +1,18 @@
+---
+title: "R34_Coupa_Pay_Virtual_Card_API.json"
+url: "https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Coupa_Pay_Virtual_Card_API.json"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbbtswDP0VQ%2B%2B2bOfSWkgCpM2GBWg3o8n2sJeCltlVqCypotxlf1%2FZaYdsQPrII%2FJcSC0IOu3Eug%2BP5g6fe6SQbDdLdt82KKtLrNIWZJNOm3ySNpPZPJ3PqqqQzSVOIGfJD%2FSkrFmyMovVlqjHraEAJkQoL%2BdpPk2LfJ8XYjYX%2BUVWVpOfLNlEFWUgjJOPITgSnEvbO0jxENAb0Jl9CpBJ23Fw7r%2B3%2Bwg7IHLWh1gVHA9Ptsz7HKbl5qr7JKEIF5zI8iEcSz5bL3FMuGQPoAkHp3UkUC%2F4F6m9DVZafaVMq8yvJeu9ERZIkTDQIYkgxW59eyNiUtEcm0h82e%2FrtP6227NkTYR%2BiHRtDfUd%2Bh36FyXx%2B93NacjReTYGGuMNnPzcLEsOnTYkxiN9bMm9%2BWerxdAtxlv4k%2FmPx%2BHdAVud9brgJ8xHGSe%2BRqrtprZayT%2FDpjsI55WKrBgR1aYPY6vADpRet61HorhDre3va48Q4mGC7%2BMC%2BOoo%2B%2B8fXb0C&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Coupa_Pay_Virtual_Card_API.json"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:56:29+00:00"
+---
+
+# R34_Coupa_Pay_Virtual_Card_API.json
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Coupa_Pay_Virtual_Card_API.json](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/core_api_and_csv_download_formats/misc/R34/R34_Coupa_Pay_Virtual_Card_API.json)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbbtswDP0VQ%2B%2B2bOfSWkgCpM2GBWg3o8n2sJeCltlVqCypotxlf1%2FZaYdsQPrII%2FJcSC0IOu3Eug%2BP5g6fe6SQbDdLdt82KKtLrNIWZJNOm3ySNpPZPJ3PqqqQzSVOIGfJD%2FSkrFmyMovVlqjHraEAJkQoL%2BdpPk2LfJ8XYjYX%2BUVWVpOfLNlEFWUgjJOPITgSnEvbO0jxENAb0Jl9CpBJ23Fw7r%2B3%2Bwg7IHLWh1gVHA9Ptsz7HKbl5qr7JKEIF5zI8iEcSz5bL3FMuGQPoAkHp3UkUC%2F4F6m9DVZafaVMq8yvJeu9ERZIkTDQIYkgxW59eyNiUtEcm0h82e%2FrtP6227NkTYR%2BiHRtDfUd%2Bh36FyXx%2B93NacjReTYGGuMNnPzcLEsOnTYkxiN9bMm9%2BWerxdAtxlv4k%2FmPx%2BHdAVud9brgJ8xHGSe%2BRqrtprZayT%2FDpjsI55WKrBgR1aYPY6vADpRet61HorhDre3va48Q4mGC7%2BMC%2BOoo%2B%2B8fXb0C&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Coupa_Pay_Virtual_Card_API.json](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLbbtswDP0VQ%2B%2B2bOfSWkgCpM2GBWg3o8n2sJeCltlVqCypotxlf1%2FZaYdsQPrII%2FJcSC0IOu3Eug%2BP5g6fe6SQbDdLdt82KKtLrNIWZJNOm3ySNpPZPJ3PqqqQzSVOIGfJD%2FSkrFmyMovVlqjHraEAJkQoL%2BdpPk2LfJ8XYjYX%2BUVWVpOfLNlEFWUgjJOPITgSnEvbO0jxENAb0Jl9CpBJ23Fw7r%2B3%2Bwg7IHLWh1gVHA9Ptsz7HKbl5qr7JKEIF5zI8iEcSz5bL3FMuGQPoAkHp3UkUC%2F4F6m9DVZafaVMq8yvJeu9ERZIkTDQIYkgxW59eyNiUtEcm0h82e%2FrtP6227NkTYR%2BiHRtDfUd%2Bh36FyXx%2B93NacjReTYGGuMNnPzcLEsOnTYkxiN9bMm9%2BWerxdAtxlv4k%2FmPx%2BHdAVud9brgJ8xHGSe%2BRqrtprZayT%2FDpjsI55WKrBgR1aYPY6vADpRet61HorhDre3va48Q4mGC7%2BMC%2BOoo%2B%2B8fXb0C&RelayState=http%3A%2F%2Fcompass.coupa.com%2F_dita_%2Fen-us%2Fdocumentation%2Fplat%2Finteg%2Fcore_api_and_csv_download_formats%2Fmisc%2FR34%2FR34_Coupa_Pay_Virtual_Card_API.json)
+
+Observed redirect page title: Coupa Portals - Sign In

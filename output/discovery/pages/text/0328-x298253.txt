@@ -1,0 +1,9 @@
+x298253.xml
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/x298253.xml
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdj9MwEPwrkd%2BT2E36gdVW6l1BVDoguhYeeDntJVvOOsc2Xuco%2Fx7HBVSQeo873pmd2fWSoNdObobwZO7x%2B4AUst12xR64mE2POF%2FkRzGZ5XWN03zxOJvnoq6Ad%2FPqTbfgLPuCnpQ1KzYpYrUjGnBnKIAJEeKRyOtc8AMXcrqQvCqqqv7Ksm2cogyExHwKwZEsy9YODnI8BfQGdGGfAxSt7Utw7r%2B3hwg7IHLWh1iJEk%2FPdsIHDvVke9O%2FbUGEeUlkyzEcy95Z32JKuGJH0ISj0yYKqBf8izTeBttafaNMp8y3FRu8kRZIkTTQI8nQyv3mw52MSeXjuYnk%2B8OhyZtP%2BwPLNkTox0i31tDQo9%2Bjf1Etfr6%2FuwyZnBcpUIo3apbXuCw79dqQTEd63ZL77Z%2Btl2O3TLfwF%2FzX6fDHAVtf9bosL5TPY5z8GKV228Zq1f4cN91DuD5JFCIhqsuPqVViD0pvus4jUdyh1vbHrUcI8TDBD3EB5fo89t8%2Fuv4F&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Finventory%2Fcycle-counts
+
+Observed redirect page title: Coupa Portals - Sign In

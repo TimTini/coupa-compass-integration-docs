@@ -1,0 +1,193 @@
+---
+title: "System - FX and Interest Rate Scenarios Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-csv-format-descriptions-(classic)/system-fx-and-interest-rate-scenarios-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/treasury-integrations/treasury-csv-format-descriptions-(classic)/system-fx-and-interest-rate-scenarios-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:59+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Treasury Integrations"
+  - "Treasury CSV Format Descriptions (classic)"
+  - "System - FX and Interest Rate Scenarios Import"
+---
+
+# System - FX and Interest Rate Scenarios Import
+
+## Format Descriptions
+
+[PDF Version](https://compass.coupa.com/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/System_-_FX_and_Interest_Rate_Scenarios_Import.pdf)
+
+## FX Rate Not Per Period
+
+| **#** | **Name** | **Type** | **Mandatory** | **Comment** |
+| --- | --- | --- | --- | --- |
+| 1 | Currency | char - 3 | Yes | Currency ISO code. |
+| 2 | Rate | decimal | Yes | |
+
+## FX Rate Per Period
+
+| **#** | **Name** | **Type** | **Mandatory** | **Comment** |
+| --- | --- | --- | --- | --- |
+| 1 | Date (from) | date | Yes | Date as of which the rate is valid. |
+| 2 | Currency | char - 3 | Yes | Currency ISO code. |
+| 3 | Rate | decimal | Yes | |
+
+## Interest Rate Not Per Period
+
+| **#** | **Name** | **Type** | **Mandatory** | **Comment** |
+| --- | --- | --- | --- | --- |
+| 1 | Currency | char - 3 | Yes | Currency ISO code. |
+| 2 | Days | integer | * | Number of days in the time range. |
+| 3 | Time Range | char - 4 | * | |
+| 4 | Interest Rate | decimal | Yes | |
+
+* - Only one field is mandatory, depending on the scenario type (time range or
+not).
+
+## Interest Rate Per Period, No Multicurve
+
+| **#** | **Name** | **Type** | **Mandatory** | **Comment** |
+| --- | --- | --- | --- | --- |
+| 1 | From | date | Yes | Date as of which the rate is valid. |
+| 2 | Currency | char - 3 | Yes | Currency ISO code. |
+| 3 | Days | integer | * | Number of days in the time range. |
+| 4 | Time Range | char - 4 | * | |
+| 5 | Interest Rate | decimal | Yes | |
+
+* - Only one field is mandatory, depending on the scenario type (time range or
+not).
+
+## Interest Rate Per Period, No Multicurve
+
+| **#** | **Name** | **Type** | **Mandatory** | **Comment** |
+| --- | --- | --- | --- | --- |
+| 1 | From | date | Yes | Date as of which the rate is valid. |
+| 2 | Currency | char - 3 | Yes | Currency ISO code. |
+| 3 | Days | integer | No | Number of days in the time range. |
+| 4 | Time Range | char - 4 | Yes | |
+| 5 | Interest Rate | decimal | Yes | |
+| 6 | Interest type | integer | Yes | 0 = Discount 1 = Tenor |
+| 7 | Tenor | char - 4 | * | |
+
+* - If Interest type = 1 (Tenor), this field is mandatory. If Interest rate = 0
+(Discount), this field must be empty.
+
+## Import Function
+
+The import function is
+available on **Commodity Scenarios**, **Interest Rate Change Scenarios**, **Interest
+Scenarios**, **Rate Change Scenarios**, and **Rate Scenarios**.
+
+For any
+configured scenario, click the **Details** button to open the details pop-up window.
+Under **Import From File**, use the **Choose File** button to select a file for
+import.
+
+The import function processes files in standard text formats:
+
+- ASCII
+
+- Unicode
+
+One file contains data about one specific scenario. That scenario must be set up in
+Coupa Treasury prior to the file import.
+
+Each imported data set overwrites any
+existing data sets.
+
+## Format Rules
+
+The file cannot contain any
+headers or format descriptions. Do not enclose text in quotation marks.
+
+One file may
+contain multiple data sets. Each row contains exactly one data set.
+
+- ASCII Code 13: carriage return shows the end of a data set.
+
+- ASCII Code 10: new line shows the end of a data set.
+
+- The last data set concludes by an end of file (EOF).
+
+In the table above, the value for “char” shows how many characters is the maximum
+length for that field in the imported file.
+
+For decimals, negative numbers are marked
+with a leading minus sign. There may be a space between the minus sign and the number. For
+values without decimal places, the decimal separator is optional:
+
+- Example: 12345.99, -12345.00, 12345
+
+Days and months are always 2-digit values, whereas years are 4 digits.
+
+Date
+separator, date sequence, and file format must match your user settings.
+
+- **Field Separator**– semicolon (;)
+
+- **Decimal Separator**– period (.), comma (,), no thousands separators
+
+- **Decimal**: Negative amounts must be marked with a minus sign (-); blanks between
+the minus sign and the amount are allowed.
+
+- **Integer** – No thousands or decimal separators
+
+- **Date Separator**– slash (/), period (.), comma (,)
+
+- **Date Sequence**– mdy, dmy, ymd
+
+## Example Data Sets
+
+**FX Rate Not Per
+Period**
+
+EUR;1
+
+USO;1,20156
+
+CHF;1,5751
+
+**FX Rate Per Period
+**
+
+11.10.2019;USD;1,2362
+
+11.10.2019;JPY;135,19
+
+11.10.2019;GBP;0,6887
+
+**Interest
+Rate Not Per Period
+**
+
+EUR;1;1D;2,156
+
+EUR;7;1W;2,218
+
+EUR;14;2W;2,496
+
+**Interest Rate
+Per Period, No Multi-Curve
+**
+
+11.10.2019;EUR;1;1D;2,156
+
+11.10.2019;EUR;7;1W;2,218
+
+11.10.2019;EUR;14;2W;2,496
+
+**Interest
+Rate Per Period, With Multi-Curve
+**
+
+11.10.2019;EUR;1;1D;2,156;0
+
+11.10.2019;EUR;7;1W;2,218;0
+
+11.10.2019;EUR;14;2W;2,496;0
+
+11.10.2019;EUR;1;1D;2,056;1;3M
+
+11.10.2019;EUR;7;1W;2,118;1;3M
+
+11.10.2019;EUR;14;2W;2,396;1;3M

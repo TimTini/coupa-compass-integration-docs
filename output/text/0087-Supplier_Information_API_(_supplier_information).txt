@@ -1,0 +1,1311 @@
+Supplier Information API (/supplier_information)
+
+Use the supplier information API to send the supplier information you collected via SIM to your ERP or financial system.
+
+The URL to access supplier information is: https://<instance>/api/supplier_information
+
+SIM API permissions must be included with your API key to enable proper usage. Existing API keys without SIM API permissions won't be able to access the /api/supplier_information resource. See Integration Best Practices for more info.
+
+Note:
+
+SIM API GET calls include SIM Sites in response payloads. For more information, see Postman Collection for Coupa APIs.
+
+Note:
+
+As of R31, when fields are NULL (for example, when a field is blank), the API does not return those fields in the payload. When the payload varies, the target system throws an error message.
+
+For more information about ISO codes, see List of international country codes.
+
+Actions
+
+The Supplier Information API allows you to:
+
+Verb
+
+Path
+
+Action
+
+Description
+
+POST
+
+/api/supplier_information
+
+create
+
+Create. When a POST call is made without specifying the supplier-id, an associatted Supplier record is automatically created.
+
+GET
+
+/api/supplier_information
+
+index
+
+Index
+
+GET
+
+/api/supplier_information/:id
+
+show
+
+Show
+
+PUT
+
+/api/supplier_information/:id
+
+update
+
+Update
+
+Note:
+
+This API call may Return a snippet of Ruby code as part of the GET response payload. This code snippet can be disregard.
+
+Elements
+
+The following elements are available for the Supplier Information API:
+
+(Scroll the table to see the additional columns)
+
+Element
+
+Description
+
+Required?
+
+Unique?
+
+Allowable Value
+
+Api In?
+
+Api Out?
+
+Data Type
+
+allow-cxml-invoicing
+
+Allow cXML Invoicing
+
+yes
+
+boolean
+
+allow-inv-choose-billing-account
+
+Allow Choosing Billing Account in Invoicing
+
+yes
+
+boolean
+
+allow-inv-from-connect
+
+Allow Invoicing from Connect
+
+yes
+
+boolean
+
+allow-inv-no-backing-doc-from-connect
+
+Allow Invoicing with no Backing Doc from Connect
+
+yes
+
+boolean
+
+allow-inv-unbacked-lines-from-connect
+
+Allow Invoicing with Unbacked Lines from Connect
+
+yes
+
+boolean
+
+backend-system-catalog
+
+Backend System Used for Catalog Management
+
+CatBase, Elastic, iPartner Product Suite, Claritum, Contalog, CatalognTime, Advizia, Aravo, MatrixCMX, SigmaCommerce
+
+yes
+
+yes
+
+string(255)
+
+backend-system-invoicing
+
+Backend System Used for Invoice
+
+SAP, Oracle
+
+yes
+
+yes
+
+string(255)
+
+buyer-hold
+
+Hold POs for buyer review
+
+yes
+
+yes
+
+boolean
+
+buyer-id
+
+Buyer ID
+
+yes
+
+yes
+
+integer
+
+comment
+
+Comment Text
+
+yes
+
+yes
+
+text
+
+comment-source
+
+Comment Source
+
+yes
+
+yes
+
+string(255)
+
+commodity-id
+
+Commodity ID
+
+yes
+
+integer
+
+content-groups
+
+Content groups
+
+yes
+
+yes
+
+Business Groups
+
+country-of-operation
+
+Country of Operation
+
+yes
+
+yes
+
+Country
+
+country-of-operation-id
+
+Country of Operation ID
+
+yes
+
+integer
+
+created-at
+
+SIM Record Create Date and Time
+
+yes
+
+datetime
+
+created-by
+
+SIM record created by User
+
+yes
+
+Users
+
+currency-id
+
+Currency ID
+
+yes
+
+yes
+
+integer
+
+cxml-domain
+
+cXML Domain
+
+yes
+
+yes
+
+string
+
+cxml-http-username
+
+cXML HTTP Username
+
+yes
+
+yes
+
+string
+
+cxml-identity
+
+cXML Identity
+
+yes
+
+yes
+
+string
+
+cxml-protocol
+
+cXML Protocol
+
+yes
+
+yes
+
+string
+
+cxml-secret
+
+cXML Secret
+
+yes
+
+yes
+
+string
+
+cxml-ssl-version
+
+cXML SSL Version
+
+yes
+
+yes
+
+string
+
+cxml-supplier-domain
+
+cXML Supplier Domain
+
+yes
+
+yes
+
+string
+
+cxml-supplier-identity
+
+cXML Supplier Identity
+
+yes
+
+yes
+
+string
+
+cxml-url
+
+cXML URL
+
+yes
+
+yes
+
+string
+
+default-commodity
+
+Default Commodity
+
+yes
+
+yes
+
+Commodities
+
+default-commodity-id
+
+Default Commodity
+
+yes
+
+integer
+
+default-invoice-email
+
+Default Invoice Email
+
+yes
+
+string(255)
+
+disable-cert-verify
+
+Disable Cert Verify
+
+yes
+
+yes
+
+boolean
+
+display-name
+
+Supplier Display Name
+
+yes
+
+yes
+
+string(255)
+
+duns-number
+
+Dun and Bradstreet Number
+
+yes
+
+yes
+
+string(255)
+
+duplicate-exists
+
+Duplicate Exists
+
+yes
+
+yes
+
+boolean
+
+estimated-spend-amount
+
+Estimate Spend Amount
+
+yes
+
+yes
+
+decimal(30,4)
+
+fed-reportable
+
+Federal Tax Reportable Indicator
+
+yes
+
+yes
+
+boolean
+
+federal-tax-num
+
+Federal Tax ID Number
+
+yes
+
+yes
+
+string(255)
+
+goods-services-provided
+
+Goods and Services Provided
+
+yes
+
+yes
+
+string(255)
+
+govt-agency-interaction
+
+Government Agency Interaction Explanation
+
+yes
+
+yes
+
+text
+
+govt-agency-interaction-indicator
+
+Government Agency Interaction Indicator
+
+yes
+
+yes
+
+boolean
+
+govt-allegation-fraud-bribery
+
+Supplier policy for government allegations of fraud and bribery
+
+yes
+
+yes
+
+string(255)
+
+govt-allegation-fraud-bribery-indicator
+
+Does the supplier have a policy for government allegations of fraud and bribery?
+
+yes
+
+yes
+
+boolean
+
+hold-invoices-for-ap-review
+
+Hold Invoices for AP Review
+
+yes
+
+boolean
+
+hold-payment
+
+Hold Payment
+
+yes
+
+yes
+
+string(255)
+
+hold-payment-indicator
+
+Hold Payment Indicator
+
+yes
+
+yes
+
+boolean
+
+id
+
+SIM ID
+
+yes
+
+integer
+
+inbound-invoice-domain
+
+Inbound Invoice Email Domain
+
+yes
+
+string(255)
+
+inco-terms
+
+Inco Terms
+
+EXW, FCA, CPT, CIP, DAT, DAP, DDP, FAS, FOB, CFR, CIF, DPU
+
+yes
+
+yes
+
+string(255)
+
+income-type
+
+Income Type
+
+yes
+
+yes
+
+string(255)
+
+industry
+
+Primary Industry of Supplier
+
+yes
+
+yes
+
+string(255)
+
+intl-other-explanation
+
+International Tax Classification Explanation
+
+yes
+
+yes
+
+string(255)
+
+intl-tax-classification
+
+International Tax Classification
+
+Active NFFE, Passive NFFE (including trusts), Exempt beneficial owner, Deemed compliant FFI, Canadian Financial Institution, Other Partner Jurisdiction Financial Institution, Participating Foreign Financial Institution, Non Participating Financial Institution, Specified U.S. Person, Not a Specified U.S. Person, 1099, C Corp, Customer Refund, Exempt 1099, Tax Authority, Tax & Gov, Vendor, Non Profit, Partner Referral, S Corp, Foreign Company, Active NFFE, Passive NFFE (including trusts), Exempt beneficial owner, Deemed compliant FFI, Canadian Financial Institution, Other Partner Jurisdiction Financial Institution, Participating Foreign Financial Institution, Non Participating Financial Institution, Specified U.S. Person, Not a Specified U.S. Person
+
+yes
+
+yes
+
+string(255)
+
+intl-tax-num
+
+International Tax Number
+
+Note
+
+Filtering on this field is not supported. To query related information, use the Supplier Information Tax Registrations API.
+
+yes
+
+yes
+
+string(255)
+
+invoice-amount-limit
+
+Invoice Amount Limit
+
+yes
+
+yes
+
+text
+
+invoice-inbound-emails
+
+Invoice Inbound Emails
+
+yes
+
+text
+
+invoice-matching-level
+
+Invoice Matching Level
+
+yes
+
+string(255)
+
+last-exported-at
+
+Last Exported Flag
+
+yes
+
+string(255)
+
+logo-content-type
+
+Logo content type
+
+yes
+
+string(255)
+
+logo-file-name
+
+Logo file name
+
+yes
+
+string(255)
+
+logo-file-size
+
+Logo file size
+
+yes
+
+integer
+
+logo-updated-at
+
+Logo updated at
+
+yes
+
+datetime
+
+minority-indicator
+
+MWBE Indicator
+
+yes
+
+yes
+
+boolean
+
+minority-type-id
+
+Minority Type
+
+1, 2, 3, 4, 1, 2, 3, 4
+
+yes
+
+yes
+
+integer
+
+name
+
+Supplier name
+
+yes
+
+yes
+
+yes
+
+string(100)
+
+organization-type
+
+Organization Type
+
+Corporation, Foreign Corporation, Individual, Foreign Individual, Partnership, Foreign Partnership
+
+yes
+
+yes
+
+string(255)
+
+parent-company-name
+
+Parent Company Name
+
+yes
+
+yes
+
+string(255)
+
+pay-group
+
+Pay Group
+
+Direct Debit, Standard, Customer Refund, Employee, Intercompany, Lease, Partner Referral, Rent, Tax, Util/Telecom, Direct Debit, Standard, Customer Refund, Employee, Intercompany, Lease, Partner Referral, Rent, Tax, Util/Telecom
+
+yes
+
+yes
+
+string(255)
+
+payment-term
+
+Payment Term
+
+yes
+
+yes
+
+Payment Terms
+
+payment-term-id
+
+Payment Term
+
+yes
+
+yes
+
+integer
+
+payment-terms-id
+
+Payment Term
+
+yes
+
+yes
+
+integer
+
+po-change-method
+
+PO Change Method
+
+cxml, xml, email, prompt, mark_as_sent, buy_online
+
+yes
+
+yes
+
+string(255)
+
+po-email
+
+PO Email
+
+yes
+
+yes
+
+string(255)
+
+po-method
+
+PO Method
+
+cxml, xml, email, prompt, mark_as_sent, buy_online
+
+yes
+
+yes
+
+string(255)
+
+policy-for-bribery-corruption
+
+Supplier policy for bribery and corruption
+
+yes
+
+yes
+
+text
+
+policy-for-bribery-corruption-indicator
+
+Does the supplier have a policy for bribery and corruption?
+
+yes
+
+yes
+
+boolean
+
+preferred-currency
+
+Preferred Currency
+
+yes
+
+yes
+
+Currencies
+
+preferred-currency-id
+
+Default Currency ID
+
+yes
+
+integer
+
+preferred-language
+
+Preferred Language
+
+yes
+
+yes
+
+Language
+
+preferred-language-id
+
+Preferred Language ID
+
+yes
+
+integer
+
+savings-pct
+
+Savings Percentage
+
+yes
+
+decimal(8,2)
+
+send-invoices-to-approvals
+
+Send Invoices to Approvals
+
+yes
+
+boolean
+
+separate-remit-to
+
+Separate Remit To
+
+yes
+
+yes
+
+boolean
+
+shipping-term-id
+
+Shipping Term ID
+
+yes
+
+integer
+
+status
+
+Status
+
+yes
+
+yes
+
+yes
+
+string(255)
+
+strategic_supplier 	Strategic Supplier 	no
+
+supplier-id
+
+Supplier ID
+
+yes
+
+yes
+
+integer
+
+supplier-information-addresses
+
+Addresses Sub-Object
+
+yes
+
+yes
+
+SupplierInformationAddress
+
+supplier-information-artifacts
+
+Artifacts/Attachments Sub-Object
+
+yes
+
+yes
+
+SupplierInformationArtifact
+
+supplier_information_classification_detail
+
+Supplier Classification Sub-Object for Custom Fields
+
+yes
+
+yes
+
+Supplier Classification Detail Object
+
+supplier_information_enterprise_detail
+
+Enterprise Supplier Data Sub-Object for Custom Fields
+
+yes
+
+yes
+
+Supplier Enterprise Detail Object
+
+supplier_information_insurance_detail
+
+Insurance Sub-Object for Custom Fields
+
+yes
+
+yes
+
+Supplier Insurance Detail Object
+
+supplier_information_risk_detail
+
+Risk Sub-Object for Custom Fields
+
+yes
+
+yes
+
+Supplier Risk Detail Object
+
+supplier_information_tax_detail
+
+Tax Sub-Object for Custom Fields
+
+yes
+
+yes
+
+Supplier Tax Detail Object
+
+supplier-information-contacts
+
+Contacts Sub-Object
+
+yes
+
+yes
+
+SupplierInformationContact
+
+supplier-name
+
+Supplier Name
+
+yes
+
+string(255)
+
+supplier-number
+
+Supplier Number
+
+yes
+
+string(255)
+
+supplier-region
+
+Supplier Region
+
+AMER, EMEA, APAC, Japan
+
+yes
+
+yes
+
+string(255)
+
+tax-classification
+
+US Tax Classification
+
+1099, C Corp, Customer Refund, Exempt 1099, Tax Authority, Tax & Gov, Vendor, Non Profit, Partner Referral, S Corp, Foreign Company
+
+yes
+
+yes
+
+string(255)
+
+tax-code-id
+
+Tax Code ID
+
+yes
+
+yes
+
+integer
+
+tax-exempt-other-explanation
+
+Tax Exempt Explanation
+
+yes
+
+yes
+
+string(255)
+
+tax-region
+
+Tax Region
+
+1099, C Corp, Customer Refund, Exempt 1099, Tax Authority, Tax & Gov, Vendor, Non Profit, Partner Referral, S Corp, Foreign Company, US, International
+
+yes
+
+yes
+
+string(255)
+
+third-party-interaction
+
+Supplier policy for Third Party Interactions
+
+yes
+
+yes
+
+text
+
+third-party-interaction-indicator
+
+Supplier has a policy for its Third Party Interactions?
+
+yes
+
+yes
+
+boolean
+
+updated-at
+
+SIM Record Updated Date and Time
+
+yes
+
+datetime
+
+updated-by
+
+SIM record updated by User
+
+yes
+
+Users
+
+user-id
+
+User ID
+
+yes
+
+yes
+
+integer
+
+website
+
+Website
+
+yes
+
+string(255)
+
+minority-designation-id
+
+Minority Designation
+
+1, 2, 3
+
+yes
+
+yes
+
+integer
+
+minority-type-id
+
+minority_type_id
+
+5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+diversities
+
+List of Supplier Information Diversities
+
+Diversity Marker Codes
+
+yes
+
+yes
+
+[]
+
+one-time-supplier
+
+Indicates whether the supplier is a One Time Supplier
+
+yes
+
+yes
+
+boolean
+
+scope-three-emissions
+
+Indicates whether the supplier tracks Scope Three Emissions
+
+yes
+
+yes
+
+boolean
+
+website
+
+Website
+
+yes
+
+string(255)
+
+invoice-matching-level
+
+Invoice Matching Level
+
+yes
+
+string(255)
+
+shipping-term-id
+
+Shipping Term ID
+
+yes
+
+integer
+
+Diversity marker codes
+
+Diversity Marker Code
+
+Description
+
+ABILITYONE
+
+Ability One Program
+
+ACDBE
+
+Airport Concession Disadvantaged Business Enterprise
+
+AMS
+
+Aboriginal and Minority Supplier
+
+ANC
+
+Alaskan Native Corporation
+
+BOB
+
+Black-owned business
+
+DBE
+
+Disadvantaged Business Enterprise
+
+DOB
+
+Disability Owned Businesses
+
+DVBE
+
+Disabled Veteran Business Enterprise
+
+EDWOSB
+
+Economically Disadvantaged Women-Owned Small Business
+
+EMB
+
+Ethnic minority businesses (EMBs)
+
+HBCU
+
+Historically Black College or University / Minority Institution
+
+HUBZone
+
+Historically Underutilized Business Zone
+
+IOB
+
+Indigenous-owned business
+
+LGBTBE
+
+Lesbian, Gay, Bisexual, Transgender Business Enterprise
+
+LSA
+
+Labor Surplus Area
+
+MBE
+
+Minority-Owned Business Enterprise
+
+MGOB
+
+Minority group owned business
+
+NAO
+
+Native American owned
+
+NPO
+
+Non-profit Organization
+
+SBA8A
+
+SBA-8(A)
+
+SBE
+
+Small Business Enterprise
+
+SDB
+
+Small Disadvantaged Business
+
+SDVBE
+
+Service Disabled Veteran Owned Business Enterprise
+
+SDVOSB
+
+Service Disabled Veteran Owned Small Business
+
+VOB
+
+Veteran Owned Business
+
+VVO
+
+Vietnam Veteran Owned
+
+WBE
+
+Woman-Owned Business Enterprise
+
+WOSB
+
+Woman-Owned Small Business

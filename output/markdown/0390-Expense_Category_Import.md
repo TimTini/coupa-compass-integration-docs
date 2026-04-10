@@ -1,0 +1,54 @@
+---
+title: "Expense Category Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/expense-category-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/expense-category-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:36+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Expense Category Import"
+---
+
+# Expense Category Import
+
+## Expense Category
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Name* | Yes | Yes | string(255) | Expense Category Name | |
+| Key* | Yes | No | | Expense Category Key | |
+| Group | No | No | string(255) | Group of Expense Category | |
+| Active* | Yes | No | boolean | Specifies whether the category is usable or selectable | true, false |
+| Attendee Tracking Enabled | No | No | boolean | Enable attendee tracking for category | |
+| Exclude User as Attendee | No | No | | User will not be able to add themselves as an attendee for this category | |
+| Attendee Types | No | No | | List of allowed attendee types, separated by comma ',' | |
+| Type | No | No | string(255) | Type of Expense Category | |
+| Currency | No | No | | Expense Policy Currency Code (3 Characters) | |
+| Content Groups | No | No | | Expense Policy Content Group Names | |
+| Limit Amount | No | No | | Expense Policy Limit Amount | |
+| Show Frugal Meter | No | No | | Determine if the Coupa Frugal Meter should be shown | |
+| Requires Receipt | No | No | | Does the Expense Policy Require a Receipt | |
+| Summary | No | No | | Expense Policy Summary | |
+| Text | No | No | | Expense Policy Text | |
+| Distance Unit | No | No | | Distance Unit in (Km / Mi) | |
+| Require Address | No | No | | Determine if Address fields should be shown | |
+| Show Map | No | No | | Determine if Google map should be shown | |
+| Simple Fixed Rate Enabled | No | No | | Determine if mileage category type is Fixed Rate | |
+| Simple Fixed Rate Amount | No | No | | Rate to be applied for Fixed Rate Mileage Category | |
+| Simple Fixed Rate Currency | No | No | | Rate currency | |
+| Country | No | No | | Home Country for Advanced Mileage | |
+| Vehicle Type Rule Enabled | No | No | | Determine if Vehicle Type should be shown | |
+| Vehicle Type Prompt | No | No | | Prompt for Vehicle Type | |
+| Region Rule Enabled | No | No | | Determine if Region should be shown | |
+| Region Prompt | No | No | | Prompt for Region | |
+| Passenger Count Rule Enabled | No | No | | Determine if Passenger Count should be shown | |
+| Passenger Count Prompt | No | No | | Prompt for Passenger Count | |
+| Mileage Accumulation Rule Enabled | No | No | | Determine if Mileage should be accumulated | |
+| Accumulation Period Start Day Month | No | No | | Period Start Day Month for accumulation cycle | |
+| Base Rate | No | No | | Base Rate | |
+| Rate 2 | No | No | | Rate 2 | |
+| Rate 3 | No | No | | Rate 3 | |
+| Rate 4 | No | No | | Rate 4 | |
+| Rate 5 | No | No | | Rate 5 | |

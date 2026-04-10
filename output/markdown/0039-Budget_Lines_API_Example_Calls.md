@@ -1,0 +1,362 @@
+---
+title: "Budget Lines API Example Calls"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/budget-lines-api-(budget-lines)/budget-lines-api-example-calls"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/budget-lines-api-(budget-lines)/budget-lines-api-example-calls"
+status_code: 200
+fetched_at: "2026-04-09T11:59:09+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Budget Lines API (/budget lines)"
+  - "Budget Lines API Example Calls"
+---
+
+# Budget Lines API Example Calls
+
+## Get Budget Line Query Options
+
+Here are more examples of how to use the budget line API to
+query and get the result set you want.
+
+This query will return all budget lines with a budget period
+name already defined
+
+```text
+https://<instance>.coupa.com/api/budget_lines?period[name]=Q3FY09
+```
+
+This query will return all budget lines for the budget owner
+with the last name of "Carlton" and that this owner is also part of
+the approval process with any requisitions affecting his/her
+budgets.
+
+`https://.coupahost.com/api/budget_lines?owner[lastname]=Carlton&owner_is_approver=true`
+
+This query will return all budget lines belonging to the set of
+accounts named, Chart of Accounts and where the accounting period
+is open.
+
+`https://.coupahost.com/api/budget_lines?period[account-type][name]=chart+of+accounts&period[is_open]=true`
+
+## GET Budget Line
+
+In this example, we queried for a single budget line record with an ID of
+
+We did a GET to the URL:
+
+```text
+https://<instance url>/api/budget_lines/3
+```
+
+or
+
+`https:///api/budget_lines?id=3`
+
+Here is the response matching the search
+criteria:
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<budget-line>
+<id type="integer">577</id>
+<created-at type="datetime">2009-05-04T18:00:58-07:00</created-at>
+<updated-at type="datetime">2014-04-29T09:55:19-07:00</updated-at>
+<notes />
+<description>New IT Equipment Purchased for Company</description>
+<amount type="decimal">128000.00</amount>
+<remaining type="decimal">66883.00</remaining>
+<owner-is-approver nil="true" />
+<segment-1>HQ</segment-1>
+<segment-2>Development</segment-2>
+<segment-3>Assets</segment-3>
+<segment-4 nil="true" />
+<segment-5 nil="true" />
+<segment-6 nil="true" />
+<segment-7 nil="true" />
+<segment-8 nil="true" />
+<segment-9 nil="true" />
+<segment-10 nil="true" />
+<segment-11 nil="true" />
+<segment-12 nil="true" />
+<segment-13 nil="true" />
+<segment-14 nil="true" />
+<segment-15 nil="true" />
+<segment-16 nil="true" />
+<segment-17 nil="true" />
+<segment-18 nil="true" />
+<segment-19 nil="true" />
+<segment-20 nil="true" />
+<error-on-overrun type="boolean">true</error-on-overrun>
+<period>
+<id type="integer">2</id>
+<created-at type="datetime">2008-10-28T11:27:45-07:00</created-at>
+<updated-at type="datetime">2011-06-07T11:24:05-07:00</updated-at>
+<start-date type="datetime">2009-01-01T00:00:00-08:00</start-date>
+<end-date type="datetime">2009-03-31T01:00:00-07:00</end-date>
+<is-open type="boolean">false</is-open>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+<segment-1 type="boolean">true</segment-1>
+<segment-2 type="boolean">true</segment-2>
+<segment-3 type="boolean">true</segment-3>
+<segment-4 nil="true" />
+<segment-5 nil="true" />
+<segment-6 nil="true" />
+<segment-7 nil="true" />
+<segment-8 nil="true" />
+<segment-9 nil="true" />
+<segment-10 nil="true" />
+<segment-11 nil="true" />
+<segment-12 nil="true" />
+<segment-13 nil="true" />
+<segment-14 nil="true" />
+<segment-15 nil="true" />
+<segment-16 nil="true" />
+<segment-17 nil="true" />
+<segment-18 nil="true" />
+<segment-19 nil="true" />
+<segment-20 nil="true" />
+<name>Q1 FY09</name>
+<account-type>
+<id type="integer">1</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2014-03-17T14:59:59-07:00</updated-at>
+<name>Ace Corporate</name>
+<active type="boolean">true</active>
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<primary-contact>
+<id type="integer">14</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2012-01-18T11:01:36-08:00</updated-at>
+<email>upgrade@coupa.com</email>
+<name-prefix nil="true" />
+<name-suffix nil="true" />
+<name-additional nil="true" />
+<name-given>Jill</name-given>
+<name-family>Harker</name-family>
+<name-fullname nil="true" />
+<notes nil="true" />
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+</primary-contact>
+<primary-address>
+<id type="integer">17</id>
+<created-at type="datetime">2008-10-27T13:10:01-07:00</created-at>
+<updated-at type="datetime">2012-01-18T11:01:36-08:00</updated-at>
+<name nil="true" />
+<street1>28 Nevada Blvd</street1>
+<street2 />
+<city>Laughlin</city>
+<state>NV</state>
+<postal-code>94301</postal-code>
+<attention nil="true" />
+<active type="boolean">true</active>
+<business-group-name nil="true" />
+<country>
+<id type="integer">223</id>
+<code>US</code>
+<name>United States</name>
+</country>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</created-by>
+<updated-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+</primary-address>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</created-by>
+<updated-by>
+<id type="integer">69</id>
+<login>coupasupport+rohitdemo@coupa.com</login>
+<email>coupasupport+rohitdemo@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Integration</firstname>
+<lastname>User</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+</account-type>
+</period>
+<owner>
+<id type="integer">73</id>
+<login>tri</login>
+<email>trishanth.vallurupalli@coupa.com</email>
+<employee-number />
+<firstname>Trishanth</firstname>
+<lastname>Vallurupalli</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</owner>
+<currency>
+<id type="integer">1</id>
+<code>USD</code>
+</currency>
+<created-by>
+<id type="integer">1</id>
+<login>coupasupport</login>
+<email>upgrade@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Coupa</firstname>
+<lastname>Support</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</created-by>
+<updated-by>
+<id type="integer">69</id>
+<login>coupasupport+rohitdemo@coupa.com</login>
+<email>coupasupport+rohitdemo@coupa.com</email>
+<employee-number nil="true" />
+<firstname>Integration</firstname>
+<lastname>User</lastname>
+<salesforce-id nil="true" />
+<mycustom-userfield />
+</updated-by>
+</budget-line>
+```
+
+## Budget line create
+
+In this example we are creating a budget line for an existing
+period and account for an amount of 50000. We are not using any
+Coupa system ID's for any of the reference objects.
+
+We posted it to the URL:
+`https://.coupahost.com/api/budget_lines.`
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<budget_lines>
+<segment_1>San_Francisco</segment_1>
+<segment_2>Marketing</segment_2>
+<segment_3>Office_Supplies</segment_3>
+<description>budget for Mary</description>
+<period>
+<name>Q2 2012</name>
+</period>
+<amount>50000</amount>
+<owner>
+<firstname>Mary (Manager)</firstname>
+<lastname>Snow</lastname>
+<login>msnow</login>
+</owner>
+</budget_lines>
+```
+
+## Update Budget lines - full update
+
+In these examples, we are updating different information on the budget line record.
+
+We did a PUT to the URL:
+
+```text
+https://<instance>.coupahost.com/api/budget_lines/<budget line id>
+```
+
+For example, to update the budget owner for budget line id 616:
+
+```text
+URL:
+https://<instance>.coupahost.com/api/budget_lines/616
+```
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<budget_lines>
+<notes>Carlton is the budget owner</notes>
+<description>this is for budget period Q2 - 2010</description>
+<owner>
+<login>mcarlton</login>
+</owner>
+</budget_lines>
+```
+
+## Update Budget lines - simple update
+
+In these examples, we are updating a single attribute on the
+budget line record.
+
+We did a PUT to the URL:
+
+```text
+https://<instance url>/api/budget_lines/<budget line id>
+```
+
+For example, to update the amount allocated to this budget line
+to 7500 with budget line id 616
+
+URL:
+
+```text
+https://<instance url>/api/budget_lines/616
+```
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<budget_lines>
+<amount>7500</amount>
+</budget_lines>
+```

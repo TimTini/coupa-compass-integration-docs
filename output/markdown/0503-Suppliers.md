@@ -1,0 +1,83 @@
+---
+title: "Suppliers"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-quick-integration-file-formats/suppliers"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/risk-assess-integrations/risk-assess-quick-integration-file-formats/suppliers"
+status_code: 200
+fetched_at: "2026-04-09T12:01:01+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Risk Assess Integrations"
+  - "Risk Assess Quick Integration File Formats"
+  - "Suppliers"
+---
+
+# Suppliers
+
+This can be used to load suppliers using CSV import
+file. Anything in this document can be created/updated using
+the Basic Supplier CSV Import.
+
+To update UDFs (User Defined Fields) we will have to use Extended Supplier CSV Import. All
+fields that are not getting updated or not used, will have to be removed from CSV import file
+and send only deltas.
+
+## Post URL
+
+`https://.hiperos.com/QuickIntegration/Suppliers`
+
+## Order precedence/key priority
+
+- Entity ID
+
+- Supplier Number
+
+- External Reference
+
+- Supplier Name
+
+## Suppliers
+
+| **Field** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| ParentExternalReference | Enter the unique reference key of the supplier parent to link to external systems (ERP system, etc). | | | String(256) | |
+| ExternalReference (*) | Enter the unique reference key to link to external systems (ERP system, etc). NOTE: this field is required but can be left blank if the SupplierName is populated. | Yes | | String(256) | any |
+| SupplierNumber | Enter the unique reference number. | | | String(256) | Not settable, only used for updates |
+| SupplierName (*) | Enter the name of the supplier . NOTE: this field is required but can be left blank if the ExternalReference is populated. | Yes | | String(256) | any |
+| Status | Enter the status of the supplier. | | | String(64) | |
+| SupplierMgrUserName (*) | Enter the username of the internal Client supplier manager. | Yes | | String(256) | Uses regular expressions:<br>Default: ^[\w.+'-]+@[\w\.-]+\.(\w{2,7})$ Used when http context doen't exist<br>Filtering on top level domains: ^[\w.+'-]+@[\w\.-]+\.(TOPLEVELDOMAINLIST)$ Used for a logged in user<br>*Note: regex can be chaned per client via a localization change request.<br>AND Can't contain ..<br>AND Can't contain .@<br>AND Can't contain whitespace |
+| SupplierMgrFirstName | Enter the first name of the internal Client supplier manager. NOTE: this field is required only when SupplierMgrUsername does not exist in the system. | | | String(64) | any |
+| SupplierMgrLastName | Enter the last name of the internal Client supplier manager. NOTE: this field is required only when SupplierMgrUsername does not exist in the system. | | | String(64) | any |
+| AccountMgrEmail (*) | Enter the email address of external supplier account manager . | Yes | | String(256) | Email can't be a username for an exsting user on another supplier.<br>Uses regular expressions:<br>Default: ^[\w.+'-]+@[\w\.-]+\.(\w{2,7})$ Used when http context doen't exist<br>Filtering on top level domains: ^[\w.+'-]+@[\w\.-]+\.(TOPLEVELDOMAINLIST)$ Used for a logged in user<br>*Note: regex can be chaned per client via a localization change request.<br>AND Can't contain ..<br>AND Can't contain .@<br>AND Can't contain whitespace |
+| AlternateAccountMgrEmail | Enter the alternate email address of the external user. | | | String(256) | any |
+| AccountMgrFirstName (*) | Enter the first name of external supplier account manager. | Yes | | String(64) | any |
+| AccountMgrLastName (*) | Enter the last name of external supplier account manager. | Yes | | String(64) | any |
+| ShortName | Enter the supplier short name. | | | String(64) | any |
+| ParentName | Enter the supplier parent name. | | | String(256) | any |
+| LegalName | Enter the supplier legal name. | | | String(64) | any |
+| DUNSNumber | Enter the unique nine digit number for identifying and tracking. | | | String(64) | any |
+| TickerSymbol | Enter the supplier ticker symbol. | | | String(64) | |
+| IndustryClassification | Enter the industry type. Must match an existing industry classification code defined under Setup Data Management. | | | String(64) | |
+| Classification | Enter the classification type. Must match an existing classification defined under Setup Data Management. | | | String(64) | |
+| MinorityType | Enter the minority type. | | | | |
+| RiskRating | Enter the level of risk associated with the supplier. Must match an existing risk rating defined under Setup Data Management. | | | String(64) | |
+| TaxIDNumber | Enter the US tax exempt ID number. | | | String(64) | |
+| VATNumber | Enter the European VAT number. | | | String(64) | |
+| OnExclusionList | [Yes or No] Enter Yes to indicate the supplier is on the US State Department's Terrorist Exclusion List. | | | Bool | |
+| SupplierGroup | Enter the name of the supplier group. | | | | |
+| AutoApproveCompliance | [Yes or No] Enter Yes to indicate the supplier program responses for all compliance programs are automatically approved (if compliant). NOTE: setting the Auto Approve Compliance flag to 'Yes' indicates that all compliance programs for this supplier are configured as auto approval programs. This setting defaults to 'No' and overrides the program definition. | | | | |
+| Phone | Enter the supplier phone number. | | | String(64) | Uses regular expressions:<br>must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?: x[0-9]{1,4})?$<br>must have at least 7 digits |
+| Fax | Enter the supplier fax number. | | | String(64) | Uses regular expressions:<br>must match ^(?:\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*(?: x[0-9]{1,4})?$<br>must have at least 7 digits |
+| Website | Enter the supplier web site. | | | String(256) | |
+| BusinessType | Enter the business type. Must match an existing business type defined under Setup Data Management. | | | String(256) | any |
+| SupplierType | Enter the supplier type. Must match an existing supplier type defined under Setup Data Management. | | | String(256) | any |
+| YearEstablished | Enter the year the supplier was founded. | | | String(60) | |
+| EDIEnabled | Enter the EDI enabled type. | | | String(256) | |
+| LifeCycleStatus | Enter the life cycle status of the supplier. Must match an existing life cycle status. See Supplier Life Cycle Status Management. | | | | |
+| UltimateCountry | Enter the default country of origin. | | | String(64) | |
+| DefaultLanguage | Enter the default culture. | | | | |
+| WorkspaceList | Enter the name of the workspace the supplier should be included. Multiple values must be separated with the pipe character (\|). If the workspace does not exist, the import creates it and adds the supplier. If the workspace does exist, the import adds the supplier to that workspace. NOTE: all suppliers are added to the main workspace (Hiperos 3PM ). See Your Active Workspaces. | | | | |
+| OnHold | [Yes or No] Enter Yes to indicate the supplier is on hold. | | | Boolean | Yes or No |
+| HoldReason | Enter the reason the supplier is on hold. | | | String(64) | |
+| Description | Enter a brief description of the supplier. NOTE: this is the Products and/or Services field on the Supplier Management page. | | | String(Max) | any |
+
+(*)Required

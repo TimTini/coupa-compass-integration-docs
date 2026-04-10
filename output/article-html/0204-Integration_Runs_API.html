@@ -1,0 +1,345 @@
+<article class="" id="integration_runs_api">
+<h1 class="title">Integration Runs API</h1>
+<div class="body">
+<p class="">The URL to access Integration Runs
+is <code class="ph codeph">https://&lt;instance&gt;.coupahost.com/api/integration_runs</code>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration
+Best Practices</a> for more info.</p>
+<div class="" id="actions-d957e180434">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">Integration Runs API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">POST</td>
+<td class="entry" align="">/api/integration_runs</td>
+<td class="entry" align="">create</td>
+<td class="entry" align="">Create integration run with status of pending</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/integration_runs/:id/fail</td>
+<td class="entry" align="">fail</td>
+<td class="entry" align="">Set integration run status as failed</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/integration_runs</td>
+<td class="entry" align="">index</td>
+<td class="entry" align="">Query integration runs</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/integration_runs/:id/pause</td>
+<td class="entry" align="">pause</td>
+<td class="entry" align="">Set integration run status as paused</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/integration_runs/:id/pending</td>
+<td class="entry" align="">pending</td>
+<td class="entry" align="">Set integration run status as pending</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/integration_runs/:id/run</td>
+<td class="entry" align="">run</td>
+<td class="entry" align="">Set integration run status as running</td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">/api/integration_runs/:id</td>
+<td class="entry" align="">show</td>
+<td class="entry" align="">Show integration run</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/integration_runs/:id/success</td>
+<td class="entry" align="">success</td>
+<td class="entry" align="">Set integration run status as successful</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PATCH</td>
+<td class="entry" align="">/api/integration_runs/:id</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update integration run</td>
+</tr>
+<tr class="">
+<td class="entry" align="">PUT</td>
+<td class="entry" align="">/api/integration_runs/:id</td>
+<td class="entry" align="">update</td>
+<td class="entry" align="">Update integration run</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e180679">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">These are the elements available for
+the Integration Run API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>API In</b>
+</th>
+<th class="entry " align="">
+<b>API Out</b>
+</th>
+<th class="entry " align="">
+<b>Required</b>
+</th>
+<th class="entry " align="">
+<b>Length</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">created-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">end-time</td>
+<td class="entry" align="">end_time</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">flow</td>
+<td class="entry" align="">flow</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Flow</td>
+</tr>
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integration</td>
+<td class="entry" align="">integration</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">Integration</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integration</td>
+<td class="entry" align="">Standard</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integrationError</td>
+<td class="entry" align="">document_type</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">OrderHeader, InventoryTransaction, InvoiceHeader, ExpenseReport,
+RequisitionHeader, Account, Supplier, User, Address,
+RemitToAddress, Contract, ExchangeRate, Invoice, Requisition,
+Payment, ApprovalChain, LookupValue, Item, SupplierInformation</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integrationError</td>
+<td class="entry" align="">document_id</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integrationError</td>
+<td class="entry" align="">document_status</td>
+<td class="entry" align="">string</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integrationError</td>
+<td class="entry" align="">document_revision</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integration-errors</td>
+<td class="entry" align="">integration_errors</td>
+<td class="entry" align="">string</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/integrations-api-(integrations)/integration-error-api" title="">IntegrationError</a>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integrationError</td>
+<td class="entry" align="">document_type</td>
+<td class="entry" align="">string(255)</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">OrderHeader, InventoryTransaction, InvoiceHeader, ExpenseReport,
+RequisitionHeader, Account, Supplier, User, Address,
+RemitToAddress, Contract, ExchangeRate, Invoice, Requisition,
+Payment, ApprovalChain, LookupValue, Item, SupplierInformation</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integrationError</td>
+<td class="entry" align="">document_id</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integrationError</td>
+<td class="entry" align="">document_status</td>
+<td class="entry" align="">string</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">integrationError</td>
+<td class="entry" align="">document_revision</td>
+<td class="entry" align="">integer</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">records-processed</td>
+<td class="entry" align="">records_processed</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">start-time</td>
+<td class="entry" align="">start_time</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align="">transaction status</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string</td>
+</tr>
+<tr class="">
+<td class="entry" align="">total-records</td>
+<td class="entry" align="">total_records</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated-at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">datetime</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

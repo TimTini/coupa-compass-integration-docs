@@ -1,0 +1,23 @@
+Inventory Balance API
+
+Associations
+
+This resource is associated with Pick Lists/Fulfillment Reservations API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+allocated 	allocated quantity 	 	 	 	 	yes
+available 	available quantity 	 	 	 	 	yes
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+inventory-valuations 	Inventory valuations 	 	 	 	 	yes 	 Inventory Valuation
+item 	item 	yes 	 	 	 	yes 	 Item
+quantity 	consumption quantity 	 	 	 	 	yes 	integer
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User
+warehouse 	warehouse 	yes 	 	 	 	yes 	 Warehouse
+warehouse-location 	warehouse location 	yes 	 	 	 	yes 	 Warehouse Location
+adjustment_price 	Price for adjustment 	 	 	 	 	yes 	string
+uom 	Unit of Measure 	 	 	 	 	yes 	 Uom

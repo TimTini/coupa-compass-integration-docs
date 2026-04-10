@@ -1,0 +1,640 @@
+<article class="" id="extended_suppliers">
+<h1 class="title">Extended Suppliers</h1>
+<div class="body">
+<div class="" id="post_url-d126e3446">
+<h2 class="title sectiontitle">Post URL</h2>
+<p class="">
+<code class="ph codeph">https://&lt;CRA_TENANT&gt;.hiperos.com/QuickIntegration/ExtendedSuppliers</code>
+</p>
+<p class="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">The syntax for populating parent-child UDFs is to separate the
+            2 values with an ""@""      
+          </li>
+<li class="li">The syntax for populating Money and Currency UDFs is to
+            separate the 2 values with a "" "" (space)  
+          </li>
+<li class="li">Use the setup data code or set up data type code for UDFs of
+            type Set-up Data and Setup Data type.  
+          </li>
+<li class="li">The syntax for populating multi-select set-up data UDFs is to
+            separate the values with an ""@""      
+          </li>
+<li class="li">Use the username field to populate UDFs of type User
+            Selector          
+          </li>
+<li class="li">The syntax for populating multi-select UDFs is to separate the
+            values with a ""|"" (pipe character)      
+          </li>
+<li class="li">The syntax for populating Table UDFs is:
+            Row1Col1|Row1Col2|Row1Col~Row2Col1|Row2Col2|Row2Col3. Separate
+            values for each column in a given row using the | (pipe character)
+            separate rows with the ~      
+          </li>
+<li class="li">The syntax for populating the Unit of Measure UDF is: value|uom
+            string i.e. (15.0|each) Note: The uom string must be an exact match
+            to the configuration in the component.</li>
+<li class="li">Enter ""true"" to populate a Checkbox UDF with a check. (note:
+            all letters must be lower case)</li>
+<li class="li">The syntax for populating date range UDFs is to separate the 2
+            values with a ""|"" (pipe) For example: 01/01/2012|12/31/2012</li>
+</ul>
+</div>
+</p>
+</div>
+<div class="" id="extended_suppliers-d126e3479">
+<h2 class="title sectiontitle">Extended Suppliers</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Field</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Req'd</b>
+</th>
+<th class="entry " align="">
+<b>Unique</b>
+</th>
+<th class="entry " align="">
+<b>Type</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Values</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">ParentExternalReference</td>
+<td class="entry" align="">Enter the unique reference key of the supplier parent to link to
+external systems (ERP system, etc).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ExternalReference</td>
+<td class="entry" align="">Enter the unique reference key to link to external systems (ERP
+system, etc).</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierNumber</td>
+<td class="entry" align="">Enter the unique reference number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierName (*)</td>
+<td class="entry" align="">Enter the name of the supplier.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierMgrUserName (*)</td>
+<td class="entry" align="">Enter the username of the internal Client supplier manager.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierMgrFirstName</td>
+<td class="entry" align="">Enter the first name of the internal Client supplier
+manager.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierMgrLastName</td>
+<td class="entry" align="">Enter the last name of the internal Client supplier manager.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">AccountMgrEmail (*)</td>
+<td class="entry" align="">Enter the email address of external supplier account
+manager.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">AlternateAccountMgrEmail</td>
+<td class="entry" align="">Enter the alternate email address of the external user.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">AccountMgrFirstName (*)</td>
+<td class="entry" align="">Enter the first name of external supplier account manager.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">AccountMgrLastName (*)</td>
+<td class="entry" align="">Enter the last name of external supplier account manager.</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ShortName</td>
+<td class="entry" align="">Enter the supplier short name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">ParentName</td>
+<td class="entry" align="">Enter the supplier parent name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">LegalName</td>
+<td class="entry" align="">Enter the supplier legal name.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">DUNSNumber</td>
+<td class="entry" align="">Enter the unique nine digit number for identifying and tracking
+(nn-nnn-nnnn).</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">TickerSymbol</td>
+<td class="entry" align="">Enter the supplier ticker symbol.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">IndustryClassification</td>
+<td class="entry" align="">Enter the industry type. Must match an existing industry
+classification code defined under Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Classification</td>
+<td class="entry" align="">Enter the classification type. Must match an existing
+classification defined under Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align="">any</td>
+</tr>
+<tr class="">
+<td class="entry" align="">MinorityType</td>
+<td class="entry" align="">Enter the minority type.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">None</p>
+<p class="">
+African-American</p>
+<p class="">
+Asian-India American</p>
+<p class="">
+Asian-Pacific American</p>
+<p class="">
+Hispanic-American</p>
+<p class="">
+Native-American</p>
+<p class="">
+Woman-owned</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">RiskRating</td>
+<td class="entry" align="">Enter the level of risk associated with the supplier. Must match
+an existing risk rating defined under Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">TaxIDNumber</td>
+<td class="entry" align="">Enter the US tax exempt ID number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">VATNumber</td>
+<td class="entry" align="">Enter the European VAT number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">OnExclusionList</td>
+<td class="entry" align="">[Yes or No] Enter Yes to indicate the supplier is on the US
+State Department's Terrorist Exclusion List.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Boolean</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierGroup</td>
+<td class="entry" align="">Enter the name of the supplier group.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">AutoApproveCompliance</td>
+<td class="entry" align="">[Yes or No] Enter Yes to indicate the supplier program responses
+for all compliance programs are automatically approved (if
+compliant).</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Phone</td>
+<td class="entry" align="">Enter the supplier phone number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Fax</td>
+<td class="entry" align="">Enter the supplier fax number.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Website</td>
+<td class="entry" align="">Enter the supplier web site.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">BusinessType</td>
+<td class="entry" align="">Enter the business type. Must match an existing business type
+defined under Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierType</td>
+<td class="entry" align="">Enter the supplier type. Must match an existing supplier type
+defined under Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">YearEstablished</td>
+<td class="entry" align="">Enter the year the supplier was founded.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(60)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="" rowspan="5">EDIEnabled</td>
+<td class="entry" align="">Enter the EDI enabled type.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">None</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">All Types</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">AS2</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">EDI via VAN</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LifeCycleStatus</td>
+<td class="entry" align="">Enter the life cycle status of the supplier. Must match an
+existing life cycle status. See Supplier Life Cycle Status
+Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">UltimateCountry</td>
+<td class="entry" align="">Enter the default country of origin.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">DefaultLanguage</td>
+<td class="entry" align="">Enter the default culture.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">WorkspaceList</td>
+<td class="entry" align="">Enter the name of the workspace the supplier should be included.
+Multiple values must be separated with the pipe character (|). If
+the workspace does not exist, the import creates it and adds the
+supplier. If the workspace does exist, the import adds the supplier
+to that workspace. NOTE: all suppliers are added to the main
+workspace (Hiperos 3PM). See Your Active Workspaces.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Status</td>
+<td class="entry" align="">Enter the status of the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">OnHold</td>
+<td class="entry" align="">[Yes or No] Enter Yes to indicate the supplier is on hold.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">HoldReason</td>
+<td class="entry" align="">Enter the reason the supplier is on hold.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Description</td>
+<td class="entry" align="">Enter a brief description of the supplier.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(Max)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">udfs_&lt;fieldname&gt;</td>
+<td class="entry" align="">Enter one column for each Supplier UDF to be entered. Enter the
+field name of the UDF to import in each column, and the value for
+each supplier in the rows. Must match an existing r.portal UDF name
+for Suppliers. NOTE: field name must be in the format
+udfs_&lt;fieldname&gt;</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationType</td>
+<td class="entry" align="">Enter the location type. Must match an existing address type
+defined under Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationCountry</td>
+<td class="entry" align="">Enter the location country.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationAddress1</td>
+<td class="entry" align="">Enter the first line of the address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(128)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationAddress2</td>
+<td class="entry" align="">Enter the second line of the address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(128)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationAddress3</td>
+<td class="entry" align="">Enter the third line of the address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationAddress4</td>
+<td class="entry" align="">Enter the fourth line of the address.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationCity</td>
+<td class="entry" align="">Enter the location city.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationState</td>
+<td class="entry" align="">Enter the location state.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationPostalCode</td>
+<td class="entry" align="">Enter the location postal code.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationCounty</td>
+<td class="entry" align="">Enter the location county.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(64)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationDUNSNumber</td>
+<td class="entry" align="">Enter the location D-U-N-S Number (nn-nnn-nnnn).</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationContactUserName</td>
+<td class="entry" align="">Enter the location contact username.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">LocationNumber</td>
+<td class="entry" align="">Enter the location number. For internal use only.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">udfsl_&lt;fieldname&gt;</td>
+<td class="entry" align="">Enter one column for each Supplier Location UDF to be entered.
+Enter the field name of the UDF to import in each column, and the
+value for each supplier location in the rows. Must match an
+existing r.portal UDF name for Supplier Locations. NOTE: field name
+must be in the format udfsl_&lt;fieldname&gt;</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierIDType</td>
+<td class="entry" align="">Enter the supplier identifier type. Must be either Tax ID or ERP
+ID.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierIDCategory</td>
+<td class="entry" align="">Enter the supplier identifier category. Must match an existing
+supplier ID category defined under Setup Data Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierIDSubCategory</td>
+<td class="entry" align="">Enter the supplier identifier subcategory. Must match an
+existing supplier ID subcategory defined under Setup Data
+Management.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">SupplierIDValue</td>
+<td class="entry" align="">Enter the supplier identifier unique reference key.</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">String(256)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">udfsi_&lt;fieldname&gt;</td>
+<td class="entry" align="">Enter one column for each Supplier Identifier UDF to be entered.
+Enter the field name of the UDF to import in each column, and the
+value for each supplier identifier in the rows. Must match an
+existing r.portal UDF name for Supplier Identifiers. NOTE: field
+name must be in the format udfsi_&lt;fieldname&gt;</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">(*)Required</p>
+</div>
+</div>
+</article>

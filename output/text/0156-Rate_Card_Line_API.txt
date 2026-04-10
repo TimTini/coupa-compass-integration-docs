@@ -1,0 +1,38 @@
+Rate Card Line API
+
+Element 	 Description 	 Req 	 Unique 	 Allowed Values 	 In 	 Out 	 Type
+active 	Active 	 	 	 	yes 	yes 	boolean
+code 	Code 	 	 	 	yes 	yes 	string(255)
+commodity 	Commodity 	 	 	 	yes 	yes 	 Commodity
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+currency 	Currency 	yes 	 	 	yes 	yes 	 Currency
+custom-field-1 	Custom field 1 	 	 	 	yes 	 	string(255)
+custom-field-10 	Custom field 10 	 	 	 	yes 	 	string(255)
+custom-field-11 	Custom field 11 	 	 	 	yes 	 	string(255)
+custom-field-12 	Custom field 12 	 	 	 	yes 	 	string(255)
+custom-field-13 	Custom field 13 	 	 	 	yes 	 	string(255)
+custom-field-14 	Custom field 14 	 	 	 	yes 	 	string(255)
+custom-field-15 	Custom field 15 	 	 	 	yes 	 	string(255)
+custom-field-16 	Custom field 16 	 	 	 	yes 	 	string(255)
+custom-field-17 	Custom field 17 	 	 	 	yes 	 	string(255)
+custom-field-18 	Custom field 18 	 	 	 	yes 	 	string(255)
+custom-field-19 	Custom field 19 	 	 	 	yes 	 	string(255)
+custom-field-2 	Custom field 2 	 	 	 	yes 	 	string(255)
+custom-field-20 	Custom field 20 	 	 	 	yes 	 	string(255)
+custom-field-3 	Custom field 3 	 	 	 	yes 	 	string(255)
+custom-field-4 	Custom field 4 	 	 	 	yes 	 	string(255)
+custom-field-5 	Custom field 5 	 	 	 	yes 	 	string(255)
+custom-field-6 	Custom field 6 	 	 	 	yes 	 	string(255)
+custom-field-7 	Custom field 7 	 	 	 	yes 	 	string(255)
+custom-field-8 	Custom field 8 	 	 	 	yes 	 	string(255)
+custom-field-9 	Custom field 9 	 	 	 	yes 	 	string(255)
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+name 	Name 	yes 	 	 	yes 	yes 	string(255)
+price 	Price 	yes 	 	 	yes 	yes 	decimal(30,6)
+rate-card-id 	Rate card 	 	 	 	 	yes 	integer
+rate-card-line-type 	Line Type 	yes 	 	 	yes 	yes 	integer
+rate-card-type 	Rate card type 	yes 	 	 	yes 	yes 	integer
+uom 	Unit of Measure 	yes 	 	 	yes 	yes 	 Uom
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

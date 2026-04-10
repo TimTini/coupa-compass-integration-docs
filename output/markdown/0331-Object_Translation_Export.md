@@ -1,0 +1,33 @@
+---
+title: "Object Translation Export"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/object-translation-export"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-export/object-translation-export"
+status_code: 200
+fetched_at: "2026-04-09T12:00:20+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Export"
+  - "Object Translation Export"
+---
+
+# Object Translation Export
+
+| **Column Name** | **Description** | **Req'd** | **Unique** | **Type** | **Allowable Values** |
+| --- | --- | --- | --- | --- | --- |
+| RecordType | The type of record type found in each row | false | false | string(255) | any |
+| Object Name | Object to be translated (example: Uom) | false | false | integer | any |
+| Object ID | A unique identifier for the value to be translated. | false | false | string(255) | any |
+| Field Name | Model attribute to be translated (example: name) | false | false | string(1024) | any |
+| Original Value | Model attribute value of the translation | false | false | string(255) | * see below |
+| Locale | Locale of this translation | false | false | string(1024) | any |
+| Translated Value | Model attribute value of the translation | false | false | string(255) | any |
+
+* en, tr, ja, bg, cs, da, de-AT, de-BE, de-CH, de-LU, de,
+el, en-AE, en-AU, en-BD, en-BH, en-CA, en-CN, en-DK, en-FI, en-GB,
+en-HK, en-IE, en-IN, en-ME, en-MM, en-MT, en-MY, en-NA, en-NL,
+en-NO, en-NZ, en-PH, en-PK, en-SE, en-SG, en-TW, en-ZA, es-CO,
+es-IC, es-MX, es-PR, es, et, fi, fr-BE, fr-CA, fr-CH, fr-LU, fr,
+hr, hu, it-CH, it, ko, lt, lv, mt, nl-BE, nl, no, pl, pt-BR, pt,
+ro, ru, sk, sl, sr-ME, sr, sv-FI, sv, th, vi, zh-CN, zh-HK,
+zh-TW

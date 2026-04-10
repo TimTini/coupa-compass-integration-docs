@@ -1,0 +1,37 @@
+---
+title: "Intellectual Property and Data API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/intellectual-property-and-data-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/intellectual-property-and-data-api"
+status_code: 200
+fetched_at: "2026-04-09T11:59:37+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Contracts API (/contracts)"
+  - "Intellectual Property and Data API"
+---
+
+# Intellectual Property and Data API
+
+## Elements
+
+The following elements are available for the Intellectual
+Property and Data API:
+
+| **Element** | **Description** | **Required Field?** | **Unique?** | **Allowable Value** | **Api_In Field?** | **Api_Out Field?** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| non_disclosure_copying_restriction | | no | no | any | yes | yes | integer |
+| permitted_disclosees_directors_officers | | no | no | any | yes | yes | boolean |
+| permitted_disclosees_employees | | no | no | any | yes | yes | boolean |
+| permitted_disclosees_advisers | | no | no | any | yes | yes | boolean |
+| permitted_disclosees_contractors | | no | no | any | yes | yes | boolean |
+| id | Coupa unique identifier | no | no | any | yes | yes | integer |
+| created_at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | no | no | any | yes | yes | datetime |
+| updated_at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | no | no | any | yes | yes | datetime |
+| contract_type_custom_field_6 | | no | no | any | yes | | string(255) |
+| contract_type_custom_field_7 | | no | no | any | yes | | string(255) |
+| contract_type_custom_field_8 | | no | no | any | yes | | string(255) |
+| contract_type_custom_field_9 | | no | no | any | yes | | string(255) |
+| contract_type_custom_field_10 | | no | no | any | yes | | string(255) |

@@ -1,0 +1,16 @@
+Account Category API
+
+Use the Account Category API to create and manage account categories to mimic your business' financial structure.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+active 	Active 	 	 	 	 	yes 	boolean
+category-type 	Category type 	yes 	 	ap, ar, charges, deposit_account, dividend, escrow, factoring, guarantee, hr, letter_of_credit, lockbox, on_behalf, petty_cash, settlement, special_purpose, standard, taxes, trapped_cash, other 	 	yes 	string(255)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+description 	Description 	 	 	 	 	yes 	string(500)
+id 	Coupa Internal ID 	 	 	 	 	yes 	integer
+name 	Name 	yes 	yes 	 	 	yes 	string(50)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

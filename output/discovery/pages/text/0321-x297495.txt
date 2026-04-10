@@ -1,0 +1,9 @@
+x297495.xml
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/x297495.xml
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb9owEP5XIr8ndhJSmAVItGwaUrtFhe1hL9XhHKvVxE59Tsv%2B%2Bzlmm%2Bgk%2Bpgv9%2F2685yga3u5GvyjucfnAcknm%2FWCPahcTQssP6TNrMR0Iqb7dFbmV2lZwkHsYVJV1Ywl39GRtmbBikywZEM04MaQB%2BMDJIqrVEzSXOxELquZFCKrRPWDJevgog34yHz0vifJubJDDykePToDbWafPGTKdhz6%2Fr9%2FDwHugai3zoevnOPxyRZiEDAp1tfdRwW5n3Iiy8dyLPlkncLYcMEO0BKOSesgoF%2FwH1I7662y7bU2jTY%2FF2xwRlogTdJAhyS9ktvV3a0MTeX%2BNETy825Xp%2FXX7Y4lKyJ0Y6Uba2jo0G3RvWiF3%2B5vz0vG5FksFOuNmvwSlyXHrjUk45Hej9T%2Fyc%2BW83Faxlu4M%2F77dPibgC0vZp3zM%2BWTTS%2B%2FBKnNuratVr%2FGTXfgLzvlWR4R3aSHOCqxA92umsYhUdhh29rXG4fgw2G8G8IC%2BPJk%2B%2FaNLn8D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fcoupa-contract-lifecycle-management-standard%2Fcreate-and-manage-agreement-templates
+
+Observed redirect page title: Coupa Portals - Sign In

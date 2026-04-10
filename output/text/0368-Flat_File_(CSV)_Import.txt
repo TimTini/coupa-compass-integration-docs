@@ -1,0 +1,87 @@
+Flat File (CSV) Import
+
+Through the use of the standard flat file formats, you can quickly load both master and transactional related data into Coupa. Please see the related topics for the detailed information on each business object.
+
+To learn more about flat file (CSV) imports, including a list of best practices, see Coupa CSV Flat File Integration.
+
+- Account Import
+- Account Type (CoA) Import
+- Account Validation Rules Import
+- Addresses Import
+- Approval Chain Import
+- Advance Ship Notice Import
+- Attachment Links Classification
+- Budget Line Import
+- Budget Line Adjustment Import
+- Business Entity Import
+- Category Import
+- Commodity Import
+- Commodity Translation Import
+- Content Group Import
+- Contract Extraction Rule Example Import
+- Contract Import
+- Departments Import
+- Enterprise Import
+- Exchange Rate Import
+- Expense Mileage Data Import
+- Expense Action Dynamic Category Limit Import
+- Expense Category Import
+- Expense Category Tax Rates Import
+- Expense Category Translation Import
+- Expense Import Category Map Import
+- Expense Import Transaction Type Filter Map Import
+- Expense Import User Map Import
+- Expense Payment Import
+- External Orders Import
+- External Payments
+- Flexible Attribute Import
+- Forms (Easy Forms) Import
+- Integration Contacts Import
+- Integration Import
+- Intelligent Import Review
+- Inventory Balance Import
+- Inventory Balance Lot Import
+- Invoices Import
+- Invoice Payment Import
+- Item Import
+- Legal Entity Import
+- Legal Payment Receipt Import
+- Lookup Import
+- Object Instance Import
+- Object Translation Import
+- Order Confirmation Import
+- Order Header Change Assignment Import
+- Payment Import
+- Payables :: External :: Payable Import
+- Payment Term Import
+- Project Import
+- Purchase Order Change Import
+- Purchase Order Assignment Import'
+- Quote Request Line Import
+- Quote Supplier Import
+- Inventory Transactions (Receipts) Import
+- Reference Data-Document Type
+- Reference Data-External Identifier Type
+- Reference Data-Job Category-Job Category
+- Reference Data-Job Level-Job Level
+- Reference Data-Job Title-Job Title
+- Reference Data-Skill
+- Remit-to Addresses Import
+- Requisitions Import
+- Shippable Tracker Import
+- Suppliers Import
+- Supplier Risk Aware Feed Import
+- Supplier Site Import
+- Tax Code Import
+- Tax Code Rule Import
+- Tax Rate Import
+- Tax Reference Import
+- Tax Registration Import
+- User Reassignment Import
+- Users Import
+- User Group Import
+- Warehouse Import
+- Warehouse Location Import
+- Service/Time Sheets Import
+- Worker Assignment Import
+- Worker Import

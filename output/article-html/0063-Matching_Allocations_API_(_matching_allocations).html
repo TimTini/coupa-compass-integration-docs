@@ -1,0 +1,238 @@
+<article class="" id="matching_allocations_api_matching_allocations">
+<h1 class="title">Matching Allocations API (/matching_allocations)</h1>
+<div class="body">
+<div class="" id="actions-d957e53513">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Matching Allocation API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Verb</b>
+</th>
+<th class="entry " align="">
+<b>Path</b>
+</th>
+<th class="entry " align="">
+<b>Action</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/matching_allocations/invoice_line_id=</code>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">GET</td>
+<td class="entry" align="">
+<code class="ph codeph">/api/matching_allocations/invoice_line[invoice_header_id][in]=</code>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e53592">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Matching
+Allocation API:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<b>Element</b>
+</th>
+<th class="entry " align="">
+<b>Description</b>
+</th>
+<th class="entry " align="">
+<b>Required Field?</b>
+</th>
+<th class="entry " align="">
+<b>Unique?</b>
+</th>
+<th class="entry " align="">
+<b>Allowable Value</b>
+</th>
+<th class="entry " align="">
+<b>Api_In Field?</b>
+</th>
+<th class="entry " align="">
+<b>Api_Out Field?</b>
+</th>
+<th class="entry " align="">
+<b>Data Type</b>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">id</td>
+<td class="entry" align="">Coupa unique identifier</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">created_at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">updated_at</td>
+<td class="entry" align="">Automatically created by Coupa in the format
+YYYY-MM-DDTHH:MM:SS+HH:MMZ</td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">datetime</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">string(50)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">inventory_transaction_id</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">quantity</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">amount</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice_line_total</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">decimal</td>
+</tr>
+<tr class="">
+<td class="entry" align="">asn_line_id</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">invoice_line_id</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">order_line_id</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">manual_match</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">integer</td>
+</tr>
+<tr class="">
+<td class="entry" align="">status_reason</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">string(512)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">inventory_transaction_match_reference</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">uom</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">false</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">false</td>
+<td class="entry" align="">true</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

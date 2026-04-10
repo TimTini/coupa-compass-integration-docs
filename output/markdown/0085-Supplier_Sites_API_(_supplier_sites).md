@@ -1,0 +1,78 @@
+---
+title: "Supplier Sites API (/supplier_sites)"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)/supplier-sites-api-(supplier_sites)"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)/supplier-sites-api-(supplier_sites)"
+status_code: 200
+fetched_at: "2026-04-09T11:59:21+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Reference Data Resources"
+  - "Suppliers API (/suppliers)"
+  - "Supplier Sites API (/supplier_sites)"
+---
+
+# Supplier Sites API (/supplier_sites)
+
+The URL to access supplier sites is: `https:///api/suppliers/:supplier_id/supplier_sites`
+
+See [Integration Best Practices](https://compass.coupa.com/x285417.xml) for more info.
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+Supplier API GET calls include Supplier Sites in response payloads. For more information, see [Postman Collection for Coupa APIs](https://compass.coupa.com/x285429.xml).
+
+## Actions
+
+The Supplier Sites API allows you to:
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| POST | /api/suppliers/:supplier_id/supplier_sites | create | Create supplier site |
+| GET | /api/suppliers/:supplier_id/supplier_sites | index | Query supplier sites |
+| GET | /api/suppliers/:supplier_id/supplier_sites/:id | show | Show supplier site |
+| PATCH | /api/suppliers/:supplier_id/supplier_sites/:id | update | Update supplier site |
+| PUT | /api/suppliers/:supplier_id/supplier_sites/:id | update | Update supplier site |
+| DELETE | /api/suppliers/:supplier_id/supplier_sites/:id | delete | Deletes the supplier site by id |
+
+## Elements
+
+The following elements are available for the Supplier Sites API:
+
+| **Element** | **Description** | **Required Field?** | **Unique?** | **Allowable Value** | **Api_In Field?** | **Api_Out Field?** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| active | True if the site is active. Defaults to "true" if value not provided in payload in POST operation. | | | true, false | yes | yes | boolean |
+| account-types | Account types | | | | yes | yes | [AccountType](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/account-types-api-(account_types)) |
+| addresses | Supplier Site addresses | | | | yes | yes | [] |
+| allow_change_requests | Allows suppliers to create change requests from CSP | | | | yes | yes | boolean |
+| allow-order-confirmation-item-substitutions | Allow supplier to propose item substitute on Order Confirmations | | | | yes | yes | integer |
+| buyer-hold | Hold all POs for buyer review | | | true, false | yes | yes | boolean |
+| code | supplier_code | yes | yes | | yes | yes | string(20) |
+| contacts | Supplier Site contacts | | | | yes | yes | [] |
+| content-groups | Content group that controls visibility of supplier site to end users. Defaults to "Everyone" content group if no value is provided in the payload in POST operation. | | | | yes | yes | [ContentGroup](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/content-groups-api-(business_groups)) |
+| created-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| created-by | User who created | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| cxml-domain | "From" , our domain | yes (if po-method = cxml) | | | yes | yes | string |
+| cxml-http-username | User name required to access the Supplier's online store | | | | yes | yes | string |
+| cxml-identity | "From", our identity | yes (if po-method = cxml) | | | yes | yes | string |
+| cxml-protocol | Transmission protocol | yes (if po-method = cxml) | | | yes | yes | string |
+| cxml-secret | Shared secret | yes (if po-method = cxml) | | | yes | yes | string |
+| cxml-ssl-version | Specify the SSL version used for cXML communication with the supplier | | | TLSv1_2, TLSv1_1, TLSv1 | yes | yes | string |
+| cxml-supplier-domain | "To", supplier domain | yes (if po-method = cxml) | | | yes | yes | string |
+| cxml-supplier-identity | "To", supplier identity | yes (if po-method = cxml) | | | yes | yes | string |
+| cxml-url | URL where POs are sent if PO transmission is "cxml" | yes (if po-method = cxml) | | | yes | yes | string |
+| default_locale | Default Locale for sending emails to this supplier site | no | no | any | yes | | string(255) |
+| disable-cert-verify | Specify whether to ignore SSL certificate mismatch errors | | | true, false | yes | yes | boolean |
+| id | Coupa Internal ID of the Supplier Site record | | | | | yes | integer |
+| name | Supplier Site name | yes | | | yes | yes | string |
+| payment-method | Default payment method, selectable from drop down | | | | yes | yes | string(255) |
+| payment-term | Default payment term, selectable from drop down | | | | yes | yes (only if supplier site is associated with payment term) | [Payment Term](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/payment-terms-api-(payment_terms))<br>Payment term should exist in Coupa. |
+| po-change-method | Purchase order change transmission method | yes | | cxml, xml, email, prompt, mark_as_sent, buy_online | yes | yes | string |
+| po-email | Email where POs are sent if PO transmission is "email" | yes (if po-method = email) | | | yes | yes | string |
+| po-method | Purchase order transmission method | yes | | cxml, xml, email, prompt, mark_as_sent, buy_online | yes | yes | string |
+| shipping-term | Supplier shipping term, selectable from drop down | | | | yes | yes (only if supplier site is associated with shipping term) | [Shipping Term](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/shipping-terms-api-(shipping_terms))<br>Shipping term must exist in Coupa. |
+| supplier_id | Supplier id | | | | yes | yes | integer |
+| updated-at | Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ | | | | | yes | datetime |
+| updated-by | User who updated | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |

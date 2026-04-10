@@ -1,0 +1,196 @@
+---
+title: "Worker Assignments API"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-assignments-api"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-assignments-api"
+status_code: 200
+fetched_at: "2026-04-09T12:00:08+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "The Coupa Core API"
+  - "Resources"
+  - "Transactional Resources"
+  - "Worker Assignments API"
+---
+
+# Worker Assignments API
+
+Get worker data such as assignment confirmation, closure, and changes to key fields like start date, end date, or job role, so you can trigger  provisioning workflows, manage asset distribution, and terminate access as needed.
+
+## Actions
+
+| **Verb** | **Path** | **Action** | **Description** |
+| --- | --- | --- | --- |
+| GET | `/api/worker_assignments` | index | Get all worker assigments. |
+| GET | `/api/worker_assignments/:id/show_history` | show_history | Get the history for a worker assignment. |
+| GET | `/api/worker_assignments/:id` | show | Get assignment data for a single worker. |
+| PATCH | `/api/worker_assignments/:id` | update | Update a worker assignment. |
+| POST | `api/worker_assignments/:id` | create | Create a new worker assignment. |
+| PUT | `/api/worker_assignments/:id` | update | Update worker assignment |
+| PUT | `/api/worker_assignments/:id/cancel` | cancel | Changes the assignment's status to **Cancelled** and adds a record of the cancellation to the assignment's history.<br>Required elements: **Cancel Reason**. |
+| PUT | `/api/worker_assignments/:id/close` | close | Updates the assignment’s status to **Closed** if the end date is today or in the past. For end dates in the future, the status is changed to **Pending Close**.<br>Required elements: **Close Reason**. |
+| PUT | `/api/worker_assignments/:id/confirm` | confirm | Confirms worker assignments once all mandatory onboarding activities are approved. When confirmed, the assignment's status updates to **Active**. If the start date is in the future, the status updates to **Scheduled**. |
+
+## Elements
+
+| **Element** | **Description** | **Req'd** | **Unique** | **Allowable Value** | **In** | **Out** | **Data Type** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| allow-worker-entered-price | Indicates if workers who submit service sheets for the assignment can manually specify pricing | | | | | yes | boolean |
+| auto-close | Auto Close | | | | | yes | boolean |
+| auto-confirm | Auto Confirm | | | | | yes | boolean |
+| close-authority | Indicates whether a user has the permissions necessary to manually close an assignment | | | | | yes | integer |
+| confirm-authority | Confirm Authority | | | | | yes | integer |
+| created-at | Created Date | | | | | yes | datetime |
+| created-by | User who created | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| end-date | End Date | yes | | | | yes | datetime |
+| external-reference-identifier | External reference identifier | | | | | yes | string(255) |
+| id | Coupa’s Internal ID | | | | | yes | integer |
+| job-role-association | Job role object associated with the assignment | | | | | yes | [ReferenceData::JobRole::JobRoleAssociation](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-assignments-api/referencedatajobrolejobroleassociation-api) |
+| resource-manager | Worker Manager | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| service-manager-email | Supplier Contact email. | yes | | | | yes | string(255) |
+| service-sheet-submission-owner | Service Sheet Submission Owner | | | | | yes | string(255) |
+| sourceable | Extra line attribute for order lines can be different for other types such as req line. | | | | | yes | [ExtraLineAttributes::OrderLineAttribute](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/extralineattributesorderlineattribute-api-da-5838-da-5838) |
+| sourceable-type | Type of the sourceable for worker assignment such as order line or requisition line | | | | | yes | string(255) |
+| start-date | Start Date | yes | | | | yes | datetime |
+| status | Worker Assignment Status | yes | | | | yes | string(255) |
+| supplier-contact-email | Email of the service manager | | | | | yes | string(255) |
+| updated-at | Updated Date | | | | | yes | datetime |
+| updated-by | User who updated | | | | | yes | [User](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)) |
+| worker | Worker | | | | | yes | [Worker::Worker](https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/worker-api) |
+
+## Get worker assignments
+
+Method
+
+GET `/api/worker_assignments`
+
+Example cURL request
+
+```text
+curl --location 'https://<your-instance>.com/api/worker_assignments' \
+--header 'Accept: application/xml' \
+--header 'Accept: application/json' \
+--header 'Accept: application/octet-stream' \
+--header 'Authorization: ••••••'
+```
+
+Example response
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<worker-assignments type="array">
+<worker-assignment>
+<id type="integer">1</id>
+<created-at type="dateTime">2024-11-20T15:39:20-05:00</created-at>
+<updated-at type="dateTime">2024-11-20T15:39:20-05:00</updated-at>
+<status>pending_confirmation</status>
+<start-date type="dateTime">2024-10-31T20:00:00-04:00</start-date>
+<end-date type="dateTime">2024-11-29T19:00:00-05:00</end-date>
+<external-reference-identifier nil="true"/>
+<confirm-authority>buyer</confirm-authority>
+<close-authority>buyer</close-authority>
+<service-sheet-submission-owner>supplier</service-sheet-submission-owner>
+<allow-worker-entered-price nil="true"/>
+<auto-confirm type="boolean">false</auto-confirm>
+<auto-close type="boolean">false</auto-close>
+<supplier-contact-email>test@coupa.com</supplier-contact-email>
+<worker>
+<id type="integer">1</id>
+<created-at type="dateTime">2024-11-20T15:36:25-05:00</created-at>
+<updated-at type="dateTime">2025-02-15T20:00:30-05:00</updated-at>
+<first-name>John</first-name>
+<last-name>Travolta</last-name>
+<middle-name nil="true"/>
+<active type="boolean">true</active>
+<status>open</status>
+<current-title></current-title>
+<total-experience-in-years type="decimal">10.0</total-experience-in-years>
+<portal-access>Not Registered</portal-access>
+<gender-code>m</gender-code>
+<gender>Male</gender>
+<supplier>
+<id type="integer">1468</id>
+<name>Art Supply</name>
+<display-name>Art Supply (DO NOT EDIT)</display-name>
+</supplier>
+<worker-addresses type="array">
+<worker-address>
+<id type="integer">6669</id>
+<created-at type="dateTime">2024-11-20T15:36:25-05:00</created-at>
+<updated-at type="dateTime">2024-11-20T15:38:05-05:00</updated-at>
+<street1>542 Southwest Natura Avenue</street1>
+<street2></street2>
+<street3></street3>
+<street4></street4>
+<city>Orlando</city>
+<state>FL</state>
+<state-iso-code></state-iso-code>
+<postal-code>22331</postal-code>
+<active type="boolean">true</active>
+<worker-address-purpose>
+<id type="integer">33</id>
+<code>Home</code>
+<name>Home</name>
+</worker-address-purpose>
+</worker-address>
+</worker-addresses>
+<external-identifiers type="array"/>
+<worker-phone-numbers type="array">
+<worker-phone-number>
+<id type="integer">1</id>
+<created-at type="dateTime">2024-11-20T15:36:25-05:00</created-at>
+<updated-at type="dateTime">2024-11-20T15:36:25-05:00</updated-at>
+<phone-type>work</phone-type>
+<phone-number>
+<number>9546556861</number>
+<extension></extension>
+<country-code>US</country-code>
+</phone-number>
+</worker-phone-number>
+</worker-phone-numbers>
+</worker>
+<resource-manager>
+<id type="integer">4179</id>
+<login>a.belin2</login>
+<employee-number></employee-number>
+<firstname>aaron</firstname>
+<lastname>belin</lastname>
+</resource-manager>
+<sourceable>
+<id type="integer">671</id>
+<created-at type="dateTime">2024-11-20T15:35:11-05:00</created-at>
+<updated-at type="dateTime">2024-11-20T15:35:11-05:00</updated-at>
+<type>ExtraLineAttributes::DeliverableOrderLineAttribute</type>
+<order-line>
+<id type="integer">3258</id>
+<status>created</status>
+<description>Reimbursable Expense</description>
+<line-num>2</line-num>
+<service-sheet-required type="boolean">false</service-sheet-required>
+<start-date nil="true"/>
+<end-date nil="true"/>
+<supplier-contact-email></supplier-contact-email>
+<manager nil="true"/>
+<commodity nil="true"/>
+<order-header>
+<id type="integer">2542</id>
+<created-at type="dateTime">2024-11-20T15:35:11-05:00</created-at>
+<updated-at type="dateTime">2024-11-20T15:35:22-05:00</updated-at>
+<po-number>2542</po-number>
+<status>issued</status>
+</order-header>
+</order-line>
+</sourceable>
+<job-role-association nil="true"/>
+<created-by>
+<id type="integer">80</id>
+<login>user@email.com</login>
+<employee-number nil="true"/>
+</created-by>
+<updated-by>
+<id type="integer">80</id>
+<login>user@email.com</login>
+<employee-number nil="true"/>
+</updated-by>
+</worker-assignment>
+</worker-assignments>
+```

@@ -1,0 +1,189 @@
+<article class="" id="openid_connect_clients">
+<h1 class="title">OpenID Connect Clients</h1>
+<p class="">
+<p class="">Use OpenID Connect (OIDC) to provide additional security that's beyond traditional API keys.</p>
+</p>
+<div class="body">
+<p class="">OIDC is a way of authenticating clients using OAuth 2.0 when they connect to Coupa. For more information, see <a data-scope="external" data-name="" target="_blank" href="https://openid.net/connect/" title="">OpenID Connect</a>.</p>
+<div class="" id="step_1_create_a_client_in_coupa">
+<h2 class="title sectiontitle">OAuth 2.0 clients</h2>
+<p class="">When you create a new Open Connect client, you're granting access to a specific application or user client for specific areas of the product, defined by scopes. Once you create the client in Coupa, use the application or client to request an access token based on the grant type you specify.</p>
+<p class="">You can create, activate, or deactivate individual clients from the OpenIDConnect Clients table by going to <b>Setup &gt; Integrations &gt; Oauth2/OpenID Connect Clients</b> .</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Setting</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Details</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Grant type</p>
+</td>
+<td class="entry" align="">
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Client credentials:</b> Used when there is no user involved. Typically used for system-to-system integrations. (Most common)</p>
+</li>
+<li class="li">
+<p class="">
+<b>Authorization code:</b> Used when an end user is involved and requires the user's consent before granting an access token to be used to access resources.</p>
+</li>
+<li class="li">
+<p class="">
+<b>Device code:</b> Used in cases where the client resides on a device and the user gets authenticated and authorizes the request on another.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the client/application</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Redirect URIs</p>
+</td>
+<td class="entry" align="">
+<p class="">A redirection URI where the response will be sent.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Scopes</p>
+</td>
+<td class="entry" align="">
+<p class="">When a customer registers a client they have to assign scopes to the client. Scopes are required and determines what the client/application is allowed to do.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="scopes">
+<h2 class="title sectiontitle">Scopes</h2>
+<p class="">Coupa scopes take the form of <code class="ph codeph">service.object.right</code>. For example, <code class="ph codeph">core.accounting.read</code> or <code class="ph codeph">core.accounting.write</code>. There are a handful of scopes listed today on the client create/edit page. You can find the list of scopes and their underlying Coupa permissions by going to the <b>Scope management</b> page at <code class="ph codeph">/oauth2/scopes</code>. When you drill down into a scope, you can see the specific API permissions associated with that scope.</p>
+</div>
+<div class="" id="client_credentials">
+<h2 class="title sectiontitle">Client credentials grant type</h2>
+<p class="">Use the <code class="ph codeph">client credentials</code> grant type when there is no user involved, such as in system-to-system integrations. The token is automatically accepted and generated.</p>
+<dl class="dl">
+<dt class="dt dlterm">Example client credential cURL request</dt>
+<dd class="dd">
+<p class="">
+<code class="ph codeph">curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "client_id=&lt;CLIENT_ID&gt;&amp;grant_type=client_credentials&amp;scope=&lt;SPACE_SEPARATED_LIST_OF_SCOPES&gt;&amp;client_secret=&lt;CLIENT_SECRET&gt;" https://&lt;INSTANCE_DOMAIN&gt;/oauth2/token</code>
+</p>
+</dd>
+</dl>
+</div>
+<div class="" id="authorization_code">
+<h2 class="title sectiontitle">Authorization code grant type</h2>
+<p class="">Used when an end user is involved. Requires the user's consent before granting an access token to be used to access resources.</p>
+<dl class="dl">
+<dt class="dt dlterm">User flow</dt>
+<dd class="dd">
+<ol class="ol">
+<li class="li">
+<p class="">In a web browser, paste the following URL into the address bar (replacing the elements between brackets with the correct values).</p>
+<pre xml:space="preserve">
+                  <code class="ph codeph">https://&lt;INSTANCE_DOMAIN&gt;/oauth2/authorizations/new?client_id=&lt;CLIENT_ID&gt;&amp;response_type=code&amp;scope=&lt;SPACE_SEPARATED_LIST_OF_SCOPES&gt;&amp;redirect_uri=&lt;REDIRECT_URI&gt;</code>
+                </pre>
+</li>
+<li class="li">
+<p class="">Click <b>Allow</b> on the consent screen. The application redirects to REDIRECT_URI specified when you created the client.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<p class="">To retrieve the access token with the code, make an HTTPS POST request . Below is an example of a request using cURL:</p>
+<dl class="dl">
+<dt class="dt dlterm">Example authorization code cURL request</dt>
+<dd class="dd">
+<p class="">
+<code class="ph codeph">curl -XPOST -i https://&lt;INSTANCE_DOMAIN&gt;/oauth2/token?client_id=&lt;CLIENT_ID&gt;&amp;grant_type=authorization_code&amp;code=&lt;CODE&gt;&amp;scope=&lt;SPACE_SEPARATED_LIST_OF_SCOPES&gt;&amp;client_secret=&lt;CLIENT_SECRET&gt;&amp;redirect_uri=&lt;REDIRECT_URI&gt;</code>
+</p>
+</dd>
+</dl>
+</div>
+<div class="" id="device_code">
+<h2 class="title sectiontitle">Device code grant type</h2>
+<p class="">Used in cases where the client resides on a device and the user gets authenticated and authorizes the request on another. The device asks the user to go to a link on their computer or smartphone and authorize the device.</p>
+<dl class="dl">
+<dt class="dt dlterm">Example device code cURL request</dt>
+<dd class="dd">
+<p class="">
+<code class="ph codeph">curl -XPOST -i https://&lt;INSTANCE_DOMAIN&gt;/oauth2/device_authorizations?client_id=&lt;CLIENT_ID&gt;&amp;scope=&lt;SPACE_SEPARATED_LIST_OF_SCOPES&gt;</code>
+</p>
+</dd>
+</dl>
+<p class="">The JSON response contains the <code class="ph codeph">verification_uri</code> and user code among other values. Go to the <code class="ph codeph">verification_uri</code> on a browser and enter the user code to complete the flow.</p>
+</div>
+<div class="" id="design_considerations">
+<h2 class="title sectiontitle">Design Considerations</h2>
+<ul class="ul">
+<li class="li">
+<p class="">When developing an integration, ensure that you include at least a five-second buffer in your code between when you generate a token and when you submit an API call using the token. Otherwise, the second call is submitted before the authentication token is generated and your call may fail.</p>
+</li>
+<li class="li">
+<p class="">Tokens are provided in JWT format. By design, there is no limit to the length of a JWT token. Tokens can become very long, partially dependent on the number of scopes supported by the token.</p>
+</li>
+<li class="li">Refresh tokens expire every 90 days, after which you must reauthenticate. For security purposes, tokens also expire if a client encounters an issue when attempting to obtain a new access token.</li>
+</ul>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Additional Resources</h2>
+<ul class="ul">
+<li class="li">
+<p class="">OpenID Connect Clients</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285441.xml" title="">OAuth 2.0 for Call Outs</a>
+</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285429.xml" title="">Postman Collection for Coupa APIs</a>
+</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285439.xml" title="">OAuth 2.0 Getting Started with Coupa API</a>
+</p>
+</li>
+</ul>
+</div>
+<div class="">
+<h2 class="title sectiontitle">Related webinars</h2>
+<ul class="ul">
+<li class="li">
+<p class="">Oct 14, 2021: <a data-scope="external" data-name="" target="_blank" href="https://attendee.gotowebinar.com/recording/8752277902190897675" title="">OAuth (API)</a>
+</p>
+</li>
+<li class="li">
+<p class="">March 25, 2022: <a data-scope="external" data-name="" target="_blank" href="https://value.coupa.com/api/mailings/click/PMRHK4TMEI5CE2DUORYHGORPF5QXI5DFNZSGKZJOM5XXI33XMVRGS3TBOIXGG33NF5ZGKY3POJSGS3THF43DGNJSGIYTGMZUG4YTIMJSGA4DQMZVEIWCE2LEEI5CENRXGIRCYITPOJTSEORCMUYWGMLFMVTGGLLGG44DILJUGQ2DKLJYGY4GCLLDME4DOYTBG4YDIYRQMIRCYITWMVZHG2LPNYRDUIRUEIWCE43JM4RDUITMOEYXEWSNGJFDQTSSLFWEO6SPNJKUY4KVOR4VETBNPFFWKZL2K52VKOL2GFTWWSKWNY4D2IT5" title="">Transitioning to OAuth(API)</a>
+</p>
+</li>
+<li class="li">
+<p class="">May 3, 2022: <a data-scope="external" data-name="" target="_blank" href="https://value.coupa.com/api/mailings/click/PMRHK4TMEI5CE2DUORYHGORPF5QXI5DFNZSGKZJOM5XXI33XMVRGS3TBOIXGG33NF5ZGKY3POJSGS3THF44DSMZSGQ2TCNJXHA2TKNRZGQ4DONBZEIWCE2LEEI5CENRXGIRCYITPOJTSEORCMUYWGMLFMVTGGLLGG44DILJUGQ2DKLJYGY4GCLLDME4DOYTBG4YDIYRQMIRCYITWMVZHG2LPNYRDUIRUEIWCE43JM4RDUIRVGVSFSNDXPJ2GEMDBGRIDMUZZPJQWWTBTMZWVKVZTHBJEMZ3QK53E6MLWOFCFOZJZNFET2IT5" title="">OAuth migration for NetSuite Bundle Customers</a>
+</p>
+</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,1365 @@
+<article class="" id="purchase_orders_api_purchase_orders">
+<h1 class="title">Purchase Orders API (/purchase_orders)</h1>
+<div class="body">
+<div class="" id="overview-d957e212173">
+<h2 class="title sectiontitle">Overview</h2>
+<p class="">When working with the Purchase Orders API, you've got a few resource endpoints you can work from:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Resource</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">PO headers</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Full purchase orders that contain PO lines, payment terms, addresses and more.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PO lines</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_order_lines</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Detailed information about PO lines like item info and accounting details. See <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-lines-api-da-5961-da-5961" title="">Purchase Order Lines API</a> and <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/order-line-allocations-api" title="">Order Line Allocations API</a> for details.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PO changes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_order_changes</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Create and manage PO change requests regardless if they drive approvals or not.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Reason insights</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/reason_insights/</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">Provide reasons when reopening an order.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="actions-d957e212277">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">Purchase Orders API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id/cancel</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">cancel</p>
+</td>
+<td class="entry" align="">
+<p class="">Cancel</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id/close</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">close</p>
+</td>
+<td class="entry" align="">
+<p class="">Close a purchase order. See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x295731.xml" title="">Closing Purchase Orders</a> for more info.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Create a purchase order as part of the <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x295747.xml" title="">external purchase orders</a> feature. Do not use for Coupa-based POs.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id/ignore_window_and_issue</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">ignore_window_and_issue</p>
+</td>
+<td class="entry" align="">
+<p class="">Ignore Windows And Issue</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Query purchase orders</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id/issue</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">issue</p>
+</td>
+<td class="entry" align="">
+<p class="">Issue and send the PO to the supplier.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id/issue_without_send</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">issue_without_send</p>
+</td>
+<td class="entry" align="">
+<p class="">Issue without sending the PO to the supplier.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id/release_from_buyer_hold</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">release_from_buyer_hold</p>
+</td>
+<td class="entry" align="">
+<p class="">Release purchase order on buyer hold</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id/reopen</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">reopen</p>
+</td>
+<td class="entry" align="">
+<p class="">Reopen a soft-closed purchase order. See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x295731.xml" title="">Closing Purchase Orders</a> for more info on soft close.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show purchase order</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PATCH</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update purchase order</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/purchase_orders/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update purchase order</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d957e212590">
+<h2 class="title sectiontitle">Elements</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">acknowledged-at</p>
+</td>
+<td class="entry" align="">
+<p class="">acknowledged_at</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">acknowledged-flag</p>
+</td>
+<td class="entry" align="">
+<p class="">Has PO been acknowledged by Supplier?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">attachments</p>
+</td>
+<td class="entry" align="">
+<p class="">attachments</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/shared-resources/attachments-api" title="">Attachment</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">change-type</p>
+</td>
+<td class="entry" align="" colspan="3">
+<p class="">Last type of change on PO, it represents whether PO was changed through change request or through revise</p>
+</td>
+<td class="entry" align="">
+<p class="">change, revision, confirmation</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">confirmation_status</td>
+<td class="entry" align="">Confirmation Status</td>
+<td class="entry" align="" colspan="2">no</td>
+<td class="entry" align="">pending_supplier_action, confirmed, pending_buyer_action, completed, overridden, archived, pending_integration, integration_failed, backgrounded, po_revise_backgrounded, po_change_backgrounded, pending_approval, po_change_failed, reconfirmation_backgrounded, supplier_draft, buyer_draft, partially_confirmed</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">yes</td>
+<td class="entry" align="">string(255)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">coupa-accelerate-status</p>
+</td>
+<td class="entry" align="" colspan="3">
+<p class="">Status indicating whether the invoice has discount payment terms via Static Discounting</p>
+</td>
+<td class="entry" align="">
+<p class="">accelerated</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Date record was created in Coupa.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa ID of User who created Invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">currency</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency of transaction</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/currencies-api-(currencies)" title="">Currency</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">current-integration-history-records</p>
+</td>
+<td class="entry" align="">
+<p class="">Current integration history records</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/integrations-api-(integrations)/integration-history-record-api" title="">Integration History Record</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">exported</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates if transaction has been exported.</p>
+<p class="">By default, you cannot update other fields while updating the exported field. To change this behavior, reach out to customer support.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hide-price</p>
+</td>
+<td class="entry" align="">
+<p class="">Hide Price from supplier. True or False</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa's internal ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">internal-revision</p>
+</td>
+<td class="entry" align="" colspan="4">
+<p class="">Internal Revision Number - Increases each time a change is made to a PO whether that change is internal or causes the PO to be resent to the supplier.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-stop</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Stop flag</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last-exported-at</p>
+</td>
+<td class="entry" align="" colspan="4">
+<p class="">Date and time transaction was last exported in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">milestones</p>
+</td>
+<td class="entry" align="">
+<p class="">Milestones</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Procurement::Milestone</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">order-lines</p>
+</td>
+<td class="entry" align="">
+<p class="">order_lines</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/purchase-orders-api-(purchase_orders)/purchase-order-lines-api-da-5961-da-5961" title="">Order Line</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-method</p>
+</td>
+<td class="entry" align="">
+<p class="">payment_method</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Terms</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/payment-terms-api-(payment_terms)" title="">Payment Term</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">pcard</p>
+</td>
+<td class="entry" align="">
+<p class="">pcard</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Pcard</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-number</p>
+</td>
+<td class="entry" align="">
+<p class="">PO Number</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(20)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">price-hidden</p>
+</td>
+<td class="entry" align="">
+<p class="">Hide Price from supplier. True or False</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">reason-insight-events</p>
+</td>
+<td class="entry" align="" colspan="3">
+<p class="">Reason insight events for changes, reopens, etc.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/contracts-api-(contracts)/reason-insights-events-api" title="">Reason Insight Event</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requester</p>
+</td>
+<td class="entry" align="">
+<p class="">Requesting Account's login</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">requisition-header</p>
+</td>
+<td class="entry" align="">
+<p class="">Requisition Header</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/requisitions-api-(requisitions)" title="">Requisition Header</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ship-to-address</p>
+</td>
+<td class="entry" align="">
+<p class="">ship_to_address</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/address-api-(addresses)-da-5757-da-5757" title="">Address</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ship-to-attention</p>
+</td>
+<td class="entry" align="">
+<p class="">The user for whom the order will be addressed. Ship to the attention.</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ship-to-user</p>
+</td>
+<td class="entry" align="">
+<p class="">ship_to_user</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shipping-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Terms</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/shipping-terms-api-(shipping_terms)" title="">ShippingTerm</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">PO Status</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">buyer_hold, cancelled, closed, currency_hold, draft, error, expensed, issued, supplier_hold, supplier_window_hold, exported</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(50)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Coupa internal ID number</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)-da-5797-da-5797" title="">Supplier</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-site</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Site</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/suppliers-api-(suppliers)/supplier-sites-api-(supplier_sites)" title="">Supplier Site</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">transmission-emails</p>
+</td>
+<td class="entry" align="">
+<p class="">Transmission Email comma separated list</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">any</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">transmission-method-override</p>
+</td>
+<td class="entry" align="">
+<p class="">Transmission Method Override</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">supplier_default, email, do_not_transmit</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(30)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">transmission-status</p>
+</td>
+<td class="entry" align="">
+<p class="">Transmission Status</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">no</p>
+</td>
+<td class="entry" align="">
+<p class="">created, deferred, deferred_processing, pending_manual, pending_manual_cancel, awaiting_online_purchase, scheduled_for_email, sent_via_email, scheduled_for_cxml, scheduled_for_xml, sent_via_cxml, sent_via_xml, sent_manually, purchased_online, transmission_failure</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">total</td>
+<td class="entry" align="">Total</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">decimal(32,4)</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">type</p>
+</td>
+<td class="entry" align="">
+<p class="">Type of Order</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">ExternalOrderHeader</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Last Updated at Date</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">Coupa ID of User who created Invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/users-api-(users)" title="">User</a>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">version</p>
+</td>
+<td class="entry" align="" colspan="4">
+<p class="">PO Supplier Version Number - Increase each time a PO is changed and triggers a resend to the supplier.</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">classification</p>
+</td>
+<td class="entry" align="">
+<p class="">Classification</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">msp, supplier, vms</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">currency</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency of transaction</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">confirm-by-hrs</p>
+</td>
+<td class="entry" align="">
+<p class="">Confirm by</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">order-confirmation-level</p>
+</td>
+<td class="entry" align="">
+<p class="">Confirmation Level</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">int(11)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">user-members</p>
+</td>
+<td class="entry" align="">
+<p class="">User members</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">User</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">user-group-members</p>
+</td>
+<td class="entry" align="">
+<p class="">User group members</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">User</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<ul class="ul">
+<li class="li">
+<p class="">There are dependent fields that become queryable based the value from the source field. For example, if you query against <code class="ph codeph">po-method=email</code>, then po-email can be added as an additional query criteria. Please see fields with Yes*.</p>
+</li>
+<li class="li">
+<p class="">For large data set and for performance optimization, you should always limit your result with some GET criteria.</p>
+</li>
+<li class="li">
+<p class="">PO changes do not always increment the version number. See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x295749.xml" title="">Fields that Cause a Purchase Order Revision</a> for more info. The <code class="ph codeph">updated-at</code> field can always be used to determine whether any changes have been made.</p>
+</li>
+<li class="li">
+<p class="">In order to see <code class="ph codeph">invoice-total</code> returned in the API query, you need to set the <code class="ph codeph">default_purchase_orders_filter</code> to <code class="ph codeph">default</code>. After updating the default PO API filter, <b>invoice-total</b> shows in the API GET call.</p>
+</li>
+</ul>
+</div>
+<div class="" id="code_examples">
+<h2 class="title sectiontitle">Code examples</h2>
+</div>
+<div class="" id="delete_an_order_line_using_put">
+<h2 class="title sectiontitle">Delete an order line using PUT</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;order-header&gt;
+	&lt;order-lines&gt;
+		&lt;order-line&gt;
+			&lt;id&gt;coupa_line_id&lt;/id&gt;
+			&lt;_delete&gt;true&lt;/_delete&gt;
+		&lt;/order-line&gt;
+	&lt;/order-lines&gt;
+&lt;/order-header&gt; </code>
+</pre>
+</div>
+<div class="" id="reopen_a_soft-closed_po">
+<h2 class="title sectiontitle">Reopen a soft-closed PO</h2>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x295731.xml" title="">Closing Purchase Orders</a> for more info on soft close.</p>
+</div>
+<div class="" id="using_a_reason_insight_id">
+<h2 class="title sectiontitle">Using a reason insight ID</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;order-header&gt;
+	&lt;reason-insight-id&gt;1&lt;/reason-insight-id&gt;
+	&lt;reason-insight-event-comment&gt;comment body&lt;/reason-insight-event-comment&gt;
+&lt;/order-header&gt;</code>
+</pre>
+</div>
+<div class="" id="using_a_reason_insight_code">
+<h2 class="title sectiontitle">Using a reason insight code</h2>
+<pre>
+<code class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;order-header&gt;
+	&lt;reason-insight-code&gt;code&lt;/reason-insight-code&gt;
+	&lt;reason-insight-event-comment&gt;comment body&lt;/reason-insight-event-comment&gt;
+&lt;/order-header&gt;</code>
+</pre>
+</div>
+</div>
+</article>

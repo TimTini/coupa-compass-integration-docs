@@ -1,0 +1,219 @@
+<article class="" id="netsuite_oauth_setup">
+<h1 class="title">NetSuite OAuth Setup</h1>
+<div class="body">
+<div class="" id="step_1_create_an_oauth_account_in_coupa_for_netsuite">
+<h2 class="title sectiontitle">Create an OAuth account in Coupa for NetSuite</h2>
+<p class="">
+<b>To set up your Coupa instance with a new connection:</b>
+</p>
+<ol class="ol">
+<li class="li">
+<p class="">Go to <b>Setup &gt; Integrations &gt; Oauth2/OpenID Connect Clients</b> and click <b>Create</b>.</p>
+</li>
+<li class="li">
+<p class="">For <b>Grant Type</b> select <b>Client credentials.</b>
+</p>
+</li>
+<li class="li">
+<p class="">Specify a Name for the Client, Login, Contact info, and Contact Email.</p>
+</li>
+<li class="li">
+<p class="">Select the following scopes to enable the NetSuite bundle:</p>
+<ul class="ul">
+<li class="li">
+<p class="">core.common.read</p>
+</li>
+<li class="li">
+<p class="">core.common.write</p>
+</li>
+<li class="li">
+<p class="">core.expense.read</p>
+</li>
+<li class="li">
+<p class="">core.expense.write</p>
+</li>
+<li class="li">
+<p class="">core.inventory.receiving.read</p>
+</li>
+<li class="li">
+<p class="">core.inventory.receiving.write</p>
+</li>
+<li class="li">
+<p class="">core.invoice.read</p>
+</li>
+<li class="li">
+<p class="">core.invoice.write</p>
+</li>
+<li class="li">
+<p class="">core.pay.payments.read</p>
+</li>
+<li class="li">
+<p class="">core.pay.payments.write</p>
+</li>
+<li class="li">
+<p class="">core.pay.virtual_cards.read</p>
+</li>
+<li class="li">
+<p class="">core.pay.virtual_cards.write</p>
+</li>
+<li class="li">
+<p class="">core.payables.invoice.read</p>
+</li>
+<li class="li">
+<p class="">core.payables.invoice.write</p>
+</li>
+<li class="li">
+<p class="">core.purchase_order.read</p>
+</li>
+<li class="li">
+<p class="">core.purchase_order.write</p>
+</li>
+<li class="li">
+<p class="">core.supplier.read</p>
+</li>
+<li class="li">
+<p class="">core.supplier.write</p>
+</li>
+<li class="li">
+<p class="">core.payables.order.read</p>
+</li>
+<li class="li">
+<p class="">core.payables.order.write</p>
+</li>
+</ul>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Scopes are like a set of permissions set on the API key. In order to implement API permissions with OIDC, we've created several new scopes that provide access to specific functionality for the API.</p>
+<p class="">You can find the list of scopes and their underlying Coupa permissions by going to the Scope management page at <code class="ph codeph">/oauth2/scopes</code>. When you drill down into a scope, you can see the specific API permissions associated with that scope.</p>
+</div>
+</li>
+<li class="li">
+<p class="">Click <b>Save</b>.</p>
+<p class="">Saving the client gives you values of the client Identifier and Secret which are needed to gain access to the API Scopes you have defined for it. Click Show/Hide to display and copy the Secret.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/ns-oauth-01.png" alt="" title="" width="">
+</li>
+</ol>
+<p class="">We need an access token to be able to access APIs and it only lasts for <b>24 hours</b>, so Coupa’s recommendation is to renew the token every 20 hours (like a refresh token). With the Netsuite bundle, it's automated.</p>
+</div>
+<div class="" id="step_2_update_to_the_latest_version_of_the_coupa_p2p_expenses_bundle">
+<h2 class="title sectiontitle">Update to the latest version of the Coupa P2P + Expenses bundle</h2>
+<ol class="ol">
+<li class="li">
+<p class="">Log in to NetSuite and check the client version</p>
+</li>
+<li class="li">
+<p class="">Go to <b>Customization &gt; SuiteBundler &gt; Search &amp; Install Bundles &gt; List</b> form the top tool bar.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oracle-01.png" alt="" title="" width="">
+</li>
+<li class="li">
+<p class="">Search for <i>Coupa P2P + Expenses Bundle</i>.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oracle-02.png" alt="" title="" width="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">The Bundle version must be 7.0.0 or above to support OAuth</p>
+</div>
+</li>
+<li class="li">
+<p class="">Upgrade to the latest bundle by clicking the configuration icon () and then selecting <b>Update</b>.</p>
+<p class="">The Bundle page opens.</p>
+</li>
+<li class="li">
+<p class="">Set all values in the <b>PREFERENCE</b> column to <b>Do Not Update Deployments</b> since we don't want to overwrite any script deployment parameters that have already been set up.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oracle-04.png" alt="" title="" width="">
+</li>
+<li class="li">
+<p class="">Select <b>Update Bundle</b>.</p>
+<p class="">The status changes to <b>Pending</b>. Wait for it to finishing updating.</p>
+</li>
+</ol>
+<p class="">It may take several minutes to update. When it's finished, a green checkmark appears.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">If the update fails, try again. Sometimes NetSuite resources aren’t immediately available and the update fails for no apparent reason.</p>
+</div>
+</div>
+<div class="" id="general_observations">
+<h2 class="title sectiontitle">General observations</h2>
+<ul class="ul">
+<li class="li">
+<p class="">This process should not overwrite any of your customization in the script deployment or alter the instance credentials.</p>
+</li>
+<li class="li">
+<p class="">Please install it in your sandbox first and confirm the changes aren’t going to impact any of your current processes.</p>
+</li>
+<li class="li">
+<p class="">Review the changes made in the release notes so that you are aware which scripts are being affected and why. This should allow you to better target testing.</p>
+</li>
+</ul>
+</div>
+<div class="" id="step_3_configure_netsuite_to_use_oauth_instead_of_api_keys">
+<h2 class="title sectiontitle">Configure NetSuite to use OAuth instead of API keys</h2>
+<ol class="ol">
+<li class="li">
+<p class="">Go to <b>Setup &gt; Company &gt; General Preferences</b> and scroll down to <b>Customer Preferences</b>.</p>
+</li>
+<li class="li">
+<p class="">Under the Coupa P2P + Expenses Bundle header, provide the OIDC client identifier and client secret from the previous section. Also include the base URL of your Coupa instance in the form of <code class="ph codeph">https://{your_instance}.coupahost.com</code>.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oauth-01.png" alt="" title="" width="">
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">If any one of the above three fields are missing, NetSuite won't use OAuth to authenticate.</p>
+</div>
+</li>
+<li class="li">
+<p class="">To remove the API Key from your existing Coupa scripts, go to <b>Customization &gt; Scripting &gt; Scripts</b>.</p>
+<p class="">The <b>Scripts</b> page opens.</p>
+</li>
+<li class="li">
+<p class="">Under <b>SCRIPT FILE</b>, select <b>- All -</b> and under <b>FROM BUNDLE</b>, select <b>84306</b>.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oauth-02.png" alt="" title="" width="">
+<p class="">All of the Coupa P2P scripts used by the bundle displayed.</p>
+</li>
+<li class="li">
+<p class="">Select the <b>Deployments</b> link for a script.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oauth-03.png" alt="" title="" width="">
+<p class="">The Script Deployments page opens.</p>
+</li>
+<li class="li">
+<p class="">Select <b>Edit</b> for the deployment and then select <b>Parameters</b>.</p>
+</li>
+<li class="li">
+<p class="">Blank out the value for the <b>COUPA API Key</b>. Do not change the <b>COUPA URL</b>.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oauth-04.png" alt="" title="" width="">
+</li>
+<li class="li">
+<p class="">Repeat for each Coupa script shown back in Step 5.</p>
+</li>
+</ol>
+<p class="">By removing the Coupa API Key from each script, NetSuite won't be able to use keys to access Coupa, and will now need to rely on OAuth.</p>
+</div>
+<div class="" id="step_4_check_oauth_logging_for_each_script_during_testing">
+<h2 class="title sectiontitle">Check OAuth logging for each script during testing</h2>
+<ol class="ol">
+<li class="li">
+<p class="">Go to <b>Customization &gt; Scripting &gt; Scripts</b>.</p>
+<p class="">The <b>Scripts</b> page opens.</p>
+</li>
+<li class="li">
+<p class="">Under <b>SCRIPT FILE</b>, select <b>- All -</b> and under <b>FROM BUNDLE</b>, select <b>84306</b>.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oauth-02.png" alt="" title="" width="">
+<p class="">All of the Coupa P2P scripts used by the bundle displayed.</p>
+</li>
+<li class="li">
+<p class="">Select the <b>Deployments</b> link for a script.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/oauth-03.png" alt="" title="" width="">
+<p class="">The Script Deployments page opens.</p>
+</li>
+<li class="li">
+<p class="">Select <b>Edit</b> for the deployment and then select <b>Execution Log</b>.</p>
+<img class="inline" src="/_dita_/en-us/documentation/plat/integ/coupa_core_api/images/logging-01.png" alt="" title="" width="">
+</li>
+</ol>
+<p class="">Any script that can use OAuth but isn't configured yet has a deprecation notices similar to the ones shown above. These notices dissapear when you've fully implemented OAuth correctly. Then they will show an OAuth response code of 200 instead.</p>
+</div>
+</div>
+</article>

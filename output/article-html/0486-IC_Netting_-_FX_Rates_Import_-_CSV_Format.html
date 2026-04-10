@@ -1,0 +1,160 @@
+<article class="" id="ic_netting_-_fx_rates_import_-_csv_format">
+<h1 class="title">IC Netting - FX Rates Import - CSV Format</h1>
+<div class="body">
+<div class="" id="format_description-d94e3444">
+<h2 class="title sectiontitle">Format Description</h2>
+<p class="">
+<a data-scope="peer" data-name="" target="" href="/_dita_/en-us/documentation/plat/integ/treasury_integrations/misc/IC_Netting_-_FX_Rates_Import_-_CSV_Format.pdf" title="">PDF Version</a>
+</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>#</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Comment</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+<td class="entry" align="">
+<p class="">Netting code</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 7</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Recon code in IC Balances.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">2</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency</p>
+</td>
+<td class="entry" align="">
+<p class="">char - 3</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency ISO code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">3</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank buying rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">4</p>
+</td>
+<td class="entry" align="">
+<p class="">Bank selling rate</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="import_function-d94e3589">
+<h2 class="title sectiontitle">Import Function</h2>
+<p class="">The import function is
+        under Special Functions on Recon &amp; Netting &gt; IC Netting &gt; Rates. The import
+        function processes files in standard text formats:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII</p>
+</li>
+<li class="li">
+<p class="">Unicode</p>
+</li>
+</ul>
+</div>
+<div class="" id="format_rules-d94e3601">
+<h2 class="title sectiontitle">Format Rules</h2>
+<p class="">One file may contain multiple
+        data sets. The file cannot contain any headers or format descriptions. Do not enclose text
+        in quotation marks.</p>
+<p class="">Each row in the file contains exactly one data set:</p>
+<ul class="ul">
+<li class="li">
+<p class="">ASCII Code 13: carriage return shows the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">ASCII Code 10: new line shows the end of a data set.</p>
+</li>
+<li class="li">
+<p class="">The last data set concludes by an end of file (EOF).</p>
+</li>
+</ul>
+<p class="">In the table above, the value for “char” shows how many characters is the maximum
+        length for that field in the imported file.</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Field Separator</b> – semicolon (;), comma (,)</p>
+</li>
+<li class="li">
+<p class="">
+<b>Decimal Separator</b> – period (.), comma (,)</p>
+</li>
+</ul>
+</div>
+<div class="" id="example_data_sets-d94e3630">
+<h2 class="title sectiontitle">Example Data
+        Sets</h2>
+<p class="">N0504;USD;1.2869;1.2929</p>
+<p class="">N2001;EUR;1,352;1,3162</p>
+</div>
+</div>
+</article>

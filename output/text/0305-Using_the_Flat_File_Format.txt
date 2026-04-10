@@ -1,0 +1,11 @@
+Using the Flat File Format
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/using-the-flat-file-format
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVLfb5swEP5XkN8NhpB0WEmktNm0SN2GmmwPe6kOc6xWwWY%2B02X%2FfQ1pp3RS%2BsjHfb%2FuvCTo2l5uBv9g7vD3gOSj3XbF7mtQzRwXM97gPOe5qhpe5EXFi0qkBeTVh%2FksZdEPdKStWbEsFizaEQ24M%2BTB%2BACJbMFFzkVxSDMphExncbrIfrJoG1y0AT8xH7zvSSaJskMPHI8enYE2to8eYmW7BPr%2Bv3%2F3Ae6BqLfOh680weOjzcQgIM%2B2191HBam%2FSohsMpZj0SfrFE4NV6yBlnBMWgYB%2FYT%2FkNJZb5Vtr7Wptfm1YoMz0gJpkgY6JOmV3G%2B%2B3MrQVFanIZKfD4eSl9%2F2BxZtiNCNlW6soaFDt0f3pBV%2Bv7s9Lzklj6dCU71RM7nEZdGxaw3J6UjvR%2Bpf8rP1cpyW0y3cGf99OrwmYOuLWZfJmfLJppdfg9RuW9pWq7%2Fjpjvwl53SOJ0QXfNmGpXYgW43de2QKOywbe2fG4fgw2G8G8ICkvXJ9u0bXT8D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fusing-the-flat-file-format
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

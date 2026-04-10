@@ -1,0 +1,80 @@
+Coupa Pay Charges Export
+
+Export of these records is included as a Standard CSV Export.
+
+CoupaPay Charges export can includes rows of types: Charge, ChargeAllocation, and ChargeTaxLine. The value of type in the first position determines what table of fields applies for that row.
+
+Before publishing an integration format table you can rename most any field and reorder the fields, but it is probably best if you leave the type field in the first position because the value of type determines the structure for the row data that follows.
+
+Exportable type is charge.
+
+Charge
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+type 	Describes the type of row. Possible values are Statement, Charge, ChargeAllocation, or ChargeTaxLine. 	 	No/No
+id 	Coupa internal ID for the charge 	integer 	No/No
+coupa-pay-statement-id 	Coupa Pay internal ID for the statement 	integer 	No/No
+statement-external-ref-id 	A statement ID or Reference from the payment partner 	 	No/No
+statement-name 	The name of the statement 	 	No/No
+coupa-pay-id 	Coupa Pay's Internal ID for the Statement 	integer 	No/No
+external-ref-id 	A charge ID or Reference from the payment partner 	string(255) 	Yes/No
+charge-date 	Date of the charge 	datetime 	Yes/No
+posting-date 	Date the charge posted to the card's bank 	datetime 	No/No
+virtual-card-name 	Name of the Virtual Card 	 	No/No
+virtual-card-coupa-pay-id 	Coupa Pay internal ID of the virtual card 	 	No/No
+virtual-card-external-ref-id 	A card ID or Reference from the payment partner 	 	No/No
+virtual-card-type 	Type of the virtual card 	 	No/No
+virtual-card-order-header-po-number 	PO number on the associated order header 	 	No/No
+virtual-card-po-id 	Coupa internal ID of the associated order header 	 	No/No
+virtual-card-document-type 	The type of transactional document the card is associated with 	 	No/No
+virtual-card-document-id 	The ID of the transactional document the card is associated with 	 	No/No
+amount 	The amount in the credit card currency that was charged 	decimal(30,6) 	No/No
+currency 	The currency the card card is issued in 	 	Yes/No
+merchant-amount 	The amount the merchant charged in the transaction 	decimal(30,6) 	No/No
+merchant-currency 	The currency the merchant used in the transaction 	 	No/No
+mcc 	Merchant Category Code 	string(255) 	No/No
+supplier-name 	The name from Coupa's supplier record for the supplier that charged the card 	 	No/No
+supplier-number 	The number from Coupa's supplier record for the supplier that charged the card 	 	No/No
+merchant-reference 	The description provided by the credit card processor of who charged the card 	string(255) 	No/No
+tax-amount 	The tax amount charged in the transaction 	decimal(30,6) 	No/No
+tax-currency 	The currency for the tax 	 	No/No
+accounting-total 	Amount of charge in Chart Of Accounts Accounting Currency 	decimal 	No/No
+accounting-currency 	Currency Code for Accounting Total 	 	No/No
+issuer-bank-name 	The name from Coupa's supplier record for the bank that issued the card 	 	No/No
+issuer-bank-number 	The number from Coupa's supplier record for the bank that issued the card 	 	No/No
+issuer-reconciliation-id 	The charge reference as provided by the issuer bank 	string(255) 	No/No
+legal-entity-name 	Legal Entity name 	 	No/No
+
+Charge Allocation
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+type 	Describes the type of row. Possible values are Statement, Charge, ChargeAllocation, or ChargeTaxLine. 	 	No/No
+id 	Coupa internal ID for the charge allocation 	integer 	No/No
+statement-id 	Coupa Pay internal ID for the associated Statement 	 	No/No
+statement-external-ref-id 	A statement ID or Reference from the payment partner 	 	No/No
+statement-name 	The name of the statement 	 	No/No
+charge-id 	The unique identifier Coupa assigns to the charge. 	integer 	No/No
+charge-coupa-pay-id 	Coupa Pay internal ID of the charge 	 	No/No
+charge-external-ref-id 	external ref id of the charge 	 	No/No
+period-name 	Name of the period 	 	No/No
+amount 	amount of the charge allocation 	decimal(30,6) 	No/No
+currency 	currency of the charge allocation 	 	Yes/No
+pct 	the percentage of the total charge amount 	decimal(16,10) 	Yes/No
+account-name 	The name of the account associated to the charge allocation 	 	No/No
+account-code 	The code of the account associated to the charge allocation 	 	No/No
+account-type-name 	The name of the COA associated to the charge allocation 	 	No/No
+
+Charge Tax Line
+
+Field Name 	Description 	Field Type 	Required/Unique 	Possible Values
+type 	Describes the type of row. Possible values are Statement, Charge, ChargeAllocation, or ChargeTaxLine. 	 	No/No
+id 	The unique identifier Coupa assigns to the tax line. 	integer 	No/No
+charge-id 	The unique identifier Coupa assigns to the charge. 	 	No/No
+charge-coupa-pay-id 	Coupa Pay internal ID of the charge. 	 	No/No
+line-number 	The line number of the corresponding of the tax line. 	integer 	No/No
+tax-amount 	The amount of tax calculated on the line. 	 	No/No
+tax-currency 	The currency of tax amount on the line. 	 	No/No
+tax-rate 	The tax rate indicated on the line. 	 	No/No
+tax-code 	The tax rate code for the line tax rate. 	 	No/No
+tax-code-country 	The tax rate code country for the line tax rate 	 	No/No
+tax-code-description 	The tax rate code description for the line tax rate. 	 	No/No

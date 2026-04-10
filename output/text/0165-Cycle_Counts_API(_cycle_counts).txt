@@ -1,0 +1,23 @@
+Cycle Counts API(/cycle_counts)
+
+Associations
+
+This resource is associated with Cycle Count Lines API.
+
+Actions
+
+Verb 	 Path 	 Action 	 Description
+GET 	/api/cycle_counts 	index 	Query Cycle Counts
+GET 	/api/cycle_counts/:id 	show 	Show Cycle Counts
+PUT 	/api/cycle_counts/submit 	submit 	Submit Cycle Counts
+PATCH 	/api/cycle_counts/:id/submit 	submit 	Submit Cycle Counts
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+cycle-count-lines 	Cycle count lines 	 	 	 	 	yes 	 CycleCountLine
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+status 	Status of the cycle count 	 	 	 	 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime

@@ -1,0 +1,19 @@
+Form API
+
+Use the Form API resource to view form info on other Coupa objects.
+
+Associations
+
+The form APOI resource is associated with the Quote Requests API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+form-type 	form_type 	 	 	 	 	yes 	string(255)
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+name 	name 	yes 	yes 	 	 	yes 	string(100)
+status 	transaction status 	 	 	 	 	yes 	string(50)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User

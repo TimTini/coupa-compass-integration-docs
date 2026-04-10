@@ -1,0 +1,3 @@
+Shared Resources
+
+Many of our Coupa objects reference other objects. This section shows API resources that aren't necessarily accessible directly, but are associated with other resources.

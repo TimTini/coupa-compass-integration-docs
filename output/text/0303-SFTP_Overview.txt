@@ -1,0 +1,11 @@
+SFTP Overview
+
+This TOC entry redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+Requested URL: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/getting-started/sftp-overview-da-3411-da-3411
+
+Final URL: https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJbb9MwFP4rkd8Tx%2BmNWm2lbgVRaUC0djzwMp0mp8yaYxsfZ5R%2Fj%2BMCKpO6x3w53%2B0cLwg67eS6D0%2FmHn%2F0SCHbbpbssUIcTUaTQz6ZikM%2BPpbjfC6gzWfvWtHOD%2BMZ4JRlX9GTsmbJqqJk2Zaox62hACZEqKymeaSV872oZFlKURUzMfrGsk10UQZCYj6F4Ehy3tjeQY6ngN6ALuxzgKKxHQfnXv17jLADImd9iF%2BC4%2BnZVmVfwrja3HTvGxBhxoksH8qx7IP1DaaGS3YETTgkraOAesF%2FSO1tsI3VN8q0ynxfst4baYEUSQMdkgyN3K0%2F3cnYVB7OQyQ%2F7vd1Xn%2FZ7Vm2JkI%2FVLq1hvoO%2FQ79i2rw4f7usmRKXqRCqd6gya9xWXbqtCGZjvR2JPcnP1sthmmZbuEv%2BG%2FT4W8CtrqadcEvlM82Tn6OUttNbbVqfg2b7iBcdxKFSIhq82MaldiB0uu29UgUd6i1%2FXnrEUI8TPB9XABfnW3%2Ff6Or3w%3D%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Fintegration-technical-documentation%2Fcoupa-core-flat-files-(csv)%2Fgetting-started%2Fsftp-overview-da-3411-da-3411
+
+Observed redirect page title: Coupa Portals - Sign In
+
+Raw HTML for the redirect/login page is still preserved in the raw-html archive.

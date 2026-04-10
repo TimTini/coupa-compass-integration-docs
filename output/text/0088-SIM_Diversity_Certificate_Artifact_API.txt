@@ -1,0 +1,19 @@
+SIM Diversity Certificate Artifact API
+
+Associations
+
+This API resource is associated with the Supplier Information API.
+
+Elements
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+effective-date 	Attachment Effective Date 	 	 	 	yes 	yes 	datetime
+expiry-date 	Attachment Expiration Date 	 	 	 	yes 	yes 	datetime
+description 	Description 	 	 	 	yes 	yes 	string(255)
+agency-id 	Agency ID 	 	 	 	yes 	yes 	integer
+id 	Artifact/Attachment ID 	 	 	 	yes 	yes 	integer
+created-at 	Created Date and Time 	 	 	 	yes 	yes 	datetime
+updated-at 	Last Updated Date and Time 	 	 	 	yes 	yes 	datetime
+agency 	Agency 	 	 	 	yes 	yes
+created-by 	User who created 	 	 	 	yes 	yes
+updated-by 	User who last updated 	 	 	 	yes 	yes

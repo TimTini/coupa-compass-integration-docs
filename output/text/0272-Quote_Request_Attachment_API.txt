@@ -1,0 +1,17 @@
+Quote Request Attachment API
+
+The quote request attachment resource lets you manage the attachments on sourcing events.
+
+Associations
+
+This resource is associated with the Quote Request API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+allow-to-respond 	Allow to respond 	 	 	 	yes 	yes 	boolean
+attachments 	Attachments 	 	 	 	yes 	yes 	 Attachment
+id 	Coupa unique identifier 	 	 	 	yes 	yes 	integer
+instruction 	Instruction 	 	 	 	yes 	yes 	text
+name 	Name 	 	 	 	yes 	yes 	string(255)
+response-required 	Response required 	 	 	 	yes 	yes 	boolean

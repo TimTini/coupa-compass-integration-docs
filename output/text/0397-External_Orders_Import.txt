@@ -1,0 +1,1115 @@
+External Orders Import
+
+Overview
+
+The Purchase Order Import process reads files from the SFTP folder: ./Incoming/PurchaseOrders/.
+
+These files will be moved to the archive folder located at ./Incoming/Archive/PurchaseOrders/ before being processed in Alphanumeric order.
+
+Coupa can't update an order via flat file integration.
+
+The External Purchase Orders FAQ has a lot useful information about loading orders from third party systems.
+
+Keys
+-
+
+Supplier Name
+
+-
+
+Supplier Number
+
+For soft-closing a PO, update the PO with Action = Close
+
+For hard-closing a PO, update the PO a second time with Action = Close
+
+Item finder logic
+
+Coupa searches Supplier Item for Ship To User on Item with Supplier Part Number matching. If nothing is found, Coupa searches for the next best Supplier Item for Ship To User.
+
+Note:
+
+The External Orders import now validates the ship-to address ID against other address IDs in Coupa. If the ID matches an existing address with a different type (supplier address, remit-to, etc.) Coupa now shows the error “Invalid Ship-To Address”.
+
+Possible values Action
+
+Cancel, Close, Reopen, IssueWithSend, IssueWithoutSend, IgnoreWindowsAndIssue
+Version Number
+
+If specified, must be equal to or greater than the current order version number.
+
+External Order Header
+
+Field Name 	Required Field 	Unique? 	Field Type 	Field Description 	Possible Values
+Header 	No 	No 	 	Indicates the type of row.
+Action 	No 	No 	 	Dictates what happens to the PO line.
+Version Number 	No 	No 	 	Allows you to override Coupa's default versioning rules. See the PO SFTP Loader documentation for more info.
+PO Number 	Yes 	Yes 	string(20) 	Use to determine if Coupa will modify an existing PO or create a new PO.
+Supplier Name 	No 	No 	 	Used to identify the supplier for the PO. Can pass the supplier number in lieu of this field, but Coupa must identify an active supplier record for each PO.
+Supplier Number 	No 	No 	 	Used to identify the supplier for the PO. Can pass the supplier name in lieu of this field, but Coupa must identify an active supplier record for each PO.
+Supplier Site Code 	No 	No 	 	Supplier Site Code
+Currency Code 	No 	No 	 	Currency Code
+Chart of Account Name 	No 	No 	 	Chart of Accounts for the order. The CoA must exist in Coupa and be active.
+Confirmation Level 	No 	No 	 	No Description Found
+Confirm By Hrs 	No 	No 	integer 	No Description Found 	0..87600
+Payment Method 	No 	No 	string(255) 	No Description Found
+Payment Term Code 	No 	No 	 	No Description Found
+Shipping Term Code 	No 	No 	 	Shipping Term Code
+Ship To Id 	No 	No 	 	Ship To Id
+Ship To Name 	No 	No 	 	Name of Address. Must exist in Coupa. Must include a ship-to address, either new or preexisting in Coupa.
+Ship To Attention 	No 	No 	string(255) 	Ship to Address attention. Either the Requester or the attention linked to Address in Coupa (defaults to the requester).
+Ship To Street 1 	No 	No 	 	Ship to Address Line 1. Provide if the address does not exist in Coupa.
+Ship To Street 2 	No 	No 	 	Ship to Address Line 2. Provide if the address does not exist in Coupa.
+Ship To City 	No 	No 	 	Ship to Address City. Provide if the address does not exist in Coupa.
+Ship To State 	No 	No 	 	Ship to Address state. Provide if the address does not exist in Coupa.
+Ship To Postal Code 	No 	No 	 	Ship to Address Postal code. Provide if the address does not exist in Coupa.
+Ship To Country Code 	No 	No 	 	Ship to Address Country Code. Must exist in Coupa.
+Ship To Country Name 	No 	No 	 	Ship To Country Name
+Ship To Location Code 	No 	No 	 	Ship to Address Country Code. Must exist in Coupa. If this value is provided, the rest of the Ship to Address values can be omitted. Coupa will find the Ship To Address based on the location code and copy all address values to the external order.
+Ship To Employee Number 	No 	No 	 	The recipient must be identified with at least one of Ship To Employee Number, Ship To Email, or Ship To Login.
+Ship To Email 	No 	No 	 	The recipient must be identified with at least one of Ship To Employee Number, Ship To Email, or Ship To Login.
+Ship To Login 	No 	No 	 	The recipient must be identified with at least one of Ship To Employee Number, Ship To Email, or Ship To Login.
+Transmission Method Override 	No 	Yes 	string(30) 	Transmission Method Override 	supplier_default, email, do_not_transmit
+Transmission Emails 	No 	No 	text 	Transmission Emails
+Hide Price 	No 	No 	boolean 	Hide Price from supplier
+Allow ERS on header 	No 	No 	boolean 	Allow ERS on header
+Line 	No 	No 	 	Indicates the type of row.
+Receiving Warehouse Name 	No 	No 	 	Used for inventory orders only.
+Contract Number 	No 	No 	 	Used to identify a contract, which must be associated with the supplier on the header row. Can also be specified by passing a contract name.
+Contract Name 	No 	No 	 	Used to identify a contract, which must be associated with the supplier on the header row. Can also be specified by passing a contract number.
+Record Identifier 	No 	No 	 	Record Identifier
+Line Number 	No 	No 	 	Line Number
+Catalog Item Number 	No 	No 	 	Can be used to identify catalog items in lieu of item name.
+Catalog Item Name 	No 	No 	 	Can be used to identify catalog items in lieu of item number.
+Non Catalog Item Description 	No 	No 	 	Item description for non-catalog items.
+Department Name 	No 	No 	 	No Description Found
+Supplier Part Number 	No 	No 	 	Can be used to help identify a supplier item. See PO SFTP Loader documentation for more details.
+Supplier Aux Part Number 	No 	No 	 	Supplier Aux Part Number
+Quantity 	No 	No 	 	Line Qty Amount (blank for Service-based line).
+Price 	No 	No 	 	Price
+Need By Date 	No 	No 	 	Need By Date
+UOM Code 	No 	No 	 	Code for the unit of measure. Must exist in Coupa.
+Commodity Name 	No 	No 	 	Commodity Name
+Asset Tags 	No 	No 	 	Asset Tags
+Account Name 	No 	No 	 	Account Name
+Account Code 	No 	No 	 	Account Code
+Account Segment 1 	No 	No 	 	Account Segment 1
+Account Segment 2 	No 	No 	 	Account Segment 2
+Account Segment 3 	No 	No 	 	Account Segment 3
+Account Segment 4 	No 	No 	 	Account Segment 4
+Account Segment 5 	No 	No 	 	Account Segment 5
+Account Segment 6 	No 	No 	 	Account Segment 6
+Account Segment 7 	No 	No 	 	Account Segment 7
+Account Segment 8 	No 	No 	 	Account Segment 8
+Account Segment 9 	No 	No 	 	Account Segment 9
+Account Segment 10 	No 	No 	 	Account Segment 10
+Account Segment 11 	No 	No 	 	Account Segment 11
+Account Segment 12 	No 	No 	 	Account Segment 12
+Account Segment 13 	No 	No 	 	Account Segment 13
+Account Segment 14 	No 	No 	 	Account Segment 14
+Account Segment 15 	No 	No 	 	Account Segment 15
+Account Segment 16 	No 	No 	 	Account Segment 16
+Account Segment 17 	No 	No 	 	Account Segment 17
+Account Segment 18 	No 	No 	 	Account Segment 18
+Account Segment 19 	No 	No 	 	Account Segment 19
+Account Segment 20 	No 	No 	 	Account Segment 20
+Budget Period Name 	No 	No 	 	Budget Period Name
+Bulk Price 	No 	No 	 	Bulk Price
+Bulk Price Qty 	No 	No 	 	Bulk Price Qty
+Bulk Price UoM Code 	No 	No 	 	Bulk Price UOM Code
+Bulk Price Conversion Numerator 	No 	No 	 	Bulk Price Conversion Numerator
+Bulk Price Conversion Denominator 	No 	No 	 	Bulk Price Conversion Denominator
+Reason Insight Event Comment 	No 	No 	 	Required comment if a reason insight ID or code is provided.
+Reason Insight ID 	No 	No 	 	If a reason insight needs to be specified (required for opening line or PO), one of the ID or CODE is required, along with a comment.
+Reason Insight Code 	No 	No 	 	If a reason insight needs to be specified (required for opening line or PO), one of the ID or CODE is required, along with a comment.
+Manufacturer Name 	No 	No 	 	Manufacturer Name
+Manufacturer Part Number 	No 	No 	 	Manufacturer Part Number
+Account Allocation 	No 	No 	 	Account Allocation
+Estimated Tax Amount 	No 	No 	 	Estimated Tax Amount
+Percent 	No 	No 	 	Percent
+Estimated Tax Line 	No 	No 	 	Estimated Tax Line
+Tax Line Number 	No 	No 	 	Tax Line Number
+Estimated Tax Code 	No 	No 	 	Estimated Tax Code
+Estimated Tax Rate 	No 	No 	 	Estimated Tax Rate
+Tax Reference 	No 	No 	 	Tax Reference
+Base Amount 	No 	No 	 	Base Amount
+Product Classification 	No 	No 	 	Product Classification
+Delete 	No 	No 	 	Delete
+
+External order line columns
+
+Column Name
+
+Description
+
+Req'd
+
+Unique
+
+Type
+
+Allowable Values
+
+Line
+
+Indicates the type of row
+
+No
+
+No
+
+-
+
+Line
+
+Action
+
+Dictates what happens to the PO line.
+
+No
+
+No
+
+string
+
+delete,
+
+SoftCloseForReceiving, SoftCloseForInvoicing, ReopenForReceiving, ReopenForInvoicing
+
+Receiving Warehouse Name
+
+Used for inventory orders only
+
+No
+
+No
+
+string(255)
+
+any
+
+Contract Number
+
+Used to identify a contract, which must be associated with the supplier on the header row. Can also be specified by passing a contract name.
+
+No
+
+No
+
+string(50)
+
+any
+
+Contract Name
+
+Used to identify a contract, which must be associated with the supplier on the header row. Can also be specified by passing a contract number.
+
+No
+
+No
+
+string(100)
+
+any
+
+Record Identifier
+
+Record Identifier
+
+No
+
+No
+
+any
+
+Line Number
+
+Used to identify an existing PO line if making an update to a PO, otherwise defines the line number for new PO lines.
+
+No
+
+No
+
+string(255)
+
+any
+
+Catalog Item Number
+
+Can be used to identify catalog items, in lieu of item name.
+
+No
+
+No
+
+string(255)
+
+any
+
+Catalog Item Name
+
+Can be used to identify catalog items, in lieu of item number.
+
+No
+
+No
+
+string(255)
+
+any
+
+Non Catalog Item Description
+
+Item description for non-catalog items.
+
+No
+
+No
+
+string(255)
+
+any
+
+Department Name
+
+Same as req loader
+
+No
+
+No
+
+string(255)
+
+any
+
+Supplier Part Number
+
+Can be used to help identify a supplier item. See PO SFTP Loader documentation for more details
+
+No
+
+No
+
+string(255)
+
+any
+
+Quantity
+
+Line Qty Amount (blank for Service-based line)
+
+No*
+
+No
+
+decimal(30,6)
+
+any
+
+Price
+
+Item unit price
+
+Yes***
+
+No
+
+decimal(30,6)
+
+any
+
+Need By Date
+
+Need by date
+
+No
+
+No
+
+datetime
+
+YYYY-MM-DDTHH:MM:SS+HH:MM
+
+UOM Code
+
+Code for the unit of measure. Must exist in Coupa.
+
+No*
+
+No
+
+string(6)
+
+any
+
+Commodity Name
+
+Commodity Name. Must exist in Coupa.
+
+No
+
+No
+
+string(255)
+
+Must exist in Coupa
+
+Asset Tags
+
+Not currently used
+
+No
+
+No
+
+any
+
+Account Name
+
+Same as req loader
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Code
+
+Same as req loader
+
+No
+
+No
+
+string(2020)
+
+any
+
+Account Segment 1
+
+Account Segment 1
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 2
+
+Account Segment 2
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 3
+
+Account Segment 3
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 4
+
+Account Segment 4
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 5
+
+Account Segment 5
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 6
+
+Account Segment 6
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 7
+
+Account Segment 7
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 8
+
+Account Segment 8
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 9
+
+Account Segment 9
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 10
+
+Account Segment 10
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 11
+
+Account Segment 11
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 12
+
+Account Segment 12
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 13
+
+Account Segment 13
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 14
+
+Account Segment 14
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 15
+
+Account Segment 15
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 16
+
+Account Segment 16
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 17
+
+Account Segment 17
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 18
+
+Account Segment 18
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 19
+
+Account Segment 19
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Segment 20
+
+Account Segment 20
+
+No
+
+No
+
+string(100)
+
+any
+
+Budget Period Name
+
+The name of the budget period
+
+No
+
+No
+
+string(255)
+
+any
+
+Bulk Price
+
+Bulk Price
+
+No
+
+No
+
+decimal(30,6)
+
+any
+
+Bulk Price Conversion Numerator
+
+Bulk Price Conversion Numerator
+
+No
+
+No
+
+decimal(30,6)
+
+any
+
+Bulk Price Conversion Denominator
+
+Bulk Price Conversion Denominator
+
+No
+
+No
+
+decimal(30,6)
+
+any
+
+Bulk Price Qty
+
+Bulk Price Qty
+
+No
+
+No
+
+decimal(30,6)
+
+any
+
+Bulk Price UoM Code
+
+Bulk Price UoM Code
+
+No
+
+No
+
+int(11)
+
+any
+
+Supplier Aux Part Number
+
+Supplier Aux Part Number
+
+No
+
+No
+
+any
+
+Manufacturer Name
+
+Manufacturer Name
+
+No
+
+No
+
+any
+
+Manufacturer Part Number
+
+Manufacturer Part Number
+
+No
+
+No
+
+any
+
+Hidden columns
+
+These columns are available for use in External Order Lines rows but aren't included in the template. You can add them manually if you need to use them.
+
+Column Name
+
+Description
+
+Req'd
+
+Unique
+
+Type
+
+Allowable Values
+
+Reason Insight ID
+
+If a reason insight needs to be specified (required for opening line or PO), one of the ID or CODE is required, along with a comment.
+
+True*
+
+false
+
+integer
+
+any
+
+Reason Insight Code
+
+If a reason insight needs to be specified (required for opening line or PO), one of the ID or CODE is required, along with a comment.
+
+True*
+
+false
+
+string(255)
+
+any
+
+Reason Insight Event Comment
+
+Required comment if a reason insight ID or code is provided.
+
+True*
+
+false
+
+string(255)
+
+any
+
+External order account allocation columns
+
+Column Name
+
+Description
+
+Req'd
+
+Unique
+
+Type
+
+Allowable Values
+
+Account Allocation
+
+Indicates the type of row
+
+No
+
+No
+
+-
+
+Account Allocation
+
+Record Identifier
+
+No
+
+No
+
+any
+
+Line Number
+
+Used to identify an existing PO line if making an update to a PO, otherwise defines the line number for new PO lines.
+
+No
+
+No
+
+string(255)
+
+any
+
+Amount
+
+Amount
+
+No
+
+No
+
+decimal(30,3)
+
+any
+
+Percent
+
+Percent
+
+No
+
+No
+
+decimal(16,10)
+
+any
+
+Account Name
+
+Same as req loader
+
+No
+
+No
+
+string(100)
+
+any
+
+Account Code
+
+Same as req loader
+
+No
+
+No
+
+string(20)
+
+any
+
+Account Segments 1 - 20
+
+Account Segments 1 through 20
+
+No
+
+No
+
+string(100)
+
+any
+
+Budget Period Name
+
+The name of the budget period
+
+No
+
+No
+
+string(255)
+
+any
+
+* Service based lines don't have a quantity or UOM
+
+** Requires one of Supplier Name or Supplier Number
+
+*** This field is only required if a value is not currently assigned for an item within Coupa
+
+Order line defaults for all lines
+
+Line Attribute
+
+Source
+
+Source Attribute
+
+Conditions
+
+description
+
+Item
+
+name
+
+unit_price
+
+CSV
+
+csv_row[ rice]
+
+If provided
+
+unit_price
+
+SupplierItem
+
+price
+
+If CSV value (above) is blank
+
+contract
+
+#load_contract
+
+csv_row[:contract_number] or csv_row[:contract_name]
+
+Matching Name or Number
+
+contract
+
+SupplierItem
+
+contract
+
+If CSV value (above) is blank
+
+source_part_num
+
+CSV
+
+csv_row[:supplier_part_number]
+
+If provided
+
+source_part_num
+
+SupplierItem
+
+supplier_part_num
+
+If CSV value (above) is blank
+
+supplier_aux_part_num
+
+CSV
+
+csv_row[:supplier_aux_part_number]
+
+If provided
+
+supplier_aux_part_num
+
+SupplierItem
+
+supplier_aux_part_num
+
+If CSV value (above) is blank
+
+supplier
+
+#load_supplier
+
+Supplier
+
+Matching Name or Number & "active"
+
+supplier_site
+
+CSV
+
+OrderHeader
+
+uom
+
+#load_uom
+
+Uom
+
+Matching "Uom Code"
+
+uom
+
+Item
+
+Uom
+
+If CSV value (above) is blank
+
+commodity
+
+#load_commodity
+
+Commodity
+
+Matching Commodity Name
+
+currency
+
+OrderHeader
+
+Currency
+
+period
+
+#load_period
+
+BudgetPeriod
+
+Matching "Budget Period Name" for AccountType (above)
+
+line_num
+
+CSV
+
+csv_row[:line_number]
+
+quantity
+
+CSV
+
+csv_row[:quantity]
+
+need_by_date
+
+CSV
+
+csv_row[:need_by_date]
+
+Defaults for free-form requisition lines
+
+Line Attribute
+
+Source
+
+Source Attribute
+
+Conditions
+
+description
+
+CSV
+
+csv_row[:non_catalog_item_description]
+
+Item finder errors
+
+An error will be returned if:
+
+-
+
+Catalog and/or Manufacturer details are included in the loader input and no Catalog Item is found. This includes cases where there is an existing match to Catalog details but with different Manufacturer details.
+
+-
+
+Catalog Item cannot be found and Non Catalog Item Description is blank in loader input.
+
+-
+
+No Supplier Item is found.
+
+-
+
+Neither Price nor Bulk Price are found.
+
+The following cases result in a Catalog Item Not Found error message:
+
+-
+
+Catalog Item Number or Catalog Item Name are present in the payload, but an item cannot be found.
+
+-
+
+Catalog Item Name and MFG details are present in the payload and Catalog Item Name does not match Name of the selected Item.
+
+-
+
+Manufacturer Name is present in the payload and configured on the selected Item and not matching.
+
+-
+
+Manufacturer Part Number is present in the payload and configured on the selected Item and not matching.
+
+The Catalog Not Found error message says "Catalog Item not found for LIST OF ATTRIBUTES AND VALUES IN PAYLOAD". For example, the error message could be, "Catalog Item not found for Catalog Item Number with value ABC123, Catalog Item Name with value ABC 123 ITEM."
+
+In addition to the above messages, in the Requisition Header loader, if the setup key csv_requisition_loader_supplier_item_required? is set to true and the loader cannot match a Supplier Item, a Supplier Item Not Found error is returned. For example, the error message could be, "Supplier Item not found for Catalog Item Name with value ABC 123 ITEM, Supplier Part Number with value SUPP123."

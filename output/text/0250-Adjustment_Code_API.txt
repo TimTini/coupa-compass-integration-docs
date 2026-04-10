@@ -1,0 +1,14 @@
+Adjustment Code API
+
+Associations
+
+This resource is associated with Receipts API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+code 	Code 	yes 	yes 	any 	 	yes 	string(255)
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime
+id 	Coupa unique identifier 	no 	no 	any 	 	yes 	integer
+name 	Name 	yes 	yes 	any 	 	yes 	string(255)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	 	yes 	datetime

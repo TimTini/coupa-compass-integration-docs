@@ -1,0 +1,91 @@
+---
+title: "Account Validation Rules Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/account-validation-rules-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/account-validation-rules-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:32+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Account Validation Rules Import"
+---
+
+# Account Validation Rules Import
+
+## Overview
+
+The Approval chains Import process reads files from
+`./Incoming/AccountValidationRules/` in the SFTP. These files will be moved
+to the archive folder located at `./Archive/Incoming/AccountValidationRules/`
+before being processed in Alpha-Numeric order.
+
+## Account Validation Rule
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Name | Yes | Yes | string(100) | Name of Account Validation Rule | |
+| Error Message | Yes | No | string(255) | Error Message to display if rule is triggered | |
+| Description | No | No | string(255) | Description of the rule | |
+| Active | No | No | boolean | If this rule is currently active or not | |
+| Chart of Accounts Name | No | No | | Leave blank to trigger for ALL chart of accounts. Otherwise Chart of Account Name must exist. | |
+| Segment 1 Condition | No | No | string(255) | Segment 1 Condition (Range, Blank Value, Any Values) | |
+| Segment 1 Min | No | No | string(255) | Segment 1 Min if Condition i s Range | |
+| Segment 1 Max | No | No | string(255) | Segment 1 Max if condition is Range | |
+| Segment 2 Condition | No | No | string(255) | Segment 2 Condition (Range, Blank Value, Any Values) | |
+| Segment 2 Min | No | No | string(255) | Segment 2 Min if condition is Range | |
+| Segment 2 Max | No | No | string(255) | Segment 2 Max if condition is Range | |
+| Segment 3 Condition | No | No | string(255) | Segment 3 Condition (Range, Blank Value, Any Values) | |
+| Segment 3 Min | No | No | string(255) | Segment 3 Min if condition is Range | |
+| Segment 3 Max | No | No | string(255) | Segment 3 Max if condition is Range | |
+| Segment 4 Condition | No | No | string(255) | Segment 4 Condition (Range, Blank Value, Any Values) | |
+| Segment 4 Min | No | No | string(255) | Segment 4 Min if condition is Range | |
+| Segment 4 Max | No | No | string(255) | Segment 4 Max if condition is Range | |
+| Segment 5 Condition | No | No | string(255) | Segment 5 Condition (Range, Blank Value, Any Values) | |
+| Segment 5 Min | No | No | string(255) | Segment 5 Min if condition is Range | |
+| Segment 5 Max | No | No | string(255) | Segment 5 Max if condition is Range | |
+| Segment 6 Condition | No | No | string(255) | Segment 6 Condition (Range, Blank Value, Any Values) | |
+| Segment 6 Min | No | No | string(255) | Segment 6 Min if condition is Range | |
+| Segment 6 Max | No | No | string(255) | Segment 6 Max if condition is Range | |
+| Segment 7 Condition | No | No | string(255) | Segment 7 Condition (Range, Blank Value, Any Values) | |
+| Segment 7 Min | No | No | string(255) | Segment 7 Min if condition is Range | |
+| Segment 7 Max | No | No | string(255) | Segment 7 Max if condition is Range | |
+| Segment 8 Condition | No | No | string(255) | Segment 8 Condition (Range, Blank Value, Any Values) | |
+| Segment 8 Min | No | No | string(255) | Segment 8 Min if condition is Range | |
+| Segment 8 Max | No | No | string(255) | Segment 8 Max if condition is Range | |
+| Segment 9 Condition | No | No | string(255) | Segment 9 Condition (Range, Blank Value, Any Values) | |
+| Segment 9 Min | No | No | string(255) | Segment 9 Min if condition is Range | |
+| Segment 9 Max | No | No | string(255) | Segment 9 Max if condition is Range | |
+| Segment 10 Condition | No | No | string(255) | Segment 10 Condition (Range, Blank Value, Any Values) | |
+| Segment 10 Min | No | No | string(255) | Segment 10 Min if condition is Range | |
+| Segment 10 Max | No | No | string(255) | Segment 10 Max if condition is Range | |
+| Segment 11 Condition | No | No | string(255) | Segment 11 Condition (Range, Blank Value, Any Values) | |
+| Segment 11 Min | No | No | string(255) | Segment 11 Min if condition is Range | |
+| Segment 11 Max | No | No | string(255) | Segment 11 Max if condition is Range | |
+| Segment 12 Condition | No | No | string(255) | Segment 12 Condition (Range, Blank Value, Any Values) | |
+| Segment 12 Min | No | No | string(255) | Segment 12 Min if condition is Range | |
+| Segment 12 Max | No | No | string(255) | Segment 12 Max if condition is Range | |
+| Segment 13 Condition | No | No | string(255) | Segment 13 Condition (Range, Blank Value, Any Values) | |
+| Segment 13 Min | No | No | string(255) | Segment 13 Min if condition is Range | |
+| Segment 13 Max | No | No | string(255) | Segment 13 Max if condition is Range | |
+| Segment 14 Condition | No | No | string(255) | Segment 14 Condition (Range, Blank Value, Any Values) | |
+| Segment 14 Min | No | No | string(255) | Segment 14 Min if condition is Range | |
+| Segment 14 Max | No | No | string(255) | Segment 14 Max if condition is Range | |
+| Segment 15 Condition | No | No | string(255) | Segment 15 Condition (Range, Blank Value, Any Values) | |
+| Segment 15 Min | No | No | string(255) | Segment 15 Min if condition is Range | |
+| Segment 15 Max | No | No | string(255) | Segment 15 Max if condition is Range | |
+| Segment 16 Condition | No | No | string(255) | Segment 16 Condition (Range, Blank Value, Any Values) | |
+| Segment 16 Min | No | No | string(255) | Segment 16 Min if condition is Range | |
+| Segment 16 Max | No | No | string(255) | Segment 16 Max if condition is Range | |
+| Segment 17 Condition | No | No | string(255) | Segment 17 Condition (Range, Blank Value, Any Values) | |
+| Segment 17 Min | No | No | string(255) | Segment 17 Min if condition is Range | |
+| Segment 17 Max | No | No | string(255) | Segment 17 Max if condition is Range | |
+| Segment 18 Condition | No | No | string(255) | Segment 18 Condition (Range, Blank Value, Any Values) | |
+| Segment 18 Min | No | No | string(255) | Segment 18 Min if condition is Range | |
+| Segment 18 Max | No | No | string(255) | Segment 18 Max if condition is Range | |
+| Segment 19 Condition | No | No | string(255) | Segment 19 Condition (Range, Blank Value, Any Values) | |
+| Segment 19 Min | No | No | string(255) | Segment 19 Min if condition is Range | |
+| Segment 19 Max | No | No | string(255) | Segment 19 Max if condition is Range | |
+| Segment 20 Condition | No | No | string(255) | Segment 20 Condition (Range, Blank Value, Any Values) | |
+| Segment 20 Min | No | No | string(255) | Segment 20 Min if condition is Range | |
+| Segment 20 Max | No | No | string(255) | Segment 20 Max if condition is Range | |

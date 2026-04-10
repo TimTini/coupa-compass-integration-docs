@@ -1,0 +1,45 @@
+Contract Template API (/contracts/templates)
+
+In support of Contract Template Management you can now restrict access to contract templates by assigning a contract template to a content group. The Contract Template API allows your system to get them.
+
+The URL to access contract templates is: https://<instance>/api/contracts/templates
+
+See Integration Best Practices for more info.
+
+Actions
+
+The Contract Template API allows you to:
+
+Verb 	 Path 	 Action 	 Description
+GET 	 /api/contracts/templates 	index 	Query contract templates
+GET 	 /api/contracts/templates/:id 	show 	Show contract template
+
+Elements
+
+The following elements are available for the Contract Template API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+active 	Is Template Active 	no 	no 	any 	 yes 	yes 	boolean
+authoring-method 	Authoring Method
+
+msword,
+
+msword_and_online
+yes 	yes 	string(255)
+content-groups 	Business Groups 	 	 	 yes 	yes 	 Content Groups
+contract-classification 	Contract classification 	 	 	 	yes
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	yes 	datetime
+created-by 	User who created 	 	 	 	yes 	 User
+description 	Description 	 	 	 yes 	yes 	string(255)
+fill-with-counterparty 	Fill with Counterparty 	 	 	 	yes 	yes 	boolean
+hierarchy-type 	Hierarchy Type 	 	 	 	yes 	string(255)
+id 	Coupa unique identifier 	 	 	yes 	integer
+name 	Name 	yes 	 	 	 yes 	yes 	string(255)
+template-generator-id 	Template Generator ID 	yes 	 	 	 	yes 	string(1024)
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	yes 	datetime
+updated-by 	User who updated 	 	 	 	yes 	 User
+template_generator_type 	Template Generator Typetemplate_generator_type 	 	 	 	yes 	integer
+supporting_document 	Supporting Documentsupporting_document 	 	 	 	yes 	boolean
+source 	Identifier for Contract Template Source 	 	 	 	yes 	 	string(255)
+contract_types 	Contract Types 	 	 	 	yes 	yes 	 Contract Types
+contract_hierarchy_types 	Contract Hierarchy Types 	 	 	 	yes 	yes 	ContractHierarchyType

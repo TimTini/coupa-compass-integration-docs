@@ -1,0 +1,15 @@
+Expense Line Imported Data API
+
+Association
+
+This resource is associated with Expense Lines API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+amount 	amount 	 	 	 	 	yes 	decimal(32,4)
+description 	description 	 	 	 	 	yes 	string(255)
+id 	Coupa unique identifier 	 	 	 	 	yes 	integer
+local-amount-different 	 	 	 	 	 	yes 	boolean
+local-amount 	 	 	 	 	 	yes 	decimal(32,4)
+local-amount-currency 	 	 	 	 	 	yes

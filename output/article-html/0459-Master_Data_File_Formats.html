@@ -1,0 +1,995 @@
+<article class="" id="master_data_file_formats">
+<h1 class="title">Master Data File Formats</h1>
+<div class="body">
+<p class="">Customers, before attempting to integrate the file formats described in this document, please review the following notes first:</p>
+<div class="" id="if_you_are_in_the_middle_of_an_implementation">
+<h2 class="title sectiontitle">If you are in the middle of an implementation</h2>
+<p class="">Please contact your Coupa Solutions Architect for assistance with file imports.</p>
+</div>
+<div class="" id="if_you_have_legacy_custom_integration_formats_that_differ_significantly_from_what_is_described_below">
+<h2 class="title sectiontitle">If you have legacy, custom integration formats that differ significantly from what is described below</h2>
+<p class="">Please contact your Coupa CVM about switching to the formats described in this document.</p>
+</div>
+<div class="" id="everyone_else">
+<h2 class="title sectiontitle">Everyone else</h2>
+<p class="">Please contact Coupa support for assistance with adding any of the fields below to an existing integration file.</p>
+</div>
+<div class="" id="master_data">
+<h2 class="title sectiontitle">Master Data</h2>
+<p class="">
+<b>Description:</b> Data representing an individual segment</p>
+<p class="">
+<b>Supported loads:</b> Delta File, Full File</p>
+<p class="">
+<b>Supported Delimiters:</b> Pipe(|), Comma(,)</p>
+<p class="">
+<b>Supported file extensions:</b> .csv, .txt</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Fields</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type &amp; Length</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowed Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Example</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Service QA</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">64121</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Description</p>
+</td>
+<td class="entry" align="">
+<p class="">string(500)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">IT Services Cost Center</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Status</p>
+</td>
+<td class="entry" align="">
+<p class="">Int(1)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">1 for Active, 0 for inactive</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="master_data_relationships">
+<h2 class="title sectiontitle">Master Data Relationships</h2>
+<p class="">
+<b>Description:</b> Defines the relationship between 2 segments, so that valid child segment options are filtered based on parent segment choice</p>
+<p class="">
+<b>Supported loads:</b> Delta File (recommended), Full File</p>
+<p class="">
+<b>Supported Delimiters:</b> Pipe(|), Comma(,)</p>
+<p class="">
+<b>Supported file extensions:</b> .csv, .txt</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Fields</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type &amp; Length</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowed Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Example</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Status</p>
+</td>
+<td class="entry" align="">
+<p class="">Int(1)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">1 for Active, 0 for inactive</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Parent Segment Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CUSTOMER’s Master Data1 unique name (must match to Unique name value of record on Master Data1 integration)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Parent Segment Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CUSTOMER's Master Data1 code.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Child Segment Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CUSTOMER’s Master Data2 name (must match to Unique name value of record on Master Data2 integration).</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Child Segment Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CUSTOMER's Master Data2 code.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="accounts">
+<h2 class="title sectiontitle">Accounts</h2>
+<p class="">
+<b>Description:</b> CCW stand-alone customers only (Non BSM) can use this integration to load accounts into CCW.</p>
+<p class="">
+<b>Supported loads:</b> Delta File (recommended), Full File</p>
+<p class="">
+<b>Supported Delimiters:</b> Pipe(|), Comma(,)</p>
+<p class="">
+<b>Supported file extensions:</b> .csv, .txt</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Fields</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type &amp; Length</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowed Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Example</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Status</p>
+</td>
+<td class="entry" align="">
+<p class="">Int(1)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">1 for Active, 0 for inactive</p>
+</td>
+<td class="entry" align="">
+<p class="">1</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Account</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">0100-2522-1545</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Top of the house booking account</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="work_location">
+<h2 class="title sectiontitle">Work Location</h2>
+<p class="">
+<b>Description:</b> Load work location data associated with a CW, so that CW onboarding can be assigned to a Work location</p>
+<p class="">
+<b>Supported loads:</b> Delta File (recommended), Full File</p>
+<p class="">
+<b>Supported Delimiters:</b> Pipe(|), Comma(,)</p>
+<p class="">
+<b>Supported file extensions:</b> .csv, .txt</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Fields</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type &amp; Length</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowed Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Example</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Status</p>
+</td>
+<td class="entry" align="">
+<p class="">int</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">1 for Active, 0 for inactive</p>
+</td>
+<td class="entry" align="">
+<p class="">0</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">CCW01234</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(200)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Arcade Research</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Address Line1</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">8978 - westlake</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Address Line2</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Suire # 201</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">City</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Cleveland</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">State</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Ohio</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Postal Code</p>
+</td>
+<td class="entry" align="">
+<p class="">string(20)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">44234</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+<td class="entry" align="">
+<p class="">string(3)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any, ISO Alpha3</p>
+</td>
+<td class="entry" align="">
+<p class="">USA</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="user">
+<h2 class="title sectiontitle">User</h2>
+<p class="">
+<b>Description:</b> CCW stand-alone customers only (Non BSM) can use this integration to load users into CCW.</p>
+<p class="">
+<b>Supported loads:</b> Delta File (recommended), Full File</p>
+<p class="">
+<b>Supported Delimiters:</b> Pipe(|), Comma(,)</p>
+<p class="">
+<b>Supported file extensions:</b> .csv, .txt</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Fields</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type &amp; Length</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Mandatory</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowed Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Example</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Status</p>
+</td>
+<td class="entry" align="">
+<p class="">int(1)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">1 for Active, 0 for inactive</p>
+</td>
+<td class="entry" align="">
+<p class="">0</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">User ID</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">STPHCAR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Last Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Doe</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">First Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">John</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Middle Name</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Email</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">jdoe@coupadocument.com</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">CCW User Role</p>
+</td>
+<td class="entry" align="">
+<p class="">string(512)</p>
+</td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Engaging Manager</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Supervisor ID</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">HUMJINK</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Job Title</p>
+</td>
+<td class="entry" align="">
+<p class="">string(400)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Production Manager</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Spend Limit</p>
+</td>
+<td class="entry" align="">
+<p class="">Number(45,8)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">0.00</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SSO Attribute</p>
+</td>
+<td class="entry" align="">
+<p class="">String(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">STPHCAR</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Work Location Code</p>
+</td>
+<td class="entry" align="">
+<p class="">String(100)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">NJB1F002C23</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 1 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Company ID (CCW Mapping = Organization)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 2 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Cost Center ID (CCW Mapping = Cost Center)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 3 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">GL ID (CCW Mapping = GL Account)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 4 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Service Method ID (CCW Mapping = Program)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 5 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Supervisory Org ID (CCW Mapping = Project)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 6 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Site Location</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 7 Name</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Profit Center</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 8 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">ServiceMethod</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 9 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Labor Class</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 10 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Matrix</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Master Data Segment 11 Code</p>
+</td>
+<td class="entry" align="">
+<p class="">String(255)</p>
+</td>
+<td class="entry" align="">
+<p class="">No</p>
+</td>
+<td class="entry" align="">
+<p class="">Any</p>
+</td>
+<td class="entry" align="">
+<p class="">Department</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="">
+</div>
+</div>
+</article>

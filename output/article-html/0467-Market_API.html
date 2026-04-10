@@ -1,0 +1,473 @@
+<article class="" id="market_api">
+<h1 class="title">Market API</h1>
+<div class="body">
+<p class="">Use the Market API's to create, update, or query the Market Data. This includes specific
+      endpoints to take action (create/update/delete) as well as events related to markets.</p>
+<p class="">The URL to access the API's is :
+        <span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/markets</span>
+</p>
+<p class="">See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div class="" id="actions-d26e4840">
+<h2 class="title sectiontitle">Actions</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/markets</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Performs Get action to retrieve all markets</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/markets</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Creates one or more market objects.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/markets</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Updates one or more markets . Can perform mass updates.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/markets</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">delete</p>
+</td>
+<td class="entry" align="">
+<p class="">Deletes one more more markets. Can perform mass deletes.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/markets/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show one market data.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/markets/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update one market at a time using the ID</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DELETE</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/markets/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">delete</p>
+</td>
+<td class="entry" align="">
+<p class="">Delete one market at a time.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="elements-d26e5028">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">These are the elements available for
+        the Markets API</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Field Name</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Field Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Req'd</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Values</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>In</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Out</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">A unique auto incremental, system generated ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Name of the market</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">description</p>
+</td>
+<td class="entry" align="">
+<p class="">Short description of the market</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="examples-d26e5207">
+<h2 class="title sectiontitle">Examples</h2>
+<p class="">In this example, we queried for a
+        markets API. We did a GET to the
+          URL:</p>
+<p class="">
+<span class="filepath">https://&lt;instance&gt;.cso.coupahost.com/api/markets</span>
+</p>
+</div>
+<div class="" id="markets_get_response">
+<h2 class="title sectiontitle">Markets GET
+      Response</h2>
+<pre>
+<code class="codeblock">
+        {
+		"total": 10,
+		"markets": [
+				{
+						"id": "9219601763469521167",
+						"name": "!Bank of Montreal Savings Tracker Demo"
+				},
+				{
+						"id": "9219595277140974408",
+						"name": "!JIRA-Tickets"
+				},
+				{
+						"id": "9219593060488131385",
+						"name": "!Market 1",
+						"description": "Logistics and Transportation"
+				},
+			 {
+						"id": "9220538753220565326",
+						"name": "Arj Market 1",
+						"description": "XPO logistics"
+				},
+				{
+						"id": "9220538753220565329",
+						"name": "Arj Market 2",
+						"description": "XPO Transportation"
+				},
+				{
+						"id": "9219592846040196615",
+						"name": "Common Information"
+				},
+				{
+						"id": "9219593864376360801",
+						"name": "Consulting"
+				},
+				{
+						"id": "9219601774059719348",
+						"name": "D - Nikisha's Demo Market"
+				},
+				{
+						"id": "9219601938334799391",
+						"name": "E-Integrations"
+				},
+				{
+						"id": "9219601936493380282",
+						"name": "E-Top Tips to Audit Events"
+				}
+	 ]
+}</code>
+</pre>
+</div>
+<div class="" id="create_update_delete-d26e5370">
+<h2 class="title sectiontitle">Create/Update/Delete</h2>
+<p class="">The following
+        describes how you can use the Coupa API to perform actions on Markets.</p>
+</div>
+<div class="" id="create-d26e5374">
+<h2 class="title sectiontitle">Create</h2>
+<p class="">
+<code class="ph codeph">/api/markets</code>
+</p>
+<p class="">The
+        below payload creates two
+      markets.</p>
+<pre>
+<code class="codeblock">
+        Payload: 
+{
+		"markets": [
+				{
+						"name": "Arjun Market 1",
+						"description": "XPO logistics"
+				},
+				{
+						"name": "Arjun Market 2",
+						"description": "XPO Transportation"
+				}
+		]
+}
+
+Response: 201
+{
+		"result": [
+				{
+						"type": "api.post.added",
+						"description": "2 objects created."
+				}
+		],
+		"added": 2,
+		"markets": [
+				{
+						"id": "9220538753220565326"
+				},
+				{
+						"id": "9220538753220565329"
+				}
+		]
+}</code>
+</pre>
+</div>
+<div class="" id="update-d26e5480">
+<h2 class="title sectiontitle">Update</h2>
+<p class="">
+<code class="ph codeph">/api/markets</code>
+</p>
+<p class="">The
+        below payload updates a
+      market.</p>
+<pre>
+<code class="codeblock">
+        To update one or more market at a time: 
+Payload:
+{
+		"markets": [
+				{
+						"name": "Arj Market 1",
+						"description": "XPO logistics updated"
+				},
+				{
+						"name": "Arj Market 2",
+						"description": "XPO Transportation updated"
+				}
+		]
+}
+
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "api.put.updated",
+						"description": "2 objects updated."
+				}
+		],
+		"updated": 2
+}</code>
+</pre>
+</div>
+<div class="" id="delete-d26e5563">
+<h2 class="title sectiontitle">Delete</h2>
+<p class="">
+<code class="ph codeph">/api/markets</code>
+</p>
+<p class="">The
+        below payload is to delete more than one market at a time. Please remember that deleting
+        markets individually or mass , will result in deletion of associated events as
+          well.</p>
+<pre>
+<code class="codeblock">
+        Payload:
+{
+		"markets": [
+				{
+						"id": "9220538753220565326"
+				},
+				{
+						"name": "Arjun Market 2"
+				}
+		]
+}
+
+Response: 200 OK
+{
+		"result": [
+				{
+						"type": "market.deleted.logMsg",
+						"description": "The market Arjun Market 1 was deleted."
+				}
+		],
+		"deleted": 1
+}</code>
+</pre>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">Updates
+          are done in a lenient manner, i.e. if updating one resource fails, the other ones might be
+          successful. See delete payload above for example. The payload deleted only one market. For
+          deletion or updates, an ID is required in the payload.</p>
+</div>
+<p class="">Successful requests
+        will return <code class="ph codeph">HTTP 200 Response</code>. The body of the response will include the
+        created requisition. Unsuccessful requests will return</p>
+<pre>
+<code class="codeblock">HTTP 400 Bad
+Request</code>
+</pre>
+<p class="">. The body of the response will include validation errors formatted as
+        XML.</p>
+</div>
+</div>
+</article>

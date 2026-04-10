@@ -1,0 +1,2679 @@
+<article class="" id="supplier_information_api_supplier_information">
+<h1 class="title">Supplier Information API (/supplier_information)</h1>
+<p class="">
+<p class="">Use the supplier information API to send the supplier information you collected via SIM to your ERP or financial system.</p>
+</p>
+<div class="body">
+<p class="">The URL to access supplier information is: <code class="ph codeph">https://&lt;instance&gt;/api/supplier_information</code>
+</p>
+<p class="">SIM API permissions must be included with your API key to enable proper usage. Existing API keys without SIM API permissions won't be able to access the <code class="ph codeph">/api/supplier_information</code> resource. See <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285417.xml" title="">Integration Best Practices</a> for more info.</p>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">SIM API GET calls include SIM Sites in response payloads. For more information, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x285429.xml" title="">Postman Collection for Coupa APIs</a>.</p>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">As of R31, when fields are NULL (for example, when a field is blank), the API does not return those fields in the payload. When the payload varies, the target system throws an error message.</p>
+<p class="">For more information about ISO codes, see <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x294001.xml" title="">List of international country codes</a>.</p>
+</div>
+<div class="" id="actions-d957e78585">
+<h2 class="title sectiontitle">Actions</h2>
+<p class="">The Supplier Information API allows you to:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Verb</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Path</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Action</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">POST</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">create</p>
+</td>
+<td class="entry" align="">
+<p class="">Create. When a POST call is made without specifying the <code class="ph codeph">supplier-id</code>, an associatted Supplier record is automatically created.</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">index</p>
+</td>
+<td class="entry" align="">
+<p class="">Index</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">GET</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">show</p>
+</td>
+<td class="entry" align="">
+<p class="">Show</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">PUT</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<code class="ph codeph">/api/supplier_information/:id</code>
+</p>
+</td>
+<td class="entry" align="">
+<p class="">update</p>
+</td>
+<td class="entry" align="">
+<p class="">Update</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin: 0 0 40px;overflow: hidden;padding-left: 10px;padding-top: 5px;background-color: #E9F8FF;border: 1px solid;border-radius: 11px;border-color: #E9F8FF;">
+<img class="note__icon" src="/DITARoot/icons/important.png" style="width:24px;">
+<span style="font-weight: 700;">Note: </span>
+<p class="">This API call may Return a snippet of Ruby code as part of the GET response payload. This code snippet can be disregard.</p>
+</div>
+</div>
+<div class="" id="elements-d957e78715">
+<h2 class="title sectiontitle">Elements</h2>
+<p class="">The following elements are available for the Supplier Information API:</p>
+<p class="">(Scroll the table to see the additional columns)</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Element</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Required?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Unique?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Allowable Value</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api In?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Api Out?</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Data Type</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-cxml-invoicing</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow cXML Invoicing</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-inv-choose-billing-account</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow Choosing Billing Account in Invoicing</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-inv-from-connect</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow Invoicing from Connect</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-inv-no-backing-doc-from-connect</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow Invoicing with no Backing Doc from Connect</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">allow-inv-unbacked-lines-from-connect</p>
+</td>
+<td class="entry" align="">
+<p class="">Allow Invoicing with Unbacked Lines from Connect</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">backend-system-catalog</p>
+</td>
+<td class="entry" align="">
+<p class="">Backend System Used for Catalog Management</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">CatBase, Elastic, iPartner Product Suite, Claritum, Contalog, CatalognTime, Advizia, Aravo, MatrixCMX, SigmaCommerce</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">backend-system-invoicing</p>
+</td>
+<td class="entry" align="">
+<p class="">Backend System Used for Invoice</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">SAP, Oracle</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer-hold</p>
+</td>
+<td class="entry" align="">
+<p class="">Hold POs for buyer review</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">buyer-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Buyer ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">comment</p>
+</td>
+<td class="entry" align="">
+<p class="">Comment Text</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">comment-source</p>
+</td>
+<td class="entry" align="">
+<p class="">Comment Source</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">commodity-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Commodity ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">content-groups</p>
+</td>
+<td class="entry" align="">
+<p class="">Content groups</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Business Groups</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">country-of-operation</p>
+</td>
+<td class="entry" align="">
+<p class="">Country of Operation</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Country</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">country-of-operation-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Country of Operation ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-at</p>
+</td>
+<td class="entry" align="">
+<p class="">SIM Record Create Date and Time</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">created-by</p>
+</td>
+<td class="entry" align="">
+<p class="">SIM record created by User</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Users</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">currency-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Currency ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-domain</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML Domain</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-http-username</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML HTTP Username</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-identity</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML Identity</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-protocol</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML Protocol</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-secret</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML Secret</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-ssl-version</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML SSL Version</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-supplier-domain</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML Supplier Domain</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-supplier-identity</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML Supplier Identity</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">cxml-url</p>
+</td>
+<td class="entry" align="">
+<p class="">cXML URL</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default-commodity</p>
+</td>
+<td class="entry" align="">
+<p class="">Default Commodity</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Commodities</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default-commodity-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Default Commodity</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">default-invoice-email</p>
+</td>
+<td class="entry" align="">
+<p class="">Default Invoice Email</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">disable-cert-verify</p>
+</td>
+<td class="entry" align="">
+<p class="">Disable Cert Verify</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">display-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Display Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">duns-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Dun and Bradstreet Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">duplicate-exists</p>
+</td>
+<td class="entry" align="">
+<p class="">Duplicate Exists</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">estimated-spend-amount</p>
+</td>
+<td class="entry" align="">
+<p class="">Estimate Spend Amount</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(30,4)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">fed-reportable</p>
+</td>
+<td class="entry" align="">
+<p class="">Federal Tax Reportable Indicator</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">federal-tax-num</p>
+</td>
+<td class="entry" align="">
+<p class="">Federal Tax ID Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">goods-services-provided</p>
+</td>
+<td class="entry" align="">
+<p class="">Goods and Services Provided</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">govt-agency-interaction</p>
+</td>
+<td class="entry" align="">
+<p class="">Government Agency Interaction Explanation</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">govt-agency-interaction-indicator</p>
+</td>
+<td class="entry" align="">
+<p class="">Government Agency Interaction Indicator</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">govt-allegation-fraud-bribery</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier policy for government allegations of fraud and bribery</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">govt-allegation-fraud-bribery-indicator</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the supplier have a policy for government allegations of fraud and bribery?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hold-invoices-for-ap-review</p>
+</td>
+<td class="entry" align="">
+<p class="">Hold Invoices for AP Review</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hold-payment</p>
+</td>
+<td class="entry" align="">
+<p class="">Hold Payment</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">hold-payment-indicator</p>
+</td>
+<td class="entry" align="">
+<p class="">Hold Payment Indicator</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">id</p>
+</td>
+<td class="entry" align="">
+<p class="">SIM ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">inbound-invoice-domain</p>
+</td>
+<td class="entry" align="">
+<p class="">Inbound Invoice Email Domain</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">inco-terms</p>
+</td>
+<td class="entry" align="">
+<p class="">Inco Terms</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">EXW, FCA, CPT, CIP, DAT, DAP, DDP, FAS, FOB, CFR, CIF, DPU</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">income-type</p>
+</td>
+<td class="entry" align="">
+<p class="">Income Type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">industry</p>
+</td>
+<td class="entry" align="">
+<p class="">Primary Industry of Supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">intl-other-explanation</p>
+</td>
+<td class="entry" align="">
+<p class="">International Tax Classification Explanation</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">intl-tax-classification</p>
+</td>
+<td class="entry" align="">
+<p class="">International Tax Classification</p>
+</td>
+<td class="entry" align="" colspan="3">
+<p class="">Active NFFE, Passive NFFE (including trusts), Exempt beneficial owner, Deemed compliant FFI, Canadian Financial Institution, Other Partner Jurisdiction Financial Institution, Participating Foreign Financial Institution, Non Participating Financial Institution, Specified U.S. Person, Not a Specified U.S. Person, 1099, C Corp, Customer Refund, Exempt 1099, Tax Authority, Tax &amp; Gov, Vendor, Non Profit, Partner Referral, S Corp, Foreign Company, Active NFFE, Passive NFFE (including trusts), Exempt beneficial owner, Deemed compliant FFI, Canadian Financial Institution, Other Partner Jurisdiction Financial Institution, Participating Foreign Financial Institution, Non Participating Financial Institution, Specified U.S. Person, Not a Specified U.S. Person</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">intl-tax-num</p>
+</td>
+<td class="entry" align="">
+<p class="">International Tax Number</p>
+<p class="">Note</p>
+<p class="">Filtering on this field is not supported. To query related information, use the <a data-scope="" data-name="" target="" href="/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/reference-data-resources/supplier-information-tax-registrations-api(supplier_information_tax_registrations)" title="">Supplier Information Tax Registrations API</a>.</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-amount-limit</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Amount Limit</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-inbound-emails</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Inbound Emails</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-matching-level</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Matching Level</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">last-exported-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Last Exported Flag</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">logo-content-type</p>
+</td>
+<td class="entry" align="">
+<p class="">Logo content type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">logo-file-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Logo file name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">logo-file-size</p>
+</td>
+<td class="entry" align="">
+<p class="">Logo file size</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">logo-updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">Logo updated at</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">minority-indicator</p>
+</td>
+<td class="entry" align="">
+<p class="">MWBE Indicator</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">minority-type-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Minority Type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">1, 2, 3, 4, 1, 2, 3, 4</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier name</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(100)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">organization-type</p>
+</td>
+<td class="entry" align="">
+<p class="">Organization Type</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Corporation, Foreign Corporation, Individual, Foreign Individual, Partnership, Foreign Partnership</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">parent-company-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Parent Company Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">pay-group</p>
+</td>
+<td class="entry" align="">
+<p class="">Pay Group</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Direct Debit, Standard, Customer Refund, Employee, Intercompany, Lease, Partner Referral, Rent, Tax, Util/Telecom, Direct Debit, Standard, Customer Refund, Employee, Intercompany, Lease, Partner Referral, Rent, Tax, Util/Telecom</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-term</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Term</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Terms</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-term-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Term</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">payment-terms-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Payment Term</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-change-method</p>
+</td>
+<td class="entry" align="">
+<p class="">PO Change Method</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">cxml, xml, email, prompt, mark_as_sent, buy_online</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-email</p>
+</td>
+<td class="entry" align="">
+<p class="">PO Email</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">po-method</p>
+</td>
+<td class="entry" align="">
+<p class="">PO Method</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">cxml, xml, email, prompt, mark_as_sent, buy_online</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">policy-for-bribery-corruption</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier policy for bribery and corruption</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">policy-for-bribery-corruption-indicator</p>
+</td>
+<td class="entry" align="">
+<p class="">Does the supplier have a policy for bribery and corruption?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">preferred-currency</p>
+</td>
+<td class="entry" align="">
+<p class="">Preferred Currency</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Currencies</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">preferred-currency-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Default Currency ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">preferred-language</p>
+</td>
+<td class="entry" align="">
+<p class="">Preferred Language</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Language</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">preferred-language-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Preferred Language ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">savings-pct</p>
+</td>
+<td class="entry" align="">
+<p class="">Savings Percentage</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">decimal(8,2)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">send-invoices-to-approvals</p>
+</td>
+<td class="entry" align="">
+<p class="">Send Invoices to Approvals</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">separate-remit-to</p>
+</td>
+<td class="entry" align="">
+<p class="">Separate Remit To</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shipping-term-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Shipping Term ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">status</p>
+</td>
+<td class="entry" align="">
+<p class="">Status</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">strategic_supplier</td>
+<td class="entry" align="">Strategic Supplier</td>
+<td class="entry" align="">no</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-information-addresses</p>
+</td>
+<td class="entry" align="">
+<p class="">Addresses Sub-Object</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">SupplierInformationAddress</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-information-artifacts</p>
+</td>
+<td class="entry" align="">
+<p class="">Artifacts/Attachments Sub-Object</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">SupplierInformationArtifact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_information_classification_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Classification Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Classification Detail Object</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_information_enterprise_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Enterprise Supplier Data Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Enterprise Detail Object</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_information_insurance_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Insurance Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Insurance Detail Object</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_information_risk_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Risk Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Risk Detail Object</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier_information_tax_detail</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax Sub-Object for Custom Fields</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Tax Detail Object</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-information-contacts</p>
+</td>
+<td class="entry" align="">
+<p class="">Contacts Sub-Object</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">SupplierInformationContact</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-name</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Name</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-number</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Number</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">supplier-region</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier Region</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">AMER, EMEA, APAC, Japan</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-classification</p>
+</td>
+<td class="entry" align="">
+<p class="">US Tax Classification</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">1099, C Corp, Customer Refund, Exempt 1099, Tax Authority, Tax &amp; Gov, Vendor, Non Profit, Partner Referral, S Corp, Foreign Company</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-code-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax Code ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-exempt-other-explanation</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax Exempt Explanation</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">tax-region</p>
+</td>
+<td class="entry" align="">
+<p class="">Tax Region</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">1099, C Corp, Customer Refund, Exempt 1099, Tax Authority, Tax &amp; Gov, Vendor, Non Profit, Partner Referral, S Corp, Foreign Company, US, International</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">third-party-interaction</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier policy for Third Party Interactions</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">text</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">third-party-interaction-indicator</p>
+</td>
+<td class="entry" align="">
+<p class="">Supplier has a policy for its Third Party Interactions?</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-at</p>
+</td>
+<td class="entry" align="">
+<p class="">SIM Record Updated Date and Time</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">datetime</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">updated-by</p>
+</td>
+<td class="entry" align="">
+<p class="">SIM record updated by User</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">Users</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">user-id</p>
+</td>
+<td class="entry" align="">
+<p class="">User ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">website</p>
+</td>
+<td class="entry" align="">
+<p class="">Website</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">minority-designation-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Minority Designation</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">1, 2, 3</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">minority-type-id</p>
+</td>
+<td class="entry" align="">
+<p class="">
+<b>minority_type_id</b>
+</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">diversities</p>
+</td>
+<td class="entry" align="">
+<p class="">List of Supplier Information Diversities</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">Diversity Marker Codes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">[]</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">one-time-supplier</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates whether the supplier is a One Time Supplier</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">scope-three-emissions</p>
+</td>
+<td class="entry" align="">
+<p class="">Indicates whether the supplier tracks Scope Three Emissions</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align="">
+<p class="">boolean</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">website</p>
+</td>
+<td class="entry" align="">
+<p class="">Website</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">invoice-matching-level</p>
+</td>
+<td class="entry" align="">
+<p class="">Invoice Matching Level</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">string(255)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">shipping-term-id</p>
+</td>
+<td class="entry" align="">
+<p class="">Shipping Term ID</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">yes</p>
+</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">
+<p class="">integer</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="diversity_marker_codes-d957e82332">
+<h2 class="title sectiontitle">Diversity marker codes</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Diversity Marker Code</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">ABILITYONE</p>
+</td>
+<td class="entry" align="">
+<p class="">Ability One Program</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ACDBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Airport Concession Disadvantaged Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">AMS</p>
+</td>
+<td class="entry" align="">
+<p class="">Aboriginal and Minority Supplier</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">ANC</p>
+</td>
+<td class="entry" align="">
+<p class="">Alaskan Native Corporation</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">BOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Black-owned business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Disadvantaged Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Disability Owned Businesses</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">DVBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Disabled Veteran Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">EDWOSB</p>
+</td>
+<td class="entry" align="">
+<p class="">Economically Disadvantaged Women-Owned Small Business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">EMB</p>
+</td>
+<td class="entry" align="">
+<p class="">Ethnic minority businesses (EMBs)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">HBCU</p>
+</td>
+<td class="entry" align="">
+<p class="">Historically Black College or University / Minority Institution</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">HUBZone</p>
+</td>
+<td class="entry" align="">
+<p class="">Historically Underutilized Business Zone</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">IOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Indigenous-owned business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">LGBTBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Lesbian, Gay, Bisexual, Transgender Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">LSA</p>
+</td>
+<td class="entry" align="">
+<p class="">Labor Surplus Area</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">MBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Minority-Owned Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">MGOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Minority group owned business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">NAO</p>
+</td>
+<td class="entry" align="">
+<p class="">Native American owned</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">NPO</p>
+</td>
+<td class="entry" align="">
+<p class="">Non-profit Organization</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SBA8A</p>
+</td>
+<td class="entry" align="">
+<p class="">SBA-8(A)</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Small Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SDB</p>
+</td>
+<td class="entry" align="">
+<p class="">Small Disadvantaged Business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SDVBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Service Disabled Veteran Owned Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">SDVOSB</p>
+</td>
+<td class="entry" align="">
+<p class="">Service Disabled Veteran Owned Small Business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">VOB</p>
+</td>
+<td class="entry" align="">
+<p class="">Veteran Owned Business</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">VVO</p>
+</td>
+<td class="entry" align="">
+<p class="">Vietnam Veteran Owned</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">WBE</p>
+</td>
+<td class="entry" align="">
+<p class="">Woman-Owned Business Enterprise</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">WOSB</p>
+</td>
+<td class="entry" align="">
+<p class="">Woman-Owned Small Business</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

@@ -1,0 +1,70 @@
+Receipts API
+
+Use these endpoints to work with inventory receipts:
+
+- Receiving Transactions API (/receiving_transactions)
+- Inventory Adjustments API (/inventory_adjustments)
+- Inventory Consumptions API (/inventory_consumptions)
+- Inventory Transfers API (/inventory_transfers)
+- Return to Supplier Transactions API (/return_to_supplier_transactions)
+- Inventory Transactions API (/inventory_transactions) – Only HTTP GET is supported
+
+These endpoints share the same elements, however, the Type element returns a different payload as noted in each article. For more information about example payloads, see Receipts API Example Calls.
+
+Related APIs
+- Adjustment Code API
+- Inventory Transaction Lot API
+
+Example API calls
+- Receipts API Example Calls
+
+For more information about using the Coupa API, see Integration Best Practices.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+account 	Receipt Account Code 	 	 	 	yes 	yes 	 Account
+account-allocations 	account_allocations 	 	 	 	yes 	yes 	Inventory Transaction Allocation
+adjustment-code 	Adjustment code 	no 	no 	any 	yes 	yes 	Adjustment Code
+asn-header 	ASN Header 	 	 	 	 	yes 	 Asn/Header
+asn-line 	ASN Line 	 	 	 	yes 	yes 	 Asn/Line
+asset-tags 	Semi Colon seperated list of Asset Tag Identifiers 	 	 	 	 	yes 	 Asset Tag
+attachments 	attachments 	 	 	 	 	yes 	 Attachment
+barcode 	Barcode Value 	 	 	 	yes 	yes 	string(255)
+comments 	Comments for voiding transaction 	no 	no 	any 	 	yes 	text
+created-at 	Time of Inventory Transaction Creation 	 	 	 	 	yes 	datetime
+created-by 	User who created 	 	 	 	 	yes 	 User
+currency 	currency code 	no 	no 	any 	yes 	 	 Currency
+current-integration-history-records 	Current integration history records 	 	 	 	 	yes 	 Integration History Record
+exported 	Indicates if transaction has been exported 	 	 	 	yes 	yes 	boolean
+from-warehouse 	Warehouse ID 	 	 	 	yes 	 	Warehouse
+from-warehouse-location 	Coupa's Internal From-Warehouse-Location ID 	 	 	 	yes 	yes 	Warehouse Location
+id 	Coupa's Internal Inventory Transaction ID 	 	 	 	 	yes 	integer
+inspection-code 	Inspection Code 	 	 	 	yes 	yes 	Inspection Code
+inventory-transaction-valuations 	Inventory Transaction Valuations 	 	 	 	 	yes 	Inventory Transaction Valuation
+item 	item 	 	 	 	yes 	yes 	 Item
+last-exported-at 	Date and time transaction was last exported in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	 	 	 	 	yes 	datetime
+match-reference 	Three-way match attribute to connect with Receipt and ASN Line 	 	 	 	yes 	yes 	string(255)
+order-line 	Item Number 	 	 	 	yes 	yes 	 Order Line
+original_transaction 	Displays any custom fields associated with the original receipt when creating a return or void. 	 	 	 	 	yes
+original_transaction_id 	ID of the original transaction, when the transaction is partially voided 	no 	no 	any 	 	yes 	integer
+price 	Item Price 	 	 	 	yes 	yes 	decimal(30,6)
+quantity 	Receipt Quantity 	 	 	 	yes 	yes 	decimal(30,6)
+reason_insight 	Voiding reason 	no 	no 	any 	 	yes
+receipt 	receipt 	 	 	 	yes 	 	Receipt
+receipts-batch-id 	Receipts Batch ID 	 	 	 	 	yes 	integer
+received-weight 	Inventory Transaction Received Weight 	 	 	 	yes 	yes 	decimal(30,6)
+receiving-form-response 	receiving_form_response 	 	 	 	yes 	 	 Form Response
+rfid-tag 	RFID Tag Value 	yes 	 	 	yes 	yes 	string(255)
+soft-close-for-receiving 	Soft close PO line for Receiving 	 	 	 	yes 	 	boolean
+status 	Inventory Transaction Status 	 	 	 	 	yes 	string(255)
+to-warehouse 	Warehouse ID 	 	 	 	yes 	 	Warehouse
+to-warehouse-location 	Coupa's Internal To-Warehouse-Location ID 	 	 	 	yes 	yes 	Warehouse Location
+total 	Receipt Total 	 	 	 	yes 	yes 	decimal(30,6)
+transaction-date 	Actual date of transaction 	 	 	 	yes 	yes 	datetime
+type 	Inventory Transaction Type 	yes 	 	 	yes 	yes 	string(255)
+uom 	Unit of Measure Code 	 	 	 	yes 	yes 	 Uom
+updated-at 	Time of Inventory Transaction Updation 	 	 	 	 	yes 	datetime
+updated-by 	User who updated 	 	 	 	 	yes 	 User
+voided_value 	Total quantity/amount that was voided 	no 	no 	any 	 	yes 	decimal(30,6)
+inventory_transaction_lots 	 	 	 	any 	yes 	 	[]

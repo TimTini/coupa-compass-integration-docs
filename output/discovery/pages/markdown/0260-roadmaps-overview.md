@@ -1,0 +1,18 @@
+---
+title: "roadmaps-overview"
+url: "https://compass.coupa.com/en-us/products/product-documentation/roadmaps-overview"
+final_url: "https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu8YsFwnRkmktNm0SN1mNeke9lJRfLOiYvC4uMv%2B%2FbDTTemk9NHH93zdywJVZ3u5HuKTu4OfA2DMtpsleajgUNbisaTzYg60nPOK1lDNaTurVdXWnHNdk%2BwbBDTeLUmRc5JtEQfYOozKxQTxoqK8pILvuZBXMylEflVV30m2SS7GqTgxn2LsUTKm%2FdArCscIwSmb%2B%2Beocu07pvr%2Bv38PCe4VYu9DTF%2BCwfHZF3zgqiw2190HrUScMUTPxnIk%2B%2BiDhqnhkhyURRiTNknAvMA%2FpAk%2Beu3ttXGtcT%2BWZAhOeoUGpVMdoIxa7tafb2VqKh9PQyg%2F7fcNbb7u9iRbI0IYK914h0MHYQfhxWi4v7s9Lzklz6dCU71Rk13ikuzYWYdyOtL7kfrX%2FGS1GKfldItwxn%2Bfrv4mIKuLWRfsTPlk08svSWq7abw1%2Bve46U7Fy04iFxNiWnqYRiV0yth12wZATDu01v%2B6CaBiOkwMQ1oAW51s377R1R8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Froadmaps-overview"
+content_type: "text/html"
+classification: "auth_redirect"
+fetched_at: "2026-04-10T01:57:12+00:00"
+---
+
+# roadmaps-overview
+
+This discovered internal link redirected to an authentication page, so the original documentation body could not be downloaded anonymously.
+
+**Requested URL:** [https://compass.coupa.com/en-us/products/product-documentation/roadmaps-overview](https://compass.coupa.com/en-us/products/product-documentation/roadmaps-overview)
+
+**Final URL:** [https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu8YsFwnRkmktNm0SN1mNeke9lJRfLOiYvC4uMv%2B%2FbDTTemk9NHH93zdywJVZ3u5HuKTu4OfA2DMtpsleajgUNbisaTzYg60nPOK1lDNaTurVdXWnHNdk%2BwbBDTeLUmRc5JtEQfYOozKxQTxoqK8pILvuZBXMylEflVV30m2SS7GqTgxn2LsUTKm%2FdArCscIwSmb%2B%2Beocu07pvr%2Bv38PCe4VYu9DTF%2BCwfHZF3zgqiw2190HrUScMUTPxnIk%2B%2BiDhqnhkhyURRiTNknAvMA%2FpAk%2Beu3ttXGtcT%2BWZAhOeoUGpVMdoIxa7tafb2VqKh9PQyg%2F7fcNbb7u9iRbI0IYK914h0MHYQfhxWi4v7s9Lzklz6dCU71Rk13ikuzYWYdyOtL7kfrX%2FGS1GKfldItwxn%2Bfrv4mIKuLWRfsTPlk08svSWq7abw1%2Bve46U7Fy04iFxNiWnqYRiV0yth12wZATDu01v%2B6CaBiOkwMQ1oAW51s377R1R8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Froadmaps-overview](https://coupa-external.okta.com/app/coupa-external_compassportal_1/exko20u0a42DBmEca1t7/sso/saml?SAMLRequest=fVJdb9sgFP0rFu8YsFwnRkmktNm0SN1mNeke9lJRfLOiYvC4uMv%2B%2FbDTTemk9NHH93zdywJVZ3u5HuKTu4OfA2DMtpsleajgUNbisaTzYg60nPOK1lDNaTurVdXWnHNdk%2BwbBDTeLUmRc5JtEQfYOozKxQTxoqK8pILvuZBXMylEflVV30m2SS7GqTgxn2LsUTKm%2FdArCscIwSmb%2B%2Beocu07pvr%2Bv38PCe4VYu9DTF%2BCwfHZF3zgqiw2190HrUScMUTPxnIk%2B%2BiDhqnhkhyURRiTNknAvMA%2FpAk%2Beu3ttXGtcT%2BWZAhOeoUGpVMdoIxa7tafb2VqKh9PQyg%2F7fcNbb7u9iRbI0IYK914h0MHYQfhxWi4v7s9Lzklz6dCU71Rk13ikuzYWYdyOtL7kfrX%2FGS1GKfldItwxn%2Bfrv4mIKuLWRfsTPlk08svSWq7abw1%2Bve46U7Fy04iFxNiWnqYRiV0yth12wZATDu01v%2B6CaBiOkwMQ1oAW51s377R1R8%3D&RelayState=http%3A%2F%2Fcompass.coupa.com%2Fen-us%2Fproducts%2Fproduct-documentation%2Froadmaps-overview)
+
+Observed redirect page title: Coupa Portals - Sign In

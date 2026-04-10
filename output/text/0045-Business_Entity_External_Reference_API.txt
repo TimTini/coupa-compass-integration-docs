@@ -1,0 +1,14 @@
+Business Entity External Reference API
+
+Association
+
+This resource is associated with the Business Entitites API.
+
+Elements
+
+Element 	 Description 	 Req'd 	 Unique 	 Allowable Value 	 In 	 Out 	 Data Type
+name 	Name 	false 	false 	any 	yes 	yes 	string(100)
+type 	Type 	false 	false 	any 	yes 	yes 	string(255)
+value 	Value 	false 	false 	any 	yes 	yes 	string(100)
+id 	Coupa unique identifier 	false 	false 	any 	yes 	yes 	integer
+business-entity-id 	Business Entity ID 	false 	false 	any 	yes 	yes 	integer

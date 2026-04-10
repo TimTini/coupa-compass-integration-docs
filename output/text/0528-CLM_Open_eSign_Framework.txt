@@ -1,0 +1,7 @@
+CLM Open eSign Framework
+
+Coupa Open e-Sign framework supports e-signature integrations between Coupa and any provider who has an API. This is particularly useful for regions or countries that have specific regulations associated with the authenticity and integrity of the e-signing process, and require specific-unsupported e-signature providers.
+
+- Open eSign Framework Overview
+- Open eSign Connector Specifications
+- Open eSign Provider Prerequisites

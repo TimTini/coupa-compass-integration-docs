@@ -1,0 +1,249 @@
+<article class="" id="ccw_api_overview">
+<h1 class="title">CCW API Overview</h1>
+<div class="body">
+<p class="">Using CCW's REST API customers and partners can build new applications and integrate with CCW in new ways, to improve their capabilities around managing a contingent workforce. CCW's APIs are HTTP-based RESTful APIs that use OAuth 2.0 for authentication and TLS 1.2 for transport layer security. This documentation explains how to access CCW's API and make requests to obtain the data you need.</p>
+<div class="" id="authentication">
+<h2 class="title sectiontitle">Authentication</h2>
+<p class="">Customers who want to access the CCW REST API can <a data-scope="external" data-name="" target="_blank" href="https://compass.coupa.com/x298153.xml" title="">register their API consumer app</a> and receive the OAuth 2.0 client credentials to use in combination with two additional layers of security - Scopes and User/Role access rights - to authenticate requests to the CCW API.</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Authentication Requirement</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">OAuth 2.0 credentials</p>
+</td>
+<td class="entry" align="">
+<p class="">Includes a Client ID and Client Secret</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Scopes</p>
+</td>
+<td class="entry" align="">
+<p class="">The end points pointing to the specific module/functionality within CCW being requested</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">User/Role access rights</p>
+</td>
+<td class="entry" align="">
+<p class="">Assigned within the CCW application. Once you are authenticated by the API (see below), another layer of security determines access to the specific functionality being requested</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="access_token">
+<h2 class="title sectiontitle">Access Token</h2>
+<p class="">The first step in accessing the CCW API is to request an access token by making a call with the OAuth credentials and scope(s), as in the following example:</p>
+<pre>
+<code class="codeblock">curl -XPOST -H "Content-type: application/json" -d '{"client_id": "&lt;&lt;clientID&gt;&gt;", "client_secret": "&lt;&lt;secret&gt;&gt;",
+"scope":"ccw.candidate", "grant_type":"client_credential"}' 'Auth_Url'</code>
+</pre>
+<p class="">For 'Auth_Url', use the following, depending on your environment:</p>
+<p class="">
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Sandbox:</b>
+</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://identity-stg0-na10001.io.coupahost.com/realms/ccw-na-stg/protocol/openid-connect/token" title="">https://identity-stg0-na10001.io.coupahost.com/realms/ccw-na-stg/protocol/openid-connect/token</a> (North America)</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://identity-stg0-eu10009.io.coupahost.com/realms/ccw-eu-stg/protocol/openid-connect/token" title="">https://identity-stg0-eu10009.io.coupahost.com/realms/ccw-eu-stg/protocol/openid-connect/token</a> (Europe)</p>
+</li>
+</ul>
+</li>
+<li class="li">
+<p class="">
+<b>Production:</b>
+</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://identity-prd0-na10001.io.coupahost.com/realms/ccw-na-prd/protocol/openid-connect/token" title="">https://identity-prd0-na10001.io.coupahost.com/realms/ccw-na-prd/protocol/openid-connect/token</a> (North America)</p>
+</li>
+<li class="li">
+<p class="">
+<a data-scope="external" data-name="" target="_blank" href="https://identity-prd0-eu10009.io.coupahost.com/realms/ccw-eu-prd/protocol/openid-connect/token" title="">https://identity-prd0-eu10009.io.coupahost.com/realms/ccw-eu-prd/protocol/openid-connect/token</a> (Europe)</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+<p class="">The authorization server returns a JSON payload containing the following:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Property</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Value</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">token_type</p>
+</td>
+<td class="entry" align="">
+<p class="">Prefixed with "Bearer"</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">access_token</p>
+</td>
+<td class="entry" align="">
+<p class="">String to be included in the authorization header when making API requests</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">expires_in</p>
+</td>
+<td class="entry" align="">
+<p class="">Number of seconds until the token expires (typically 3600, or 1 hour)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="api_end_points">
+<h2 class="title sectiontitle">API End Points</h2>
+<p class="">Include the access token received in calls to CCW API endpoints.</p>
+<p class="">End Point format: <code class="ph codeph">https://&lt;instance&gt;/api/&lt;resource path&gt;</code>
+</p>
+<p class="">Examples:</p>
+<ul class="ul">
+<li class="li">
+<p class="">
+<b>Candidate Confirmation:</b> https://{hostname}/API/candidates/{id}/confirm</p>
+</li>
+<li class="li">
+<p class="">
+<b>Candidate Lookup:</b> https://{hostname}/API/candidates/search</p>
+</li>
+<li class="li">
+<p class="">
+<b>Contingent Worker (CW) Lookup:</b> https://{hostname}/API/contingent_workers</p>
+</li>
+</ul>
+</div>
+<div class="" id="request_headers-d26e3746">
+<h2 class="title sectiontitle">Request Headers</h2>
+<p class="">The following HTTP request headers are required:</p>
+<div class="table-wrap scroll">
+<table class="table">
+<thead class="thead">
+<tr>
+<th class="entry " align="">
+<p class="">
+<b>Header</b>
+</p>
+</th>
+<th class="entry " align="">
+<p class="">
+<b>Description</b>
+</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">
+<p class="">Authorization</p>
+</td>
+<td class="entry" align="">
+<p class="">Used to request access for API calls. Include the bearer token with the authentication scheme: <b>Bearer: &lt;Token&gt;</b>
+</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">Content-Type</p>
+</td>
+<td class="entry" align="">
+<p class="">Set to: <b>application/json</b> in all requests. JSON is the only exchange format currently supported</p>
+</td>
+</tr>
+<tr class="">
+<td class="entry" align="">
+<p class="">X-Correlation-id</p>
+</td>
+<td class="entry" align="">
+<p class="">An identifier of 36 characters maximum, generated to enable tracking and auditing of the API request</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="" id="sample_error_response">
+<h2 class="title sectiontitle">Sample error response</h2>
+<pre>
+<code class="codeblock">{
+ "error_code": "string",
+ "error_summary": "string",
+ "error_causes": [
+  {
+   "error_sub_code": "string",
+   "error_sub_code_desc": "string"
+  }
+ ]
+}</code>
+</pre>
+</div>
+<div class="" id="rate_limiting">
+<h2 class="title sectiontitle">Rate limiting</h2>
+<p class="">CCW REST API’s do not have explicit rate limiting, however, throttling of API requests is recommended for a timely response. Coming soon, Individual API endpoints will be updated with recommended rate limiting.</p>
+</div>
+<div class="" id="best_practices">
+<h2 class="title sectiontitle">Best practices</h2>
+<p class="">Below are some tips to ensure best results when building applications on top of CCW using our REST APIs:</p>
+<ol class="ol">
+<li class="li">
+<p class="">
+<b>Avoid Schema Validation:</b> CCW API's are constantly evolving, with new optional properties added to the API. For extensibility purposes, applications should not perform a schema validation, which can trigger errors when the API sends new properties that may not be required.</p>
+</li>
+<li class="li">
+<p class="">
+<b>Use HTTP Status Codes:</b> Consumer applications should rely on HTTP status codes for handling API errors, rather than contents of the response body which are for diagnostic and logging purposes only.</p>
+</li>
+<li class="li">
+<p class="">
+<b>Avoid depending on order of properties in API response:</b> CCW API's only support JSON content. The order of properties in an API response may change due to the introduction of new properties.</p>
+</li>
+</ol>
+</div>
+</div>
+</article>

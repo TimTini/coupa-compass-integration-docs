@@ -1,0 +1,134 @@
+---
+title: "Purchase Order Change Import"
+url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/purchase-order-change-import"
+final_url: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-flat-files-(csv)/flat-file-(csv)-import/purchase-order-change-import"
+status_code: 200
+fetched_at: "2026-04-09T12:00:43+00:00"
+toc_path:
+  - "Integration Technical Documentation"
+  - "Coupa Core Flat Files (CSV)"
+  - "Flat File (CSV) Import"
+  - "Purchase Order Change Import"
+---
+
+# Purchase Order Change Import
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note:
+
+If using CSP, add the following columns at the header level after downloading the
+template:
+
+- Column 1: Reason Code
+
+- - Allowable values:
+
+- Cannot fulfill order quantity/amount
+
+- The ordered item is no longer available
+
+- Cannot fulfill orders by the Need-by-date
+
+- Other
+
+- Other reasons codes configured in [reason insights](https://compass.coupa.com/x285073.xml)
+
+- Column 2: Reason comment
+
+- This column is needed only if the Reason code is `Other`
+
+- Acceptable values: Any text string
+
+## Possible values
+
+Action
+Create, Update, Delete. Leaving this field blank creates or updates a line.
+Shipping Term Code
+One of the shipping terms on the Setup > Financial Setup > Shipping Terms
+page
+
+## Purchase Order Change
+
+| Field Name | Required Field | Unique? | Field Type | Field Description | Possible Values |
+| --- | --- | --- | --- | --- | --- |
+| Header | No | No | | Header | |
+| Action | No | No | | Action | |
+| Order Header ID | No | No | integer | Order Header ID | |
+| Currency Code | No | No | | Currency Code | |
+| Payment Method | No | No | string(255) | Payment Method | |
+| Payment Term Code | No | No | | Payment Term Code | |
+| PCard Name | No | No | | PCard Name | |
+| Hide Price | No | No | boolean | Hide Price | |
+| Shipping Term Code | No | No | | Shipping Term Code | |
+| Ship To Location Code | No | No | | Ship To Location Code | |
+| Ship To Attention | No | No | string(255) | Ship To Attention | |
+| Ship To Email | No | No | | Ship To Email | |
+| Ship To Login | No | No | | Ship To Login | |
+| Supplier Name | No | No | | Supplier Name | |
+| Supplier Number | No | No | | Supplier Number | |
+| Supplier Site Code | No | No | | Supplier Site Code | |
+| Transmission Emails | No | No | text | Transmission Emails | |
+| Transmission Method Override | No | Yes | string(30) | Transmission Method Override | supplier_default, email, do_not_transmit |
+| Department Name | No | No | | Department Name | |
+| Line | No | No | | Line | |
+| Line Number | No | No | | Line Number | |
+| Chart of Account Name | No | No | | Chart of Account Name | |
+| Account Code | No | No | | Account Code | |
+| Account Name | No | No | | Account Name | |
+| Account Segment 1 | No | No | | Account Segment 1 | |
+| Account Segment 2 | No | No | | Account Segment 2 | |
+| Account Segment 3 | No | No | | Account Segment 3 | |
+| Account Segment 4 | No | No | | Account Segment 4 | |
+| Account Segment 5 | No | No | | Account Segment 5 | |
+| Account Segment 6 | No | No | | Account Segment 6 | |
+| Account Segment 7 | No | No | | Account Segment 7 | |
+| Account Segment 8 | No | No | | Account Segment 8 | |
+| Account Segment 9 | No | No | | Account Segment 9 | |
+| Account Segment 10 | No | No | | Account Segment 10 | |
+| Account Segment 11 | No | No | | Account Segment 11 | |
+| Account Segment 12 | No | No | | Account Segment 12 | |
+| Account Segment 13 | No | No | | Account Segment 13 | |
+| Account Segment 14 | No | No | | Account Segment 14 | |
+| Account Segment 15 | No | No | | Account Segment 15 | |
+| Account Segment 16 | No | No | | Account Segment 16 | |
+| Account Segment 17 | No | No | | Account Segment 17 | |
+| Account Segment 18 | No | No | | Account Segment 18 | |
+| Account Segment 19 | No | No | | Account Segment 19 | |
+| Account Segment 20 | No | No | | Account Segment 20 | |
+| Budget Period Name | No | No | | Budget Period Name | |
+| Catalog Item Name | No | No | | Catalog Item Name | |
+| Catalog Item Number | No | No | | Catalog Item Number | |
+| Commodity Name | No | No | | Commodity Name | |
+| Contract Name | No | No | | Contract Name | |
+| Contract Number | No | No | | Contract Number | |
+| Manufacturer Name | No | No | | Manufacturer Name | |
+| Manufacturer Part Number | No | No | | Manufacturer Part Number | |
+| Need By Date | No | No | | Need By Date | |
+| Non Catalog Item Description | No | No | | Non Catalog Item Description | |
+| Price | No | No | | Price | |
+| Quantity | No | No | | Quantity | |
+| Savings Pct | No | No | | Savings Pct | |
+| Supplier Aux Part Number | No | No | | Supplier Aux Part Number | |
+| Supplier Part Number | No | No | | Supplier Part Number | |
+| UOM Code | No | No | | UOM Code | |
+| Account Allocation | No | No | | Account Allocation | |
+| Estimated Tax Amount | No | No | | Estimated Tax Amount | |
+| Percent | No | No | | Percent | |
+| Payment Agreement | No | No | | Payment Agreement | |
+| Record Identifier | No | No | | Record Identifier | |
+| Type | No | No | | Type | |
+| Amount Type | No | No | | Amount Type | |
+| Description | No | No | | Description | |
+| Due Date | No | No | | Due Date | |
+| Estimated Tax Line | No | No | | Estimated Tax Line | |
+| Tax Line Number | No | No | | Tax Line Number | |
+| Estimated Tax Code | No | No | | Estimated Tax Code | |
+| Estimated Tax Rate | No | No | | Estimated Tax Rate | |
+| Tax Reference | No | No | | Tax Reference | |
+| Base Amount | No | No | | Base Amount | |
+| Product Classification | No | No | | Product Classification | |
+| Delete | No | No | | Delete | |
+
+![](https://compass.coupa.com/DITARoot/icons/important.png)
+Note: The PO change CSV loader is available for only item lines at this
+time. Service lines are not currently supported.

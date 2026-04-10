@@ -1,0 +1,17 @@
+RA CLMA Contract API
+
+Use the RA CLMA Contract API to view and update contracts between Risk Assess and CLMA.
+
+Elements
+
+The following elements are available for the RA CLMA Contract API:
+
+Element 	 Description 	 Required Field? 	 Unique? 	 Allowable Value 	 Api_In Field? 	 Api_Out Field? 	 Data Type
+non-disclosure-copying-restriction 	 	no 	no 	any 	yes 	yes 	integer
+permitted-disclosees-directors-officers 	 	no 	no 	any 	yes 	yes 	boolean
+permitted-disclosees-employees 	 	no 	no 	any 	yes 	yes 	boolean
+permitted-disclosees-advisers 	 	no 	no 	any 	yes 	yes 	boolean
+permitted-disclosees-contractors 	 	no 	no 	any 	yes 	yes 	boolean
+id 	Coupa unique identifier 	no 	no 	any 	yes 	yes 	integer
+created-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	yes 	yes 	datetime
+updated-at 	Automatically created by Coupa in the format YYYY-MM-DDTHH:MM:SS+HH:MMZ 	no 	no 	any 	yes 	yes 	datetime

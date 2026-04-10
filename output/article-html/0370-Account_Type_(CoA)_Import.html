@@ -1,0 +1,3519 @@
+<article class="" id="account_type_coa_import">
+<h1 class="title">Account Type (CoA) Import</h1>
+<div class="body">
+<div class="" id="section_cjv_kdt_b1c">
+<h2 class="title sectiontitle">Possible values</h2>
+<dl class="dl">
+<dt class="dt dlterm">Item Invoice Matching Level</dt>
+<dd class="dd">2-way, 3-way, 3-way-direct, none</dd>
+<dt class="dt dlterm">Service Invoice Matching Level</dt>
+<dd class="dd">2-way, 3-way, 3-way-direct, none</dd>
+</dl>
+</div>
+<div class="" id="section_fbq_wct_b1c">
+<h2 class="title sectiontitle">Chart Of Accounts</h2>
+<div class="table-wrap scroll">
+<table class="table">
+<tbody class="tbody">
+<tr class="">
+<td class="entry" align="">Field Name</td>
+<td class="entry" align="">Required Field</td>
+<td class="entry" align="">Unique?</td>
+<td class="entry" align="">Field Type</td>
+<td class="entry" align="">Field Description</td>
+<td class="entry" align="">Possible Values</td>
+</tr>
+<tr class="">
+<td class="entry" align="">Name</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">string(50)</td>
+<td class="entry" align="">This is the name for the chart of accounts.  Users can view this field through the user interface if they have access to more than one.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Active</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">A false value will inactivate the chart of accounts, making it no longer available to users.  A true value will make it active and available to users.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency Code</td>
+<td class="entry" align="">Yes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">The accounting currency for the chart of accounts, specified as an ISO-standard currency code (e.g. USD)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Email</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Email address for the primary contact. The primary contact is used as the default billing contact for purchase orders issued from this chart of accounts, unless the 'use_requester_as_billing_contact' is enabled.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Work Phone</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Work phone number for the primary contact. The primary contact is used as the default billing contact for purchase orders issued from this chart of accounts, unless the 'use_requester_as_billing_contact' is enabled.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Mobile Phone</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Mobile phone number for the primary contact. The primary contact is used as the default billing contact for purchase orders issued from this chart of accounts, unless the 'use_requester_as_billing_contact' is enabled.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Fax Phone</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">FAX number for the primary contact. The primary contact is used as the default billing contact for purchase orders issued from this chart of accounts, unless the 'use_requester_as_billing_contact' is enabled.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Given Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Given or first name for the primary contact. The primary contact is used as the default billing contact for purchase orders issued from this chart of accounts, unless the 'use_requester_as_billing_contact' is enabled.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Contact Family Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Family or last name for the primary contact. The primary contact is used as the default billing contact for purchase orders issued from this chart of accounts, unless the 'use_requester_as_billing_contact' is enabled.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Location Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Location code for the primary address. This field is optional, but if specified will be used to look up an existing company address. The primary address is used as the default billing address for purchase orders issued from this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Street 1</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">First address line for the primary address. This field is required, unless a valid location code for an existing address is specified or the 'use_ship_to_as_bill_to' option is enabled. The primary address is used as the default billing address for purchase orders issued from this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Street 2</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Second address line for the primary address. The primary address is used as the default billing address for purchase orders issued from this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Street 3</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Third address line for the primary address. The primary address is used as the default billing address for purchase orders issued from this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Street 4</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Fourth address line for the primary address. The primary address is used as the default billing address for purchase orders issued from this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address City</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">City for the primary address. The primary address is used as the default billing address for purchase orders issued from this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address State</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">State or province for the primary address. The primary address is used as the default billing address for purchase orders issued from this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Postal Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">ZIP or postal code for the primary address. The primary address is used as the default billing address for purchase orders issued from this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Country Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Country for the primary address, specified as an ISO-standard country code (e.g. US). The primary address is used as the default billing address for purchase orders issued from this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address VAT ID</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Primary Address VAT ID</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Primary Address Local Tax Number</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Primary Address Local Tax Number</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Boilerplate Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Customizable text that will appear at the bottom of the default PO liquid template, intended to be used to include standard terms and conditions on all outbound purchase orders.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 1 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 2 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 3 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 4 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 5 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 6 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 7 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 8 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 9 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 10 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 11 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 12 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 13 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 14 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 15 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 16 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 17 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 18 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 19 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Field Type Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short code (max 8 characters) identifying what segment 20 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 1 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 2 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 3 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 4 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 5 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 6 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 7 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 8 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 9 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 10 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 11 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 12 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 13 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 14 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 15 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 16 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 17 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 18 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 19 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Field Type Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Short name (max 50 characters) identifying what segment 20 of this chart of accounts represents, if anything, e.g. ORG or PROJECT.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity-Based Line Quantity Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity-Based Line Quantity Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity-Based Line Price Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity-Based Line Price Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity-Based Line Price Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity-Based Line Price Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount-Based Line Price Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Amount-Based Line Price Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount-Based Line Price Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Amount-Based Line Price Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Non-Backed Line Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Non-Backed Line Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Total Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Company Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Company Name</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Quantity Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Quantity Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Price Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Price Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Price Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Price Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Amount-Based Line Price Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Amount-Based Line Price Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Amount-Based Line Price Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Amount-Based Line Price Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Payment Term Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Payment Term Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Default Shipping Term Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Default Shipping Term Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Total Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Total Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Self-Service Quantity Percent PO Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Self-Service Quantity Percent PO Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Self-Service Amount Percent PO Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Self-Service Amount Percent PO Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Self-Service Amount Price PO Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Self-Service Amount Price PO Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Self-Service Quantity Percent Invoice Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Self-Service Quantity Percent Invoice Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Self-Service Amount Percent Invoice Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Self-Service Amount Percent Invoice Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Self-Service Amount Price Invoice Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Self-Service Amount Price Invoice Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Quantity Percent PO Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Quantity Percent PO Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Amount Percent PO Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Amount Percent PO Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Amount Price PO Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Amount Price PO Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Quantity Percent Invoice Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Quantity Percent Invoice Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Amount Percent Invoice Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Amount Percent Invoice Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receiving Amount Price Invoice Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receiving Amount Price Invoice Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Logo Image URL</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Logo Image URL</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 1 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 1 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 2 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 1 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 3 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 1 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 4 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 4 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 5 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 5 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 6 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 6 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 7 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 7 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 8 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 8 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 9 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 9 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 10 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 10 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 11 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 11 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 12 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 12 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 13 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 13 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 14 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 14 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 15 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 15 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 16 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 16 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 17 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 17 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 18 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 18 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 19 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 19 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Req Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 20 from when attempting to default an account on a requisition line. This can be 'user', 'department', 'commodity', 'supplier', 'item', or 'address'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Req Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 20 from attempting to default an account on a requisition line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Layout URL</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">PO Layout URL</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Use Default PO Layout</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Use Default PO Layout</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Min Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Min Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Min Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Min Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 1 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 1 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 2 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 2 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 3 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 3 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 4 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 4 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 5 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 5 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 6 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 6 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 7 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 7 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 8 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 8 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 9 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 9 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 10 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 10 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 11 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 11 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 12 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 12 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 13 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 13 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 14 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 14 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 15 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 15 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 16 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 16 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 17 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 17 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 18 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 18 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 19 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 19 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Expense Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 20 from when attempting to default an account on an expense report line. This can be 'user', 'department', 'expense_category'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Expense Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 20 from attempting to default an account on an expense report line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 1 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 1 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 2 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 2 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 3 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 3 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 4 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 4 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 5 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 5 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 6 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 6 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 7 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 7 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 8 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 8 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 9 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 9 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 10 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 10 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 11 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 11 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 12 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 12 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 13 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 13 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 14 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 14 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 15 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 15 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 16 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 16 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 17 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 17 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 18 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 18 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 19 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 19 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Invoice Default Model</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Object to pull the default value for segment 20 from when attempting to default an account on an invoice line. This can be 'user', 'department', 'commodity', 'supplier', 'item', 'address'. 'user' and 'department' reference the requester and requester's department.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Invoice Default Column</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Attribute of the object to pull the default value for segment 20 from attempting to default an account on an invoice line. For custom fields, this is the field name you specified when defining the field. To use a user's default account, use 'default_account.current_code'.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Use Ship To as Bill To</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Use Ship To as Bill To</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Use Requester As Billing Contact</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Use Requester As Billing Contact</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Non-Backed Line Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Non-Backed Line Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract-Backed Line Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Contract-Backed Line Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Contract-Backed Line Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Contract-Backed Line Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax and Tax Engine Calculation Difference Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Tax and Tax Engine Calculation Difference Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Header Tax and Tax Engine Calculation Difference Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Header Tax and Tax Engine Calculation Difference Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Line Tax and Tax Engine Calculation Difference Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Line Tax and Tax Engine Calculation Difference Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Header Tax and Tax Engine Calculation Difference Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Header Tax and Tax Engine Calculation Difference Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Dynamic Flag</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">boolean</td>
+<td class="entry" align="">Flag specifying whether the accounts for this chart of accounts will be loaded as combinations (static) or specified segment-by-segment (dynamic). This should be specified as Yes or No.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Lookup Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">For dynamic charts of accounts, this specifies the name of the already-defined Lookup that contains valid values for this segment.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 2 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 2 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 3 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 3 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 4 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 4 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 5 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 5 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 6 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 6 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 7 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 7 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 8 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 8 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 9 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 9 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 10 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 10 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 11 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 11 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 12 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 12 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 13 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 13 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 14 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 14 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 15 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 15 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 16 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 16 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 17 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 17 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 18 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 18 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 19 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 19 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Lookup Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 20 Lookup Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Parent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Segment 20 Parent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 2 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 3 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 4 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 5 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 6 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 7 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 8 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 9 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 10 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 11 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 12 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 13 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 14 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 15 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 16 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 17 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 18 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 19 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 20 is required for all accounts in this chart of accounts. Segment 1 is always required.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 1 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 1 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 1.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 2 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 2 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 2.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 3 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 3 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 3.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 4 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 4 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 4.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 5 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 5 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 5.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 6 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 6 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 6.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 7 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 7 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 7.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 8 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 8 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 8.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 9 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 9 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 9.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 10 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 10 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 10.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 11 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 11 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 11.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 12 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 12 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 12.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 13 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 13 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 13.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 14 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 14 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 14.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 15 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 15 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 15.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 16 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 16 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 16.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 17 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 17 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 17.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 18 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 18 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 18.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 19 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 19 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 19.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Locked</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether segment 20 is locked for all accounts in this chart of accounts.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Segment 20 Apply Requisition Default to PO Change</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Flag specifying whether to apply Purchase Request Default to Purchase Order Change for Segment 20.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Number Prefix</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Optional alphanumeric prefix displayed as part of the PO number, sometimes used for integration or disambiguation purposes.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Number Length</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Optional numeric value used to specify a fixed length for the numeric portion of the PO number. If used, the PO number will be padded with 0's up to the specified length for display purposes. Valid values are between 6 and 15, inclusive.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Item Invoice Matching Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Item Invoice Matching Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Invoice Matching Level</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Service Invoice Matching Level</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Units of Measure on Invoice and PO Match Boolean Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Units of Measure on Invoice and PO Match Boolean Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Line Units of Measure on Invoice and PO Match Boolean Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Line Units of Measure on Invoice and PO Match Boolean Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">PO Email Actions Enabled</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">PO Email Actions Enabled</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Days Backdating Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Days Backdating Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Days Backdating Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Days Backdating Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Shipping Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Shipping Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Shipping Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Shipping Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Handling Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Handling Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Handling Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Handling Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Misc Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Misc Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Misc Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Misc Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Total Taxes Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Total Taxes Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Extras Total Taxes Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Extras Total Taxes Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Shipping Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Shipping Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Shipping Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Shipping Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Handling Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Handling Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Handling Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Handling Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Misc Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Misc Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Misc Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Misc Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Total Taxes Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Total Taxes Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Extras Total Taxes Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Extras Total Taxes Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice line unit price compared to Catalog unit price (Amount)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice line unit price compared to Catalog unit price (Amount)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice line unit price compared to Catalog unit price (Percent)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice line unit price compared to Catalog unit price (Percent)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Distribute Tax</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Distribute Tax</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Distribute Shipping</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Distribute Shipping</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Distribute Handling</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Distribute Handling</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Distribute Misc</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Distribute Misc</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Allow Billing Notes</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Allow Billing Notes</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Enterprise Code</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Enterprise Code</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Currency Matches PO Currency Boolean Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Currency Matches PO Currency Boolean Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Currency Matches PO Currency Boolean Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Currency Matches PO Currency Boolean Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity-Based Line Quantity Over Invoiced Quantity Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity-Based Line Quantity Over Invoiced Quantity Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity-Based Line Quantity Over Invoiced Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity-Based Line Quantity Over Invoiced Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount-Based Line Price Over Invoiced Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Amount-Based Line Price Over Invoiced Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Amount-Based Line Price Over Invoiced Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Amount-Based Line Price Over Invoiced Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Quantity Over Invoiced Quantity Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Quantity Over Invoiced Quantity Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Quantity Over Invoiced Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Quantity Over Invoiced Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Amount-Based Line Price Over Invoiced Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Amount-Based Line Price Over Invoiced Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Amount-Based Line Price Over Invoiced Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Amount-Based Line Price Over Invoiced Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Weight-Based Line Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Weight-Based Line Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Weight-Based Line Amount Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Weight-Based Line Amount Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Weight-Based Line Price Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Weight-Based Line Price Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Weight-Based Line Price Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Weight-Based Line Price Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Weight Units of Measure on Invoice and Item Match Boolean Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Weight Units of Measure on Invoice and Item Match Boolean Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Supplier Part Number on Invoice and PO Match Boolean Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Supplier Part Number on Invoice and PO Match Boolean Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Weight-Based Line Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Weight-Based Line Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Weight-Based Line Amount Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Weight-Based Line Amount Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Weight-Based Line Price Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Weight-Based Line Price Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Weight-Based Line Price Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Weight-Based Line Price Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Line Weight Units of Measure on Invoice and Item Match Boolean Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Line Weight Units of Measure on Invoice and Item Match Boolean Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Line Supplier Part Number on Invoice and PO Match Boolean Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Line Supplier Part Number on Invoice and PO Match Boolean Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Header Tax and Tax Engine Calculation Difference Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Header Tax and Tax Engine Calculation Difference Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Header Tax and Tax Engine Calculation Difference Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Header Tax and Tax Engine Calculation Difference Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Line Tax and Tax Engine Calculation Difference Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Line Tax and Tax Engine Calculation Difference Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Line Tax and Tax Engine Calculation Difference Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Line Tax and Tax Engine Calculation Difference Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">3-Way Match Under Receiving Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">3-Way Match Under Receiving Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices 3-Way Match Under Receiving Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices 3-Way Match Under Receiving Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Contract Price Percent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Contract Price Percent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoice Contract Price Percent</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoice Contract Price Percent</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Contract Price Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Contract Price Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoice Contract Price Amount</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoice Contract Price Amount</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Exchange Rate compared to Coupa Exchange Rate (Percent)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Exchange Rate compared to Coupa Exchange Rate (Percent)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Invoice Exchange Rate compared to Coupa Exchange Rate (Percent)</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Invoice Exchange Rate compared to Coupa Exchange Rate (Percent)</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Legal Entity Name</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Name of the legal entity that this chart of accounts belongs to. The legal entity will provide billing address and tax registrations.</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Payment Terms compared to PO Payment Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Payment Terms compared to PO Payment Terms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Invoice Payment Terms compared to PO Payment Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Invoice Payment Terms compared to PO Payment Terms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Shipping Terms compared to PO Shipping Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Shipping Terms compared to PO Shipping Terms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Invoice Shipping Terms compared to PO Shipping Terms</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Invoice Shipping Terms compared to PO Shipping Terms</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice account does not match PO account</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice account does not match PO account</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Invoice account does not match PO account</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Invoice account does not match PO account</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity-Based Line Amount Over Invoiced Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity-Based Line Amount Over Invoiced Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Amount Over Invoiced Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Amount Over Invoiced Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Quantity-Based Line Amount Over Invoiced Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Quantity-Based Line Amount Over Invoiced Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Amount Over Invoiced Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Quantity-Based Line Amount Over Invoiced Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Total Taxes Compared to Invoice Net Total Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Total Taxes Compared to Invoice Net Total Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Total Taxes Compared to Invoice Net Total Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Total Taxes Compared to Invoice Net Total Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract Max Spend Line Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Contract Max Spend Line Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Contract Max Spend Line Amount Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Contract Max Spend Line Amount Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Contract Max Spend Line Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Contract Max Spend Line Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Contract Max Spend Line Percent Tolerance</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Contract Max Spend Line Percent Tolerance</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Classification of Goods Code and PO Classification of Goods code differ</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Classification of Goods Code and PO Classification of Goods code differ</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Invoice Fiscal Code and PO Fiscal Code differ</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Invoice Fiscal Code and PO Fiscal Code differ</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Invoice Classification of Goods Code and PO Classification of Goods code differ</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Invoice Classification of Goods Code and PO Classification of Goods code differ</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Supplier Created Invoices Invoice Fiscal Code and PO Fiscal Code differ</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Supplier Created Invoices Invoice Fiscal Code and PO Fiscal Code differ</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Receipt Approval Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Receipt Approval Required</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Sheet Required</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Service Sheet Required for COA when used in req/po</td>
+<td class="entry" align=""></td>
+</tr>
+<tr class="">
+<td class="entry" align="">Service Sheet Budget Period Mode</td>
+<td class="entry" align="">No</td>
+<td class="entry" align="">No</td>
+<td class="entry" align=""></td>
+<td class="entry" align="">Service Sheet Budget Period Mode</td>
+<td class="entry" align=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>

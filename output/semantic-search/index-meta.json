@@ -1,0 +1,10 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "chunk_count": 2139,
+  "embedding_dim": 384,
+  "chunk_size_words": 220,
+  "chunk_overlap_words": 40,
+  "documents_jsonl": "E:\\Documents\\MyGitProject\\coupa-compass-integration-docs\\output\\documents.jsonl",
+  "chunks_file": "chunks.jsonl",
+  "embeddings_file": "embeddings.npy"
+}

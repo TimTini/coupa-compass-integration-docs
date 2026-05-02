@@ -11,4 +11,4 @@ pinned: false
 
 # Coupa Docs Semantic Search
 
-This Space loads chunk + embedding artifacts from dataset `TimTini/coupa-docs-semantic-index` and provides semantic search.
+Gradio template: load chunk and embedding artifacts from a local build of `output/semantic-search` (see the repository root `README.md`). The app downloads `chunks.jsonl`, `embeddings.npy`, and `index-meta.json` from a dataset whose id you supply via the `COUPA_DATASET_REPO` environment variable (see `app.py`).

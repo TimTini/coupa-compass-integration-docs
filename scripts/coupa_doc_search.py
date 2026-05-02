@@ -1,8 +1,7 @@
 from __future__ import annotations
 
 """
-Tra cứu tài liệu Coupa Compass (semantic index local). Mặc định in JSON ra stdout
-để Cursor / Claude / Codex (hoặc MCP) dễ parse.
+Tra cứu tài liệu Coupa Compass (semantic index local). Mặc định in JSON ra stdout.
 
 Cần build index trước: scripts/build_semantic_index.py
 """

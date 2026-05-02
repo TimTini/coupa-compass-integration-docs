@@ -4,7 +4,7 @@
   "embedding_dim": 384,
   "chunk_size_words": 220,
   "chunk_overlap_words": 40,
-  "documents_jsonl": "E:\\Documents\\MyGitProject\\coupa-compass-integration-docs\\output\\documents.jsonl",
+  "documents_jsonl": "../documents.jsonl",
   "chunks_file": "chunks.jsonl",
   "embeddings_file": "embeddings.npy"
 }

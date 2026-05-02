@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from pathlib import Path
 from typing import Any
@@ -154,13 +155,15 @@ def main() -> int:
     embeddings = build_embeddings(chunks=chunks, model_name=args.model, batch_size=args.batch_size)
     np.save(output_dir / "embeddings.npy", embeddings)
 
+    # Đường dẫn tương đối từ thư mục index (`output/semantic-search`) để meta không gắn máy cụ thể.
+    doc_rel = os.path.relpath(documents_jsonl, output_dir).replace("\\", "/")
     metadata = {
         "model": args.model,
         "chunk_count": len(chunks),
         "embedding_dim": int(embeddings.shape[1]),
         "chunk_size_words": args.chunk_size,
         "chunk_overlap_words": args.chunk_overlap,
-        "documents_jsonl": str(documents_jsonl),
+        "documents_jsonl": doc_rel,
         "chunks_file": "chunks.jsonl",
         "embeddings_file": "embeddings.npy",
     }

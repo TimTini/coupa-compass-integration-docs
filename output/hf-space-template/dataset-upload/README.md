@@ -8,7 +8,7 @@ configs:
 
 # Coupa Docs Semantic Index
 
-This dataset stores semantic-search artifacts for `TimTini/coupa-docs-semantic-index`.
+Dataset layout for artifacts generated under `output/semantic-search` in the parent repository:
 
 - `chunks.jsonl`: chunk rows for dataset viewer/training pipelines
 - `embeddings.npy`: dense vectors aligned by row index with `chunks.jsonl`

@@ -9,7 +9,12 @@ import numpy as np
 from huggingface_hub import InferenceClient, hf_hub_download
 from sentence_transformers import SentenceTransformer
 
-DATASET_REPO = "TimTini/coupa-docs-semantic-index"
+# Dataset id khi chạy trên hub: biến môi trường COUPA_DATASET_REPO = owner/name (cùng bộ file với output/semantic-search).
+DATASET_REPO = os.environ.get("COUPA_DATASET_REPO", "").strip()
+if not DATASET_REPO:
+    raise RuntimeError(
+        "Thiếu COUPA_DATASET_REPO: gán id dataset (owner/name) chứa chunks.jsonl, embeddings.npy, index-meta.json."
+    )
 
 # Tóm tắt (EN) rồi dịch sang VI — model nhỏ, phù hợp tier miễn phí (có giới hạn tốc độ).
 SUMMARIZE_MODEL = "sshleifer/distilbart-cnn-12-6"

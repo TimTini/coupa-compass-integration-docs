@@ -32,18 +32,12 @@ Gợi ý query: **tiếng Anh** hoặc đúng thuật ngữ tài liệu (OAuth, 
 - Index **mặc định** (`sentence-transformers/all-MiniLM-L6-v2`, xem `index-meta.json`) tối ưu cho query **Anh**. Query tiếng Việt vẫn có thể ra kết quả nhưng đôi khi **kém ổn định** (embedding chỉ một ngôn ngữ).
 - Muốn **ưu tiên câu hỏi tiếng Việt**: build lại index với model đa ngôn ngữ, ví dụ `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (cùng `build_semantic_index.py`, đổi `--model` và `--output-dir` hoặc ghi đè có chủ đích). Sau đó trỏ `coupa_doc_search.py --index-dir` vào thư mục index mới.
 
-## Lệnh (JSON cho agent)
+## Lệnh (JSON)
 
-Đặt `REPO` = đường dẫn tuyệt đối tới clone `coupa-compass-integration-docs`.
+Chạy từ **thư mục gốc repo** (thư mục có `scripts/` và `output/`):
 
 ```bash
-python "%REPO%\scripts\coupa_doc_search.py" "your search query" --top-k 8
-```
-
-Windows PowerShell:
-
-```powershell
-python "E:\Documents\MyGitProject\coupa-compass-integration-docs\scripts\coupa_doc_search.py" "OAuth client Coupa" --top-k 8
+python scripts/coupa_doc_search.py "your search query" --top-k 8
 ```
 
 Đầu ra là JSON: `results[].title`, `url`, `text`, `score`, `toc_path`.
@@ -54,30 +48,3 @@ python "E:\Documents\MyGitProject\coupa-compass-integration-docs\scripts\coupa_d
 ## Nếu lỗi `index_missing`
 
 Chạy build index trong repo (xem `README.md` / `README.en.md`, mục semantic search), rồi tìm lại.
-
----
-
-## Cài trên từng công cụ (một skill, nhiều nơi)
-
-**Nguyên tắc:** cùng một thư mục skill này; copy hoặc symlink vào đúng thư mục skill của từng tool.
-
-### Cursor
-
-- Copy hoặc symlink `skills/coupa-compass-docs` vào một trong:
-  - `%USERPROFILE%\.cursor\skills-cursor\coupa-compass-docs`, hoặc
-  - `.cursor/skills/coupa-compass-docs` trong workspace (nếu project cho phép).
-- Trong chat: nhắc `coupa-compass-docs` hoặc “tra Coupa doc trước khi trả lời”.
-
-### Claude Code (CLI)
-
-- Copy/symlink vào `%USERPROFILE%\.claude\skills\coupa-compass-docs` (hoặc skills project-level nếu bạn dùng).
-- Khi task liên quan Coupa integration: đọc skill này và chạy `coupa_doc_search.py` trước.
-
-### Codex (OpenAI / VS tooling)
-
-- **Không** dùng chung một “skill store” với Cursor: thêm đoạn ngắn vào rule project (vd. `AGENTS.md` hoặc `.codex/`) trỏ tới repo và lệnh trên, hoặc symlink skill vào path Codex đọc (nếu bạn đã cấu hình universal agent skills `%.agents\skills%`).
-- Nội dung tối thiểu: “Với Coupa Compass integration: luôn chạy `coupa_doc_search.py` với query tiếng Anh/ngắn, parse JSON, trả lời kèm URL.”
-
-### MCP (tuỳ chọn)
-
-Nếu sau này bọc `coupa_doc_search.py` trong MCP server: một tool `search_coupa_docs` trả cùng schema JSON — Cursor/Claude có thể gọi thống nhất. Skill này vẫn giữ làm hợp đồng hành vi (khi nào phải search).

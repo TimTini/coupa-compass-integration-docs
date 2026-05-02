@@ -4,7 +4,7 @@
 
 ## Provenance
 
-- Source TOC: <https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation>
+- This archive mirrors Coupa’s **Integration Technical Documentation** product area. Full URLs and metadata are in `output/manifest.json`, `output/toc.md`, and per-page front matter.
 - Generated: 2026-04-09
 
 ## Results
@@ -32,7 +32,7 @@ Breakdown of the extension set:
 
 ## Directory layout
 
-(From the repository root, or replace paths with your clone location.)
+(From the repository root.)
 
 - `scripts/fetch_coupa_docs.py` — re-download the full TOC and generate AI-ready data.
 - `output/raw-html/` — full HTML per URL.
@@ -65,33 +65,33 @@ Breakdown of the extension set:
 ## Re-run fetch
 
 ```powershell
-python "scripts/fetch_coupa_docs.py" `
-  --output-dir "output" `
+python scripts/fetch_coupa_docs.py `
+  --output-dir output `
   --workers 8
 ```
 
 ```powershell
-python "scripts/extend_coupa_discovery.py" `
-  --base-output-dir "output" `
+python scripts/extend_coupa_discovery.py `
+  --base-output-dir output `
   --workers 8
 ```
 
-(Run from the repository root, or use absolute paths.)
+(Run from the repository root.)
 
-## Semantic search (local + Hugging Face)
+## Semantic search (local)
 
 ### 1) Install dependencies
 
 ```powershell
-pip install -r "requirements.txt"
+pip install -r requirements.txt
 ```
 
 ### 2) Build semantic index from the document corpus
 
 ```powershell
-python "scripts/build_semantic_index.py" `
-  --documents-jsonl "output/documents.jsonl" `
-  --output-dir "output/semantic-search" `
+python scripts/build_semantic_index.py `
+  --documents-jsonl output/documents.jsonl `
+  --output-dir output/semantic-search `
   --model "sentence-transformers/all-MiniLM-L6-v2"
 ```
 
@@ -104,60 +104,26 @@ Artifacts:
 ### 3) Query semantic search locally
 
 ```powershell
-python "scripts/query_semantic_search.py" `
+python scripts/query_semantic_search.py `
   "invoice match exception flow" `
-  --index-dir "output/semantic-search" `
+  --index-dir output/semantic-search `
   --top-k 5
 ```
 
-### 3b) Agent lookup (Cursor / Claude / Codex) — JSON
+### 3b) JSON lookup (agents / scripts)
 
-- Script: `scripts/coupa_doc_search.py` — prints **JSON** by default for agents; `--format text` for humans.
-- Skill + citation rules: `skills/coupa-compass-docs/` (`SKILL.md` = Vietnamese, `SKILL.en.md` = English).
+- Script: `scripts/coupa_doc_search.py` — prints **JSON** by default; `--format text` for humans.
+- Citation rules: `skills/coupa-compass-docs/` (`SKILL.md` = Vietnamese, `SKILL.en.md` = English).
 - Requires index built (step 2) and dependencies (step 1). Prefer English queries or exact Compass terms (invoice, OAuth, Supplier Portal, …).
 - **Languages:** retrieved snippets are **English**. Queries may be **VI or EN**; the default index (`all-MiniLM-L6-v2`) favors **English** queries. For **Vietnamese** queries more often, rebuild with a multilingual model, e.g. `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (step 2, change `--model`); point `coupa_doc_search.py --index-dir` at the new folder.
 
 ```powershell
-python "scripts/coupa_doc_search.py" `
+python scripts/coupa_doc_search.py `
   "invoice match exception" `
-  --index-dir "output/semantic-search" `
+  --index-dir output/semantic-search `
   --top-k 8
 ```
 
-### 4) Upload index to Hugging Face Dataset (free tier)
+### 4) Optional publishing scripts
 
-Log in first:
-
-```powershell
-hf auth login
-```
-
-Upload dataset:
-
-```powershell
-python "scripts/publish_semantic_to_hf.py" `
-  --dataset-repo "YOUR_HF_USERNAME/coupa-docs-semantic-index" `
-  --index-dir "output/semantic-search"
-```
-
-### 5) Deploy Hugging Face Space (Gradio) — from `output/hf-space-template`
-
-The script uploads only `app.py`, `requirements.txt`, `README.md` (skips `dataset-upload/`).
-
-```powershell
-python "scripts/publish_hf_space.py" `
-  --space-repo "YOUR_HF_USERNAME/coupa-docs-semantic-search"
-```
-
-After build: `https://huggingface.co/spaces/YOUR_HF_USERNAME/coupa-docs-semantic-search`.  
-For Inference API (summarize/translate after search): **Space → Settings → Repository secrets** → add `HF_TOKEN` (read).
-
-### 5b) (Legacy) Create Space via `publish_semantic_to_hf.py`
-
-`--space-repo` **deletes and regenerates** the old Space template folder (no summarize/translate). Only if you want a single command that also uploads the dataset:
-
-```powershell
-python "scripts/publish_semantic_to_hf.py" `
-  --dataset-repo "YOUR_HF_USERNAME/coupa-docs-semantic-index" `
-  --space-repo "YOUR_HF_USERNAME/coupa-docs-semantic-search"
-```
+`scripts/publish_semantic_to_hf.py`, `scripts/publish_hf_space.py`, and `output/hf-space-template/` package the index/app for use outside this repository; repo names and credentials are configured where you run them — not documented here.

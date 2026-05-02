@@ -1,5 +1,7 @@
 # Coupa Compass Integration Technical Documentation Archive
 
+**English / Tiếng Anh:** [README.en.md](README.en.md)
+
 Nguồn gốc:
 
 - TOC gốc: <https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation>
@@ -120,6 +122,20 @@ python "E:\Documents\MyGitProject\coupa-compass-integration-docs\scripts\query_s
   "invoice match exception flow" `
   --index-dir "E:\Documents\MyGitProject\coupa-compass-integration-docs\output\semantic-search" `
   --top-k 5
+```
+
+### 3b) Tra cứu cho AI (Cursor / Claude / Codex) — JSON
+
+- Script: `scripts/coupa_doc_search.py` — in **JSON** (mặc định) để agent parse; `--format text` cho người đọc.
+- Hướng dẫn cài skill + quy tắc trích dẫn: thư mục `skills/coupa-compass-docs/` (`SKILL.md` = tiếng Việt, `SKILL.en.md` = tiếng Anh).
+- Cần đã build index (mục 2) và cài dependency (mục 1). Gợi ý query: tiếng Anh hoặc đúng thuật ngữ Compass (invoice, OAuth, Supplier Portal, …).
+- **Đa ngôn ngữ:** tài liệu trích ra là **tiếng Anh**. Query có thể **VI hoặc EN**; index mặc định (`all-MiniLM-L6-v2`) hợp query Anh hơn. Nếu thường hỏi bằng **tiếng Việt**, build lại index với model đa ngôn ngữ, ví dụ `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (mục 2, đổi `--model`); trỏ `coupa_doc_search.py --index-dir` tới thư mục index mới.
+
+```powershell
+python "E:\Documents\MyGitProject\coupa-compass-integration-docs\scripts\coupa_doc_search.py" `
+  "invoice match exception" `
+  --index-dir "E:\Documents\MyGitProject\coupa-compass-integration-docs\output\semantic-search" `
+  --top-k 8
 ```
 
 ### 4) Upload index lên Hugging Face Dataset (miễn phí)

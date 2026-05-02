@@ -4,3 +4,6 @@ __pycache__/
 output-auth-test/
 output-sample/
 output-test/
+
+# Local timestamped backups before edits
+*.bak*
